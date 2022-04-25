@@ -1,16 +1,17 @@
+Sample_Index: 91526
 checking : A14
-duration : 22
+duration : 5
 credit-hist : A34
-purpose : A41
-credit-amount : 9225
-savings-account : A65
-employment-duration : A75
+purpose : A43
+credit-amount : 252
+savings-account : A61
+employment-duration : A73
 installment-income-ratio : 4
-sex : A93
+marital-gender-status : A92
 debtors-guarantors : A101
 residence-since : 4
-property : A123
-age : 27
+property : A121
+age : 31
 installment-plans : A143
 housing : A152
 num-existing-credits : 1
