@@ -1,0 +1,21 @@
+# Changelog
+
+## [1.4.0.1] - 2022-06-06
+
+* 'accord' submodule in pyhelayers: MPC and ZK, including demo notebooks.
+* 'mltoolbox' submodule in pyhelayers: convert a network to be HE friendly. Including a new demo notebook.
+* ARIMA model training and prediction, including a new demo notebook.
+* Added automatic bootstrapping to logistic regression training.
+* Upgraded to HEaaN 3.5.0.
+* Added support for Batch Normalization layer in NN.
+* Added optimization of rotation keys in HE models: optimizer to detect and include only the necessary rotation keys in the HE context.
+* New demo notebook for deep neural networks: AlexNet, SqueezeNet and ResNet-18.
+* New demo notebook for FHE XGBoost inference over the iris dataset.
+
+## [1.3.0] - 2022-04-03
+
+* Support for HEaaN as backend
+* Added helayerslite - a basic version of the library.
+* helayerslite compiled for WASM (Web assembly)
+* Faster logistic regression training
+* Support for convolution with custom padding
