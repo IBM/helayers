@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.0.2] - 2022-06-13
+
+* Add support for HEaaN on IBM Z (s390x)
+* Bug fixes
+
 ## [1.4.0.1] - 2022-06-06
 
 * 'accord' submodule in pyhelayers: MPC and ZK, including demo notebooks.
