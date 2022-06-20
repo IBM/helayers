@@ -15,10 +15,18 @@ specialized skills in cryptography.
 Use the [`ibmcom/helayers-pylab`](https://hub.docker.com/r/ibmcom/helayers-pylab)
 Docker image to explore and use HElayers using a Python API.
 
+Use the [`ibmcom/helayers-pylab-s390x`](https://hub.docker.com/r/ibmcom/helayers-pylab-s390x)
+Docker image to explore and use HElayers using a Python API on IBM Z and IBM
+LinuxONE.
+
 ### C++ API with helayers-lab Docker image
 
 Use the [`ibmcom/helayers-lab`](https://hub.docker.com/r/ibmcom/helayers-lab)
 Docker image to explore and use HElayers using C++ API.
+
+Use the [`ibmcom/helayers-lab-s390x`](https://hub.docker.com/r/ibmcom/helayers-lab-s390x)
+Docker image to explore and use HElayers using C++ API on IBM Z and IBM
+LinuxONE.
 
 ### pyhelayers Python package
 
@@ -26,7 +34,7 @@ Install the [pyhelayers](https://pypi.org/project/pyhelayers/) Python package:
 
     pip install pyhelayers
 
-This is currently supported on Linux only.
+This is currently supported on Linux only (x86 and IBM Z).
 
 ## License
 
