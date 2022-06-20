@@ -36,6 +36,14 @@ Install the [pyhelayers](https://pypi.org/project/pyhelayers/) Python package:
 
 This is currently supported on Linux only (x86 and IBM Z).
 
+### pyhelayerslite Python package
+
+Install the [pyhelayerslite](https://pypi.org/project/pyhelayerslite/) Python package:
+
+    pip install pyhelayerslite
+
+This is currently supported on Windows only.
+
 ## License
 
 HElayers is provided under a community edition license for non-commercial use;
