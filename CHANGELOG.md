@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0.3] - 2022-06-21
+
+* mltoolbox: Improve trainer API; add starting_point() helper
+
 ## [1.4.0.2] - 2022-06-13
 
 * Add support for HEaaN on IBM Z (s390x)
