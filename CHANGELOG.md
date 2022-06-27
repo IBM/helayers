@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0.4] - 2022-06-27
+
+* Fix bug in XGBoost inference when a tree has a single leaf node.
+
 ## [1.4.0.3] - 2022-06-21
 
 * mltoolbox: Improve trainer API; add starting_point() helper
