@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.0.5] - 2022-07-19
+
+* Fix a bug in which encode() and encode_encrypt() encoded Python lists of doubles as lists of integers.
+* Allow XGBoost inference using HeModel interface.
+* XGBoost demo notebook: use HeProfileOptimizer to find optimal packing configuration and context parameters; encrypt and decrypt using IoProcessor.
+
 ## [1.4.0.4] - 2022-06-27
 
 * Fix bug in XGBoost inference when a tree has a single leaf node.
