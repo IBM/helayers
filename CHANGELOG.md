@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0.3] - 2022-11-02
+
+* A new API for HeModel and PlainModel: includes support for training, multiple inputs/outputs.
+* pyhelayers: added some missing HeConfigRequirement methods.
+* MockupContext includes operation counts tracking.
+* Tile tensors: rotate method now supports interleaved dimensions.
+* Tile tensors: A new printing mode for tile tensor that prints tiles.
+
 ## [1.4.0.5] - 2022-07-19
 
 * Fix a bug in which encode() and encode_encrypt() encoded Python lists of doubles as lists of integers.
