@@ -33,13 +33,13 @@ To get started with HElayers, follow our [instructional setup video](https://www
 
 ### Step 1: Pull the Docker image
 
-In your terminal pull this image from Dockerhub to your local repository.
+In your terminal pull this image from IBM Container Registry to your local repository.
 
-    docker pull ibmcom/helayers-pylab-s390x:latest
+    docker pull icr.io/helayers/helayers-pylab-s390x:latest
 
 If you specify `:latest`, it will always pull the most recent version.  However, if you are looking for a specific version you can replace `:latest` with the version number, such as `:1.0`.
 
-If the fetch is successful, it will download the image and you will now have an image in your local repository named `ibmcom/helayers-pylab-s390x:latest`.  Check that this image exists with
+If the fetch is successful, it will download the image and you will now have an image in your local repository named `icr.io/helayers/helayers-pylab-s390x:latest`.  Check that this image exists with
 
     docker images
 
@@ -48,7 +48,7 @@ If the fetch is successful, it will download the image and you will now have an 
 
 Once the image download is complete, `run` the image as a container in Docker...
 
-    docker run -p 8888:8888 -d --rm --name helayers-pylab-s390x ibmcom/helayers-pylab-s390x:latest
+    docker run -p 8888:8888 -d --rm --name helayers-pylab-s390x icr.io/helayers/helayers-pylab-s390x:latest
 
 This command runs the image and sets the container to be accessed via port 8888.  It also gives the container a name called `helayers-pylab-s390x`, which we can use to find it in the list of other running containers.
 

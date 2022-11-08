@@ -59,13 +59,13 @@ For commercial deployments and access to the source code, please contact jbusell
 
 
 ### Step 1: Pull the Docker image
-In your terminal pull this image from Dockerhub to your local repository.
+In your terminal pull this image from IBM Container Registry to your local repository.
 
-    docker pull ibmcom/helayers-lab-s390x:latest
+    docker pull icr.io/helayers/helayers-lab-s390x:latest
 
 If you specify `:latest`, it will always pull the most recent version.  However, if you are looking for a specific version you can replace `:latest` with the version number, such as `:1.0`.
 
-If the fetch is successful, it will download the image and you will now have an image in your local repository named `ibmcom/helayers-lab:latest`.  Check that this image exists with
+If the fetch is successful, it will download the image and you will now have an image in your local repository named `icr.io/helayers/helayers-lab:latest`.  Check that this image exists with
 
     docker images
 
@@ -74,7 +74,7 @@ If the fetch is successful, it will download the image and you will now have an 
 
 Once the image download is complete, `run` the image as a container in Docker...
 
-    docker run -p 8443:8443 -d --rm --name helayers-lab-s390x ibmcom/helayers-lab-s390x:latest
+    docker run -p 8443:8443 -d --rm --name helayers-lab-s390x icr.io/helayers/helayers-lab-s390x:latest
 
 This command runs the image and sets the container to be accessed via port 8443.  It also gives the container a name called `helayers-lab-s390x`, which we can use to find it in the list of other running containers.
 
