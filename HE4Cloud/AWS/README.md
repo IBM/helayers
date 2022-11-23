@@ -27,8 +27,8 @@
     1. Create an IAM role with the following settings:
         - *Trusted entity type*: `Web Identity`  
         - *Identity Provider*: `Amazon Cognito`  
-        - *Identity Pool ID*: The ID of the Identity Pool created in 1.2.  
-        - Add the policy defined in 2.1. to the Role’s Permissions list.  
+        - *Identity Pool ID*: The ID of the Identity Pool created in `1.2`  
+        - Add the policy defined in `2.1` to the Role’s Permissions list  
     1. Create an IAM policy with the following actions defined:
         - `s3:CreateBucket`
         - `s3:ListBucket`
@@ -44,6 +44,7 @@
 1. ### **Elastic Kubernetes Service (EKS)** 
     1. Create a cluster.
     1. Install AWS Load Balancer Controller (Follow instructions in [AWS documentation](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)).
+    1. Create a Kubernetes docker-registry secret to a Docker repository which will contain the He4Cloud images.
 
 ## MongoDB
 Create a [free](https://www.mongodb.com/cloud/atlas/register) MongoDb cluster.
@@ -56,8 +57,10 @@ Create a [free](https://www.mongodb.com/cloud/atlas/register) MongoDb cluster.
     - `yq`
     - `make`
 
-   **Note**      
-   `kubectl needs to be configured to access the kubernetes cluster created above.`
+   **`Notes:`**      
+   - kubectl needs to be configured to access the kubernetes cluster created above.
+   - Push the He4Cloud images found in IBM Box to the Docker repository used during `IAM Services` step `3.3`. Contact jbuselli@us.ibm.com to get access to IBM Box.
+     
 1. ### **Ingress**
    1. Run make command:
    ```makefile
