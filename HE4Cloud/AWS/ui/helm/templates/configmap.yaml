@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: he4cloud-ui-config
+data:
+  HE4C_ENV: {{ .Values.deployment.env | quote }}
+  CLUSTER_URL: {{ .Values.env.clusterUrl | quote }}
+  SERVER_BASE_URL: {{ .Values.env.serverBaseUrl | quote }}
+  COMMON_CLIENT_ID: {{ .Values.env.commonClientId | quote }}
+  COMMON_ISSUER: {{ .Values.env.commonIssuer | quote }}
+  API_VERSION: {{ .Values.env.apiVersion | quote }}
+  KMS_ENV: {{ .Values.env.kmsEnv | quote }}
+  {{- if eq .Values.env.kmsEnv "AWS" }}
+  AWS_ROLE_ARN: {{ .Values.env.aws.roleArn | quote }}
+  AWS_ACCOUNT_ID: {{ .Values.env.aws.accountId | quote }}
+  AWS_IDENTITY_POOL_ID: {{ .Values.env.aws.identityPoolId | quote }}
+  AWS_LOGIN_ID: {{ .Values.env.aws.loginId | quote }}
+  {{- end }}
+  {{- if eq .Values.env.kmsEnv "K8S" }}
+  VAULT_URL: {{ .Values.env.k8s.vaultUrl | quote }}
+  VAULT_AUTH_JWT_ROLE: {{ .Values.env.k8s.vaultAuthJwtRole | quote }}
+  {{- end }}
