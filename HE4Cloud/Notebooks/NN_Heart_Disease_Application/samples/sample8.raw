@@ -1,0 +1,15 @@
+Sample_Index: 195
+age : 59.0
+sex : 1.0
+cp : 0.0
+trestbps : 170.0
+chol : 326.0
+fbs : 0.0
+restecg : 0.0
+thalach : 140.0
+exang : 1.0
+oldpeak : 3.4
+slope : 0.0
+ca : 0.0
+thal : 3.0
+target : 0.0

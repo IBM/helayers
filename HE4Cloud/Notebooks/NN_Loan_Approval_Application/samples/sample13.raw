@@ -1,0 +1,22 @@
+Sample_Index: 57755
+checking : A14
+duration : 8
+credit-hist : A32
+purpose : A42
+credit-amount : 745
+savings-account : A61
+employment-duration : A72
+installment-income-ratio : 4
+marital-gender-status : A92
+debtors-guarantors : A101
+residence-since : 1
+property : A123
+age : 45
+installment-plans : A143
+housing : A151
+num-existing-credits : 1
+job : A173
+num-liable : 1
+telephone : A191
+foreign-worker : A201
+is_good : 1
