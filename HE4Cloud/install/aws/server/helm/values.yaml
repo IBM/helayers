@@ -1,0 +1,98 @@
+replicaCount: 1
+
+image:
+  repository: icr.io/he4cloud/he4cloud-server-provisioning
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+deployment:
+  # select one of the possible values: IBM, K8S, CASH, AWS. 
+  # IBM when deploying to IBM Cloud. 
+  # K8S for on-prem deployment. 
+  # CASH for deployment to the Cash environment
+  # AWS for deployment to the AWS environment
+  env: ""
+  stage: "dev"
+
+env: 
+  logPath: /home/user/logs
+  lockFile: /home/user/logs/.lock
+  cluster_ip: ""
+  thread_pool_size: "10"
+  api_version: ""
+  shared_model_bucket: ""
+  limitations: 
+    context_size: 1000000000 
+    prediction_time: 900000000000 
+    num_predictions : 300 
+    expiration: 30
+    max_payload: 5000000000
+    num_trains: 500
+    num_active_models: 500
+    num_deployed_models: 500
+  expiration_file_prefix: "UF_"
+  upload_link_timeout: "60"
+  ibm:
+    # For IBM Cloud only: 
+    cos_endpoint: ""
+    cos_instance_id: ""
+    cos_iam_api_key: "" # Secret
+    cos_iam_auth_endpoint: ""
+    cos_access_key_id: "" 
+    cos_secret_access_key: "" # Secret
+    appid_auth_url: ""
+    appid_client_id: ""
+    appid_client_secret: "" # Secret
+    cloudant_url: ""
+    cloudant_apikey: "" # Secret
+  aws:
+    # For AWS only:
+    cognito_client_id: ""
+    cognito_identity_provider_name: ""
+    cognito_signing_keys_url: ""
+    mongodb_connection_string: "" # Secret
+    mongodb_database: ""
+    access_key_id: ""
+    secret_access_key: "" # Secret
+  k8s:
+    # For K8S only:
+    mongodb_connection_string: "" # Secret
+    mongodb_database: ""
+    keycloak_client_id: ""
+    keycloak_client_secret: "" # Secret
+    keycloak_url: ""
+    minio_url: ""
+    minio_user: ""
+    minio_user_password: "" # Secret
+
+imagePullSecrets: 
+  artregcred
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+resources: {}
+  # limits:
+  #   cpu: 1000m
+  # requests:
+  #   cpu: 500m
+
+terminationGracePeriodSeconds: 60
+
+logger:
+  level:
+    file: 
+      dev: "DEBUG"
+      prod: "DEBUG"
+    stdout: 
+      dev: "DEBUG"
+      prod: "INFO"
+
+service:
+  type: ClusterIP
+  port: 5001
