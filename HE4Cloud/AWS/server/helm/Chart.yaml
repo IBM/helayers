@@ -1,0 +1,6 @@
+apiVersion: v2
+name: he4cloud-cloud-function
+description: A he4cloud backend helm chart
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
