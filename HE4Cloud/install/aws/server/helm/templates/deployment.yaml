@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: he4cloud-server-provisioning
+spec:
+  selector:
+    matchLabels:
+      app: he4cloud-server-provisioning
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: he4cloud-server-provisioning
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      containers:
+      - name: he4cloud-server-provisioning
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+          protocol: TCP
+        #livenessProbe:
+        #    httpGet:
+        #      scheme: HTTP
+        #      path: /healthz
+        #      port: {{ .Values.monitoringPort }}
+        #    initialDelaySeconds: 20
+        #    timeoutSeconds: 9
+        #    periodSeconds: 10
+        #readinessProbe:
+        #    httpGet:
+        #      scheme: HTTP
+        #      path: /ready
+        #      port: {{ .Values.monitoringPort }}
+        #    initialDelaySeconds: 20
+        #    timeoutSeconds: 9
+        #    periodSeconds: 10
+        #lifecycle:
+        #  preStop:
+        #    httpGet:
+        #      path: terminate
+        #      port: {{ .Values.monitoringPort }}
+        envFrom:
+        - configMapRef:
+            name: he4cloud-server-provisioning-config
+        - secretRef:
+            name: he4cloud-server-provisioning-secret
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}    
