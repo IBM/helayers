@@ -40,9 +40,12 @@ helm-ui-install:
 
 	@helm upgrade \
 		--set "deployment.env=AWS" \
+		--set "image.repository=${REMOTE_IMAGE_REPO}/${REMOTE_IMAGE_NAME}" \
+		--set "image.tag=${REMOTE_IMAGE_TAG}" \
+		--set "imagePullSecrets[0].name=${K8S_IMAGE_PULL_SECRETS}" \
 		--set "env.clusterUrl=${CLUSTER_URL}" \
 		--set "env.serverBaseUrl=${SERVER_PUBLIC_ENDPOINT}" \
-		--set "env.apiVersion=${SERVER_VERSION}" \
+		--set "env.apiVersion=v0.1" \
 		--set "env.commonClientId=${AWS_COGNITO_CLIENT_ID}" \
 		--set "env.commonClientSecret=${AWS_COGNITO_CLIENT_SECRET}" \
 		--set "env.commonBaseAuthorizationUrl=${AWS_COGNITO_AUTH_API_URL}" \
@@ -76,9 +79,12 @@ helm-server-install:
 
 	@helm upgrade \
         --set "deployment.env=AWS" \
+		--set "image.repository=${REMOTE_IMAGE_REPO}/${REMOTE_IMAGE_NAME}" \
+		--set "image.tag=${REMOTE_IMAGE_TAG}" \
+		--set "imagePullSecrets[0].name=${K8S_IMAGE_PULL_SECRETS}" \
         --set "env.cluster_ip=${CLUSTER_PUBLIC_ENDPOINT}" \
-        --set "env.api_version=${SERVER_VERSION}" \
-		--set "env.shared_model_bucket=${SHARED_MODEL_BUCKET}" \
+        --set "env.api_version=v0.1" \
+		--set "env.shared_model_bucket=shared-bucket" \
         --set "env.aws.cognito_client_id=${AWS_COGNITO_CLIENT_ID}" \
         --set "env.aws.cognito_identity_provider_name=${AWS_COGNITO_IDENTITY_PROVIDER_NAME}" \
         --set "env.aws.cognito_signing_keys_url=${AWS_COGNITO_SIGNING_KEYS_URL}" \
