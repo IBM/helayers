@@ -1,0 +1,16 @@
+Sample_Index: 10343
+age : 39
+workclass :  Self-emp-not-inc
+fnlwgt : 331481
+education :  Bachelors
+education-num : 13
+marital-status :  Divorced
+occupation :  Craft-repair
+relationship :  Not-in-family
+race :  Black
+sex :  Male
+capital-gain : 0
+capital-loss : 1669
+hours-per-week : 60
+native-country :  ?
+label :  <=50K
