@@ -1,0 +1,16 @@
+Sample_Index: 28629
+age : 61
+workclass :  ?
+fnlwgt : 71467
+education :  HS-grad
+education-num : 9
+marital-status :  Married-civ-spouse
+occupation :  ?
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 3103
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  >50K

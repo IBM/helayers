@@ -1,0 +1,16 @@
+Sample_Index: 28064
+age : 47
+workclass :  Local-gov
+fnlwgt : 102628
+education :  Some-college
+education-num : 10
+marital-status :  Married-civ-spouse
+occupation :  Other-service
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  >50K
