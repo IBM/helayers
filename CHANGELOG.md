@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.1.0] - 2022-11-30
+
+* New notebooks with thorough explanations of Tile Tensors.
+* ARIMA: Add support for parameter d=1 in training and prediction. Now supporting all models of type `ARIMA(p=*,d=0/1,q=1)`.
+* Python: CTile now suppports support for multiply_scalar with integer, multiply_imaginary_unit, and nullify_imaginary_part.
+
 ## [1.5.0.3] - 2022-11-02
 
 * A new API for HeModel and PlainModel: includes support for training, multiple inputs/outputs.
