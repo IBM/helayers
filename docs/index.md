@@ -2,10 +2,10 @@
 
 ## Scope
 
-IBM HElayers is software development kit (SDK) for the practical and efficient
+IBM HElayers is a software development kit (SDK) for the practical and efficient
 execution of encrypted workloads using fully homomorphic encrypted data.
 HElayers is designed to enable application developers and data scientists to
-seamlessly apply advanced privacy preserving techniques without requiring
+seamlessly apply advanced privacy-preserving techniques without requiring
 specialized skills in cryptography.
 
 ## Usage
@@ -47,3 +47,6 @@ see [license](https://ibm.ent.box.com/s/zfl6rt2p09811nyy8yow8t3mpsmkmsw6). For
 commercial deployments and access to the source code, please contact
 [jbuselli@us.ibm.com](mailto:jbuselli@us.ibm.com) for the Premium Edition
 license.
+
+## Support
+For questions and comments about HElayers please visit our slack channel <i>#helayers</i> on [IBM AIF360 workspace](https://join.slack.com/t/aif360/shared_invite/zt-5hfvuafo-X0~g6tgJQ~7tIAT~S294TQ)
