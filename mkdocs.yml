@@ -14,6 +14,8 @@ nav:
   - C++ for x86: lab.md
   - Python for Z: pylab-s390x.md
   - C++ for Z: lab-s390x.md
+  - Documentation:
+    - C++ SDK: cpp-sdk/latest
 
 # Copyright
 #copyright: Copyright &copy; 2022 IBM
@@ -23,3 +25,5 @@ theme:
   font:
     text: IBM Plex Sans
     code: IBM Plex Mono
+  features:
+    - navigation.expand
