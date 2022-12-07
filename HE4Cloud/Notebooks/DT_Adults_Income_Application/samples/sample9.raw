@@ -1,0 +1,16 @@
+Sample_Index: 14588
+age : 26
+workclass :  State-gov
+fnlwgt : 180886
+education :  Masters
+education-num : 14
+marital-status :  Married-civ-spouse
+occupation :  Prof-specialty
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 30
+native-country :  United-States
+label :  <=50K

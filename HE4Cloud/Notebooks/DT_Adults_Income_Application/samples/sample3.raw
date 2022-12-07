@@ -1,0 +1,16 @@
+Sample_Index: 15674
+age : 37
+workclass :  ?
+fnlwgt : 102541
+education :  Assoc-voc
+education-num : 11
+marital-status :  Married-civ-spouse
+occupation :  ?
+relationship :  Wife
+race :  Amer-Indian-Eskimo
+sex :  Female
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K
