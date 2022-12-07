@@ -48,5 +48,23 @@ commercial deployments and access to the source code, please contact
 [jbuselli@us.ibm.com](mailto:jbuselli@us.ibm.com) for the Premium Edition
 license.
 
+## Citing IBM HELayers
+
+To cite IBM HELayers in academic papers, please use:
+
+```
+Aharoni, E., Adir, A., Baruch, M., Drucker, N., Ezov, G., Farkash, A., Greenberg, L., Masalha, R., Moshkowich, G., Murik, D. and Shaul, H., 2020. HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data. (2023), Privacy Enhancing Technology Symposium (PETs) 2023 (To be published)
+```
+
+```
+@article{helayers,
+author = {Aharoni, Ehud and Adir, Allon and Baruch, Moran and Drucker, Nir and Ezov, Gilad and Farkash, Ariel and Greenberg, Lev and Masalha, Ramy and Moshkowich, Guy and Murik, Dov and Shaul, Hayim and Soceanu, Omri},
+journal = {Privacy Enhancing Technology Symposium (PETs) 2023},
+title = {{HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data}},
+url = {https://petsymposium.org/2023/paperlist.php},
+year = {2023}
+}
+```
+
 ## Support
 For questions and comments about HElayers please visit our slack channel <i>#helayers</i> on [IBM AIF360 workspace](https://join.slack.com/t/aif360/shared_invite/zt-5hfvuafo-X0~g6tgJQ~7tIAT~S294TQ)
