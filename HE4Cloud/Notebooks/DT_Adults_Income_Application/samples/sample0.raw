@@ -1,0 +1,16 @@
+Sample_Index: 29028
+age : 48
+workclass :  Private
+fnlwgt : 182313
+education :  Some-college
+education-num : 10
+marital-status :  Married-civ-spouse
+occupation :  Handlers-cleaners
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K
