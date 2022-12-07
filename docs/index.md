@@ -50,12 +50,13 @@ license.
 
 ## Citing IBM HELayers
 
-To cite IBM HELayers in academic papers, please use:
+To cite IBM HELayers, please use:
 
 ```
 Aharoni, E., Adir, A., Baruch, M., Drucker, N., Ezov, G., Farkash, A., Greenberg, L., Masalha, R., Moshkowich, G., Murik, D. and Shaul, H., 2020. HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data. (2023), Privacy Enhancing Technology Symposium (PETs) 2023 (To be published)
 ```
 
+Bibtex:
 ```
 @article{helayers,
 author = {Aharoni, Ehud and Adir, Allon and Baruch, Moran and Drucker, Nir and Ezov, Gilad and Farkash, Ariel and Greenberg, Lev and Masalha, Ramy and Moshkowich, Guy and Murik, Dov and Shaul, Hayim and Soceanu, Omri},
