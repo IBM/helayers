@@ -1,0 +1,16 @@
+Sample_Index: 27580
+age : 26
+workclass :  Private
+fnlwgt : 89326
+education :  Bachelors
+education-num : 13
+marital-status :  Never-married
+occupation :  Sales
+relationship :  Not-in-family
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K

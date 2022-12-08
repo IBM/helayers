@@ -1,0 +1,16 @@
+Sample_Index: 19010
+age : 20
+workclass :  Federal-gov
+fnlwgt : 178517
+education :  Some-college
+education-num : 10
+marital-status :  Never-married
+occupation :  Tech-support
+relationship :  Not-in-family
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K

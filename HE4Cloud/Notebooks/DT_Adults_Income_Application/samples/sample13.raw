@@ -1,0 +1,16 @@
+Sample_Index: 969
+age : 36
+workclass :  ?
+fnlwgt : 94954
+education :  Assoc-voc
+education-num : 11
+marital-status :  Widowed
+occupation :  ?
+relationship :  Not-in-family
+race :  White
+sex :  Female
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 20
+native-country :  United-States
+label :  <=50K

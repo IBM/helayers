@@ -1,0 +1,16 @@
+Sample_Index: 30643
+age : 34
+workclass :  Private
+fnlwgt : 265807
+education :  HS-grad
+education-num : 9
+marital-status :  Married-civ-spouse
+occupation :  Transport-moving
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 2051
+hours-per-week : 55
+native-country :  United-States
+label :  <=50K
