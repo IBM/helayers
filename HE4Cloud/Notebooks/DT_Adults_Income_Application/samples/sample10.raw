@@ -1,0 +1,16 @@
+Sample_Index: 25758
+age : 58
+workclass :  Private
+fnlwgt : 225394
+education :  HS-grad
+education-num : 9
+marital-status :  Married-civ-spouse
+occupation :  Craft-repair
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 1902
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K

@@ -1,0 +1,16 @@
+Sample_Index: 9259
+age : 60
+workclass :  Private
+fnlwgt : 88055
+education :  10th
+education-num : 6
+marital-status :  Married-civ-spouse
+occupation :  Transport-moving
+relationship :  Husband
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 40
+native-country :  United-States
+label :  <=50K

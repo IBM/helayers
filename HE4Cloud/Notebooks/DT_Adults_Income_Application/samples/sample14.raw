@@ -1,0 +1,16 @@
+Sample_Index: 28303
+age : 18
+workclass :  ?
+fnlwgt : 171964
+education :  HS-grad
+education-num : 9
+marital-status :  Never-married
+occupation :  ?
+relationship :  Own-child
+race :  White
+sex :  Female
+capital-gain : 0
+capital-loss : 1602
+hours-per-week : 20
+native-country :  United-States
+label :  <=50K

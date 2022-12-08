@@ -1,0 +1,16 @@
+Sample_Index: 16941
+age : 37
+workclass :  Private
+fnlwgt : 334291
+education :  Bachelors
+education-num : 13
+marital-status :  Never-married
+occupation :  Exec-managerial
+relationship :  Not-in-family
+race :  White
+sex :  Male
+capital-gain : 0
+capital-loss : 0
+hours-per-week : 50
+native-country :  United-States
+label :  <=50K
