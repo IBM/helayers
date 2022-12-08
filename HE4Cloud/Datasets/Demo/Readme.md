@@ -27,4 +27,4 @@ For example:
 
 The requested number of histogram bins for salary column is 5.
 
-** NOTE: ** At this time Chrome browser doesn't support uploading datasets
+**NOTE:** At this time Chrome browser doesn't support uploading datasets
