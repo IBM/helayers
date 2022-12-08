@@ -1,0 +1,13 @@
+{
+    "columns": {
+        "salary": {
+            "bins": 5
+        },
+        "height": {
+            "bins": 4
+        },
+        "weight": {
+            "bins": 5
+        }
+    }
+}
