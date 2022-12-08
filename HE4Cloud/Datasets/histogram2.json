@@ -1,0 +1,17 @@
+{
+    "operation": "compute_histogram",
+    "columns": {
+        "Age": {
+            "bins": 4
+        },
+        "Income": {
+            "bins": 4
+        },
+        "unPaid-Balance": {
+            "bins": 3
+        },
+        "Semester": {
+            "bins": 3
+        }
+    }
+}
