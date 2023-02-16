@@ -8,6 +8,11 @@ HElayers is designed to enable application developers and data scientists to
 seamlessly apply advanced privacy preserving techniques without requiring
 specialized skills in cryptography.
 
+HElayers now powers [IBM's FHE Cloud Service](https://he4cloud.com/public/), a
+beta cloud service that enables data scientists and developers to deploy
+privacy preserving machine learning driven Software-as-a-Service (SaaS)
+applications in the Cloud.
+
 ## Usage
 
 ### Python API with helayers-pylab Docker image
