@@ -8,6 +8,11 @@ HElayers is designed to enable application developers and data scientists to
 seamlessly apply advanced privacy-preserving techniques without requiring
 specialized skills in cryptography.
 
+HElayers now powers [IBM's FHE Cloud Service](https://he4cloud.com/public/), a
+beta cloud service that enables data scientists and developers to deploy
+privacy preserving machine learning driven Software-as-a-Service (SaaS)
+applications in the Cloud.
+
 ## Usage
 
 ### Python API with helayers-pylab Docker image
@@ -52,20 +57,20 @@ license.
 
 To cite IBM HELayers, please use:
 
-```
-Aharoni, E., Adir, A., Baruch, M., Drucker, N., Ezov, G., Farkash, A., Greenberg, L., Masalha, R., Moshkowich, G., Murik, D. and Shaul, H., 2020. HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data. (2023), Privacy Enhancing Technology Symposium (PETs) 2023 (To be published)
-```
+> Aharoni, E., Adir, A., Baruch, M., Drucker, N., Ezov, G., Farkash, A., Greenberg, L., Masalha, R., Moshkowich, G., Murik, D. and Shaul, H., 2020. HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data. (2023), Privacy Enhancing Technology Symposium (PETs) 2023 (To be published)
 
 Bibtex:
+
 ```
 @article{helayers,
-author = {Aharoni, Ehud and Adir, Allon and Baruch, Moran and Drucker, Nir and Ezov, Gilad and Farkash, Ariel and Greenberg, Lev and Masalha, Ramy and Moshkowich, Guy and Murik, Dov and Shaul, Hayim and Soceanu, Omri},
-journal = {Privacy Enhancing Technology Symposium (PETs) 2023},
-title = {{HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data}},
-url = {https://petsymposium.org/2023/paperlist.php},
-year = {2023}
+  author = {Aharoni, Ehud and Adir, Allon and Baruch, Moran and Drucker, Nir and Ezov, Gilad and Farkash, Ariel and Greenberg, Lev and Masalha, Ramy and Moshkowich, Guy and Murik, Dov and Shaul, Hayim and Soceanu, Omri},
+  journal = {Privacy Enhancing Technology Symposium (PETs) 2023},
+  title = {{HeLayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data}},
+  url = {https://petsymposium.org/2023/paperlist.php},
+  year = {2023}
 }
 ```
 
 ## Support
-For questions and comments about HElayers please visit our slack channel <i>#helayers</i> on [IBM AIF360 workspace](https://join.slack.com/t/aif360/shared_invite/zt-5hfvuafo-X0~g6tgJQ~7tIAT~S294TQ)
+
+For questions and comments about HElayers please visit our slack channel <i>#helayers</i> on [IBM AIF360 workspace](https://join.slack.com/t/aif360/shared_invite/zt-5hfvuafo-X0~g6tgJQ~7tIAT~S294TQ).
