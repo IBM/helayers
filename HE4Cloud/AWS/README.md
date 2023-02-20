@@ -59,7 +59,7 @@ Create a [free](https://www.mongodb.com/cloud/atlas/register) MongoDb cluster.
 
    **`Notes:`**      
    - kubectl needs to be configured to access the kubernetes cluster created above.
-   - Push the He4Cloud images found in IBM Box to the Docker repository used during `IAM Services` step `3.3`. Contact jbuselli@us.ibm.com to get access to IBM Box.
+   - Push the He4Cloud images found in IBM Box to the Docker repository used during `IAM Services` step `3.3`. Contact chamliam@ie.ibm.com to get access to IBM Box.
      
 1. ### **Ingress**
    1. Run make command:
