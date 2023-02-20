@@ -1,0 +1,1435 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyhelayers.HeRunRequirements &#8212; pyhelayers 1.5.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidoc/pyhelayers.HeRunRequirements';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyhelayers.HeTraits" href="pyhelayers.HeTraits.html" />
+    <link rel="prev" title="pyhelayers.HeProfile" href="pyhelayers.HeProfile.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">pyhelayers 1.5.2.0 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pyhelayers.html">pyhelayers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html">pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.get_print_options.html">pyhelayers.get_print_options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_encrypted_data.html">pyhelayers.load_encrypted_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context.html">pyhelayers.load_he_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context_from_file.html">pyhelayers.load_he_context_from_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_model.html">pyhelayers.load_he_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_io_processor.html">pyhelayers.load_io_processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.prepare_default_plain_blocks_for_aes_encryption.html">pyhelayers.prepare_default_plain_blocks_for_aes_encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.set_neural_net_verbosity_level.html">pyhelayers.set_neural_net_verbosity_level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ActionType.html">pyhelayers.ActionType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AesKey.html">pyhelayers.AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AggregatorPsiManager.html">pyhelayers.AggregatorPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Arima.html">pyhelayers.Arima</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ArimaPlain.html">pyhelayers.ArimaPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.BootstrapConfig.html">pyhelayers.BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTile.html">pyhelayers.CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensor.html">pyhelayers.CTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensorVector.html">pyhelayers.CTileTensorVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileVector.html">pyhelayers.CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ComparisonType.html">pyhelayers.ComparisonType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ConjugationSupport.html">pyhelayers.ConjugationSupport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Crf.html">pyhelayers.Crf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CrfPlain.html">pyhelayers.CrfPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DefaultContext.html">pyhelayers.DefaultContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DeviceType.html">pyhelayers.DeviceType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DoubleTensor.html">pyhelayers.DoubleTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Encoder.html">pyhelayers.Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedBatch.html">pyhelayers.EncryptedBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedData.html">pyhelayers.EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EvalType.html">pyhelayers.EvalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Field.html">pyhelayers.Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldType.html">pyhelayers.FieldType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldVector.html">pyhelayers.FieldVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FileStorage.html">pyhelayers.FileStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FitHyperParams.html">pyhelayers.FitHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FunctionEvaluator.html">pyhelayers.FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeConfigRequirement.html">pyhelayers.HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeContext.html">pyhelayers.HeContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModel.html">pyhelayers.HeModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModelRunner.html">pyhelayers.HeModelRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeProfile.html">pyhelayers.HeProfile</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyhelayers.HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeTraits.html">pyhelayers.HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeaanContext.html">pyhelayers.HeaanContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibBgvContext.html">pyhelayers.HelibBgvContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibCkksContext.html">pyhelayers.HelibCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibConfig.html">pyhelayers.HelibConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibContext.html">pyhelayers.HelibContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibPreset.html">pyhelayers.HelibPreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeans.html">pyhelayers.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeansPlain.html">pyhelayers.KMeansPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LRActivation.html">pyhelayers.LRActivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LattigoContext.html">pyhelayers.LattigoContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegression.html">pyhelayers.LogisticRegression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegressionPlain.html">pyhelayers.LogisticRegressionPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ModelIoProcessor.html">pyhelayers.ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NativeFunctionEvaluator.html">pyhelayers.NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNet.html">pyhelayers.NeuralNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetConfig.html">pyhelayers.NeuralNetConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetPlain.html">pyhelayers.NeuralNetPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberConfig.html">pyhelayers.NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSigned.html">pyhelayers.NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSize.html">pyhelayers.NumberSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.OptimizationTarget.html">pyhelayers.OptimizationTarget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTile.html">pyhelayers.PTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTileTensor.html">pyhelayers.PTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Padding2d.html">pyhelayers.Padding2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModel.html">pyhelayers.PlainModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModelHyperParams.html">pyhelayers.PlainModelHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PrintOptions.html">pyhelayers.PrintOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PublicFunctions.html">pyhelayers.PublicFunctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PythonBackedStorage.html">pyhelayers.PythonBackedStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageConfig.html">pyhelayers.RecordLinkageConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageManager.html">pyhelayers.RecordLinkageManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkagePackage.html">pyhelayers.RecordLinkagePackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRule.html">pyhelayers.RecordLinkageRule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRuleType.html">pyhelayers.RecordLinkageRuleType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RotationSetType.html">pyhelayers.RotationSetType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RtsPsiManager.html">pyhelayers.RtsPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.SealCkksContext.html">pyhelayers.SealCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Storage.html">pyhelayers.Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTDim.html">pyhelayers.TTDim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTEncoder.html">pyhelayers.TTEncoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTFunctionEvaluator.html">pyhelayers.TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTShape.html">pyhelayers.TTShape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Table.html">pyhelayers.Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Tile.html">pyhelayers.Tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TileTensor.html">pyhelayers.TileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Verbosity.html">pyhelayers.Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoost.html">pyhelayers.XGBoost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoostPlain.html">pyhelayers.XGBoostPlain</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.ext.html">pyhelayers.ext</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.MODEL_ARCH.html">pyhelayers.ext.MODEL_ARCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.pyfhe.html">pyhelayers.ext.pyfhe</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.html">pyhelayers.ext.pyfhecommon</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.abstractmethod.html">pyhelayers.ext.pyfhecommon.abstractmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.ABC.html">pyhelayers.ext.pyfhecommon.ABC</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.html">pyhelayers.ext.pyfhemlimpl</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.pyfheml.html">pyhelayers.ext.pyfhemlimpl.pyfheml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.utils.html">pyhelayers.ext.utils</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.end_timer.html">pyhelayers.ext.utils.end_timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.extract_batch.html">pyhelayers.ext.utils.extract_batch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.report_duration.html">pyhelayers.ext.utils.report_duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.start_timer.html">pyhelayers.ext.utils.start_timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.html">pyhelayers.mltoolbox</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.html">pyhelayers.mltoolbox.arguments</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html">pyhelayers.mltoolbox.arguments.Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.html">pyhelayers.mltoolbox.data_loader</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.cifar10_dataset.html">pyhelayers.mltoolbox.data_loader.cifar10_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidCT_dataset.html">pyhelayers.mltoolbox.data_loader.covidCT_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidXray_dataset.html">pyhelayers.mltoolbox.data_loader.covidXray_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.dataset_wrapper.html">pyhelayers.mltoolbox.data_loader.dataset_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.ds_factory.html">pyhelayers.mltoolbox.data_loader.ds_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.places205_dataset.html">pyhelayers.mltoolbox.data_loader.places205_dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint.html">pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed.html">pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point.html">pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau.html">pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace.html">pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.html">pyhelayers.mltoolbox.he_dl_lib</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.distillation.html">pyhelayers.mltoolbox.he_dl_lib.distillation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.my_logger.html">pyhelayers.mltoolbox.he_dl_lib.my_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.poly_activations.html">pyhelayers.mltoolbox.he_dl_lib.poly_activations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.singleton.html">pyhelayers.mltoolbox.he_dl_lib.singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.timers.html">pyhelayers.mltoolbox.he_dl_lib.timers</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.model.html">pyhelayers.mltoolbox.model</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.DNN_factory.html">pyhelayers.mltoolbox.model.DNN_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.alexnet_fhe.html">pyhelayers.mltoolbox.model.alexnet_fhe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.lenet5.html">pyhelayers.mltoolbox.model.lenet5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.nn_module.html">pyhelayers.mltoolbox.model.nn_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenet.html">pyhelayers.mltoolbox.model.squeezenet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenetchet.html">pyhelayers.mltoolbox.model.squeezenetchet</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.html">pyhelayers.mltoolbox.trainer</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.accuracy.html">pyhelayers.mltoolbox.trainer.accuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_logger.html">pyhelayers.mltoolbox.trainer.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_model_by_name.html">pyhelayers.mltoolbox.trainer.get_model_by_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_optimizer.html">pyhelayers.mltoolbox.trainer.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.load_checkpoint.html">pyhelayers.mltoolbox.trainer.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.make_confusion_matrix.html">pyhelayers.mltoolbox.trainer.make_confusion_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.nd_loss.html">pyhelayers.mltoolbox.trainer.nd_loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.print_summary.html">pyhelayers.mltoolbox.trainer.print_summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.top_k_acc.html">pyhelayers.mltoolbox.trainer.top_k_acc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidCTDataset.html">pyhelayers.mltoolbox.trainer.CovidCTDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidXrayDataset.html">pyhelayers.mltoolbox.trainer.CovidXrayDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DDP.html">pyhelayers.mltoolbox.trainer.DDP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DataLoader.html">pyhelayers.mltoolbox.trainer.DataLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DistributedSampler.html">pyhelayers.mltoolbox.trainer.DistributedSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.SimpleNamespace.html">pyhelayers.mltoolbox.trainer.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.Trainer.html">pyhelayers.mltoolbox.trainer.Trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.places205Dataset.html">pyhelayers.mltoolbox.trainer.places205Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.tqdm.html">pyhelayers.mltoolbox.trainer.tqdm</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.utils.html">pyhelayers.mltoolbox.utils</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.cf_matrix.html">pyhelayers.mltoolbox.utils.cf_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.metrics_tracker.html">pyhelayers.mltoolbox.utils.metrics_tracker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.training_debug.html">pyhelayers.mltoolbox.utils.training_debug</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.util.html">pyhelayers.mltoolbox.utils.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="pyhelayers-herunrequirements">
+<h1>pyhelayers.HeRunRequirements<a class="headerlink" href="#pyhelayers-herunrequirements" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeRunRequirements</span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>A class to describe all the user requirements for running a model with
+respect to the library, packaging considerations and computational
+performance.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.__init__" title="pyhelayers.HeRunRequirements.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.optimize_for_batch_size" title="pyhelayers.HeRunRequirements.optimize_for_batch_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_for_batch_size</span></code></a>(self, batch_size)</p></td>
+<td><p>Sets the requirement for the batch size to optimize for (default: 1).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_aes_key_size" title="pyhelayers.HeRunRequirements.set_aes_key_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_aes_key_size</span></code></a>(self, key_size)</p></td>
+<td><p>When using AES inputs, sets the size of the AES secret key, in bits (default: 256).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_aes_number_config" title="pyhelayers.HeRunRequirements.set_aes_number_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_aes_number_config</span></code></a>(self, number_config)</p></td>
+<td><p>When using AES inputs, sets the requirement for a number configuration, describing the characteristics of the numbers inside the inputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_compress_aes_key" title="pyhelayers.HeRunRequirements.set_compress_aes_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_compress_aes_key</span></code></a>(self, compress_aes_key)</p></td>
+<td><p>When using AES inputs, sets the requirement for whether or not the AES key encrypted under FHE will be saved and loaded in a compressed mode (default: true).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_exhaustive_search" title="pyhelayers.HeRunRequirements.set_exhaustive_search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_exhaustive_search</span></code></a>(self, exhaustive_search)</p></td>
+<td><p>Sets the requirement for whether or not to perform exhaustive search (default: false).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_fixed_num_slots" title="pyhelayers.HeRunRequirements.set_fixed_num_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_fixed_num_slots</span></code></a>(self, fixed_num_slots)</p></td>
+<td><p>Sets the requirement for a fixed number of slots in a ciphertext (default: no fixed number of slots, recommended).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_fractional_part_precision" title="pyhelayers.HeRunRequirements.set_fractional_part_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_fractional_part_precision</span></code></a>(self, ...[, ...])</p></td>
+<td><p>Sets the requirement for the fractional part precision (default: 35).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_handle_overflow" title="pyhelayers.HeRunRequirements.set_handle_overflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_handle_overflow</span></code></a>(self, handle_overflow)</p></td>
+<td><p>Sets the requirement for whether or not to apply overflow handling aiming at preventing overflows during the computation (default: false).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_he_context_options" title="pyhelayers.HeRunRequirements.set_he_context_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_he_context_options</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_integer_part_precision" title="pyhelayers.HeRunRequirements.set_integer_part_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_integer_part_precision</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the integer part precision (default: 10).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_lazy_encoding" title="pyhelayers.HeRunRequirements.set_lazy_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_lazy_encoding</span></code></a>(self, lazy_encoding)</p></td>
+<td><p>Sets the requirement for whether or not to apply lazy encoding for the model's weights, such that a required weight will be encoded at runtime and free after being used (default: false).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_batch_memory" title="pyhelayers.HeRunRequirements.set_max_batch_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_batch_memory</span></code></a>(self, max_batch_memory)</p></td>
+<td><p>Sets the requirement for the maximal batch memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time" title="pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_client_inference_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal client inference CPU time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_client_inference_memory" title="pyhelayers.HeRunRequirements.set_max_client_inference_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_client_inference_memory</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal client inference memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_context_memory" title="pyhelayers.HeRunRequirements.set_max_context_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_context_memory</span></code></a>(self, max_context_memory)</p></td>
+<td><p>Sets the requirement for the maximal context memory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time" title="pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_decrypt_output_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal decrypt output CPU time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time" title="pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_encrypt_input_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal encrypt input CPU time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_fit_cpu_time" title="pyhelayers.HeRunRequirements.set_max_fit_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_fit_cpu_time</span></code></a>(self, max_fit_cpu_time)</p></td>
+<td><p>Sets the requirement for the maximal fit CPU time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_inference_cpu_time" title="pyhelayers.HeRunRequirements.set_max_inference_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_inference_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal inference CPU time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_inference_memory" title="pyhelayers.HeRunRequirements.set_max_inference_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_inference_memory</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal inference memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_init_model_cpu_time" title="pyhelayers.HeRunRequirements.set_max_init_model_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_init_model_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal init model CPU time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_input_memory" title="pyhelayers.HeRunRequirements.set_max_input_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_input_memory</span></code></a>(self, max_input_memory)</p></td>
+<td><p>Sets the requirement for the maximal input memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_model_memory" title="pyhelayers.HeRunRequirements.set_max_model_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_model_memory</span></code></a>(self, max_model_memory)</p></td>
+<td><p>Sets the requirement for the maximal model memory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_output_memory" title="pyhelayers.HeRunRequirements.set_max_output_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_output_memory</span></code></a>(self, max_output_memory)</p></td>
+<td><p>Sets the requirement for the maximal output memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_max_predict_cpu_time" title="pyhelayers.HeRunRequirements.set_max_predict_cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_max_predict_cpu_time</span></code></a>(self, ...)</p></td>
+<td><p>Sets the requirement for the maximal predict CPU time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_model_encrypted" title="pyhelayers.HeRunRequirements.set_model_encrypted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_model_encrypted</span></code></a>(self, model_encrypted)</p></td>
+<td><p>Sets the requirement for whether or not to encrypt the model's weights (default: true).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_no_fixed_batch_size" title="pyhelayers.HeRunRequirements.set_no_fixed_batch_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_no_fixed_batch_size</span></code></a>(self)</p></td>
+<td><p>Sets the requirement for no fixed batch size (default: fixed batch size).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_not_secure" title="pyhelayers.HeRunRequirements.set_not_secure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_not_secure</span></code></a>(self)</p></td>
+<td><p>Set the security level to 0.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_optimization_target" title="pyhelayers.HeRunRequirements.set_optimization_target"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_optimization_target</span></code></a>(self, optimization)</p></td>
+<td><p>Sets the requirement for the optimization target (default: SERVER_SIDE_CPU_PER_SAMPLE).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_security_level" title="pyhelayers.HeRunRequirements.set_security_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_security_level</span></code></a>(self, security_level)</p></td>
+<td><p>Sets the requirement for the security level (default: 128).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_system_spec" title="pyhelayers.HeRunRequirements.set_system_spec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_system_spec</span></code></a>(self, ...)</p></td>
+<td><p>Sets the system specification, to be used to estimate the expected end-to-end latency when the optimization target is END_TO_END_LATENCY_PER_SAMPLE.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeRunRequirements.set_use_aes_inputs" title="pyhelayers.HeRunRequirements.set_use_aes_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_use_aes_inputs</span></code></a>(self, use_aes_inputs)</p></td>
+<td><p>Sets the requirement for whether or not to use AES inputs for the computation (default: false).</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.optimize_for_batch_size">
+<span class="sig-name descname"><span class="pre">optimize_for_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.optimize_for_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the batch size to optimize for (default:
+1). Cannot be called when “no fixed batch size” mode was set. The
+effective batch size may be different than the provided value if the
+provided value is too big or not a power of two.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit
+batch size set as its hyperparameter. In such case, the batch size to
+optimize for will be the fit batch size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>batch_size</strong> – The batch size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_aes_key_size">
+<span class="sig-name descname"><span class="pre">set_aes_key_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_aes_key_size" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the size of the AES secret key, in bits
+(default: 256).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key_size</strong> – The AES secret key size, in bits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_aes_number_config">
+<span class="sig-name descname"><span class="pre">set_aes_number_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.NumberConfig.html#pyhelayers.NumberConfig" title="pyhelayers.libs.pyhelayers_cppwrappers.NumberConfig"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.NumberConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_aes_number_config" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the requirement for a number
+configuration, describing the characteristics of the numbers inside the
+inputs. Must be set when using AES inputs (no default).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>number_config</strong> – The number configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_compress_aes_key">
+<span class="sig-name descname"><span class="pre">set_compress_aes_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress_aes_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_compress_aes_key" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the requirement for whether or not the
+AES key encrypted under FHE will be saved and loaded in a compressed mode
+(default: true).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compress_aes_key</strong> – Whether or not the AES key encrypted under FHE will
+be saved and loaded in a compressed mode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_exhaustive_search">
+<span class="sig-name descname"><span class="pre">set_exhaustive_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exhaustive_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_exhaustive_search" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to perform exhaustive search (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exhaustive_search</strong> – Whether or not to perform exhaustive search.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_fixed_num_slots">
+<span class="sig-name descname"><span class="pre">set_fixed_num_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_num_slots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_fixed_num_slots" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for a fixed number of slots in a ciphertext
+(default: no fixed number of slots, recommended).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixed_num_slots</strong> – A fixed number of slots in a ciphertext.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_fractional_part_precision">
+<span class="sig-name descname"><span class="pre">set_fractional_part_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractional_part_precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_max_feasible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_fractional_part_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the fractional part precision (default:
+35).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fractional_part_precision</strong> – The fractional part precision.</p></li>
+<li><p><strong>use_max_feasible</strong> – If a higher precision is feasible by the HE library
+while still fulfilling all the other requirements, the maximal feasible
+precision value will be used.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_handle_overflow">
+<span class="sig-name descname"><span class="pre">set_handle_overflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_handle_overflow" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to apply overflow handling
+aiming at preventing overflows during the computation (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_overflow</strong> – Whether or not to apply overflow handling.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_he_context_options">
+<span class="sig-name descname"><span class="pre">set_he_context_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_he_context_options" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>set_he_context_options(self: pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements, he_context_options: List[pyhelayers.libs.pyhelayers_cppwrappers.HeContext]) -&gt; None</p>
+<blockquote>
+<div><p>Sets the requirement for HeContext options. This value specifies
+possible (uninitialized) HeContexts that may be used when searching for a
+profile that satisfies the user’s requirements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param he_context_options<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The HeContext options to set.</p>
+</dd>
+<dt class="field-even">type he_context_options<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of HeContexts</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>set_he_context_options(self: pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements, arg0: List[str]) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_integer_part_precision">
+<span class="sig-name descname"><span class="pre">set_integer_part_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">integer_part_precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_integer_part_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the integer part precision (default: 10).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>integer_part_precision</strong> – The integer part precision.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_lazy_encoding">
+<span class="sig-name descname"><span class="pre">set_lazy_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_lazy_encoding" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to apply lazy encoding for
+the model’s weights, such that a required weight will be encoded at
+runtime and free after being used (default: false). Lazy encoding can only
+be applied on a non-encrypted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lazy_encoding</strong> – Whether or not to apply lazy encoding for the model’s
+weights.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_batch_memory">
+<span class="sig-name descname"><span class="pre">set_max_batch_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_batch_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_batch_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal batch memory. This value
+includes the sum of the input memory and the output memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_batch_memory</strong> – The maximal batch memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_client_inference_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_client_inference_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal client inference CPU time. This
+value includes the sum of the encrypt input CPU time and the decrypt
+output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_client_inference_cpu_time</strong> – The maximal client inference CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_client_inference_memory">
+<span class="sig-name descname"><span class="pre">set_max_client_inference_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_client_inference_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_client_inference_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal client inference memory. This
+value includes the sum of the input memory, the output memory and the
+context memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_client_inference_memory</strong> – The maximal client inference memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_context_memory">
+<span class="sig-name descname"><span class="pre">set_max_context_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_context_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_context_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal context memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_context_memory</strong> – The maximal context memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_decrypt_output_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_decrypt_output_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_decrypt_output_cpu_time</strong> – The maximal decrypt output CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_encrypt_input_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_encrypt_input_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal encrypt input CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_encrypt_input_cpu_time</strong> – The maximal encrypt input CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_fit_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_fit_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fit_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_fit_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal fit CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_fit_cpu_time</strong> – The maximal fit CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_inference_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_inference_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inference_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_inference_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal inference CPU time. This value
+includes the sum of the encrypt input CPU time, the predict CPU time and
+the decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_inference_cpu_time</strong> – The maximal inference CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_inference_memory">
+<span class="sig-name descname"><span class="pre">set_max_inference_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inference_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_inference_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal inference memory. This value includes
+the sum of the input memory, the output memory, the context memory and the
+model memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_inference_memory</strong> – The maximal inference memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_init_model_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_init_model_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_init_model_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_init_model_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal init model CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_init_model_cpu_time</strong> – The maximal init model CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_input_memory">
+<span class="sig-name descname"><span class="pre">set_max_input_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_input_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_input_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal input memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_input_memory</strong> – The maximal input memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_model_memory">
+<span class="sig-name descname"><span class="pre">set_max_model_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_model_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_model_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal model memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_model_memory</strong> – The maximal model memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_output_memory">
+<span class="sig-name descname"><span class="pre">set_max_output_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_output_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_output_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal output memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_output_memory</strong> – The maximal output memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_predict_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_predict_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_predict_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal predict CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_predict_cpu_time</strong> – The maximal predict CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_model_encrypted">
+<span class="sig-name descname"><span class="pre">set_model_encrypted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_encrypted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_model_encrypted" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to encrypt the model’s
+weights (default: true).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model_encrypted</strong> – Whether or not to encrypt the model’s weights.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_no_fixed_batch_size">
+<span class="sig-name descname"><span class="pre">set_no_fixed_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_no_fixed_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for no fixed batch size (default: fixed batch
+size). Having an unfixed batch size will result in optimizing for
+throughput considering multiple possible batch sizes and will usually end
+up with a large batch size. Cannot be called if an explicit batch size was
+set.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit
+batch size set as its hyperparameter. In such case, the batch size to
+optimize for will be the fit batch size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_not_secure">
+<span class="sig-name descname"><span class="pre">set_not_secure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_not_secure" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the security level to 0.
+This will result with ciphertexts that can be easily broken.
+It is useful for quick experiments sometimes, as everything
+will work faster and consume less memory.</p>
+<p>A warning will be issued when this method is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_optimization_target">
+<span class="sig-name descname"><span class="pre">set_optimization_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.OptimizationTarget.html#pyhelayers.OptimizationTarget" title="pyhelayers.libs.pyhelayers_cppwrappers.OptimizationTarget"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.OptimizationTarget</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_optimization_target" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the optimization target (default: SERVER_SIDE_CPU_PER_SAMPLE).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optimization</strong> – The optimization target.
+SERVER_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in
+server side operations (fit/predict). It is the only supported
+optimization target for a model in fit mode.
+CLIENT_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in
+client side operations (encrypt input, decrypt output).
+END_TO_END_LATENCY_PER_SAMPLE will optimize for low end-to-end latency per
+sample, including client-side operations, server-side operations and
+communication time, and excluding the time it takes to initialize the
+model and HE context. Requires setting the system specification by calling
+“set_system_spec”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_security_level">
+<span class="sig-name descname"><span class="pre">set_security_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">security_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_security_level" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the security level (default: 128).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>security_level</strong> – The security level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_system_spec">
+<span class="sig-name descname"><span class="pre">set_system_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_parallelization_speedup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_parallelization_speedup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_upload_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_upload_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_system_spec" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the system specification, to be used to estimate the expected
+end-to-end latency when the optimization target is
+END_TO_END_LATENCY_PER_SAMPLE. Required when optimizing for the above
+target, not-supported when optimizing for any other target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_parallelization_speedup</strong> – The speedup factor in client-side
+operations achieved by running them in client-side environment compared to
+a single-thread environment. With the lack of better estimation, consider
+setting the number of threads available in client-side.</p></li>
+<li><p><strong>server_parallelization_speedup</strong> – The speedup factor in server-side
+operations achieved by running them in server-side environment compared to
+a single-thread environment. With the lack of better estimation, consider
+setting the number of threads available in server-side.</p></li>
+<li><p><strong>client_upload_speed</strong> – The client-side upload speed, in bytes/sec.</p></li>
+<li><p><strong>server_upload_speed</strong> – The server-side upload speed, in bytes/sec.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_use_aes_inputs">
+<span class="sig-name descname"><span class="pre">set_use_aes_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_aes_inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_use_aes_inputs" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to use AES inputs for the
+computation (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>use_aes_inputs</strong> – Whether or not to use AES inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="pyhelayers.HeProfile.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">pyhelayers.HeProfile</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="pyhelayers.HeTraits.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">pyhelayers.HeTraits</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     HeRunRequirements
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.__init__">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.__init__()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.optimize_for_batch_size">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.optimize_for_batch_size()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_aes_key_size">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_aes_key_size()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_aes_number_config">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_aes_number_config()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_compress_aes_key">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_compress_aes_key()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_exhaustive_search">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_exhaustive_search()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_fixed_num_slots">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_fixed_num_slots()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_fractional_part_precision">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_fractional_part_precision()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_handle_overflow">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_handle_overflow()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_he_context_options">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_he_context_options()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_integer_part_precision">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_integer_part_precision()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_lazy_encoding">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_lazy_encoding()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_batch_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_batch_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_client_inference_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_client_inference_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_client_inference_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_context_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_context_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_decrypt_output_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_encrypt_input_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_fit_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_fit_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_inference_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_inference_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_inference_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_inference_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_init_model_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_init_model_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_input_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_input_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_model_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_model_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_output_memory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_output_memory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_predict_cpu_time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_max_predict_cpu_time()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_model_encrypted">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_model_encrypted()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_no_fixed_batch_size">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_no_fixed_batch_size()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_not_secure">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_not_secure()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_optimization_target">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_optimization_target()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_security_level">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_security_level()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_system_spec">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_system_spec()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_use_aes_inputs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeRunRequirements.set_use_aes_inputs()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, IBM.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

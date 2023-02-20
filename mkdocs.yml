@@ -15,6 +15,7 @@ nav:
   - Python for Z: pylab-s390x.md
   - C++ for Z: lab-s390x.md
   - Documentation:
+    - Python SDK: python-sdk/latest
     - C++ SDK: cpp-sdk/latest
 
 # Copyright
