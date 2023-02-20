@@ -15,7 +15,7 @@ This image is built to run on all x86 64-bit architectures including Linux, macO
 ## License
 
 This image is provided under a community edition license for non-commercial use; see [license](https://ibm.box.com/s/zfl6rt2p09811nyy8yow8t3mpsmkmsw6).
-For commercial deployments and access to the source code, please contact jbuselli@us.ibm.com and rohit.panjala@ibm.com for the Premium Edition license.
+For commercial deployments and access to the source code, please contact [chamliam@ie.ibm.com](mailto:chamliam@ie.ibm.com) for the Premium Edition license.
 
 <br />
 
