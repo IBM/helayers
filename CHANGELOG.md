@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.5.2.0] - 2023-02-28
+
+* CircLayer: Improved API, support bootstrapping operators, new C++ tutorials in helayers-lab.
+* AES decryption under FHE; AI supports AES-encrypted inputs.
+* Extended CTile API: added polymorphic binary operations that accept a Tile as second argument.
+* New TTFunctionEvaluator::compare() for comparing tile tensors.
+* New CTileTensor::shiftAlongDim() for shifting a tile tensor.
+* HeContext: Create context from a prioritized list of context names.
+* Performance: improve simulations of deep computations; enable unlimited depth in simulations.
+* Performance: Replace integer multiply with additions in SealCkksCiphertext (when it's empirically faster).
+* Upgraded HEaaN backend to 0.1.0, and added HEaaN to the pyhelayers wheels.
+* Added Lattigo backend.
+* Added macOS Intel 64-bit build for pyhelayerslite wheel.
+
 ## [1.5.1.0] - 2022-11-30
 
 * New notebooks with thorough explanations of Tile Tensors.
