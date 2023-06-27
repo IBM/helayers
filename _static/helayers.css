@@ -1,0 +1,181 @@
+/* Configure breathe */
+.breatheparameterlist li tt + p {
+    display: inline;
+}
+
+.breatheenumvalues li tt + p {
+    display: inline;
+}
+
+/* Set the properties of the cards in the main page (grid-item-card).*/
+.sd-card .sd-card-header {
+  text-align: center;
+}
+
+.sd-card .sd-card-header .sd-card-text {
+  margin: 0px;
+}
+
+.sd-card .sd-card-img-top {
+  height: 80px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sd-card .sd-card-header {
+  border: none;
+  background-color: white;
+  color: #150458 !important;
+  font-size: var(--pst-font-size-h5);
+  font-weight: bold;
+  padding: 2.0rem 0rem 0.5rem 0rem;
+}
+
+.sd-card .sd-card-footer {
+  border: none;
+  background-color: white;
+}
+
+.sd-card .sd-card-footer .sd-card-text {
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-theme="light"] {
+    --pst-color-primary: rgb(38, 77, 218);
+    --pst-color-secondary: rgb(20, 90, 218);
+    --pst-color-background: rgb(255, 255, 255);
+    --pst-color-on-background: rgb(255, 255, 255);
+
+    --pst-color-text-base: rgb(0, 0, 0);
+    --pst-color-text-muted: rgb(38, 77, 218);
+    --pst-color-secondary-highlight: rgb(20, 50, 218);
+    --pst-color-secondary-text: rgb(255, 255, 255);
+}
+
+/* For external links icon */
+a.reference.external:after {
+  content: "\f35d";
+  font-family: FontAwesome;
+  font-size: .7em;
+  vertical-align: text-top;
+  margin-left: .1em;
+  color: grey;
+}
+
+html[data-theme=light] div.admonition.helayers-admonition-info {
+  border-color: blue;
+}
+html[data-theme=light] div.admonition.helayers-admonition-info > .admonition-title:before {
+  background-color: blue;
+}
+html[data-theme=light] div.admonition.helayers-admonition-info > .admonition-title:after {
+  color: blue;
+  content: "\f05a"; /* the fa-scale icon */
+}
+
+
+html[data-theme=light] div.admonition.helayers-admonition-youtube {
+  border-color: #ff0000; /* YouTube red */
+}
+html[data-theme=light] div.admonition.helayers-admonition-youtube > .admonition-title:before {
+  background-color: #ff0000;
+}
+html[data-theme=light] div.admonition.helayers-admonition-youtube > .admonition-title:after {
+  color: #ff0000;
+  content: "\f26c"; /* fa-solid fa-tv */
+}
+
+html[data-theme=light] div.admonition.helayers-admonition-question {
+  border-color: rgb(0, 255, 123); 
+}
+html[data-theme=light] div.admonition.helayers-admonition-question > .admonition-title:before {
+  background-color: rgb(0, 255, 123);
+}
+html[data-theme=light] div.admonition.helayers-admonition-question > .admonition-title:after {
+  color: rgb(0, 255, 123);
+  content: "\f059"; /* fa-solid fa-tv */
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+  --pst-color-primary: rgb(20, 220, 250);
+  --pst-color-secondary: rgb(50, 220, 250);
+  --pst-color-background: rgb(0, 0, 0);
+  --pst-color-on-background: rgb(0, 0, 0);
+
+  --pst-color-text-base: rgb(255, 255, 255);
+  --pst-color-text-muted: rgb(50, 220, 250);
+  --pst-color-secondary-highlight: rgb(20, 50, 218);
+  --pst-color-secondary-text: rgb(0, 0, 0);
+}
+
+html[data-theme=dark] .sphinx-tabs-panel {
+  background-color:var(--pst-color-background);
+}
+
+html[data-theme=dark] .sphinx-tabs-tab {
+  background-color:var(--pst-color-background);
+  color:var(--pst-color-primary);
+}
+
+html[data-theme=dark] .bd-content img[src*='.png'] {
+  filter: invert(0.82) brightness(0.8) contrast(1.2);
+}
+
+html[data-theme=dark] .bd-content img[src*='.svg'] {
+  filter: invert(0.82) brightness(0.8) contrast(1.2);
+}
+
+html[data-theme=dark] .sd-card img[src*='.svg'] {
+  filter: invert(0.82) brightness(0.8) contrast(1.2);
+}
+
+html[data-theme=dark] .sd-shadow-sm {
+    box-shadow: 0 .1rem 1rem rgba(250, 250, 250, .6) !important
+}
+
+html[data-theme=dark] .sd-card .sd-card-header {
+  background-color:var(--pst-color-background);
+  color: #150458 !important;
+}
+
+html[data-theme=dark] .sd-card .sd-card-footer {
+  background-color:var(--pst-color-background);
+}
+
+html[data-theme=light] div.admonition.helayers-admonition-info {
+  border-color: rgb(255, 255, 255);
+}
+html[data-theme=light] div.admonition.helayers-admonition-info > .admonition-title:before {
+  background-color: rgb(255, 255, 255);
+}
+html[data-theme=light] div.admonition.helayers-admonition-info > .admonition-title:after {
+  color: rgb(255, 255, 255);
+  content: "\f05a"; /* the fa-scale icon */
+}
+
+
+html[data-theme=light] div.admonition.helayers-admonition-youtube {
+  border-color: #ff0000; /* YouTube red */
+}
+html[data-theme=light] div.admonition.helayers-admonition-youtube > .admonition-title:before {
+  background-color: #ff0000;
+}
+html[data-theme=light] div.admonition.helayers-admonition-youtube > .admonition-title:after {
+  color: #ff0000;
+  content: "\f26c"; /* fa-solid fa-tv */
+}
+
+html[data-theme=light] div.admonition.helayers-admonition-question {
+  border-color: rgb(0, 255, 123); 
+}
+html[data-theme=light] div.admonition.helayers-admonition-question > .admonition-title:before {
+  background-color: rgb(0, 255, 123);
+}
+html[data-theme=light] div.admonition.helayers-admonition-question > .admonition-title:after {
+  color: rgb(0, 255, 123);
+  content: "\f059"; /* fa-solid fa-tv */
+}

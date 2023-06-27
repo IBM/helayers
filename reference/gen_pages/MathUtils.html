@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MathUtils &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/MathUtils';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Packing optimizer" href="../packing_optimizer.html" />
+    <link rel="prev" title="TTFunctionEvaluator" href="TTFunctionEvaluator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../math.html" class="nav-link">Mathematical functions</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">MathUtils</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="mathutils">
+<h1>MathUtils<a class="headerlink" href="#mathutils" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtilsE">
+<span id="_CPPv3N8helayers9MathUtilsE"></span><span id="_CPPv2N8helayers9MathUtilsE"></span><span id="helayers::MathUtils"></span><span class="target" id="classhelayers_1_1MathUtils"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MathUtils</span></span></span><a class="headerlink" href="#_CPPv4N8helayers9MathUtilsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils3modEii">
+<span id="_CPPv3N8helayers9MathUtils3modEii"></span><span id="_CPPv2N8helayers9MathUtils3modEii"></span><span id="helayers::MathUtils::mod__i.i"></span><span class="target" id="classhelayers_1_1MathUtils_1ab28636a453fd1c99f4a7b60fd946723b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mod</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modulus</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils3modEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Computes (a % modulus) and returns a positive number in [0,modulus-1]. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – the dividend </p></li>
+<li><p><strong>modulus</strong> – the modulus </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils3modEdd">
+<span id="_CPPv3N8helayers9MathUtils3modEdd"></span><span id="_CPPv2N8helayers9MathUtils3modEdd"></span><span id="helayers::MathUtils::mod__double.double"></span><span class="target" id="classhelayers_1_1MathUtils_1a0798067f1bf64bf4d5d59a4178574616"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mod</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modulus</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils3modEdd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Computes (a % modulus) and returns a positive number in [0,modulus) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – the dividend </p></li>
+<li><p><strong>modulus</strong> – the modulus </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils19integerDivisionCeilEii">
+<span id="_CPPv3N8helayers9MathUtils19integerDivisionCeilEii"></span><span id="_CPPv2N8helayers9MathUtils19integerDivisionCeilEii"></span><span id="helayers::MathUtils::integerDivisionCeil__i.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a180e083e08ee60fabac5ff804c92c787"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integerDivisionCeil</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numerator</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">denominator</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils19integerDivisionCeilEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns ceil(numerator / denominator) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerator</strong> – The numerator. </p></li>
+<li><p><strong>denominator</strong> – The denominator. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils19roundDownToPowerOf2E8uint64_t">
+<span id="_CPPv3N8helayers9MathUtils19roundDownToPowerOf2E8uint64_t"></span><span id="_CPPv2N8helayers9MathUtils19roundDownToPowerOf2E8uint64_t"></span><span id="helayers::MathUtils::roundDownToPowerOf2__uint64_t"></span><span class="target" id="classhelayers_1_1MathUtils_1abd979fc70079f5916df2112df0d7a474"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">roundDownToPowerOf2</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils19roundDownToPowerOf2E8uint64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Rounds down x to the biggest power of 2 that is at most x. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – number to round down </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils17roundUpToPowerOf2E8uint64_t">
+<span id="_CPPv3N8helayers9MathUtils17roundUpToPowerOf2E8uint64_t"></span><span id="_CPPv2N8helayers9MathUtils17roundUpToPowerOf2E8uint64_t"></span><span id="helayers::MathUtils::roundUpToPowerOf2__uint64_t"></span><span class="target" id="classhelayers_1_1MathUtils_1ab1d0ceba66c268edc6ac30cd32a69573"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">roundUpToPowerOf2</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils17roundUpToPowerOf2E8uint64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Rounds up x to the smallest power of 2 that is at least x. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – number to round up </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils10isPowerOf2E8uint64_t">
+<span id="_CPPv3N8helayers9MathUtils10isPowerOf2E8uint64_t"></span><span id="_CPPv2N8helayers9MathUtils10isPowerOf2E8uint64_t"></span><span id="helayers::MathUtils::isPowerOf2__uint64_t"></span><span class="target" id="classhelayers_1_1MathUtils_1a4961be1ddb0b066c90d058b1c68e9434"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isPowerOf2</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils10isPowerOf2E8uint64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if <code class="docutils literal notranslate"><span class="pre">x</span></code> is power of 2 and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Number to check whether it is a power of 2 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils24getConvolutionOutputSizeEiiiii">
+<span id="_CPPv3N8helayers9MathUtils24getConvolutionOutputSizeEiiiii"></span><span id="_CPPv2N8helayers9MathUtils24getConvolutionOutputSizeEiiiii"></span><span id="helayers::MathUtils::getConvolutionOutputSize__i.i.i.i.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a39c0b1870b8e8dbbc0277ca12a5add51"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConvolutionOutputSize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inputSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filterSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stride</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">startPadding</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">endPadding</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils24getConvolutionOutputSizeEiiiii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the size of the output of the convolution operator for a specific dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSize</strong> – the size of the input </p></li>
+<li><p><strong>filterSize</strong> – the size of the filter </p></li>
+<li><p><strong>stride</strong> – the size of the stride </p></li>
+<li><p><strong>startPadding</strong> – padding added at the start of the input </p></li>
+<li><p><strong>endPadding</strong> – padding added at the end of the input </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils7randIntEii">
+<span id="_CPPv3N8helayers9MathUtils7randIntEii"></span><span id="_CPPv2N8helayers9MathUtils7randIntEii"></span><span id="helayers::MathUtils::randInt__i.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a4dd8e1322e9b17abf76e9864e1128b7a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">randInt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils7randIntEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a uniform random integer in [min, max] (inclusive). </p>
+<p>This version of <em>randInt</em> can be used when the user does not care about ensuring reproducibility or controlling the randomness of the chosen integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The left boundary of the range to choose from. </p></li>
+<li><p><strong>max</strong> – The right boundary of the range to choose from. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">exception</span></span></span> – If random devices are not available to produce random numbers in the used system </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils7randIntEiiRNSt7mt19937E">
+<span id="_CPPv3N8helayers9MathUtils7randIntEiiRNSt7mt19937E"></span><span id="_CPPv2N8helayers9MathUtils7randIntEiiRNSt7mt19937E"></span><span id="helayers::MathUtils::randInt__i.i.std::mt19937R"></span><span class="target" id="classhelayers_1_1MathUtils_1af76266b27540bce707f5d6844b66809e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">randInt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mt19937</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">randomNumberGenerator</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils7randIntEiiRNSt7mt19937E" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a uniform random integer in [min, max] (inclusive), using <code class="docutils literal notranslate"><span class="pre">randomNumberGenerator</span></code> random engine. </p>
+<p>This version of <em>randInt</em> can be used to control the randomness of the generated number (by using a a random engine initialized with a fixed seed, for example). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The left boundary of the range to choose from. </p></li>
+<li><p><strong>max</strong> – The right boundary of the range to choose from. </p></li>
+<li><p><strong>randomNumberGenerator</strong> – The random engine used to generate a random number. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils7isEqualEddd">
+<span id="_CPPv3N8helayers9MathUtils7isEqualEddd"></span><span id="_CPPv2N8helayers9MathUtils7isEqualEddd"></span><span id="helayers::MathUtils::isEqual__double.double.double"></span><span class="target" id="classhelayers_1_1MathUtils_1afda0e62a390361821c7fef356a3a3504"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEqual</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils7isEqualEddd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication to whether two values should be considered equal. </p>
+<p>Taking into account the relative difference, unless at least one of the inputs equals zero, in this case the absolute difference is considered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first value. </p></li>
+<li><p><strong>b</strong> – The second value. </p></li>
+<li><p><strong>eps</strong> – The maximal allowed relative difference: (abs(a-b) / max(abs(a),abs(b))) or the maximal allowed absolute difference if at least one of the inputs equals zero. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils6isLessEddd">
+<span id="_CPPv3N8helayers9MathUtils6isLessEddd"></span><span id="_CPPv2N8helayers9MathUtils6isLessEddd"></span><span id="helayers::MathUtils::isLess__double.double.double"></span><span class="target" id="classhelayers_1_1MathUtils_1a26ddd703365b77741f1c9220046839b2"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isLess</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils6isLessEddd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication to whether one value should be considered smaller than another. </p>
+<p>Based on “MathUtils::isEqual” method, see its description for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first value. </p></li>
+<li><p><strong>b</strong> – The second value. </p></li>
+<li><p><strong>eps</strong> – See description of “MathUtils::isEqual” method. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils13isLessOrEqualEddd">
+<span id="_CPPv3N8helayers9MathUtils13isLessOrEqualEddd"></span><span id="_CPPv2N8helayers9MathUtils13isLessOrEqualEddd"></span><span id="helayers::MathUtils::isLessOrEqual__double.double.double"></span><span class="target" id="classhelayers_1_1MathUtils_1a47a0a72f1e81a8d9b4ccba29aa772861"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isLessOrEqual</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils13isLessOrEqualEddd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication to whether one value should be considered smaller than another or equal to it. </p>
+<p>Based on “MathUtils::isEqual” method, see its description for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first value. </p></li>
+<li><p><strong>b</strong> – The second value. </p></li>
+<li><p><strong>eps</strong> – See description of “MathUtils::isEqual” method. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils10getInverseERKNSt6vectorIdEE">
+<span id="_CPPv3N8helayers9MathUtils10getInverseERKNSt6vectorIdEE"></span><span id="_CPPv2N8helayers9MathUtils10getInverseERKNSt6vectorIdEE"></span><span id="helayers::MathUtils::getInverse__std::vector:double:CR"></span><span class="target" id="classhelayers_1_1MathUtils_1a7c17eb85298a06d7fca10d52dea24a33"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInverse</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils10getInverseERKNSt6vectorIdEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns element-wise inverse vector R given a vector of values V, where R[i] = 1 / V[i] for every index i. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>src</strong> – The given input vector. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils8toStringEdi">
+<span id="_CPPv3N8helayers9MathUtils8toStringEdi"></span><span id="_CPPv2N8helayers9MathUtils8toStringEdi"></span><span id="helayers::MathUtils::toString__double.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a026c8b374b506fbbaeb914076fa14f5a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">precision</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils8toStringEdi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a string representing the given double, using the given number of precision digits. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d</strong> – The double to convert to a string. </p></li>
+<li><p><strong>precision</strong> – The number of precision digits to use in the string representation of “d”. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8helayers9MathUtils8safeCastE1Tdd">
+<span id="_CPPv3I0EN8helayers9MathUtils8safeCastEdd"></span><span id="_CPPv2I0EN8helayers9MathUtils8safeCastEdd"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1MathUtils_1ad3886d65a4a311ccec6bf64829664845"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils8safeCastE1Tdd" title="helayers::MathUtils::safeCast::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">safeCast</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-6</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8helayers9MathUtils8safeCastE1Tdd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Casts “v” to be of type T. </p>
+<p>Asserts the result of the casting has the same value (up to “eps”) as the original value of “v”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> – The double to cast. </p></li>
+<li><p><strong>eps</strong> – The maximal allowed differene between the casting result and “v”. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8helayers9MathUtils10findUniqueEiRKNSt6vectorI1TEERK1T">
+<span id="_CPPv3I0EN8helayers9MathUtils10findUniqueERKNSt6vectorI1TEERK1T"></span><span id="_CPPv2I0EN8helayers9MathUtils10findUniqueERKNSt6vectorI1TEERK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1MathUtils_1af2535ae041dc1f519f7e9409f79c6cd0"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">findUnique</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils10findUniqueEiRKNSt6vectorI1TEERK1T" title="helayers::MathUtils::findUnique::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils10findUniqueEiRKNSt6vectorI1TEERK1T" title="helayers::MathUtils::findUnique::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8helayers9MathUtils10findUniqueEiRKNSt6vectorI1TEERK1T" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the index of a given unique value in a given vector of values, or -1 if the value does not exist in the vector. </p>
+<p>Throws an exception if more than one element in the vector has the given value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vals</strong> – The vector of values. </p></li>
+<li><p><strong>val</strong> – The value to find. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8helayers9MathUtils6removeEvRNSt6vectorI1TEERK1T6size_t">
+<span id="_CPPv3I0EN8helayers9MathUtils6removeERNSt6vectorI1TEERK1T6size_t"></span><span id="_CPPv2I0EN8helayers9MathUtils6removeERNSt6vectorI1TEERK1T6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1MathUtils_1a451ff50ede16d70942da51085a4dbde2"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remove</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils6removeEvRNSt6vectorI1TEERK1T6size_t" title="helayers::MathUtils::remove::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils6removeEvRNSt6vectorI1TEERK1T6size_t" title="helayers::MathUtils::remove::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">startDim</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8helayers9MathUtils6removeEvRNSt6vectorI1TEERK1T6size_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Removes all the elements with the given value from the given vector of values, or from a sub-vector starting at the given index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vals</strong> – The vector of values. </p></li>
+<li><p><strong>val</strong> – The value to remove. </p></li>
+<li><p><strong>startDim</strong> – An optional index, only remove elements at index greater or equal the given index. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8helayers9MathUtils8getBatchENSt6vectorI1TEERKNSt6vectorI1TEE6size_t6size_t">
+<span id="_CPPv3I0EN8helayers9MathUtils8getBatchERKNSt6vectorI1TEE6size_t6size_t"></span><span id="_CPPv2I0EN8helayers9MathUtils8getBatchERKNSt6vectorI1TEE6size_t6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1MathUtils_1a2f940cef88b20a4abda014ad0fa63b57"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils8getBatchENSt6vectorI1TEERKNSt6vectorI1TEE6size_t6size_t" title="helayers::MathUtils::getBatch::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBatch</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN8helayers9MathUtils8getBatchENSt6vectorI1TEERKNSt6vectorI1TEE6size_t6size_t" title="helayers::MathUtils::getBatch::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">batchNum</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">batchSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8helayers9MathUtils8getBatchENSt6vectorI1TEERKNSt6vectorI1TEE6size_t6size_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a batch that is a subset of the given vector, according to batch number and the size of each batch, similar to pagination mechanism. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vals</strong> – The vector of values. </p></li>
+<li><p><strong>batchNum</strong> – The batch number. </p></li>
+<li><p><strong>batchSize</strong> – The size of each batch. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="TTFunctionEvaluator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TTFunctionEvaluator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../packing_optimizer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Packing optimizer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

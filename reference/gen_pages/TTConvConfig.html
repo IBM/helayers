@@ -1,0 +1,1028 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>TTConvConfig &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/TTConvConfig';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TTConvFilters" href="TTConvFilters.html" />
+    <link rel="prev" title="PTileTensor" href="PTileTensor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../tt.html" class="nav-link">Tile Tensors</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">TTConvConfig</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="ttconvconfig">
+<h1>TTConvConfig<a class="headerlink" href="#ttconvconfig" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfigE">
+<span id="_CPPv3N8helayers12TTConvConfigE"></span><span id="_CPPv2N8helayers12TTConvConfigE"></span><span id="helayers::TTConvConfig"></span><span class="target" id="classhelayers_1_1TTConvConfig"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTConvConfig</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SaveableBasic</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfigE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A configuration class for <a class="reference internal" href="TTConvolutionInterleaved.html#classhelayers_1_1TTConvolutionInterleaved"><span class="std std-ref">TTConvolutionInterleaved</span></a>. </p>
+<p>It is provided with meta-data only: the input shape and other configuration options. It performs validations and computes some derived meta data.</p>
+<p>Semantics of dimensions: In all cases corresponding input, filters, and biases dims should be compatible.</p>
+<p>imageRowsDim, imageColsDim: Input: two interleaved dims describing the image. Filters: fully duplicated (possibly masked) Output: interleaved dims describing the output image (possibly smaller due to padding options or to strides. We currently block if the sizes increase) bias: originalSize=1</p>
+<p>filtersDim: (optional) Input: original size 1 Filters: original size according to number of filters, not duplicated Output: Same as in filters, or as in input if no filters. bias: If sumOverChannels=true, no duplication, if sumOverChannels=false then originalSize=1</p>
+<p>channelDims: (zero or more) Input: not duplicated, may be summed over. Filters: same original size Output: If sumOverChannels is true, then reduced to 1 by summing over (duplicate if first) Otherwise same as in input bias: If sumOverChannels=false, no duplication, if sumOverChannels=true then originalSize=1</p>
+<p>All other dims are either degenerated or are considered batch: Input: anything Filters: original_size=1 Output: same as input bias: originalSize=1 </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12TTConvConfigERK9HeContext">
+<span id="_CPPv3N8helayers12TTConvConfig12TTConvConfigERK9HeContext"></span><span id="_CPPv2N8helayers12TTConvConfig12TTConvConfigERK9HeContext"></span><span id="helayers::TTConvConfig::TTConvConfig__HeContextCR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a757d97779907e71b4fa27d95907ecd64"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTConvConfig</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12TTConvConfigERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct empty configuration for loading from stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>he</strong> – <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12TTConvConfigERK9HeContextRK7TTShapeiiib">
+<span id="_CPPv3N8helayers12TTConvConfig12TTConvConfigERK9HeContextRK7TTShapeiiib"></span><span id="_CPPv2N8helayers12TTConvConfig12TTConvConfigERK9HeContextRK7TTShapeiiib"></span><span id="helayers::TTConvConfig::TTConvConfig__HeContextCR.TTShapeCR.i.i.i.b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1adbcfbad16ab8db708f603d0977a669f5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTConvConfig</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputShapeSkeleton</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filterRows</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filterCols</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numFilters</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">hasBias</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12TTConvConfigERK9HeContextRK7TTShapeiiib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Setup details for interleaved convolution / sum pooling. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>he</strong> – The HE context </p></li>
+<li><p><strong>inputShapeSkeleton</strong> – Input tile tensor shape skeleton. Can be incomplete, but channels dimensions must be complete. Used only for tile sizes, number of dimensions, and channel dimensions </p></li>
+<li><p><strong>filterRows</strong> – size of filter along the row dimension </p></li>
+<li><p><strong>filterCols</strong> – size of filter along the col dimension </p></li>
+<li><p><strong>numFilters</strong> – size of filter along the col dimension </p></li>
+<li><p><strong>hasBias</strong> – Whether bias exists </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig10setStridesEii">
+<span id="_CPPv3N8helayers12TTConvConfig10setStridesEii"></span><span id="_CPPv2N8helayers12TTConvConfig10setStridesEii"></span><span id="helayers::TTConvConfig::setStrides__i.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a44eda003fe8dfe5be269f3cdf0921e0e"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setStrides</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strideRows</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strideCols</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig10setStridesEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the strides. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>strideRows</strong> – Stride rows </p></li>
+<li><p><strong>strideCols</strong> – Stride cols </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig18setInternalStridesEii">
+<span id="_CPPv3N8helayers12TTConvConfig18setInternalStridesEii"></span><span id="_CPPv2N8helayers12TTConvConfig18setInternalStridesEii"></span><span id="helayers::TTConvConfig::setInternalStrides__i.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1ace825b01a860c69e04270d87bdf6295a"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setInternalStrides</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strideRows</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strideCols</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig18setInternalStridesEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the internal strides. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>strideRows</strong> – Stride rows </p></li>
+<li><p><strong>strideCols</strong> – Stride cols </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig15setChainIndicesEii">
+<span id="_CPPv3N8helayers12TTConvConfig15setChainIndicesEii"></span><span id="_CPPv2N8helayers12TTConvConfig15setChainIndicesEii"></span><span id="helayers::TTConvConfig::setChainIndices__i.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a4abea5e8c2c98bbd848661c8d2318d5d"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setChainIndices</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filtersChainIndex</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">biasChainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig15setChainIndicesEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the chain indices of filters and (optionally) bias. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filtersChainIndex</strong> – Chain index of filters </p></li>
+<li><p><strong>biasChainIndex</strong> – Chain index of bias, default -1 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig18setSumOverChannelsEb">
+<span id="_CPPv3N8helayers12TTConvConfig18setSumOverChannelsEb"></span><span id="_CPPv2N8helayers12TTConvConfig18setSumOverChannelsEb"></span><span id="helayers::TTConvConfig::setSumOverChannels__b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a6cce7231ae83e61b28af118f9bc169ed"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setSumOverChannels</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig18setSumOverChannelsEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets whether to sum over channels. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig10setPaddingERK9Padding2d">
+<span id="_CPPv3N8helayers12TTConvConfig10setPaddingERK9Padding2d"></span><span id="_CPPv2N8helayers12TTConvConfig10setPaddingERK9Padding2d"></span><span id="helayers::TTConvConfig::setPadding__Padding2dCR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1ac7b940b34acad0587146a2a5c9c8f7be"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setPadding</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Padding2d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">padding</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig10setPaddingERK9Padding2d" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets padding. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>padding</strong> – padding </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig7setDimsE6DimInt6DimInt6DimIntRKNSt6vectorI6DimIntEE">
+<span id="_CPPv3N8helayers12TTConvConfig7setDimsE6DimInt6DimInt6DimIntRKNSt6vectorI6DimIntEE"></span><span id="_CPPv2N8helayers12TTConvConfig7setDimsE6DimInt6DimInt6DimIntRKNSt6vectorI6DimIntEE"></span><span id="helayers::TTConvConfig::setDims__DimInt.DimInt.DimInt.std::vector:DimInt:CR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1aeb533197a17af375b4501e0c4c002e93"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setDims</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">imageRows</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">imageCols</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filters</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">channels</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig7setDimsE6DimInt6DimInt6DimIntRKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the semantics of the dimensions. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imageRows</strong> – image rows </p></li>
+<li><p><strong>imageCols</strong> – image cols </p></li>
+<li><p><strong>filters</strong> – filters Can be -1 for no filters dim </p></li>
+<li><p><strong>channels</strong> – channels. Can be any list of dims, including empty list. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig14setDefaultDimsEb">
+<span id="_CPPv3N8helayers12TTConvConfig14setDefaultDimsEb"></span><span id="_CPPv2N8helayers12TTConvConfig14setDefaultDimsEb"></span><span id="helayers::TTConvConfig::setDefaultDims__b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1ae87b44b176c583bb4fff388c4fc4cfb8"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDims</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cxyfb</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig14setDefaultDimsEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the semantics of the dimensions based on defaults. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cxyfb</strong> – If true, then CXYFB, otherwise FXYCB </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig17setAllInterleavedEb">
+<span id="_CPPv3N8helayers12TTConvConfig17setAllInterleavedEb"></span><span id="_CPPv2N8helayers12TTConvConfig17setAllInterleavedEb"></span><span id="helayers::TTConvConfig::setAllInterleaved__b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a328084619ba95e4ba368ba40575d88f0"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setAllInterleaved</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig17setAllInterleavedEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>When set to true, filters and biases will be entirely with interleaved dimensions. </p>
+<p>Otherwise only image dimensions. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12setEncryptedEb">
+<span id="_CPPv3N8helayers12TTConvConfig12setEncryptedEb"></span><span id="_CPPv2N8helayers12TTConvConfig12setEncryptedEb"></span><span id="helayers::TTConvConfig::setEncrypted__b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a7cea9d795cf03c1b862b57dc8980614b"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setEncrypted</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12setEncryptedEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Whether the filters and biases should be encrypted. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyMode">
+<span id="_CPPv3N8helayers12TTConvConfig11setLazyModeE8LazyMode"></span><span id="_CPPv2N8helayers12TTConvConfig11setLazyModeE8LazyMode"></span><span id="helayers::TTConvConfig::setLazyMode__LazyMode"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a0eefd430ba5205837515efce0dcf517d"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setLazyMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">LazyMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyMode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets lazy mode for filters and biases. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig12getHeContextEv">
+<span id="_CPPv3NK8helayers12TTConvConfig12getHeContextEv"></span><span id="_CPPv2NK8helayers12TTConvConfig12getHeContextEv"></span><span id="helayers::TTConvConfig::getHeContextC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a9c19a5614e79b2509791def911a9b79f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHeContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig12getHeContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns HE context used by this config. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig4saveERNSt7ostreamE">
+<span id="_CPPv3NK8helayers12TTConvConfig4saveERNSt7ostreamE"></span><span id="_CPPv2NK8helayers12TTConvConfig4saveERNSt7ostreamE"></span><span id="helayers::TTConvConfig::save__osRC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a2f5477eb8f8310b71b581fce889a818d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">streamoff</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">save</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig4saveERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves this object to a stream in binary form. </p>
+<p>Returns the number of bytes written to the output stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – <strong>[in]</strong> output stream to write to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig4loadERNSt7istreamE">
+<span id="_CPPv3N8helayers12TTConvConfig4loadERNSt7istreamE"></span><span id="_CPPv2N8helayers12TTConvConfig4loadERNSt7istreamE"></span><span id="helayers::TTConvConfig::load__isR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a30fc1869fc38987e34c845cf4134f222"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">streamoff</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig4loadERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads this object from the given stream. </p>
+<p>Returns the number of bytes read from the input stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – <strong>[in]</strong> input stream to read from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig18validateInputShapeERK7TTShape">
+<span id="_CPPv3NK8helayers12TTConvConfig18validateInputShapeERK7TTShape"></span><span id="_CPPv2NK8helayers12TTConvConfig18validateInputShapeERK7TTShape"></span><span id="helayers::TTConvConfig::validateInputShape__TTShapeCRC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1af595eb6070054b300a860ced9f89862a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validateInputShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inShape</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig18validateInputShapeERK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Verifies the given input shape matches the configuration. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inShape</strong> – Input shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig23computeOutputDimensionsERK7TTShape">
+<span id="_CPPv3NK8helayers12TTConvConfig23computeOutputDimensionsERK7TTShape"></span><span id="_CPPv2NK8helayers12TTConvConfig23computeOutputDimensionsERK7TTShape"></span><span id="helayers::TTConvConfig::computeOutputDimensions__TTShapeCRC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1af5e6ec01b165bedb589962e879710090"></span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeOutputDimensions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inShape</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig23computeOutputDimensionsERK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return the output shape for the given input shape. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inShape</strong> – Input shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig9needMasksERK7TTShape">
+<span id="_CPPv3NK8helayers12TTConvConfig9needMasksERK7TTShape"></span><span id="_CPPv2NK8helayers12TTConvConfig9needMasksERK7TTShape"></span><span id="helayers::TTConvConfig::needMasks__TTShapeCRC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1afed8e019cab69dafd96e6c6c43f5d7e8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">needMasks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inShape</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig9needMasksERK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Computes whether masks are necessary for the given input shape. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inShape</strong> – Input shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig15getImageDimInfoEi">
+<span id="_CPPv3NK8helayers12TTConvConfig15getImageDimInfoEi"></span><span id="_CPPv2NK8helayers12TTConvConfig15getImageDimInfoEi"></span><span id="helayers::TTConvConfig::getImageDimInfo__iC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a6e8c669e64e5b334c9b0fcf25bceb2e0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfoE" title="helayers::TTConvConfig::ImageDimInfo"><span class="n"><span class="pre">ImageDimInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getImageDimInfo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig15getImageDimInfoEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns image dim information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dimension index </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig10getPaddingEv">
+<span id="_CPPv3NK8helayers12TTConvConfig10getPaddingEv"></span><span id="_CPPv2NK8helayers12TTConvConfig10getPaddingEv"></span><span id="helayers::TTConvConfig::getPaddingC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a93eb0ad3c565b916b3d82576019aea5c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Padding2d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPadding</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig10getPaddingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns padding. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig21getInputShapeSkeletonEv">
+<span id="_CPPv3NK8helayers12TTConvConfig21getInputShapeSkeletonEv"></span><span id="_CPPv2NK8helayers12TTConvConfig21getInputShapeSkeletonEv"></span><span id="helayers::TTConvConfig::getInputShapeSkeletonC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1ae10b9aab6d6bbd12ff21f1389e7bea15"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInputShapeSkeleton</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig21getInputShapeSkeletonEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns input shape skeleton. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig30splitShapeDueToInternalStridesER7TTShape">
+<span id="_CPPv3NK8helayers12TTConvConfig30splitShapeDueToInternalStridesER7TTShape"></span><span id="_CPPv2NK8helayers12TTConvConfig30splitShapeDueToInternalStridesER7TTShape"></span><span id="helayers::TTConvConfig::splitShapeDueToInternalStrides__TTShapeRC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a1c5c7c69dbdf3d2b5ecfdb3a9716703f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">splitShapeDueToInternalStrides</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig30splitShapeDueToInternalStridesER7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Splits the input shape image dimensions to two dimension each, The second one reflecting the internal strides. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> – input/output shape </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a map between input dims and output dims </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig18hasInternalStridesEv">
+<span id="_CPPv3NK8helayers12TTConvConfig18hasInternalStridesEv"></span><span id="_CPPv2NK8helayers12TTConvConfig18hasInternalStridesEv"></span><span id="helayers::TTConvConfig::hasInternalStridesC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1acb8ad1cd9973b5c065b5c1d8b263644a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasInternalStrides</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig18hasInternalStridesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if internal strides were specified. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig10isImageDimEi">
+<span id="_CPPv3NK8helayers12TTConvConfig10isImageDimEi"></span><span id="_CPPv2NK8helayers12TTConvConfig10isImageDimEi"></span><span id="helayers::TTConvConfig::isImageDim__iC"></span><span class="target" id="classhelayers_1_1TTConvConfig_1aa9caf8eb0ff4732332645499d224b7d7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isImageDim</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig10isImageDimEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if dim is an image dim. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – DImension index </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi">
+<span id="_CPPv3N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi"></span><span id="_CPPv2N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi"></span><span id="helayers::TTConvConfig::dimMatchesStride__TTDimCR.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1affc05ed3e55b1ab356fa439d396b0c73"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimMatchesStride</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stride</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Check whether a convolution with certain stride can be applied on a dimention. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – Dimension (row or col) to apply convolution on </p></li>
+<li><p><strong>stride</strong> – The stride in question </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2diibRNSt6stringE">
+<span id="_CPPv3N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2diibRNSt6stringE"></span><span id="_CPPv2N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2diibRNSt6stringE"></span><span id="helayers::TTConvConfig::supportsPhysicalPadding__TTShapeCR.Padding2dCR.i.i.b.ssR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1ae3bd4acb91bcd3f4df1ff376c872c853"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportsPhysicalPadding</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputShape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Padding2d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">padding</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageRowsDim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageColsDim</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addDiagnosis</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">diagnosis</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2diibRNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Quick test if given shapes support the physical padding mode. </p>
+<p>Returns true if physical padding is supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputShape</strong> – Input shape </p></li>
+<li><p><strong>padding</strong> – The requested amount of padding </p></li>
+<li><p><strong>imageRowsDim</strong> – Dimension index of row dim </p></li>
+<li><p><strong>imageColsDim</strong> – Dimension index of col dim </p></li>
+<li><p><strong>addDiagnosis</strong> – Whether to include a human readable explanation to a false results (slows runtime) </p></li>
+<li><p><strong>diagnosis</strong> – Human readable explanation, when flag is on. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2dii">
+<span id="_CPPv3N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2dii"></span><span id="_CPPv2N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2dii"></span><span id="helayers::TTConvConfig::supportsPhysicalPadding__TTShapeCR.Padding2dCR.i.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a559e243a87ab758ff18d598c64d71c39"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportsPhysicalPadding</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputShape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Padding2d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">padding</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageRowsDim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageColsDim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig23supportsPhysicalPaddingERK7TTShapeRK9Padding2dii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Quick test if given shapes support the physical padding mode. </p>
+<p>Returns true if physical padding is supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputShape</strong> – Input shape </p></li>
+<li><p><strong>padding</strong> – The requested amount of padding </p></li>
+<li><p><strong>imageRowsDim</strong> – Dimension index of row dim </p></li>
+<li><p><strong>imageColsDim</strong> – Dimension index of col dim </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfoE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfoE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfoE"></span><span id="helayers::TTConvConfig::ImageDimInfo"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageDimInfo</span></span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfoE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Info on one of the two image dimensions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12TTConvConfig12ImageDimInfo4saveERNSt7ostreamE">
+<span id="_CPPv3NK8helayers12TTConvConfig12ImageDimInfo4saveERNSt7ostreamE"></span><span id="_CPPv2NK8helayers12TTConvConfig12ImageDimInfo4saveERNSt7ostreamE"></span><span id="helayers::TTConvConfig::ImageDimInfo::save__osRC"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a109092d638e7a103fce23506d53a2fb5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">save</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12TTConvConfig12ImageDimInfo4saveERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves content of this structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – Output stream </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo4loadERNSt7istreamE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo4loadERNSt7istreamE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo4loadERNSt7istreamE"></span><span id="helayers::TTConvConfig::ImageDimInfo::load__isR"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1aad12c826108d519603b59deb3daae0f6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo4loadERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads content of this structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – Input stream </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo3dimE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo3dimE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo3dimE"></span><span id="helayers::TTConvConfig::ImageDimInfo::dim__DimInt"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a23cab26092e5ba04468a6052c8b02927"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo3dimE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Dimension index in input. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo6strideE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo6strideE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo6strideE"></span><span id="helayers::TTConvConfig::ImageDimInfo::stride__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a6e7d97b7fb1c0825c04133829a11cc68"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stride</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo6strideE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Strides along this dim. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo14internalStrideE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo14internalStrideE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo14internalStrideE"></span><span id="helayers::TTConvConfig::ImageDimInfo::internalStride__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a54f641881d4fcf6d031bae4ecf836f03"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalStride</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo14internalStrideE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Internal strides. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo17inputRotateOffsetE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo17inputRotateOffsetE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo17inputRotateOffsetE"></span><span id="helayers::TTConvConfig::ImageDimInfo::inputRotateOffset__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a11cb1e15e8fd5fac2b6b13c66ebeb30f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inputRotateOffset</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo17inputRotateOffsetE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Offset when rotating this dim. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo10filterSizeE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo10filterSizeE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo10filterSizeE"></span><span id="helayers::TTConvConfig::ImageDimInfo::filterSize__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1afc5f5ee0825dd9769ba04ee6f032ac41"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filterSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo10filterSizeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Size of filter along this dim. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE"></span><span id="helayers::TTConvConfig::ImageDimInfo::originalOutputSize__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1ae78eb6dd6f5767337b1d52bc9ef229b9"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">originalOutputSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Final output size including all strides. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PTileTensor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PTileTensor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TTConvFilters.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TTConvFilters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
