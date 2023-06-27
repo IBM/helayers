@@ -1,0 +1,1015 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>DebugContext &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/DebugContext';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EmptyContext" href="EmptyContext.html" />
+    <link rel="prev" title="loadHeContextFromFile" href="loadHeContextFromFile.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../hecontexts.html" class="nav-link">HE Contexts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">DebugContext</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="debugcontext">
+<h1>DebugContext<a class="headerlink" href="#debugcontext" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.DebugContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DebugContext</span></span><a class="headerlink" href="#pyhelayers.DebugContext" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.DebugContext.diff_threshold">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diff_threshold</span></span><a class="headerlink" href="#pyhelayers.DebugContext.diff_threshold" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.DebugContext.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.DebugContext" title="pyhelayers.DebugContext"><span class="pre">pyhelayers.DebugContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">req</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.HeConfigRequirement"><span class="pre">pyhelayers.HeConfigRequirement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.DebugContext.init" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes this DebugContext according the given requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> – an HeConfigRequirement object, indicating the required
+configuration parameters (e.g. securityLevel, numSlots).</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If it is not possible to fulfill the given
+requirement, or if the context is already initalized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContextE">
+<span id="_CPPv3N8helayers12DebugContextE"></span><span id="_CPPv2N8helayers12DebugContextE"></span><span id="helayers::DebugContext"></span><span class="target" id="classhelayers_1_1DebugContext"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DebugContext</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><a class="headerlink" href="#_CPPv4N8helayers12DebugContextE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A class to represent an <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> meant for debug purposes. </p>
+<p>The CTiles it creates wrap two ciphertexts, encrypted with two possibly different schemes. The difference between the values of the two ciphertexts is checked after each operation, and in case this difference surpasses a certain certain threshold, an error will be thrown. This class can be used, for example, to wrap a MockupCiphertext along with another ciphertext and verify that the values of the later ciphertext are close to the mockup one after each operation. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext12DebugContextER9HeContextR9HeContextdb">
+<span id="_CPPv3N8helayers12DebugContext12DebugContextER9HeContextR9HeContextdb"></span><span id="_CPPv2N8helayers12DebugContext12DebugContextER9HeContextR9HeContextdb"></span><span id="helayers::DebugContext::DebugContext__HeContextR.HeContextR.double.b"></span><span class="target" id="classhelayers_1_1DebugContext_1a77ac34ed74bd3d2d311c3d49f9ba972b"></span><span class="sig-name descname"><span class="n"><span class="pre">DebugContext</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h1</span></span>, <a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h2</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">diffThreshold</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">printLog</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext12DebugContextER9HeContextR9HeContextdb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h1</strong> – The first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p></li>
+<li><p><strong>h2</strong> – The second <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p></li>
+<li><p><strong>diffThreshold</strong> – The maximal allowed difference between the values of two ciphertexts of a DebugCiphertext created with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p></li>
+<li><p><strong>printLog</strong> – Whether to print a log of operations. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContextD0Ev">
+<span id="_CPPv3N8helayers12DebugContextD0Ev"></span><span id="_CPPv2N8helayers12DebugContextD0Ev"></span><span id="helayers::DebugContext::~DebugContext"></span><span class="target" id="classhelayers_1_1DebugContext_1a602e45565576741a9ac9bdb9f6d14e0f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~DebugContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DebugContextD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext4initERK19HeConfigRequirement">
+<span id="_CPPv3N8helayers12DebugContext4initERK19HeConfigRequirement"></span><span id="_CPPv2N8helayers12DebugContext4initERK19HeConfigRequirement"></span><span id="helayers::DebugContext::init__HeConfigRequirementCR"></span><span class="target" id="classhelayers_1_1DebugContext_1aacd93d2b79fc2122846154636cb540f3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext4initERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>initializes the two HeContexts of this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>, using the given requirements. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext20createAbstractCipherEv">
+<span id="_CPPv3NK8helayers12DebugContext20createAbstractCipherEv"></span><span id="_CPPv2NK8helayers12DebugContext20createAbstractCipherEv"></span><span id="helayers::DebugContext::createAbstractCipherC"></span><span class="target" id="classhelayers_1_1DebugContext_1a64ae90892f044bba7c3ee26d70b89d87"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractCiphertext</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractCipher</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext20createAbstractCipherEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a pointer to a DebugCiphertext, initialized with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext19createAbstractPlainEv">
+<span id="_CPPv3NK8helayers12DebugContext19createAbstractPlainEv"></span><span id="_CPPv2NK8helayers12DebugContext19createAbstractPlainEv"></span><span id="helayers::DebugContext::createAbstractPlainC"></span><span class="target" id="classhelayers_1_1DebugContext_1a201efc186bf3412debbca5a2465a036d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractPlaintext</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractPlain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext19createAbstractPlainEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a pointer to a DebugPlaintext, initialized with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext10getEncoderEv">
+<span id="_CPPv3NK8helayers12DebugContext10getEncoderEv"></span><span id="_CPPv2NK8helayers12DebugContext10getEncoderEv"></span><span id="helayers::DebugContext::getEncoderC"></span><span class="target" id="classhelayers_1_1DebugContext_1a67b12236319167afe4bd4a4d0d1c4323"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractEncoder</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEncoder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext10getEncoderEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a pointer to a DebugEncoder, initialized with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext9slotCountEv">
+<span id="_CPPv3NK8helayers12DebugContext9slotCountEv"></span><span id="_CPPv2NK8helayers12DebugContext9slotCountEv"></span><span id="helayers::DebugContext::slotCountC"></span><span class="target" id="classhelayers_1_1DebugContext_1aae8b9725c807fdb217365339c07ab195"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">slotCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext9slotCountEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The number of slots in each <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> (ciphertext) or <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> (plaintext) created over this context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext16getTopChainIndexEv">
+<span id="_CPPv3NK8helayers12DebugContext16getTopChainIndexEv"></span><span id="_CPPv2NK8helayers12DebugContext16getTopChainIndexEv"></span><span id="helayers::DebugContext::getTopChainIndexC"></span><span class="target" id="classhelayers_1_1DebugContext_1ae7fc2e6a880f0b56cb731e7315380e3f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTopChainIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext16getTopChainIndexEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the highest available chain index (for schemes where it is applicable). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext12hasSecretKeyEv">
+<span id="_CPPv3NK8helayers12DebugContext12hasSecretKeyEv"></span><span id="_CPPv2NK8helayers12DebugContext12hasSecretKeyEv"></span><span id="helayers::DebugContext::hasSecretKeyC"></span><span class="target" id="classhelayers_1_1DebugContext_1a63c35cca8a57fdeba9ed179d653bb8d0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasSecretKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext12hasSecretKeyEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether this context contains a secret key. </p>
+<p>If not, decryption and other operations relying on decryption will not be available (will throw an exception). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext16getSecurityLevelEv">
+<span id="_CPPv3NK8helayers12DebugContext16getSecurityLevelEv"></span><span id="_CPPv2NK8helayers12DebugContext16getSecurityLevelEv"></span><span id="helayers::DebugContext::getSecurityLevelC"></span><span class="target" id="classhelayers_1_1DebugContext_1aac18da544effc5dbb9920cf18a82d074"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSecurityLevel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext16getSecurityLevelEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the security level supplied by this context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext12getSignatureEv">
+<span id="_CPPv3NK8helayers12DebugContext12getSignatureEv"></span><span id="_CPPv2NK8helayers12DebugContext12getSignatureEv"></span><span id="helayers::DebugContext::getSignatureC"></span><span class="target" id="classhelayers_1_1DebugContext_1ad0bd74200c5f2187e14ef4b749e26e56"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSignature</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext12getSignatureEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a signature that identifies the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> wrapped with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext14printSignatureERNSt7ostreamE">
+<span id="_CPPv3NK8helayers12DebugContext14printSignatureERNSt7ostreamE"></span><span id="_CPPv2NK8helayers12DebugContext14printSignatureERNSt7ostreamE"></span><span id="helayers::DebugContext::printSignature__osRC"></span><span class="target" id="classhelayers_1_1DebugContext_1a16273d12b48d92cdba3eea1dabb5c375"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printSignature</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext14printSignatureERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints a summary of library details and configuration params of the two wrapped HeContexts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – output stream to write to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE">
+<span id="_CPPv3NK8helayers12DebugContext10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="_CPPv2NK8helayers12DebugContext10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="helayers::DebugContext::debugPrint__ssCR.Verbosity.osRC"></span><span class="target" id="classhelayers_1_1DebugContext_1a1c2f84df49a5a7cba6d41d5940900112"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity17VERBOSITY_REGULARE" title="helayers::VERBOSITY_REGULAR"><span class="n"><span class="pre">VERBOSITY_REGULAR</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the content of this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Text to add to the print </p></li>
+<li><p><strong>verbosity</strong> – Verbosity level </p></li>
+<li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext15getModulusChainEv">
+<span id="_CPPv3NK8helayers12DebugContext15getModulusChainEv"></span><span id="_CPPv2NK8helayers12DebugContext15getModulusChainEv"></span><span id="helayers::DebugContext::getModulusChainC"></span><span class="target" id="classhelayers_1_1DebugContext_1a5565dfccb275ed09e5801cf62c5ce8f3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getModulusChain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext15getModulusChainEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the modulus chain of the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> wrapped by this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext13saveSecretKeyERNSt7ostreamEb">
+<span id="_CPPv3N8helayers12DebugContext13saveSecretKeyERNSt7ostreamEb"></span><span id="_CPPv2N8helayers12DebugContext13saveSecretKeyERNSt7ostreamEb"></span><span id="helayers::DebugContext::saveSecretKey__osR.b"></span><span class="target" id="classhelayers_1_1DebugContext_1a97e54b86c4af8ee9eb6e8bcb0d6c3c93"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveSecretKey</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">seedOnly</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext13saveSecretKeyERNSt7ostreamEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves the secret keys of the two wrapped HeContexts to a stream in binary form. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – Output stream to write to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext13loadSecretKeyERNSt7istreamEb">
+<span id="_CPPv3N8helayers12DebugContext13loadSecretKeyERNSt7istreamEb"></span><span id="_CPPv2N8helayers12DebugContext13loadSecretKeyERNSt7istreamEb"></span><span id="helayers::DebugContext::loadSecretKey__isR.b"></span><span class="target" id="classhelayers_1_1DebugContext_1a44016297494b06cc418162132f94c184"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadSecretKey</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">seedOnly</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext13loadSecretKeyERNSt7istreamEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads the secret keys of the two wrapped HeContexts from the given istream,. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>in</strong> – Input stream to load frin. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext16getDiffThresholdEv">
+<span id="_CPPv3NK8helayers12DebugContext16getDiffThresholdEv"></span><span id="_CPPv2NK8helayers12DebugContext16getDiffThresholdEv"></span><span id="helayers::DebugContext::getDiffThresholdC"></span><span class="target" id="classhelayers_1_1DebugContext_1a50ac55e930f8a2c637dc5855e5ad7091"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDiffThreshold</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext16getDiffThresholdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal allowed difference between the values of two ciphertexts of a DebugCiphertext created with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext11getPrintLogEv">
+<span id="_CPPv3NK8helayers12DebugContext11getPrintLogEv"></span><span id="_CPPv2NK8helayers12DebugContext11getPrintLogEv"></span><span id="helayers::DebugContext::getPrintLogC"></span><span class="target" id="classhelayers_1_1DebugContext_1a3b5e5b29b2733640b92740f90b0bb37b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPrintLog</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext11getPrintLogEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether log is printed. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext16setDiffThresholdEd">
+<span id="_CPPv3N8helayers12DebugContext16setDiffThresholdEd"></span><span id="_CPPv2N8helayers12DebugContext16setDiffThresholdEd"></span><span id="helayers::DebugContext::setDiffThreshold__double"></span><span class="target" id="classhelayers_1_1DebugContext_1ad4bcc29e029db38bda4c05a8d1e4a181"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDiffThreshold</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext16setDiffThresholdEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the maximal allowed difference threshold to the given value. </p>
+<p>This threshold specifies the maximal allowed difference between the values of two ciphertexts o a DebugCiphertext created with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – The difference threshold value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext11setPrintLogEb">
+<span id="_CPPv3N8helayers12DebugContext11setPrintLogEb"></span><span id="_CPPv2N8helayers12DebugContext11setPrintLogEb"></span><span id="helayers::DebugContext::setPrintLog__b"></span><span class="target" id="classhelayers_1_1DebugContext_1adbc64e62f1418d593b704b982a29547f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPrintLog</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext11setPrintLogEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets log-printed flag value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceType">
+<span id="_CPPv3N8helayers12DebugContext16setDefaultDeviceE10DeviceType"></span><span id="_CPPv2N8helayers12DebugContext16setDefaultDeviceE10DeviceType"></span><span id="helayers::DebugContext::setDefaultDevice__DeviceType"></span><span class="target" id="classhelayers_1_1DebugContext_1a96c47a2ce25c7f62dd3d244fd532f9c7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device</strong> – <strong>[in]</strong> the new default device </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext15setDefaultScaleEd">
+<span id="_CPPv3N8helayers12DebugContext15setDefaultScaleEd"></span><span id="_CPPv2N8helayers12DebugContext15setDefaultScaleEd"></span><span id="helayers::DebugContext::setDefaultScale__double"></span><span class="target" id="classhelayers_1_1DebugContext_1a66dad352cd18ac8e5bfebac8c8dc2502"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultScale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext15setDefaultScaleEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the default scale of the two wrapped HeContexts to the given value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – The default scale value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext15getDefaultScaleEv">
+<span id="_CPPv3NK8helayers12DebugContext15getDefaultScaleEv"></span><span id="_CPPv2NK8helayers12DebugContext15getDefaultScaleEv"></span><span id="helayers::DebugContext::getDefaultScaleC"></span><span class="target" id="classhelayers_1_1DebugContext_1a32fb2250561a0a452f6807eb62813088"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultScale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext15getDefaultScaleEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the default scale. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext14getLibraryNameEv">
+<span id="_CPPv3NK8helayers12DebugContext14getLibraryNameEv"></span><span id="_CPPv2NK8helayers12DebugContext14getLibraryNameEv"></span><span id="helayers::DebugContext::getLibraryNameC"></span><span class="target" id="classhelayers_1_1DebugContext_1a372ffa566fd6bc127a346b3786c0ea31"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLibraryName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext14getLibraryNameEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a string specifying the names of the underlying libraries. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext13getSchemeNameEv">
+<span id="_CPPv3NK8helayers12DebugContext13getSchemeNameEv"></span><span id="_CPPv2NK8helayers12DebugContext13getSchemeNameEv"></span><span id="helayers::DebugContext::getSchemeNameC"></span><span class="target" id="classhelayers_1_1DebugContext_1a0ef662ec30b661e8114040bc5bd42353"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSchemeName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext13getSchemeNameEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a string specifying the names of the underlying schemes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext27isConfigRequirementFeasibleERK19HeConfigRequirement">
+<span id="_CPPv3NK8helayers12DebugContext27isConfigRequirementFeasibleERK19HeConfigRequirement"></span><span id="_CPPv2NK8helayers12DebugContext27isConfigRequirementFeasibleERK19HeConfigRequirement"></span><span id="helayers::DebugContext::isConfigRequirementFeasible__HeConfigRequirementCRC"></span><span class="target" id="classhelayers_1_1DebugContext_1a61d791dd369aedb44a3a45f800c6adf8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isConfigRequirementFeasible</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext27isConfigRequirementFeasibleERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if the received configuration requirement is feasible under the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> wrapped with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>, and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> – The requirement to check its feasibility. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext38getBestFeasibleFractionalPartPrecisionERK19HeConfigRequirement">
+<span id="_CPPv3NK8helayers12DebugContext38getBestFeasibleFractionalPartPrecisionERK19HeConfigRequirement"></span><span id="_CPPv2NK8helayers12DebugContext38getBestFeasibleFractionalPartPrecisionERK19HeConfigRequirement"></span><span id="helayers::DebugContext::getBestFeasibleFractionalPartPrecision__HeConfigRequirementCRC"></span><span class="target" id="classhelayers_1_1DebugContext_1ade516aa329f90b0c8bf344432e5fac11"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBestFeasibleFractionalPartPrecision</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext38getBestFeasibleFractionalPartPrecisionERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the best feasible fraction part precision under the given configuration requirement and according to the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> wrapped with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+<p>req The requirement to get best fractional part precision for. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext23getBestFeasibleMulDepthERK19HeConfigRequirement">
+<span id="_CPPv3NK8helayers12DebugContext23getBestFeasibleMulDepthERK19HeConfigRequirement"></span><span id="_CPPv2NK8helayers12DebugContext23getBestFeasibleMulDepthERK19HeConfigRequirement"></span><span id="helayers::DebugContext::getBestFeasibleMulDepth__HeConfigRequirementCRC"></span><span class="target" id="classhelayers_1_1DebugContext_1a03fc302d728f7e7b55f32737ba07a449"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBestFeasibleMulDepth</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext23getBestFeasibleMulDepthERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the best feasible multiplication depth under the given configuration requirement and according to the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> wrapped with this <a class="reference internal" href="#classhelayers_1_1DebugContext"><span class="std std-ref">DebugContext</span></a>. </p>
+<p>req The requirement to get best multiplication depth for. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext15getFirstContextEv">
+<span id="_CPPv3NK8helayers12DebugContext15getFirstContextEv"></span><span id="_CPPv2NK8helayers12DebugContext15getFirstContextEv"></span><span id="helayers::DebugContext::getFirstContextC"></span><span class="target" id="classhelayers_1_1DebugContext_1a82b8e7510fc19df62d77fb0e9af6ec6f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFirstContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext15getFirstContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the first <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext16getSecondContextEv">
+<span id="_CPPv3NK8helayers12DebugContext16getSecondContextEv"></span><span id="_CPPv2NK8helayers12DebugContext16getSecondContextEv"></span><span id="helayers::DebugContext::getSecondContextC"></span><span class="target" id="classhelayers_1_1DebugContext_1a34c57797eb469341e00e8130dee6b726"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSecondContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext16getSecondContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the second <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext19getMaxAllowedValuesEv">
+<span id="_CPPv3NK8helayers12DebugContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers12DebugContext19getMaxAllowedValuesEv"></span><span id="helayers::DebugContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1DebugContext_1a3a1d6fc02efa03c247f420a0a5c8ab94"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal absolute value allowed for each chain index. </p>
+<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext16getAccurateScaleEi">
+<span id="_CPPv3NK8helayers12DebugContext16getAccurateScaleEi"></span><span id="_CPPv2NK8helayers12DebugContext16getAccurateScaleEi"></span><span id="helayers::DebugContext::getAccurateScale__iC"></span><span class="target" id="classhelayers_1_1DebugContext_1ac1f90ffff9c2c32d4993f05b9bc2209a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAccurateScale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext16getAccurateScaleEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the accurate scale to be used for a given chain index. </p>
+<p>Only supported when accurate scaling mode is enabled. Cannot be called before the context is initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chainIndex</strong> – the chain index to get the scale of. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="SealCkksContext.html#classhelayers_1_1SealCkksContext"><span class="std std-ref">SealCkksContext</span></a> is not initialized. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If accurate scaling is not enabled. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext25getMaxAllowedValueByRangeEii">
+<span id="_CPPv3NK8helayers12DebugContext25getMaxAllowedValueByRangeEii"></span><span id="_CPPv2NK8helayers12DebugContext25getMaxAllowedValueByRangeEii"></span><span id="helayers::DebugContext::getMaxAllowedValueByRange__i.iC"></span><span class="target" id="classhelayers_1_1DebugContext_1ad2fd17ba5ddd7fcaf305fa91cb5e5b89"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValueByRange</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">high</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">low</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext25getMaxAllowedValueByRangeEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal absolute value allowed for values that may be in any chain index within a range that’s defined between a given low and high chain indexes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high</strong> – The higher chain index in the range. </p></li>
+<li><p><strong>low</strong> – The lower chain index in the range. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext18getMaxAllowedValueEi">
+<span id="_CPPv3NK8helayers12DebugContext18getMaxAllowedValueEi"></span><span id="_CPPv2NK8helayers12DebugContext18getMaxAllowedValueEi"></span><span id="helayers::DebugContext::getMaxAllowedValue__iC"></span><span class="target" id="classhelayers_1_1DebugContext_1af1a35d32a068e235e9623bf364656e84"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext18getMaxAllowedValueEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal absolute value allowed for values in a given chain index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chainIndex</strong> – The given chain index. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext20getMaxAllowedBsValueEv">
+<span id="_CPPv3NK8helayers12DebugContext20getMaxAllowedBsValueEv"></span><span id="_CPPv2NK8helayers12DebugContext20getMaxAllowedBsValueEv"></span><span id="helayers::DebugContext::getMaxAllowedBsValueC"></span><span class="target" id="classhelayers_1_1DebugContext_1ad4518c48c0d002166d733a1a607ed07a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedBsValue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext20getMaxAllowedBsValueEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal absolute value allowed for values going through a bootstrap operation. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext32getMinChainIndexForBootstrappingEv">
+<span id="_CPPv3NK8helayers12DebugContext32getMinChainIndexForBootstrappingEv"></span><span id="_CPPv2NK8helayers12DebugContext32getMinChainIndexForBootstrappingEv"></span><span id="helayers::DebugContext::getMinChainIndexForBootstrappingC"></span><span class="target" id="classhelayers_1_1DebugContext_1a4b49d6fc59f7b86e3dc540f3c0a866c0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext32getMinChainIndexForBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the minimum level in which ciphertexts can be bootstrapped. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext31getChainIndexAfterBootstrappingEv">
+<span id="_CPPv3NK8helayers12DebugContext31getChainIndexAfterBootstrappingEv"></span><span id="_CPPv2NK8helayers12DebugContext31getChainIndexAfterBootstrappingEv"></span><span id="helayers::DebugContext::getChainIndexAfterBootstrappingC"></span><span class="target" id="classhelayers_1_1DebugContext_1a3b02a0aae90975fcae07d1a2ab1fc254"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getChainIndexAfterBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext31getChainIndexAfterBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the level of ciphertexts after bootstrapping. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext24getBootstrapChainIndexesERK19HeConfigRequirement">
+<span id="_CPPv3NK8helayers12DebugContext24getBootstrapChainIndexesERK19HeConfigRequirement"></span><span id="_CPPv2NK8helayers12DebugContext24getBootstrapChainIndexesERK19HeConfigRequirement"></span><span id="helayers::DebugContext::getBootstrapChainIndexes__HeConfigRequirementCRC"></span><span class="target" id="classhelayers_1_1DebugContext_1a8c8067944b8ac555bd66295b51bce06b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="BootstrapConfig.html#_CPPv4N8helayers15BootstrapConfigE" title="helayers::BootstrapConfig"><span class="n"><span class="pre">BootstrapConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBootstrapChainIndexes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext24getBootstrapChainIndexesERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a bootstrap config object with two chain index values: the minimum level in which ciphertexts can be bootstrapped and the level of ciphertexts after bootstrapping. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> – The requirement, must indicate a bootstrappable object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext23getMinSupportedNumSlotsEv">
+<span id="_CPPv3NK8helayers12DebugContext23getMinSupportedNumSlotsEv"></span><span id="_CPPv2NK8helayers12DebugContext23getMinSupportedNumSlotsEv"></span><span id="helayers::DebugContext::getMinSupportedNumSlotsC"></span><span class="target" id="classhelayers_1_1DebugContext_1a0560d197c449c868816044741dedaa8a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinSupportedNumSlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext23getMinSupportedNumSlotsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the minimal number of slots supported by this HE context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext23getMaxSupportedNumSlotsEv">
+<span id="_CPPv3NK8helayers12DebugContext23getMaxSupportedNumSlotsEv"></span><span id="_CPPv2NK8helayers12DebugContext23getMaxSupportedNumSlotsEv"></span><span id="helayers::DebugContext::getMaxSupportedNumSlotsC"></span><span class="target" id="classhelayers_1_1DebugContext_1ad2d77f1ae524ffe44193381d5f991e4a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxSupportedNumSlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext23getMaxSupportedNumSlotsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the maximal number of slots supported by this HE context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext24publicFunctionsSupportedERK15PublicFunctions">
+<span id="_CPPv3NK8helayers12DebugContext24publicFunctionsSupportedERK15PublicFunctions"></span><span id="_CPPv2NK8helayers12DebugContext24publicFunctionsSupportedERK15PublicFunctions"></span><span id="helayers::DebugContext::publicFunctionsSupported__PublicFunctionsCRC"></span><span class="target" id="classhelayers_1_1DebugContext_1ad02db05a5bccec38b19144f102dcb45f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">publicFunctionsSupported</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PublicFunctions</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">publicFunctions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext24publicFunctionsSupportedERK15PublicFunctions" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if the given PublicFunctions object is supported by the first HeContexts and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>publicFunctions</strong> – The publicFunctions object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="loadHeContextFromFile.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">loadHeContextFromFile</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EmptyContext.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EmptyContext</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.DebugContext"><code class="docutils literal notranslate"><span class="pre">DebugContext</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.DebugContext.diff_threshold"><code class="docutils literal notranslate"><span class="pre">DebugContext.diff_threshold</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.DebugContext.init"><code class="docutils literal notranslate"><span class="pre">DebugContext.init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

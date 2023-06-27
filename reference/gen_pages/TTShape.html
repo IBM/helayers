@@ -1,0 +1,1427 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>TTShape &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/TTShape';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DimInt" href="DimInt.html" />
+    <link rel="prev" title="TTEncoder" href="TTEncoder.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../tt.html" class="nav-link">Tile Tensors</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">TTShape</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="ttshape">
+<h1>TTShape<a class="headerlink" href="#ttshape" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.TTShape">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TTShape</span></span><a class="headerlink" href="#pyhelayers.TTShape" title="Permalink to this definition">#</a></dt>
+<dd><p>Tile tensor shape. Contains meta data defining packing details of
+a tile tensor. Printable to a string in tile tensor shape notation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.add_dim">
+<span class="sig-name descname"><span class="pre">add_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.TTShape.add_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>add_dim(self: pyhelayers.TTShape, dim: pyhelayers.TTDim, place: int = -1) -&gt; None</p></li>
+<li><p>add_dim(self: pyhelayers.TTShape, original_size: int, tile_size: int, num_duplicated: int = 1, are_unused_slots_unkown: bool = False, is_interleaved: bool = False, is_complex_packed: bool = False) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.apply_compatibility_adjustments">
+<span class="sig-name descname"><span class="pre">apply_compatibility_adjustments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.ActionType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.apply_compatibility_adjustments" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.are_all_dims_incomplete">
+<span class="sig-name descname"><span class="pre">are_all_dims_incomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.are_all_dims_incomplete" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.assert_compatible">
+<span class="sig-name descname"><span class="pre">assert_compatible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.TTShape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other:</span> <span class="pre">pyhelayers.TTShape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type:</span> <span class="pre">pyhelayers.ActionType</span> <span class="pre">=</span> <span class="pre">&lt;ActionType.OTHER_ACTION_TYPE:</span> <span class="pre">2&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.assert_compatible" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.clear_unknowns">
+<span class="sig-name descname"><span class="pre">clear_unknowns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.clear_unknowns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.contains_unknown_unused_slots">
+<span class="sig-name descname"><span class="pre">contains_unknown_unused_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.contains_unknown_unused_slots" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_dim">
+<span class="sig-name descname"><span class="pre">get_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.TTShape.get_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>get_dim(self: pyhelayers.TTShape, dim: int) -&gt; pyhelayers.TTDim</p></li>
+<li><p>get_dim(self: pyhelayers.TTShape, dim: int) -&gt; pyhelayers.TTDim</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_external_sizes">
+<span class="sig-name descname"><span class="pre">get_external_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_external_sizes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_incomplete_tile_sizes_and_interleaved">
+<span class="sig-name descname"><span class="pre">get_incomplete_tile_sizes_and_interleaved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_incomplete_tile_sizes_and_interleaved" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_num_dims">
+<span class="sig-name descname"><span class="pre">get_num_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_num_dims" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_num_slots_in_tile">
+<span class="sig-name descname"><span class="pre">get_num_slots_in_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_num_slots_in_tile" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_num_used_tiles">
+<span class="sig-name descname"><span class="pre">get_num_used_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_num_used_tiles" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_original_sizes">
+<span class="sig-name descname"><span class="pre">get_original_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_duplications</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_original_sizes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_rotate_offset_of_dim">
+<span class="sig-name descname"><span class="pre">get_rotate_offset_of_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_rotate_offset_of_dim" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_sub_shape">
+<span class="sig-name descname"><span class="pre">get_sub_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_sub_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Returs a sub-TTShape of dimensions [first,last).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<em>int</em>) – The start index of the first dimension.</p></li>
+<li><p><strong>last</strong> (<em>int</em>) – The ending index of the required sub shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sub shape of dimensions [first, last)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape">TTShape</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_tile_sizes">
+<span class="sig-name descname"><span class="pre">get_tile_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_tile_sizes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_with_duplicated_dim">
+<span class="sig-name descname"><span class="pre">get_with_duplicated_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_with_duplicated_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a copy of current ttshape with the specified dimension
+fully duplicated along tile size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – Dimension to duplicate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.get_with_duplicated_dims">
+<span class="sig-name descname"><span class="pre">get_with_duplicated_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims_to_duplicate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></span><a class="headerlink" href="#pyhelayers.TTShape.get_with_duplicated_dims" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a copy of current ttshape with the specified dimensions
+fully duplicated along tile size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dims_to_duplicate</strong> (<em>pyarray&lt;int&gt;</em>) – Dimensions to duplicate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.insert_dim_at">
+<span class="sig-name descname"><span class="pre">insert_dim_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="TTDim.html#pyhelayers.TTDim" title="pyhelayers.TTDim"><span class="pre">pyhelayers.TTDim</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.insert_dim_at" title="Permalink to this definition">#</a></dt>
+<dd><p>Inserts a dimension at given position.
+If it is inserted at pos i, current dimension at i becomes i+1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="TTDim.html#pyhelayers.TTDim" title="pyhelayers.TTDim"><em>TTDim</em></a>) – Dimension to add.</p></li>
+<li><p><strong>pos</strong> (<em>int</em>) – Position to insert to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_compatible">
+<span class="sig-name descname"><span class="pre">is_compatible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.TTShape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other:</span> <span class="pre">pyhelayers.TTShape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actionType:</span> <span class="pre">pyhelayers.ActionType</span> <span class="pre">=</span> <span class="pre">&lt;ActionType.OTHER_ACTION_TYPE:</span> <span class="pre">2&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_compatible" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_diagonalized">
+<span class="sig-name descname"><span class="pre">is_diagonalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_diagonalized" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Returns whether this shape is diagonalized in its first two</dt><dd><p>dimensions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_first_non_degenerate_tile_dim">
+<span class="sig-name descname"><span class="pre">is_first_non_degenerate_tile_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_first_non_degenerate_tile_dim" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_incomplete">
+<span class="sig-name descname"><span class="pre">is_incomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_incomplete" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.set_all_unused_slots_unknown">
+<span class="sig-name descname"><span class="pre">set_all_unused_slots_unknown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.set_all_unused_slots_unknown" title="Permalink to this definition">#</a></dt>
+<dd><p>Turns on the unknown flag for all dimensions which have unused
+slots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.set_diagonalized">
+<span class="sig-name descname"><span class="pre">set_diagonalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.set_diagonalized" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the diagonalized flag of this shape.
+Diagonalized shapes must statisfy:
+- At least 2 dims
+- Dims 0-1 not duplicated, interleaved, or complex packed.
+- Original size of dim 0 must be divisible by tileSize[0]*tileSize[1]
+:param val: New value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.set_original_sizes">
+<span class="sig-name descname"><span class="pre">set_original_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">org_sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.set_original_sizes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.tile_layout_to_string">
+<span class="sig-name descname"><span class="pre">tile_layout_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.tile_layout_to_string" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShapeE">
+<span id="_CPPv3N8helayers7TTShapeE"></span><span id="_CPPv2N8helayers7TTShapeE"></span><span id="helayers::TTShape"></span><span class="target" id="classhelayers_1_1TTShape"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTShape</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SaveableBasic</span></span><a class="headerlink" href="#_CPPv4N8helayers7TTShapeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Tile tensor shape. </p>
+<p>Contains meta data defining packing details of a tile tensor. Printable to a string in tile tensor shape notation </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape7TTShapeEv">
+<span id="_CPPv3N8helayers7TTShape7TTShapeEv"></span><span id="_CPPv2N8helayers7TTShape7TTShapeEv"></span><span id="helayers::TTShape::TTShape"></span><span class="target" id="classhelayers_1_1TTShape_1af5e5d88128f5443a1540d2d1ef27eda2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTShape</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape7TTShapeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructs an empty object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape7TTShapeERKNSt6vectorI5TTDimEE">
+<span id="_CPPv3N8helayers7TTShape7TTShapeERKNSt6vectorI5TTDimEE"></span><span id="_CPPv2N8helayers7TTShape7TTShapeERKNSt6vectorI5TTDimEE"></span><span id="helayers::TTShape::TTShape__std::vector:TTDim:CR"></span><span class="target" id="classhelayers_1_1TTShape_1abbc7109730812daf3af4259fd0dfa229"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape7TTShapeERKNSt6vectorI5TTDimEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructs a <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> with given list of <a class="reference internal" href="TTDim.html#classhelayers_1_1TTDim"><span class="std std-ref">TTDim</span></a> specification. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – Dimension specifications. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape7TTShapeENSt16initializer_listI6DimIntEE">
+<span id="_CPPv3N8helayers7TTShape7TTShapeENSt16initializer_listI6DimIntEE"></span><span id="_CPPv2N8helayers7TTShape7TTShapeENSt16initializer_listI6DimIntEE"></span><span id="helayers::TTShape::TTShape__std::initializer_list:DimInt:"></span><span class="target" id="classhelayers_1_1TTShape_1a92060c46446b62d6abd0c11a120f46c3"></span><span class="sig-name descname"><span class="n"><span class="pre">TTShape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tshape</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape7TTShapeENSt16initializer_listI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Initialize a ttshape Example usage: <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> myShape({16,32,8});. </p>
+<p>Construct a new <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> object with just tile dimension sizes defined. In this state it is incomplete (since it has no original sizes) but it can be used for packing tensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tshape</strong> – Tile shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape7TTShapeERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3N8helayers7TTShape7TTShapeERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2N8helayers7TTShape7TTShapeERKNSt6vectorI6DimIntEE"></span><span id="helayers::TTShape::TTShape__std::vector:DimInt:CR"></span><span class="target" id="classhelayers_1_1TTShape_1a765528cdb78e56e7e006c18d5364945f"></span><span class="sig-name descname"><span class="n"><span class="pre">TTShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tshape</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape7TTShapeERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> object with just tile dimension sizes defined. </p>
+<p>In this state it is incomplete (since it has no original sizes) but it can be used for packing tensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tshape</strong> – Tile shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShapeD0Ev">
+<span id="_CPPv3N8helayers7TTShapeD0Ev"></span><span id="_CPPv2N8helayers7TTShapeD0Ev"></span><span id="helayers::TTShape::~TTShape"></span><span class="target" id="classhelayers_1_1TTShape_1a01e33ec6a4beb664c8e5fa94cf54737f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~TTShape</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShapeD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape21getWithDuplicatedDimsENSt16initializer_listI6DimIntEE">
+<span id="_CPPv3NK8helayers7TTShape21getWithDuplicatedDimsENSt16initializer_listI6DimIntEE"></span><span id="_CPPv2NK8helayers7TTShape21getWithDuplicatedDimsENSt16initializer_listI6DimIntEE"></span><span id="helayers::TTShape::getWithDuplicatedDims__std::initializer_list:DimInt:C"></span><span class="target" id="classhelayers_1_1TTShape_1a6c4b09d5166103b0a5dbea0ac9aa8b59"></span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWithDuplicatedDims</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dimsToDuplicate</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape21getWithDuplicatedDimsENSt16initializer_listI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a copy of current ttshape with each of the specified dimensions fully duplicated along tile size. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimsToDuplicate</strong> – List of dimension indices to duplicate </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape21getWithDuplicatedDimsERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3NK8helayers7TTShape21getWithDuplicatedDimsERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2NK8helayers7TTShape21getWithDuplicatedDimsERKNSt6vectorI6DimIntEE"></span><span id="helayers::TTShape::getWithDuplicatedDims__std::vector:DimInt:CRC"></span><span class="target" id="classhelayers_1_1TTShape_1ac3755997d9ab2d7e09e8a69d438ed4be"></span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWithDuplicatedDims</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dimsToDuplicate</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape21getWithDuplicatedDimsERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a copy of current ttshape with each of the specified dimensions fully duplicated along tile size. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimsToDuplicate</strong> – List of dimension indices to duplicate </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape20getWithDuplicatedDimE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape20getWithDuplicatedDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape20getWithDuplicatedDimE6DimInt"></span><span id="helayers::TTShape::getWithDuplicatedDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a3ee3d93e36fb3b261df0b12f2f1c9376"></span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWithDuplicatedDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape20getWithDuplicatedDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get a copy of current ttshape with the specified dimension fully duplicated along tile size. </p>
+<p>
+Returns a copy of current ttshape with the specified dimension fully duplicated along tile size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – <strong>[in]</strong> dimension to duplicate to the entire tile size</p></li>
+<li><p><strong>dim</strong> – Dimension index to duplicate </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape36getIncompleteTileSizesAndInterleavedEv">
+<span id="_CPPv3NK8helayers7TTShape36getIncompleteTileSizesAndInterleavedEv"></span><span id="_CPPv2NK8helayers7TTShape36getIncompleteTileSizesAndInterleavedEv"></span><span id="helayers::TTShape::getIncompleteTileSizesAndInterleavedC"></span><span class="target" id="classhelayers_1_1TTShape_1ab29172b6168aabb52aadd9dbb61b08b8"></span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIncompleteTileSizesAndInterleaved</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape36getIncompleteTileSizesAndInterleavedEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a ttshape containing just the tile shape of this object, as well as the interleaved flag and the interleaved external size in case of non-default size. </p>
+<p>The returned ttshape is in incomplete state, but can be used for packing tensors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape6getDimE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape6getDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape6getDimE6DimInt"></span><span id="helayers::TTShape::getDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1ad19d8bfbf90dfa3a4f919eb0d0b35100"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape6getDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a dimension specification. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dimension index </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape6getDimE6DimInt">
+<span id="_CPPv3N8helayers7TTShape6getDimE6DimInt"></span><span id="_CPPv2N8helayers7TTShape6getDimE6DimInt"></span><span id="helayers::TTShape::getDim__DimInt"></span><span class="target" id="classhelayers_1_1TTShape_1a22fd686ea1bd1f252d92a0fadbeca302"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape6getDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a dimension specification. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dimension index </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape11getSubShapeE6DimInt6DimInt">
+<span id="_CPPv3NK8helayers7TTShape11getSubShapeE6DimInt6DimInt"></span><span id="_CPPv2NK8helayers7TTShape11getSubShapeE6DimInt6DimInt"></span><span id="helayers::TTShape::getSubShape__DimInt.DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a750b91fc3eeb32cc6fe55bd0b9da83ca"></span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSubShape</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape11getSubShapeE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a sub-ttshape of dimensions [first,last) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> – First dimension index (inclusive) </p></li>
+<li><p><strong>last</strong> – Last dimension index (exclusive) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If indices are illegal, or if trying to slice one of the first two dimensions of a diagonal shape. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape16setOriginalSizesENSt16initializer_listI6DimIntEE">
+<span id="_CPPv3N8helayers7TTShape16setOriginalSizesENSt16initializer_listI6DimIntEE"></span><span id="_CPPv2N8helayers7TTShape16setOriginalSizesENSt16initializer_listI6DimIntEE"></span><span id="helayers::TTShape::setOriginalSizes__std::initializer_list:DimInt:"></span><span class="target" id="classhelayers_1_1TTShape_1a01811da927688da66a5ef5d37f909547"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOriginalSizes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">orgSizes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape16setOriginalSizesENSt16initializer_listI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the original sizes of all dimensions. </p>
+<p>Usually used for incomplete shapes. If some dimensions are complete, their original size is overriden. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orgSizes</strong> – Original sizes vector </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape16setOriginalSizesERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3N8helayers7TTShape16setOriginalSizesERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2N8helayers7TTShape16setOriginalSizesERKNSt6vectorI6DimIntEE"></span><span id="helayers::TTShape::setOriginalSizes__std::vector:DimInt:CR"></span><span class="target" id="classhelayers_1_1TTShape_1a0a2e106de6598252f91349cc6a2bd8c6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOriginalSizes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">orgSizes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape16setOriginalSizesERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the original sizes of all dimensions. </p>
+<p>Usually used for incomplete shapes. If some dimensions are complete, their original size is overriden. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orgSizes</strong> – Original sizes vector </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape19assertOriginalSizesERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3NK8helayers7TTShape19assertOriginalSizesERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2NK8helayers7TTShape19assertOriginalSizesERKNSt6vectorI6DimIntEE"></span><span id="helayers::TTShape::assertOriginalSizes__std::vector:DimInt:CRC"></span><span class="target" id="classhelayers_1_1TTShape_1a46714c6ee4d98fca18c78808fcafbf71"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assertOriginalSizes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">orgSizes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape19assertOriginalSizesERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Validates the original sizes of the shape are as expected. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orgSizes</strong> – Expected original sizes. If a zero value is passed for a certain dimension, it means this dimension should be skipped when verifying its size. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If assertion fails. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape12isIncompleteEv">
+<span id="_CPPv3NK8helayers7TTShape12isIncompleteEv"></span><span id="_CPPv2NK8helayers7TTShape12isIncompleteEv"></span><span id="helayers::TTShape::isIncompleteC"></span><span class="target" id="classhelayers_1_1TTShape_1a36ddbe4b7e4e381969da9c6919bfd208"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isIncomplete</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape12isIncompleteEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether object is in incomplete state. </p>
+<p>Incomplete ttshape are missing some details but have the tile shape, and can be used for packing tensors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape20areAllDimsIncompleteEv">
+<span id="_CPPv3NK8helayers7TTShape20areAllDimsIncompleteEv"></span><span id="_CPPv2NK8helayers7TTShape20areAllDimsIncompleteEv"></span><span id="helayers::TTShape::areAllDimsIncompleteC"></span><span class="target" id="classhelayers_1_1TTShape_1a0be41b42e1b47bd8d706d35301fdf292"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">areAllDimsIncomplete</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape20areAllDimsIncompleteEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if all dimensions are incomplete. </p>
+<p>See <a class="reference internal" href="#classhelayers_1_1TTShape_1a36ddbe4b7e4e381969da9c6919bfd208"><span class="std std-ref">isIncomplete()</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape12isCompatibleERK7TTShape10ActionType">
+<span id="_CPPv3NK8helayers7TTShape12isCompatibleERK7TTShape10ActionType"></span><span id="_CPPv2NK8helayers7TTShape12isCompatibleERK7TTShape10ActionType"></span><span id="helayers::TTShape::isCompatible__TTShapeCR.ActionTypeC"></span><span class="target" id="classhelayers_1_1TTShape_1a62cf2a64c20ca368ac0aa19c49a22dfb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isCompatible</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="n"><span class="pre">ActionType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">at</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">OTHER_ACTION_TYPE</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape12isCompatibleERK7TTShape10ActionType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if this ttshape is compatiable with other. </p>
+<p>Compatibility means elementwise binary operators can be applied. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other ttshape to test with </p></li>
+<li><p><strong>at</strong> – Action type to check compatibility for. Affects complex packed dimensions. Default is set to most restrictive setting. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape16assertCompatibleERK7TTShape10ActionTypeRKNSt6stringE">
+<span id="_CPPv3NK8helayers7TTShape16assertCompatibleERK7TTShape10ActionTypeRKNSt6stringE"></span><span id="_CPPv2NK8helayers7TTShape16assertCompatibleERK7TTShape10ActionTypeRKNSt6stringE"></span><span id="helayers::TTShape::assertCompatible__TTShapeCR.ActionType.ssCRC"></span><span class="target" id="classhelayers_1_1TTShape_1a1345630dbcb95a73d429480a9a34905e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assertCompatible</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="n"><span class="pre">ActionType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">at</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">OTHER_ACTION_TYPE</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">text</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape16assertCompatibleERK7TTShape10ActionTypeRKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Asserts that other ttshape is compatible with this. </p>
+<p>See <a class="reference internal" href="#classhelayers_1_1TTShape_1a62cf2a64c20ca368ac0aa19c49a22dfb"><span class="std std-ref">isCompatible()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other shape to test with </p></li>
+<li><p><strong>at</strong> – Action type to check compatibility for. Affects complex packed dimensions. Default is set to most restrictive setting. </p></li>
+<li><p><strong>text</strong> – Text to include in error </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – if not compatible </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape29applyCompatibilityAdjustmentsERK7TTShape10ActionType">
+<span id="_CPPv3N8helayers7TTShape29applyCompatibilityAdjustmentsERK7TTShape10ActionType"></span><span id="_CPPv2N8helayers7TTShape29applyCompatibilityAdjustmentsERK7TTShape10ActionType"></span><span id="helayers::TTShape::applyCompatibilityAdjustments__TTShapeCR.ActionType"></span><span class="target" id="classhelayers_1_1TTShape_1ae46ed322371cb6b916888f10646af604"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">applyCompatibilityAdjustments</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="n"><span class="pre">ActionType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">at</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape29applyCompatibilityAdjustmentsERK7TTShape10ActionType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Update current shape to the result of applying a binary elementwise operator on this and other shape. </p>
+<p>The two shapes are assumed to be compatible. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other input shape. </p></li>
+<li><p><strong>at</strong> – Action type used </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape6addDimERK5TTDimi">
+<span id="_CPPv3N8helayers7TTShape6addDimERK5TTDimi"></span><span id="_CPPv2N8helayers7TTShape6addDimERK5TTDimi"></span><span id="helayers::TTShape::addDim__TTDimCR.i"></span><span class="target" id="classhelayers_1_1TTShape_1aa60b3fdb5a6b7464735d3dc38f200686"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDim</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">place</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape6addDimERK5TTDimi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add a dimension to this ttshape. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – Dimension to add. </p></li>
+<li><p><strong>place</strong> – Place of the new dimension, default is last. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape9removeDimE6DimInt">
+<span id="_CPPv3N8helayers7TTShape9removeDimE6DimInt"></span><span id="_CPPv2N8helayers7TTShape9removeDimE6DimInt"></span><span id="helayers::TTShape::removeDim__DimInt"></span><span class="target" id="classhelayers_1_1TTShape_1a899b224ee213a37a94da405f504ab402"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape9removeDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Removes a dim from this ttshape. </p>
+<p>Only for dim with original size 1 and tile size 1. Number of dims before calling the function must be at least 3. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dim to remove </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If dim doesn’t exists </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If dim is not of size 1 </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If number of dims is less than 3 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape11reorderDimsERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3N8helayers7TTShape11reorderDimsERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2N8helayers7TTShape11reorderDimsERKNSt6vectorI6DimIntEE"></span><span id="helayers::TTShape::reorderDims__std::vector:DimInt:CR"></span><span class="target" id="classhelayers_1_1TTShape_1a8acdf21bda610f4bc2c2d53d2342580e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reorderDims</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dimOrder</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape11reorderDimsERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Reorders the dimensions of this ttshape. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimOrder</strong> – New order of dimensions </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape10getNumDimsEv">
+<span id="_CPPv3NK8helayers7TTShape10getNumDimsEv"></span><span id="_CPPv2NK8helayers7TTShape10getNumDimsEv"></span><span id="helayers::TTShape::getNumDimsC"></span><span class="target" id="classhelayers_1_1TTShape_1a7ff5a11256b65388bb234609161ca745"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumDims</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape10getNumDimsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns dimension number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape16getOriginalSizesEb">
+<span id="_CPPv3NK8helayers7TTShape16getOriginalSizesEb"></span><span id="_CPPv2NK8helayers7TTShape16getOriginalSizesEb"></span><span id="helayers::TTShape::getOriginalSizes__bC"></span><span class="target" id="classhelayers_1_1TTShape_1ace3a205827b4ea53f7b85d86e7dfdd0d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOriginalSizes</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">includeDuplications</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape16getOriginalSizesEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the original shape. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>includeDuplications</strong> – If true, the returned list contains number of duplicates for each duplicated dimension, otherwise 1 is returned for these dimensions. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape12getTileSizesEv">
+<span id="_CPPv3NK8helayers7TTShape12getTileSizesEv"></span><span id="_CPPv2NK8helayers7TTShape12getTileSizesEv"></span><span id="helayers::TTShape::getTileSizesC"></span><span class="target" id="classhelayers_1_1TTShape_1a69e0552cb5f1286335ce68deffb0e68f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTileSizes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape12getTileSizesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the tile shape. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape14isBatchPackingE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape14isBatchPackingE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape14isBatchPackingE6DimInt"></span><span id="helayers::TTShape::isBatchPacking__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a81a3e48bd47b06e29b39c8345a859769"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isBatchPacking</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">numDims</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape14isBatchPackingE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if all tile sizes are one except the last. </p>
+<p>Optionally, it conditions on number of dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numDims</strong> – Required number of dimensions or -1 if can be any. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape16getExternalSizesEv">
+<span id="_CPPv3NK8helayers7TTShape16getExternalSizesEv"></span><span id="_CPPv2NK8helayers7TTShape16getExternalSizesEv"></span><span id="helayers::TTShape::getExternalSizesC"></span><span class="target" id="classhelayers_1_1TTShape_1ab589cf3eeeb3ff350f8ae94431f11b0a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getExternalSizes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape16getExternalSizesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the external shape. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape15getNumUsedTilesEv">
+<span id="_CPPv3NK8helayers7TTShape15getNumUsedTilesEv"></span><span id="_CPPv2NK8helayers7TTShape15getNumUsedTilesEv"></span><span id="helayers::TTShape::getNumUsedTilesC"></span><span class="target" id="classhelayers_1_1TTShape_1aa924126603969d74eb8b32b3b394ae43"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumUsedTiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape15getNumUsedTilesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of tiles required by this ttshape. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape17getNumSlotsInTileEv">
+<span id="_CPPv3NK8helayers7TTShape17getNumSlotsInTileEv"></span><span id="_CPPv2NK8helayers7TTShape17getNumSlotsInTileEv"></span><span id="helayers::TTShape::getNumSlotsInTileC"></span><span class="target" id="classhelayers_1_1TTShape_1a606bde525d2abae35836811ef83a91e6"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumSlotsInTile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape17getNumSlotsInTileEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of slots in each tile. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape19getNumOriginalSlotsEv">
+<span id="_CPPv3NK8helayers7TTShape19getNumOriginalSlotsEv"></span><span id="_CPPv2NK8helayers7TTShape19getNumOriginalSlotsEv"></span><span id="helayers::TTShape::getNumOriginalSlotsC"></span><span class="target" id="classhelayers_1_1TTShape_1a8bd8cbac30f6615c965e90132dbfb9f4"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumOriginalSlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape19getNumOriginalSlotsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of slots in the original tensor represented by this shape. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape20getRotateOffsetOfDimE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape20getRotateOffsetOfDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape20getRotateOffsetOfDimE6DimInt"></span><span id="helayers::TTShape::getRotateOffsetOfDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a7091301fa82c8f5726939de2f7158326"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRotateOffsetOfDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape20getRotateOffsetOfDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the rotation offset of a flattened tile to achieve rotation over the given dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – Dimension to rotate </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape26containsUnknownUnusedSlotsEv">
+<span id="_CPPv3NK8helayers7TTShape26containsUnknownUnusedSlotsEv"></span><span id="_CPPv2NK8helayers7TTShape26containsUnknownUnusedSlotsEv"></span><span id="helayers::TTShape::containsUnknownUnusedSlotsC"></span><span class="target" id="classhelayers_1_1TTShape_1a257c4a017940023994aa4f7084d94f17"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">containsUnknownUnusedSlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape26containsUnknownUnusedSlotsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if any dimension has unknown values in unused slots. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape13clearUnknownsEv">
+<span id="_CPPv3N8helayers7TTShape13clearUnknownsEv"></span><span id="_CPPv2N8helayers7TTShape13clearUnknownsEv"></span><span id="helayers::TTShape::clearUnknowns"></span><span class="target" id="classhelayers_1_1TTShape_1a7425f09d2cfc52699468406052458862"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearUnknowns</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape13clearUnknownsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Remove all unknown values in unused slots. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape24setAllUnusedSlotsUnknownEv">
+<span id="_CPPv3N8helayers7TTShape24setAllUnusedSlotsUnknownEv"></span><span id="_CPPv2N8helayers7TTShape24setAllUnusedSlotsUnknownEv"></span><span id="helayers::TTShape::setAllUnusedSlotsUnknown"></span><span class="target" id="classhelayers_1_1TTShape_1a1e71bf75783277028f8426b9215324f4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAllUnusedSlotsUnknown</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape24setAllUnusedSlotsUnknownEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Turns on the unknown flag for all dimensions which have unused slots. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape17setAllInterleavedEv">
+<span id="_CPPv3N8helayers7TTShape17setAllInterleavedEv"></span><span id="_CPPv2N8helayers7TTShape17setAllInterleavedEv"></span><span id="helayers::TTShape::setAllInterleaved"></span><span class="target" id="classhelayers_1_1TTShape_1abc3545b672729d9e360bffdfb5ea61a0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAllInterleaved</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape17setAllInterleavedEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Turns on the interleaved flag for all dimensions which are currently not interleaved. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape11insertDimAtERK5TTDim6DimInt">
+<span id="_CPPv3N8helayers7TTShape11insertDimAtERK5TTDim6DimInt"></span><span id="_CPPv2N8helayers7TTShape11insertDimAtERK5TTDim6DimInt"></span><span id="helayers::TTShape::insertDimAt__TTDimCR.DimInt"></span><span class="target" id="classhelayers_1_1TTShape_1a82dd2f6f04cbe38987325fe02a69a0ee"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">insertDimAt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape11insertDimAtERK5TTDim6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Inserts a dimension at given position. </p>
+<p>If it is inserted at pos i, current dimension at i becomes i+1. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – Dimension to add </p></li>
+<li><p><strong>pos</strong> – Position to insert to. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt"></span><span id="helayers::TTShape::isFirstNonDegenerateTileDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1ac417909701631e4ed8ba9274a9395014"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFirstNonDegenerateTileDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if given dimension is the first dimension whose tile size is larger than one. </p>
+<p>This dimension allows true rotation, and summation ends with duplication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Input dimension. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape23getNumComplexPackedDimsEv">
+<span id="_CPPv3NK8helayers7TTShape23getNumComplexPackedDimsEv"></span><span id="_CPPv2NK8helayers7TTShape23getNumComplexPackedDimsEv"></span><span id="helayers::TTShape::getNumComplexPackedDimsC"></span><span class="target" id="classhelayers_1_1TTShape_1ac17c495fda8369a894517fd4686fd949"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumComplexPackedDims</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape23getNumComplexPackedDimsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns number of dimensions marked as complex packed. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape19getComplexPackedDimEv">
+<span id="_CPPv3NK8helayers7TTShape19getComplexPackedDimEv"></span><span id="_CPPv2NK8helayers7TTShape19getComplexPackedDimEv"></span><span id="helayers::TTShape::getComplexPackedDimC"></span><span class="target" id="classhelayers_1_1TTShape_1ab0acac7d151fe7809e90281012b4828e"></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getComplexPackedDim</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape19getComplexPackedDimEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the first complex packed dimension index, or -1 if none. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape14isDiagonalizedEv">
+<span id="_CPPv3NK8helayers7TTShape14isDiagonalizedEv"></span><span id="_CPPv2NK8helayers7TTShape14isDiagonalizedEv"></span><span id="helayers::TTShape::isDiagonalizedC"></span><span class="target" id="classhelayers_1_1TTShape_1a47b1f08a51e58de09ec2d4703251b52b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDiagonalized</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape14isDiagonalizedEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether this shape is diagonalized in its first two dimensions. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape15setDiagonalizedEb">
+<span id="_CPPv3N8helayers7TTShape15setDiagonalizedEb"></span><span id="_CPPv2N8helayers7TTShape15setDiagonalizedEb"></span><span id="helayers::TTShape::setDiagonalized__b"></span><span class="target" id="classhelayers_1_1TTShape_1a2a9572ec03e10109735979e8ccc8a43a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDiagonalized</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape15setDiagonalizedEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the diagonalized flag of this shape. </p>
+<p>Diagonalized shapes must statisfy:<ul class="simple">
+<li><p>At least 2 dims</p></li>
+<li><p>Dims 0-1 not duplicated, interleaved, or complex packed. </p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape23includesDuplicatedSlotsEv">
+<span id="_CPPv3NK8helayers7TTShape23includesDuplicatedSlotsEv"></span><span id="_CPPv2NK8helayers7TTShape23includesDuplicatedSlotsEv"></span><span id="helayers::TTShape::includesDuplicatedSlotsC"></span><span class="target" id="classhelayers_1_1TTShape_1a272c149d28d6ed10d3633b3f75684dba"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">includesDuplicatedSlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape23includesDuplicatedSlotsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if this <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> includes duplicated slots and false otherwise. </p>
+<p>This <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> is considered to contain duplicated slots if at least one of its dimensions includes duplicated slots. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape7isEmptyEv">
+<span id="_CPPv3NK8helayers7TTShape7isEmptyEv"></span><span id="_CPPv2NK8helayers7TTShape7isEmptyEv"></span><span id="helayers::TTShape::isEmptyC"></span><span class="target" id="classhelayers_1_1TTShape_1acfbeecb2eddb6fda72742247ba06ba32"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEmpty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape7isEmptyEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether this <a class="reference internal" href="#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> is empty. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE">
+<span id="_CPPv3NK8helayers7TTShape10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="_CPPv2NK8helayers7TTShape10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="helayers::TTShape::debugPrint__ssCR.Verbosity.osRC"></span><span class="target" id="classhelayers_1_1TTShape_1a6d046c796b15829e52be9c742f0d7924"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity17VERBOSITY_REGULARE" title="helayers::VERBOSITY_REGULAR"><span class="n"><span class="pre">VERBOSITY_REGULAR</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the content of this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Text to add to the print </p></li>
+<li><p><strong>verbosity</strong> – Verbosity level </p></li>
+<li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape18tileLayoutToStringEv">
+<span id="_CPPv3NK8helayers7TTShape18tileLayoutToStringEv"></span><span id="_CPPv2NK8helayers7TTShape18tileLayoutToStringEv"></span><span id="helayers::TTShape::tileLayoutToStringC"></span><span class="target" id="classhelayers_1_1TTShape_1aac17a9f30a1f0c817cebf449638ffb75"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileLayoutToString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape18tileLayoutToStringEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns tile shape in string representation: ( t1 x t2 x … x tk ) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape4saveERNSt7ostreamE">
+<span id="_CPPv3NK8helayers7TTShape4saveERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7TTShape4saveERNSt7ostreamE"></span><span id="helayers::TTShape::save__osRC"></span><span class="target" id="classhelayers_1_1TTShape_1a0a29232dcd02851c077c7a5b95e0f874"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">streamoff</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">save</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape4saveERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves this object to a stream in binary form. </p>
+<p>Returns the number of bytes written to the output stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – <strong>[in]</strong> output stream to write to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape4loadERNSt7istreamE">
+<span id="_CPPv3N8helayers7TTShape4loadERNSt7istreamE"></span><span id="_CPPv2N8helayers7TTShape4loadERNSt7istreamE"></span><span id="helayers::TTShape::load__isR"></span><span class="target" id="classhelayers_1_1TTShape_1a916c5d4c50618cca5cb9d8ceb1d2256b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">streamoff</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7TTShape4loadERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads this object from the given stream. </p>
+<p>Returns the number of bytes read from the input stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – <strong>[in]</strong> input stream to read from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape11reportErrorERKNSt6stringE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape11reportErrorERKNSt6stringE6DimInt"></span><span id="helayers::TTShape::reportError__ssCR.DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a12d4d86d45b0ad69032cf306775e6d54"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reportError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">error</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">atDim</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Report an error has occurred related to this shape. </p>
+<p>This call throws an exception giving relevant details and supplied error message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> – Error to report. </p></li>
+<li><p><strong>dimIndex</strong> – Optional specification of dimension index </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringERK7TTShape">
+<span id="_CPPv3NK8helayers7TTShape11reportErrorERKNSt6stringERK7TTShape"></span><span id="_CPPv2NK8helayers7TTShape11reportErrorERKNSt6stringERK7TTShape"></span><span id="helayers::TTShape::reportError__ssCR.TTShapeCRC"></span><span class="target" id="classhelayers_1_1TTShape_1a6c5fd2970104159445b375651380b27f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reportError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">error</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">expected</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringERK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Report an error has occurred: this shape is different from an expected one. </p>
+<p>This call throws an exception giving relevant details and supplied error message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> – Error to report. </p></li>
+<li><p><strong>expected</strong> – Expected shape. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringE6DimIntRK5TTDim">
+<span id="_CPPv3NK8helayers7TTShape11reportErrorERKNSt6stringE6DimIntRK5TTDim"></span><span id="_CPPv2NK8helayers7TTShape11reportErrorERKNSt6stringE6DimIntRK5TTDim"></span><span id="helayers::TTShape::reportError__ssCR.DimInt.TTDimCRC"></span><span class="target" id="classhelayers_1_1TTShape_1a267da3318fc42e33d6fae0217cb9952d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reportError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">error</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dimIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">expected</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape11reportErrorERKNSt6stringE6DimIntRK5TTDim" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Report an error has occurred: a dimension in this shape is different from an expected one. </p>
+<p>This call throws an exception giving relevant details and supplied error message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> – Error to report. </p></li>
+<li><p><strong>dimIndex</strong> – dimension of erroneous dimension </p></li>
+<li><p><strong>expected</strong> – Expected dimension. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape8validateEv">
+<span id="_CPPv3NK8helayers7TTShape8validateEv"></span><span id="_CPPv2NK8helayers7TTShape8validateEv"></span><span id="helayers::TTShape::validateC"></span><span class="target" id="classhelayers_1_1TTShape_1a275b53769b1872e8a19eeeae50741e19"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape8validateEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Validates this shape is complete and valid. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="TTEncoder.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TTEncoder</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DimInt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DimInt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape"><code class="docutils literal notranslate"><span class="pre">TTShape</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.add_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.add_dim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.apply_compatibility_adjustments"><code class="docutils literal notranslate"><span class="pre">TTShape.apply_compatibility_adjustments()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.are_all_dims_incomplete"><code class="docutils literal notranslate"><span class="pre">TTShape.are_all_dims_incomplete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.assert_compatible"><code class="docutils literal notranslate"><span class="pre">TTShape.assert_compatible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.clear_unknowns"><code class="docutils literal notranslate"><span class="pre">TTShape.clear_unknowns()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.contains_unknown_unused_slots"><code class="docutils literal notranslate"><span class="pre">TTShape.contains_unknown_unused_slots()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.get_dim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_external_sizes"><code class="docutils literal notranslate"><span class="pre">TTShape.get_external_sizes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_incomplete_tile_sizes_and_interleaved"><code class="docutils literal notranslate"><span class="pre">TTShape.get_incomplete_tile_sizes_and_interleaved()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_num_dims"><code class="docutils literal notranslate"><span class="pre">TTShape.get_num_dims()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_num_slots_in_tile"><code class="docutils literal notranslate"><span class="pre">TTShape.get_num_slots_in_tile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_num_used_tiles"><code class="docutils literal notranslate"><span class="pre">TTShape.get_num_used_tiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_original_sizes"><code class="docutils literal notranslate"><span class="pre">TTShape.get_original_sizes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_rotate_offset_of_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.get_rotate_offset_of_dim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_sub_shape"><code class="docutils literal notranslate"><span class="pre">TTShape.get_sub_shape()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_tile_sizes"><code class="docutils literal notranslate"><span class="pre">TTShape.get_tile_sizes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_with_duplicated_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.get_with_duplicated_dim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_with_duplicated_dims"><code class="docutils literal notranslate"><span class="pre">TTShape.get_with_duplicated_dims()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.insert_dim_at"><code class="docutils literal notranslate"><span class="pre">TTShape.insert_dim_at()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_compatible"><code class="docutils literal notranslate"><span class="pre">TTShape.is_compatible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_diagonalized"><code class="docutils literal notranslate"><span class="pre">TTShape.is_diagonalized()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_first_non_degenerate_tile_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.is_first_non_degenerate_tile_dim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_incomplete"><code class="docutils literal notranslate"><span class="pre">TTShape.is_incomplete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_all_unused_slots_unknown"><code class="docutils literal notranslate"><span class="pre">TTShape.set_all_unused_slots_unknown()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_diagonalized"><code class="docutils literal notranslate"><span class="pre">TTShape.set_diagonalized()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_original_sizes"><code class="docutils literal notranslate"><span class="pre">TTShape.set_original_sizes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.tile_layout_to_string"><code class="docutils literal notranslate"><span class="pre">TTShape.tile_layout_to_string()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

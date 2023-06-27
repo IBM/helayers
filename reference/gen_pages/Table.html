@@ -1,0 +1,1768 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Table &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/Table';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="QueryDatabase" href="QueryDatabase.html" />
+    <link rel="prev" title="Field" href="Field.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../db.html">Data bases</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../db.html" class="nav-link">Data bases</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Table</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="table">
+<h1>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.Table">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Table</span></span><a class="headerlink" href="#pyhelayers.Table" title="Permalink to this definition">#</a></dt>
+<dd><p>A class representing an encrypted database. This Table supports the
+calculation of some data analysis functions on tabular data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.average_query">
+<span class="sig-name descname"><span class="pre">average_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.average_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>average_query(self: pyhelayers.Table, average_field: str, field_to_compare: str, compare_value: pyhelayers.Field, ct: pyhelayers.ComparisonType) -&gt; pyhelayers.FieldVector</p>
+<blockquote>
+<div><p>Average of “average_field” elements, where “field_to_compare”
+satisfies the given comparison condition. Use
+post_process_average_query() to extract the required average from
+the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param average_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to compute average
+for.</p>
+</dd>
+<dt class="field-even">type average_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param field_to_compare<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to apply the
+comparison condition on.</p>
+</dd>
+<dt class="field-even">type field_to_compare<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param compare_value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value to compare with.</p>
+</dd>
+<dt class="field-even">type compare_value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Field</p>
+</dd>
+<dt class="field-odd">param ct<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The comparison type.</p>
+</dd>
+<dt class="field-even">type ct<span class="colon">:</span></dt>
+<dd class="field-even"><p>comparison_type</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>FieldVector</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If this table was initialized with
+“inverse_optimsation_on” set to False and
+“ct” is not “IS_EQUAL”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>average_query(self: pyhelayers.Table, average_field: str) -&gt; Tuple[pyhelayers.Field, int]</p>
+<blockquote>
+<div><p>Average of “average_field” elements.
+Use post_process_average_query() to extract the required average
+from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param average_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to compute average
+for.</p>
+</dd>
+<dt class="field-even">type average_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (Field, int)</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.count_query">
+<span class="sig-name descname"><span class="pre">count_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_to_compare</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compare_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ct</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ComparisonType.html#pyhelayers.ComparisonType" title="pyhelayers.ComparisonType"><span class="pre">pyhelayers.ComparisonType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></span><a class="headerlink" href="#pyhelayers.Table.count_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of elements of “field_to_compare” satisfying the given
+comparison condition. Use postProcessCountQuery() to extract the
+count result from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_to_compare</strong> (<em>string</em>) – The name of the field to apply the
+comparison condition on.</p></li>
+<li><p><strong>compare_value</strong> (<a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><em>Field</em></a>) – The value to compare with.</p></li>
+<li><p><strong>ct</strong> (<em>comparison_type</em>) – The comparison type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field">Field</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – If this table was initialized with
+“inverse_optimsation_on” set to False and
+“ct” is not “IS_EQUAL”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.create_compare_value">
+<span class="sig-name descname"><span class="pre">create_compare_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.create_compare_value" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>create_compare_value(self: pyhelayers.Table, value_to_seek: int, column_name: str, is_signed: bool = False) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Creates a hybrid bitwise value to be used in comparison queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param value_to_seek<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The compare value to use in the comparison.</p>
+</dd>
+<dt class="field-even">type value_to_seek<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param column_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the column which is intended to
+be compared with the given value.</p>
+</dd>
+<dt class="field-even">type column_name<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param is_signed<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Whether the comparison value is signed.
+Defaults to False.</p>
+</dd>
+<dt class="field-even">type is_signed<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>create_compare_value(self: pyhelayers.Table, value_to_seek: int, bit_len: int, is_signed: bool = False) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Creates a hybrid bitwise value to be used in comparison queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param value_to_seek<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The compare value to use in the comparison.</p>
+</dd>
+<dt class="field-even">type value_to_seek<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param bit_len<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of bits that should be used to
+represent the comparison value.</p>
+</dd>
+<dt class="field-even">type bit_len<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param is_signed<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Whether the comparison value is signed.
+Defaults to False.</p>
+</dd>
+<dt class="field-even">type is_signed<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.create_indicators_for_col">
+<span class="sig-name descname"><span class="pre">create_indicators_for_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_to_compare</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ct</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ComparisonType.html#pyhelayers.ComparisonType" title="pyhelayers.ComparisonType"><span class="pre">pyhelayers.ComparisonType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mult_by_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">std::vector&lt;std::shared_ptr&lt;helayers::Field&gt;,</span> <span class="pre">std::allocator&lt;std::shared_ptr&lt;helayers::Field&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></span><a class="headerlink" href="#pyhelayers.Table.create_indicators_for_col" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies the given comparison condition on the entries of the
+specified column, and returns a vector of indicators representing
+the comparison results. The ith Field in the returned vector
+contains the indicators corresponding to the ith Field in the
+specified column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> (<em>string</em>) – The name of the column to create indicators
+for.</p></li>
+<li><p><strong>val_to_compare</strong> (<a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><em>Field</em></a>) – The value to compare the column Fields with.</p></li>
+<li><p><strong>ct</strong> (<em>FieldType</em>) – comparison type.</p></li>
+<li><p><strong>mult_by_mask</strong> (<em>bool</em>) – If true, the resulting indicators will be
+multiplied by the stored mask. Defautls to
+False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FieldVector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.get_cell_content">
+<span class="sig-name descname"><span class="pre">get_cell_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileVector.html#pyhelayers.CTileVector" title="pyhelayers.CTileVector"><span class="pre">pyhelayers.CTileVector</span></a></span></span><a class="headerlink" href="#pyhelayers.Table.get_cell_content" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a CTile containing the column values in the Field with the
+given index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> (<em>string</em>) – The name of the column to extract the content
+from.</p></li>
+<li><p><strong>row_num</strong> (<em>int</em>) – The index of the Field to be extracted from the
+specified column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="CTileVector.html#pyhelayers.CTileVector" title="pyhelayers.CTileVector">CTileVector</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.get_num_of_rows">
+<span class="sig-name descname"><span class="pre">get_num_of_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.Table.get_num_of_rows" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the number of entries in this database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.mult_indicators">
+<span class="sig-name descname"><span class="pre">mult_indicators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.Table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicators:</span> <span class="pre">std::vector&lt;std::shared_ptr&lt;helayers::Field&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;std::shared_ptr&lt;helayers::Field&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">std::vector&lt;std::shared_ptr&lt;helayers::Field&gt;,</span> <span class="pre">std::allocator&lt;std::shared_ptr&lt;helayers::Field&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></span><a class="headerlink" href="#pyhelayers.Table.mult_indicators" title="Permalink to this definition">#</a></dt>
+<dd><p>Multiplies the given set of indicators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> (<em>string</em>) – The name of the column the given indicators are
+created for.</p></li>
+<li><p><strong>indicators</strong> (<em>FieldVector</em>) – The indicators to multiply.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FieldVector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.post_process_average_query">
+<span class="sig-name descname"><span class="pre">post_process_average_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.post_process_average_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>post_process_average_query(self: pyhelayers.Table, query_res: pyhelayers.FieldVector) -&gt; float</p>
+<blockquote>
+<div><p>Applies post-processing on the result of an average_query and
+returns the average result. This function assumes that the
+HeContext stored in this Table object contains the secret key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param query_res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of an average_query.</p>
+</dd>
+<dt class="field-even">type query_res<span class="colon">:</span></dt>
+<dd class="field-even"><p>FieldVector</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>post_process_average_query(self: pyhelayers.Table, query_res: Tuple[pyhelayers.Field, int]) -&gt; float</p>
+<blockquote>
+<div><p>Applies post-processing on the result of an average_query and
+returns the average result. This function assumes that the
+HeContext stored in this Table object contains the secret key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param query_res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of an average_query.</p>
+</dd>
+<dt class="field-even">type query_res<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple of (Field, int)</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>post_process_average_query(self: pyhelayers.Table, query_res: Tuple[pyhelayers.FieldVector, int]) -&gt; float</p>
+<blockquote>
+<div><p>Applies post-processing on the result of a standard_deviation_query
+and returns the standard deviation result. This function assumes
+that the HeContext stored in this Table object contains the secret
+key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param query_res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of a standard_deviation_query.</p>
+</dd>
+<dt class="field-even">type query_res<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple of (FieldVector, int)</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.post_process_count_query">
+<span class="sig-name descname"><span class="pre">post_process_count_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.Table.post_process_count_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies post-processing on the result of a count_query and returns
+the counting result. This function assumes that the HeContext
+stored in this Table object contains the secret key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>query_res</strong> (<a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><em>Field</em></a>) – The result of a count_query.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.post_process_std_dev_query">
+<span class="sig-name descname"><span class="pre">post_process_std_dev_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.FieldVector</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyhelayers.Table.post_process_std_dev_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies post-processing on the result of a standard_deviation_query
+and returns the standard deviation result. This function assumes
+that the HeContext stored in this Table object contains the secret
+key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>query_res</strong> (<em>FieldVector</em>) – The result of a standard_deviation_query.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.post_process_sum_query">
+<span class="sig-name descname"><span class="pre">post_process_sum_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyhelayers.Table.post_process_sum_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies post-processing on the result of a sum_query and returns
+the sum value. This function assumes that the HeContext stored in
+this Table object contains the secret key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>query_res</strong> (<a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><em>Field</em></a>) – The result of a sum_query.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.post_process_sum_squares_query">
+<span class="sig-name descname"><span class="pre">post_process_sum_squares_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyhelayers.Table.post_process_sum_squares_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies post-processing on the result of a sum_squares_query and
+returns the sum squares value. This function assumes that the
+HeContext stored in this Table object contains the secret key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>query_res</strong> (<a class="reference internal" href="Field.html#pyhelayers.Field" title="pyhelayers.Field"><em>Field</em></a>) – The result of a sum_squares_query</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.set_inverse_optimization">
+<span class="sig-name descname"><span class="pre">set_inverse_optimization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Table" title="pyhelayers.Table"><span class="pre">pyhelayers.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.Table.set_inverse_optimization" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets inverseOptimisation flag to the given value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flag</strong> (<em>bool</em>) – The value to set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.standard_deviation_query">
+<span class="sig-name descname"><span class="pre">standard_deviation_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.standard_deviation_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>standard_deviation_query(self: pyhelayers.Table, std_dev_field: str, field_to_compare: str, compare_value: pyhelayers.Field, ct: pyhelayers.ComparisonType) -&gt; pyhelayers.FieldVector</p>
+<blockquote>
+<div><p>Standard deviation of “std_dev_field” elements, where
+“field_to_compare” satisfies the given comparison condition. Use
+post_process_std_dev_query() to extract the required standard
+deviation from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param std_dev_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to compute standard
+deviation for.</p>
+</dd>
+<dt class="field-even">type std_dev_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param field_to_compare<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to apply the
+comparison condition on.</p>
+</dd>
+<dt class="field-even">type field_to_compare<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param compare_value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value to compare with.</p>
+</dd>
+<dt class="field-even">type compare_value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Field</p>
+</dd>
+<dt class="field-odd">param ct<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The comparison type.</p>
+</dd>
+<dt class="field-even">type ct<span class="colon">:</span></dt>
+<dd class="field-even"><p>comparison_type</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>FieldVector</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If this table was initialized with
+“inverse_optimsation_on” set to False and
+“ct” is not “IS_EQUAL”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>standard_deviation_query(self: pyhelayers.Table, std_dev_field: str) -&gt; Tuple[pyhelayers.FieldVector, int]</p>
+<blockquote>
+<div><p>Standard deviation of “std_dev_field” elements. Use
+post_process_std_dev_query() to extract the required standard
+deviation from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param std_dev_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to compute standard
+deviation for.</p>
+</dd>
+<dt class="field-even">type std_dev_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (FieldVector, int)</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.sum_query">
+<span class="sig-name descname"><span class="pre">sum_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.sum_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>sum_query(self: pyhelayers.Table, field_to_sum: str, field_to_compare: str, compare_value: pyhelayers.Field, ct: pyhelayers.ComparisonType) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Sum of “field_to_sum” elements, where “field_to_compare” satisfies
+the given comparison condition. Use post_process_sum_query() to
+extract the sum value from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param field_to_sum<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to sum.</p>
+</dd>
+<dt class="field-even">type field_to_sum<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param field_to_compare<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to apply the
+comparison condition on.</p>
+</dd>
+<dt class="field-even">type field_to_compare<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param compare_value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value to compare with.</p>
+</dd>
+<dt class="field-even">type compare_value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Field</p>
+</dd>
+<dt class="field-odd">param ct<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The comparison type.</p>
+</dd>
+<dt class="field-even">type ct<span class="colon">:</span></dt>
+<dd class="field-even"><p>comparison_type</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If this table was initialized with
+“inverse_optimsation_on” set to False and
+“ct” is not “IS_EQUAL”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>sum_query(self: pyhelayers.Table, field_to_sum: str) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Sum “field_to_sum” elements. Use post_process_sum_query() to
+extract the sum value from the return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param field_to_sum<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the column to sum.</p>
+</dd>
+<dt class="field-even">type field_to_sum<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.Table.sum_squares_query">
+<span class="sig-name descname"><span class="pre">sum_squares_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Table.sum_squares_query" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>sum_squares_query(self: pyhelayers.Table, sum_squares_field: str, field_to_compare: str, compare_value: pyhelayers.Field, ct: pyhelayers.ComparisonType) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Sum squares of “sum_squares_field” elements, where
+“field_to_compare” satisfies the given comparison condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param sum_squares_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to compute sum
+squares for.</p>
+</dd>
+<dt class="field-even">type sum_squares_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param field_to_compare<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the field to apply the
+comparison condition on.</p>
+</dd>
+<dt class="field-even">type field_to_compare<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param compare_value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value to compare with.</p>
+</dd>
+<dt class="field-even">type compare_value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Field</p>
+</dd>
+<dt class="field-odd">param ct<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The comparison type.</p>
+</dd>
+<dt class="field-even">type ct<span class="colon">:</span></dt>
+<dd class="field-even"><p>comparison_type</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If this table was initialized with
+“inverse_optimsation_on” set to False and
+“ct” is not “IS_EQUAL”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>sum_squares_query(self: pyhelayers.Table, sum_squares_field: str) -&gt; pyhelayers.Field</p>
+<blockquote>
+<div><p>Sum of squares of “sum_squares_field” elements. Use
+post_process_sum_squares_query() to extract the sum value from the
+return value of this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param sum_squares_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the column to compute sum
+squares for.</p>
+</dd>
+<dt class="field-even">type sum_squares_field<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5TableE">
+<span id="_CPPv3N8helayers5TableE"></span><span id="_CPPv2N8helayers5TableE"></span><span id="helayers::Table"></span><span class="target" id="classhelayers_1_1Table"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Saveable</span></span><a class="headerlink" href="#_CPPv4N8helayers5TableE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A class representing an encrypted database. </p>
+<p>This <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> supports the calculation of some data analysis functions on tabular data. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table5TableERK9HeContextbb">
+<span id="_CPPv3N8helayers5Table5TableERK9HeContextbb"></span><span id="_CPPv2N8helayers5Table5TableERK9HeContextbb"></span><span id="helayers::Table::Table__HeContextCR.b.b"></span><span class="target" id="classhelayers_1_1Table_1a5105cd2a2de2878cacaf6b4991f3dc01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_he</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">oneSlotRes</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inverseOptimisationOn</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table5TableERK9HeContextbb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A constructor. </p>
+<p>constructs an empty table. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_he</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p></li>
+<li><p><strong>oneSlotRes</strong> – If true, the results of queries (such as sum and count queries) will be aggregated to a single slot of the returned <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. Otherwise, the results will be distributed among all of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>’s slots. Setting this argument to false would reduce the runtime of queries. </p></li>
+<li><p><strong>inverseOptimsationOn</strong> – Whether the inverse optimisation should be used. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table5TableERK9HeContextRNSt8ifstreamEbb">
+<span id="_CPPv3N8helayers5Table5TableERK9HeContextRNSt8ifstreamEbb"></span><span id="_CPPv2N8helayers5Table5TableERK9HeContextRNSt8ifstreamEbb"></span><span id="helayers::Table::Table__HeContextCR.std::ifstreamR.b.b"></span><span class="target" id="classhelayers_1_1Table_1a17ff19579502fd6dde2f03830cede6cf"></span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_he</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ifstream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">csvFile</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">oneSlotRes</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inverseOptimisationOn</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table5TableERK9HeContextRNSt8ifstreamEbb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A constructor from csv File. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_he</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p></li>
+<li><p><strong>csvFile</strong> – A csv containing the database. </p></li>
+<li><p><strong>oneSlotRes</strong> – If true, the results of queries (such as sum and count queries) will be aggregated to a single slot of the returned <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. Otherwise, the results will be distributed among all of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>’s slots. Setting this argument to false would reduce the runtime of queries. </p></li>
+<li><p><strong>inverseOptimisationOn</strong> – Whetehr the inverse optimisation should be used. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table17encryptAndAddlineERNSt6vectorINSt6vectorINSt6vectorIdEEEEEEi">
+<span id="_CPPv3N8helayers5Table17encryptAndAddlineERNSt6vectorINSt6vectorINSt6vectorIdEEEEEEi"></span><span id="_CPPv2N8helayers5Table17encryptAndAddlineERNSt6vectorINSt6vectorINSt6vectorIdEEEEEEi"></span><span id="helayers::Table::encryptAndAddline__std::vector:std::vector:std::vector:double:::R.i"></span><span class="target" id="classhelayers_1_1Table_1ae572c1f3d4d830823fc091b3d6046ea3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encryptAndAddline</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">batch</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rows</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table17encryptAndAddlineERNSt6vectorINSt6vectorINSt6vectorIdEEEEEEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encrypts the given batch of database entries and stores them into the <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> – The batch of entries to encrypt and add to the <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a>. The first dimension of this vector is for the different columns, the second one is for the entries of each column and the third one is for the bits of each entry. </p></li>
+<li><p><strong>row</strong> – The number of the records in the given batch. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table14stringToVectorERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N8helayers5Table14stringToVectorERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N8helayers5Table14stringToVectorERKNSt6stringERKNSt6stringE"></span><span id="helayers::Table::stringToVector__ssCR.ssCR"></span><span class="target" id="classhelayers_1_1Table_1a258f51988ce96deceed5dce4633db047"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stringToVector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldStr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table14stringToVectorERKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Parses the given fieldStr into a vector of values corresponding to the field with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldName</strong> – The name of the field to be parsed. </p></li>
+<li><p><strong>fieldStr</strong> – The string value to be parsed. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given string contain an unsupported filed type. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table14addEmptyColumnERKNSt6stringE9FieldType">
+<span id="_CPPv3N8helayers5Table14addEmptyColumnERKNSt6stringE9FieldType"></span><span id="_CPPv2N8helayers5Table14addEmptyColumnERKNSt6stringE9FieldType"></span><span id="helayers::Table::addEmptyColumn__ssCR.FieldType"></span><span class="target" id="classhelayers_1_1Table_1a6b5b234d4b7ebaa5be492714aa1a1941"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEmptyColumn</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="n"><span class="pre">FieldType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table14addEmptyColumnERKNSt6stringE9FieldType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds an empty numirical column with the given parameters to the table. </p>
+<p>This method is only relevant when the table is empty. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the empty column to be added. </p></li>
+<li><p><strong>FieldType</strong> – The type of the data represented by the column to be added. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table21addEmptyBitwiseColumnERKNSt6stringE9FieldTypei">
+<span id="_CPPv3N8helayers5Table21addEmptyBitwiseColumnERKNSt6stringE9FieldTypei"></span><span id="_CPPv2N8helayers5Table21addEmptyBitwiseColumnERKNSt6stringE9FieldTypei"></span><span id="helayers::Table::addEmptyBitwiseColumn__ssCR.FieldType.i"></span><span class="target" id="classhelayers_1_1Table_1a05ae5c743ed58b30d81f1fa1b732670e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEmptyBitwiseColumn</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="n"><span class="pre">FieldType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitLen</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table21addEmptyBitwiseColumnERKNSt6stringE9FieldTypei" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds an empty hybrid bitwise colum with the given parameters to the table. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the empty column to be added. </p></li>
+<li><p><strong>FieldType</strong> – The type of the data represented by the column to be added. </p></li>
+<li><p><strong>bitLen</strong> – The number of used bits in the column to be added. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table19parseAndEncryptLineENSt6stringE">
+<span id="_CPPv3N8helayers5Table19parseAndEncryptLineENSt6stringE"></span><span id="_CPPv2N8helayers5Table19parseAndEncryptLineENSt6stringE"></span><span id="helayers::Table::parseAndEncryptLine__ss"></span><span class="target" id="classhelayers_1_1Table_1a629a22520d89dbdd0879dd1f98205ab0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parseAndEncryptLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">line</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table19parseAndEncryptLineENSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Parses the given line into an encrypted <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>line</strong> – The line to parse. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table9addColumnERKNSt6stringERNSt6vectorI5FieldEE9FieldType">
+<span id="_CPPv3N8helayers5Table9addColumnERKNSt6stringERNSt6vectorI5FieldEE9FieldType"></span><span id="_CPPv2N8helayers5Table9addColumnERKNSt6stringERNSt6vectorI5FieldEE9FieldType"></span><span id="helayers::Table::addColumn__ssCR.std::vector:Field:R.FieldType"></span><span class="target" id="classhelayers_1_1Table_1aa581e0de6b9f6ad7052286ffe71c7022"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addColumn</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colValues</span></span>, <span class="n"><span class="pre">FieldType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table9addColumnERKNSt6stringERNSt6vectorI5FieldEE9FieldType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds a column with the given parameters to the <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the empty column to add. </p></li>
+<li><p><strong>colValues</strong> – The entry values of the column to be added. Each batch of values should be represented by one <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a>. </p></li>
+<li><p><strong>FieldType</strong> – The type of the data represented by the column to be added. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table11addFieldRowERNSt6vectorI5FieldEEi">
+<span id="_CPPv3N8helayers5Table11addFieldRowERNSt6vectorI5FieldEEi"></span><span id="_CPPv2N8helayers5Table11addFieldRowERNSt6vectorI5FieldEEi"></span><span id="helayers::Table::addFieldRow__std::vector:Field:R.i"></span><span class="target" id="classhelayers_1_1Table_1a3528e8a4da7e0bd1dd5b995508fd1df3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFieldRow</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldRowToAdd</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rows</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table11addFieldRowERNSt6vectorI5FieldEEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds the given batch of database entries to the table. </p>
+<p>The batch of entries should be represented by a vector of Fields, one <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> for each column in the <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a>.</p>
+<p>fieldRowToAdd A vector of Fields representing the values of the batch of entries to be added. The i-th element in this vector should contains the values to add to the i-th column of the <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a>.</p>
+<p>row The number of used slots in the field. row=-1 if all slots are used. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table14getCellContentERKNSt6stringEi">
+<span id="_CPPv3N8helayers5Table14getCellContentERKNSt6stringEi"></span><span id="_CPPv2N8helayers5Table14getCellContentERKNSt6stringEi"></span><span id="helayers::Table::getCellContent__ssCR.i"></span><span class="target" id="classhelayers_1_1Table_1af7c6780c6cb619e5df39dfc0845b93b2"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCellContent</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rowNum</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table14getCellContentERKNSt6stringEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> containing the column values in the <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> with the given index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the column to extract the content from. </p></li>
+<li><p><strong>rowNum</strong> – The index of the <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> to be extracted from the specified column. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table22createIndicatorsForColERKNSt6stringERK5Field14ComparisonTypeb">
+<span id="_CPPv3NK8helayers5Table22createIndicatorsForColERKNSt6stringERK5Field14ComparisonTypeb"></span><span id="_CPPv2NK8helayers5Table22createIndicatorsForColERKNSt6stringERK5Field14ComparisonTypeb"></span><span id="helayers::Table::createIndicatorsForCol__ssCR.FieldCR.ComparisonType.bC"></span><span class="target" id="classhelayers_1_1Table_1a796e777bd952c14d5235357d728037ef"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createIndicatorsForCol</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">valToCompare</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">multByMask</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table22createIndicatorsForColERKNSt6stringERK5Field14ComparisonTypeb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies the given comparison condition on the entries of the specified column, and returns a vector of indicators representing the comparison results. </p>
+<p>The ith <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> in the returned vector contains the indicators corresponding to the ith <a class="reference internal" href="Field.html#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> in the specified column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the column to create indicators for. </p></li>
+<li><p><strong>valToCompare</strong> – The value to compare the column Fields with. </p></li>
+<li><p><strong>ct</strong> – The comparison type. </p></li>
+<li><p><strong>multByMask</strong> – If true, the resulting indicators will be multiplied by the stored mask. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table14multIndicatorsERKNSt6stringERKNSt6vectorINSt10shared_ptrI5FieldEEEE">
+<span id="_CPPv3NK8helayers5Table14multIndicatorsERKNSt6stringERKNSt6vectorINSt10shared_ptrI5FieldEEEE"></span><span id="_CPPv2NK8helayers5Table14multIndicatorsERKNSt6stringERKNSt6vectorINSt10shared_ptrI5FieldEEEE"></span><span id="helayers::Table::multIndicators__ssCR.std::vector:std::shared_ptr:Field::CRC"></span><span class="target" id="classhelayers_1_1Table_1abeb16a1e7fc7850c01b001718ebbce7e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multIndicators</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">indicators</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table14multIndicatorsERKNSt6stringERKNSt6vectorINSt10shared_ptrI5FieldEEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiplies the given set of indicators. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colName</strong> – The name of the column the given indicators are created for. </p></li>
+<li><p><strong>indicators</strong> – The indicators to multiply. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table8sumQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType">
+<span id="_CPPv3NK8helayers5Table8sumQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="_CPPv2NK8helayers5Table8sumQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="helayers::Table::sumQuery__ssCR.ssCR.FieldCR.ComparisonTypeC"></span><span class="target" id="classhelayers_1_1Table_1adfd1c07459dfc9c5f6e04aeed88fd787"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToSum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToCompare</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">compareValue</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table8sumQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sum of “fieldToSum” elements, where “fieldToCompare” satisfies the given comparison condition. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a257cd87cddc124a19407a8c916187c7d"><span class="std std-ref">postProcessSumQuery()</span></a> to extract the sum value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldToSum</strong> – The field to sum. </p></li>
+<li><p><strong>fieldToCompare</strong> – The field to check whether its elements satisfy the given comparison condition. </p></li>
+<li><p><strong>compareValue</strong> – The value to compare with. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table8sumQueryERKNSt6stringE">
+<span id="_CPPv3NK8helayers5Table8sumQueryERKNSt6stringE"></span><span id="_CPPv2NK8helayers5Table8sumQueryERKNSt6stringE"></span><span id="helayers::Table::sumQuery__ssCRC"></span><span class="target" id="classhelayers_1_1Table_1ac416f8a6f98fd43fe6cfe264710aa6d9"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToSum</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table8sumQueryERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sum of “fieldToSum” elements. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a257cd87cddc124a19407a8c916187c7d"><span class="std std-ref">postProcessSumQuery()</span></a> to extract the sum value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fieldToSum</strong> – The field to sum. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table19postProcessSumQueryERK5Field">
+<span id="_CPPv3NK8helayers5Table19postProcessSumQueryERK5Field"></span><span id="_CPPv2NK8helayers5Table19postProcessSumQueryERK5Field"></span><span id="helayers::Table::postProcessSumQuery__FieldCRC"></span><span class="target" id="classhelayers_1_1Table_1a257cd87cddc124a19407a8c916187c7d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessSumQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table19postProcessSumQueryERK5Field" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of a sumQuery and returns the sum value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of a sumQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table15sumSquaresQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType">
+<span id="_CPPv3NK8helayers5Table15sumSquaresQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="_CPPv2NK8helayers5Table15sumSquaresQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="helayers::Table::sumSquaresQuery__ssCR.ssCR.FieldCR.ComparisonTypeC"></span><span class="target" id="classhelayers_1_1Table_1a89a2ade90f3a76e231b8693f4f24c99d"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumSquaresQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sumSqrsField</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToCompare</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">compareValue</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table15sumSquaresQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sum of squares of “sumSqrsField” elements, where “fieldToCompare” satisfies the given comparison condition. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a341f8a9a52f015423a21f1f1564ceb4b"><span class="std std-ref">postProcessSumSquaresQuery()</span></a> to extract the sum squares value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sumSqrsField</strong> – the field to compute the sum squares on. </p></li>
+<li><p><strong>fieldToCompare</strong> – the field to check whether its elements satisfy the given comparison condition. </p></li>
+<li><p><strong>compareValue</strong> – The value to compare with. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table15sumSquaresQueryERKNSt6stringE">
+<span id="_CPPv3NK8helayers5Table15sumSquaresQueryERKNSt6stringE"></span><span id="_CPPv2NK8helayers5Table15sumSquaresQueryERKNSt6stringE"></span><span id="helayers::Table::sumSquaresQuery__ssCRC"></span><span class="target" id="classhelayers_1_1Table_1a4a11a8a43ec02adcb6e001405c785f6e"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumSquaresQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sumSqrField</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table15sumSquaresQueryERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sum of squares of “sumSqrsField” elements. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a341f8a9a52f015423a21f1f1564ceb4b"><span class="std std-ref">postProcessSumSquaresQuery()</span></a> to extract the sum squares value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sumSqrsField</strong> – The field to compute the sum squares on. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table26postProcessSumSquaresQueryERK5Field">
+<span id="_CPPv3NK8helayers5Table26postProcessSumSquaresQueryERK5Field"></span><span id="_CPPv2NK8helayers5Table26postProcessSumSquaresQueryERK5Field"></span><span id="helayers::Table::postProcessSumSquaresQuery__FieldCRC"></span><span class="target" id="classhelayers_1_1Table_1a341f8a9a52f015423a21f1f1564ceb4b"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessSumSquaresQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table26postProcessSumSquaresQueryERK5Field" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of a sumSquaresQuery and returns the sum squares value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of a sumSqueresQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table10countQueryERKNSt6stringERK5Field14ComparisonType">
+<span id="_CPPv3NK8helayers5Table10countQueryERKNSt6stringERK5Field14ComparisonType"></span><span id="_CPPv2NK8helayers5Table10countQueryERKNSt6stringERK5Field14ComparisonType"></span><span id="helayers::Table::countQuery__ssCR.FieldCR.ComparisonTypeC"></span><span class="target" id="classhelayers_1_1Table_1a559532b6903ffbcc9c717943d20b9637"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">countQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToCompare</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">compareValue</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table10countQueryERKNSt6stringERK5Field14ComparisonType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Number of elements of “fieldToCompare” satisfying the given comparison condition. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a962232ab0a7b5fa21d49291d718a34b0"><span class="std std-ref">postProcessCountQuery()</span></a> to extract the count result from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fieldToCompare</strong> – The field to count its elements that satisfy the given condition. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table21postProcessCountQueryERK5Field">
+<span id="_CPPv3NK8helayers5Table21postProcessCountQueryERK5Field"></span><span id="_CPPv2NK8helayers5Table21postProcessCountQueryERK5Field"></span><span id="helayers::Table::postProcessCountQuery__FieldCRC"></span><span class="target" id="classhelayers_1_1Table_1a962232ab0a7b5fa21d49291d718a34b0"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessCountQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table21postProcessCountQueryERK5Field" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of a countQuery and returns the counting result. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of a countQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table12averageQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType">
+<span id="_CPPv3NK8helayers5Table12averageQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="_CPPv2NK8helayers5Table12averageQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="helayers::Table::averageQuery__ssCR.ssCR.FieldCR.ComparisonTypeC"></span><span class="target" id="classhelayers_1_1Table_1ace1261cdf1831d501f73bb673857fd64"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">averageQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">avgField</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToCompare</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">compareValue</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table12averageQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Average “avgField” elements, where “fieldToCompare” satisfies the given comparison condition. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1aad5a7883be6230cad0fe47fce695e6c9"><span class="std std-ref">postProcessAverageQuery()</span></a> to extract the average value from the returned vector of fields. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldToCompare</strong> – The field to check whether its elements satisfy the given comparison condition. </p></li>
+<li><p><strong>compareValue</strong> – The value to compare with. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. functions) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table12averageQueryERKNSt6stringE">
+<span id="_CPPv3NK8helayers5Table12averageQueryERKNSt6stringE"></span><span id="_CPPv2NK8helayers5Table12averageQueryERKNSt6stringE"></span><span id="helayers::Table::averageQuery__ssCRC"></span><span class="target" id="classhelayers_1_1Table_1a483444cfed157c8cdb1ced18087867db"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">averageQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">avgField</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table12averageQueryERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Average “avgField” elements. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1aad5a7883be6230cad0fe47fce695e6c9"><span class="std std-ref">postProcessAverageQuery()</span></a> to extract the rquired average value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>avgField</strong> – The field to compute average on. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table23postProcessAverageQueryERKNSt6vectorI5FieldEE">
+<span id="_CPPv3NK8helayers5Table23postProcessAverageQueryERKNSt6vectorI5FieldEE"></span><span id="_CPPv2NK8helayers5Table23postProcessAverageQueryERKNSt6vectorI5FieldEE"></span><span id="helayers::Table::postProcessAverageQuery__std::vector:Field:CRC"></span><span class="target" id="classhelayers_1_1Table_1aad5a7883be6230cad0fe47fce695e6c9"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessAverageQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table23postProcessAverageQueryERKNSt6vectorI5FieldEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of an averageQuery and returns the average value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of an averageQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table23postProcessAverageQueryERKNSt4pairI5FieldiEE">
+<span id="_CPPv3NK8helayers5Table23postProcessAverageQueryERKNSt4pairI5FieldiEE"></span><span id="_CPPv2NK8helayers5Table23postProcessAverageQueryERKNSt4pairI5FieldiEE"></span><span id="helayers::Table::postProcessAverageQuery__std::pair:Field.i:CRC"></span><span class="target" id="classhelayers_1_1Table_1ad6dc5a1f82f9fbd3ec0759f98417651d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessAverageQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table23postProcessAverageQueryERKNSt4pairI5FieldiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of an averageQuery and returns the average value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of an averageQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table22standardDeviationQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType">
+<span id="_CPPv3NK8helayers5Table22standardDeviationQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="_CPPv2NK8helayers5Table22standardDeviationQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType"></span><span id="helayers::Table::standardDeviationQuery__ssCR.ssCR.FieldCR.ComparisonTypeC"></span><span class="target" id="classhelayers_1_1Table_1a3406efaf7ce682c69a2efc01c5bbc62f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">standardDeviationQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stdDevField</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldToCompare</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">compareValue</span></span>, <a class="reference internal" href="ComparisonType.html#_CPPv4N8helayers14ComparisonTypeE" title="helayers::ComparisonType"><span class="n"><span class="pre">ComparisonType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ct</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table22standardDeviationQueryERKNSt6stringERKNSt6stringERK5Field14ComparisonType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Standrad deviation of “stdDevField” elements, where “fieldToCompare” satisfies the given comparison condition. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a829826ae2d828f921fc4b3f3901385c3"><span class="std std-ref">postProcessStdDevQuery()</span></a> to extract the required standard deviation value from the returned vector of Fields. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>avgField</strong> – the field to compute average on. </p></li>
+<li><p><strong>fieldToCompare</strong> – The field to check whether its elements satisfy the given comparison condition. </p></li>
+<li><p><strong>compareValue</strong> – The value to compare with. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table22standardDeviationQueryERKNSt6stringE">
+<span id="_CPPv3NK8helayers5Table22standardDeviationQueryERKNSt6stringE"></span><span id="_CPPv2NK8helayers5Table22standardDeviationQueryERKNSt6stringE"></span><span id="helayers::Table::standardDeviationQuery__ssCRC"></span><span class="target" id="classhelayers_1_1Table_1a434a9833505ac80edab86fc270d636ab"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">standardDeviationQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stdDevField</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table22standardDeviationQueryERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Standrad deviation of “stdDevField” elements. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1Table_1a829826ae2d828f921fc4b3f3901385c3"><span class="std std-ref">postProcessStdDevQuery()</span></a> to extract the standard deviation value from the return value of this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>avgField</strong> – The field to compute average on. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If “ct” is of type “IS_GREATER” and “inverseOptimisation” is set to false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table22postProcessStdDevQueryERKNSt6vectorI5FieldEE">
+<span id="_CPPv3NK8helayers5Table22postProcessStdDevQueryERKNSt6vectorI5FieldEE"></span><span id="_CPPv2NK8helayers5Table22postProcessStdDevQueryERKNSt6vectorI5FieldEE"></span><span id="helayers::Table::postProcessStdDevQuery__std::vector:Field:CRC"></span><span class="target" id="classhelayers_1_1Table_1a829826ae2d828f921fc4b3f3901385c3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessStdDevQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table22postProcessStdDevQueryERKNSt6vectorI5FieldEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of a standardDeviationQuery and returns the standard deviation value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of a standardDeviationQuery </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table22postProcessStdDevQueryERKNSt4pairINSt6vectorI5FieldEEiEE">
+<span id="_CPPv3NK8helayers5Table22postProcessStdDevQueryERKNSt4pairINSt6vectorI5FieldEEiEE"></span><span id="_CPPv2NK8helayers5Table22postProcessStdDevQueryERKNSt4pairINSt6vectorI5FieldEEiEE"></span><span id="helayers::Table::postProcessStdDevQuery__std::pair:std::vector:Field:.i:CRC"></span><span class="target" id="classhelayers_1_1Table_1ac8462c5de2e0009e4ed1d8191510baff"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">postProcessStdDevQuery</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">queryRes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table22postProcessStdDevQueryERKNSt4pairINSt6vectorI5FieldEEiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies post-processing on the result of a standardDeviationQuery and returns the standard deviation value. </p>
+<p>This function assumes that the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> stored in this <a class="reference internal" href="#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> object contains the secret key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>queryRes</strong> – The result of a standardDeviationQuery. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table24buildColumnNamesAndTypesENSt6vectorINSt6stringEEE">
+<span id="_CPPv3N8helayers5Table24buildColumnNamesAndTypesENSt6vectorINSt6stringEEE"></span><span id="_CPPv2N8helayers5Table24buildColumnNamesAndTypesENSt6vectorINSt6stringEEE"></span><span id="helayers::Table::buildColumnNamesAndTypes__std::vector:ss:"></span><span class="target" id="classhelayers_1_1Table_1a4951eed7b1111b89b85d70199444570c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildColumnNamesAndTypes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">columnDescription</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table24buildColumnNamesAndTypesENSt6vectorINSt6stringEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Parses the given column description string, and creates empty columns accordingly. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>columnDescritopn</strong> – The column description string to parse. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given strings have unsupported format. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table18createCompareValueEiRKNSt6stringEb">
+<span id="_CPPv3NK8helayers5Table18createCompareValueEiRKNSt6stringEb"></span><span id="_CPPv2NK8helayers5Table18createCompareValueEiRKNSt6stringEb"></span><span id="helayers::Table::createCompareValue__i.ssCR.bC"></span><span class="target" id="classhelayers_1_1Table_1a9bfe72e9dfa727e58b9d932bbe6c18f0"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createCompareValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">valueToSeek</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">columnName</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">isSigned</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table18createCompareValueEiRKNSt6stringEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Creates a hybrid bitwise value to be used in comparison queries. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valueToSeek</strong> – The compare value to use in the comparison. </p></li>
+<li><p><strong>columnName</strong> – The name of the column which is intended to be compared with this value. </p></li>
+<li><p><strong>isSigned</strong> – Whether the comparison value is signed. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table18createCompareValueEiib">
+<span id="_CPPv3NK8helayers5Table18createCompareValueEiib"></span><span id="_CPPv2NK8helayers5Table18createCompareValueEiib"></span><span id="helayers::Table::createCompareValue__i.i.bC"></span><span class="target" id="classhelayers_1_1Table_1a382095e7e114ec899f805a3ab399aa55"></span><a class="reference internal" href="Field.html#_CPPv4N8helayers5FieldE" title="helayers::Field"><span class="n"><span class="pre">Field</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createCompareValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">valueToSeek</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitLen</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">isSigned</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table18createCompareValueEiib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Creates a hybrid bitwise value to be used in comparison queries. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valueToSeek</strong> – The compare value to use in the comparison. </p></li>
+<li><p><strong>bitLen</strong> – The number of bits that should be used to represent the comparison value. </p></li>
+<li><p><strong>isSigned</strong> – Whether the comparison value is signed. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table22setInverseOptimizationEb">
+<span id="_CPPv3N8helayers5Table22setInverseOptimizationEb"></span><span id="_CPPv2N8helayers5Table22setInverseOptimizationEb"></span><span id="helayers::Table::setInverseOptimization__b"></span><span class="target" id="classhelayers_1_1Table_1a964432348f71babb213d141982ee9295"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInverseOptimization</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">flag</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table22setInverseOptimizationEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets inverseOptimisation flag to the given value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flag</strong> – The value to set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table12getNumOfRowsEv">
+<span id="_CPPv3NK8helayers5Table12getNumOfRowsEv"></span><span id="_CPPv2NK8helayers5Table12getNumOfRowsEv"></span><span id="helayers::Table::getNumOfRowsC"></span><span class="target" id="classhelayers_1_1Table_1adc0866735b9ffbd63dd7ed54258b234e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumOfRows</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table12getNumOfRowsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of entries in this database. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5Table12getContextIdEv">
+<span id="_CPPv3NK8helayers5Table12getContextIdEv"></span><span id="_CPPv2NK8helayers5Table12getContextIdEv"></span><span id="helayers::Table::getContextIdC"></span><span class="target" id="classhelayers_1_1Table_1a6d0ea62ff8b90879f617ad15a2eee0fd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getContextId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5Table12getContextIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the contextId of the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> this object was initialized with. </p>
+<p>This contextId can be used, for example, to verify heContext match when loading a saved Saveable object. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table12breakCSVLineERKNSt6stringE">
+<span id="_CPPv3N8helayers5Table12breakCSVLineERKNSt6stringE"></span><span id="_CPPv2N8helayers5Table12breakCSVLineERKNSt6stringE"></span><span id="helayers::Table::breakCSVLine__ssCR"></span><span class="target" id="classhelayers_1_1Table_1a32a03ee2372566a12803e2236a9b8dcf"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">breakCSVLine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">line</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table12breakCSVLineERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Breaks the given line into different tokens. </p>
+<p>The different tokens are assumed to be separated with a comma. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>line</strong> – To break into different tokens. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table5isIntERKNSt6stringE">
+<span id="_CPPv3N8helayers5Table5isIntERKNSt6stringE"></span><span id="_CPPv2N8helayers5Table5isIntERKNSt6stringE"></span><span id="helayers::Table::isInt__ssCR"></span><span class="target" id="classhelayers_1_1Table_1aac540538234419de4af211126352ddb0"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table5isIntERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if the given string represents an integer and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – To check whether it represents an integer. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5Table19createBitwiseVectorEii">
+<span id="_CPPv3N8helayers5Table19createBitwiseVectorEii"></span><span id="_CPPv2N8helayers5Table19createBitwiseVectorEii"></span><span id="helayers::Table::createBitwiseVector__i.i"></span><span class="target" id="classhelayers_1_1Table_1af37151fbb9ec59e5a17d1163202f9da5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createBitwiseVector</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitLen</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5Table19createBitwiseVectorEii" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a bitwise representation of the given value, using “bitLen” bits. </p>
+<p>The first element of the returned vector represents the LSB. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – To return a bitwise representation for. </p></li>
+<li><p><strong>bitLen</strong> – The number of bits to use in the bitwise representation. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Field.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Field</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="QueryDatabase.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">QueryDatabase</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.average_query"><code class="docutils literal notranslate"><span class="pre">Table.average_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.count_query"><code class="docutils literal notranslate"><span class="pre">Table.count_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.create_compare_value"><code class="docutils literal notranslate"><span class="pre">Table.create_compare_value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.create_indicators_for_col"><code class="docutils literal notranslate"><span class="pre">Table.create_indicators_for_col()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.get_cell_content"><code class="docutils literal notranslate"><span class="pre">Table.get_cell_content()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.get_num_of_rows"><code class="docutils literal notranslate"><span class="pre">Table.get_num_of_rows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.mult_indicators"><code class="docutils literal notranslate"><span class="pre">Table.mult_indicators()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.post_process_average_query"><code class="docutils literal notranslate"><span class="pre">Table.post_process_average_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.post_process_count_query"><code class="docutils literal notranslate"><span class="pre">Table.post_process_count_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.post_process_std_dev_query"><code class="docutils literal notranslate"><span class="pre">Table.post_process_std_dev_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.post_process_sum_query"><code class="docutils literal notranslate"><span class="pre">Table.post_process_sum_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.post_process_sum_squares_query"><code class="docutils literal notranslate"><span class="pre">Table.post_process_sum_squares_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.set_inverse_optimization"><code class="docutils literal notranslate"><span class="pre">Table.set_inverse_optimization()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.standard_deviation_query"><code class="docutils literal notranslate"><span class="pre">Table.standard_deviation_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.sum_query"><code class="docutils literal notranslate"><span class="pre">Table.sum_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.Table.sum_squares_query"><code class="docutils literal notranslate"><span class="pre">Table.sum_squares_query()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
