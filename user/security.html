@@ -1,0 +1,612 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Security aspects &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user/security';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Designing an FHE solution" href="solution.html" />
+    <link rel="prev" title="FHE overview" href="fhe_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Security aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution.html">Designing an FHE solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">KMS implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="fhe_overview.html" class="nav-link">FHE overview</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Security aspects</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="security-aspects">
+<h1>Security aspects<a class="headerlink" href="#security-aspects" title="Permalink to this heading">#</a></h1>
+<p>Commercial application developers should carefully assess the threat model and security assumptions
+associated with their applications when incorporating HElayers.
+While it is impossible to cover all possible scenarios on a single page,
+we will provide some non-interactive protocol examples that utilize HE.
+These protocols allow the full potential of FHE to be harnessed by offloading computations to the server,
+with interactions limited to sending queries (input) and receiving encrypted answers (output).</p>
+<div class="helayers-admonition-info dropdown admonition">
+<p class="admonition-title">Adversaries types</p>
+<p>It is common to define three adversary types.</p>
+<ul class="simple">
+<li><p><strong>Semi-honest or honest-but-curious adversaries</strong>. These adversaries follow the protocol (code/algorithm)
+specification without deviating from it. They are allowed to record the data during the protocol execution
+and try to recover information from it later on in an offline stage.</p></li>
+<li><p><strong>Malicious adversaries</strong>. These are the most powerful adversaries.
+They can deviate from the protocol and try to affect the final or intermediate results
+by injecting false data or performing some data manipulation. In addition, they are allowed
+to collect the data and perform offline attacks similar to semi-honest attackers.</p></li>
+<li><p><strong>Covert adversaries</strong>. These adversaries have similar capabilities to malicious adversaries.
+However, they get penalties if the user catches them cheating. A threat model that considers
+covert adversaries should take into consideration the costs to mount an attack and compare
+them to the expected penalty that the adversary gets.</p></li>
+</ul>
+<p>Modern state-of-the-art FHE applications consider only passive adversaries, i.e., semi-honest or honest-but-curious adversaries.
+One reason is that the <a class="reference external" href="https://en.wikipedia.org/wiki/Malleability_(cryptography)">malleability</a> properties of FHE
+allow a malicious or covert adversary who deviates from a given protocol to manipulate
+the protocol output such that the decrypted results will be wrong.
+To take into account also the integrity of the computations, application developers
+should use additional cryptographic machinery. For example, Trusted Execution Environemnts (TEEs)
+such as <a class="reference external" href="https://www.ibm.com/cloud/hyper-protect-virtual-servers">IBM Hyper Protect Virtual Server (HPVS)</a>
+or <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html">Intel SGX</a>
+as suggested <a class="reference external" href="https://doi.org/10.22667/JOWUA.2018.03.31.086">here</a>. These mechanisms are outside the scope of this page.</p>
+</div>
+<div class="helayers-admonition-info admonition">
+<p class="admonition-title">Side-channel protection</p>
+<p>The final threat model should take into account attacks against the implementations of the suggested solutions.
+Specifically, it should consider side-channel attacks that attempt to extract secret information before encryption
+or the secret keys themselves. See for example <a class="reference external" href="https://doi.org/10.1007/978-3-031-07689-3_8">here</a>.</p>
+</div>
+<p>The figure above presents five possible scenarios together with their threat model assumptions.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">2P</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">3P (data owner)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">3P (model owner)</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">3P (shared)</button><button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">+3P</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><img alt="Threat models 2P" src="../_images/2p.png" />
+<p>This scenario involves two parties (2P) a user and a cloud server. This is the simplest scenario, where the user holds the secret key and is allowed to encrypt and decrypt data, while the cloud only has access to the public and the evaluation keys, which means that it cannot decrypt and observe the underlying data. In this scenario, the confidentiality of the user’s data is maintained by the <a class="reference external" href="https://en.wikipedia.org/wiki/Semantic_security">semantic security</a> provided by the underlying FHE scheme.</p>
+<p>This scenario applies, for example, when the user aims to maintain a secure database where the records are encrypted using FHE while still being able to query it. Another case is when a user aims to perform some analytics on the cloud by first training a model that may or may not be encrypted, storing the model encrypted on the cloud, and subsequently querying the model on some private input sample.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><img alt="Threat models 3P1" src="../_images/3p1.png" />
+<p>This scenario involves a three-party (3P) configurations with two different entities and one cloud server.</p>
+<p>A typical example is when performing a machine learning inference operation. The right entity is always called the <strong>data owner</strong>, who owns a secret trained model. The data owner would like to offer the model as a service to its <strong>users</strong> without revealing it to the cloud or the users. For this to happen, it needs to encrypt the model and upload it encrypted to the cloud. Subsequently, the users can send their private input samples to the cloud, which evaluates the model homomorphically on the data and outputs the encrypted results.</p>
+<p>Here, the end users own the secret key, the cloud should get access to the public and evaluation keys needed to perform the required computations. The model owner should get access and use the public key to encrypt its model. To ensure that the cloud does not ask the users to decrypt the model, we <strong>have to assume that the cloud and the users are not colluding</strong>.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Allows the users to upload a query and decrypt the results by themselves in real-time.</p></li>
+<li><p>Reduces the model-owner overhead by allowing the model-owner to fully utilize the compute powers of the cloud and stay offline during the entire inference process.</p></li>
+<li><p>The secret keys are often smaller than the other keys, which can reduce bandwidth.</p></li>
+</ul>
+<p>Disadvantage:</p>
+<ul class="simple">
+<li><p>Every user gets access to the secret key. This can increase the attack surface when the key is handled locally on the different users’ devices. Even one breach can invalidate the security of the entire system.</p></li>
+</ul>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><img alt="Threat models 3P2" src="../_images/3p2.png" />
+<p>This scenario involves a three-party (3P) configurations with two different entities and one cloud server.</p>
+<p>A typical example is when performing a machine learning inference operation. The right entity is called the <strong>data owner</strong>, who owns a secret trained model. The data owner would like to offer the model as a service to its <strong>users</strong> without revealing it to the cloud or the users. For this to happen, it needs to encrypt the model and upload it encrypted to the cloud. Subsequently, the users can send their private input samples to the cloud, which evaluates the model homomorphically on the data and outputs the encrypted results.</p>
+<p>Here, the data owner is the secret key owner, and the users only use the public key to encrypt their samples. Here too, <strong>we need a non-collusion assumption to protect the users’ data; but this time it’s between the cloud and the data owner</strong>.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Reduced attack surface, only the model-owner gets access to the secret key.</p></li>
+</ul>
+<p>Disadvantage:</p>
+<ul class="simple">
+<li><p>The users must go through the model owner to decrypt the inference results. This scenario is practical, for example, in voting systems, where there are many users; each one encrypts its own vote and the cloud server aggregates the results. The model (poll) owner is involved only in the final decryption and presentation of the results.</p></li>
+</ul>
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><img alt="Threat models 3Pm" src="../_images/3pm.png" />
+<p>Scenario 4 can be seen as an extension of Scenario 1 to the three-party case. Here, both the model owner and the users have access to the private key. This scenario can happen, for example, when the two entities belong to the same company and hold the same permissions to use and see some private data.</p>
+</div><div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0"><p>This scenario considers an FHE extension to the multi-user case called MK-FHE see <a class="reference external" href="https://doi.org/10.1145/3477139">survey</a>. Every entity has a different secret key, and the cloud’s encrypted evaluation considers ciphertexts encrypted under different keys. It  uses the two public keys and two evaluation keys that are associated with the different secret keys.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Every party can decrypt the results.</p></li>
+<li><p>Every party holds its own secret key.</p></li>
+</ul>
+<p>Disadvantage:</p>
+<ul class="simple">
+<li><p>This solution involves much slower computations and higher bandwidth consumption.</p></li>
+</ul>
+</div></div>
+<div class="helayers-admonition-info dropdown admonition">
+<p class="admonition-title">More than 3 parties</p>
+<p>While the figures above refer to 2-3 parties, in practice there can be many users
+with different roles and access rights to the same set of keys.
+A solution designer should take all of them into account.
+While the choice of a threat model is critical, it often depends not only on the security
+guarantees it provides but also on the engineering capabilities it can support;
+these, in turn, depend on the latency and bandwidth of managing the keys.</p>
+</div>
+<section id="security-faq">
+<h2>Security FAQ<a class="headerlink" href="#security-faq" title="Permalink to this heading">#</a></h2>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What security guarantees does HElayers provide for my unencrypted confidential data?</p>
+<p>HElayers relies on 3rd party libraries to provide FHE capabilities,
+as such it depends on the security guarantees that these libraries provide.
+Commercial applications that use HElayers with a backend of choice,
+must ensure they review and understand the security guarantees that this backend provides.
+With that said, the code of HElayers that deals with data to be encrypted (<a class="reference internal" href="../reference/gen_pages/PTile.html"><span class="doc">PTile</span></a>, <a class="reference internal" href="../reference/gen_pages/PTileTensor.html"><span class="doc">PTileTensor</span></a>, or the keys contexts) is handled in a constant-time manner, i.e., it does not leak timing info that depends on the data.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What security guarantees does HElayers provide for my encrypted data?</p>
+<p>By the properties of the FHE of choice, once the data is encrypted, it can be decrypted only by the secret key holder. When an application does not provide HElayers with the secret key, HElayers, the systems it is integrated with, and the environment in which it runs cannot learn anything about the data.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does HElayers code is side-channel secure?</p>
+<p>The code of HElayers that deals with data to be encrypted (<a class="reference internal" href="../reference/gen_pages/PTile.html"><span class="doc">PTile</span></a>, <a class="reference internal" href="../reference/gen_pages/PTileTensor.html"><span class="doc">PTileTensor</span></a>, or the keys contexts) is handled in a constant-time manner, i.e., it does not leak timing info that depends on the data. helayers-admonition-info that once the data is encrypted, no leakage (timing, power, etc.) is possible because HElayers only gets to see encrypted data, and cannot perform any data-dependent operation that may leak information.</p>
+<p>Similar to most of the HElayer’s underlying backends, power, electromagnetic, and fault attacks fall outside the scope of the HElayers security model. Commercial applications that run in environments where these attacks are possible should use relevant protection mechanisms.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does HElayers provide a quantum safe solution?</p>
+<p>Yes, HElayers only use FHE schemes that rely on quantum-safe lattice-based cryptography.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does HElayers is compliance with FIPS 140?</p>
+<p>No, FHE is a new technology in terms of cryptography and the National Institute of Standards and Technology (NIST) has not yet generated a standard for FHE. To be FIPS 140 compliant, a product must use only encryption that was standardized by NIST. Today, there are efforts to <a class="reference external" href="https://www.iso.org/standard/83139.html">standardize FHE in ISO</a>, which we hope evolve also to NIST standardization of FHE in the future.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Can I store the FHE secret key on disk?</p>
+<p>No, like with all public-private key cryptography systems, it is important to keep the secret key protected. Interactions with your secret key should only be done from a trusted environment and should not be revealed to anyone except the data owner.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Are there specifiic security recommendations when using CKKS?</p>
+<p>Yes, please follow the <a class="reference external" href="https://www.iso.org/standard/83139.html">ISO (draft) standard</a> recommendations. In general, it is important to keep the decryptions of CKKS ciphertexts as private information only available to the secret key owner. This is due to the potential of leaking the secret key attack of <a class="reference external" href="https://eprint.iacr.org/2020/1533">Li and Micciancio</a>. When an application needs to share this information, e.g., as part of some protocol, the number of bits shared should be kept to a minimum, and secret keys should be rotated regularly.  helayers-admonition-info that some backends use special techniques to mitigate the above issue. It is recommended, that commercial applications that use CKKS be carefully reviewed by cryptography experts who are familiar with FHE security models and the underlying backend.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does FHE require special key handling?</p>
+<p>Yes, FHE involves keys that serve different purposes compared to other symmetric and asymmetric cryptographic schemes such as bootstrapping and evaluation keys. Today, there is not yet a standard that defines how to handle these keys. For convenience, we provide one way of handling them <a class="reference external" href="keys.rst">here</a>. However, commercial applications should assist security and cryptography experts before using any of the examples described therein.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fhe_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">FHE overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="solution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Designing an FHE solution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-faq">Security FAQ</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

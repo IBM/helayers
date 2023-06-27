@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ONNX Support &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FHE overview" href="fhe_overview.html" />
+    <link rel="prev" title="HElayers Overview" href="overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ONNX Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution.html">Designing an FHE solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">KMS implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="overview.html" class="nav-link">HElayers Overview</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ONNX Support</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="onnx-support">
+<h1>ONNX Support<a class="headerlink" href="#onnx-support" title="Permalink to this heading">#</a></h1>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md11">
+<h2>ONNX supported operators<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md11" title="Permalink to this heading">#</a></h2>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md11">Currently, HElayers partially support ONNX files. It is recommended to review the supported operations below before loading an ONNX file into HElayers. When an unsupported operator is loaded to HElayers, it will try to automatically identify it and alert the user about it.</p>
+<p>The supported ONNX operators are:<ul class="simple">
+<li><p>AveragePool</p></li>
+<li><p>BatchNormalization</p></li>
+<li><p>Cast</p></li>
+<li><p>Concat</p></li>
+<li><p>Conv</p></li>
+<li><p>Flatten</p></li>
+<li><p>Gemm</p></li>
+<li><p>Identity</p></li>
+<li><p>MatMul</p></li>
+<li><p>ReduceSum</p></li>
+<li><p>ReduceMean</p></li>
+<li><p>Squeeze</p></li>
+<li><p>Transpose</p></li>
+<li><p>Unsqueeze</p></li>
+</ul>
+</p>
+<p>In addition, the following operators are interpreted by HElayers as polynomial activation layers:<ul class="simple">
+<li><p>Constant</p></li>
+<li><p>Div</p></li>
+<li><p>Pow</p></li>
+<li><p>Sub</p></li>
+<li><p>The “Add” and “Mul” operators are also supported and may be used either as a separate layer that performs element-wise addition or multiplication on the outputs of two previous layers together, or as part of an activation layer.</p></li>
+</ul>
+</p>
+<p>HElayers support non-sequential graphs of operators: operator’s output can be the input of multiple operators, and the outputs of two operators can be added, multiplied or concatenated to one another as long as the tensor shapes are compatible. The operators must form a DAG, where all paths start and end in the same nodes. For example, an NN must have a single input, which can then be fed into multiple layers.</p>
+<p>Note: dimension 0 is assumed to be the batch dimension. This dimension must not be changed, manipulated or involved in operations in any way.</p>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md12">
+<h3>Add<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md12" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md12"><ul class="simple">
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md13">
+<h3>AveragePool<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md13" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md13"><ul class="simple">
+<li><p>Must have one input: the input data.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”kernel_shape” - required, must contain two integers</p></li>
+<li><p>”strides” - required, must contain two integers</p></li>
+<li><p>”pads” - required, must contain 4 integers. Alternatively, pads will be taken from a previous “Pad” operator, if such operator appears before this layer.</p></li>
+</ul>
+</p></li>
+<li><p>NOTICE: when an average pooling layer includes padding, its evaluation by Helayers will include the pads when averaging, regardless of any setting or behaviour of an external library.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md14">
+<h3>BatchNormalization<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md14" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md14"><ul class="simple">
+<li><p>Must have five inputs: the input data, the scales, the biases, the means and the variances.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”epsilon” - required, the value to use for the normalization, to avoid deviding by zero.</p></li>
+</ul>
+</p></li>
+<li><p>The batch normalization is assumed to be over dimension #1.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md15">
+<h3>Cast<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md15" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md15"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>Has no effect.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md16">
+<h3>Concat<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md16" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md16"><ul class="simple">
+<li><p>Must have two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axis” - required, the axis to concatenate along.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md17">
+<h3>Constant<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md17" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md17"><ul class="simple">
+<li><p>Must have no inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”value” - required, must contain a valid tensor with a single value.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md18">
+<h3>Conv<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md18" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md18"><ul class="simple">
+<li><p>Must have two or three inputs: the input data, filters and optional biases.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”kernel_shape” - required, must contain two integers</p></li>
+<li><p>”strides” - required, must contain two integers</p></li>
+<li><p>”pads” - required, must contain 4 integers</p></li>
+<li><p>”group” - required. Currently, must be either 1, or the number of input channels in case they also equal the number of output channels.</p></li>
+</ul>
+</p></li>
+<li><p>The number of filters will be deduced from the associated filters specified as input for the operator.</p></li>
+<li><p>Filters are assumed to be of shape [filters][channels][rows][cols]</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md19">
+<h3>Div<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md19" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md19"><ul class="simple">
+<li><p>Must have two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md20">
+<h3>Flatten<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md20" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md20"><ul class="simple">
+<li><p>Must have one input: the input data.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axis” - required, must contain 1 integer with a value of 1</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md21">
+<h3>Gemm<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md21" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md21"><ul class="simple">
+<li><p>Must have two or three inputs: the input data, weights and optional bias.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>The output size will be deduced from the associated weights specified as input for the operator.</p></li>
+<li><p>Weights are assumed to be of shape [output_size][input_size]</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md22">
+<h3>Identity<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md22" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md22"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md23">
+<h3>MatMul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md23" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md23"><ul class="simple">
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md24">
+<h3>Mul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md24" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md24"><ul class="simple">
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md25">
+<h3>Pow<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md25" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md25"><ul class="simple">
+<li><p>Must have two inputs: the input data and the exponent.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>The input associated with the exponent must contain a valid tensor with a single value, or be a “Constant” operator representing a single scalar. The exponent value must be a non-negative integer.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md26">
+<h3>Pad<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md26" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md26"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional pad values.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”pads” - required, must contain 8 integers: 0,0,T,L,0,0,B,R where T,L,B,R are the paddings from top, left, bottom and right, and can be zero or non-zero values. If provided, will be applied over the next layer which must be AveragePool. In case the operator has two inputs, the pad values will be taken from the second input and not from the “pads” attribute. In such case, the second input must contain a tensor of 8 integers that follow the above limitations.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md27">
+<h3>ReduceMean<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md27" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md27"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the are value will be taken from the second input and not from the “axes” attribute.</p></li>
+<li><p>”keepdims” - required, whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md28">
+<h3>ReduceSum<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md28" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md28"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the are value will be taken from the second input and not from the “axes” attribute.</p></li>
+<li><p>”keepdims” - required, whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md29">
+<h3>Squeeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md29" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md29"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axes” - optional, the dimensions to squeeze. If empty, all the dimensions of size 1 will be squeezed.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md30">
+<h3>Sub<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md30" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md30"><ul class="simple">
+<li><p>Must have two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md31">
+<h3>Transpose<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md31" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md31"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”perm” - required, the permutation to apply.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md32">
+<h3>Unsqueeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md32" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md32"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>”axes” - required, the dimensions to unsqueeze. </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HElayers Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fhe_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FHE overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md11">ONNX supported operators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md12">Add</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md13">AveragePool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md14">BatchNormalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md15">Cast</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md16">Concat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md17">Constant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md18">Conv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md19">Div</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md20">Flatten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md21">Gemm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md22">Identity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md23">MatMul</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md24">Mul</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md25">Pow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md26">Pad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md27">ReduceMean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md28">ReduceSum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md29">Squeeze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md30">Sub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md31">Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md32">Unsqueeze</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
