@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Circuit &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/Circuit';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CtxtCacheMem" href="CtxtCacheMem.html" />
+    <link rel="prev" title="CircuitContext" href="CircuitContext.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../circuit.html" class="nav-link">Circuit layer (CircLayer)</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Circuit</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="circuit">
+<h1>Circuit<a class="headerlink" href="#circuit" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7CircuitE">
+<span id="_CPPv3N8helayers7circuit7CircuitE"></span><span id="_CPPv2N8helayers7circuit7CircuitE"></span><span id="helayers::circuit::Circuit"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A class that keeps the directed acyclic graph (DAG) that is the circuit. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit7CircuitEv">
+<span id="_CPPv3N8helayers7circuit7Circuit7CircuitEv"></span><span id="_CPPv2N8helayers7circuit7Circuit7CircuitEv"></span><span id="helayers::circuit::Circuit::Circuit"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a74ef889f5c99fade1f5d7b34a532c629"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit7CircuitEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructs an empty circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7CircuitD0Ev">
+<span id="_CPPv3N8helayers7circuit7CircuitD0Ev"></span><span id="_CPPv2N8helayers7circuit7CircuitD0Ev"></span><span id="helayers::circuit::Circuit::~Circuit"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aa5cd8353ed9376de30441a32431f8e65"></span><span class="sig-name descname"><span class="n"><span class="pre">~Circuit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Destructs a circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit7CircuitERK7Circuit">
+<span id="_CPPv3N8helayers7circuit7Circuit7CircuitERK7Circuit"></span><span id="_CPPv2N8helayers7circuit7Circuit7CircuitERK7Circuit"></span><span id="helayers::circuit::Circuit::Circuit__CircuitCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a9d41e674f92b7537fdc6b389be3f9ff0"></span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7circuit7Circuit7CircuitERK7Circuit" title="helayers::circuit::Circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit7CircuitERK7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – the circuit to copy from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit7CircuitERR7Circuit">
+<span id="_CPPv3N8helayers7circuit7Circuit7CircuitERR7Circuit"></span><span id="_CPPv2N8helayers7circuit7Circuit7CircuitERR7Circuit"></span><span id="helayers::circuit::Circuit::Circuit__CircuitRR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ae7325a2ae40b5050ff09ca1984a7c641"></span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers7circuit7Circuit7CircuitERR7Circuit" title="helayers::circuit::Circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit7CircuitERR7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Move constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – the circuit to move into this instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7CircuitaSERK7Circuit">
+<span id="_CPPv3N8helayers7circuit7CircuitaSERK7Circuit"></span><span id="_CPPv2N8helayers7circuit7CircuitaSERK7Circuit"></span><span id="helayers::circuit::Circuit::assign-operator__CircuitCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ace87a65eac2534df0fd861c8ffe7d66b"></span><a class="reference internal" href="#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitaSERK7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Copy operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – the circuit to copy </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7CircuitaSERR7Circuit">
+<span id="_CPPv3N8helayers7circuit7CircuitaSERR7Circuit"></span><span id="_CPPv2N8helayers7circuit7CircuitaSERR7Circuit"></span><span id="helayers::circuit::Circuit::assign-operator__CircuitRR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a39e326ed7c0adc86163fb585daeb567b"></span><a class="reference internal" href="#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitaSERR7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Move operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – the circuit to move </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit7addNodeE5PNode">
+<span id="_CPPv3N8helayers7circuit7Circuit7addNodeE5PNode"></span><span id="_CPPv2N8helayers7circuit7Circuit7addNodeE5PNode"></span><span id="helayers::circuit::Circuit::addNode__PNode"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a26328ebb55d9eee76e3c4d37d040b127"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addNode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit7addNodeE5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add a node to the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – the node to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext">
+<span id="_CPPv3N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext"></span><span id="_CPPv2N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext"></span><span id="helayers::circuit::Circuit::addInputNode__CircuitCiphertextCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aa04adf914a4c6ff17c16ea75e67d267f"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addInputNode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CircuitCiphertext</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add an input node (a ctxt input) to the DAG. </p>
+<p>The ciphertext is added with no label. A label can be added later. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – The ciphertext to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit10buildEdgesEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit10buildEdgesEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit10buildEdgesEv"></span><span id="helayers::circuit::Circuit::buildEdgesC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a208fb33b0af652953251e477a22a6f6e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildEdges</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit10buildEdgesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Finish the construction of the DAG after all nodes have been added. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="helayers::circuit::Circuit::areEdgesBuiltC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a39e306b31ead61cd280e0928bd9642fb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">areEdgesBuilt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return whether the edges have been built. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId">
+<span id="_CPPv3N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId"></span><span id="_CPPv2N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId"></span><span id="helayers::circuit::Circuit::setLabelCtxt__CtxtLabelCR.CtxtIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aea7a8a11d8d6ba7210836fcae0615412"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLabelCtxt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Give a node a human-meaningful label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The human meaningful label. </p></li>
+<li><p><strong>id</strong> – The node id to label. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape">
+<span id="_CPPv3N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape"></span><span id="_CPPv2N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape"></span><span id="helayers::circuit::Circuit::setTensorMetadata__CtxtLabelCR.TTShapeCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1afc4c8b49c209641f691a31058dc6c7fe"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Store a <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> with the circuit and give it a label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a>. </p></li>
+<li><p><strong>s</strong> – The shape to be stored. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel">
+<span id="_CPPv3NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel"></span><span id="_CPPv2NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel"></span><span id="helayers::circuit::Circuit::getTensorMetadataShape__CtxtLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1abfca769d1f014e77a41d6e94a0a6e635"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTensorMetadataShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> from the circuit using the label it was given. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues">
+<span id="_CPPv3N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues"></span><span id="_CPPv2N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues"></span><span id="helayers::circuit::Circuit::addPlaintextNode__PtxtIdCR.i.RawValuesCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a792a8c03f17599aa87077c82624d6c22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addPlaintextNode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add a plaintext to the circuit. </p>
+<p>The plaintext is added once and any references to this plaintex is done by its label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id of the plaintext. </p></li>
+<li><p><strong>chainIndex</strong> – the chain index to encode the plaintext in </p></li>
+<li><p><strong>p</strong> – The raw values of the plaintext. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues">
+<span id="_CPPv3N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues"></span><span id="_CPPv2N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues"></span><span id="helayers::circuit::Circuit::addEncryptedParameters__CtxtIdCR.LeveledRawValuesCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a717e3da59076aab3df5d7191d1be6706"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEncryptedParameters</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LeveledRawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add ciphertext values to the circuit. </p>
+<p>Any inputs that are not labeled are considered as parameters and therefore a part of the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id of the plaintext. </p></li>
+<li><p><strong>p</strong> – The raw values of the plaintext. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit15getLabelToIdMapEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="helayers::circuit::Circuit::getLabelToIdMapC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a2e8421b74c55c27f1e7472babe2e814e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CtxtLabel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getLabelToIdMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit15getLabelToIdMapEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the map translating from a label to a ctxt id. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId">
+<span id="_CPPv3NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId"></span><span id="helayers::circuit::Circuit::getNodeByOutputId__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a52b0a9ff1470f9123d93b2e7052301d4"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodeByOutputId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get a node by its id. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The id of the node to retrieve. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId">
+<span id="_CPPv3NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId"></span><span id="helayers::circuit::Circuit::hasNodeWithOutputId__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a46d16bd241b1bd93f7e6438364566352"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasNodeWithOutputId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Query whether a node with a given id exists in the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The id of the node to query. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit8getNodesEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit8getNodesEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit8getNodesEv"></span><span id="helayers::circuit::Circuit::getNodesC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af012ce9250180db3115f7476e0ce4659"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PNode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit8getNodesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the vector of nodes in the circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId">
+<span id="_CPPv3NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId"></span><span id="helayers::circuit::Circuit::getRawValues__PtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aa35dc9f414676521c0e194f80827c0cc"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRawValues</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the raw values of a plaintext of a certain id. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The id of the plaintext to retrieve. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE">
+<span id="_CPPv3NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE"></span><span id="helayers::circuit::Circuit::writeGateList__osRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aea5a34b4fa2e2b362cb057c4f13a70ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeGateList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Write the circuit into a GateList file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>o</strong> – The stream to write the file into. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb">
+<span id="_CPPv3N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb"></span><span id="_CPPv2N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb"></span><span id="helayers::circuit::Circuit::saveUnlabeledInputs__circuit::CtxtCacheMemR.b"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1afa8c3b7f76c312c8954c1ecec9acb106"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveUnlabeledInputs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="CtxtCacheMem.html#_CPPv4N8helayers7circuit12CtxtCacheMemE" title="helayers::circuit::CtxtCacheMem"><span class="n"><span class="pre">CtxtCacheMem</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deleteValues</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Record all unlabeled ctxt the circuit encountered. </p>
+<p>Since ctxt that were not labeled are not input it must mean they are encrypted parameters of the circuit. With this function these ctxts can be saved to cache to be later encrypted and be used when running the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> – A cache mem to write the unlabeled ctxts to. </p></li>
+<li><p><strong>deleteValues</strong> – Determines whether the values should be deleted from the circuit. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CircuitContext.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CircuitContext</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CtxtCacheMem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CtxtCacheMem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

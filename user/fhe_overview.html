@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>FHE overview &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Security aspects" href="security.html" />
+    <link rel="prev" title="ONNX Support" href="onnx.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">FHE overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution.html">Designing an FHE solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">KMS implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">FHE overview</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="fhe-overview">
+<h1>FHE overview<a class="headerlink" href="#fhe-overview" title="Permalink to this heading">#</a></h1>
+<p>Protecting data confidentiality happens in three main locations.</p>
+<ul class="simple">
+<li><p><strong>At rest</strong>, e.g., by using symmetric encryption such as <a class="reference external" href="https://doi.org/10.6028/NIST.SP.800-38D">AES-GCM</a> or <a class="reference external" href="https://doi.org/10.6028/NIST.SP.800-38E">AES-XTS</a>.</p></li>
+<li><p><strong>In transit</strong>, e.g., by using cryptographic protocols such as <a class="reference external" href="https://www.rfc-editor.org/rfc/rfc8446">TLS 1.3</a>.</p></li>
+<li><p><strong>In use</strong>, e.g., by using Fully Homomorphic Encryption (FHE).</p></li>
+</ul>
+<p>This page provides a short overview of how FHE assists in protecting data confidentiality while in use.
+Consider the following simple scenario with two parties a data owner and an untrusted server,
+where the data owner wishes to use the server to perform some computations over its data <img class="math" src="../_images/math/e1aaac0305e1b00c3c08173dd3e8402b6320c110.png" alt="m_i"/>, <img class="math" src="../_images/math/fdd400b4864aeb4585068ab387377e90de05eb28.png" alt="i=1,2,3"/>.</p>
+<p>To accomplish this, the data owner securely transmits the data <img class="math" src="../_images/math/e1aaac0305e1b00c3c08173dd3e8402b6320c110.png" alt="m_i"/> to the server,
+possibly employing a secure channel like <a class="reference external" href="https://www.rfc-editor.org/rfc/rfc8446">TLS 1.3</a>.
+The server can then evaluate various mathematical operations on this data. Upon completion,
+the server ships the results <img class="math" src="../_images/math/5656e343e33e1c49834650fc5fd3108f00108573.png" alt="m_{res}"/> back to the data owner.</p>
+<img alt="Unencrypted" src="../_images/cloud_unencrypted.png" />
+<p>The challenge lies in the fact that the untrusted server can potentially gain access to the confidential information <img class="math" src="../_images/math/e1aaac0305e1b00c3c08173dd3e8402b6320c110.png" alt="m_i"/>.
+To address this concern, the data owner may consider employing a conventional encryption method like AES to encrypt the data,
+resulting in ciphertexts <img class="math" src="../_images/math/d0061ea783eb5fc8d028c231e97dc0ab5b9ab676.png" alt="c_i = Enc(m_i)"/>. However, this approach restricts the server from conducting any computations
+on the data, essentially reducing it to a mere storage server. This limitation undermines the primary purpose of utilizing the server in the first place.</p>
+<img alt="Symmetric encryption" src="../_images/cloud_symmetric.png" />
+<p>That is precisely where HE can provide assistance. HE empowers the data owner to carry out computations on encrypted data.
+By utilizing HE, the data owner can encrypt its confidential data <img class="math" src="../_images/math/d0061ea783eb5fc8d028c231e97dc0ab5b9ab676.png" alt="c_i = Enc(m_i)"/>, and upload it to the untrusted server.
+The server can then perform operations such as multiplication and addition on the ciphertexts <img class="math" src="../_images/math/30634b08f5df289a7acab4963cb6a3e6b99aba0f.png" alt="c_i"/>,
+without gaining any knowledge about the original data <img class="math" src="../_images/math/e1aaac0305e1b00c3c08173dd3e8402b6320c110.png" alt="m_i"/>. Upon decrypting the result, the data owner
+should obtain an output equivalent to what would have been obtained if the computations were performed on
+unencrypted data (within a certain margin of error tolerance).</p>
+<img alt="with FHE" src="../_images/cloud_FHE.png" />
+<p>Using additions and multiplications is enough for performing many types of operations in an untrusted environment. For example, performing deep neural network inference operations.</p>
+<img alt="with FHE NN" src="../_images/cloud_NN.png" />
+<p>To learn more about the FHE technology see the FHE FAQ section below.</p>
+<section id="fhe-faq">
+<h2>FHE FAQ<a class="headerlink" href="#fhe-faq" title="Permalink to this heading">#</a></h2>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What does a scheme mean in FHE?</p>
+<p>An FHE cryptographic scheme is a specific set of algorithms that describe the underlying mathematics
+being used to perform homomorphic calculations. Different schemes provide different capabilities and
+have different characteristics.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What capabilities modern FHE schemes provide</p>
+<p>Exact FHE schemes such as BGV, B/FV, and TFHE provide at least the following set of operations:</p>
+<ul class="simple">
+<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that recieves a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
+<li><p>Decryption <img class="math" src="../_images/math/2c56f3765f4ab421450db8c05185bfb7805683d2.png" alt="m=Dec(c)"/> - that recieves a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
+<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/8bb0a7c7cf683fbfab9637f64ee0593a63f02df4.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))"/>.</p></li>
+<li><p>Multiplicaiton <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/5fffbad51976676d0e5c97b3c8388cd057ae12b9.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))"/>.</p></li>
+</ul>
+<p>Apprixmated FHE schemes such as CKKS provide at least the following set of operations for some small <img class="math" src="../_images/math/0ad7b30534898f253002222f998f38001e604648.png" alt="\epsilon"/>:</p>
+<ul class="simple">
+<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that recieves a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
+<li><p>Decryption <img class="math" src="../_images/math/a051955d0d952d2092b64ead1581717f142b0511.png" alt="m = Dec(c) + \epsilon"/> - that recieves a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
+<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/3e96aed755e30547b8944ec21b41c20066cbbc0c.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))  + \epsilon"/>.</p></li>
+<li><p>Multiplicaiton <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/0c2bba1a508766031d533c5e420e24d19efe8f17.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))  + \epsilon"/>.</p></li>
+</ul>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What FHE schemes exist and why would I use one over the other?</p>
+<p>There exist various cryptographic schemes, including BGV, B/FV, TFHE, and CKKS, each with distinct
+characteristics regarding the input they accept and the output they produce. For instance, BGV, B/FV, and TFHE
+are designed to operate on integers, enabling operations like database lookups and comparisons of numbers.
+On the other hand, CKKS is particularly well-suited for handling real or complex numbers,
+making it suitable for applications such as AI and ML, including tasks like NN infernece.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Is FHE quantum-safe and what does quantum-safe mean?</p>
+<p>Yes, modern FHE is considered to be quantum-safe. Quantum-safe encryption algorithm
+maintains the confidentiality of encrypted data even in the presence of large quantum
+computers. Most FHE schemes today rely on lattice-based cryptography,
+which is considered secure against quantum attacks.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">How is FHE different from a Trusted Execution Environment (TEE)?</p>
+<p>With a TEE, one can run computations on unencrypted data with a hardware enforced root of trust.
+A TEE is intended to be secure by design, however if an application running within it had a security issue
+(insecure code, application code deployed with malicious malware, zero day exploit, etc),
+your data may be exposed and an attacker might be able to exfiltrate or manipulate your data.</p>
+<p>But with FHE, data remains encrypted at all times even during data leakage or exfiltration.
+FHE (which guarantees data confidentiality at all times) and a TEE (which provides data integrity)
+can be combined to secure your ‘crown jewel’ sensitive data. See for example the paper
+<a class="reference external" href="https://isyou.info/jowua/papers/jowua-v9n1-4.pdf">Achieving trustworthy Homomorphic Encryption by combining it with a Trusted Execution Environment</a>.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What are low level primitives?</p>
+<p>Low level primitives are the base operations that can be performed directly on ciphertext and include multiplication, addition, and rotation.
+All higher level functions are implemented in terms of low level primitives, which make them homomorphic as well.</p>
+<p>In HElayers, lower level primitives are exposed in its lower level <a class="reference internal" href="../reference/hebase.html"><span class="doc">HEbase</span></a>.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What are high level primitives?</p>
+<p>Complex operations like operations on matrices or arrays are built upon the low level primitives.
+These operations, e.g., <a class="reference external" href="resources.md#tile-tensors">tile tensors</a>, are already implemented and provided by HElayers.
+See relevant APIs in <a class="reference internal" href="../reference/tt.html"><span class="doc">tile tensor</span></a>.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Is FHE Turing-complete?</p>
+<p>FHE is Turing-complete because, in theory, it can perform any function that is computable.
+Even approximate schemes that until recently were not considered Turing-complete schemes are now such,
+see <a class="reference external" href="https://eprint.iacr.org/2022/1298">BLEACH</a>.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What is the differnece between HE, LHE, FHE and PHE?</p>
+<ul class="simple">
+<li><p>Partially Homomorphic Encryption (PHE): Refers to schemes that allow performing only one operation on ciphertexts,
+either addition or multiplication such as Paillier and El-Gamal. PHE schemes are limited in their computational capabilities.</p></li>
+<li><p>Fully Homomorphic Encryption (FHE): Historically, FHE denoted schemes that could perform both addition and multiplication operations on ciphertexts,
+making them Turing-complete. FHE schemes offer more flexibility and computational power compared to PHE schemes.
+Modern schemes such as BGV, B/FV, TFHE and CKKS are FHE schemes.</p></li>
+<li><p>Levelled Homomorphic Encryption (LHE): In modern schemes, there is a distinction between LHE and FHE.
+While modern schemes typically incorporate an efficient bootstrap operation, which is considerably slower
+than other HE operations, there are cases where avoiding bootstrap is beneficial.
+In LHE, users define the depth of computations in terms of the number of serial multiplications,
+also known as the level of the evaluated function. LHE has a finite depth limitation, unlike FHE schemes.</p></li>
+<li><p><strong>HElayers Terminology:</strong> HElayers employs the terms HE and FHE interchangeably.</p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="onnx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ONNX Support</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="security.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Security aspects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fhe-faq">FHE FAQ</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

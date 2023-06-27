@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>HElayers Overview &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user/overview';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ONNX Support" href="onnx.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">HElayers Overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution.html">Designing an FHE solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">KMS implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">HElayers Overview</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="helayers-overview">
+<h1>HElayers Overview<a class="headerlink" href="#helayers-overview" title="Permalink to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">FHE overview</p>
+<p>If you are unfamiliar with FHE, it is recommended to first visit the <a class="reference internal" href="fhe_overview.html"><span class="doc">FHE overview page</span></a>.</p>
+</div>
+<p>HElayers is an SDK that enables data scientists and application developers to easily use the power of FHE for developing and deploying FHE into their applications. HElayers is enabled with patented optimization and performance-boosting innovation for computation, AI innovation, and use case requirements that facilitate the practical use of a wide variety of AI workloads over FHE data.</p>
+<p>Use HElayers when you want to</p>
+<ul class="simple">
+<li><p>have a smooth transition from a non-encrypted environment to a privacy preserving one,</p></li>
+<li><p>benefit from specially crafted optimizations that would otherwise require cryptographic and specific library knowledge to run efficiently, and</p></li>
+<li><p>enable HE-based computations without dependence on a specific HE library</p></li>
+</ul>
+<section id="layered-design">
+<h2>Layered design<a class="headerlink" href="#layered-design" title="Permalink to this heading">#</a></h2>
+<p>HElayers is designed with a layered set of capabilities, where every layer
+is coupled with appropriate C++ or Python APIs. It uses low-level HE cryptographic
+libraries such as <a class="reference external" href="https://www.cryptolab.co.kr/en/products-en/heaan-he/">HEaaN</a>,
+<a class="reference external" href="https://github.com/homenc/HElib">HElib</a>, <a class="reference external" href="https://github.com/microsoft/SEAL">SEAL</a>,
+<a class="reference external" href="https://www.openfhe.org/">OpenFHE</a>, and <a class="reference external" href="https://github.com/tuneinsight/lattigo">Lattigo</a>
+and adds functionality on top of them in a layered structure. These layers aim to provide the
+most for the various user types HElayers has.
+A concrete description of the layers is provided per user type below.</p>
+<img alt="Layers" src="../_images/layers.png" />
+<section id="helayers-audiences">
+<h3>HElayers audiences<a class="headerlink" href="#helayers-audiences" title="Permalink to this heading">#</a></h3>
+<p>HElayers target different types of users with varying expertise levels.
+Each user group is provided with specific sets of APIs tailored to meet their individual needs.
+All layers encompass research and debugging tools that enable algorithm testing in mockup settings,
+providing detailed trace data, facilitating approach comparisons, and more.</p>
+<br /><img alt="HElayers users" src="../_images/users.png" />
+<br /><br /><br /><div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Application developers</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Data Scientists</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Applied cryptographers</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>HElayers provides application developers with an intuitive solution to leverage the power of
+FHE technology in their projects. With its high-level APIs, developers can tackle AI and other challenges
+without the need for deep expertise in FHE. For instance, if you are accustomed to working with neural networks
+using popular libraries like Keras, HElayers equips you with the essential tools to seamlessly import and convert
+your work to HE, expanding the possibilities of secure computation.</p>
+<p>Application developers should use the <a class="reference internal" href="../reference/applications.html"><span class="doc">AI layer APIs</span></a> in C++ or Python.
+In addition, it is recommended to checkout the various <a class="reference internal" href="demos.html#use-cases-based-tutorials"><span class="std std-ref">use cases based tutorials</span></a>
+that include applications for Credit card fraud detection, Heart disease detection,
+and COVID-19 predictions using encrypted CT scans.</p>
+<p>Other application level tutorials include the <a class="reference internal" href="demos.html#machine-learning-tutorials"><span class="std std-ref">ML tutorials</span></a> the
+<a class="reference internal" href="demos.html#databases-tutorials"><span class="std std-ref">DB tutorials</span></a> and the <a class="reference internal" href="demos.html#other-tutorials"><span class="std std-ref">other tutorials</span></a>.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>There are two types of data scientists: users and explorers.</p>
+<p>Users primarily focus on utilizing existing, ready-to-use applications,
+such as HE-friendly neural networks, to evaluate how HE can be integrated into their workflows.
+These users can begin by familiarizing themselves with HElayers’ <a class="reference internal" href="demos.html#machine-learning-tutorials"><span class="std std-ref">ML tutorials</span></a>,
+enabling them to apply the demonstrated practices to their own data.
+They can leverage pre-designed and tested models, such as AlexNet and ResNet, and can test HElayers
+by providing it with an <a class="reference internal" href="onnx.html"><span class="doc">ONNX</span></a> file representing their desired NN.
+This allows them to quickly observe the results of their HE applications.</p>
+<p>Additionally, HElayers offers the MLToolbox, which aids users in converting any NN to be HE-friendly,
+further enhancing their capabilities in utilizing HE.</p>
+<p>On the other hand, researchers delve into developing novel HE-friendly training techniques.
+While researchers can also take advantage of the MLToolbox, their primary focus revolves
+around testing and refining new designs using HElayers’ functionalities.</p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Applied cryptographers, who prefer direct engagement with HE primitives, are advised
+to embark on their journey by exploring the comprehensive tutorials on
+<a class="reference internal" href="resources.html#learn-about-tile-tensors"><span class="std std-ref">tile tensors</span></a>. These tutorials serve
+as an invaluable resource for acquiring the necessary knowledge and skills in this domain.</p>
+<p>Afterwards, they can delve into exploring the <a class="reference internal" href="../reference/tt.html"><span class="doc">tile tensor</span></a> APIs, leveraging the
+<a class="reference internal" href="../reference/math.html"><span class="doc">supported mathematical operations</span></a> within the Math layer, and expanding their understanding of
+the foundational layer of HElayers, <a class="reference internal" href="../reference/hebase.html"><span class="doc">HEbase</span></a>. To gain further insight into lower-level capabilities
+<a class="reference internal" href="demos.html#low-level-apis-tutorials"><span class="std std-ref">low-level API tutorials</span></a> and
+<a class="reference internal" href="demos.html#he-utiltiies-tutorials"><span class="std std-ref">HE utiltiies tutorials</span></a> offer demonstrations and guidance.</p>
+<p>For expert users seeking advanced control, HElayers offers an <a class="reference internal" href="../reference/packing_optimizer.html"><span class="doc">HElayers packing optimizer</span></a>
+for enhanced performance as well as <a class="reference internal" href="../reference/circuit.html"><span class="doc">tutorials on leveraging CircLayer</span></a>
+Additional resources are available in the form of <span class="xref std std-ref">C++ only tutorials</span>
+catering to users interested in maximizing their expertise in HElayers.</p>
+</div></div>
+</section>
+</section>
+<section id="developers-faq">
+<h2>Developers FAQ<a class="headerlink" href="#developers-faq" title="Permalink to this heading">#</a></h2>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does HElayers requrie a specific hardware?</p>
+<p>HElayers can leverage different hardware capabilities such as CPUs an GPUs,
+this depends on underlying library of choice. Check the <a class="reference internal" href="installation.html"><span class="doc">installation page</span></a>
+to learn more about HW support.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does HElayers depend on a specific ML library such as Pytorch or TensorFlow?</p>
+<p>No, HElayers receives inputs from ML packages such as
+<a class="reference external" href="https://pytorch.org/">Pytorch</a> or <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>
+(see also <a class="reference external" href="https://github.com/onnx/tensorflow-onnx">tensorflow-onnx</a>)
+by using common file formats such as <a class="reference external" href="https://onnx.ai/">ONNX</a>.
+Users who work with ML packages that support ONNX can automatically enjoy HElayer’s capabilities.</p>
+<p>Currently, ONNX is only partially supported by HElayers, see the <a class="reference internal" href="onnx.html"><span class="doc">ONNX manual page</span></a> for more info.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Is there any special background I should have to successfully use HElayers?</p>
+<p>HElayers offers high-level APIs that enable users to solve AI and other problems
+without requiring in-depth knowledge of Fully Homomorphic Encryption (FHE).
+For instance, if you are accustomed to working with neural networks using popular libraries like Keras,
+HElayers equips you with the necessary tools to import and convert your work into the HE domain.</p>
+<p>However, it is still beneficial to have a basic understanding of the specific domain of the HE application.
+For instance, to achieve optimal performance in a neural network inference application,
+having knowledge of the pros and cons of different neural network architectures is recommended.</p>
+<p>Moreover, if you intend to utilize the mid-to-lower level APIs, it is advisable to possess
+some level of data science capabilities or familiarity with the underlying HE schemes and their properties.
+This understanding will enable you to make more informed decisions and leverage the full potential of HElayers.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Does writing an HE-based application require any code or application changes?</p>
+<p>Generally, yes FHE requires code changes. Some things that are easy to do with plaintext,
+or unencrypted data, are difficult to do with HE schemes. For example, a common function like
+MAX (taking the maximum of two numbers) is easy to compute using plaintext,
+but very difficult to compute using encrypted data.</p>
+<p>Algorithms need to be changed to make them ‘HE friendly’ so that they are able to be decomposed
+into three foundational FHE primitives of multiplication, addition and rotation.</p>
+<p>For complex operations, if there is no direct implementation feasible due to performance requirements,
+one must substitute the desired function by polynomial approximation. Over time, the
+API (Application Programming Interface) library will provide more functions that have been
+implemented using the three FHE primitives.
+Our goal is to make the developer experience as comfortable and familiar as possible,
+while minimizing the number of changes that is needed to implement FHE.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Do you need to approximate computations with polynomials to make it compatible with FHE?</p>
+<p>That’s depends on your application. Most FHE schemes only provide two basic operators: addition and multiplication.
+This means that everything you compute will have to be a polynomial or approximated using polynomials.
+The larger the polynomial, the better the approximation. However, having larger polynomials means it will be more difficult to compute.
+For example, if you have a function involving a square root, division, and MAX operators, it may be very easy to do using plaintext.
+But for FHE, it will result in a complicated polynomial and will be much slower to compute.
+This again touches why in principle everything is possible to compute under HE, but in practice, it’s not always practical.
+To learn more about the built-in math functions that HElayers already implements see the
+<a class="reference internal" href="../reference/math.html"><span class="doc">Math layer APIs</span></a>.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Any special challenges with testing and debugging FHE programs?</p>
+<p>There are three main challenges with testing and debugging FHE programs.
+The first is that because encrypted computations require more resources than unencrypted computations, computations are slower.
+The second is the additional layer of complexity that is created due to the constraints of working with ciphertext of a fixed size.
+The last challenge is the error (noise) that needs to be managed that is inherent to FHE operations.</p>
+<p>In HElayers, we provide tools to help address these challenges.
+For example, we offer APIs to measure noise and compare the computation in plaintext with a computation done under encryption (see <a class="reference internal" href="../reference/hecontexts.html#debug-contexts"><span class="std std-ref">Debug Contexts</span></a>).
+This allows you to track how the noise grows and manage the noise.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What can I program with FHE? What can’t I program with FHE?</p>
+<p>In principle, the ‘Fully’ in FHE means that you can compute on any function that you want.
+However, in practice, some computations are very difficult to the point of being impractical.</p>
+<p>FHE computation is most similar to a hardware circuit; we get the data,
+we run it through a sequence of gates and each gate performs an operation.
+Because the data remains encrypted and we are not able to see it in the clear,
+it is difficult to perform branching with FHE (e.g. if the data meets a certain condition,
+do X, else do Y). As a result, the data must run through all of the gates.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What programming constructs are not available on FHE in terms of control flow?</p>
+<p>There is no control flow for FHE - the input arrives and it runs through a circuit involving gates.
+You can’t branch at all no ifs, no loops. It’s like one big circuit.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">What is the performance and speed of FHE now?</p>
+<p>Performance is dependent on the use case and the corresponding implementation.
+For many applications, FHE is fast enough now to be used.
+This is especially the case when FHE enables workloads that could not have been computed in
+an automated fashion before due to privacy or data sharing concerns.</p>
+</div>
+<div class="helayers-admonition-question dropdown admonition">
+<p class="admonition-title">Are there any special CPUs that are needed?</p>
+<p>There are no special CPUs or hardware that is strictly needed to perform FHE operations.
+However, FHE is computationally intensive and utilizing faster processors with larger cache sizes
+and memory capacity will result in better performance.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="installation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="onnx.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ONNX Support</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layered-design">Layered design</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helayers-audiences">HElayers audiences</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developers-faq">Developers FAQ</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

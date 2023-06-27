@@ -1,0 +1,1654 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>HeRunRequirements &#8212; HElayers 1.5.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/HeRunRequirements';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ModelIoProcessor" href="ModelIoProcessor.html" />
+    <link rel="prev" title="HeConfigRequirement" href="HeConfigRequirement.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../packing_optimizer.html" class="nav-link">Packing optimizer</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">HeRunRequirements</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="herunrequirements">
+<h1>HeRunRequirements<a class="headerlink" href="#herunrequirements" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeRunRequirements</span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements" title="Permalink to this definition">#</a></dt>
+<dd><p>A class to describe all the user requirements for running a model with
+respect to the library, packaging considerations and computational
+performance.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.optimize_for_batch_size">
+<span class="sig-name descname"><span class="pre">optimize_for_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.optimize_for_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the batch size to optimize for (default:
+1). Cannot be called when “no fixed batch size” mode was set. The
+effective batch size may be different than the provided value if the
+provided value is too big or not a power of two.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit
+batch size set as its hyperparameter. In such case, the batch size to
+optimize for will be the fit batch size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>batch_size</strong> – The batch size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_aes_key_size">
+<span class="sig-name descname"><span class="pre">set_aes_key_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_aes_key_size" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the size of the AES secret key, in bits
+(default: 256).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key_size</strong> – The AES secret key size, in bits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_aes_number_config">
+<span class="sig-name descname"><span class="pre">set_aes_number_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="NumberConfig.html#pyhelayers.NumberConfig" title="pyhelayers.NumberConfig"><span class="pre">pyhelayers.NumberConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_aes_number_config" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the requirement for a number
+configuration, describing the characteristics of the numbers inside the
+inputs. Must be set when using AES inputs (no default).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>number_config</strong> – The number configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_compress_aes_key">
+<span class="sig-name descname"><span class="pre">set_compress_aes_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress_aes_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_compress_aes_key" title="Permalink to this definition">#</a></dt>
+<dd><p>When using AES inputs, sets the requirement for whether or not the
+AES key encrypted under FHE will be saved and loaded in a compressed mode
+(default: true).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compress_aes_key</strong> – Whether or not the AES key encrypted under FHE will
+be saved and loaded in a compressed mode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_exhaustive_search">
+<span class="sig-name descname"><span class="pre">set_exhaustive_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exhaustive_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_exhaustive_search" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to perform exhaustive search (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exhaustive_search</strong> – Whether or not to perform exhaustive search.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_explicit_he_config_requirement">
+<span class="sig-name descname"><span class="pre">set_explicit_he_config_requirement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">he_config_requirement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.HeConfigRequirement"><span class="pre">pyhelayers.HeConfigRequirement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for an explicit HE config requirement. Useful
+when an already-initialized HE context exists. The HE config requirement
+is validated to be feasible by the HE context options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>he_config_requirement</strong> – The HE config requirement to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing">
+<span class="sig-name descname"><span class="pre">set_explicit_he_config_requirement_for_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">he_config_requirement:</span> <span class="pre">pyhelayers.HeConfigRequirement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7efdf0fa3ef0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for using generically-packed inputs for the
+computation, where the HE context used to generically pack data is a
+custom HE context corresponds to the given HE config requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>he_config_requirement</strong> – An HE config requirement corresponds to the HE context</p>
+</dd>
+</dl>
+<p>used to generically pack data.
+:param generic_packing_config: An optional generic packing config. The same config that
+was used to generically pack data shall be provided.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_fixed_num_slots">
+<span class="sig-name descname"><span class="pre">set_fixed_num_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_num_slots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_fixed_num_slots" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for a fixed number of slots in a ciphertext
+(default: no fixed number of slots, recommended).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixed_num_slots</strong> – A fixed number of slots in a ciphertext.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_fractional_part_precision">
+<span class="sig-name descname"><span class="pre">set_fractional_part_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractional_part_precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_max_feasible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_fractional_part_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the fractional part precision (default:
+35).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fractional_part_precision</strong> – The fractional part precision.</p></li>
+<li><p><strong>use_max_feasible</strong> – If a higher precision is feasible by the HE library
+while still fulfilling all the other requirements, the maximal feasible
+precision value will be used.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_handle_overflow">
+<span class="sig-name descname"><span class="pre">set_handle_overflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_handle_overflow" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to apply overflow handling
+aiming at preventing overflows during the computation (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_overflow</strong> – Whether or not to apply overflow handling.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_he_context_options">
+<span class="sig-name descname"><span class="pre">set_he_context_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_he_context_options" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>set_he_context_options(self: pyhelayers.HeRunRequirements, he_context_options: List[pyhelayers.HeContext]) -&gt; None</p>
+<blockquote>
+<div><p>Sets the requirement for HeContext options. This value specifies
+possible HeContext types that may be used when searching for a profile
+that satisfies the user’s requirements. The HeContext objects may or may
+not be initialized, and any attribute other then their type will be
+ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param he_context_options<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The HeContext options to set.</p>
+</dd>
+<dt class="field-even">type he_context_options<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of HeContexts</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>set_he_context_options(self: pyhelayers.HeRunRequirements, arg0: List[str]) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_integer_part_precision">
+<span class="sig-name descname"><span class="pre">set_integer_part_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">integer_part_precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_integer_part_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the integer part precision (default: 10).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>integer_part_precision</strong> – The integer part precision.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_lazy_encoding">
+<span class="sig-name descname"><span class="pre">set_lazy_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_lazy_encoding" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to apply lazy encoding for
+the model’s weights, such that a required weight will be encoded at
+runtime and free after being used (default: false). Lazy encoding can only
+be applied on a non-encrypted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lazy_encoding</strong> – Whether or not to apply lazy encoding for the model’s
+weights.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_batch_memory">
+<span class="sig-name descname"><span class="pre">set_max_batch_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_batch_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_batch_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal batch memory. This value
+includes the sum of the input memory and the output memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_batch_memory</strong> – The maximal batch memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_client_inference_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_client_inference_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal client inference CPU time. This
+value includes the sum of the encrypt input CPU time and the decrypt
+output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_client_inference_cpu_time</strong> – The maximal client inference CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_client_inference_memory">
+<span class="sig-name descname"><span class="pre">set_max_client_inference_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_client_inference_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_client_inference_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal client inference memory. This
+value includes the sum of the input memory, the output memory and the
+context memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_client_inference_memory</strong> – The maximal client inference memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_context_memory">
+<span class="sig-name descname"><span class="pre">set_max_context_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_context_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_context_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal context memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_context_memory</strong> – The maximal context memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_decrypt_output_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_decrypt_output_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_decrypt_output_cpu_time</strong> – The maximal decrypt output CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_encrypt_input_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_encrypt_input_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal encrypt input CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_encrypt_input_cpu_time</strong> – The maximal encrypt input CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_fit_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_fit_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fit_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_fit_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal fit CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_fit_cpu_time</strong> – The maximal fit CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_inference_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_inference_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inference_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_inference_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal inference CPU time. This value
+includes the sum of the encrypt input CPU time, the predict CPU time and
+the decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_inference_cpu_time</strong> – The maximal inference CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_inference_memory">
+<span class="sig-name descname"><span class="pre">set_max_inference_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inference_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_inference_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal inference memory. This value includes
+the sum of the input memory, the output memory, the context memory and the
+model memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_inference_memory</strong> – The maximal inference memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_init_model_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_init_model_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_init_model_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_init_model_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal init model CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_init_model_cpu_time</strong> – The maximal init model CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_input_memory">
+<span class="sig-name descname"><span class="pre">set_max_input_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_input_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_input_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal input memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_input_memory</strong> – The maximal input memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_model_memory">
+<span class="sig-name descname"><span class="pre">set_max_model_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_model_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_model_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal model memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_model_memory</strong> – The maximal model memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_output_memory">
+<span class="sig-name descname"><span class="pre">set_max_output_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_output_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_output_memory" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal output memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_output_memory</strong> – The maximal output memory (bytes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_max_predict_cpu_time">
+<span class="sig-name descname"><span class="pre">set_max_predict_cpu_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict_cpu_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_max_predict_cpu_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the maximal predict CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_predict_cpu_time</strong> – The maximal predict CPU time (micro-seconds).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_model_encrypted">
+<span class="sig-name descname"><span class="pre">set_model_encrypted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_encrypted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_model_encrypted" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to encrypt the model’s
+weights (default: true).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model_encrypted</strong> – Whether or not to encrypt the model’s weights.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_no_fixed_batch_size">
+<span class="sig-name descname"><span class="pre">set_no_fixed_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_no_fixed_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for no fixed batch size (default: fixed batch
+size). Having an unfixed batch size will result in optimizing for
+throughput considering multiple possible batch sizes and will usually end
+up with a large batch size. Cannot be called if an explicit batch size was
+set.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit
+batch size set as its hyperparameter. In such case, the batch size to
+optimize for will be the fit batch size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_not_secure">
+<span class="sig-name descname"><span class="pre">set_not_secure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_not_secure" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the security level to 0.
+This will result with ciphertexts that can be easily broken.
+It is useful for quick experiments sometimes, as everything
+will work faster and consume less memory.</p>
+<p>A warning will be issued when this method is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_optimization_target">
+<span class="sig-name descname"><span class="pre">set_optimization_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.OptimizationTarget</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_optimization_target" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the optimization target (default: SERVER_SIDE_CPU_PER_SAMPLE).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optimization</strong> – The optimization target.
+SERVER_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in
+server side operations (fit/predict). It is the only supported
+optimization target for a model in fit mode.
+CLIENT_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in
+client side operations (encrypt input, decrypt output).
+END_TO_END_LATENCY_PER_SAMPLE will optimize for low end-to-end latency per
+sample, including client-side operations, server-side operations and
+communication time, and excluding the time it takes to initialize the
+model and HE context. Requires setting the system specification by calling
+<cite>set_system_spec</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_security_level">
+<span class="sig-name descname"><span class="pre">set_security_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">security_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_security_level" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for the security level (default: 128).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>security_level</strong> – The security level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_simple_generic_packing">
+<span class="sig-name descname"><span class="pre">set_simple_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">light:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7efdf049e1b0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_simple_generic_packing" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for using generically-packed inputs for the
+computation, where the HE context used to generically pack data is the
+default generic-packing HE context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>light</strong> – Whether the default generic-packing HE context was initialized</p>
+</dd>
+</dl>
+<p>for light mode or not (default: false).
+:param generic_packing_config: An optional generic packing config. The same config that
+was used to generically pack data shall be provided.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_system_spec">
+<span class="sig-name descname"><span class="pre">set_system_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_parallelization_speedup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_parallelization_speedup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_upload_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_upload_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_system_spec" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the system specification, to be used to estimate the expected
+end-to-end latency when the optimization target is
+END_TO_END_LATENCY_PER_SAMPLE. Required when optimizing for the above
+target, not-supported when optimizing for any other target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_parallelization_speedup</strong> – The speedup factor in client-side
+operations achieved by running them in client-side environment compared to
+a single-thread environment. With the lack of better estimation, consider
+setting the number of threads available in client-side.</p></li>
+<li><p><strong>server_parallelization_speedup</strong> – The speedup factor in server-side
+operations achieved by running them in server-side environment compared to
+a single-thread environment. With the lack of better estimation, consider
+setting the number of threads available in server-side.</p></li>
+<li><p><strong>client_upload_speed</strong> – The client-side upload speed, in bytes/sec.</p></li>
+<li><p><strong>server_upload_speed</strong> – The server-side upload speed, in bytes/sec.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_use_aes_inputs">
+<span class="sig-name descname"><span class="pre">set_use_aes_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_aes_inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_use_aes_inputs" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the requirement for whether or not to use AES inputs for the
+computation (default: false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>use_aes_inputs</strong> – Whether or not to use AES inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirementsE">
+<span id="_CPPv3N8helayers17HeRunRequirementsE"></span><span id="_CPPv2N8helayers17HeRunRequirementsE"></span><span id="helayers::HeRunRequirements"></span><span class="target" id="classhelayers_1_1HeRunRequirements"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HeRunRequirements</span></span></span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirementsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>class to describe all the user requirements for running a model with respect to the library, packaging considerations and computational performance </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17HeRunRequirementsEv">
+<span id="_CPPv3N8helayers17HeRunRequirements17HeRunRequirementsEv"></span><span id="_CPPv2N8helayers17HeRunRequirements17HeRunRequirementsEv"></span><span id="helayers::HeRunRequirements::HeRunRequirements"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a65402ae6e50a6d640c1538127635c30c"></span><span class="sig-name descname"><span class="n"><span class="pre">HeRunRequirements</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17HeRunRequirementsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirementsD0Ev">
+<span id="_CPPv3N8helayers17HeRunRequirementsD0Ev"></span><span id="_CPPv2N8helayers17HeRunRequirementsD0Ev"></span><span id="helayers::HeRunRequirements::~HeRunRequirements"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1acc64e7277538fa83cbc85cfdeb903478"></span><span class="sig-name descname"><span class="n"><span class="pre">~HeRunRequirements</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirementsD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements21setOptimizationTargetE19OPTIMIZATION_TARGET">
+<span id="_CPPv3N8helayers17HeRunRequirements21setOptimizationTargetE19OPTIMIZATION_TARGET"></span><span id="_CPPv2N8helayers17HeRunRequirements21setOptimizationTargetE19OPTIMIZATION_TARGET"></span><span id="helayers::HeRunRequirements::setOptimizationTarget__OPTIMIZATION_TARGET"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a6a36c895d0b877a2922927a75cbfefd7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptimizationTarget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">OPTIMIZATION_TARGET</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">optimization</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements21setOptimizationTargetE19OPTIMIZATION_TARGET" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the optimization target (default: SERVER_SIDE_CPU_PER_SAMPLE). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optimization</strong> – the optimization target.<ul class="simple">
+<li><p>SERVER_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in server side operations (fit/predict). It is the only supported optimization target for a model in fit mode.</p></li>
+<li><p>CLIENT_SIDE_CPU_PER_SAMPLE will optimize for low CPU time per sample in client side operations (encrypt input, decrypt output).</p></li>
+<li><p>END_TO_END_LATENCY_PER_SAMPLE will optimize for low end-to-end latency per sample, including client-side operations, server-side operations and communication time, and excluding the time it takes to initialize the model and HE context. Requires setting the system specification by calling “setSystemSpec”. </p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements20optimizeForBatchSizeE6DimInt">
+<span id="_CPPv3N8helayers17HeRunRequirements20optimizeForBatchSizeE6DimInt"></span><span id="_CPPv2N8helayers17HeRunRequirements20optimizeForBatchSizeE6DimInt"></span><span id="helayers::HeRunRequirements::optimizeForBatchSize__DimInt"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1aee669e57fe158207cee20a7fb84622af"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optimizeForBatchSize</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">batchSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements20optimizeForBatchSizeE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the batch size to optimize for (default: 1). </p>
+<p>Cannot be called when “no fixed batch size” mode was set. The effective batch size may be different than the provided value if the provided value is too big or not a power of two.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit batch size set as its hyperparameter. In such case, the batch size to optimize for will be the fit batch size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>batchSize</strong> – the batch size </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements19setNoFixedBatchSizeEv">
+<span id="_CPPv3N8helayers17HeRunRequirements19setNoFixedBatchSizeEv"></span><span id="_CPPv2N8helayers17HeRunRequirements19setNoFixedBatchSizeEv"></span><span id="helayers::HeRunRequirements::setNoFixedBatchSize"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1ad36dc46fc1b904d12a5bf73fb524919c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNoFixedBatchSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements19setNoFixedBatchSizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for no fixed batch size (default: fixed batch size). </p>
+<p>Having an unfixed batch size will result in optimizing for throughput considering multiple possible batch sizes and will usually end up with a large batch size. Cannot be called if an explicit batch size was set.</p>
+<p>NOTE: This method cannot be called with respect to a model that has fit batch size set as its hyperparameter. In such case, the batch size to optimize for will be the fit batch size. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements16setSecurityLevelEi">
+<span id="_CPPv3N8helayers17HeRunRequirements16setSecurityLevelEi"></span><span id="_CPPv2N8helayers17HeRunRequirements16setSecurityLevelEi"></span><span id="helayers::HeRunRequirements::setSecurityLevel__i"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a87c1c80f8259c3d902ad206ab115109a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSecurityLevel</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">securityLevel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements16setSecurityLevelEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the security level (default: 128) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>securityLevel</strong> – the security level </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements12setNotSecureEv">
+<span id="_CPPv3N8helayers17HeRunRequirements12setNotSecureEv"></span><span id="_CPPv2N8helayers17HeRunRequirements12setNotSecureEv"></span><span id="helayers::HeRunRequirements::setNotSecure"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1abebaf7c8f8c2ea8a021571565c6020b4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNotSecure</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements12setNotSecureEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the security level to 0. </p>
+<p>This will result with ciphertexts that can be easily broken. It is useful for quick experiments sometimes, as everything will work faster and consume less memory.</p>
+<p>A warning will be issued when this method is called. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements23setIntegerPartPrecisionEi">
+<span id="_CPPv3N8helayers17HeRunRequirements23setIntegerPartPrecisionEi"></span><span id="_CPPv2N8helayers17HeRunRequirements23setIntegerPartPrecisionEi"></span><span id="helayers::HeRunRequirements::setIntegerPartPrecision__i"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a92eea7db740ca58b0721d695e67d9449"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIntegerPartPrecision</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">integerPartPrecision</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements23setIntegerPartPrecisionEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the integer part precision (default: 10) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>integerPartPrecision</strong> – the integer part precision </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements26setFractionalPartPrecisionEib">
+<span id="_CPPv3N8helayers17HeRunRequirements26setFractionalPartPrecisionEib"></span><span id="_CPPv2N8helayers17HeRunRequirements26setFractionalPartPrecisionEib"></span><span id="helayers::HeRunRequirements::setFractionalPartPrecision__i.b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a705951b69d1ca93efa0e40c745cc8d65"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFractionalPartPrecision</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fractionalPartPrecision</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">useMaxFeasible</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements26setFractionalPartPrecisionEib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the fractional part precision (default: 35) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fractionalPartPrecision</strong> – the fractional part precision </p></li>
+<li><p><strong>useMaxFeasible</strong> – if a higher precision is feasible by the HE library while still fulfilling all the other requirements, the maximal feasible precision value will be used. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements19setExhaustiveSearchEb">
+<span id="_CPPv3N8helayers17HeRunRequirements19setExhaustiveSearchEb"></span><span id="_CPPv2N8helayers17HeRunRequirements19setExhaustiveSearchEb"></span><span id="helayers::HeRunRequirements::setExhaustiveSearch__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a55ecaa34a59f5ffaf9286d123452f6cb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setExhaustiveSearch</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">exhaustiveSearch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements19setExhaustiveSearchEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to perform exhaustive search (default: false) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exhaustiveSearch</strong> – whether or not to perform exhaustive search </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setParallelSearchEb">
+<span id="_CPPv3N8helayers17HeRunRequirements17setParallelSearchEb"></span><span id="_CPPv2N8helayers17HeRunRequirements17setParallelSearchEb"></span><span id="helayers::HeRunRequirements::setParallelSearch__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a17b39aa2ed4c0d3025e110d0fb826b93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setParallelSearch</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">parallelSearch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setParallelSearchEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to perform parallel search (default: true) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parallelSearch</strong> – whether or not to perform parallel search </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setModelEncryptedEb">
+<span id="_CPPv3N8helayers17HeRunRequirements17setModelEncryptedEb"></span><span id="_CPPv2N8helayers17HeRunRequirements17setModelEncryptedEb"></span><span id="helayers::HeRunRequirements::setModelEncrypted__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a1115da32e84887c28f4282305262472e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setModelEncrypted</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modelEncrypted</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setModelEncryptedEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to encrypt the model’s weights (default: true) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modelEncrypted</strong> – whether or not to encrypt the model’s weights </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements22setCircuitOptimizationEb">
+<span id="_CPPv3N8helayers17HeRunRequirements22setCircuitOptimizationEb"></span><span id="_CPPv2N8helayers17HeRunRequirements22setCircuitOptimizationEb"></span><span id="helayers::HeRunRequirements::setCircuitOptimization__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1aaef4b64c3a50b699dbe68df7e3a9dad0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCircuitOptimization</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">circuitOptimization</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements22setCircuitOptimizationEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether to use circuit optimization when running the model. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>circuitOptimization</strong> – whether to use circuit optimization when running the model </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements15setLazyEncodingEb">
+<span id="_CPPv3N8helayers17HeRunRequirements15setLazyEncodingEb"></span><span id="_CPPv2N8helayers17HeRunRequirements15setLazyEncodingEb"></span><span id="helayers::HeRunRequirements::setLazyEncoding__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1ae84f00a981969bf8b8552a91173d3f64"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLazyEncoding</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lazyEncoding</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements15setLazyEncodingEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to apply lazy encoding for the model’s weights, such that a required weight will be encoded at runtime and free after being used (default: false). </p>
+<p>Lazy encoding can only be applied on a non-encrypted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modelEncrypted</strong> – whether or not to apply lazy encoding for the model’s weights </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setHandleOverflowEb">
+<span id="_CPPv3N8helayers17HeRunRequirements17setHandleOverflowEb"></span><span id="_CPPv2N8helayers17HeRunRequirements17setHandleOverflowEb"></span><span id="helayers::HeRunRequirements::setHandleOverflow__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1ac89acba6127b2f3e64932dfc469d1756"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHandleOverflow</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">handleOverflow</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setHandleOverflowEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to apply overflow handling aiming at preventing overflows during the computation (default: false) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handleOverflow</strong> – whether or not to apply overflow handling </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements16setFixedNumSlotsE6DimInt">
+<span id="_CPPv3N8helayers17HeRunRequirements16setFixedNumSlotsE6DimInt"></span><span id="_CPPv2N8helayers17HeRunRequirements16setFixedNumSlotsE6DimInt"></span><span id="helayers::HeRunRequirements::setFixedNumSlots__DimInt"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1afece342be766d5f7d2e929c8fad37274"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFixedNumSlots</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fixedNumSlots</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements16setFixedNumSlotsE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for a fixed number of slots in a ciphertext (default: no fixed number of slots, recommended) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixedNumSlots</strong> – a fixed number of slots in a ciphertext </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements13setSystemSpecEdd7int64_t7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements13setSystemSpecEdd7int64_t7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements13setSystemSpecEdd7int64_t7int64_t"></span><span id="helayers::HeRunRequirements::setSystemSpec__double.double.int64_t.int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a67e0d83466df8137bb41557c8f37b13f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSystemSpec</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clientParallelizationSpeedup</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">serverParallelizationSpeedup</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clientUploadSpeed</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">serverUploadSpeed</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements13setSystemSpecEdd7int64_t7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the system specification, to be used to estimate the expected end-to-end latency when the optimization target is END_TO_END_LATENCY_PER_SAMPLE. </p>
+<p>Required when optimizing for the above target, not-supported when optimizing for any other target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clientParallelizationSpeedup</strong> – the speedup factor in client-side operations achieved by running them in client-side environment compared to a single-thread environment. With the lack of better estimation, consider setting the number of threads available in client-side. </p></li>
+<li><p><strong>serverParallelizationSpeedup</strong> – the speedup factor in server-side operations achieved by running them in server-side environment compared to a single-thread environment. With the lack of better estimation, consider setting the number of threads available in server-side. </p></li>
+<li><p><strong>clientUploadSpeed</strong> – the client-side upload speed, in bytes/sec </p></li>
+<li><p><strong>serverUploadSpeed</strong> – the server-side upload speed, in bytes/sec </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setMaxModelMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements17setMaxModelMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements17setMaxModelMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxModelMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a7d109846d2b0cc6a7a9b92fa7f054a70"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxModelMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxModelMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setMaxModelMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal model memory. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxModelMemory</strong> – the maximal model memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setMaxInputMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements17setMaxInputMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements17setMaxInputMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxInputMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a52adef781de3b0fc959da358e709ed05"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxInputMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxInputMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setMaxInputMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal input memory. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxInputMemory</strong> – the maximal input memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements18setMaxOutputMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements18setMaxOutputMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements18setMaxOutputMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxOutputMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1ae363811649583cceef263c48db9e7084"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxOutputMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxOutputMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements18setMaxOutputMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal output memory. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxOutputMemory</strong> – the maximal output memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements19setMaxContextMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements19setMaxContextMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements19setMaxContextMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxContextMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a1f88ae81aebb7e17248d285cee99a322"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxContextMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxContextMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements19setMaxContextMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal context memory. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxContextMemory</strong> – the maximal context memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setMaxBatchMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements17setMaxBatchMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements17setMaxBatchMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxBatchMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a7f7e68b0f195d7d0ee0ec8fc3e408f0b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxBatchMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxBatchMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setMaxBatchMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal batch memory. </p>
+<p>This value includes the sum of the input memory and the output memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxBatchMemory</strong> – the maximal batch memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements27setMaxClientInferenceMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements27setMaxClientInferenceMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements27setMaxClientInferenceMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxClientInferenceMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1ac85642c5418a94dd5b6263d4ba12c267"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxClientInferenceMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxClientInferenceMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements27setMaxClientInferenceMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal client inference memory. </p>
+<p>This value includes the sum of the input memory, the output memory and the context memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxClientInferenceMemory</strong> – the maximal client inference memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements21setMaxInferenceMemoryE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements21setMaxInferenceMemoryE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements21setMaxInferenceMemoryE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxInferenceMemory__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a7d8b69203f919703a9cf23392b137ece"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxInferenceMemory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxInferenceMemory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements21setMaxInferenceMemoryE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal inference memory. </p>
+<p>This value includes the sum of the input memory, the output memory, the context memory and the model memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxInferenceMemory</strong> – the maximal inference memory (bytes) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements20setMaxPredictCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements20setMaxPredictCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements20setMaxPredictCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxPredictCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a3ebbae6a672e6f0ee23645bff3f5cd93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxPredictCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxPredictCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements20setMaxPredictCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal predict CPU time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxPredictCpuTime</strong> – the maximal predict CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements16setMaxFitCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements16setMaxFitCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements16setMaxFitCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxFitCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a975c21ad0e3197059e029a53bca3bc76"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxFitCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxFitCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements16setMaxFitCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal fit CPU time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxFitCpuTime</strong> – the maximal predict CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements22setMaxInitModelCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements22setMaxInitModelCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements22setMaxInitModelCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxInitModelCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a43fe76cb56e4735509a68e8c4037f827"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxInitModelCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxInitModelCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements22setMaxInitModelCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal init model CPU time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxInitModelCpuTime</strong> – the maximal init model CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements25setMaxEncryptInputCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements25setMaxEncryptInputCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements25setMaxEncryptInputCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxEncryptInputCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a2f92057e9bd446b097883d7a84014e7e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxEncryptInputCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxEncryptInputCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements25setMaxEncryptInputCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal encrypt input CPU time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxEncryptInputCpuTime</strong> – the maximal encrypt input CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements26setMaxDecryptOutputCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements26setMaxDecryptOutputCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements26setMaxDecryptOutputCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxDecryptOutputCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a8633a1dbe6c43989a83660dd4563a3a6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxDecryptOutputCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxDecryptOutputCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements26setMaxDecryptOutputCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal decrypt output CPU time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxDecryptOutputCpuTime</strong> – the maximal decrypt output CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements28setMaxClientInferenceCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements28setMaxClientInferenceCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements28setMaxClientInferenceCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxClientInferenceCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a618e40e2036753b5ea3476ec786662fa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxClientInferenceCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxClientInferenceCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements28setMaxClientInferenceCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal client inference CPU time. </p>
+<p>This value includes the sum of the encrypt input CPU time and the decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxClientInferenceCpuTime</strong> – the maximal client inference CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements22setMaxInferenceCpuTimeE7int64_t">
+<span id="_CPPv3N8helayers17HeRunRequirements22setMaxInferenceCpuTimeE7int64_t"></span><span id="_CPPv2N8helayers17HeRunRequirements22setMaxInferenceCpuTimeE7int64_t"></span><span id="helayers::HeRunRequirements::setMaxInferenceCpuTime__int64_t"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1abb2ff953198e857b608dbed29bfc4267"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxInferenceCpuTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxInferenceCpuTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements22setMaxInferenceCpuTimeE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for the maximal inference CPU time. </p>
+<p>This value includes the sum of the encrypt input CPU time, the predict CPU time and the decrypt output CPU time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>maxInferenceCpuTime</strong> – the maximal inference CPU time (micro-seconds) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements19setHeContextOptionsERKNSt6vectorINSt10shared_ptrIK9HeContextEEEE">
+<span id="_CPPv3N8helayers17HeRunRequirements19setHeContextOptionsERKNSt6vectorINSt10shared_ptrIK9HeContextEEEE"></span><span id="_CPPv2N8helayers17HeRunRequirements19setHeContextOptionsERKNSt6vectorINSt10shared_ptrIK9HeContextEEEE"></span><span id="helayers::HeRunRequirements::setHeContextOptions__std::vector:std::shared_ptr:HeContextC::CR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1aa3b83418e552786ae23680ee8bb9a7bb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHeContextOptions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heContextOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements19setHeContextOptionsERKNSt6vectorINSt10shared_ptrIK9HeContextEEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> options. </p>
+<p>This value specifies possible <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> types that may be used when searching for a profile that satisfies the user’s requirements. The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> objects may or may not be initialized, and any attribute other then their type will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>heContextOption</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> options to set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements30setExplicitHeConfigRequirementERK19HeConfigRequirement">
+<span id="_CPPv3N8helayers17HeRunRequirements30setExplicitHeConfigRequirementERK19HeConfigRequirement"></span><span id="_CPPv2N8helayers17HeRunRequirements30setExplicitHeConfigRequirementERK19HeConfigRequirement"></span><span id="helayers::HeRunRequirements::setExplicitHeConfigRequirement__HeConfigRequirementCR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a3f17dd42e3023176e71f48b0e5314272"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setExplicitHeConfigRequirement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heConfReq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements30setExplicitHeConfigRequirementERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for an explicit HE config requirement. </p>
+<p>Useful when an already-initialized HE context exists. The HE config requirement is validated to be feasible by the HE context options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>heConfReq</strong> – The HE config requirement to set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements30getExplicitHeConfigRequirementEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements30getExplicitHeConfigRequirementEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements30getExplicitHeConfigRequirementEv"></span><span id="helayers::HeRunRequirements::getExplicitHeConfigRequirementC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a95329f84a8f7198bfe8b2a9c44f848e3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getExplicitHeConfigRequirement</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements30getExplicitHeConfigRequirementEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the explicit HE config requirement if set, or nullopt otherwise. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements23setSimpleGenericPackingEbRK20GenericPackingConfig">
+<span id="_CPPv3N8helayers17HeRunRequirements23setSimpleGenericPackingEbRK20GenericPackingConfig"></span><span id="_CPPv2N8helayers17HeRunRequirements23setSimpleGenericPackingEbRK20GenericPackingConfig"></span><span id="helayers::HeRunRequirements::setSimpleGenericPacking__b.GenericPackingConfigCR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a7088bdc149ef628a31739db00c7931bc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSimpleGenericPacking</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">light</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GenericPackingConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">gpConfig</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">GenericPackingConfig</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements23setSimpleGenericPackingEbRK20GenericPackingConfig" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for using generically-packed inputs for the computation, where the HE context used to generically pack data is the default generic-packing HE context. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>light</strong> – Whether the default generic-packing HE context was initialized for light mode or not (default: false). </p></li>
+<li><p><strong>gpConfig</strong> – An optional generic packing config. The same config that was used to generically pack data shall be provided. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements47setExplicitHeConfigRequirementForGenericPackingERK19HeConfigRequirementRK20GenericPackingConfig">
+<span id="_CPPv3N8helayers17HeRunRequirements47setExplicitHeConfigRequirementForGenericPackingERK19HeConfigRequirementRK20GenericPackingConfig"></span><span id="_CPPv2N8helayers17HeRunRequirements47setExplicitHeConfigRequirementForGenericPackingERK19HeConfigRequirementRK20GenericPackingConfig"></span><span id="helayers::HeRunRequirements::setExplicitHeConfigRequirementForGenericPacking__HeConfigRequirementCR.GenericPackingConfigCR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a874e4f8926329c0484cc811a62e074d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setExplicitHeConfigRequirementForGenericPacking</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heConfReq</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GenericPackingConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">gpConfig</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">GenericPackingConfig</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements47setExplicitHeConfigRequirementForGenericPackingERK19HeConfigRequirementRK20GenericPackingConfig" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for using generically-packed inputs for the computation, where the HE context used to generically pack data is a custom HE context corresponds to the given HE config requirement. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heConfReq</strong> – An HE config requirement corresponds to the HE context used to generically pack data. </p></li>
+<li><p><strong>gpConfig</strong> – An optional generic packing config. The same config that was used to generically pack data shall be provided. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements26getUseGenericPackingInputsEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements26getUseGenericPackingInputsEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements26getUseGenericPackingInputsEv"></span><span id="helayers::HeRunRequirements::getUseGenericPackingInputsC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a491dbe15946c6701f12659b95bb778f6"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getUseGenericPackingInputs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements26getUseGenericPackingInputsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication for whether or not to use generically-packed inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements23getGenericPackingConfigEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements23getGenericPackingConfigEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements23getGenericPackingConfigEv"></span><span id="helayers::HeRunRequirements::getGenericPackingConfigC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a26e2783377c6d494c4298e2222bf31d6"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GenericPackingConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getGenericPackingConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements23getGenericPackingConfigEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the generic packing configuration in case of generically-packed inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements15setUseAesInputsEb">
+<span id="_CPPv3N8helayers17HeRunRequirements15setUseAesInputsEb"></span><span id="_CPPv2N8helayers17HeRunRequirements15setUseAesInputsEb"></span><span id="helayers::HeRunRequirements::setUseAesInputs__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a3ee853aebb11a258294aacf6c3b23e5b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUseAesInputs</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">useAesInputs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements15setUseAesInputsEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for whether or not to use AES inputs for the computation (default: false) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>useAesInputs</strong> – Whether or not to use AES inputs. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements18setAesNumberConfigERK12NumberConfig">
+<span id="_CPPv3N8helayers17HeRunRequirements18setAesNumberConfigERK12NumberConfig"></span><span id="_CPPv2N8helayers17HeRunRequirements18setAesNumberConfigERK12NumberConfig"></span><span id="helayers::HeRunRequirements::setAesNumberConfig__NumberConfigCR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a561ad7b92141c182e18a181794432e08"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAesNumberConfig</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="NumberConfig.html#_CPPv4N8helayers12NumberConfigE" title="helayers::NumberConfig"><span class="n"><span class="pre">NumberConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">numberConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements18setAesNumberConfigERK12NumberConfig" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>When using AES inputs, sets the requirement for a number configuration, describing the characteristics of the numbers inside the inputs. </p>
+<p>Must be set when using AES inputs (no default).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numberConfig</strong> – The number configuration. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements13setAesKeySizeE6size_t">
+<span id="_CPPv3N8helayers17HeRunRequirements13setAesKeySizeE6size_t"></span><span id="_CPPv2N8helayers17HeRunRequirements13setAesKeySizeE6size_t"></span><span id="helayers::HeRunRequirements::setAesKeySize__s"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a18b662bdd54640b9ea131715d66b91a6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAesKeySize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keySize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements13setAesKeySizeE6size_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>When using AES inputs, sets the size of the AES secret key, in bits (default: 256). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keySize</strong> – The AES secret key size, in bits. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements17setCompressAesKeyEb">
+<span id="_CPPv3N8helayers17HeRunRequirements17setCompressAesKeyEb"></span><span id="_CPPv2N8helayers17HeRunRequirements17setCompressAesKeyEb"></span><span id="helayers::HeRunRequirements::setCompressAesKey__b"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a4ae04918cfc0608b39feee25e3395243"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCompressAesKey</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compressAesKey</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements17setCompressAesKeyEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>When using AES inputs, sets the requirement for whether or not the AES key encrypted under FHE will be saved and loaded in a compressed mode (default: true). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compressAesKey</strong> – Whether or not the AES key encrypted under FHE will be saved and loaded in a compressed mode. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements15getUseAesInputsEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements15getUseAesInputsEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements15getUseAesInputsEv"></span><span id="helayers::HeRunRequirements::getUseAesInputsC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a9f5f70279b1a0d326739b0cbb2e8eb2d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getUseAesInputs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements15getUseAesInputsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication for whether or not to use AES inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements18getAesNumberConfigEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements18getAesNumberConfigEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements18getAesNumberConfigEv"></span><span id="helayers::HeRunRequirements::getAesNumberConfigC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a5760952187884cade8f672e703ddb820"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="NumberConfig.html#_CPPv4N8helayers12NumberConfigE" title="helayers::NumberConfig"><span class="n"><span class="pre">NumberConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getAesNumberConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements18getAesNumberConfigEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number configuration in case of AES inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements13getAesKeySizeEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements13getAesKeySizeEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements13getAesKeySizeEv"></span><span id="helayers::HeRunRequirements::getAesKeySizeC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a084af6e23da8cc4be71ff1877bd204d1"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAesKeySize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements13getAesKeySizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the AES secret key size, in bits, in case of AES inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements17getCompressAesKeyEv">
+<span id="_CPPv3NK8helayers17HeRunRequirements17getCompressAesKeyEv"></span><span id="_CPPv2NK8helayers17HeRunRequirements17getCompressAesKeyEv"></span><span id="helayers::HeRunRequirements::getCompressAesKeyC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a0aafcfee05369ce0bd68a06da49df972"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCompressAesKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements17getCompressAesKeyEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication for whether or not the AES key encrypted under FHE will be saved and loaded in a compressed mode, in case of AES inputs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17HeRunRequirements10debugPrintERNSt7ostreamE">
+<span id="_CPPv3NK8helayers17HeRunRequirements10debugPrintERNSt7ostreamE"></span><span id="_CPPv2NK8helayers17HeRunRequirements10debugPrintERNSt7ostreamE"></span><span id="helayers::HeRunRequirements::debugPrint__osRC"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a6b9c4f5e9cf86e6cf42faa56dce4f23b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17HeRunRequirements10debugPrintERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the effective set of requirements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – output stream to print to </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="HeConfigRequirement.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HeConfigRequirement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ModelIoProcessor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ModelIoProcessor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.optimize_for_batch_size"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.optimize_for_batch_size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_aes_key_size"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_aes_key_size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_aes_number_config"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_aes_number_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_compress_aes_key"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_compress_aes_key()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_exhaustive_search"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_exhaustive_search()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_explicit_he_config_requirement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_fixed_num_slots"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_fixed_num_slots()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_fractional_part_precision"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_fractional_part_precision()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_handle_overflow"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_handle_overflow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_he_context_options"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_he_context_options()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_integer_part_precision"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_integer_part_precision()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_lazy_encoding"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_lazy_encoding()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_batch_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_batch_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_client_inference_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_client_inference_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_client_inference_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_client_inference_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_context_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_context_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_decrypt_output_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_decrypt_output_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_encrypt_input_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_encrypt_input_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_fit_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_fit_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_inference_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_inference_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_inference_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_inference_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_init_model_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_init_model_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_input_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_input_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_model_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_model_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_output_memory"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_output_memory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_max_predict_cpu_time"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_max_predict_cpu_time()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_model_encrypted"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_model_encrypted()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_no_fixed_batch_size"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_no_fixed_batch_size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_not_secure"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_not_secure()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_optimization_target"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_optimization_target()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_security_level"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_security_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_simple_generic_packing"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_simple_generic_packing()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_system_spec"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_system_spec()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeRunRequirements.set_use_aes_inputs"><code class="docutils literal notranslate"><span class="pre">HeRunRequirements.set_use_aes_inputs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
