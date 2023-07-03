@@ -385,7 +385,7 @@ document.write(`
 .tg .tg-9353{border-color:inherit;font-weight:bold;text-align:center;text-decoration:underline;vertical-align:top}
 .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-</style><p>There are two ways to get started with HElayers: using <a class="reference external" href="https://www.docker.com/">Dockers</a> or directly through <a class="reference external" href="https://www.python.org/">Python</a>.</p>
+</style><p>There are two ways to get started with HElayers: using <a class="reference external" href="https://www.docker.com/">Docker</a> or directly through <a class="reference external" href="https://www.python.org/">Python</a>.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#docker-image-installation"><span class="std std-ref">The Docker image installation option</span></a> is recommended for new HElayers users who wish to explore the various <a class="reference internal" href="demos.html"><span class="doc">demos</span></a> that HElayers provides, which may have dependencies on 3rd-party libraries such as <a class="reference external" href="https://scikit-learn.org/">scikit-learn</a>. The Docker images come with these dependencies already installed, together with a C++ or Python IDE, where the users can immediately start programming some HE-based applications.</p></li>
 <li><p><a class="reference internal" href="#importing-pyhelayers"><span class="std std-ref">The import to Python option</span></a> is recommended for users who already have a Python environment of choice installed and wish to simply import the <cite>pyhelayers</cite> package and start programming.</p></li>
@@ -625,15 +625,15 @@ only some of the supported libraries, allowing it to run without dependence on t
 <section id="step-2-running-the-image">
 <h4>Step 2: Running the image<a class="headerlink" href="#step-2-running-the-image" title="Permalink to this heading">#</a></h4>
 <p>Once the image download is complete, <cite>run</cite> the image as a container in Docker using the relevant <cite>helayers docker name</cite>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -p 8443:8443 -d --rm --name helayers-lab icr.io/helayers/&lt;helayers docker name&gt;:latest</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -p 8888:8888 -d --rm --name helayers-lab icr.io/helayers/&lt;helayers docker name&gt;:latest</span>
 </pre></div>
 </div>
-<p>This command runs the image and sets the container to be accessed via port 8443. It also gives the container a name called <cite>helayers-lab</cite>, which is used for finding it in the list of other running containers.</p>
+<p>This command runs the image and sets the container to be accessed via port 8888. It also gives the container a name called <cite>helayers-lab</cite>, which is used for finding it in the list of other running containers.</p>
 <div class="helayers-admonition-info dropdown admonition">
-<p class="admonition-title">Running several dockers at once.</p>
-<p>When required to run several dockers in parallel,
-e.g., for using the C++ and Python APIs at the same time set a different port per docker.
-For example, use <cite>8443:8843</cite> for the <cite>helayers-lab</cite> docker and <cite>8443:8444</cite> for the <cite>helayers-pylab</cite> docker.</p>
+<p class="admonition-title">Running several Docker containers at once.</p>
+<p>When required to run several containers in parallel,
+e.g., for using the C++ and Python APIs at the same time, set a different port per container.
+For example, use <cite>8888:8888</cite> for the <cite>helayers-lab</cite> container and <cite>8888:9999</cite> for the <cite>helayers-pylab</cite> container.</p>
 </div>
 </section>
 <section id="step-3-accessing-helayers-and-running-the-tutorials">
@@ -643,7 +643,7 @@ For example, use <cite>8443:8843</cite> for the <cite>helayers-lab</cite> docker
 <dt><strong>For Python users</strong>:</dt><dd><ul class="simple">
 <li><p>Connect to the Juptyer notebook welcome page by opening a web browser on your host machine (not the docker container instance), and browse to</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">http://127.0.0.1:8443/lab/?token=demo-experience-with-fhe-and-python</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">http://127.0.0.1:8888/lab/?token=demo-experience-with-fhe-and-python</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -656,7 +656,7 @@ For example, use <cite>8443:8843</cite> for the <cite>helayers-lab</cite> docker
 <dt><strong>For C++ users</strong>:</dt><dd><ul class="simple">
 <li><p>Connect to the VS Code welcome page by openning a web browser on your host machine (not the docker container instance), and browse to</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">http://127.0.0.1:8443</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">http://127.0.0.1:8888</span>
 </pre></div>
 </div>
 <ul class="simple">
