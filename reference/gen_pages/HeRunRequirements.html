@@ -616,7 +616,7 @@ is validated to be feasible by the HE context options.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing">
-<span class="sig-name descname"><span class="pre">set_explicit_he_config_requirement_for_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">he_config_requirement:</span> <span class="pre">pyhelayers.HeConfigRequirement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fab93261bb0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_explicit_he_config_requirement_for_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">he_config_requirement:</span> <span class="pre">pyhelayers.HeConfigRequirement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f501b4c7af0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_explicit_he_config_requirement_for_generic_packing" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the requirement for using generically-packed inputs for the
 computation, where the HE context used to generically pack data is a
 custom HE context corresponds to the given HE config requirement.</p>
@@ -955,7 +955,7 @@ model and HE context. Requires setting the system specification by calling
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeRunRequirements.set_simple_generic_packing">
-<span class="sig-name descname"><span class="pre">set_simple_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">light:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fab91fae830&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_simple_generic_packing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_simple_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.HeRunRequirements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">light:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f501ae4bfb0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeRunRequirements.set_simple_generic_packing" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the requirement for using generically-packed inputs for the
 computation, where the HE context used to generically pack data is the
 default generic-packing HE context.</p>
@@ -1181,6 +1181,18 @@ computation (default: false).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fixedNumSlots</strong> – a fixed number of slots in a ciphertext </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17HeRunRequirements18setFixedTileLayoutERK7TTShape">
+<span id="_CPPv3N8helayers17HeRunRequirements18setFixedTileLayoutERK7TTShape"></span><span id="_CPPv2N8helayers17HeRunRequirements18setFixedTileLayoutERK7TTShape"></span><span id="helayers::HeRunRequirements::setFixedTileLayout__TTShapeCR"></span><span class="target" id="classhelayers_1_1HeRunRequirements_1a57f46b4cc681b606c66f94d06141d3c2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFixedTileLayout</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fixedTileLayout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17HeRunRequirements18setFixedTileLayoutERK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the requirement for a fixed tile layout (default: no fixed tile layout). </p>
+<p>It is usually best to keep this option unset, allowing the optimizer to pick the best layout suitable for the model. This option is useful when the tile layout is known in advance for some reason, e.g., for conducting some specific tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixedNumSlots</strong> – a fixed tile layout </p>
 </dd>
 </dl>
 </dd></dl>
