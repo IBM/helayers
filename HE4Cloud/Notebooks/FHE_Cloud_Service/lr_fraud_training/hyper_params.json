@@ -1,0 +1,8 @@
+{
+    "verbose": false,
+    "trainable": true,
+    "numberOfEpochs": 3,
+    "learningRate": 0.1,
+    "numberOfFeatures": 30,
+    "logisticRegressionActivation": "sigmoid_poly_3_approximation"
+}
