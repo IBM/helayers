@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeConfigRequirement &#8212; HElayers 1.5.3.0 documentation</title>
+    <title>HeConfigRequirement &#8212; HElayers 1.5.3.1 documentation</title>
   
   
   
@@ -636,7 +636,24 @@ public keys of the HeContex</p>
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirementE">
 <span id="_CPPv3N8helayers19HeConfigRequirementE"></span><span id="_CPPv2N8helayers19HeConfigRequirementE"></span><span id="helayers::HeConfigRequirement"></span><span class="target" id="structhelayers_1_1HeConfigRequirement"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HeConfigRequirement</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SaveableBasic</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirementE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>For internal use. </p>
+<dd><p>A class for configuring <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> objects. </p>
+<p>See documentation in each field below.</p>
+<p>General instructions for CKKS scheme:<ul class="simple">
+<li><p>numSlots should be a power of 2, typically in the range 1024 … 65536.</p></li>
+<li><p>integerPartPrecision is typically in the range 0 … 20.</p></li>
+<li><p>fractionalPartPrecision is typically in the range 20 … 50.</p></li>
+<li><p>multiplicationDepth depends on the computation planned. If you need a computation that requires n layers of multiplications, then set this value here. For small values (e.g., n&lt;10) this should work efficiently. For large values, see the ‘bootstrappable’ option below.</p></li>
+<li><p>bootstrappable: set this to true for computations that require a lot of multiplication depth, typically more than 20. For depth in the range 10-20 you can experiment which works better, with bootstrappable true or false. Even if bootstrappable is set to true, you still need to set the multiplication depth. Different values of it in the range 4-20 may produce different bootstrappable configurations. Note that generally turning on this flag creates significantly larger keys and slower setup time. Bootstrapping can be called manually using <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>’s bootstrap method, or turn on automaticBootstrapping to have it called automatically when necessary.</p></li>
+<li><p>securityLevel: typical values are 128, 192, and 256. Default is 128.</p></li>
+<li><p>Troubleshooting:<ul>
+<li><p>Bootstrapping is not supported by all underlying libraries, or by the HElayers wrapper for that library. Currently HElayers supports bootstrapping using HEaaN and Lattigo.</p></li>
+<li><p>Some combination of values may not satisfy the securityLevel constraint specified (or the default 128). To solve that, try increasing numSlots, or decreasing multiplicationDepth, fractionalPartPrecision, and integerPartPrecision.</p></li>
+<li><p>Some combinations of integerPartPrecision and fractionalPartPrecision may cause errors related to choosing appropriate prime numbers. This may happen for values that are too low or too high. Try values closer to the typical values of integerPartPrecision=10 and fractionalPartPrecision=40.</p></li>
+</ul>
+</p></li>
+<li><p>To create toy setups with no security guarantees, use the <code class="docutils literal notranslate"><span class="pre">insecure</span></code> static method instead of the constructor. </p></li>
+</ul>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -769,25 +786,29 @@ public keys of the HeContex</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement8numSlotsE">
 <span id="_CPPv3N8helayers19HeConfigRequirement8numSlotsE"></span><span id="_CPPv2N8helayers19HeConfigRequirement8numSlotsE"></span><span id="helayers::HeConfigRequirement::numSlots__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a16eca9b06f439fb92bfbe827c7cd5960"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numSlots</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement8numSlotsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The required number of slots. </p>
+<dd><p>The number of slots in a ciphertext. </p>
+<p>For example, if it is set to 4096 it means each <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> (ciphertext) will contain 4096 numbers. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement19multiplicationDepthE">
 <span id="_CPPv3N8helayers19HeConfigRequirement19multiplicationDepthE"></span><span id="_CPPv2N8helayers19HeConfigRequirement19multiplicationDepthE"></span><span id="helayers::HeConfigRequirement::multiplicationDepth__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1aa116fc8d020ff4520063ae3b63a00695"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplicationDepth</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement19multiplicationDepthE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The required multiplication depth. </p>
+<p>For example, multiplication depth of 2 will allow a computation involving two multiplications performed one after the other. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement23fractionalPartPrecisionE">
 <span id="_CPPv3N8helayers19HeConfigRequirement23fractionalPartPrecisionE"></span><span id="_CPPv2N8helayers19HeConfigRequirement23fractionalPartPrecisionE"></span><span id="helayers::HeConfigRequirement::fractionalPartPrecision__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1ab13e78609bfbae02c59c1e451bf5b36d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fractionalPartPrecision</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement23fractionalPartPrecisionE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The required fractional part precision. </p>
+<p>This is the number of bits each number will have in its fractional part. For example, a value of 40 means it will have an accuracy of about 2^-40. Note that actual accuracy in a computation might be lower than that, as the computation itself adds further noise. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement20integerPartPrecisionE">
 <span id="_CPPv3N8helayers19HeConfigRequirement20integerPartPrecisionE"></span><span id="_CPPv2N8helayers19HeConfigRequirement20integerPartPrecisionE"></span><span id="helayers::HeConfigRequirement::integerPartPrecision__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a930312e3e133371800ed7c70500d0cb2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integerPartPrecision</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement20integerPartPrecisionE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The required integer part precision. </p>
+<p>This is the number of bits each number will have in its integer part. For example, a value of 10 means the numbers will be in the range -2^10 … 2^10. Numbers outside this range might produce errors. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -799,8 +820,8 @@ public keys of the HeContex</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement14bootstrappableE">
 <span id="_CPPv3N8helayers19HeConfigRequirement14bootstrappableE"></span><span id="_CPPv2N8helayers19HeConfigRequirement14bootstrappableE"></span><span id="helayers::HeConfigRequirement::bootstrappable__b"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a718aae5de1f7a7c2755cee7bcc99ba3a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrappable</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement14bootstrappableE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Whether CTiles created by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> will be bootstrappable. </p>
-<p>Setting this flag to true will lead to the creation of a BootstrapEvaluator object upon the initialization of the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. Note that this BootstrapEvaluator creation increases the runtime of the initialization. </p>
+<dd><p>Whether <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> objects (ciphrtexts) created by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> will be bootstrappable. </p>
+<p>Setting this flag to true will allow performing computation of arbitrary multiplication depth. Note that this feature is not supported yet by all underlying back-end libraries, or not yet integrated with HElayers for all underlying back-ends. </p>
 </dd></dl>
 
 <dl class="cpp var">
