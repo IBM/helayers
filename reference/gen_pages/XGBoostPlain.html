@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>XGBoostPlain &#8212; HElayers 1.5.3.0 documentation</title>
+    <title>XGBoostPlain &#8212; HElayers 1.5.3.1 documentation</title>
   
   
   
@@ -547,7 +547,7 @@ document.write(`
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12XGBoostPlain12XGBoostPlainEv">
-<span id="_CPPv3N8helayers12XGBoostPlain12XGBoostPlainEv"></span><span id="_CPPv2N8helayers12XGBoostPlain12XGBoostPlainEv"></span><span id="helayers::XGBoostPlain::XGBoostPlain"></span><span class="target" id="classhelayers_1_1XGBoostPlain_1a0884767abd2aad648b93728b26c3628f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">XGBoostPlain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12XGBoostPlain12XGBoostPlainEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8helayers12XGBoostPlain12XGBoostPlainEv"></span><span id="_CPPv2N8helayers12XGBoostPlain12XGBoostPlainEv"></span><span id="helayers::XGBoostPlain::XGBoostPlain"></span><span class="target" id="classhelayers_1_1XGBoostPlain_1a0884767abd2aad648b93728b26c3628f"></span><span class="sig-name descname"><span class="n"><span class="pre">XGBoostPlain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12XGBoostPlain12XGBoostPlainEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -572,6 +572,21 @@ document.write(`
 <span id="_CPPv3NK8helayers12XGBoostPlain24getInputShapesForPredictEv"></span><span id="_CPPv2NK8helayers12XGBoostPlain24getInputShapesForPredictEv"></span><span id="helayers::XGBoostPlain::getInputShapesForPredictC"></span><span class="target" id="classhelayers_1_1XGBoostPlain_1a37271c194d2584cb8f7c41f15fffe798"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputShapesForPredict</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12XGBoostPlain24getInputShapesForPredictEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the expected shapes of the inputs for predict. </p>
 <p>If batch dimension is applicable, the value of the batch dimension is set to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12XGBoostPlain10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE">
+<span id="_CPPv3NK8helayers12XGBoostPlain10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="_CPPv2NK8helayers12XGBoostPlain10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="helayers::XGBoostPlain::debugPrint__ssCR.Verbosity.osRC"></span><span class="target" id="classhelayers_1_1XGBoostPlain_1a155c6c3ef521cc3c0031d41bf276ea9b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity17VERBOSITY_REGULARE" title="helayers::VERBOSITY_REGULAR"><span class="n"><span class="pre">VERBOSITY_REGULAR</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12XGBoostPlain10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the content of this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Text to add to the print </p></li>
+<li><p><strong>verbosity</strong> – Verbosity level </p></li>
+<li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

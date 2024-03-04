@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PlainModelHyperParams &#8212; HElayers 1.5.3.0 documentation</title>
+    <title>PlainModelHyperParams &#8212; HElayers 1.5.3.1 documentation</title>
   
   
   
@@ -709,6 +709,13 @@ plain ARIMA model) on the account of higher multiplication depth.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_cached_nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_cached_nodes</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_cached_nodes" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of nodes that are shared among trees and their results are
+cached as an optimization.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_features">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_features</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_features" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of features in an input sample.
@@ -744,6 +751,16 @@ Value of -1 indicates it will be determined by the model file.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.round_before_storing_thresholds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">round_before_storing_thresholds</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds" title="Permalink to this definition">#</a></dt>
+<dd><p>In case storeThresholds is true, decides whether the
+thresholds should be scaled and rounded before they are
+stored. Turning this flag on makes close thresholds
+considered the same one, thus reducing runtime on the
+account of possibly reducing accuracy.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.sparse_rate">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sparse_rate</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.sparse_rate" title="Permalink to this definition">#</a></dt>
 <dd><p>Relevant when init_random_weights is set to True.
@@ -751,6 +768,19 @@ The rate of zeroed values. Must be in the range of [0,1].
 For example, 0 means no values will be set to zero, while 0.3 means ~30%
 of the values will be set to zero and ~70% will get values in the range of
 [min,max).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.store_thresholds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">store_thresholds</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.store_thresholds" title="Permalink to this definition">#</a></dt>
+<dd><p>If true, XGBoost and DTree will store all thresholds of
+the model in the user side, in the plain.
+This has the advantage of making prediction faster and
+more accurate, on the account of storing additional,
+possibly sensitive, data in the user side, and requiring
+the user to do some additional pre-processing. Note that
+the additional data will be kept in the user side and it
+will not be exposed to the server at any time.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -986,7 +1016,7 @@ of the values will be set to zero and ~70% will get values in the range of
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4gRepE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams4gRepE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4gRepE"></span><span id="helayers::PlainModelHyperParams::gRep__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a105f9c45dc40bca419ae5643bbbd4e2c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gRep</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">4</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4gRepE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8helayers21PlainModelHyperParams4gRepE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4gRepE"></span><span id="helayers::PlainModelHyperParams::gRep__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a105f9c45dc40bca419ae5643bbbd4e2c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gRep</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4gRepE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Controls the accuracy of the comparison approximation in XGBoost and DTree prediction. </p>
 <p>A higher grep increases the accuracy on the account of deeper and slower computation. </p>
 </dd></dl>
@@ -1002,6 +1032,26 @@ of the values will be set to zero and ~70% will get values in the range of
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13featureRangesE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams13featureRangesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13featureRangesE"></span><span id="helayers::PlainModelHyperParams::featureRanges__std::vector:std::pair:double.double::"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0a349ad0fcf81e54c57727c1d9dc1b51"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">featureRanges</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13featureRangesE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A vector specifying the minimum and maximum supported values for each feature. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams19numberOfCachedNodesE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams19numberOfCachedNodesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams19numberOfCachedNodesE"></span><span id="helayers::PlainModelHyperParams::numberOfCachedNodes__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2eb8dd8bc027f91133697e86444b9235"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfCachedNodes</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams19numberOfCachedNodesE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Number of nodes that are shared among trees and their results are cached as an optimization. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams15storeThresholdsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams15storeThresholdsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams15storeThresholdsE"></span><span id="helayers::PlainModelHyperParams::storeThresholds__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a52f024f18ec495f395f9d703e99277da"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">storeThresholds</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams15storeThresholdsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>If true, XGBoost and DTree will store all thresholds of the model in the user side, in the plain. </p>
+<p>This has the advantage of making prediction faster and more accurate, on the account of storing additional, possibly sensitive, data in the user side, and requiring the user to do some additional pre-processing. Note that the additional data will be kept in the user side and it will not be exposed to the server at any time. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE"></span><span id="helayers::PlainModelHyperParams::roundBeforeStoringThresholds__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac47e3b46153c3b19b9439cdcd7a0c883"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">roundBeforeStoringThresholds</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>In case storeThresholds is true, decides whether the thresholds should be scaled and rounded before they are stored. </p>
+<p>Turning this flag on makes close thresholds considered the same one, thus reducing runtime on the account of possibly reducing accuracy. </p>
 </dd></dl>
 
 </div>
@@ -1075,11 +1125,14 @@ of the values will be set to zero and ~70% will get values in the range of
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_centers"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_centers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_samples"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_samples</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_values_used_for_prediction"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_values_used_for_prediction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_cached_nodes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_cached_nodes</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_features"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_features</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.p"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.p</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.phi</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.q"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.q</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.round_before_storing_thresholds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.sparse_rate"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.sparse_rate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.store_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.store_thresholds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.theta1"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.theta1</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.trainable"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.trainable</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.varw"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.varw</span></code></a></li>

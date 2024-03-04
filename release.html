@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Changelog &#8212; HElayers 1.5.3.0 documentation</title>
+    <title>Changelog &#8212; HElayers 1.5.3.1 documentation</title>
   
   
   
@@ -348,7 +348,14 @@ document.write(`
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
 <section id="id1">
-<h2>[1.5.3.0] - 2023-06-27<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>[1.5.3.1] - 2023-11-16<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MlToolBox improvements.</p></li>
+<li><p>s390x related fixes.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>[1.5.3.0] - 2023-06-27<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HEbase: Add Multi-Party FHE support for Palisade.</p></li>
 <li><p>HEbase: Support for decreasing the rotation keys size while using HeaanContext, by setting the gadget rank and the size of the temporary primes when possible from a security standpoint (see <a class="reference external" href="https://heaan.it/docs/heaan/namespaceHEaaN.html#a28041777366fb026ee2f40559f1fbf1d">HEaaN documentation</a> for further details about gadget rank and temporary primes).</p></li>
@@ -363,8 +370,8 @@ document.write(`
 <li><p>New HElayers website and API documentation.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>[1.5.2.0] - 2023-02-28<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2>[1.5.2.0] - 2023-02-28<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>CircLayer: Improved API, support bootstrapping operators, new C++ tutorials in helayers-lab.</p></li>
 <li><p>AES decryption under FHE; AI supports AES-encrypted inputs.</p></li>
@@ -379,16 +386,16 @@ document.write(`
 <li><p>Added macOS Intel 64-bit build for pyhelayerslite wheel.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>[1.5.1.0] - 2022-11-30<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2>[1.5.1.0] - 2022-11-30<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>New notebooks with thorough explanations of Tile Tensors.</p></li>
 <li><p>ARIMA: Add support for parameter d=1 in training and prediction. Now supporting all models of type <cite>ARIMA(p=*,d=0/1,q=1)</cite>.</p></li>
 <li><p>Python: CTile now supports multiply_scalar with integer, multiply_imaginary_unit, and nullify_imaginary_part.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>[1.5.0.3] - 2022-11-02<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2>[1.5.0.3] - 2022-11-02<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A new API for HeModel and PlainModel: Includes support for training, multiple inputs/outputs.</p></li>
 <li><p>pyhelayers: Added some missing HeConfigRequirement methods.</p></li>
@@ -397,35 +404,35 @@ document.write(`
 <li><p>Tile tensors: A new printing mode for tile tensor that prints tiles.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>[1.4.0.5] - 2022-07-19<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2>[1.4.0.5] - 2022-07-19<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix a bug in which encode() and encode_encrypt() encoded Python lists of doubles as lists of integers.</p></li>
 <li><p>Allow XGBoost inference using HeModel interface.</p></li>
 <li><p>XGBoost demo notebook: Use HeProfileOptimizer to find optimal packing configuration and context parameters; encrypt and decrypt using IoProcessor.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>[1.4.0.4] - 2022-06-27<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2>[1.4.0.4] - 2022-06-27<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix bug in XGBoost inference when a tree has a single leaf node.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>[1.4.0.3] - 2022-06-21<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h2>[1.4.0.3] - 2022-06-21<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>mltoolbox: Improve trainer API; add starting_point() helper</p></li>
 </ul>
 </section>
-<section id="id8">
-<h2>[1.4.0.2] - 2022-06-13<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2>[1.4.0.2] - 2022-06-13<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Add support for HEaaN on IBM Z (s390x)</p></li>
 <li><p>Bug fixes</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>[1.4.0.1] - 2022-06-06<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2>[1.4.0.1] - 2022-06-06<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>‘accord’ submodule in pyhelayers: MPC and ZK, including demo notebooks.</p></li>
 <li><p>‘mltoolbox’ submodule in pyhelayers: Convert a network to be HE friendly. Including a new demo notebook.</p></li>
@@ -438,8 +445,8 @@ document.write(`
 <li><p>New demo notebook for FHE XGBoost inference over the iris dataset.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h2>[1.3.0] - 2022-04-03<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h2>[1.3.0] - 2022-04-03<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Support for HEaaN as backend</p></li>
 <li><p>Added helayerslite - a basic version of the library.</p></li>
@@ -482,16 +489,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1.5.3.0] - 2023-06-27</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[1.5.2.0] - 2023-02-28</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[1.5.1.0] - 2022-11-30</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[1.5.0.3] - 2022-11-02</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[1.4.0.5] - 2022-07-19</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">[1.4.0.4] - 2022-06-27</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">[1.4.0.3] - 2022-06-21</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">[1.4.0.2] - 2022-06-13</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">[1.4.0.1] - 2022-06-06</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">[1.3.0] - 2022-04-03</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1.5.3.1] - 2023-11-16</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[1.5.3.0] - 2023-06-27</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[1.5.2.0] - 2023-02-28</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[1.5.1.0] - 2022-11-30</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[1.5.0.3] - 2022-11-02</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">[1.4.0.5] - 2022-07-19</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">[1.4.0.4] - 2022-06-27</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">[1.4.0.3] - 2022-06-21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">[1.4.0.2] - 2022-06-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">[1.4.0.1] - 2022-06-06</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">[1.3.0] - 2022-04-03</a></li>
 </ul>
   </nav></div>
 
