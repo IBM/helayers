@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>FileUtils &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>FileUtils &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -659,6 +659,53 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filePath</strong> – File path to check. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9FileUtils21extractFileExtensionsERKNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE">
+<span id="_CPPv3N8helayers9FileUtils21extractFileExtensionsERKNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE"></span><span id="_CPPv2N8helayers9FileUtils21extractFileExtensionsERKNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE"></span><span id="helayers::FileUtils::extractFileExtensions__std::vector:ss:CR.std::set:ss:CR"></span><span class="target" id="classhelayers_1_1FileUtils_1a0b40e79fd2363827479b1ecacd720ccc"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extractFileExtensions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">validFileExtensions</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9FileUtils21extractFileExtensionsERKNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a vector whose i-th element is the file extension of the i-th file name in the given “files” vector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> – The names of the files to extract their extensions. </p></li>
+<li><p><strong>validFileExtensions</strong> – The valid file extensions that are allowed to be in “files” vector. If validFileExtensions is empty, all extensions are considered valid. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If one of the file names in “files” vector has an invalid extension. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9FileUtils13rewindStreamsERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEE">
+<span id="_CPPv3N8helayers9FileUtils13rewindStreamsERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEE"></span><span id="_CPPv2N8helayers9FileUtils13rewindStreamsERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEE"></span><span id="helayers::FileUtils::rewindStreams__std::vector:std::shared_ptr:is::CR"></span><span class="target" id="classhelayers_1_1FileUtils_1a421d40882b3e0e6d0281da15c72f6199"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rewindStreams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">streams</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9FileUtils13rewindStreamsERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the position of the given istreams to the beginning of their content. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>streams</strong> – The istreams to rewind. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9FileUtils15sortByExtensionERNSt6vectorINSt10shared_ptrINSt7istreamEEEEERNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE">
+<span id="_CPPv3N8helayers9FileUtils15sortByExtensionERNSt6vectorINSt10shared_ptrINSt7istreamEEEEERNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE"></span><span id="_CPPv2N8helayers9FileUtils15sortByExtensionERNSt6vectorINSt10shared_ptrINSt7istreamEEEEERNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE"></span><span id="helayers::FileUtils::sortByExtension__std::vector:std::shared_ptr:is::R.std::vector:ss:R.std::set:ss:CR"></span><span class="target" id="classhelayers_1_1FileUtils_1a98a592d79e832aedecfe6d17a859791b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sortByExtension</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">streams</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">validFileExtensions</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9FileUtils15sortByExtensionERNSt6vectorINSt10shared_ptrINSt7istreamEEEEERNSt6vectorINSt6stringEEERKNSt3setINSt6stringEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sorts the given file names and their associated input streams by their file extensions, in an ascending order. </p>
+<p>The sorted files and input streams will be stored in place. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>streams</strong> – The input streams to sort. </p></li>
+<li><p><strong>files</strong> – The file names to sort. </p></li>
+<li><p><strong>validFileExtensions</strong> – The valid file extensions that are allowed to be in “files” vector. If validFileExtensions is empty, all extensions are considered valid. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If one of the file names in “files” vector has an invalid extension. </p>
 </dd>
 </dl>
 </dd></dl>

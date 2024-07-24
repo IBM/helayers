@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Runner &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>Runner &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -532,87 +532,79 @@ document.write(`
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit">
-<span id="_CPPv3N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit"></span><span id="_CPPv2N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit"></span><span id="helayers::circuit::Runner::Runner__HeContextCR.CircuitCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a3b49e427fe1277a4d31ebed2db3abb6a"></span><span class="sig-name descname"><span class="n"><span class="pre">Runner</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Circuit.html#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK8Schedule">
+<span id="_CPPv3N8helayers7circuit6Runner6RunnerERK9HeContextRK8Schedule"></span><span id="_CPPv2N8helayers7circuit6Runner6RunnerERK9HeContextRK8Schedule"></span><span id="helayers::circuit::Runner::Runner__HeContextCR.ScheduleCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a3a8c74b86070880374e94949cefa4259"></span><span class="sig-name descname"><span class="n"><span class="pre">Runner</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Schedule</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK8Schedule" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Construct a <a class="reference internal" href="#classhelayers_1_1circuit_1_1Runner"><span class="std std-ref">Runner</span></a> for computing a circuit. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>h</strong> – <strong>[in]</strong> The underlying context for the computation. </p></li>
-<li><p><strong>c</strong> – <strong>[in]</strong> The circuit to compute. </p></li>
+<li><p><strong>s</strong> – <strong>[in]</strong> The schedule to use. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner9addWorkerEP6Worker">
-<span id="_CPPv3N8helayers7circuit6Runner9addWorkerEP6Worker"></span><span id="_CPPv2N8helayers7circuit6Runner9addWorkerEP6Worker"></span><span id="helayers::circuit::Runner::addWorker__WorkerP"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a7d2df591a1961d4548ecd277d2292c98"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addWorker</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Worker</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">w</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner9addWorkerEP6Worker" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a worker to the runner. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit">
+<span id="_CPPv3N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit"></span><span id="_CPPv2N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit"></span><span id="helayers::circuit::Runner::Runner__HeContextCR.CircuitCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a3b49e427fe1277a4d31ebed2db3abb6a"></span><span class="sig-name descname"><span class="n"><span class="pre">Runner</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Circuit.html#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner6RunnerERK9HeContextRK7Circuit" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct a <a class="reference internal" href="#classhelayers_1_1circuit_1_1Runner"><span class="std std-ref">Runner</span></a> object with simple scheduling and one CPU thread. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>w</strong> – The worker to add. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> – Context </p></li>
+<li><p><strong>c</strong> – <a class="reference internal" href="Circuit.html#classhelayers_1_1circuit_1_1Circuit"><span class="std std-ref">Circuit</span></a></p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner16addWritableCacheEP9CtxtCache">
-<span id="_CPPv3N8helayers7circuit6Runner16addWritableCacheEP9CtxtCache"></span><span id="_CPPv2N8helayers7circuit6Runner16addWritableCacheEP9CtxtCache"></span><span id="helayers::circuit::Runner::addWritableCache__CtxtCacheP"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1aedba6f609c5b636ed485c1b55ea7fb8b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addWritableCache</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">CtxtCache</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">a</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner16addWritableCacheEP9CtxtCache" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a random-access cache to the native worker. </p>
-<p>The caller is responsible to delete this cache, however, the runner keeps a pointer to the cache. In this case the caller needs to delete the cache only after the runner has finished running. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner17fillUnlabeledDataERK9CtxtCache">
+<span id="_CPPv3N8helayers7circuit6Runner17fillUnlabeledDataERK9CtxtCache"></span><span id="_CPPv2N8helayers7circuit6Runner17fillUnlabeledDataERK9CtxtCache"></span><span id="helayers::circuit::Runner::fillUnlabeledData__CtxtCacheCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a899e8a325467f66d167146dbe3db31d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillUnlabeledData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtCache</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cache</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner17fillUnlabeledDataERK9CtxtCache" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Takes the ciphertexts stored in given cache, and places them in InputCtxtNode based on their NodeIds. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>a</strong> – The cache to add. </p>
+<dd class="field-odd"><p><strong>cache</strong> – Input cache </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner16addReadOnlyCacheEPK9CtxtCache">
-<span id="_CPPv3N8helayers7circuit6Runner16addReadOnlyCacheEPK9CtxtCache"></span><span id="_CPPv2N8helayers7circuit6Runner16addReadOnlyCacheEPK9CtxtCache"></span><span id="helayers::circuit::Runner::addReadOnlyCache__CtxtCacheCP"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a52abb81113531e018419407fe4008e2a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addReadOnlyCache</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtCache</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">a</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner16addReadOnlyCacheEPK9CtxtCache" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a read-only cache to the native worker. </p>
-<p>The caller is responsible to delete this cache, however, the runner keeps a pointer to the cache. In this case the caller needs to delete the cache only after the runner has finished running. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK11CTileTensor">
+<span id="_CPPv3N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="_CPPv2N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="helayers::circuit::Runner::setByLabelCopy__NodeLabelCR.CTileTensorCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a1641991128cdfa3765a0122b95fbec27"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated with a label. </p>
+<p>This fills all one InputCtxtNode for each tile of this tile tensor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>a</strong> – The cache to add. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+<li><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner19removeReadOnlyCacheEv">
-<span id="_CPPv3N8helayers7circuit6Runner19removeReadOnlyCacheEv"></span><span id="_CPPv2N8helayers7circuit6Runner19removeReadOnlyCacheEv"></span><span id="helayers::circuit::Runner::removeReadOnlyCache"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a6dfd0eb3c1bb095e0a2a7aac04762e90"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeReadOnlyCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner19removeReadOnlyCacheEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Remove a pointer to a read-only cache (if any is held). </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner19removeWritableCacheEv">
-<span id="_CPPv3N8helayers7circuit6Runner19removeWritableCacheEv"></span><span id="_CPPv2N8helayers7circuit6Runner19removeWritableCacheEv"></span><span id="helayers::circuit::Runner::removeWritableCache"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a473a0056663633b9c684354d65d19d22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeWritableCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner19removeWritableCacheEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Remove a pointer to a random-access cache (if any is held). </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner11executeGateE5PNode">
-<span id="_CPPv3N8helayers7circuit6Runner11executeGateE5PNode"></span><span id="_CPPv2N8helayers7circuit6Runner11executeGateE5PNode"></span><span id="helayers::circuit::Runner::executeGate__PNode"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1aad211a046429ae39a1044aa41d56b347"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">executeGate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner11executeGateE5PNode" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Execute a single node. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK5CTile">
+<span id="_CPPv3N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="_CPPv2N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="helayers::circuit::Runner::setByLabelCopy__NodeLabelCR.CTileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a6966620fc7f3861dccc9e79b549dae93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner14setByLabelCopyERK9NodeLabelRK5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the output of the InputCtxtNode associated with this label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – The node to execute. </p>
+<dd class="field-odd"><p><strong>label</strong> – The label of the InputCtxtNode. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner9runWorkerEv">
-<span id="_CPPv3N8helayers7circuit6Runner9runWorkerEv"></span><span id="_CPPv2N8helayers7circuit6Runner9runWorkerEv"></span><span id="helayers::circuit::Runner::runWorker"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a3b11d4f54742a9590fda52ff3ad47573"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">runWorker</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner9runWorkerEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Loop to execute a single step until all nodes have been executed. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10workerStepEv">
-<span id="_CPPv3N8helayers7circuit6Runner10workerStepEv"></span><span id="_CPPv2N8helayers7circuit6Runner10workerStepEv"></span><span id="helayers::circuit::Runner::workerStep"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1aecb43d7de75086bf6e6d2ecf3cbee9a8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">workerStep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10workerStepEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Find the next node to execute a single node in the graph. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner10getContextEv">
+<span id="_CPPv3NK8helayers7circuit6Runner10getContextEv"></span><span id="_CPPv2NK8helayers7circuit6Runner10getContextEv"></span><span id="helayers::circuit::Runner::getContextC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a932088cdd95803724ef372ea6d5ca717"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner10getContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> the runner is using. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -622,8 +614,21 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner15getCTileByLabelERK9CtxtLabel">
-<span id="_CPPv3N8helayers7circuit6Runner15getCTileByLabelERK9CtxtLabel"></span><span id="_CPPv2N8helayers7circuit6Runner15getCTileByLabelERK9CtxtLabel"></span><span id="helayers::circuit::Runner::getCTileByLabel__CtxtLabelCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a36c92f111c816a28142626b1c6eb476c"></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCTileByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">l</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner15getCTileByLabelERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner6preRunEv">
+<span id="_CPPv3N8helayers7circuit6Runner6preRunEv"></span><span id="_CPPv2N8helayers7circuit6Runner6preRunEv"></span><span id="helayers::circuit::Runner::preRun"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1aaf75ae59b74a91f3bb35670cb4006f13"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preRun</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner6preRunEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Computes a one-time setup of the circuit which may include some of the nodes e.g., encoding of plaintexts. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner13clearAfterRunEv">
+<span id="_CPPv3N8helayers7circuit6Runner13clearAfterRunEv"></span><span id="_CPPv2N8helayers7circuit6Runner13clearAfterRunEv"></span><span id="helayers::circuit::Runner::clearAfterRun"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1acb960405c07aa36382001e616b42df16"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearAfterRun</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner13clearAfterRunEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Reset the circuit after a run, preparing for another run. </p>
+<p>This method should be called after each call to <a class="reference internal" href="#classhelayers_1_1circuit_1_1Runner_1aa8e5627125be1b782e05d12970d2429f"><span class="std std-ref">run()</span></a>, and after the outputs had been read off the circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner15getCTileByLabelERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit6Runner15getCTileByLabelERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit6Runner15getCTileByLabelERK9NodeLabel"></span><span id="helayers::circuit::Runner::getCTileByLabel__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a29a936db0d53b694df87427e54beab85"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">l</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner15getCTileByLabelERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> associated to a label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -633,48 +638,23 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner21getCTileTensorByLabelERK9CtxtLabelR11CTileTensor">
-<span id="_CPPv3N8helayers7circuit6Runner21getCTileTensorByLabelERK9CtxtLabelR11CTileTensor"></span><span id="_CPPv2N8helayers7circuit6Runner21getCTileTensorByLabelERK9CtxtLabelR11CTileTensor"></span><span id="helayers::circuit::Runner::getCTileTensorByLabel__CtxtLabelCR.CTileTensorR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a448bfb844273cc815dddf91ca1a61ecc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileTensorByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">l</span></span>, <a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner21getCTileTensorByLabelERK9CtxtLabelR11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner21getCTileTensorByLabelERK9NodeLabelR11CTileTensor">
+<span id="_CPPv3NK8helayers7circuit6Runner21getCTileTensorByLabelERK9NodeLabelR11CTileTensor"></span><span id="_CPPv2NK8helayers7circuit6Runner21getCTileTensorByLabelERK9NodeLabelR11CTileTensor"></span><span id="helayers::circuit::Runner::getCTileTensorByLabel__NodeLabelCR.CTileTensorRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a0f9f4baec8934bcfeb9ed4a939ededf2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileTensorByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="p"><span class="pre">&amp;</span></span>, <a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner21getCTileTensorByLabelERK9NodeLabelR11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated to a label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>l</strong> – A label. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner10isReadOnlyERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit6Runner10isReadOnlyERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit6Runner10isReadOnlyERK6CtxtId"></span><span id="helayers::circuit::Runner::isReadOnly__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a3952586eb622d1994fe212ec8ad7457c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReadOnly</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner10isReadOnlyERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns a Boolean whether a ciphertext is read only. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> – An id of a ciphertext. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>l</strong> – A label. </p></li>
+<li><p><strong>c</strong> – The resulting <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner4doneEv">
-<span id="_CPPv3NK8helayers7circuit6Runner4doneEv"></span><span id="_CPPv2NK8helayers7circuit6Runner4doneEv"></span><span id="helayers::circuit::Runner::doneC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a8aa6d08b62504b908c63451051f92f2e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner4doneEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers7circuit6Runner4doneEv"></span><span id="_CPPv2NK8helayers7circuit6Runner4doneEv"></span><span id="helayers::circuit::Runner::doneC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a8aa6d08b62504b908c63451051f92f2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner4doneEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether the execution is complete. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner20getNextNodeToExecuteEv">
-<span id="_CPPv3N8helayers7circuit6Runner20getNextNodeToExecuteEv"></span><span id="_CPPv2N8helayers7circuit6Runner20getNextNodeToExecuteEv"></span><span id="helayers::circuit::Runner::getNextNodeToExecute"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a22b0254dd7a07791e5621f7aa6d74ef3"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNextNodeToExecute</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner20getNextNodeToExecuteEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Get a pointer to the next node to execute. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner13doneExecutingER5PNode">
-<span id="_CPPv3N8helayers7circuit6Runner13doneExecutingER5PNode"></span><span id="_CPPv2N8helayers7circuit6Runner13doneExecutingER5PNode"></span><span id="helayers::circuit::Runner::doneExecuting__PNodeR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a0877d486998104edba1c9392bea8e937"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">doneExecuting</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner13doneExecutingER5PNode" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Notify the runner that the execution of a node has finished. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – The node that has finished executing </p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -689,29 +669,99 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner26getNumberOfOutputsThatNeedERK5PNode">
-<span id="_CPPv3NK8helayers7circuit6Runner26getNumberOfOutputsThatNeedERK5PNode"></span><span id="_CPPv2NK8helayers7circuit6Runner26getNumberOfOutputsThatNeedERK5PNode"></span><span id="helayers::circuit::Runner::getNumberOfOutputsThatNeed__PNodeCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a41fca3eed75efe44d558f836c6ed7803"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumberOfOutputsThatNeed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner26getNumberOfOutputsThatNeedERK5PNode" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the number of nodes that still need the output of a node, n. </p>
-<p>The output is needed by node X if X is not done computing. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner18setMemorySoftLimitEi">
+<span id="_CPPv3N8helayers7circuit6Runner18setMemorySoftLimitEi"></span><span id="_CPPv2N8helayers7circuit6Runner18setMemorySoftLimitEi"></span><span id="helayers::circuit::Runner::setMemorySoftLimit__i"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a1a10c80b27cc5f71b40162ba4e30f319"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMemorySoftLimit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner18setMemorySoftLimitEi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner13setNumThreadsEi">
+<span id="_CPPv3N8helayers7circuit6Runner13setNumThreadsEi"></span><span id="_CPPv2N8helayers7circuit6Runner13setNumThreadsEi"></span><span id="helayers::circuit::Runner::setNumThreads__i"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a1522eefdfa7022ce414d4b0de730ae2b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNumThreads</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner13setNumThreadsEi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner13addCacheToHubEPv">
+<span id="_CPPv3N8helayers7circuit6Runner13addCacheToHubEPv"></span><span id="_CPPv2N8helayers7circuit6Runner13addCacheToHubEPv"></span><span id="helayers::circuit::Runner::addCacheToHub__voidP"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a2fa7ffcebd666d6822244517e94cb342"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addCacheToHub</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner13addCacheToHubEPv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner8setCacheEPv">
+<span id="_CPPv3N8helayers7circuit6Runner8setCacheEPv"></span><span id="_CPPv2N8helayers7circuit6Runner8setCacheEPv"></span><span id="helayers::circuit::Runner::setCache__voidP"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1ae6bd600effe59cac64c783b28a4af286"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCache</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner8setCacheEPv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner11removeCacheEv">
+<span id="_CPPv3N8helayers7circuit6Runner11removeCacheEv"></span><span id="_CPPv2N8helayers7circuit6Runner11removeCacheEv"></span><span id="helayers::circuit::Runner::removeCache"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a10dfc14d8a34562ca64574182605e81a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner11removeCacheEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit6Runner10getCircuitEv">
+<span id="_CPPv3NK8helayers7circuit6Runner10getCircuitEv"></span><span id="_CPPv2NK8helayers7circuit6Runner10getCircuitEv"></span><span id="helayers::circuit::Runner::getCircuitC"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a7857e5769a2263a0583383eb92705ea5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="Circuit.html#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCircuit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit6Runner10getCircuitEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the circuit object of this runner object. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner5statsE">
+<span id="_CPPv3N8helayers7circuit6Runner5statsE"></span><span id="_CPPv2N8helayers7circuit6Runner5statsE"></span><span id="helayers::circuit::Runner::stats__Statistics"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1ab5cbd12e59abc1e2db8470444415dd6d"></span><a class="reference internal" href="#_CPPv4N8helayers7circuit6Runner10StatisticsE" title="helayers::circuit::Runner::Statistics"><span class="n"><span class="pre">Statistics</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stats</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner5statsE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner16setProfilingTimeEi">
+<span id="_CPPv3N8helayers7circuit6Runner16setProfilingTimeEi"></span><span id="_CPPv2N8helayers7circuit6Runner16setProfilingTimeEi"></span><span id="helayers::circuit::Runner::setProfilingTime__i"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a34b74f699b7d09ead67abbdb1550f92d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setProfilingTime</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner16setProfilingTimeEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a time limit to the profiling the circuit. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – The node whose input is checked. </p>
+<dd class="field-odd"><p><strong>sec</strong> – Time limit (in seconds) to the profiling the circuit. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner11getPtxtByIdERK6PtxtId">
-<span id="_CPPv3N8helayers7circuit6Runner11getPtxtByIdERK6PtxtId"></span><span id="_CPPv2N8helayers7circuit6Runner11getPtxtByIdERK6PtxtId"></span><span id="helayers::circuit::Runner::getPtxtById__PtxtIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1a69955bf95036960d8a85f315100941a6"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPtxtById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner11getPtxtByIdERK6PtxtId" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>This function returns a plaintext by its id in the circuit. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> – The id of the ctxt to return. </p>
-</dd>
-</dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner16setTimeStatsFileERKNSt6stringE">
+<span id="_CPPv3N8helayers7circuit6Runner16setTimeStatsFileERKNSt6stringE"></span><span id="_CPPv2N8helayers7circuit6Runner16setTimeStatsFileERKNSt6stringE"></span><span id="helayers::circuit::Runner::setTimeStatsFile__ssCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1aabe837dfc6371e2a3ded3a57f734fee3"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTimeStatsFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">file</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner16setTimeStatsFileERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The file to write the circuit time stats to (if profilingTime was set). </p>
+<p>If empty, prints time stats to screen. </p>
 </dd></dl>
 
 </div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10StatisticsE">
+<span id="_CPPv3N8helayers7circuit6Runner10StatisticsE"></span><span id="_CPPv2N8helayers7circuit6Runner10StatisticsE"></span><span id="helayers::circuit::Runner::Statistics"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Statistics</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10StatisticsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10Statistics14nodesToComputeE">
+<span id="_CPPv3N8helayers7circuit6Runner10Statistics14nodesToComputeE"></span><span id="_CPPv2N8helayers7circuit6Runner10Statistics14nodesToComputeE"></span><span id="helayers::circuit::Runner::Statistics::nodesToCompute__s"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics_1a59ee9e140d931795fb8c2e4a42ff78f5"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nodesToCompute</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10Statistics14nodesToComputeE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10Statistics13nodesComputedE">
+<span id="_CPPv3N8helayers7circuit6Runner10Statistics13nodesComputedE"></span><span id="_CPPv2N8helayers7circuit6Runner10Statistics13nodesComputedE"></span><span id="helayers::circuit::Runner::Statistics::nodesComputed__std::atomic:std::uint64_t:"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics_1a415af2e347cf17ed56e231d508ef5c3a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">atomic</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nodesComputed</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10Statistics13nodesComputedE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10Statistics18currentlyExecutingE">
+<span id="_CPPv3N8helayers7circuit6Runner10Statistics18currentlyExecutingE"></span><span id="_CPPv2N8helayers7circuit6Runner10Statistics18currentlyExecutingE"></span><span id="helayers::circuit::Runner::Statistics::currentlyExecuting__std::atomic:std::uint64_t:"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics_1a0a2552783696ff28b455f8fe00dc166f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">atomic</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentlyExecuting</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10Statistics18currentlyExecutingE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10Statistics13currentlyIdleE">
+<span id="_CPPv3N8helayers7circuit6Runner10Statistics13currentlyIdleE"></span><span id="_CPPv2N8helayers7circuit6Runner10Statistics13currentlyIdleE"></span><span id="helayers::circuit::Runner::Statistics::currentlyIdle__std::atomic:std::uint64_t:"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics_1a2cea2ed0c6eb661d8d3170f5a4d6ac7c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">atomic</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentlyIdle</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10Statistics13currentlyIdleE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit6Runner10Statistics14startExecutionE">
+<span id="_CPPv3N8helayers7circuit6Runner10Statistics14startExecutionE"></span><span id="_CPPv2N8helayers7circuit6Runner10Statistics14startExecutionE"></span><span id="helayers::circuit::Runner::Statistics::startExecution__std::chrono::high_resolution_clock::time_point"></span><span class="target" id="classhelayers_1_1circuit_1_1Runner_1_1Statistics_1a47d24223f0e1b3dc633dca1597e87cb8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">high_resolution_clock</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startExecution</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit6Runner10Statistics14startExecutionE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div></div>

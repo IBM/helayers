@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>loadHeModel &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>loadHeModel &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -545,9 +545,9 @@ document.write(`
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain an HeModel or if
-loading fails due to an illegal header of the HeModel object in the given
-buffer.</p>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain an HeModel
+object, or if the object was saved with a mismatching HELayers
+version.</p>
 </dd>
 </dl>
 </dd></dl>

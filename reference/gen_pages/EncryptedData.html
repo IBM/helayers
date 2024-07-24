@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>EncryptedData &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>EncryptedData &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -534,6 +534,13 @@ document.write(`
 <dd><p>A class to hold encrypted data. Each data object may have multiple
 batches.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.EncryptedData.add_batch">
+<span class="sig-name descname"><span class="pre">add_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.EncryptedBatch</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.EncryptedData.add_batch" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds a batch.
+:param batch: The batch to add.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.EncryptedData.add_encrypted_data">
 <span class="sig-name descname"><span class="pre">add_encrypted_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.EncryptedData.add_encrypted_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds the batches of the other EncryptedData to this object.</p>
@@ -626,6 +633,21 @@ batches.</p>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers13EncryptedData10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE">
+<span id="_CPPv3NK8helayers13EncryptedData10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="_CPPv2NK8helayers13EncryptedData10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="helayers::EncryptedData::debugPrint__ssCR.Verbosity.osRC"></span><span class="target" id="classhelayers_1_1EncryptedData_1a6bc9079530c263f8e65fa31b94f0b51d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity17VERBOSITY_REGULARE" title="helayers::VERBOSITY_REGULAR"><span class="n"><span class="pre">VERBOSITY_REGULAR</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers13EncryptedData10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the content of this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Text to add to the print </p></li>
+<li><p><strong>verbosity</strong> – Verbosity level </p></li>
+<li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -674,6 +696,7 @@ batches.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.EncryptedData"><code class="docutils literal notranslate"><span class="pre">EncryptedData</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.EncryptedData.add_batch"><code class="docutils literal notranslate"><span class="pre">EncryptedData.add_batch()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.EncryptedData.add_encrypted_data"><code class="docutils literal notranslate"><span class="pre">EncryptedData.add_encrypted_data()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.EncryptedData.get_batch"><code class="docutils literal notranslate"><span class="pre">EncryptedData.get_batch()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.EncryptedData.get_num_batches"><code class="docutils literal notranslate"><span class="pre">EncryptedData.get_num_batches()</span></code></a></li>

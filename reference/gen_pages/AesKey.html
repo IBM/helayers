@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>AesKey &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>AesKey &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -559,12 +559,15 @@ uncompress when loading the key.</p></li>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers6AesKey6AesKeyERK9HeContext">
-<span id="_CPPv3N8helayers6AesKey6AesKeyERK9HeContext"></span><span id="_CPPv2N8helayers6AesKey6AesKeyERK9HeContext"></span><span id="helayers::AesKey::AesKey__HeContextCR"></span><span class="target" id="classhelayers_1_1AesKey_1a700ced67be40f4523bbd340096f08092"></span><span class="sig-name descname"><span class="n"><span class="pre">AesKey</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers6AesKey6AesKeyERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers6AesKey6AesKeyERK9HeContext9Verbosity">
+<span id="_CPPv3N8helayers6AesKey6AesKeyERK9HeContext9Verbosity"></span><span id="_CPPv2N8helayers6AesKey6AesKeyERK9HeContext9Verbosity"></span><span id="helayers::AesKey::AesKey__HeContextCR.Verbosity"></span><span class="target" id="classhelayers_1_1AesKey_1afe999eebd484e2a33bae7f3279751d67"></span><span class="sig-name descname"><span class="n"><span class="pre">AesKey</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity14VERBOSITY_NONEE" title="helayers::VERBOSITY_NONE"><span class="n"><span class="pre">VERBOSITY_NONE</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers6AesKey6AesKeyERK9HeContext9Verbosity" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Construct a new AES key object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>he</strong> – The HE context. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>he</strong> – The HE context. </p></li>
+<li><p><strong>verbosity</strong> – The verbosity level. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -617,6 +620,39 @@ uncompress when loading the key.</p></li>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers6AesKey12getHeContextEv">
 <span id="_CPPv3NK8helayers6AesKey12getHeContextEv"></span><span id="_CPPv2NK8helayers6AesKey12getHeContextEv"></span><span id="helayers::AesKey::getHeContextC"></span><span class="target" id="classhelayers_1_1AesKey_1a88c88e019af5643e6e1fa9f2d8258b22"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHeContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers6AesKey12getHeContextEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the HE context object this AES key uses. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers6AesKey15getNumUsedTilesEv">
+<span id="_CPPv3NK8helayers6AesKey15getNumUsedTilesEv"></span><span id="_CPPv2NK8helayers6AesKey15getNumUsedTilesEv"></span><span id="helayers::AesKey::getNumUsedTilesC"></span><span class="target" id="classhelayers_1_1AesKey_1a0789f0c7c620cad0ccc10a5fb1888add"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumUsedTiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers6AesKey15getNumUsedTilesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of used tiles in this <a class="reference internal" href="#classhelayers_1_1AesKey"><span class="std std-ref">AesKey</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers6AesKey10uncompressEv">
+<span id="_CPPv3N8helayers6AesKey10uncompressEv"></span><span id="_CPPv2N8helayers6AesKey10uncompressEv"></span><span id="helayers::AesKey::uncompress"></span><span class="target" id="classhelayers_1_1AesKey_1a44e9cf09ba0f106968995fe67d33c6ea"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uncompress</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers6AesKey10uncompressEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Uncompress the key if it was encrypted compressed (see <a class="reference internal" href="#classhelayers_1_1AesKey_1a82a66e722f28e62dc57cff4b5f5633e4"><span class="std std-ref">AesKey::heEncrypt</span></a>). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers6AesKey26getChainIndexAtAddRoundKeyEv">
+<span id="_CPPv3NK8helayers6AesKey26getChainIndexAtAddRoundKeyEv"></span><span id="_CPPv2NK8helayers6AesKey26getChainIndexAtAddRoundKeyEv"></span><span id="helayers::AesKey::getChainIndexAtAddRoundKeyC"></span><span class="target" id="classhelayers_1_1AesKey_1a7ba07b98f1998eee128d9bb78adfa80a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getChainIndexAtAddRoundKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers6AesKey26getChainIndexAtAddRoundKeyEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>See AesConverter::getChainIndexAtAddRoundKey. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers6AesKey10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE">
+<span id="_CPPv3NK8helayers6AesKey10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="_CPPv2NK8helayers6AesKey10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE"></span><span id="helayers::AesKey::debugPrint__ssCR.Verbosity.osRC"></span><span class="target" id="classhelayers_1_1AesKey_1a6951a08a10d4071b6f9c78f35324b712"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugPrint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9Verbosity17VERBOSITY_REGULARE" title="helayers::VERBOSITY_REGULAR"><span class="n"><span class="pre">VERBOSITY_REGULAR</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers6AesKey10debugPrintERKNSt6stringE9VerbosityRNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Prints the content of this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Text to add to the print </p></li>
+<li><p><strong>verbosity</strong> – Verbosity level </p></li>
+<li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

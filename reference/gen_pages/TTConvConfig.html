@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTConvConfig &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTConvConfig &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -686,12 +686,28 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyMode">
-<span id="_CPPv3N8helayers12TTConvConfig11setLazyModeE8LazyMode"></span><span id="_CPPv2N8helayers12TTConvConfig11setLazyModeE8LazyMode"></span><span id="helayers::TTConvConfig::setLazyMode__LazyMode"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a0eefd430ba5205837515efce0dcf517d"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setLazyMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">LazyMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyMode" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyModeRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N8helayers12TTConvConfig11setLazyModeE8LazyModeRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N8helayers12TTConvConfig11setLazyModeE8LazyModeRKNSt6stringERKNSt6stringE"></span><span id="helayers::TTConvConfig::setLazyMode__LazyMode.ssCR.ssCR"></span><span class="target" id="classhelayers_1_1TTConvConfig_1a2444957819e355d851cecd252aa28bb8"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setLazyMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">LazyMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lazyLoadFiltersFileName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lazyLoadBiasesFileName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig11setLazyModeE8LazyModeRKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets lazy mode for filters and biases. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> – New value. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> – New value. </p></li>
+<li><p><strong>lazyLoadFiltersFileName</strong> – File name to save filters content in disk when using lazy loading (optional). </p></li>
+<li><p><strong>lazyLoadBiasesFileName</strong> – File name to save biases content in disk when using lazy loading (optional). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig17setEncodeOnTheFlyEb">
+<span id="_CPPv3N8helayers12TTConvConfig17setEncodeOnTheFlyEb"></span><span id="_CPPv2N8helayers12TTConvConfig17setEncodeOnTheFlyEb"></span><span id="helayers::TTConvConfig::setEncodeOnTheFly__b"></span><span class="target" id="classhelayers_1_1TTConvConfig_1af47769a77b3f750ee1eff8b2a78a2d73"></span><a class="reference internal" href="#_CPPv4N8helayers12TTConvConfigE" title="helayers::TTConvConfig"><span class="n"><span class="pre">TTConvConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setEncodeOnTheFly</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig17setEncodeOnTheFlyEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the encode-on-the-fly mode for the filters. </p>
+<p>When on, the filters will be encoded one tile at a time to save memory </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – New Value. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -819,7 +835,7 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi">
 <span id="_CPPv3N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi"></span><span id="_CPPv2N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi"></span><span id="helayers::TTConvConfig::dimMatchesStride__TTDimCR.i"></span><span class="target" id="classhelayers_1_1TTConvConfig_1affc05ed3e55b1ab356fa439d396b0c73"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimMatchesStride</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTDim.html#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stride</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig16dimMatchesStrideERK5TTDimi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Check whether a convolution with certain stride can be applied on a dimention. </p>
+<dd><p>Check whether a convolution with certain stride can be applied on a dimension. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -932,6 +948,12 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE">
 <span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE"></span><span id="helayers::TTConvConfig::ImageDimInfo::originalOutputSize__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1ae78eb6dd6f5767337b1d52bc9ef229b9"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">originalOutputSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo18originalOutputSizeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Final output size including all strides. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12TTConvConfig12ImageDimInfo38originalOutputSizeAfterExternalStridesE">
+<span id="_CPPv3N8helayers12TTConvConfig12ImageDimInfo38originalOutputSizeAfterExternalStridesE"></span><span id="_CPPv2N8helayers12TTConvConfig12ImageDimInfo38originalOutputSizeAfterExternalStridesE"></span><span id="helayers::TTConvConfig::ImageDimInfo::originalOutputSizeAfterExternalStrides__i"></span><span class="target" id="structhelayers_1_1TTConvConfig_1_1ImageDimInfo_1a53f829e4ea0f6199563d9563ac113e9d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">originalOutputSizeAfterExternalStrides</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers12TTConvConfig12ImageDimInfo38originalOutputSizeAfterExternalStridesE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Final output size including external strides only. </p>
 </dd></dl>
 
 </div>

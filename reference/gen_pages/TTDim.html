@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTDim &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTDim &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -688,7 +688,7 @@ fully duplicated along tile size.</p>
 <dd class="field-odd"><p><strong>are_unknown</strong> (<em>bool</em>) – Value to set.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If areUknown is true and this dimension has no
+<dd class="field-even"><p><strong>ValueError</strong> – If areUnknown is true and this dimension has no
 unused slots.</p>
 </dd>
 </dl>
@@ -748,7 +748,7 @@ getMinExternalSize()</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.TTDim.set_original_size">
-<span class="sig-name descname"><span class="pre">set_original_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTDim" title="pyhelayers.TTDim"><span class="pre">pyhelayers.TTDim</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_interleaved_placing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTDim" title="pyhelayers.TTDim"><span class="pre">pyhelayers.TTDim</span></a></span></span><a class="headerlink" href="#pyhelayers.TTDim.set_original_size" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_original_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTDim" title="pyhelayers.TTDim"><span class="pre">pyhelayers.TTDim</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_interleaved_external_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.TTDim" title="pyhelayers.TTDim"><span class="pre">pyhelayers.TTDim</span></a></span></span><a class="headerlink" href="#pyhelayers.TTDim.set_original_size" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -771,7 +771,7 @@ slots.</p>
 <span id="_CPPv3N8helayers5TTDimE"></span><span id="_CPPv2N8helayers5TTDimE"></span><span id="helayers::TTDim"></span><span class="target" id="classhelayers_1_1TTDim"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTDim</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SaveableBasic</span></span><a class="headerlink" href="#_CPPv4N8helayers5TTDimE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Specification of a single dimension in a tile tensor shape. </p>
 <p>See more in <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a>.</p>
-<p>You can query this object to get atttributes such as originalSize, tileSize, numDuplicates, etc…</p>
+<p>You can query this object to get attributes such as originalSize, tileSize, numDuplicates, etc…</p>
 <p>Notes for complex packed dims:</p>
 <p><ul class="simple">
 <li><p>Complex packing can be either for duplicated data, or for regular data. Currently not for interleaved dimensions.</p></li>
@@ -856,14 +856,14 @@ slots.</p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5TTDim15setOriginalSizeE6DimIntb">
-<span id="_CPPv3N8helayers5TTDim15setOriginalSizeE6DimIntb"></span><span id="_CPPv2N8helayers5TTDim15setOriginalSizeE6DimIntb"></span><span id="helayers::TTDim::setOriginalSize__DimInt.b"></span><span class="target" id="classhelayers_1_1TTDim_1a36611d5ce7423ae54d0ac3f44890be53"></span><a class="reference internal" href="#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setOriginalSize</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keepInterleavedPlacing</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5TTDim15setOriginalSizeE6DimIntb" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8helayers5TTDim15setOriginalSizeE6DimIntb"></span><span id="_CPPv2N8helayers5TTDim15setOriginalSizeE6DimIntb"></span><span id="helayers::TTDim::setOriginalSize__DimInt.b"></span><span class="target" id="classhelayers_1_1TTDim_1aeb153b745991df5452b8fac2f31a8664"></span><a class="reference internal" href="#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setOriginalSize</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keepInterleavedExternalSize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5TTDim15setOriginalSizeE6DimIntb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the original size. </p>
 <p>In interleaved mode, the interleaved external size is set to the new minimum. Returns a reference to this object for further manipulation. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>size</strong> – New value to set. </p></li>
-<li><p><strong>keepInterleavedPlacing</strong> – if in interleaved mode and this param set to true, the external size will be modified s.t. the first ‘size’ elements in this dimension will be kept. </p></li>
+<li><p><strong>keepInterleavedExternalSize</strong> – if in interleaved mode and this param set to true, the external size will be set to the minimal value between the current external size and the new original size. </p></li>
 </ul>
 </dd>
 </dl>
@@ -894,6 +894,14 @@ slots.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5TTDim18setFullyDuplicatedEv">
+<span id="_CPPv3N8helayers5TTDim18setFullyDuplicatedEv"></span><span id="_CPPv2N8helayers5TTDim18setFullyDuplicatedEv"></span><span id="helayers::TTDim::setFullyDuplicated"></span><span class="target" id="classhelayers_1_1TTDim_1a4064d7b3668c28e5f2f8160e278d210f"></span><a class="reference internal" href="#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setFullyDuplicated</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5TTDim18setFullyDuplicatedEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets this <a class="reference internal" href="#classhelayers_1_1TTDim"><span class="std std-ref">TTDim</span></a> to be fully duplicated. </p>
+<p>That is, the number of its duplicated tiles becomes equal to the tile size.</p>
+<p>Returns a reference to this object for further manipulation. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5TTDim24setAreUnusedSlotsUnknownEb">
 <span id="_CPPv3N8helayers5TTDim24setAreUnusedSlotsUnknownEb"></span><span id="_CPPv2N8helayers5TTDim24setAreUnusedSlotsUnknownEb"></span><span id="helayers::TTDim::setAreUnusedSlotsUnknown__b"></span><span class="target" id="classhelayers_1_1TTDim_1a46a3024171d071bff3de2e4b632f2485"></span><a class="reference internal" href="#_CPPv4N8helayers5TTDimE" title="helayers::TTDim"><span class="n"><span class="pre">TTDim</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setAreUnusedSlotsUnknown</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">areUnknown</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5TTDim24setAreUnusedSlotsUnknownEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of the unknown flag for this dimension. </p>
@@ -902,7 +910,7 @@ slots.</p>
 <dd class="field-odd"><p><strong>areUnknown</strong> – Value to set </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – if areUknown is true and this dimension has no unused slots. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – if areUnknown is true and this dimension has no unused slots. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -960,7 +968,7 @@ slots.</p>
 <p>Assumes this dim is either incomplete or originalSize==1 and currently not duplicated. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dup</strong> – <strong>[in]</strong> dupplication count. The default value of -1 means duplicate to the entire tile size </p>
+<dd class="field-odd"><p><strong>dup</strong> – <strong>[in]</strong> duplication count. The default value of -1 means duplicate to the entire tile size </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If the specified dimension has originalSize&gt;1, or is already duplicated </p>
@@ -1150,6 +1158,28 @@ slots.</p>
 <span id="_CPPv3NK8helayers5TTDim14isDiagonalizedEv"></span><span id="_CPPv2NK8helayers5TTDim14isDiagonalizedEv"></span><span id="helayers::TTDim::isDiagonalizedC"></span><span class="target" id="classhelayers_1_1TTDim_1acfbeecb30dadceef2b5c08c054286875"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDiagonalized</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5TTDim14isDiagonalizedEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns true if this dimension is diagonalized. </p>
 <p>To set diagonalized dims, use setDiagonalized of <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5TTDim23getDiagonalizedDimIndexEv">
+<span id="_CPPv3NK8helayers5TTDim23getDiagonalizedDimIndexEv"></span><span id="_CPPv2NK8helayers5TTDim23getDiagonalizedDimIndexEv"></span><span id="helayers::TTDim::getDiagonalizedDimIndexC"></span><span class="target" id="classhelayers_1_1TTDim_1abe65e2de0f8ca7e5a8c76ffc71e535ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDiagonalizedDimIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5TTDim23getDiagonalizedDimIndexEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>If <a class="reference internal" href="#classhelayers_1_1TTDim_1acfbeecb30dadceef2b5c08c054286875"><span class="std std-ref">isDiagonalized()</span></a> returns true, this method returns the diagonalized dim index of the dimension (0 or 1). </p>
+<p>Otherwise returns -1. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5TTDim12allowPackingERKNSt6vectorI17TTDimTilingMethodEERKNSt6vectorI9TTDimFlagEERKNSt6stringE">
+<span id="_CPPv3NK8helayers5TTDim12allowPackingERKNSt6vectorI17TTDimTilingMethodEERKNSt6vectorI9TTDimFlagEERKNSt6stringE"></span><span id="_CPPv2NK8helayers5TTDim12allowPackingERKNSt6vectorI17TTDimTilingMethodEERKNSt6vectorI9TTDimFlagEERKNSt6stringE"></span><span id="helayers::TTDim::allowPacking__std::vector:TTDimTilingMethod:CR.std::vector:TTDimFlag:CR.ssCRC"></span><span class="target" id="classhelayers_1_1TTDim_1af19a1a8133e679954ac1806e110d5b12"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">allowPacking</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TTDimTilingMethod</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">allowedMethods</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TTDimFlag</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">allowedFlags</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">opName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5TTDim12allowPackingERKNSt6vectorI17TTDimTilingMethodEERKNSt6vectorI9TTDimFlagEERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Verifies the tiling methods and flags used by this object are included in the given lists. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allowedMethods</strong> – List of allowed tiling methods. </p></li>
+<li><p><strong>allowedFlags</strong> – List of allowed flags. </p></li>
+<li><p><strong>opName</strong> – Name of operator requesting this check, for error messages. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

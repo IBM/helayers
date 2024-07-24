@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Circuit &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>Circuit &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -527,7 +527,7 @@ document.write(`
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7CircuitE">
-<span id="_CPPv3N8helayers7circuit7CircuitE"></span><span id="_CPPv2N8helayers7circuit7CircuitE"></span><span id="helayers::circuit::Circuit"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8helayers7circuit7CircuitE"></span><span id="_CPPv2N8helayers7circuit7CircuitE"></span><span id="helayers::circuit::Circuit"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Circuit</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Saveable</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit7CircuitE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A class that keeps the directed acyclic graph (DAG) that is the circuit. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -599,6 +599,17 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12createNodeIdEv">
+<span id="_CPPv3N8helayers7circuit7Circuit12createNodeIdEv"></span><span id="_CPPv2N8helayers7circuit7Circuit12createNodeIdEv"></span><span id="helayers::circuit::Circuit::createNodeId"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a2d841009d43de9f755431ef1e2123918"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createNodeId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12createNodeIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14createTensorIdEv">
+<span id="_CPPv3N8helayers7circuit7Circuit14createTensorIdEv"></span><span id="_CPPv2N8helayers7circuit7Circuit14createTensorIdEv"></span><span id="helayers::circuit::Circuit::createTensorId"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ac9d5643ee392c7437c1d24a74d46ce4a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createTensorId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14createTensorIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Allocate a new tensor ID. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext">
 <span id="_CPPv3N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext"></span><span id="_CPPv2N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext"></span><span id="helayers::circuit::Circuit::addInputNode__CircuitCiphertextCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aa04adf914a4c6ff17c16ea75e67d267f"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addInputNode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CircuitCiphertext</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12addInputNodeERK17CircuitCiphertext" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add an input node (a ctxt input) to the DAG. </p>
@@ -617,14 +628,77 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit13uniteNodeMapsEv">
+<span id="_CPPv3N8helayers7circuit7Circuit13uniteNodeMapsEv"></span><span id="_CPPv2N8helayers7circuit7Circuit13uniteNodeMapsEv"></span><span id="helayers::circuit::Circuit::uniteNodeMaps"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a3dd8f90695e02a59228504935d1d05bd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uniteNodeMaps</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit13uniteNodeMapsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Unites all node maps of this circuit. </p>
+<p>Required after finishing building the circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit21populateNodesToGroupsEv">
+<span id="_CPPv3N8helayers7circuit7Circuit21populateNodesToGroupsEv"></span><span id="_CPPv2N8helayers7circuit7Circuit21populateNodesToGroupsEv"></span><span id="helayers::circuit::Circuit::populateNodesToGroups"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a32e12b250041272faa20ed31ab5cdc0f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">populateNodesToGroups</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit21populateNodesToGroupsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Populate the NodeIds in the group map. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit21populateGroupsToNodesEv">
+<span id="_CPPv3N8helayers7circuit7Circuit21populateGroupsToNodesEv"></span><span id="_CPPv2N8helayers7circuit7Circuit21populateGroupsToNodesEv"></span><span id="helayers::circuit::Circuit::populateGroupsToNodes"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a656fc8daa8f3b8d62f4655f7e842fc57"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">populateGroupsToNodes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit21populateGroupsToNodesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Populate the group names at the nodes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit17getBuildingBucketEi">
+<span id="_CPPv3NK8helayers7circuit7Circuit17getBuildingBucketEi"></span><span id="_CPPv2NK8helayers7circuit7Circuit17getBuildingBucketEi"></span><span id="helayers::circuit::Circuit::getBuildingBucket__iC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a3a6fbb4d85a169da3d0a747cbc1901b3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBuildingBucket</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit17getBuildingBucketEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the building bucket a NodeId is mapped to. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – The NodeId. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit10removeNodeE5PNode">
+<span id="_CPPv3N8helayers7circuit7Circuit10removeNodeE5PNode"></span><span id="_CPPv2N8helayers7circuit7Circuit10removeNodeE5PNode"></span><span id="helayers::circuit::Circuit::removeNode__PNode"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a0e3deff8946d07f7a77c056abafe7132"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeNode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rem</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit10removeNodeE5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Remove a node from the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rem</strong> – The node to remove. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit41deleteUnaryNodeAndReconnectInputToOutputsER5PNode">
+<span id="_CPPv3N8helayers7circuit7Circuit41deleteUnaryNodeAndReconnectInputToOutputsER5PNode"></span><span id="_CPPv2N8helayers7circuit7Circuit41deleteUnaryNodeAndReconnectInputToOutputsER5PNode"></span><span id="helayers::circuit::Circuit::deleteUnaryNodeAndReconnectInputToOutputs__PNodeR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a63d53caa606c2219b9542e853257e0e7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteUnaryNodeAndReconnectInputToOutputs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">node</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit41deleteUnaryNodeAndReconnectInputToOutputsER5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Delete a unary node from a circuit, while fixing the circuit connections so that the deleted node’s consumers are now directly consuming the deleted node’s input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>node</strong> – The node to delete </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit50deleteBootstrapRealNodeAndReconnectInputsToOutputsER5PNode">
+<span id="_CPPv3N8helayers7circuit7Circuit50deleteBootstrapRealNodeAndReconnectInputsToOutputsER5PNode"></span><span id="_CPPv2N8helayers7circuit7Circuit50deleteBootstrapRealNodeAndReconnectInputsToOutputsER5PNode"></span><span id="helayers::circuit::Circuit::deleteBootstrapRealNodeAndReconnectInputsToOutputs__PNodeR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a4a5ab87516874a94f6cd9f587e2f0e64"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteBootstrapRealNodeAndReconnectInputsToOutputs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">node</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit50deleteBootstrapRealNodeAndReconnectInputsToOutputsER5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Delete a BootstrapReal node from a circuit, while fixing the circuit connections so that the deleted node’s consumers are now directly consuming the deleted node’s inputs. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>node</strong> – The node to delete </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv">
 <span id="_CPPv3NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="helayers::circuit::Circuit::areEdgesBuiltC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a39e306b31ead61cd280e0928bd9642fb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">areEdgesBuilt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether the edges have been built. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId">
-<span id="_CPPv3N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId"></span><span id="_CPPv2N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId"></span><span id="helayers::circuit::Circuit::setLabelCtxt__CtxtLabelCR.CtxtIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aea7a8a11d8d6ba7210836fcae0615412"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLabelCtxt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9CtxtLabelRK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9NodeLabel6NodeId">
+<span id="_CPPv3N8helayers7circuit7Circuit12setLabelCtxtERK9NodeLabel6NodeId"></span><span id="_CPPv2N8helayers7circuit7Circuit12setLabelCtxtERK9NodeLabel6NodeId"></span><span id="helayers::circuit::Circuit::setLabelCtxt__NodeLabelCR.NodeId"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a609b3fd3c1595070249072fbf2e02e60"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLabelCtxt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit12setLabelCtxtERK9NodeLabel6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Give a node a human-meaningful label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -637,8 +711,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape">
-<span id="_CPPv3N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape"></span><span id="_CPPv2N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape"></span><span id="helayers::circuit::Circuit::setTensorMetadata__CtxtLabelCR.TTShapeCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1afc4c8b49c209641f691a31058dc6c7fe"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9CtxtLabelRK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9NodeLabelRK7TTShape">
+<span id="_CPPv3N8helayers7circuit7Circuit17setTensorMetadataERK9NodeLabelRK7TTShape"></span><span id="_CPPv2N8helayers7circuit7Circuit17setTensorMetadataERK9NodeLabelRK7TTShape"></span><span id="helayers::circuit::Circuit::setTensorMetadata__NodeLabelCR.TTShapeCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a5d6571de5a45b8ae474a131e347a86d3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit17setTensorMetadataERK9NodeLabelRK7TTShape" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Store a <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> with the circuit and give it a label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -651,8 +725,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel">
-<span id="_CPPv3NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel"></span><span id="_CPPv2NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel"></span><span id="helayers::circuit::Circuit::getTensorMetadataShape__CtxtLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1abfca769d1f014e77a41d6e94a0a6e635"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTensorMetadataShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9NodeLabel"></span><span id="helayers::circuit::Circuit::getTensorMetadataShape__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ae3f0b71fc9d8dec233d063912c376a61"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTensorMetadataShape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit22getTensorMetadataShapeERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> from the circuit using the label it was given. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -662,45 +736,25 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues">
-<span id="_CPPv3N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues"></span><span id="_CPPv2N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues"></span><span id="helayers::circuit::Circuit::addPlaintextNode__PtxtIdCR.i.RawValuesCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a792a8c03f17599aa87077c82624d6c22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addPlaintextNode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit16addPlaintextNodeERK6PtxtIdiRK9RawValues" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a plaintext to the circuit. </p>
-<p>The plaintext is added once and any references to this plaintex is done by its label. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> – The id of the plaintext. </p></li>
-<li><p><strong>chainIndex</strong> – the chain index to encode the plaintext in </p></li>
-<li><p><strong>p</strong> – The raw values of the plaintext. </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues">
-<span id="_CPPv3N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues"></span><span id="_CPPv2N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues"></span><span id="helayers::circuit::Circuit::addEncryptedParameters__CtxtIdCR.LeveledRawValuesCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a717e3da59076aab3df5d7191d1be6706"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEncryptedParameters</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LeveledRawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit22addEncryptedParametersERK6CtxtIdRK16LeveledRawValues" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add ciphertext values to the circuit. </p>
-<p>Any inputs that are not labeled are considered as parameters and therefore a part of the circuit. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> – The id of the plaintext. </p></li>
-<li><p><strong>p</strong> – The raw values of the plaintext. </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit15getLabelToIdMapEv">
-<span id="_CPPv3NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="helayers::circuit::Circuit::getLabelToIdMapC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a2e8421b74c55c27f1e7472babe2e814e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CtxtLabel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getLabelToIdMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit15getLabelToIdMapEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit15getLabelToIdMapEv"></span><span id="helayers::circuit::Circuit::getLabelToIdMapC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ab8b81cd79a1cd0b91a6eabac03f05e9e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">NodeLabel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getLabelToIdMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit15getLabelToIdMapEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the map translating from a label to a ctxt id. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId"></span><span id="helayers::circuit::Circuit::getNodeByOutputId__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a52b0a9ff1470f9123d93b2e7052301d4"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodeByOutputId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit17getNodeByOutputIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit16getNodeIdByLabelERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit7Circuit16getNodeIdByLabelERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit7Circuit16getNodeIdByLabelERK9NodeLabel"></span><span id="helayers::circuit::Circuit::getNodeIdByLabel__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a760fda231b0f2d07bc6d8e922bec01bf"></span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodeIdByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit16getNodeIdByLabelERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the NodeId for the node with given label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label</strong> – Input label </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit11getNodeByIdERK6NodeId">
+<span id="_CPPv3NK8helayers7circuit7Circuit11getNodeByIdERK6NodeId"></span><span id="_CPPv2NK8helayers7circuit7Circuit11getNodeByIdERK6NodeId"></span><span id="helayers::circuit::Circuit::getNodeById__NodeIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a83b129eed538fa7737c567a45b0640bc"></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodeById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit11getNodeByIdERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a node by its id. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -710,8 +764,13 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId"></span><span id="helayers::circuit::Circuit::hasNodeWithOutputId__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a46d16bd241b1bd93f7e6438364566352"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasNodeWithOutputId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit11getNodeByIdEv">
+<span id="_CPPv3N8helayers7circuit7Circuit11getNodeByIdEv"></span><span id="_CPPv2N8helayers7circuit7Circuit11getNodeByIdEv"></span><span id="helayers::circuit::Circuit::getNodeById"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a73d2390a3d4624828e2e3a970a5e0180"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">PNode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getNodeById</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit11getNodeByIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6NodeId">
+<span id="_CPPv3NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6NodeId"></span><span id="_CPPv2NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6NodeId"></span><span id="helayers::circuit::Circuit::hasNodeWithOutputId__NodeIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a1ac719b7c0b79a71f1869a7a56c9d805"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasNodeWithOutputId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit19hasNodeWithOutputIdERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Query whether a node with a given id exists in the circuit. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -721,14 +780,27 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit11getNumNodesEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit11getNumNodesEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit11getNumNodesEv"></span><span id="helayers::circuit::Circuit::getNumNodesC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af545e5948140e08a73fa93aa9238f903"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumNodes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit11getNumNodesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the number of nodes in the circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit8getNodesEv">
 <span id="_CPPv3NK8helayers7circuit7Circuit8getNodesEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit8getNodesEv"></span><span id="helayers::circuit::Circuit::getNodesC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af012ce9250180db3115f7476e0ce4659"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PNode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit8getNodesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the vector of nodes in the circuit. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId">
-<span id="_CPPv3NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId"></span><span id="_CPPv2NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId"></span><span id="helayers::circuit::Circuit::getRawValues__PtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aa35dc9f414676521c0e194f80827c0cc"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRawValues</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6PtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit26getNodesInTopologicalOrderEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit26getNodesInTopologicalOrderEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit26getNodesInTopologicalOrderEv"></span><span id="helayers::circuit::Circuit::getNodesInTopologicalOrderC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a089db951b35b662b127795e3d209283d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PNode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNodesInTopologicalOrder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit26getNodesInTopologicalOrderEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the vector of nodes in the circuit. </p>
+<p>The nodes are returned in a topological order, i.e., if v is a descendent of u then v will appear after u. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6NodeId">
+<span id="_CPPv3NK8helayers7circuit7Circuit12getRawValuesERK6NodeId"></span><span id="_CPPv2NK8helayers7circuit7Circuit12getRawValuesERK6NodeId"></span><span id="helayers::circuit::Circuit::getRawValues__NodeIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af296c8cbe04643c7740d0ba317234bb4"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRawValues</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit12getRawValuesERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the raw values of a plaintext of a certain id. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -749,8 +821,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb">
-<span id="_CPPv3N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb"></span><span id="_CPPv2N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb"></span><span id="helayers::circuit::Circuit::saveUnlabeledInputs__circuit::CtxtCacheMemR.b"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1afa8c3b7f76c312c8954c1ecec9acb106"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveUnlabeledInputs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="CtxtCacheMem.html#_CPPv4N8helayers7circuit12CtxtCacheMemE" title="helayers::circuit::CtxtCacheMem"><span class="n"><span class="pre">CtxtCacheMem</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deleteValues</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsERN7circuit12CtxtCacheMemEb" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsEPN7circuit9CtxtCacheEb">
+<span id="_CPPv3N8helayers7circuit7Circuit19saveUnlabeledInputsEPN7circuit9CtxtCacheEb"></span><span id="_CPPv2N8helayers7circuit7Circuit19saveUnlabeledInputsEPN7circuit9CtxtCacheEb"></span><span id="helayers::circuit::Circuit::saveUnlabeledInputs__circuit::CtxtCacheP.b"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ae08ff5f864637950c66de7dabde5c797"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveUnlabeledInputs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CtxtCache</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cache</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deleteValues</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit19saveUnlabeledInputsEPN7circuit9CtxtCacheEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Record all unlabeled ctxt the circuit encountered. </p>
 <p>Since ctxt that were not labeled are not input it must mean they are encrypted parameters of the circuit. With this function these ctxts can be saved to cache to be later encrypted and be used when running the circuit. </p>
 <dl class="field-list simple">
@@ -761,6 +833,178 @@ document.write(`
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit11reuseParamsEb">
+<span id="_CPPv3N8helayers7circuit7Circuit11reuseParamsEb"></span><span id="_CPPv2N8helayers7circuit7Circuit11reuseParamsEb"></span><span id="helayers::circuit::Circuit::reuseParams__b"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a34d8a298391d2f5c2772520544bbfb25"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reuseParams</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit11reuseParamsEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Determines whether to set all unlabeled inputs as immortal (see Node::setImmortal). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – When true sets all unlabeled nodes as immortal, when false resets the immortal flags. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit27getHeConfigReqWhenRecordingEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit27getHeConfigReqWhenRecordingEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit27getHeConfigReqWhenRecordingEv"></span><span id="helayers::circuit::Circuit::getHeConfigReqWhenRecordingC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a64140fd19545113de77b2fb8e40c3a1b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHeConfigReqWhenRecording</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit27getHeConfigReqWhenRecordingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the HeConfigRequirements of the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> used when recording this circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit10startGroupERKNSt6stringEb">
+<span id="_CPPv3N8helayers7circuit7Circuit10startGroupERKNSt6stringEb"></span><span id="_CPPv2N8helayers7circuit7Circuit10startGroupERKNSt6stringEb"></span><span id="helayers::circuit::Circuit::startGroup__ssCR.b"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1affdfe5d77bea21a03e03c17a85e67787"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startGroup</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">makeUnique</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit10startGroupERKNSt6stringEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Start a new group. </p>
+<p>Every node logged from now until the group closes will be a part of the group. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> – The group name. </p></li>
+<li><p><strong>makeUnique</strong> – Add a prefix to make the group name unique. If there can be multiple groups with the same name they can be made unique by setting this parameter to true. A unique suffix of ” #&lt;id&gt;” will be added to the name. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit8endGroupERKNSt6stringE">
+<span id="_CPPv3N8helayers7circuit7Circuit8endGroupERKNSt6stringE"></span><span id="_CPPv2N8helayers7circuit7Circuit8endGroupERKNSt6stringE"></span><span id="helayers::circuit::Circuit::endGroup__ssCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a592c7e02c9a15901a7d7bf52ed1f5586"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endGroup</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit8endGroupERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Close a group. </p>
+<p>Every node logged since the creation of the group until now was a part of the group. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>g</strong> – The group name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit9getGroupsEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit9getGroupsEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit9getGroupsEv"></span><span id="helayers::circuit::Circuit::getGroupsC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a25fcb5625a41e7909f5f024f48770019"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getGroups</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit9getGroupsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the groups defined while recording. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit8startEraERK7EraInfo">
+<span id="_CPPv3N8helayers7circuit7Circuit8startEraERK7EraInfo"></span><span id="_CPPv2N8helayers7circuit7Circuit8startEraERK7EraInfo"></span><span id="helayers::circuit::Circuit::startEra__EraInfoCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a27ae3f571914771bcda91b9920c9bc02"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startEra</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">EraInfo</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit8startEraERK7EraInfo" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Start a new era when recording a circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The info of the new era that starts. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit6getEraE5PNode">
+<span id="_CPPv3NK8helayers7circuit7Circuit6getEraE5PNode"></span><span id="_CPPv2NK8helayers7circuit7Circuit6getEraE5PNode"></span><span id="helayers::circuit::Circuit::getEra__PNodeC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ad214a69ae4115a6bfdb67a75d4c13b7e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">EraInfo</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getEra</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit6getEraE5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the info of the era a node was recordede in. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The node whose info should be returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit6getEraEi">
+<span id="_CPPv3N8helayers7circuit7Circuit6getEraEi"></span><span id="_CPPv2N8helayers7circuit7Circuit6getEraEi"></span><span id="helayers::circuit::Circuit::getEra__i"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ac43592d805d9aa0decc8a2497d99cd7a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">EraInfo</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEra</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit6getEraEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the info of the era. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The index of the era. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit10printStatsERNSt7ostreamE">
+<span id="_CPPv3NK8helayers7circuit7Circuit10printStatsERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7circuit7Circuit10printStatsERNSt7ostreamE"></span><span id="helayers::circuit::Circuit::printStats__osRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a14fcd7a28d63c010292186ec76e25518"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printStats</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit10printStatsERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Print circuit statistics. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – The out stream to write to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor">
+<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileTensorCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ae40b3b65ecb0d7e76e579df4da1085f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated with a label. </p>
+<p>This fills all one InputCtxtNode for each tile of this tile tensor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+<li><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile">
+<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a5f7a86eaec231fdaf0db9084f9ddf1d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the output of the InputCtxtNode associated with this label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the InputCtxtNode. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE">
+<span id="_CPPv3N8helayers7circuit7Circuit15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE"></span><span id="_CPPv2N8helayers7circuit7Circuit15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE"></span><span id="helayers::circuit::Circuit::setByLabelShare__NodeLabelCR.std::shared_ptr:CTile:"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a5ba961ad69db28223718eb3e2b532f5e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelShare</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the output of the InputCtxtNode associated with this label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the InputCtxtNode. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit21getCTileTensorByLabelERK9NodeLabelR11CTileTensor">
+<span id="_CPPv3NK8helayers7circuit7Circuit21getCTileTensorByLabelERK9NodeLabelR11CTileTensor"></span><span id="_CPPv2NK8helayers7circuit7Circuit21getCTileTensorByLabelERK9NodeLabelR11CTileTensor"></span><span id="helayers::circuit::Circuit::getCTileTensorByLabel__NodeLabelCR.CTileTensorRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a331314daac096ef1cb5fdf3271dc2cfd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileTensorByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">l</span></span>, <a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit21getCTileTensorByLabelERK9NodeLabelR11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated with a label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>l</strong> – A label. </p></li>
+<li><p><strong>c</strong> – The resulting <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit15getCTileByLabelERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit7Circuit15getCTileByLabelERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit7Circuit15getCTileByLabelERK9NodeLabel"></span><span id="helayers::circuit::Circuit::getCTileByLabel__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a28a64ab8be4e46f41e0606728566fb5e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">l</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit15getCTileByLabelERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> associated with a label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>l</strong> – A label. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit21isUnlabeledParametersE5PNode">
+<span id="_CPPv3NK8helayers7circuit7Circuit21isUnlabeledParametersE5PNode"></span><span id="_CPPv2NK8helayers7circuit7Circuit21isUnlabeledParametersE5PNode"></span><span id="helayers::circuit::Circuit::isUnlabeledParameters__PNodeC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af6c0f5070cc7a080b512919391bdd47d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isUnlabeledParameters</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">node</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit21isUnlabeledParametersE5PNode" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>return whether node is unlabeled parameter </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param <span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit19getTensorRepositoryEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit19getTensorRepositoryEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit19getTensorRepositoryEv"></span><span id="helayers::circuit::Circuit::getTensorRepositoryC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a57eb683fd7716dff9ce925feeb10dbec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TensorRepository</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTensorRepository</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit19getTensorRepositoryEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the tensor repository object of this circuit. </p>
 </dd></dl>
 
 </div>

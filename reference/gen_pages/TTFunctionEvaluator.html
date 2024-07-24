@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTFunctionEvaluator &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTFunctionEvaluator &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -566,11 +566,11 @@ slower and deeper computation.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.inverse">
-<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.inverse" title="Permalink to this definition">#</a></dt>
-<dd><p>The same as FunctionEvaluator::inverse, but works on a
+<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.inverse_positive">
+<span class="sig-name descname"><span class="pre">inverse_positive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.inverse_positive" title="Permalink to this definition">#</a></dt>
+<dd><p>The same as FunctionEvaluator::inversePositive, but works on a
 CTileTensor object as source, CTile-wise. For more details, see
-documentation of FunctionEvaluator::inverse.</p>
+documentation of FunctionEvaluator::inversePositive.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -585,7 +585,7 @@ result will be</p></li>
 <li><p><strong>bit_resolution</strong> (<em>int</em>) – Controls the accuracy of the result. A
 higher bit_resolution value will increase
 the accuracy of the result at the account
-of consumig more multiplication depth.
+of consuming more multiplication depth.
 Defaults to 5.</p></li>
 </ul>
 </dd>
@@ -622,7 +622,7 @@ free coefficient.</p>
 </dd>
 <dt class="field-odd">param type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The type of the evaluation algorithm. See also the
-documnetation of “EvalType”. Defaults to MIN_DEPTH.</p>
+documentation of “EvalType”. Defaults to MIN_DEPTH.</p>
 </dd>
 <dt class="field-even">type type<span class="colon">:</span></dt>
 <dd class="field-even"><p>EvalType</p>
@@ -686,35 +686,16 @@ len(coefs), will be added. Defaults to False.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.sigmoid3_in_place">
-<span class="sig-name descname"><span class="pre">sigmoid3_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.sigmoid3_in_place" title="Permalink to this definition">#</a></dt>
-<dd><p>An approximation of sigmoid by an order 3 polynomial, in place.</p>
+<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.sigmoid_in_place">
+<span class="sig-name descname"><span class="pre">sigmoid_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.SigmoidType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.sigmoid_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>An approximation of sigmoid, in place.
+:param src: A CTileTensor to calculate its sigmoid.
+:type src:  CTileTensor
+:param type: Specifies the degree of the approximating polynomial.</p>
+<blockquote>
+<div><p>See also FunctionEvaluator::SigmoidType documentation.</p>
+</div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>src</strong> (<a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><em>CTileTensor</em></a>) – A CTileTensor to calculate its sigmoid.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.sigmoid7_in_place">
-<span class="sig-name descname"><span class="pre">sigmoid7_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.sigmoid7_in_place" title="Permalink to this definition">#</a></dt>
-<dd><p>An approximation of sigmoid by an order 7 polynomial, in place.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>src</strong> (<a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><em>CTileTensor</em></a>) – A CTileTensor to calculate its sigmoid.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTFunctionEvaluator.sigmoid9_in_place">
-<span class="sig-name descname"><span class="pre">sigmoid9_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><span class="pre">pyhelayers.TTFunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.TTFunctionEvaluator.sigmoid9_in_place" title="Permalink to this definition">#</a></dt>
-<dd><p>An approximation of sigmoid by an order 9 polynomial, in place.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>src</strong> (<a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><em>CTileTensor</em></a>) – A CTileTensor to calculate its sigmoid.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -809,34 +790,22 @@ close to 1 when src &gt; 0. Defaults to False.</p></li>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator10powInPlaceER11CTileTensori">
 <span id="_CPPv3NK8helayers19TTFunctionEvaluator10powInPlaceER11CTileTensori"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator10powInPlaceER11CTileTensori"></span><span id="helayers::TTFunctionEvaluator::powInPlace__CTileTensorR.iC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a890d515d4bc262659d8d12f5f664eb6e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">powInPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">degree</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator10powInPlaceER11CTileTensori" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1aca74066483b90d2f7c1f286df9c141cb"><span class="std std-ref">FunctionEvaluator::powInPlace</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
-<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1aca74066483b90d2f7c1f286df9c141cb"><span class="std std-ref">FunctionEvaluator::powInPlace</span></a>. </p>
+<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a93800dd32527a1beafeff463754ad1e0"><span class="std std-ref">FunctionEvaluator::powInPlace</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
+<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a93800dd32527a1beafeff463754ad1e0"><span class="std std-ref">FunctionEvaluator::powInPlace</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid3InPlaceER11CTileTensor">
-<span id="_CPPv3NK8helayers19TTFunctionEvaluator15sigmoid3InPlaceER11CTileTensor"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator15sigmoid3InPlaceER11CTileTensor"></span><span id="helayers::TTFunctionEvaluator::sigmoid3InPlace__CTileTensorRC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a0cc7507a189aca396ed3cfc4481abac1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sigmoid3InPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid3InPlaceER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1abb2adcf9d8755e9b1a5979cc88b0ae13"><span class="std std-ref">FunctionEvaluator::sigmoid3InPlace</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
-<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1abb2adcf9d8755e9b1a5979cc88b0ae13"><span class="std std-ref">FunctionEvaluator::sigmoid3InPlace</span></a>. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator14sigmoidInPlaceER11CTileTensor11SigmoidType">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator14sigmoidInPlaceER11CTileTensor11SigmoidType"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator14sigmoidInPlaceER11CTileTensor11SigmoidType"></span><span id="helayers::TTFunctionEvaluator::sigmoidInPlace__CTileTensorR.SigmoidTypeC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1ad42ef7a3a139f0cf90fb189860f2b1ac"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sigmoidInPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="n"><span class="pre">SigmoidType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator14sigmoidInPlaceER11CTileTensor11SigmoidType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A polynomial approximation of sigmoid, in place. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>src</strong> – The input tensor </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – Ciphertext to calculate its sigmoid. The result will be stored here. </p></li>
+<li><p><strong>type</strong> – Specifies the degree of the approximating polynomial. See also SigmoidType documentation. </p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid7InPlaceER11CTileTensor">
-<span id="_CPPv3NK8helayers19TTFunctionEvaluator15sigmoid7InPlaceER11CTileTensor"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator15sigmoid7InPlaceER11CTileTensor"></span><span id="helayers::TTFunctionEvaluator::sigmoid7InPlace__CTileTensorRC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1ac1f96a6ce3b2556947dd76cbedd88ee3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sigmoid7InPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid7InPlaceER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a57f31bb94dddba5ecf03d5a5a679f259"><span class="std std-ref">FunctionEvaluator::sigmoid7InPlace</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
-<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a57f31bb94dddba5ecf03d5a5a679f259"><span class="std std-ref">FunctionEvaluator::sigmoid7InPlace</span></a>. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid9InPlaceER11CTileTensor">
-<span id="_CPPv3NK8helayers19TTFunctionEvaluator15sigmoid9InPlaceER11CTileTensor"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator15sigmoid9InPlaceER11CTileTensor"></span><span id="helayers::TTFunctionEvaluator::sigmoid9InPlace__CTileTensorRC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1ac28471f8289c840bc11c56db77d25697"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sigmoid9InPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator15sigmoid9InPlaceER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a41b6df0900e50aada53618cd2b554352"><span class="std std-ref">FunctionEvaluator::sigmoid9InPlace</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
-<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a41b6df0900e50aada53618cd2b554352"><span class="std std-ref">FunctionEvaluator::sigmoid9InPlace</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -847,18 +816,93 @@ close to 1 when src &gt; 0. Defaults to False.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid">
-<span id="_CPPv3N8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid"></span><span id="_CPPv2N8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid"></span><span id="helayers::TTFunctionEvaluator::compare__CTileTensorCR.TileTensorCR.i.i.double"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a650c39457917509e708dac002e69cab4"></span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compare</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxPossibleAbsOfDiff</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1ab2b1f1659e0579ac41d8ce71480a5050"><span class="std std-ref">FunctionEvaluator::compare</span></a>, but works on tile tensors elementwise. </p>
-<p>The first argument must be a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> and the second a TileTensor (encrypted or plain). The usual broadcasting rules of binary operations apply.</p>
-<p>For more details on the comparison operator, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1ab2b1f1659e0579ac41d8ce71480a5050"><span class="std std-ref">FunctionEvaluator::compare</span></a>. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid"></span><span id="helayers::TTFunctionEvaluator::compare__CTileTensorCR.TileTensorCR.i.i.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a4854758e7ff834ba27771e45418af86f"></span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compare</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxPossibleAbsOfDiff</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator7compareERK11CTileTensorRK10TileTensoriid" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Comparison of “a” and “b”, elementwise. </p>
+<p>This method compares a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> a and a TileTensor b, and returns a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> having the same shape as a. The returned <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> will approximately contian 1 in places where a&gt;b, 0.5 in places where a=b and 0 in places where a&lt;b.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – First <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to compare. </p></li>
+<li><p><strong>b</strong> – Second TileTensor to compare. </p></li>
+<li><p><strong>gRep</strong> – Controls the accuracy of the result. Increasing gRep will increase accuracy on the account of higher multiplication depth. </p></li>
+<li><p><strong>fRep</strong> – Controls the accuracy of the result. Increasing fRep will increase accuracy on the account of higher multiplication depth. </p></li>
+<li><p><strong>maxPossibleAbsOfDiff</strong> – An upper upper bound on |a-b|. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator7inverseER11CTileTensorddi">
-<span id="_CPPv3NK8helayers19TTFunctionEvaluator7inverseER11CTileTensorddi"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator7inverseER11CTileTensorddi"></span><span id="helayers::TTFunctionEvaluator::inverse__CTileTensorR.double.double.iC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1ae674c2af3b564a5c46416d274cc55c6b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverse</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lowerBound</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">upperBound</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator7inverseER11CTileTensorddi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1aec39d294b19424cde54834324fa433db"><span class="std std-ref">FunctionEvaluator::inverse</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
-<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1aec39d294b19424cde54834324fa433db"><span class="std std-ref">FunctionEvaluator::inverse</span></a>. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator15inversePositiveER11CTileTensorddi">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator15inversePositiveER11CTileTensorddi"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator15inversePositiveER11CTileTensorddi"></span><span id="helayers::TTFunctionEvaluator::inversePositive__CTileTensorR.double.double.iC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a52ed6c404b689352afd15f6604c24ccc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inversePositive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lowerBound</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">upperBound</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator15inversePositiveER11CTileTensorddi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The same as <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a2c4864733d34f717dffbef7d9c93e8b8"><span class="std std-ref">FunctionEvaluator::inversePositive</span></a>, but works on a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> object as source, CTile-wise. </p>
+<p>For more details, see documentation of <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a2c4864733d34f717dffbef7d9c93e8b8"><span class="std std-ref">FunctionEvaluator::inversePositive</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator21goldschmitInverseSqrtER11CTileTensor6DimIntddd">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator21goldschmitInverseSqrtER11CTileTensor6DimIntddd"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator21goldschmitInverseSqrtER11CTileTensor6DimIntddd"></span><span id="helayers::TTFunctionEvaluator::goldschmitInverseSqrt__CTileTensorR.DimInt.double.double.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1aa2c8a0d578a06c405ba72cd4b148c006"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">goldschmitInverseSqrt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">iterations</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxAbsVal</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inputScale</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">reuiredOutputScale</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator21goldschmitInverseSqrtER11CTileTensor6DimIntddd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) requiredOutputScale/sqrt(src/inputScale), elementwise and in place. </p>
+<p>The values of “src” must be positive values not larger than maxAbsVal. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – The values to calculate their inverse. The output will be stored in place. </p></li>
+<li><p><strong>iterations</strong> – Controls the accuracy of the result. A higher number of iterations increases the accuracy at the expense of slower and more deep computations. </p></li>
+<li><p><strong>maxAbsVal</strong> – A positive value specifying the maximum absolute value of src/inputScale. </p></li>
+<li><p><strong>inputScale</strong> – The scale of the input “src”. The actual values represented by “src” are the encrypted values divided by this scale. </p></li>
+<li><p><strong>requiredOutputScale</strong> – The output of the function is the actual 1/sqrt result multiplied by this “requiredOutputScale” value. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If “maxAbsVal” is not positive. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator4reluER11CTileTensordd">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator4reluER11CTileTensordd"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator4reluER11CTileTensordd"></span><span id="helayers::TTFunctionEvaluator::relu__CTileTensorR.double.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a065f91809fb79c9a5182df3126543d19"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">relu</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">minVal</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">8.0</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxVal</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">8.0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator4reluER11CTileTensordd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) ReLU(src) in place assuming that src is in [minVal,maxVal]. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – The values to calculate ReLU on. The output will be stored in place. </p></li>
+<li><p><strong>minVal</strong> – minimal expected value in src </p></li>
+<li><p><strong>maxVal</strong> – maximal expected value in src </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator19sigmoidBySignScaledER11CTileTensordd">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator19sigmoidBySignScaledER11CTileTensordd"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator19sigmoidBySignScaledER11CTileTensordd"></span><span id="helayers::TTFunctionEvaluator::sigmoidBySignScaled__CTileTensorR.double.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a19ef9642fdc0ee9643378a1ebf349fc4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sigmoidBySignScaled</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxAbsVal</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scale</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator19sigmoidBySignScaledER11CTileTensordd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>An approximation of sigmoid via an approximation of sign and supporting a pre-scaling of the input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Cipher to calculate its sigmoid. This will contain the sigmoid result at the end of the function execution. </p></li>
+<li><p><strong>maxAbsVal</strong> – An upper bound on the absolute value of src. </p></li>
+<li><p><strong>scale</strong> – x will be mutiplied by scale before computing its sigmoid. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator13geluBySigmoidER11CTileTensord">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator13geluBySigmoidER11CTileTensord"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator13geluBySigmoidER11CTileTensord"></span><span id="helayers::TTFunctionEvaluator::geluBySigmoid__CTileTensorR.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a57ebebb83dc94ff8d293032c5db147d0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">geluBySigmoid</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxAbsVal</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator13geluBySigmoidER11CTileTensord" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) GeLU(src) in place assuming that src is in [-maxAbsVal,maxAbsVal]. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – The values to calculate GeLU on. The output will be stored in place </p></li>
+<li><p><strong>maxAbsVal</strong> – Maximal expected absolute value of value in the slots of x </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -875,7 +919,10 @@ close to 1 when src &gt; 0. Defaults to False.</p></li>
 <p>res[0,i] = src[i,0]. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>src</strong> – one dimensional binary <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – an empty <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a></p></li>
+<li><p><strong>src</strong> – one dimensional binary <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -941,6 +988,56 @@ close to 1 when src &gt; 0. Defaults to False.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator12sortAlongDimER11CTileTensorRK11SortNetwork6DimIntiid">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator12sortAlongDimER11CTileTensorRK11SortNetwork6DimIntiid"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator12sortAlongDimER11CTileTensorRK11SortNetwork6DimIntiid"></span><span id="helayers::TTFunctionEvaluator::sortAlongDim__CTileTensorR.SortNetworkCR.DimInt.i.i.doubleC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a5dcd2cd1fe121520596b8f28ac730f6c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sortAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">SortNetwork</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sortNetwork</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxPossibleAbsOfDiff</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator12sortAlongDimER11CTileTensorRK11SortNetwork6DimIntiid" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sorts the given <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> along the specified dimension in a decreasing order. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – The <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to sort. The result will be stored in place. </p></li>
+<li><p><strong>sortNetwork</strong> – An object specifying the network to sort with. This network consists of a set of binary comparison gates. </p></li>
+<li><p><strong>dim</strong> – The dimension to sort along. </p></li>
+<li><p><strong>gRep</strong> – Controls the accuracy of the comparisons. Higher gRep increases accuracy on the account of higher computation depth. </p></li>
+<li><p><strong>fRep</strong> – Controls the accuracy of the comparisons. Higher fRep increases accuracy on the account of higher computation depth. </p></li>
+<li><p><strong>maxPossibleAbsOfDiff</strong> – The maximum absolute difference between any two values in “res” that have the same index in “dim”. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers19TTFunctionEvaluator12multiplyManyER11CTileTensorRKNSt6vectorI11CTileTensorEE">
+<span id="_CPPv3NK8helayers19TTFunctionEvaluator12multiplyManyER11CTileTensorRKNSt6vectorI11CTileTensorEE"></span><span id="_CPPv2NK8helayers19TTFunctionEvaluator12multiplyManyER11CTileTensorRKNSt6vectorI11CTileTensorEE"></span><span id="helayers::TTFunctionEvaluator::multiplyMany__CTileTensorR.std::vector:CTileTensor:CRC"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1ac88d5df37b6d0dd5dc15fc5f98fec82c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyMany</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">output</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ctts</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers19TTFunctionEvaluator12multiplyManyER11CTileTensorRKNSt6vectorI11CTileTensorEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiplies all CTileTensors in “ctts” and saves the resulting product “output”. </p>
+<p>The multiplications are performed in a way that aims to minimize the number of bootstrapping operations and maximize the chain index of the result. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> – The resulting product will be stored here. </p></li>
+<li><p><strong>ctts</strong> – The CTileTensors to multiply. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers19TTFunctionEvaluator49bootstrapAheadOfUncomposedComputationOfGivenDepthER11CTileTensori">
+<span id="_CPPv3N8helayers19TTFunctionEvaluator49bootstrapAheadOfUncomposedComputationOfGivenDepthER11CTileTensori"></span><span id="_CPPv2N8helayers19TTFunctionEvaluator49bootstrapAheadOfUncomposedComputationOfGivenDepthER11CTileTensori"></span><span id="helayers::TTFunctionEvaluator::bootstrapAheadOfUncomposedComputationOfGivenDepth__CTileTensorR.i"></span><span class="target" id="classhelayers_1_1TTFunctionEvaluator_1a3385cc5bdf7ccc3000727fcf8e25ef50"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrapAheadOfUncomposedComputationOfGivenDepth</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">depth</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers19TTFunctionEvaluator49bootstrapAheadOfUncomposedComputationOfGivenDepthER11CTileTensori" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Bootstrap ahead of uncomposed computation to avoid multiple bootstraps inside the computation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – The input for the computation that may be bootstrapped now. </p></li>
+<li><p><strong>depth</strong> – The depth of the expected uncomposed computation. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -990,12 +1087,10 @@ close to 1 when src &gt; 0. Defaults to False.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.compare"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.compare()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.inverse"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.inverse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.inverse_positive"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.inverse_positive()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.poly_eval_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.poly_eval_in_place()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.pow_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.pow_in_place()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.sigmoid3_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.sigmoid3_in_place()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.sigmoid7_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.sigmoid7_in_place()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.sigmoid9_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.sigmoid9_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.sigmoid_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.sigmoid_in_place()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTFunctionEvaluator.sign_in_place"><code class="docutils literal notranslate"><span class="pre">TTFunctionEvaluator.sign_in_place()</span></code></a></li>
 </ul>
 </li>

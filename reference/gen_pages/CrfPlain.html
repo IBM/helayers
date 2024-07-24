@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CrfPlain &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>CrfPlain &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -637,7 +637,7 @@ handled. If “nan”, “nan” probabilities are
 returned. If “data_ratio”, the predicted
 probability of a category c is set to the
 weighted ratio of training samples which
-had the categroy c (for category weights
+had the category c (for category weights
 see the set_category_weights() description).
 If “value”, the values specified in
 “nan_proba” are returned. The default nan
@@ -807,12 +807,12 @@ Defaults to “sum”.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers8CrfPlain13assessResultsERK12DoubleTensorRK12DoubleTensorRiRiRiRi">
 <span id="_CPPv3N8helayers8CrfPlain13assessResultsERK12DoubleTensorRK12DoubleTensorRiRiRiRi"></span><span id="_CPPv2N8helayers8CrfPlain13assessResultsERK12DoubleTensorRK12DoubleTensorRiRiRiRi"></span><span id="helayers::CrfPlain::assessResults__DoubleTensorCR.DoubleTensorCR.iR.iR.iR.iR"></span><span class="target" id="classhelayers_1_1CrfPlain_1ac2d965dabd6badd6b139fa1ff4dafaaa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assessResults</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">predictions</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">origLabels</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tp</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fp</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tn</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8CrfPlain13assessResultsERK12DoubleTensorRK12DoubleTensorRiRiRiRi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Asseses the prediction results. </p>
+<dd><p>Assess the prediction results. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>predictions</strong> – The predictions of this <a class="reference internal" href="#classhelayers_1_1CrfPlain"><span class="std std-ref">CrfPlain</span></a>. predictions[s] should pecify the category of the s-th sample. </p></li>
-<li><p><strong>origLabels</strong> – The original labels. origLabels.at(s) should specify the original lable of the s-th sample. </p></li>
+<li><p><strong>predictions</strong> – The predictions of this <a class="reference internal" href="#classhelayers_1_1CrfPlain"><span class="std std-ref">CrfPlain</span></a>. predictions[s] should specify the category of the s-th sample. </p></li>
+<li><p><strong>origLabels</strong> – The original labels. origLabels.at(s) should specify the original label of the s-th sample. </p></li>
 <li><p><strong>tp</strong> – The number of true positives. </p></li>
 <li><p><strong>fp</strong> – The number of false positives. </p></li>
 <li><p><strong>tn</strong> – The number of true negatives. </p></li>

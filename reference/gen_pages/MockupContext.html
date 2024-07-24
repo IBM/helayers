@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MockupContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>MockupContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -705,7 +705,7 @@ initalized.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1MockupContext_1a295b3f1b79b9338031c17dc60eb73a72"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1MockupContext_1a295b3f1b79b9338031c17dc60eb73a72"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -765,7 +765,7 @@ initalized.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers13MockupContext19getMaxAllowedValuesEv">
 <span id="_CPPv3NK8helayers13MockupContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers13MockupContext19getMaxAllowedValuesEv"></span><span id="helayers::MockupContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1MockupContext_1a975ab1edf30819e1864055b5f136d0fd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers13MockupContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the maximal absolute value allowed for each chain index. </p>
-<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+<p>Values lower than the threshold are guaranteed to not produce overflows. The value in position i corresponds to the limit for chain index i. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -811,12 +811,12 @@ initalized.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13MockupContext18updateBsSeenValuesERKNSt6vectorINSt7complexIeEEEE">
-<span id="_CPPv3N8helayers13MockupContext18updateBsSeenValuesERKNSt6vectorINSt7complexIeEEEE"></span><span id="_CPPv2N8helayers13MockupContext18updateBsSeenValuesERKNSt6vectorINSt7complexIeEEEE"></span><span id="helayers::MockupContext::updateBsSeenValues__std::vector:std::complex:l-double::CR"></span><span class="target" id="classhelayers_1_1MockupContext_1aa1a91db157faac9c104a9acd485a0c93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateBsSeenValues</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13MockupContext18updateBsSeenValuesERKNSt6vectorINSt7complexIeEEEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Update the bootstrap tracking mechanism with an array of newly seen values. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers13MockupContext18updateBsSeenValuesERK18AbstractCiphertext">
+<span id="_CPPv3N8helayers13MockupContext18updateBsSeenValuesERK18AbstractCiphertext"></span><span id="_CPPv2N8helayers13MockupContext18updateBsSeenValuesERK18AbstractCiphertext"></span><span id="helayers::MockupContext::updateBsSeenValues__AbstractCiphertextCR"></span><span class="target" id="classhelayers_1_1MockupContext_1a263c3911b418b171fae1b4ff0770175d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateBsSeenValues</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">AbstractCiphertext</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cipher</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13MockupContext18updateBsSeenValuesERK18AbstractCiphertext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Update the bootstrap tracking mechanism with newly seen values taken from a given ciphertext. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>vals</strong> – The values seen. </p>
+<dd class="field-odd"><p><strong>cipher</strong> – The given ciphertext. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -871,6 +871,11 @@ initalized.</p>
 <span id="_CPPv3NK8helayers13MockupContext31getChainIndexAfterBootstrappingEv"></span><span id="_CPPv2NK8helayers13MockupContext31getChainIndexAfterBootstrappingEv"></span><span id="helayers::MockupContext::getChainIndexAfterBootstrappingC"></span><span class="target" id="classhelayers_1_1MockupContext_1ad4d3c309ec8c3f5f0511c5a366eaa9d6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getChainIndexAfterBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers13MockupContext31getChainIndexAfterBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the level of ciphertexts after bootstrapping. </p>
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers13MockupContext13imitateTraitsERK8HeTraits">
+<span id="_CPPv3N8helayers13MockupContext13imitateTraitsERK8HeTraits"></span><span id="_CPPv2N8helayers13MockupContext13imitateTraitsERK8HeTraits"></span><span id="helayers::MockupContext::imitateTraits__HeTraitsCR"></span><span class="target" id="classhelayers_1_1MockupContext_1a6a47841bae94aeddadb0b0010d13ffc4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imitateTraits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeTraits.html#_CPPv4N8helayers8HeTraitsE" title="helayers::HeTraits"><span class="n"><span class="pre">HeTraits</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers13MockupContext13imitateTraitsERK8HeTraits" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

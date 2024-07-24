@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>OpenFheContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>OpenFheContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -550,17 +550,6 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers14OpenFheContext18getMultiPartyUtilsEv">
-<span id="_CPPv3N8helayers14OpenFheContext18getMultiPartyUtilsEv"></span><span id="_CPPv2N8helayers14OpenFheContext18getMultiPartyUtilsEv"></span><span id="helayers::OpenFheContext::getMultiPartyUtils"></span><span class="target" id="classhelayers_1_1OpenFheContext_1ab5432e1ff5be2fb51b4cb3ed79d8f536"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MultiPartyUtils</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiPartyUtils</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers14OpenFheContext18getMultiPartyUtilsEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Do not use. Should be made private. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext18getMultiPartyUtilsEv">
-<span id="_CPPv3NK8helayers14OpenFheContext18getMultiPartyUtilsEv"></span><span id="_CPPv2NK8helayers14OpenFheContext18getMultiPartyUtilsEv"></span><span id="helayers::OpenFheContext::getMultiPartyUtilsC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1af47c2bed393f914eaff666120cea5f28"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MultiPartyUtils</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiPartyUtils</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext18getMultiPartyUtilsEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext14printSignatureERNSt7ostreamE">
 <span id="_CPPv3NK8helayers14OpenFheContext14printSignatureERNSt7ostreamE"></span><span id="_CPPv2NK8helayers14OpenFheContext14printSignatureERNSt7ostreamE"></span><span id="helayers::OpenFheContext::printSignature__osRC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1ad71f8ad428af87a7b60c4794ebe22c38"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printSignature</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext14printSignatureERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Prints a summary of library details and configuration params. </p>
@@ -586,6 +575,12 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext10getEncoderEv">
 <span id="_CPPv3NK8helayers14OpenFheContext10getEncoderEv"></span><span id="_CPPv2NK8helayers14OpenFheContext10getEncoderEv"></span><span id="helayers::OpenFheContext::getEncoderC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1a128adfffb7f9e6206bebc0484c742157"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractEncoder</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEncoder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext10getEncoderEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Do not use. Should be made private. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext32createAbstractBootstrapEvaluatorERK15BootstrapConfig">
+<span id="_CPPv3NK8helayers14OpenFheContext32createAbstractBootstrapEvaluatorERK15BootstrapConfig"></span><span id="_CPPv2NK8helayers14OpenFheContext32createAbstractBootstrapEvaluatorERK15BootstrapConfig"></span><span id="helayers::OpenFheContext::createAbstractBootstrapEvaluator__BootstrapConfigCRC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1a53cadf6fc1ff9315e94413b3e4e899d4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractBootstrapEvaluator</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractBootstrapEvaluator</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="BootstrapConfig.html#_CPPv4N8helayers15BootstrapConfigE" title="helayers::BootstrapConfig"><span class="n"><span class="pre">BootstrapConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bsConfig</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="BootstrapConfig.html#_CPPv4N8helayers15BootstrapConfigE" title="helayers::BootstrapConfig"><span class="n"><span class="pre">BootstrapConfig</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext32createAbstractBootstrapEvaluatorERK15BootstrapConfig" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Do not use. Should be made private. </p>
 </dd></dl>
 
@@ -647,7 +642,7 @@ document.write(`
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1OpenFheContext_1adf74e477bd573c219b29fdd04eb73c67"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1OpenFheContext_1adf74e477bd573c219b29fdd04eb73c67"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -667,7 +662,7 @@ document.write(`
 <p>Maps the received chain index in terms of HELayers to the corresponding level in terms of OpenFHE. Note that in HELayers chain indexes start from a positive integer and decrease on each multiplication, levels in OpenFHE start from zero and increase on multiplications. This function does the mapping </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>Input</strong> – chain index to translate to OpenFHE’s level </p>
+<dd class="field-odd"><p><strong>chainIndex</strong> – <strong>[in]</strong> Input chain index to translate to OpenFHE’s level </p>
 </dd>
 </dl>
 </dd></dl>
@@ -679,9 +674,27 @@ document.write(`
 <p>See <a class="reference internal" href="#classhelayers_1_1OpenFheContext_1a0cfd7164e35670a38624c6fd33a43b02"><span class="std std-ref">chainIndexToOpenFheLevel()</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>OpenFHE's</strong> – <strong>[in]</strong> level to translate to chain index </p>
+<dd class="field-odd"><p><strong>level</strong> – <strong>[in]</strong> OpenFHE’s level to translate to chain index </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext16getRotateIndexesEv">
+<span id="_CPPv3NK8helayers14OpenFheContext16getRotateIndexesEv"></span><span id="_CPPv2NK8helayers14OpenFheContext16getRotateIndexesEv"></span><span id="helayers::OpenFheContext::getRotateIndexesC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1ab8aacf408b55afe39fd8a63ce09c6f12"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRotateIndexes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext16getRotateIndexesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the rotation indexes supported by this context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext32getMinChainIndexForBootstrappingEv">
+<span id="_CPPv3NK8helayers14OpenFheContext32getMinChainIndexForBootstrappingEv"></span><span id="_CPPv2NK8helayers14OpenFheContext32getMinChainIndexForBootstrappingEv"></span><span id="helayers::OpenFheContext::getMinChainIndexForBootstrappingC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1a4cde554e4e165f232ed972020b04e8b9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext32getMinChainIndexForBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the minimum level in which ciphertexts can be bootstrapped. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14OpenFheContext31getChainIndexAfterBootstrappingEv">
+<span id="_CPPv3NK8helayers14OpenFheContext31getChainIndexAfterBootstrappingEv"></span><span id="_CPPv2NK8helayers14OpenFheContext31getChainIndexAfterBootstrappingEv"></span><span id="helayers::OpenFheContext::getChainIndexAfterBootstrappingC"></span><span class="target" id="classhelayers_1_1OpenFheContext_1ad5fc7b8d2b4935ed8cc2c231872498cd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getChainIndexAfterBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14OpenFheContext31getChainIndexAfterBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the level of ciphertexts after bootstrapping. </p>
 </dd></dl>
 
 </div>

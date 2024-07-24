@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CTile &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>CTile &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -595,6 +595,13 @@ add_plain_raw() to get the scheme’s raw addition operation.</p>
 <span class="sig-name descname"><span class="pre">add_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTile.add_scalar" title="Permalink to this definition">#</a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic">
+<li><p>add_scalar(self: pyhelayers.CTile, scalar: complex) -&gt; None</p>
+<blockquote>
+<div><p>Adds a complex scalar value to all slots in this ciphertext.
+:param scalar: value to add.
+:type scalar: complex</p>
+</div></blockquote>
+</li>
 <li><p>add_scalar(self: pyhelayers.CTile, scalar: float) -&gt; None</p>
 <blockquote>
 <div><p>Adds a double scalar value to all slots in this ciphertext.</p>
@@ -648,6 +655,59 @@ argument type.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.assert_correct_scale">
+<span class="sig-name descname"><span class="pre">assert_correct_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn_epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.assert_correct_scale" title="Permalink to this definition">#</a></dt>
+<dd><p>Verify this CTile has a correct scale, and optionally correct it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – Message to include in case of warning or error.
+Defaults to an empty string</p></li>
+<li><p><strong>warn_epsilon</strong> – Warn epsilon. Defaults to 1e-20.</p></li>
+<li><p><strong>error_epsilon</strong> – Error epsilon. Defaults to 1e-10.</p></li>
+<li><p><strong>fix</strong> – If True the scale is fixed if to target scale. Defaults
+to True</p></li>
+<li><p><strong>target_scale</strong> – The scale to test with and to fix. If set to
+-1, the usual accurate scale for this level is used. Defaults
+to -1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.bootstrap">
+<span class="sig-name descname"><span class="pre">bootstrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.bootstrap" title="Permalink to this definition">#</a></dt>
+<dd><p>Bootstrap this CTile, if this is supported by the underlying
+HeContext. Bootstrapping will raise the chain index of this CTile,
+allowing more multiplications to be done. However, this operation
+is likely to be time-consuming, and may add noise to the ciphertext
+in some schemes (such as CKKS). Bootstrapping is only supported if
+the HeContext used to create this CTile was initialized to be
+bootstrappable (see also HeConfigRequirement::bootstrappable).
+:raises RuntimeError: If the HeContext used to create this CTile is</p>
+<blockquote>
+<div><p>not bootstrappable.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.clear_last_n_slots">
+<span class="sig-name descname"><span class="pre">clear_last_n_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.clear_last_n_slots" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the last n slots of this CTile to 0, by multiplying it with a
+relevant mask. If n is 0, does nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The number of slots to clear.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If n is negative or greater than the number of
+slots.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTile.conjugate">
 <span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.conjugate" title="Permalink to this definition">#</a></dt>
 <dd><p>Conjugates contents of this CTile in place, elementwise.
@@ -664,14 +724,36 @@ conjugate_raw() to get the scheme’s raw conjugate operation.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.get_conjugate">
+<span class="sig-name descname"><span class="pre">get_conjugate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.CTile.get_conjugate" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the result of conjugating contents of this CTile,
+elementwise. For non-complex numbers this has no effect. Depending
+on scheme, this may perform some additional light-weight tasks
+allowing for a smooth sequence of operations. Use conjugateRaw()
+to get the scheme’s raw conjugate operation.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTile.get_current_device">
-<span class="sig-name descname"><span class="pre">get_current_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyhelayers.DeviceType</span></span></span><a class="headerlink" href="#pyhelayers.CTile.get_current_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_current_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.DeviceType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.CTile.get_current_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the current device of this CTile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>DeviceType</p>
+<dd class="field-odd"><p>DeviceType, int</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.get_estimated_memory_usage_bytes">
+<span class="sig-name descname"><span class="pre">get_estimated_memory_usage_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.CTile.get_estimated_memory_usage_bytes" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns an estimation of the memory usage, or -1 if not supported.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.get_he_context">
+<span class="sig-name descname"><span class="pre">get_he_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></span><a class="headerlink" href="#pyhelayers.CTile.get_he_context" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the HE context used to initialize this CTile.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -687,23 +769,61 @@ CTile. Relies on CTile::multiply().</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.get_size">
+<span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.CTile.get_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the number of polynomials in the ciphertext
+(as reduced via relinearization).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTile.inner_sum">
-<span class="sig-name descname"><span class="pre">inner_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.inner_sum" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the inner sum of some of the ciphertext’s slots.
+<span class="sig-name descname"><span class="pre">inner_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTile.inner_sum" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>inner_sum(self: pyhelayers.CTile) -&gt; None</p>
+<blockquote>
+<div><p>Computes the inner sum of all of the ciphertext’s slots.
+Performs the computation by repeated rotations and additions, with
+rotations 1, 2, 4, up to slotCount (exclusive). The result is duplicated
+in all slots.</p>
+</div></blockquote>
+</li>
+<li><p>inner_sum(self: pyhelayers.CTile, rot1: int, rot2: int, reverse: bool = False) -&gt; None</p>
+<blockquote>
+<div><p>Computes the inner sum of some of the ciphertext’s slots.
 Performs the computation by repeated rotations and additions, with
 rotations rot1, 2*rot1, 4*rot2, up to rot2 (exclusive).
 Using this method properly is complicated, and is used by some higher
 level algorithms.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>rot1</strong> – First rotation in the rotate-and-add loop.</p></li>
-<li><p><strong>rot2</strong> (<em>int</em>) – Last rotation (exclusive) in the rotate-and-add loop.</p></li>
-<li><p><strong>reverse</strong> (<em>bool</em>) – If true, flips all rotations (left to right and vice versa).
-Defaults to false.</p></li>
-</ul>
+<dt class="field-odd">param rot1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>First rotation in the rotate-and-add loop.</p>
+</dd>
+<dt class="field-even">type int1<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param rot2<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Last rotation (exclusive) in the rotate-and-add loop.</p>
+</dd>
+<dt class="field-even">type rot2<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param reverse<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If true, flips all rotations (left to right and vice versa).
+Defaults to false.</p>
+</dd>
+<dt class="field-even">type reverse<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -729,13 +849,13 @@ multiplyRaw() to get the scheme’s raw addition operation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.CTile.multiply_by_chainging_scale">
-<span class="sig-name descname"><span class="pre">multiply_by_chainging_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.multiply_by_chainging_scale" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.CTile.multiply_by_changing_scale">
+<span class="sig-name descname"><span class="pre">multiply_by_changing_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.multiply_by_changing_scale" title="Permalink to this definition">#</a></dt>
 <dd><p>Multiply this ciphertext by a scalar double value, elementwise, by a
 light-weight scale changing.
 This multiplies every slot by the given factor.
 The operation is done by changing the scale meta-data combined with this
-ciphertext, and is therefore extermely fast.
+ciphertext, and is therefore extremely fast.
 It is not available for all underlying schemes, and also may cause
 difficulties
 down the line due to mismatching scales.</p>
@@ -810,9 +930,50 @@ multiply_plain_raw() to get the scheme’s raw multiplication operation.</p>
 </dl>
 </div></blockquote>
 </li>
+<li><p>multiply_scalar(self: pyhelayers.CTile, scalar: complex) -&gt; None</p>
+<blockquote>
+<div><p>Multiplies all slots in this ciphertext with a complex scalar value.
+:param scalar: value to multiply.
+:type scalar: complex</p>
+</div></blockquote>
+</li>
 <li><p>multiply_scalar(self: pyhelayers.CTile, scalar: float) -&gt; None</p>
 <blockquote>
 <div><p>Multiplies all slots in this ciphertext with a double scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param scalar<span class="colon">:</span></dt>
+<dd class="field-odd"><p>value to multiply.</p>
+</dd>
+<dt class="field-even">type scalar<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTile.multiply_scalar_raw">
+<span class="sig-name descname"><span class="pre">multiply_scalar_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTile.multiply_scalar_raw" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>multiply_scalar_raw(self: pyhelayers.CTile, scalar: complex) -&gt; None</p>
+<blockquote>
+<div><p>See multiply_scalar().</p>
+<dl class="field-list simple">
+<dt class="field-odd">param scalar<span class="colon">:</span></dt>
+<dd class="field-odd"><p>value to multiply.</p>
+</dd>
+<dt class="field-even">type scalar<span class="colon">:</span></dt>
+<dd class="field-even"><p>complex</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>multiply_scalar_raw(self: pyhelayers.CTile, scalar: float) -&gt; None</p>
+<blockquote>
+<div><p>See multiply_scalar().</p>
 <dl class="field-list simple">
 <dt class="field-odd">param scalar<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value to multiply.</p>
@@ -1027,13 +1188,17 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTile.to_device">
-<span class="sig-name descname"><span class="pre">to_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.to_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTile.to_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Move this CTile to another device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – The device type to move to.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – The device type to move to.</p></li>
+<li><p><strong>device_id</strong> – The device ID to move to. Device ID can be from 0 to n-1,</p></li>
+</ul>
 </dd>
 </dl>
+<p>where n is the the number of devices of the specified type.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1043,7 +1208,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <span id="_CPPv3N8helayers5CTileE"></span><span id="_CPPv2N8helayers5CTileE"></span><span id="helayers::CTile"></span><span class="target" id="classhelayers_1_1CTile"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CTile</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Tile</span></span><a class="headerlink" href="#_CPPv4N8helayers5CTileE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A class representing a ciphertext. </p>
 <p>It’s called a <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> because from a high-level point of view we’ll usually use several of these combined for holding a more complicated object such as a matrix. For a lower level documentation of different functionalities (such as the effect on chainIndex), see documentation of the underlying encryption scheme.</p>
-<p>Notice that some of the methods below implement a binary operation between two <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> objects or between a <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> and a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> object. In these binary operations, and in the case where chain index is a relevant concept for the underlying scheme, the implementation will automatically handle the case where the chain indexes of the two operands are diffetrent.</p>
+<p>Notice that some of the methods below implement a binary operation between two <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> objects or between a <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> and a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> object. In these binary operations, and in the case where chain index is a relevant concept for the underlying scheme, the implementation will automatically handle the case where the chain indexes of the two operands are different.</p>
 <p>Notice that some of the methods below have two versions: a “raw” and a “non-raw” version. The “raw” version differs from the “non-raw” version by not performing relinearize and rescale as part of the operation. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -1096,6 +1261,11 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile14cloneSharedPtrEv">
+<span id="_CPPv3NK8helayers5CTile14cloneSharedPtrEv"></span><span id="_CPPv2NK8helayers5CTile14cloneSharedPtrEv"></span><span id="helayers::CTile::cloneSharedPtrC"></span><span class="target" id="classhelayers_1_1CTile_1ad8b89e2d77344b78667f91a136173d01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tile</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cloneSharedPtr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile14cloneSharedPtrEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTileaSERK5CTile">
 <span id="_CPPv3N8helayers5CTileaSERK5CTile"></span><span id="_CPPv2N8helayers5CTileaSERK5CTile"></span><span id="helayers::CTile::assign-operator__CTileCR"></span><span class="target" id="classhelayers_1_1CTile_1a57b2781ed85ff644bbcf67ada79bc52b"></span><a class="reference internal" href="#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTileaSERK5CTile" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Copy from another object. </p>
@@ -1125,6 +1295,13 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile12getConjugateEv">
+<span id="_CPPv3NK8helayers5CTile12getConjugateEv"></span><span id="_CPPv2NK8helayers5CTile12getConjugateEv"></span><span id="helayers::CTile::getConjugateC"></span><span class="target" id="classhelayers_1_1CTile_1a2e37cc57075bec42fcbbb192e5a6d163"></span><a class="reference internal" href="#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConjugate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile12getConjugateEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of conjugating contents of this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, elementwise. </p>
+<p>For non-complex numbers this has no effect. Depending on scheme, this may perform some additional light-weight tasks allowing for a smooth sequence of operations. Use <a class="reference internal" href="#classhelayers_1_1CTile_1a5d91a250d8281a5a1595917e8de4d204"><span class="std std-ref">conjugateRaw()</span></a> to get the scheme’s raw conjugate operation. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile12conjugateRawEv">
 <span id="_CPPv3N8helayers5CTile12conjugateRawEv"></span><span id="_CPPv2N8helayers5CTile12conjugateRawEv"></span><span id="helayers::CTile::conjugateRaw"></span><span class="target" id="classhelayers_1_1CTile_1a5d91a250d8281a5a1595917e8de4d204"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">conjugateRaw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile12conjugateRawEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>See <a class="reference internal" href="#classhelayers_1_1CTile_1ab0f854bd08e939f5e7866b7b4dd9749e"><span class="std std-ref">conjugate()</span></a>. </p>
@@ -1132,12 +1309,11 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile6rotateEi">
-<span id="_CPPv3N8helayers5CTile6rotateEi"></span><span id="_CPPv2N8helayers5CTile6rotateEi"></span><span id="helayers::CTile::rotate__i"></span><span class="target" id="classhelayers_1_1CTile_1a3b49e0dea4842b6f9a8d33d222baadba"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile6rotateEi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Rotate left. </p>
-<p>For an offset of n, the element at slots 10 will move to slot 10-n. The first n elements are rotated back to be last. </p>
+<span id="_CPPv3N8helayers5CTile6rotateEi"></span><span id="_CPPv2N8helayers5CTile6rotateEi"></span><span id="helayers::CTile::rotate__i"></span><span class="target" id="classhelayers_1_1CTile_1a8210cf90b06168d211be99ea9d84832b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers5CTile6rotateEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>rotate the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> slots n steps to left </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – <strong>[in]</strong> rotate offset </p>
+<dd class="field-odd"><p><strong>n</strong> – - number of steps </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1330,7 +1506,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile23multiplyByChangingScaleEd">
 <span id="_CPPv3N8helayers5CTile23multiplyByChangingScaleEd"></span><span id="_CPPv2N8helayers5CTile23multiplyByChangingScaleEd"></span><span id="helayers::CTile::multiplyByChangingScale__double"></span><span class="target" id="classhelayers_1_1CTile_1ae14a55cd44951227f7e72f9345863076"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyByChangingScale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">factor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile23multiplyByChangingScaleEd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Multiply this ciphertext by a scalar double value, elementwise, by a light-weight scale changing. </p>
-<p>This multiplies every slot by the given factor. The operation is done by changing the scale meta-data combined with this ciphertext, and is therefore extermely fast. It is not available for all underlying schemes, and also may cause difficulties down the line due to mismatching scales. </p>
+<p>This multiplies every slot by the given factor. The operation is done by changing the scale meta-data combined with this ciphertext, and is therefore extremely fast. It is not available for all underlying schemes, and also may cause difficulties down the line due to mismatching scales. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>factor</strong> – <strong>[in]</strong> factor to multiply with. </p>
@@ -1364,6 +1540,17 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile9addScalarERKNSt7complexIdEE">
+<span id="_CPPv3N8helayers5CTile9addScalarERKNSt7complexIdEE"></span><span id="_CPPv2N8helayers5CTile9addScalarERKNSt7complexIdEE"></span><span id="helayers::CTile::addScalar__std::complex:double:CR"></span><span class="target" id="classhelayers_1_1CTile_1a699900b0259b318ee8c6aa9b9f5c55ed"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addScalar</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile9addScalarERKNSt7complexIdEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds a complex scalar value to all slots in this ciphertext. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scalar</strong> – value to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile14multiplyScalarEi">
 <span id="_CPPv3N8helayers5CTile14multiplyScalarEi"></span><span id="_CPPv2N8helayers5CTile14multiplyScalarEi"></span><span id="helayers::CTile::multiplyScalar__i"></span><span class="target" id="classhelayers_1_1CTile_1a047a2b27504d3bf142425c34c5d48acd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalar</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile14multiplyScalarEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Multiplies all slots in this ciphertext with an int scalar value. </p>
@@ -1378,9 +1565,43 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile14multiplyScalarEd">
 <span id="_CPPv3N8helayers5CTile14multiplyScalarEd"></span><span id="_CPPv2N8helayers5CTile14multiplyScalarEd"></span><span id="helayers::CTile::multiplyScalar__double"></span><span class="target" id="classhelayers_1_1CTile_1ae694e9ae71fc7fd2343e87a4b96ad836"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalar</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile14multiplyScalarEd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Multiplies all slots in this ciphertext with a double scalar value. </p>
+<p>Use <a class="reference internal" href="#classhelayers_1_1CTile_1ad556daa158e51888797c26dbe56bb4e1"><span class="std std-ref">multiplyScalarRaw()</span></a> to get the scheme’s raw multiply scalar operation. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>scalar</strong> – <strong>[in]</strong> value to multiply. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile14multiplyScalarERKNSt7complexIdEE">
+<span id="_CPPv3N8helayers5CTile14multiplyScalarERKNSt7complexIdEE"></span><span id="_CPPv2N8helayers5CTile14multiplyScalarERKNSt7complexIdEE"></span><span id="helayers::CTile::multiplyScalar__std::complex:double:CR"></span><span class="target" id="classhelayers_1_1CTile_1ac969715051b50cbc0fbebfd221d18850"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalar</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile14multiplyScalarERKNSt7complexIdEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiplies all slots in this ciphertext with a complex scalar value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scalar</strong> – value to multiply. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile17multiplyScalarRawEd">
+<span id="_CPPv3N8helayers5CTile17multiplyScalarRawEd"></span><span id="_CPPv2N8helayers5CTile17multiplyScalarRawEd"></span><span id="helayers::CTile::multiplyScalarRaw__double"></span><span class="target" id="classhelayers_1_1CTile_1ad556daa158e51888797c26dbe56bb4e1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalarRaw</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile17multiplyScalarRawEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>See <a class="reference internal" href="#classhelayers_1_1CTile_1a047a2b27504d3bf142425c34c5d48acd"><span class="std std-ref">multiplyScalar()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scalar</strong> – <strong>[in]</strong> value to multiply. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile17multiplyScalarRawERKNSt7complexIdEE">
+<span id="_CPPv3N8helayers5CTile17multiplyScalarRawERKNSt7complexIdEE"></span><span id="_CPPv2N8helayers5CTile17multiplyScalarRawERKNSt7complexIdEE"></span><span id="helayers::CTile::multiplyScalarRaw__std::complex:double:CR"></span><span class="target" id="classhelayers_1_1CTile_1a2760fb7155cd938c005130bc686ba830"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalarRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile17multiplyScalarRawERKNSt7complexIdEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiplies all slots in this ciphertext with a complex scalar value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scalar</strong> – value to multiply. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1445,6 +1666,12 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile7getSizeEv">
+<span id="_CPPv3NK8helayers5CTile7getSizeEv"></span><span id="_CPPv2NK8helayers5CTile7getSizeEv"></span><span id="helayers::CTile::getSizeC"></span><span class="target" id="classhelayers_1_1CTile_1a12d6c0828325c525ff4305c1d02b03db"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile7getSizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of polynomials in the ciphertext (as reduced via relinearization) </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile16reduceChainIndexEv">
 <span id="_CPPv3N8helayers5CTile16reduceChainIndexEv"></span><span id="_CPPv2N8helayers5CTile16reduceChainIndexEv"></span><span id="helayers::CTile::reduceChainIndex"></span><span class="target" id="classhelayers_1_1CTile_1a2f1c7f4a6852c3dd7adc6982b34247d8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reduceChainIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers5CTile16reduceChainIndexEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reduces the chain-index property of the ciphertext by 1. </p>
@@ -1463,7 +1690,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <p>Can only be used if the specified value is less than or equal to the chain index of this object. Ignored if not supported. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>chainIndex</strong> – <strong>[in]</strong> The terget value to set the chain index to </p>
+<dd class="field-odd"><p><strong>chainIndex</strong> – <strong>[in]</strong> The target value to set the chain index to </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the specified chain index is higher than this </p>
@@ -1481,8 +1708,15 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile9slotCountEv">
 <span id="_CPPv3NK8helayers5CTile9slotCountEv"></span><span id="_CPPv2NK8helayers5CTile9slotCountEv"></span><span id="helayers::CTile::slotCountC"></span><span class="target" id="classhelayers_1_1CTile_1a17e67541583955b3ee6e0f923e1c4440"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">slotCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile9slotCountEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>A <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> represents a ciphertext consisting of multuple slots. </p>
+<dd><p>A <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> represents a ciphertext consisting of multiple slots. </p>
 <p>This method returns the number of slots in this object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile8innerSumEv">
+<span id="_CPPv3N8helayers5CTile8innerSumEv"></span><span id="_CPPv2N8helayers5CTile8innerSumEv"></span><span id="helayers::CTile::innerSum"></span><span class="target" id="classhelayers_1_1CTile_1a4c96b90da71e763a1ba39a2d446fae8e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">innerSum</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile8innerSumEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Computes the inner sum of all of the ciphertext’s slots. </p>
+<p>Performs the computation by repeated rotations and additions, with rotations 1, 2, 4, up to slotCount (exclusive). The result is duplicated in all slots. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1544,7 +1778,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile9bootstrapEv">
 <span id="_CPPv3N8helayers5CTile9bootstrapEv"></span><span id="_CPPv2N8helayers5CTile9bootstrapEv"></span><span id="helayers::CTile::bootstrap"></span><span class="target" id="classhelayers_1_1CTile_1a35fbc0e10526cb22462995487588172e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5CTile9bootstrapEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Bootstrap this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, if this is supported by the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
-<p>Bootstrapping will raise the chain index of this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, allowing more multiplications to be done. However, this operation is likely to be time-consuming, and may add noise to the ciphetext in some schemes (such as CKKS). Bootstrapping is only supported if the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> used to create this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> was initialized to be bootstrappable (see also <a class="reference internal" href="HeConfigRequirement.html#structhelayers_1_1HeConfigRequirement_1a718aae5de1f7a7c2755cee7bcc99ba3a"><span class="std std-ref">HeConfigRequirement::bootstrappable</span></a>). </p>
+<p>Bootstrapping will raise the chain index of this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, allowing more multiplications to be done. However, this operation is likely to be time-consuming, and may add noise to the ciphertext in some schemes (such as CKKS). Bootstrapping is only supported if the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> used to create this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> was initialized to be bootstrappable (see also <a class="reference internal" href="HeConfigRequirement.html#structhelayers_1_1HeConfigRequirement_1a718aae5de1f7a7c2755cee7bcc99ba3a"><span class="std std-ref">HeConfigRequirement::bootstrappable</span></a>). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> used to create this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> is not bootstrappable. </p>
@@ -1553,19 +1787,22 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile8toDeviceE10DeviceType">
-<span id="_CPPv3N8helayers5CTile8toDeviceE10DeviceType"></span><span id="_CPPv2N8helayers5CTile8toDeviceE10DeviceType"></span><span id="helayers::CTile::toDevice__DeviceType"></span><span class="target" id="classhelayers_1_1CTile_1af88739eff6c989b1ce6f157a9de76912"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers5CTile8toDeviceE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5CTile8toDeviceE10DeviceTypei">
+<span id="_CPPv3N8helayers5CTile8toDeviceE10DeviceTypei"></span><span id="_CPPv2N8helayers5CTile8toDeviceE10DeviceTypei"></span><span id="helayers::CTile::toDevice__DeviceType.i"></span><span class="target" id="classhelayers_1_1CTile_1a109def5f91e36a103da6032e1692b3a7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers5CTile8toDeviceE10DeviceTypei" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Move this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> to another device. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – <strong>[in]</strong> The device type to move to. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – <strong>[in]</strong> The device type to move to. </p></li>
+<li><p><strong>deviceId</strong> – <strong>[in]</strong> The device ID to move to. Device ID can be from 0 to n-1, where n is the the number of devices of the specified type. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile16getCurrentDeviceEv">
-<span id="_CPPv3NK8helayers5CTile16getCurrentDeviceEv"></span><span id="_CPPv2NK8helayers5CTile16getCurrentDeviceEv"></span><span id="helayers::CTile::getCurrentDeviceC"></span><span class="target" id="classhelayers_1_1CTile_1a05c2c8babee9e7ced79cba02ed722947"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile16getCurrentDeviceEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers5CTile16getCurrentDeviceEv"></span><span id="_CPPv2NK8helayers5CTile16getCurrentDeviceEv"></span><span id="helayers::CTile::getCurrentDeviceC"></span><span class="target" id="classhelayers_1_1CTile_1a31f24f1fe3b92d5fc10be02f274a18f1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile16getCurrentDeviceEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the current device of this <a class="reference internal" href="#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p>
 </dd></dl>
 
@@ -1618,7 +1855,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers5CTile12getContextIdEv">
 <span id="_CPPv3NK8helayers5CTile12getContextIdEv"></span><span id="_CPPv2NK8helayers5CTile12getContextIdEv"></span><span id="helayers::CTile::getContextIdC"></span><span class="target" id="classhelayers_1_1CTile_1a8339ae7f60b4bbd159ad70afd0207e93"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getContextId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5CTile12getContextIdEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the contextId of the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> this object was initialized with. </p>
-<p>This contextId can be used, for example, to verify heContext match when loading a saved Saveable object. </p>
+<p>This contextId can be used, for example, to verify <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> match when loading a saved Saveable object. Returning -1 signals no <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1632,7 +1869,7 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <li><p><strong>warnEpsilon</strong> – Warn epsilon (used with <a class="reference internal" href="MathUtils.html#classhelayers_1_1MathUtils_1afda0e62a390361821c7fef356a3a3504"><span class="std std-ref">MathUtils::isEqual</span></a>) </p></li>
 <li><p><strong>errorEpsilon</strong> – Error epsilon (used with <a class="reference internal" href="MathUtils.html#classhelayers_1_1MathUtils_1afda0e62a390361821c7fef356a3a3504"><span class="std std-ref">MathUtils::isEqual</span></a>) </p></li>
 <li><p><strong>fix</strong> – If true (default) the scale is fixed if to target scale. </p></li>
-<li><p><strong>targetScale</strong> – The scale to test with and to fix. If set to -1 (default) the usual accuracte scale for this level is used. </p></li>
+<li><p><strong>targetScale</strong> – The scale to test with and to fix. If set to -1 (default) the usual accurate scale for this level is used. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1693,19 +1930,27 @@ Summation is done similar to right-to-left repeated squaring algorithm.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.add_scalar"><code class="docutils literal notranslate"><span class="pre">CTile.add_scalar()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.add_tile"><code class="docutils literal notranslate"><span class="pre">CTile.add_tile()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.add_tile_raw"><code class="docutils literal notranslate"><span class="pre">CTile.add_tile_raw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.assert_correct_scale"><code class="docutils literal notranslate"><span class="pre">CTile.assert_correct_scale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.bootstrap"><code class="docutils literal notranslate"><span class="pre">CTile.bootstrap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.clear_last_n_slots"><code class="docutils literal notranslate"><span class="pre">CTile.clear_last_n_slots()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.conjugate"><code class="docutils literal notranslate"><span class="pre">CTile.conjugate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.conjugate_raw"><code class="docutils literal notranslate"><span class="pre">CTile.conjugate_raw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_conjugate"><code class="docutils literal notranslate"><span class="pre">CTile.get_conjugate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_current_device"><code class="docutils literal notranslate"><span class="pre">CTile.get_current_device()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_estimated_memory_usage_bytes"><code class="docutils literal notranslate"><span class="pre">CTile.get_estimated_memory_usage_bytes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_he_context"><code class="docutils literal notranslate"><span class="pre">CTile.get_he_context()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_multiply"><code class="docutils literal notranslate"><span class="pre">CTile.get_multiply()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.get_size"><code class="docutils literal notranslate"><span class="pre">CTile.get_size()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.inner_sum"><code class="docutils literal notranslate"><span class="pre">CTile.inner_sum()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.is_empty"><code class="docutils literal notranslate"><span class="pre">CTile.is_empty()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply"><code class="docutils literal notranslate"><span class="pre">CTile.multiply()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_by_chainging_scale"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_by_chainging_scale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_by_changing_scale"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_by_changing_scale()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_imaginary_unit"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_imaginary_unit()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_plain"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_plain()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_plain_raw"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_plain_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_raw"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_scalar"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_scalar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_scalar_raw"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_scalar_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_tile"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_tile()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.multiply_tile_raw"><code class="docutils literal notranslate"><span class="pre">CTile.multiply_tile_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTile.negate"><code class="docutils literal notranslate"><span class="pre">CTile.negate()</span></code></a></li>

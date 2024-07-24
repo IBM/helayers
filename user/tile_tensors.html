@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tile tensors &#8212; HElayers 1.5.4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FHE overview" href="fhe_overview.html" />
+    <link rel="prev" title="ONNX Support" href="onnx.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tile tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution.html">Designing an FHE solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">KMS implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="overview.html" class="nav-link">HElayers Overview</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Tile tensors</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="tile-tensors">
+<h1>Tile tensors<a class="headerlink" href="#tile-tensors" title="Permalink to this heading">#</a></h1>
+<p>Tile tensor is a powerful and simple tool for handling tensors under encryption.
+It takes care of the packing details, how a tensor is flattened, and how its data
+is laid out within ciphertexts, while offering the usual API of a tensor, with operations
+like add, multiply, sum-over-dim, etc.</p>
+<p>The packing method is controlled by the <em>tile tensor shape</em>. This is a simple
+language that defines the shape of the tensor, and how it is packed.</p>
+<p>The various options achievable with tile tensor shapes cover many packing
+options known in the literature (see examples below), unify them to a generic
+framework, generalize upon them, and add novel possibilities</p>
+<section id="tile-tensor-shapes">
+<h2>Tile tensor shapes<a class="headerlink" href="#tile-tensor-shapes" title="Permalink to this heading">#</a></h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tile Tensor Applet</title>
+	<style>
+		button {
+			background-color: #5B5;
+			border: none;
+			color: white;
+			padding: 8px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<h3 id="title">Demo</h3>
+	<p>Try the following tile tensor shapes:<br>
+
+		[5/2,6/4]<br>
+		[5/2,1/4]<br>
+		[5/2,*/4]<br>
+		[5/2,1?/4]<br>
+		[5/2,6?/4]<br>
+		[5/2,6~/4]<br>
+		[5/2,6~?/4]<br>
+	</p>
+
+	<form>
+		<div>
+			Tile tensor shape: [ <input type="text" id="oy" onchange="redraw()" name="oyname" size="3" value="5"> /
+			<input type="text" id="ty" name="tyname" size="3" onchange="redraw()" value="2"> ,
+			<input type="text" id="ox" name="oxname" size="3" onchange="redraw()" value="6"> /
+			<input type="text" id="tx" name="txname" size="3" onchange="redraw()" value="4"> ]
+
+	</form>
+	<br><br>
+	<canvas style="border:1px solid black" width="700" height="400" id="can"></canvas>
+	</div>
+	<br />
+
+
+	<script>
+
+		var CELLX = 20;
+		var CELLY = 16;
+
+		function formatNum(num) {
+			var res = num.toFixed(1);
+			while (res.length < 4)
+				res = '&nbsp;' + res;
+			return res;
+		}
+
+
+
+		function getElement(shape, x, y) {
+			var xs = shape.ox;
+			return y * xs + x;
+		}
+		function interpColors(cols, x, w) {
+
+			var col1 = cols[x * 2];
+			var col2 = cols[x * 2 + 1];
+			var r = col1[0] * (1 - w) + col2[0] * w;
+			var g = col1[1] * (1 - w) + col2[1] * w;
+			var b = col1[2] * (1 - w) + col2[2] * w;
+
+			var val = ("rgb(" + Math.floor(r) + "," + Math.floor(g) + "," + Math.floor(b) + ")");
+
+			return val;
+		}
+
+
+		function interpColors2(cols, y, w) {
+
+			var r = 120 * (1 - y) + 300 * y;
+			var g = 100 * (1 - w) + 100 * w;
+			var b = 50 * (1 - w) + 20 * w;
+
+
+			var val = ("hsl(" + Math.floor(r) + "," + Math.floor(g) + "%," + Math.floor(b) + "%)");
+			return val;
+		}
+
+		function getw(x, xs) {
+			if (xs > 1)
+				return x / (xs - 1);
+			return 0;
+		}
+
+
+		function getElColor(shape, x, y) {
+			var xs = shape.ox;
+			var ys = shape.oy;
+			var cols = [0, 120, 240, 60, 180, 300, 30, 150, 270, 90, 210, 330];
+
+			return interpColors2(cols, getw(y, ys), getw(x, xs));
+		}
+		function drawCell(ctx, val, col, xx, yy) {
+			ctx.strokeStyle = '#000';
+			ctx.fillStyle = col;
+			ctx.font = "12px consolas, san-serif";
+			ctx.fillRect(xx, yy, 20, 16);
+			ctx.fillStyle = "#ffffff";
+			ctx.textAlign = "right"
+			ctx.fillText(val, xx + 18, yy + 12);
+		}
+
+		function drawMatrix(ctx, shape, xx, yy) {
+			var xs = shape.ox;
+			var ys = shape.oy;
+			for (let x = 0; x < xs; x++) {
+				for (let y = 0; y < ys; y++) {
+					drawCell(ctx, getElement(shape, x, y), getElColor(shape, x, y), xx + CELLX * x, yy + CELLY * y);
+				}
+			}
+		}
+
+
+		function getOrg(info, ti, i) {
+			if (info.duplicate)
+				return 0;
+			if (info.interleaved) {
+				return info.esz * i + ti;
+			}
+			return info.tsize * ti + i;
+		}
+
+		function drawTile(ctx, shape, tix, tiy, xx, yy) {
+			var tx = shape.tx;
+			var ty = shape.ty;
+
+			for (let x = 0; x < tx; x++) {
+				for (let y = 0; y < ty; y++) {
+					var ox = getOrg(shape.xinfo, tix, x);
+					var oy = getOrg(shape.yinfo, tiy, y);
+					var val;
+					var col = "#777";
+					if (ox < shape.ox && oy < shape.oy) {
+						val = getElement(shape, ox, oy);
+						col = getElColor(shape, ox, oy);
+					} else if ((ox >= shape.ox && shape.xinfo.unknowns) ||
+						(oy >= shape.oy && shape.yinfo.unknowns)) {
+						val = "?";
+						col = "#f00";
+					} else
+						val = "0";
+					drawCell(ctx, val, col, xx + CELLX * x, yy + CELLY * y);
+				}
+			}
+
+		}
+
+		function parseSource(val, tsize) {
+			if (val == "*") {
+				return { esz: 1, sz: 1, duplicate: true };
+			}
+
+			var regexp2 = /^(\d+)$/;
+			var res2 = tsize.match(regexp2);
+			if (!res2) {
+				return {
+					esz: 1, sz: 1,
+					hasErrorOrg: "Syntax error in \"" + tsize + "\"",
+					hasError: "Type a number in the range 1...10."
+				};
+			}
+
+			if (tsize < 1 || tsize > 10) {
+				ro = { esz: 1, sz: 1 };
+				ro.hasErrorOrg = "Invalid value \"" + tsize + "\".",
+					ro.hasError = "Values must be in the range 1...10 for this demo.";
+				return ro;
+			}
+
+			var regexp = /^(\d+)(\~?)(\??)$/;
+			var res = val.match(regexp);
+			if (!res) {
+				return {
+					esz: 1, sz: 1,
+					hasErrorOrg: "Syntax error in \"" + val + "\"",
+					hasError: "Try digits only, or see instructions below."
+				};
+			}
+
+			var ro = { sz: res[1], interleaved: (res[2] == "~"), unknowns: (res[3] == "?") }
+			ro.esz = Math.ceil(ro.sz / tsize);
+			ro.tsize = tsize;
+
+			if (ro.sz < 1 || ro.sz > 10) {
+				ro.hasErrorOrg = "Invalid value \"" + val + "\".",
+					ro.hasError = "Values must be in the range 1...10 for this demo.";
+			}
+
+			return ro;
+
+		}
+
+		function showError(ctx, msg, org) {
+			ctx.font = "16px consolas, san-serif";
+			ctx.fillStyle = "#000";
+			ctx.textAlign = "left";
+			ctx.fillText(org, 20, 20);
+			ctx.fillText(msg, 20, 40);
+		}
+
+		function showTitle(ctx, msg, xx, yy) {
+			ctx.font = "14px consolas, san-serif";
+			ctx.fillStyle = "#000";
+			ctx.textAlign = "left";
+			ctx.fillText(msg, xx, yy);
+		}
+
+		function formatShape(x, y) {
+			return x + " x " + y;
+		}
+
+		function redraw() {
+
+			var canvas = document.getElementById("can");
+
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#aaa";
+
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			var ox = document.getElementById("ox").value;
+			var tx = document.getElementById("tx").value;
+			var oy = document.getElementById("oy").value;
+			var ty = document.getElementById("ty").value;
+
+			var shape = { tx: tx, oox: ox, ooy: oy, ty: ty };
+
+			shape.xinfo = parseSource(ox, tx);
+			shape.yinfo = parseSource(oy, ty);
+			if (shape.xinfo.hasError) {
+				showError(ctx, shape.xinfo.hasError, shape.xinfo.hasErrorOrg);
+				return;
+			} else if (shape.yinfo.hasError) {
+				showError(ctx, shape.yinfo.hasError, shape.yinfo.hasErrorOrg);
+				return;
+			}
+			shape.ox = shape.xinfo.sz;
+			shape.oy = shape.yinfo.sz;
+
+			ctx.strokeStyle = '#fff';
+			ctx.fillStyle = "#fff";
+
+			ctx.font = "14px consolas, san-serif";
+
+			showTitle(ctx, "Original matrix:", 20, 20);
+			showTitle(ctx, "Size: " + formatShape(shape.oy, shape.ox), 20, 40);
+			drawMatrix(ctx, shape, 20, 50);
+
+			var numx = Math.ceil(shape.ox / shape.tx);
+			var numy = Math.ceil(shape.oy / shape.ty);
+
+			var baseX = 10 * CELLX + 20 + 40;
+			showTitle(ctx, "Tile tensor:", baseX, 20);
+			showTitle(ctx, formatShape(shape.yinfo.esz, shape.xinfo.esz) + " Tiles of size " + formatShape(ty, tx) + " each", baseX, 40);
+
+			for (let x = 0; x < numx; x++) {
+				for (let y = 0; y < numy; y++) {
+					drawTile(ctx, shape, x, y, baseX + (shape.tx * CELLX + 10) * x, 50 + (shape.ty * CELLY + 10) * y);
+				}
+			}
+		}
+
+		redraw();
+	</script>
+
+</body>
+
+</html></section>
+<section id="logical-representation">
+<h2>Logical representation<a class="headerlink" href="#logical-representation" title="Permalink to this heading">#</a></h2>
+<p>A tile tensor <img class="math" src="../_images/math/e8dea8254118f111b5fb20895b03528c17566f06.png" alt="T"/> contains some tensor <img class="math" src="../_images/math/ed38fa24f1c94891bd312012aab3f6673be3eb83.png" alt="X"/> packed divided among several
+tiles or ciphertexts. <img class="math" src="../_images/math/e8dea8254118f111b5fb20895b03528c17566f06.png" alt="T"/> logically represents <img class="math" src="../_images/math/ed38fa24f1c94891bd312012aab3f6673be3eb83.png" alt="X"/>, meaning you can work with <img class="math" src="../_images/math/e8dea8254118f111b5fb20895b03528c17566f06.png" alt="T"/>
+as if it was <img class="math" src="../_images/math/ed38fa24f1c94891bd312012aab3f6673be3eb83.png" alt="X"/>, ignoring the packing details.</p>
+<p>For example: executing <img class="math" src="../_images/math/c7aa43f338ec2d3f19a03bb8012a4cc10eb819d2.png" alt="T_2 = T.sum\_over\_dim(0)"/> will return a tile tensor <img class="math" src="../_images/math/f29a7754ac02351e8da1712eb78f010e1af6a732.png" alt="T_2"/>
+that logically represents a tensor equal to <img class="math" src="../_images/math/8aa22200dc78c9af6ebc08ef3cc07d62b8c1dd25.png" alt="X.sum\_over\_dim(0)"/>.</p>
+<p>To simplify working with tile tensors, they provide the same set of operators
+ordinarily supported by tensors: elementwise operators, matrix-multiplication,
+sum_over_dim, convolution,  rotate (roll), slice, etc.</p>
+<p>Here too, the way these operators are implemented covers and generalizes upon
+many known techniques from the literature. See examples below.</p>
+</section>
+<section id="examples-from-the-literature">
+<h2>Examples from the literature<a class="headerlink" href="#examples-from-the-literature" title="Permalink to this heading">#</a></h2>
+<p>To implement a matrix-vector multiplication of a matrix <img class="math" src="../_images/math/4abba779877abb276b98ccb2b4ba9bf2e41947ab.png" alt="M"/> with a vector <img class="math" src="../_images/math/e4762cec46619bf7781cae62216214f909395368.png" alt="V"/> as in <a class="reference internal" href="#references"><span class="std std-ref">[1]</span></a>. Simply do:</p>
+<ul class="simple">
+<li><p>Pack the matrix <img class="math" src="../_images/math/4abba779877abb276b98ccb2b4ba9bf2e41947ab.png" alt="M"/> of shape <img class="math" src="../_images/math/b17897287b23d96473a85f41eeb859a16830b679.png" alt="[a,b]"/> in a tile tensor <img class="math" src="../_images/math/60b74287bf19e27bc5a3e755457326add30fc669.png" alt="T_m"/> with shape <img class="math" src="../_images/math/a48166228f5c7e03e911573c3f4d80d826f50f33.png" alt="[\frac{a}{t_0},\frac{b}{t_1}]"/></p></li>
+<li><p>Pack the vector <img class="math" src="../_images/math/e4762cec46619bf7781cae62216214f909395368.png" alt="V"/> of shape <img class="math" src="../_images/math/4af3f9bd3d7d58d9f03b2918edb3ef5119529bb5.png" alt="[b]"/> in a tile tensor <img class="math" src="../_images/math/3938260baab9ce1f1d1fddeee9c0a7ec5479c17a.png" alt="T_v"/> with shape <img class="math" src="../_images/math/84cd7c2beb45780ce33e42530a1e353da877780a.png" alt="[\frac{*}{t_0},\frac{b}{t_1}]"/></p></li>
+<li><p>Compute the elementwise product <img class="math" src="../_images/math/e7c99b6b05fc02f7d3dbf01058847a7712e7936e.png" alt="T_m * T_v"/> then sum over the second dimension.</p></li>
+</ul>
+<p>Here, <img class="math" src="../_images/math/518a5626c97b3a5ade56c85f17a02aa412eb97c0.png" alt="t_0`"/> and <img class="math" src="../_images/math/ec9116f490f32f70a972b14502997fc1f67d2c38.png" alt="t_1`"/> can have any value such that <img class="math" src="../_images/math/74947a8ba7d2777e0ff99b4a51b8acbb7af7301e.png" alt="t_0 t_1`"/> is the number of slots in a given ciphertext.
+They can be tuned to optimize various goals, e.g., latency, throughput, memory, or network bandwidth.</p>
+<p>A generalization for matrix-matrix multiplication as in <a class="reference internal" href="#references"><span class="std std-ref">[2]</span></a> is as follows.</p>
+<ul class="simple">
+<li><p>Pack matrix <img class="math" src="../_images/math/63aefbfc394dc9ff2ae95d9397fd0d081eb149cf.png" alt="M_1"/> of shape <img class="math" src="../_images/math/b17897287b23d96473a85f41eeb859a16830b679.png" alt="[a,b]"/> in a tile tensor <img class="math" src="../_images/math/3f0a6a0ed6054aca74425b160125229ae45fdb54.png" alt="T_{M_1}"/> with shape <img class="math" src="../_images/math/0aa27dd064aeb8659633ea4460e7dfed741bbace.png" alt="[\frac{a}{t_0},\frac{b}{t_1},\frac{*}{t_2}]"/></p></li>
+<li><p>Pack matrix <img class="math" src="../_images/math/796044404e0dcf07ff66c43faa290b8bbd3d2005.png" alt="M_2"/> of shape <img class="math" src="../_images/math/0aa62aa2951d53ef8e953d265724461012c9d0f4.png" alt="[b,c]"/> in a tile tensor <img class="math" src="../_images/math/2c87eda9f5c6c831a74277aa0bce3132b1bfb04b.png" alt="T_{M_2}"/> with shape <img class="math" src="../_images/math/a198573893344d18b5f93c080bde6f73fc76eff1.png" alt="[\frac{*}{t_0},\frac{b}{t_1},\frac{c}{t_2}]"/></p></li>
+<li><p>Compute the elementwise product <img class="math" src="../_images/math/c6a7bd52127031ee5832c757cacf18502fdb7be0.png" alt="T_{M_1} * T_{M_2}"/> then sum over the second dimension.</p></li>
+</ul>
+<p>The authors of HyPHEN <a class="reference internal" href="#references"><span class="std std-ref">[3]</span></a> describe several methods for convolutional networks that can also be written using the tile tensor notation.
+For exmaple, the CAConv with SISO method is implemented as follows.</p>
+<ul class="simple">
+<li><p>The input image <img class="math" src="../_images/math/d91076411f4835bcdf71a960ab3786cfd9cacc43.png" alt="[c_i,w_i,h_i]"/> is packed as <img class="math" src="../_images/math/38631d0973e5cc6f676812804904fc00b7108839.png" alt="[\frac{c_i}{2},\frac{w_i}{32},\frac{h_i}{32}]"/>.</p></li>
+<li><p>The kernels <img class="math" src="../_images/math/cf6896c91b3c5d9acb5d276e7cce8056513cddd7.png" alt="[c_o,c_i,f_w,f_h]"/> are packed as <img class="math" src="../_images/math/ec5467d9943ef5e44a2e7faa1a974c8c8aa9bcbd.png" alt="[f_w,f_h,\frac{c_i}{2},c_o,\frac{*}{32},\frac{*}{32}]"/>.</p></li>
+<li><p>The computation is the same as the tile tensor’s convolution operator.</p></li>
+<li><p>The result is packed as <img class="math" src="../_images/math/adb5fa00f0c2cd26165dbe704475e3a17106427f.png" alt="[\frac{*}{2},c_o,\frac{w_i}{32},\frac{h_i}{32}]"/>.</p></li>
+</ul>
+<p>Tile tensors generalize on the above, using interleaved packing to support arbitrary image size and aribtrary tile sizes.</p>
+</section>
+<section id="related-work">
+<h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this heading">#</a></h2>
+<p>Other works offer frameworks to control different packing of tensors using various schemes.</p>
+<p>One such example is the layout support of the Fhelipe compiler <a class="reference internal" href="#references"><span class="std std-ref">[4]</span></a>
+Their method is effectively to reshape a tensor to dimensions of size 2.
+E.g., a tensor of shape <img class="math" src="../_images/math/b17897287b23d96473a85f41eeb859a16830b679.png" alt="[a,b]"/> where <img class="math" src="../_images/math/9e829e84c4f9bc68475557853776d48064c11aee.png" alt="a=8"/> and <img class="math" src="../_images/math/fcca9626f4e37a2b96f1abf33a136754cd94cbd8.png" alt="b=4"/> is reshaped to <img class="math" src="../_images/math/9782d900c275866d21067aa6dbb0a0293f8fff45.png" alt="[2,2,2, 2,2]"/>,
+where the first three dimensions come from the ‘a’ dimension and are labeled a0,a1,a2,
+and the last two come from the ‘b’ dimension and are labeled b0,b1.</p>
+<p>Now say this reshaped tensor is packed into a ciphertext with 8 slots.
+Fhelipe uses tile shapes that also only has dimensions of size 2, which is</p>
+<blockquote>
+<div><p><img class="math" src="../_images/math/5141b909cea7475efc352b012ed1235221552506.png" alt="[2,2,2]"/> in our example. The tensor</p>
+</div></blockquote>
+<p>can now be packed in various ways, e.g.  <img class="math" src="../_images/math/d9d28c37ce12eb69d2d65d1fa1d7749f0ede7e72.png" alt="[a0,a1,a2/2,b0/2,b1/2]"/> or <img class="math" src="../_images/math/4a3d0ef4d121546e51ea08b90be9915852810fdc.png" alt="[b0,b1,a0/2,a1/2/a2/2]"/>. In Fhelipe’s notation,
+the same thing is written <img class="math" src="../_images/math/5506019c0aea0cbd7999b7273eeda5bc55002e47.png" alt="[a0,a1;a2,b0,b1]"/> or <img class="math" src="../_images/math/02a81bd64923266da49f91c94cf9b4649b2aab3b.png" alt="[b0,b1;a0,a1,a2]"/>.</p>
+<p>Tile tensors can therefore capture Fhelipe’s packing methods, and in addition offer several advantages:</p>
+<ul class="simple">
+<li><p>Most noticeably, you are not forced to reshape a tensor to dimensions of size 2 or</p></li>
+</ul>
+<p>to work with a tile shape of <img class="math" src="../_images/math/82cc55e731679848bcb6a2da92e3d6d70693a618.png" alt="[2,2,...2]"/>.
+In the above example, if the tensor’s original shape is <img class="math" src="../_images/math/600a55a2eb0d4f34eeb9d66535491e7d15d8dd50.png" alt="[80,4]"/>,
+Fhelipe would require first padding it to a larger size of <img class="math" src="../_images/math/6348d54439f6cc97fb2cd90e4dbcadb4fd9fe58e.png" alt="[128,4]"/>, to enable
+breaking down both dimensions to size-2 dimensions. This causes a considerable waste.
+Using tile tensors, working with a tile tensor shape of
+<img class="math" src="../_images/math/cea7414f46f44d778503c76f240ee394c04f893d.png" alt="[80/4,4/2]"/> or <img class="math" src="../_images/math/b09289f140071c5b9ae54b3b23895421506a5634.png" alt="[80/2,4/4]"/> would provide maximal efficiency
+in terms of both storage and computation time.</p>
+<ul class="simple">
+<li><p>Tile tensors offer the interleaved packing method, which allows</p></li>
+</ul>
+<p>for rotating tensor dimensions with high efficiency and zero multiplication depth.
+While Fhelipe’s layouts can also be configured to schemes equivalent to interleaved packing,
+these configurations are less intuitive, and the rotation algorithms adapted to Fhelipe’s layouts
+require non-trivial multiplication depth.</p>
+<ul class="simple">
+<li><p>Tile tensors keep better track of slots containing duplicate values</p></li>
+</ul>
+<p>and unknown values. While both Fhelipe’s layout and tile tensors allow the user
+to request replication, tile tensors have the additional advantage of
+identifying cases where replication occurs spontaneously, e.g., after
+summation of a dimension under certain, simple conditions. If these conditions
+are not satisfied, then some slots will have unknown values, which are too
+tracked by the tile tensor metadata. Clearing them is not automatic as in Fhelipe,
+as they might not disrupt the rest of the computation, or be cleared
+as a side effect of one of the next operators.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>[1] Crockett, E.: A low-depth homomorphic circuit for logistic regression model training.
+Cryptology ePrint Archive (2020). <a class="reference external" href="https://eprint.iacr.org/2020/1483">Link</a></p>
+<p>[2] Rizomiliotis, P., Triakosia, A.: On matrix multiplication with homomorphic encryption. In: Proceedings of the 2022 on Cloud Computing Security Workshop,
+CCSW’22, p. 53–61. Association for Computing Machinery, New York, NY, USA (2022). <a class="reference external" href="https://doi.org/10.1145/3560810.3564267">Link</a></p>
+<p>[3] Kim, D., Park, J., Kim, J., Kim, S., Ahn, J.H.: HyPHEN: A hybrid packing method and its optimizations for homomorphic encryption-based neural networks. IEEE Access
+(2023) <a class="reference external" href="https://doi.org/10.1109/ACCESS.2023.3348170">Link</a>.</p>
+<p>[4] KKrastev, A., Samardzic, N., Langowski, S., Devadas, S., &amp; Sanchez, D. (2024). A Tensor Compiler with Automatic Data Packing for Simple and Efficient Fully Homomorphic Encryption. Proceedings of the ACM on Programming Languages, 8(PLDI), 126-150.
+<a class="reference external" href="https://dl.acm.org/doi/pdf/10.1145/3656382">Link</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="onnx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ONNX Support</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fhe_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FHE overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tile-tensor-shapes">Tile tensor shapes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-representation">Logical representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-from-the-literature">Examples from the literature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>RecordLinkageManager &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>RecordLinkageManager &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -556,10 +556,10 @@ RecordLinkageManager.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.RecordLinkageManager.encrypt_fields_for_equal_rule">
 <span class="sig-name descname"><span class="pre">encrypt_fields_for_equal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.RecordLinkageManager" title="pyhelayers.RecordLinkageManager"><span class="pre">pyhelayers.RecordLinkageManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RecordLinkagePackage.html#pyhelayers.RecordLinkagePackage" title="pyhelayers.RecordLinkagePackage"><span class="pre">pyhelayers.RecordLinkagePackage</span></a></span></span><a class="headerlink" href="#pyhelayers.RecordLinkageManager.encrypt_fields_for_equal_rule" title="Permalink to this definition">#</a></dt>
-<dd><p>Concatenates the content of the fields that the RL_RULE_EQAUL
+<dd><p>Concatenates the content of the fields that the RL_RULE_EQUAL
 applies for, hash this value, transform it to an EC point and multiply
 it by the secret key of this RecordLinkageManager. returns a
-RecordLinkagePackage containing the encrypted data to be transfered to
+RecordLinkagePackage containing the encrypted data to be transferred to
 the other participant in the protocol.</p>
 </dd></dl>
 
@@ -572,7 +572,7 @@ previous steps, otherwise they will be applied to all non-matched records.
 Generate shingles sets for each record, generate min-hash for these
 shingle sets, transform the hashes to EC points and multiply them by the
 secret key of this RecordLinkageManager. returns a RecordLinkagePackage
-containing the encrypted data to be transfered to the other participant in
+containing the encrypted data to be transferred to the other participant in
 the protocol.</p>
 </dd></dl>
 
@@ -684,7 +684,7 @@ protocol have already been carried out.</p>
 <dd><p>Find and print matching pairs of records from both party’s
 tables. To be called after all the above steps of the
 protocol have already been carried out. The printout will
-also uses the other side’s RecordLinkageManager to exract
+also uses the other side’s RecordLinkageManager to extract
 the other information about the matched record of the other
 side. This is for debugging purposes only, since no side is
 expected to have access to both RecordLinkageManagers.</p>
@@ -703,7 +703,7 @@ expected to have access to both RecordLinkageManagers.</p>
 <dt class="sig sig-object py" id="pyhelayers.RecordLinkageManager.set_current_rule">
 <span class="sig-name descname"><span class="pre">set_current_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.RecordLinkageManager" title="pyhelayers.RecordLinkageManager"><span class="pre">pyhelayers.RecordLinkageManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RecordLinkageRule.html#pyhelayers.RecordLinkageRule" title="pyhelayers.RecordLinkageRule"><span class="pre">pyhelayers.RecordLinkageRule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.RecordLinkageManager.set_current_rule" title="Permalink to this definition">#</a></dt>
 <dd><p>Set a rule for following iteration of the protocol. If the rule
-contains fields with RL_RULE_EQAUL rule type, the user must first apply
+contains fields with RL_RULE_EQUAL rule type, the user must first apply
 the functions related to this rule type (encryptFieldsForEqualRule,
 applySecretKeyToRecords, matchRecordsByEqualRule). At each iteration, the
 given rule will only be applied to try to match non-matched records (as
@@ -784,7 +784,7 @@ RecordLinkageManager object.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers2er20RecordLinkageManager14setCurrentRuleERK17RecordLinkageRule">
 <span id="_CPPv3N8helayers2er20RecordLinkageManager14setCurrentRuleERK17RecordLinkageRule"></span><span id="_CPPv2N8helayers2er20RecordLinkageManager14setCurrentRuleERK17RecordLinkageRule"></span><span id="helayers::er::RecordLinkageManager::setCurrentRule__RecordLinkageRuleCR"></span><span class="target" id="classhelayers_1_1er_1_1RecordLinkageManager_1a998672383ed72bb5bdfe32a626918241"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCurrentRule</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="RecordLinkageRule.html#_CPPv4N8helayers2er17RecordLinkageRuleE" title="helayers::er::RecordLinkageRule"><span class="n"><span class="pre">RecordLinkageRule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers2er20RecordLinkageManager14setCurrentRuleERK17RecordLinkageRule" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set a rule for following iteration of the protocol. </p>
-<p>If the rule contains fields with RL_RULE_EQAUL rule type, the user must first apply the functions related to this rule type (encryptFieldsForEqualRule, applySecretKeyToRecords, matchRecordsByEqualRule). At each iteration, the given rule will only be applied to try to match non-matched records (as indicated by the Similarity Graph).</p>
+<p>If the rule contains fields with RL_RULE_EQUAL rule type, the user must first apply the functions related to this rule type (encryptFieldsForEqualRule, applySecretKeyToRecords, matchRecordsByEqualRule). At each iteration, the given rule will only be applied to try to match non-matched records (as indicated by the Similarity Graph).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rule</strong> – the rule to apply in this iteration. This rule will also be added to the output <a class="reference internal" href="RecordLinkagePackage.html#classhelayers_1_1er_1_1RecordLinkagePackage"><span class="std std-ref">RecordLinkagePackage</span></a> object, and to this <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a> object. </p>
@@ -798,8 +798,8 @@ RecordLinkageManager object.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers2er20RecordLinkageManager25encryptFieldsForEqualRuleEv">
 <span id="_CPPv3N8helayers2er20RecordLinkageManager25encryptFieldsForEqualRuleEv"></span><span id="_CPPv2N8helayers2er20RecordLinkageManager25encryptFieldsForEqualRuleEv"></span><span id="helayers::er::RecordLinkageManager::encryptFieldsForEqualRule"></span><span class="target" id="classhelayers_1_1er_1_1RecordLinkageManager_1ab5921d74710404d8829d67001be50642"></span><a class="reference internal" href="RecordLinkagePackage.html#_CPPv4N8helayers2er20RecordLinkagePackageE" title="helayers::er::RecordLinkagePackage"><span class="n"><span class="pre">RecordLinkagePackage</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encryptFieldsForEqualRule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers2er20RecordLinkageManager25encryptFieldsForEqualRuleEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Concatenates the content of the fields that the RL_RULE_EQAUL applies for, hash this value, transform it to an EC point and multiply it by the secret key of this <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a>. </p>
-<p>returns a <a class="reference internal" href="RecordLinkagePackage.html#classhelayers_1_1er_1_1RecordLinkagePackage"><span class="std std-ref">RecordLinkagePackage</span></a> containing the encrypted data to be transfered to the other participant in the protocol. </p>
+<dd><p>Concatenates the content of the fields that the RL_RULE_EQUAL applies for, hash this value, transform it to an EC point and multiply it by the secret key of this <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a>. </p>
+<p>returns a <a class="reference internal" href="RecordLinkagePackage.html#classhelayers_1_1er_1_1RecordLinkagePackage"><span class="std std-ref">RecordLinkagePackage</span></a> containing the encrypted data to be transferred to the other participant in the protocol. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if called when not expected by the protocol </p>
@@ -832,7 +832,7 @@ RecordLinkageManager object.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers2er20RecordLinkageManager27encryptFieldsForSimilarRuleEv">
 <span id="_CPPv3N8helayers2er20RecordLinkageManager27encryptFieldsForSimilarRuleEv"></span><span id="_CPPv2N8helayers2er20RecordLinkageManager27encryptFieldsForSimilarRuleEv"></span><span id="helayers::er::RecordLinkageManager::encryptFieldsForSimilarRule"></span><span class="target" id="classhelayers_1_1er_1_1RecordLinkageManager_1ae7fc4f53b76e0fd4c7363c98f0bf7eaa"></span><a class="reference internal" href="RecordLinkagePackage.html#_CPPv4N8helayers2er20RecordLinkagePackageE" title="helayers::er::RecordLinkagePackage"><span class="n"><span class="pre">RecordLinkagePackage</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encryptFieldsForSimilarRule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers2er20RecordLinkageManager27encryptFieldsForSimilarRuleEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>If the current rule contains fields with RL_RULE_EQUAL rule type, the following steps will be applied only for records with matches from the previous steps, otherwise they will be applied to all non-matched records. </p>
-<p>Generate shingles sets for each record, generate min-hash for these shingle sets, transform the hashes to EC points and multiply them by the secret key of this <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a>. returns a <a class="reference internal" href="RecordLinkagePackage.html#classhelayers_1_1er_1_1RecordLinkagePackage"><span class="std std-ref">RecordLinkagePackage</span></a> containing the encrypted data to be transfered to the other participant in the protocol.</p>
+<p>Generate shingles sets for each record, generate min-hash for these shingle sets, transform the hashes to EC points and multiply them by the secret key of this <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a>. returns a <a class="reference internal" href="RecordLinkagePackage.html#classhelayers_1_1er_1_1RecordLinkagePackage"><span class="std std-ref">RecordLinkagePackage</span></a> containing the encrypted data to be transferred to the other participant in the protocol.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if called when not expected by the protocol </p>
@@ -906,7 +906,7 @@ RecordLinkageManager object.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers2er20RecordLinkageManager45reportMatchedRecordsAlongWithOtherSideRecordsERK20RecordLinkageManagerb">
 <span id="_CPPv3N8helayers2er20RecordLinkageManager45reportMatchedRecordsAlongWithOtherSideRecordsERK20RecordLinkageManagerb"></span><span id="_CPPv2N8helayers2er20RecordLinkageManager45reportMatchedRecordsAlongWithOtherSideRecordsERK20RecordLinkageManagerb"></span><span id="helayers::er::RecordLinkageManager::reportMatchedRecordsAlongWithOtherSideRecords__RecordLinkageManagerCR.b"></span><span class="target" id="classhelayers_1_1er_1_1RecordLinkageManager_1a62027740c7a5fe973bb0a4b566d207d5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reportMatchedRecordsAlongWithOtherSideRecords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers2er20RecordLinkageManagerE" title="helayers::er::RecordLinkageManager"><span class="n"><span class="pre">RecordLinkageManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rlmOther</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">reportBlocked</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers2er20RecordLinkageManager45reportMatchedRecordsAlongWithOtherSideRecordsERK20RecordLinkageManagerb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>find and print matching pairs of records from both party’s tables. </p>
-<p>To be called after all the above steps of the protocol have already been carried out. Returns the number of matches and number of blocked records. The printout will also uses the other side’s <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a> to exract the other information about the matched record of the other side. This is for debugging purposes only, since no side is expected to have access to both RecordLinkageManagers. </p>
+<p>To be called after all the above steps of the protocol have already been carried out. Returns the number of matches and number of blocked records. The printout will also uses the other side’s <a class="reference internal" href="#classhelayers_1_1er_1_1RecordLinkageManager"><span class="std std-ref">RecordLinkageManager</span></a> to extract the other information about the matched record of the other side. This is for debugging purposes only, since no side is expected to have access to both RecordLinkageManagers. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

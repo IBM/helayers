@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>DoubleTensor &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>DoubleTensor &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -579,7 +579,7 @@ difference between values. Defaults to false.</p></li>
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensorE">
 <span id="_CPPv3N8helayers12DoubleTensorE"></span><span id="_CPPv2N8helayers12DoubleTensorE"></span><span id="helayers::DoubleTensor"></span><span class="target" id="classhelayers_1_1DoubleTensor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DoubleTensor</span></span></span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensorE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>A thin wrapper over a DoubleTensorImpl object. </p>
+<dd><p>A tensor of doubles. </p>
 <p>Uses the first-order convention. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -634,35 +634,37 @@ difference between values. Defaults to false.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shape</strong> – New shape to set </p></li>
-<li><p><strong>vals</strong> – A single value to fill tensor with in all slots. </p></li>
+<li><p><strong>val</strong> – A single value to fill tensor with in all slots. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEb">
-<span id="_CPPv3N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEb"></span><span id="_CPPv2N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEb"></span><span id="helayers::DoubleTensor::reshape__std::vector:DimInt:CR.b"></span><span class="target" id="classhelayers_1_1DoubleTensor_1af18f228f89c964aae5dfb24432abd29b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reshape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">allowChangingNumberOfElements</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEb" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEbb">
+<span id="_CPPv3N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEbb"></span><span id="_CPPv2N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEbb"></span><span id="helayers::DoubleTensor::reshape__std::vector:DimInt:CR.b.b"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a363102414d37123786d4ded80d6bf2cf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reshape</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">allowChangingNumberOfElements</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">firstOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7reshapeERKNSt6vectorI6DimIntEEbb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reshapes tensor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shape</strong> – shape </p></li>
 <li><p><strong>allowChangingNumberOfElements</strong> – If true then reshaping may change number of elements. Default is false. </p></li>
+<li><p><strong>firstOrder</strong> – Whether to reshape using first order convention </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEb">
-<span id="_CPPv3N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEb"></span><span id="_CPPv2N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEb"></span><span id="helayers::DoubleTensor::reshape__std::initializer_list:DimInt:.b"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a47ffd3929174e406c8956af789afbba4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reshape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">allowChangingNumberOfElements</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEb" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEbb">
+<span id="_CPPv3N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEbb"></span><span id="_CPPv2N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEbb"></span><span id="helayers::DoubleTensor::reshape__std::initializer_list:DimInt:.b.b"></span><span class="target" id="classhelayers_1_1DoubleTensor_1aae81bf759daac55914b19979da465e23"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reshape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">allowChangingNumberOfElements</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">firstOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7reshapeENSt16initializer_listI6DimIntEEbb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reshapes tensor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shape</strong> – shape </p></li>
 <li><p><strong>allowChangingNumberOfElements</strong> – If true then reshaping may change number of elements. Default is false. </p></li>
+<li><p><strong>firstOrder</strong> – Whether to reshape using first order convention </p></li>
 </ul>
 </dd>
 </dl>
@@ -743,6 +745,24 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9removeDimE6DimInt">
+<span id="_CPPv3N8helayers12DoubleTensor9removeDimE6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor9removeDimE6DimInt"></span><span id="helayers::DoubleTensor::removeDim__DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ace127405fba743f3130aedc9df4eafa6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9removeDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Removes a dim from this tensor. </p>
+<p>Only for dim with size 1. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dim to remove </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If dim doesn’t exists </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If dim is not of size 1 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9resizeDimE6DimInt6DimInt">
 <span id="_CPPv3N8helayers12DoubleTensor9resizeDimE6DimInt6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor9resizeDimE6DimInt6DimInt"></span><span id="helayers::DoubleTensor::resizeDim__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a73f97c835fd0289e9ed67b85efe73d34"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resizeDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">newSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9resizeDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Resizes an existing dimension. </p>
@@ -777,6 +797,17 @@ difference between values. Defaults to false.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dim</strong> – the dimension to run arg-min over </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor10sumOverDimE6DimInt">
+<span id="_CPPv3N8helayers12DoubleTensor10sumOverDimE6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor10sumOverDimE6DimInt"></span><span id="helayers::DoubleTensor::sumOverDim__DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a39d057a96c1733f02a104f2bf7e76aa5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumOverDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor10sumOverDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sums over a dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – <strong>[in]</strong> Dimension to sum over. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -905,20 +936,23 @@ difference between values. Defaults to false.</p></li>
 <li><p><strong>vars</strong> – A vector with the variance of each feature along the features dimension. </p></li>
 <li><p><strong>scales</strong> – A vector with the scale of each feature along the features dimension. </p></li>
 <li><p><strong>biases</strong> – A vector with the bias of each feature along the features dimension. </p></li>
-<li><p><strong>eps</strong> – The epsilon value to use for the normalization, to avoid deviding by zero. </p></li>
+<li><p><strong>eps</strong> – The epsilon value to use for the normalization, to avoid dividing by zero. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7flattenE6DimInt">
-<span id="_CPPv3N8helayers12DoubleTensor7flattenE6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor7flattenE6DimInt"></span><span id="helayers::DoubleTensor::flatten__DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1abf1d6303e22caf6ec927ad9ea064747f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flatten</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">axis</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7flattenE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor7flattenE6DimIntb">
+<span id="_CPPv3N8helayers12DoubleTensor7flattenE6DimIntb"></span><span id="_CPPv2N8helayers12DoubleTensor7flattenE6DimIntb"></span><span id="helayers::DoubleTensor::flatten__DimInt.b"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a7a3061070fe17f2431b439daac1b22d3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flatten</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">axis</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">firstOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor7flattenE6DimIntb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Flattens this N-dimensional tensor into a 2D tensor of shape: [d_0 X d_1 X … </p>
 <p>X d_axis-1, d_axis X … X d_N-1]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>axis</strong> – The axis to flatten by. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> – The axis to flatten by. </p></li>
+<li><p><strong>firstOrder</strong> – Whether to flatten using first order convention </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -931,7 +965,7 @@ difference between values. Defaults to false.</p></li>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DoubleTensor4sizeEv">
-<span id="_CPPv3NK8helayers12DoubleTensor4sizeEv"></span><span id="_CPPv2NK8helayers12DoubleTensor4sizeEv"></span><span id="helayers::DoubleTensor::sizeC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a585b0b108de4c4c319a5af25395d9511"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor4sizeEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers12DoubleTensor4sizeEv"></span><span id="_CPPv2NK8helayers12DoubleTensor4sizeEv"></span><span id="helayers::DoubleTensor::sizeC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ab55a9eab0cb34536544e199c34c81193"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor4sizeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns number of elements in tensor. </p>
 </dd></dl>
 
@@ -974,6 +1008,21 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DoubleTensor16getMultiDimSliceERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEE">
+<span id="_CPPv3NK8helayers12DoubleTensor16getMultiDimSliceERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEE"></span><span id="_CPPv2NK8helayers12DoubleTensor16getMultiDimSliceERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEE"></span><span id="helayers::DoubleTensor::getMultiDimSlice__std::vector:DimInt:CR.std::vector:DimInt:CR.std::vector:DimInt:CRC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ab2f56204ad8c248bc251cb1de817a5ff"></span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiDimSlice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">starts</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ends</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">axes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor16getMultiDimSliceERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEERKNSt6vectorI6DimIntEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a slice of the tensor at the given axes in the given indexes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>starts</strong> – The start indexes (corresponding to axes). </p></li>
+<li><p><strong>ends</strong> – The end indexes (exclusive, corresponding to axes). </p></li>
+<li><p><strong>axes</strong> – The axes to slice along. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DoubleTensor8getSliceE6DimInt6DimInt6DimInt">
 <span id="_CPPv3NK8helayers12DoubleTensor8getSliceE6DimInt6DimInt6DimInt"></span><span id="_CPPv2NK8helayers12DoubleTensor8getSliceE6DimInt6DimInt6DimInt"></span><span id="helayers::DoubleTensor::getSlice__DimInt.DimInt.DimIntC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a07a8c1714e3f6d6dd34ed7b8d028dd18"></span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSlice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">startIndex</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sliceDepth</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor8getSliceE6DimInt6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns a slice of the tensor in specific dimension. </p>
@@ -1005,16 +1054,31 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9fillSliceE6DimInt6DimIntd">
+<span id="_CPPv3N8helayers12DoubleTensor9fillSliceE6DimInt6DimIntd"></span><span id="_CPPv2N8helayers12DoubleTensor9fillSliceE6DimInt6DimIntd"></span><span id="helayers::DoubleTensor::fillSlice__DimInt.DimInt.double"></span><span class="target" id="classhelayers_1_1DoubleTensor_1afd7a8cbd904ced9bab950ba6bf6dd41a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillSlice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9fillSliceE6DimInt6DimIntd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Fills the specified slice with the given value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – The dimension of the slice. Specifying negative value will count from the last dim backwards (-1 for the last dim, -2 for the previous one etc.). </p></li>
+<li><p><strong>index</strong> – The index of the slice along “dim”. </p></li>
+<li><p><strong>val</strong> – The value to fill with. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor8putSliceE6DimInt6DimIntRK12DoubleTensor">
 <span id="_CPPv3N8helayers12DoubleTensor8putSliceE6DimInt6DimIntRK12DoubleTensor"></span><span id="_CPPv2N8helayers12DoubleTensor8putSliceE6DimInt6DimIntRK12DoubleTensor"></span><span id="helayers::DoubleTensor::putSlice__DimInt.DimInt.DoubleTensorCR"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a8737d1efe354caa8f0d308f528eeac11"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">putSlice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">startIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">slice</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor8putSliceE6DimInt6DimIntRK12DoubleTensor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Put a tensor slice into an existing tensor. </p>
-<p>Putting the slice will override existing values in indexes positioned where the slice will be put, and the tensor size along the provided domension will be increased if needed.</p>
+<p>Putting the slice will override existing values in indexes positioned where the slice will be put, and the tensor size along the provided dimension will be increased if needed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dim</strong> – an existing dimension to put the slice in. Specifying negative value will count from the last dim backwards (-1 for the last dim, -2 for the previous one etc.). </p></li>
 <li><p><strong>startIndex</strong> – the index to start positioning the slice in along the dimension. specifying -1 will append slice after last current index. </p></li>
-<li><p><strong>slice</strong> – the slice to put. must be a tensor with the same number of dimensions as this, and with sizes of dimensions exactly maching the sizes of this except for the provided dimension to put the slice in, that might be at any size. </p></li>
+<li><p><strong>slice</strong> – the slice to put. must be a tensor with the same number of dimensions as this, and with sizes of dimensions exactly matching the sizes of this except for the provided dimension to put the slice in, that might be at any size. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1049,10 +1113,18 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9transposeEv">
-<span id="_CPPv3N8helayers12DoubleTensor9transposeEv"></span><span id="_CPPv2N8helayers12DoubleTensor9transposeEv"></span><span id="helayers::DoubleTensor::transpose"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a90296e2f65a6b089df2efb3de132eb76"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transpose</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9transposeEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Flips the order of the first two dimensions. </p>
-<p>For a 2d matrix, this means the transposed matrix. Requires at least 2 dimensions. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9transposeE6DimInt6DimInt">
+<span id="_CPPv3N8helayers12DoubleTensor9transposeE6DimInt6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor9transposeE6DimInt6DimInt"></span><span id="helayers::DoubleTensor::transpose__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ab08dc741d09c5deaa3beff1960c270c9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transpose</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">firstDim</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">secondDim</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9transposeE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Flips the order of the given two dimensions. </p>
+<p>Default is the first two dimensions. For a 2d matrix, this means the transposed matrix. Requires at least 2 dimensions. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>firstDim</strong> – The first dimension. </p></li>
+<li><p><strong>secondDim</strong> – The second dimension. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1117,6 +1189,12 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor14elementInverseEv">
+<span id="_CPPv3N8helayers12DoubleTensor14elementInverseEv"></span><span id="_CPPv2N8helayers12DoubleTensor14elementInverseEv"></span><span id="helayers::DoubleTensor::elementInverse"></span><span class="target" id="classhelayers_1_1DoubleTensor_1aac789bf5ddf7db3544371c5e1b738418"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elementInverse</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor14elementInverseEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Performs element-wise inverse of this. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor14matrixMultiplyERK12DoubleTensor">
 <span id="_CPPv3N8helayers12DoubleTensor14matrixMultiplyERK12DoubleTensor"></span><span id="_CPPv2N8helayers12DoubleTensor14matrixMultiplyERK12DoubleTensor"></span><span id="helayers::DoubleTensor::matrixMultiply__DoubleTensorCR"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ab9595fef5c29e1f9385b3d0ed7c54fac"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">matrixMultiply</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor14matrixMultiplyERK12DoubleTensor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the result of matrix multiplication of this and other in-place. </p>
@@ -1131,7 +1209,7 @@ difference between values. Defaults to false.</p></li>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor18matrixMultiplyLeftERK12DoubleTensor">
 <span id="_CPPv3N8helayers12DoubleTensor18matrixMultiplyLeftERK12DoubleTensor"></span><span id="_CPPv2N8helayers12DoubleTensor18matrixMultiplyLeftERK12DoubleTensor"></span><span id="helayers::DoubleTensor::matrixMultiplyLeft__DoubleTensorCR"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a390518706fab29c609c8970b5bca46bf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">matrixMultiplyLeft</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor18matrixMultiplyLeftERK12DoubleTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Same as matrixMutiply, but computes other*this, and stores results in this. </p>
+<dd><p>Same as matrixMultiply, but computes other*this, and stores results in this. </p>
 <p>See <a class="reference internal" href="#classhelayers_1_1DoubleTensor_1ab9595fef5c29e1f9385b3d0ed7c54fac"><span class="std std-ref">matrixMultiply()</span></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1293,6 +1371,24 @@ difference between values. Defaults to false.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DoubleTensor14calculateErrorERK12DoubleTensorRdRdR6DimIntRdR6DimInt">
+<span id="_CPPv3NK8helayers12DoubleTensor14calculateErrorERK12DoubleTensorRdRdR6DimIntRdR6DimInt"></span><span id="_CPPv2NK8helayers12DoubleTensor14calculateErrorERK12DoubleTensorRdRdR6DimIntRdR6DimInt"></span><span id="helayers::DoubleTensor::calculateError__DoubleTensorCR.doubleR.doubleR.DimIntR.doubleR.DimIntRC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1acbc2064a8919707f946e426a08265031"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mse</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">maxAbsDiff</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">maxAbsDiffIndex</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">maxRelDiff</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">maxRelDiffIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor14calculateErrorERK12DoubleTensorRdRdR6DimIntRdR6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates the error between this and other <a class="reference internal" href="#classhelayers_1_1DoubleTensor"><span class="std std-ref">DoubleTensor</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – The other <a class="reference internal" href="#classhelayers_1_1DoubleTensor"><span class="std std-ref">DoubleTensor</span></a>. </p></li>
+<li><p><strong>mse</strong> – The mean square error will be stored here. </p></li>
+<li><p><strong>maxDiff</strong> – The maximal absolute error will be stored here. </p></li>
+<li><p><strong>maxDiffIndex</strong> – The index of the maximal absolute error (in the flattened tensor) will be stored here. </p></li>
+<li><p><strong>maxRelDiff</strong> – The maximal relative error will be stored here. The relative error between a and b is computed as |a-b|/std::max(|a|,|b|). </p></li>
+<li><p><strong>maxRelDiffIndex</strong> – The index of the maximal relative error (in the flattened tensor) will be stored here. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DoubleTensor17getNonTrivialDimsEv">
 <span id="_CPPv3NK8helayers12DoubleTensor17getNonTrivialDimsEv"></span><span id="_CPPv2NK8helayers12DoubleTensor17getNonTrivialDimsEv"></span><span id="helayers::DoubleTensor::getNonTrivialDimsC"></span><span class="target" id="classhelayers_1_1DoubleTensor_1adbaae2aa03cc6a65926e74a5d3889786"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNonTrivialDims</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DoubleTensor17getNonTrivialDimsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns a list of dimension indices whose sizes are larger than 1. </p>
@@ -1307,6 +1403,20 @@ difference between values. Defaults to false.</p></li>
 <dd class="field-odd"><p><strong>numDims</strong> – The desired new order. </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor9castToIntEv">
+<span id="_CPPv3N8helayers12DoubleTensor9castToIntEv"></span><span id="_CPPv2N8helayers12DoubleTensor9castToIntEv"></span><span id="helayers::DoubleTensor::castToInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a989c8b66353067fef144c15efaea43c5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">castToInt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor9castToIntEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Casts the values of this into integer values. </p>
+<p>Notice that the casted values are still kept in a tensor of values of type double. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor10castToBoolEv">
+<span id="_CPPv3N8helayers12DoubleTensor10castToBoolEv"></span><span id="_CPPv2N8helayers12DoubleTensor10castToBoolEv"></span><span id="helayers::DoubleTensor::castToBool"></span><span class="target" id="classhelayers_1_1DoubleTensor_1a8f3dd4bfc58f1762c200c062ac46ebdd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">castToBool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor10castToBoolEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Casts the values of this into boolean values. </p>
+<p>Notice that the casted values are still kept in a tensor of values of type double. </p>
 </dd></dl>
 
 </div>
@@ -1345,6 +1455,20 @@ difference between values. Defaults to false.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shape</strong> – Tensor shape </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DoubleTensor10computeDimE6DimInt6DimInt">
+<span id="_CPPv3N8helayers12DoubleTensor10computeDimE6DimInt6DimInt"></span><span id="_CPPv2N8helayers12DoubleTensor10computeDimE6DimInt6DimInt"></span><span id="helayers::DoubleTensor::computeDim__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1DoubleTensor_1ae58eb499af573bd0592c89b066f0bb48"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">order</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12DoubleTensor10computeDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a count from the last dim backwards if the given dimension is negative, or the dimension as-is otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – The given dimension. </p></li>
+<li><p><strong>order</strong> – The order of the tensor. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

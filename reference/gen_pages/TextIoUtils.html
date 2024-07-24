@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TextIoUtils &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TextIoUtils &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -653,6 +653,64 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dt</strong> – The DoubleTeensor to write into a stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11TextIoUtils17removeWhiteSpacesERNSt6stringE">
+<span id="_CPPv3N8helayers11TextIoUtils17removeWhiteSpacesERNSt6stringE"></span><span id="_CPPv2N8helayers11TextIoUtils17removeWhiteSpacesERNSt6stringE"></span><span id="helayers::TextIoUtils::removeWhiteSpaces__ssR"></span><span class="target" id="classhelayers_1_1TextIoUtils_1a7cb9993f4f3a005ed277a03317d97aef"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeWhiteSpaces</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11TextIoUtils17removeWhiteSpacesERNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Removes whitespace charecters from “str”. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>str</strong> – To remove whitespaces from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamE">
+<span id="_CPPv3N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamE"></span><span id="_CPPv2N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamE"></span><span id="helayers::TextIoUtils::readNextNonWhiteSpace__isR"></span><span class="target" id="classhelayers_1_1TextIoUtils_1a21358a1854762b6f66e8c44f36d0ece3"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readNextNonWhiteSpace</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Reads the next non whitespace charecter from the given stream. </p>
+<p>Returns the read charecter. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to read from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamEc">
+<span id="_CPPv3N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamEc"></span><span id="_CPPv2N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamEc"></span><span id="helayers::TextIoUtils::readNextNonWhiteSpace__isR.c"></span><span class="target" id="classhelayers_1_1TextIoUtils_1ad6747c50058d14972c0b76e2da2abf15"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readNextNonWhiteSpace</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">expected</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11TextIoUtils21readNextNonWhiteSpaceERNSt7istreamEc" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Reads the next non whitespace charecter from the given stream, and verifies it is equal to the given expected charecter. </p>
+<p>If verifcation passes, returns the read charecter. Otherwise, throws runtime_error(). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stream</strong> – The stream to read from. </p></li>
+<li><p><strong>expected</strong> – The expected charecter to be read. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If the read charecter is different than the given expected charecter. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8helayers11TextIoUtils13arrayToStringENSt6stringERKNSt6vectorI1TEE">
+<span id="_CPPv3I0EN8helayers11TextIoUtils13arrayToStringERKNSt6vectorI1TEE"></span><span id="_CPPv2I0EN8helayers11TextIoUtils13arrayToStringERKNSt6vectorI1TEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1TextIoUtils_1a69c76d4e75ab34ea73e0a387aa90388b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">arrayToString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN8helayers11TextIoUtils13arrayToStringENSt6stringERKNSt6vectorI1TEE" title="helayers::TextIoUtils::arrayToString::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">arr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8helayers11TextIoUtils13arrayToStringENSt6stringERKNSt6vectorI1TEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a string representing the given array. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The type of the vector elements. This type should support operator &lt;&lt;. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>arr</strong> – The vector to print. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
 </dd>
 </dl>
 </dd></dl>

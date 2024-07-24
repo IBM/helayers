@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>prepareDefaultPlainBlocksForAesEncryption &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>prepareDefaultPlainBlocksForAesEncryption &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -532,7 +532,7 @@ document.write(`
 <dt class="sig sig-object py" id="pyhelayers.prepare_default_plain_blocks_for_aes_encryption">
 <span class="sig-name descname"><span class="pre">prepare_default_plain_blocks_for_aes_encryption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="NumberConfig.html#pyhelayers.NumberConfig" title="pyhelayers.NumberConfig"><span class="pre">pyhelayers.NumberConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.prepare_default_plain_blocks_for_aes_encryption" title="Permalink to this definition">#</a></dt>
 <dd><p>Arranges the given inputs, containing tensors with numbers, into
-blocks of bytes to be encrypted under AES. Returns a deafult arrangement
+blocks of bytes to be encrypted under AES. Returns a default arrangement
 that does not consider how the data will be packed and used after decrypting
 the AES.</p>
 <dl class="field-list simple">
@@ -549,7 +549,7 @@ the AES.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers41prepareDefaultPlainBlocksForAesEncryptionERKNSt6vectorI16DoubleTensorCPtrEERK12NumberConfig">
 <span id="_CPPv3N8helayers41prepareDefaultPlainBlocksForAesEncryptionERKNSt6vectorI16DoubleTensorCPtrEERK12NumberConfig"></span><span id="_CPPv2N8helayers41prepareDefaultPlainBlocksForAesEncryptionERKNSt6vectorI16DoubleTensorCPtrEERK12NumberConfig"></span><span id="helayers::prepareDefaultPlainBlocksForAesEncryption__std::vector:DoubleTensorCPtr:CR.NumberConfigCR"></span><span class="target" id="namespacehelayers_1a611abe0c4ab1422559c5afcbf84217f1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">prepareDefaultPlainBlocksForAesEncryption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="NumberConfig.html#_CPPv4N8helayers12NumberConfigE" title="helayers::NumberConfig"><span class="n"><span class="pre">NumberConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">numberConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers41prepareDefaultPlainBlocksForAesEncryptionERKNSt6vectorI16DoubleTensorCPtrEERK12NumberConfig" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Arranges the given inputs, containing tensors with numbers, into blocks of bytes to be encrypted under AES. </p>
-<p>Returns a deafult arrangement that does not consider how the data will be packed and used after decrypting the AES.</p>
+<p>Returns a default arrangement that does not consider how the data will be packed and used after decrypting the AES.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

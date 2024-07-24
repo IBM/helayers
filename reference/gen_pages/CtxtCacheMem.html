@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CtxtCacheMem &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>CtxtCacheMem &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -532,73 +532,65 @@ document.write(`
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem12CtxtCacheMemEv">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem12CtxtCacheMemEv"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem12CtxtCacheMemEv"></span><span id="helayers::circuit::CtxtCacheMem::CtxtCacheMem"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1ae85b50db54a204d848d3d0af0c280449"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CtxtCacheMem</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem12CtxtCacheMemEv" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem12CtxtCacheMemERK9HeContext">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem12CtxtCacheMemERK9HeContext"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem12CtxtCacheMemERK9HeContext"></span><span id="helayers::circuit::CtxtCacheMem::CtxtCacheMem__HeContextCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a67d0a0c29fe8aebc8ca8e27c91ddaea7"></span><span class="sig-name descname"><span class="n"><span class="pre">CtxtCacheMem</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">h</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem12CtxtCacheMemERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7encryptERK9HeContext">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7encryptERK9HeContext"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7encryptERK9HeContext"></span><span id="helayers::circuit::CtxtCacheMem::encrypt__HeContextCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a27814303f9c6a38f0573cd61ae2a8d86"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encrypt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">henc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7encryptERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Encrypt all the plaintexts. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7encryptEv">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7encryptEv"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7encryptEv"></span><span id="helayers::circuit::CtxtCacheMem::encrypt"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a5f612b7d56dcc40008b8e248cc7f2d6d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encrypt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7encryptEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encrypt all the parameters (that are given in plaintext). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>henc</strong> – The context to encrypt with. </p>
+<dd class="field-odd"><p><strong>he</strong> – The context to encrypt with. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem7hasByIdERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem7hasByIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem7hasByIdERK6CtxtId"></span><span id="helayers::circuit::CtxtCacheMem::hasById__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1aefd98c6bcf0e13112daaff1c16647d91"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem7hasByIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Return whether a ctxt given by ID is associated with this cache. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> – The id of ctxt. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>whether should be found in this cache. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem11isReadyByIdERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem11isReadyByIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem11isReadyByIdERK6CtxtId"></span><span id="helayers::circuit::CtxtCacheMem::isReadyById__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a7177e9ebeea432c3b573e22cb04d0031"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReadyById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem11isReadyByIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem10hasIdReadyERK6NodeId">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem10hasIdReadyERK6NodeId"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem10hasIdReadyERK6NodeId"></span><span id="helayers::circuit::CtxtCacheMem::hasIdReady__NodeIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a1a4dd58ec59f9123118e5049d9427abb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasIdReady</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem10hasIdReadyERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether a ctxt given by ID is currently ready in memory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>id</strong> – The id of a ctxt. </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Whether the ctxt is ready in memory. </p>
+<dd class="field-even"><p>true if the cache has the id ready in memory. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId"></span><span id="helayers::circuit::CtxtCacheMem::getById__CtxtIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a1c31a57dc5fbbe904a9f0242b263c112"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Return the ctxt associated with an ID. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId"></span><span id="helayers::circuit::CtxtCacheMem::getById__std::shared_ptr:Tile:R.NodeIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a7c3bb2d55b5eba203d49f6af326b56c1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">CacheInfo</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getById</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tile</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return the tile associated with an ID. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> – The id of a ctxt. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output tile. </p></li>
+<li><p><strong>id</strong> – The id of a ctxt. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The ctxt associated with the ID. </p>
+<dd class="field-even"><p>The cache information of the source cache of the tile. In the case of a cache miss, the source cache is considered to be the one from which the tile was brought. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId"></span><span id="helayers::circuit::CtxtCacheMem::getById__CtxtIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1aced9ea417a3f242d6afed24a7620fdfe"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem7getByIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Return the ctxt associated with an ID. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId"></span><span id="helayers::circuit::CtxtCacheMem::getById__std::shared_ptr:Tile:R.NodeIdCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a97d23cf1f6aa01a79587e460782a386a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">CacheInfo</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getById</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tile</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem7getByIdERNSt10shared_ptrI4TileEERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return the tile (ctxt or ptxt) associated with an ID. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> – The id of a ctxt. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output tile. </p></li>
+<li><p><strong>id</strong> – The id of a tile. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The ctxt associated with the ID. </p>
+<dd class="field-even"><p>The cache information of the source cache of the tile. In the case of a cache miss, the source cache is considered to be the one from which the tile was brought. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -616,22 +608,38 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK5CTile">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK5CTile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK5CTile"></span><span id="helayers::circuit::CtxtCacheMem::setById__CtxtIdCR.CTileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a4967ba9ecb6453fdf6d453b8c1b600d6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem12setByIdShareERK6NodeIdNSt10shared_ptrI4TileEE">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem12setByIdShareERK6NodeIdNSt10shared_ptrI4TileEE"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem12setByIdShareERK6NodeIdNSt10shared_ptrI4TileEE"></span><span id="helayers::circuit::CtxtCacheMem::setByIdShare__NodeIdCR.std::shared_ptr:Tile:"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1af030a16d0812a38206113a48b490f74a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByIdShare</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tile</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem12setByIdShareERK6NodeIdNSt10shared_ptrI4TileEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set a ctxt and associate it with an ID. </p>
+<p>The tile pointer is copied so the cache and the caller both point to the same tile. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>id</strong> – The id of the ctxt. </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the cache is read-only, also if the id already exists in the cache. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the id already exists in the cache. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRR5CTile">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRR5CTile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRR5CTile"></span><span id="helayers::circuit::CtxtCacheMem::setById__CtxtIdCR.CTileRR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a67f14a03f62f3a7dfacdd1bb4d18f7a8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRR5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem11setByIdCopyERK6NodeIdRK4Tile">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem11setByIdCopyERK6NodeIdRK4Tile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem11setByIdCopyERK6NodeIdRK4Tile"></span><span id="helayers::circuit::CtxtCacheMem::setByIdCopy__NodeIdCR.TileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a0ab24b3018dff146c5a9b4513c3a566f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByIdCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Tile</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem11setByIdCopyERK6NodeIdRK4Tile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a ctxt and associate it with an ID. </p>
+<p>The Tile is copied into the cache. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The id of the ctxt. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the id already exists in the cache. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem11setByIdMoveERK6NodeIdRR4Tile">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem11setByIdMoveERK6NodeIdRR4Tile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem11setByIdMoveERK6NodeIdRR4Tile"></span><span id="helayers::circuit::CtxtCacheMem::setByIdMove__NodeIdCR.TileRR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a01c58a90e7a691fc1a57630adc0d6b61"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByIdMove</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">Tile</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem11setByIdMoveERK6NodeIdRR4Tile" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set a ctxt and associate it with an ID. </p>
 <p>The function uses std::move which empties the input ctxt. </p>
 <dl class="field-list simple">
@@ -639,30 +647,29 @@ document.write(`
 <dd class="field-odd"><p><strong>id</strong> – The id of the ctxt. </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the cache is read-only, also if the id already exists in the cache. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the id already exists in the cache. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK9RawValuesi">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK9RawValuesi"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK9RawValuesi"></span><span id="helayers::circuit::CtxtCacheMem::setById__CtxtIdCR.RawValuesCR.i"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a532dd1820b0ffb7708a4f1c2d4f9b500"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RawValues</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem7setByIdERK6CtxtIdRK9RawValuesi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, given by its raw-values, to the cache. </p>
-<p>Returns whether it was successfully added. A <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> may fail to be added if the cache is read-only or if the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> is not associated with this cache. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem11setPtxtByIdERK6NodeIdRR5PTile">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem11setPtxtByIdERK6NodeIdRR5PTile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem11setPtxtByIdERK6NodeIdRR5PTile"></span><span id="helayers::circuit::CtxtCacheMem::setPtxtById__NodeIdCR.PTileRR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1aa0bb9c8becb358d4c3c35cdbe7a5c3f4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPtxtById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem11setPtxtByIdERK6NodeIdRR5PTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a ptxt and associate it with an ID. </p>
+<p>The function uses std::move which empties the input ptxt. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> – The id of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-<li><p><strong>vals</strong> – The raw values of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-<li><p><strong>chainIndex</strong> – The chain-index at which the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> needs to be encrypted with. </p></li>
-</ul>
+<dd class="field-odd"><p><strong>id</strong> – The id of the ptxt. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the id already exists in the cache. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem10retireByIdERK6CtxtId">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem10retireByIdERK6CtxtId"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem10retireByIdERK6CtxtId"></span><span id="helayers::circuit::CtxtCacheMem::retireById__CtxtIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a905f4b121dc4169ba2b5087d5dfa2670"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">retireById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem10retireByIdERK6CtxtId" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem10removeByIdERK6NodeId">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem10removeByIdERK6NodeId"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem10removeByIdERK6NodeId"></span><span id="helayers::circuit::CtxtCacheMem::removeById__NodeIdCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1ab99fa78e1a05be2203a54b1e754599f2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeById</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem10removeByIdERK6NodeId" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove a ctxt from memory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -672,8 +679,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9CtxtLabel">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9CtxtLabel"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9CtxtLabel"></span><span id="helayers::circuit::CtxtCacheMem::hasByLabel__CtxtLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1aa69f6d3b6b1e70b595a5d68293988ad6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9NodeLabel"></span><span id="helayers::circuit::CtxtCacheMem::hasByLabel__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a0f3a86e621df2353c81fa51a22847576"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem10hasByLabelERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether a ctxt given by label is associated with this cache. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -686,8 +693,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9CtxtLabel">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9CtxtLabel"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9CtxtLabel"></span><span id="helayers::circuit::CtxtCacheMem::isReadyByLabel__CtxtLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1abefdee21fe96913e4bfe8567e9cc0dff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReadyByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9NodeLabel">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9NodeLabel"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9NodeLabel"></span><span id="helayers::circuit::CtxtCacheMem::isReadyByLabel__NodeLabelCRC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1acd47df609c4b65c5d63b7d5416d3fe7a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReadyByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem14isReadyByLabelERK9NodeLabel" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether a ctxt given by label is currently ready in memory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -700,68 +707,36 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem10getByLabelERK9CtxtLabel">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem10getByLabelERK9CtxtLabel"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem10getByLabelERK9CtxtLabel"></span><span id="helayers::circuit::CtxtCacheMem::getByLabel__CtxtLabelCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a15513c3200142d06a11c60acfd153a9d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem10getByLabelERK9CtxtLabel" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Return the ctxt associated with a label. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE"></span><span id="helayers::circuit::CtxtCacheMem::setByLabelShare__NodeLabelCR.std::shared_ptr:CTile:"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a3150525d66c0ba1e36ed1e26929c0249"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelShare</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem15setByLabelShareERK9NodeLabelNSt10shared_ptrI5CTileEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a ctxt and associate it with a label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>label</strong> – The label of the ctxt. </p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The ctxt associated with label. </p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK5CTile">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK5CTile"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK5CTile"></span><span id="helayers::circuit::CtxtCacheMem::setByLabel__CtxtLabelCR.CTileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a9adb20972056f473342fad871f513c42"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK5CTile" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Set a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> associated with a label. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9NodeLabel6NodeIdEE">
+<span id="_CPPv3N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9NodeLabel6NodeIdEE"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9NodeLabel6NodeIdEE"></span><span id="helayers::circuit::CtxtCacheMem::translateLabelsToIds__std::map:NodeLabel.NodeId:CR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a505540aeb5747d959dc1b387b1d94274"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translateLabelsToIds</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">NodeLabel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">map</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9NodeLabel6NodeIdEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Provide a map that translates labels to IDs. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> – The label of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-<li><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-</ul>
+<dd class="field-odd"><p><strong>map</strong> – The map that translates labels to IDs. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK11CTileTensor">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK11CTileTensor"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK11CTileTensor"></span><span id="helayers::circuit::CtxtCacheMem::setByLabel__CtxtLabelCR.CTileTensorCR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a21cf6730eaaeff8b7256b97f8efed77d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem10setByLabelERK9CtxtLabelRK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Set a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated with a label. </p>
-<p>This saves the shape and sets all the CTiles in the tensor. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem18getCtxtIdsInMemoryEv">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem18getCtxtIdsInMemoryEv"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem18getCtxtIdsInMemoryEv"></span><span id="helayers::circuit::CtxtCacheMem::getCtxtIdsInMemoryC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a5435c6a052df69dc1cd3a2ff24b07b06"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCtxtIdsInMemory</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem18getCtxtIdsInMemoryEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get the list of ids that are currently in memory. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> – The label of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-<li><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
-</ul>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The list of ids of ctxts that are currently in memory. </p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9CtxtLabel6CtxtIdEE">
-<span id="_CPPv3N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9CtxtLabel6CtxtIdEE"></span><span id="_CPPv2N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9CtxtLabel6CtxtIdEE"></span><span id="helayers::circuit::CtxtCacheMem::translateLabelsToIds__std::map:CtxtLabel.CtxtId:CR"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a089661baa4ee65fdc9e497ad729e1dd3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translateLabelsToIds</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CtxtLabel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CtxtId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">map</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers7circuit12CtxtCacheMem20translateLabelsToIdsERKNSt3mapI9CtxtLabel6CtxtIdEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Remove a ctxt from memory. </p>
-<p>
-Provide a map that translates labels to IDs. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>label</strong> – The label of the ctxt.</p></li>
-<li><p><strong>map</strong> – The map that translates labels to IDs. </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem14getCTileNumberEv">
-<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem14getCTileNumberEv"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem14getCTileNumberEv"></span><span id="helayers::circuit::CtxtCacheMem::getCTileNumberC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1a786177f9dfd90c2d0ea4e0d95373a8b5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCTileNumber</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem14getCTileNumberEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Return how many ctxts the cache is associated with. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -777,6 +752,12 @@ Provide a map that translates labels to IDs. </p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit12CtxtCacheMem12getCacheTypeEv">
+<span id="_CPPv3NK8helayers7circuit12CtxtCacheMem12getCacheTypeEv"></span><span id="_CPPv2NK8helayers7circuit12CtxtCacheMem12getCacheTypeEv"></span><span id="helayers::circuit::CtxtCacheMem::getCacheTypeC"></span><span class="target" id="classhelayers_1_1circuit_1_1CtxtCacheMem_1abde03d69d08b94c2d58ad642f07356fe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">CacheType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCacheType</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit12CtxtCacheMem12getCacheTypeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return the cache type of this CtxtCache. </p>
 </dd></dl>
 
 </div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTConvFilters &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTConvFilters &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -554,9 +554,9 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> – The convolution configuration object. </p></li>
-<li><p><strong>filters</strong> – Filters (optional) </p></li>
-<li><p><strong>biases</strong> – Biases (optional) </p></li>
+<li><p><strong>_config</strong> – The convolution configuration object. </p></li>
+<li><p><strong>plainFilters</strong> – Filters (optional) </p></li>
+<li><p><strong>plainBiases</strong> – Biases (optional) </p></li>
 </ul>
 </dd>
 </dl>
@@ -678,13 +678,13 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers13TTConvFilters6wakeupEv">
 <span id="_CPPv3N8helayers13TTConvFilters6wakeupEv"></span><span id="_CPPv2N8helayers13TTConvFilters6wakeupEv"></span><span id="helayers::TTConvFilters::wakeup"></span><span class="target" id="classhelayers_1_1TTConvFilters_1aa2e1da6596ab526bbf7d8085ee897030"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wakeup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13TTConvFilters6wakeupEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Wakeup filters and biases tile tensors (in lazy encoding) </p>
+<dd><p>Wakeup filters and biases tile tensors (in lazy mode) </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers13TTConvFilters5sleepEv">
 <span id="_CPPv3N8helayers13TTConvFilters5sleepEv"></span><span id="_CPPv2N8helayers13TTConvFilters5sleepEv"></span><span id="helayers::TTConvFilters::sleep"></span><span class="target" id="classhelayers_1_1TTConvFilters_1aa3c820e81153d6020f76fd24f007d605"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sleep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13TTConvFilters5sleepEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sleep filters and biases tile tensors (in lazy encoding) </p>
+<dd><p>Sleep filters and biases tile tensors (in lazy mode) </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -703,6 +703,18 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers13TTConvFilters10getContextEv">
 <span id="_CPPv3NK8helayers13TTConvFilters10getContextEv"></span><span id="_CPPv2NK8helayers13TTConvFilters10getContextEv"></span><span id="helayers::TTConvFilters::getContextC"></span><span class="target" id="classhelayers_1_1TTConvFilters_1a8a43b256e38ec73f1935afad12f737ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers13TTConvFilters10getContextEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers13TTConvFilters9initCacheEv">
+<span id="_CPPv3NK8helayers13TTConvFilters9initCacheEv"></span><span id="_CPPv2NK8helayers13TTConvFilters9initCacheEv"></span><span id="helayers::TTConvFilters::initCacheC"></span><span class="target" id="classhelayers_1_1TTConvFilters_1a4ea7496aa8c0ff6a5dc1a8b7610630ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers13TTConvFilters9initCacheEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Initialize cache for encode-on-the fly mode. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers13TTConvFilters10clearCacheEv">
+<span id="_CPPv3NK8helayers13TTConvFilters10clearCacheEv"></span><span id="_CPPv2NK8helayers13TTConvFilters10clearCacheEv"></span><span id="helayers::TTConvFilters::clearCacheC"></span><span class="target" id="classhelayers_1_1TTConvFilters_1a4160bc4c5213dca765c12a9c5a2a3384"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers13TTConvFilters10clearCacheEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Clear cache for encode-on-the fly mode. </p>
 </dd></dl>
 
 </div>

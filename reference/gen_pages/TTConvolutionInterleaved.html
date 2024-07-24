@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTConvolutionInterleaved &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTConvolutionInterleaved &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -534,10 +534,29 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers24TTConvolutionInterleavedE">
 <span id="_CPPv3N8helayers24TTConvolutionInterleavedE"></span><span id="_CPPv2N8helayers24TTConvolutionInterleavedE"></span><span id="helayers::TTConvolutionInterleaved"></span><span class="target" id="classhelayers_1_1TTConvolutionInterleaved"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TTConvolutionInterleaved</span></span></span><a class="headerlink" href="#_CPPv4N8helayers24TTConvolutionInterleavedE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A 2D convolution for iteratively evaluating CNN. </p>
-<p>To be used when the XY dimensions are interleaved. The parameters have one of two shapes:</p>
-<p>option I (FXYCB): image: [<em>/t0,X~/t1,Y~/t2, C/t3, B/t4] filter: [FX,FY,F/t0,</em>/t1, <em>/t2, C/t3, */t4] bias: [F/t0,</em>/t1,<em>/t2,</em>/t3,*/t4] output: [F/t0,X~/t1,Y~/t2, */t3, B/t4]</p>
-<p>option II (CXYFB): image: [C/t0,X~/t1,Y~/t2, <em>/t3, B/t4] filter: [FX,FY,C/t0,</em>/t1, <em>/t2, F/t3, */t4] bias: [*/t0,</em>/t1,<em>/t2,F/t3,</em>/t4] output: [*/t0,X~/t1,Y~/t2, F/t3, B/t4]</p>
-<p>Set the CXYFB parameter to choose between these two options. </p>
+<p>The operator distinguishes between 5 types of dimensions: Image rows, image cols (must be present) Channels (0 or more) Filters (0 or 1) All other dimensions (0 or more) are considered batch.</p>
+<p>Here are two examples: Example option I (FXYCB): image: [<em>/t0,X~/t1,Y~/t2, C/t3, B/t4] filter: [FX,FY,F/t0,</em>/t1, <em>/t2, C/t3, */t4] bias: [F/t0,</em>/t1,<em>/t2,</em>/t3,*/t4] output: [F/t0,X~/t1,Y~/t2, */t3, B/t4]</p>
+<p>Example option II: channels split in two dimensions, no filters dimension. (implying 1 filter) image: [C1/t0,X~/t1,Y~/t2, C2/t3, B/t4] filter: [FX,FY,C1/t0,<em>/t1, */t2, C2/t3, */t4] bias: [*/t0,</em>/t1,<em>/t2,</em>/t3,*/t4] output: [*/t0,X~/t1,Y~/t2, */t3, B/t4]</p>
+<p>Regarding unknowns in the input: All dimensions can have unknown values, with one (rare) exception: If you choose to sum over channels, and there are no filters, then the channel dimensions must be cleared of unknowns.</p>
+<p>Regarding unknowns in the output: Currently the bias introduces unknowns. The documentation below applies for the case no bias is used.<ul class="simple">
+<li><p>Batch dimensions: same as in input (note: can be cleared in future version if there are masks or filters)</p></li>
+<li><p>Channel dimensions:<ul>
+<li><p>If sum-over-channels: first non-trivial dimension is duplicated, others have unknowns</p></li>
+<li><p>No sum-over-channels: cleared if there are filters, same as in input otherwise.</p></li>
+</ul>
+</p></li>
+<li><p>Image dimensions:<ul>
+<li><p>Cleared if there are masks (due to internal strides or no physical padding)</p></li>
+<li><p>With unknowns otherwise</p></li>
+</ul>
+</p></li>
+<li><p>Filter dimension:<ul>
+<li><p>If there are filters: cleared of unknowns</p></li>
+<li><p>Same as input otherwise </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -548,7 +567,7 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> – Input tensor </p></li>
-<li><p><strong>convfilters</strong> – <a class="reference internal" href="TTConvFilters.html#classhelayers_1_1TTConvFilters"><span class="std std-ref">TTConvFilters</span></a> with filters and biases </p></li>
+<li><p><strong>convFilters</strong> – <a class="reference internal" href="TTConvFilters.html#classhelayers_1_1TTConvFilters"><span class="std std-ref">TTConvFilters</span></a> with filters and biases </p></li>
 </ul>
 </dd>
 </dl>

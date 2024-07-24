@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTEncoder &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>TTEncoder &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -579,7 +579,7 @@ a tile tensor and back again.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.TTEncoder.encode_encrypt_generic_packing">
-<span class="sig-name descname"><span class="pre">encode_encrypt_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pyhelayers.TTEncoder,</span> <span class="pre">vals:</span> <span class="pre">numpy.ndarray[numpy.float64],</span> <span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fbdc19c3f70&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.TTEncoder.encode_encrypt_generic_packing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">encode_encrypt_generic_packing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pyhelayers.TTEncoder,</span> <span class="pre">vals:</span> <span class="pre">numpy.ndarray[numpy.float64],</span> <span class="pre">generic_packing_config:</span> <span class="pre">pyhelayers.GenericPackingConfig</span> <span class="pre">=</span> <span class="pre">&lt;pyhelayers.GenericPackingConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f0c4716ffb0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.TTEncoder.encode_encrypt_generic_packing" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -622,7 +622,10 @@ a tile tensor and back again.</p>
 <dd><p>Constructs a ready to use object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>he</strong> – <strong>[in]</strong> the underlying context. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>he</strong> – <strong>[in]</strong> the underlying context. </p></li>
+<li><p><strong>lazyMode</strong> – Type of lazy encoding to use (default: NONE). </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -631,12 +634,6 @@ a tile tensor and back again.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoderD0Ev">
 <span id="_CPPv3N8helayers9TTEncoderD0Ev"></span><span id="_CPPv2N8helayers9TTEncoderD0Ev"></span><span id="helayers::TTEncoder::~TTEncoder"></span><span class="target" id="classhelayers_1_1TTEncoder_1ad14cca277833cb8ba4b365431158652f"></span><span class="sig-name descname"><span class="n"><span class="pre">~TTEncoder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9TTEncoderD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoder9TTEncoderERK9TTEncoder">
-<span id="_CPPv3N8helayers9TTEncoder9TTEncoderERK9TTEncoder"></span><span id="_CPPv2N8helayers9TTEncoder9TTEncoderERK9TTEncoder"></span><span id="helayers::TTEncoder::TTEncoder__TTEncoderCR"></span><span class="target" id="classhelayers_1_1TTEncoder_1a18b3b95ffb58ae60f75653c1100a2895"></span><span class="sig-name descname"><span class="n"><span class="pre">TTEncoder</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers9TTEncoder9TTEncoderERK9TTEncoder" title="helayers::TTEncoder::TTEncoder"><span class="n"><span class="pre">TTEncoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N8helayers9TTEncoder9TTEncoderERK9TTEncoder" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Copy constructor deleted. Construct new objects when needed. </p>
-</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoderaSERK9TTEncoder">
@@ -661,6 +658,46 @@ a tile tensor and back again.</p>
 <li><p><strong>shape</strong> – Tile tensor shape </p></li>
 <li><p><strong>vals</strong> – Input tensor </p></li>
 <li><p><strong>chainIndex</strong> – Chain index used for encoding (when applicable) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK12DoubleTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE">
+<span id="_CPPv3NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK12DoubleTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="_CPPv2NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK12DoubleTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="helayers::TTEncoder::encodeOneTile__PTileR.TTShapeCR.DoubleTensorCR.i.i.std::vector:i:CR.i.std::shared_ptr:TTTileMappingC:C"></span><span class="target" id="classhelayers_1_1TTEncoder_1a08b5997b98f1aab0316888955d2afec8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeOneTile</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">valsId</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">flatIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mask</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TTTileMapping</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ttTileMapping</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK12DoubleTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encode one tile of a tile tensor into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Output <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a></p></li>
+<li><p><strong>shape</strong> – shape of tile tensor </p></li>
+<li><p><strong>vals</strong> – Original tensor of tile tensor </p></li>
+<li><p><strong>valsId</strong> – Unique ID of original tensor of tile tensor </p></li>
+<li><p><strong>flatIndex</strong> – Flat index of tile </p></li>
+<li><p><strong>mask</strong> – Optional mask to multiply tile with. Default: none (empty). </p></li>
+<li><p><strong>chainIndex</strong> – Optional chain-index for encoding (where applicable). Default: highest. </p></li>
+<li><p><strong>ttTileMapping</strong> – Optional pre-processed tile mapping. If exists encoding works faster. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK13ComplexTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE">
+<span id="_CPPv3NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK13ComplexTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="_CPPv2NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK13ComplexTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="helayers::TTEncoder::encodeOneTile__PTileR.TTShapeCR.ComplexTensorCR.i.i.std::vector:i:CR.i.std::shared_ptr:TTTileMappingC:C"></span><span class="target" id="classhelayers_1_1TTEncoder_1aa24917c51eb0551994382061eb9a2453"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeOneTile</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ComplexTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">valsId</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">flatIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mask</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TTTileMapping</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ttTileMapping</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9TTEncoder13encodeOneTileER5PTileRK7TTShapeRK13ComplexTensoriiRKNSt6vectorIiEEiNSt10shared_ptrIK13TTTileMappingEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encode one tile of a complex packed tile tensor into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Output <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a></p></li>
+<li><p><strong>shape</strong> – shape of tile tensor </p></li>
+<li><p><strong>vals</strong> – Original (complex packed) tensor of tile tensor </p></li>
+<li><p><strong>valsId</strong> – Unique ID of original tensor of tile tensor </p></li>
+<li><p><strong>flatIndex</strong> – Flat index of tile </p></li>
+<li><p><strong>mask</strong> – Optional mask to multiply tile with. Default: none (empty). </p></li>
+<li><p><strong>chainIndex</strong> – Optional chain-index for encoding (where applicable). Default: highest. </p></li>
+<li><p><strong>ttTileMapping</strong> – Optional pre-processed tile mapping. If exists encoding works faster. </p></li>
 </ul>
 </dd>
 </dl>
@@ -715,7 +752,7 @@ a tile tensor and back again.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>res</strong> – Output <a class="reference internal" href="PTileTensor.html#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a></p></li>
-<li><p><strong>src</strong> – Input <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> caller rsponsebility to call src.wakeup() </p></li>
+<li><p><strong>src</strong> – Input <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> caller responsibility to call src.wakeup() </p></li>
 </ul>
 </dd>
 </dl>
@@ -747,39 +784,6 @@ a tile tensor and back again.</p>
 <li><p><strong>res</strong> – Output <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a></p></li>
 <li><p><strong>shape</strong> – Tile tensor shape </p></li>
 <li><p><strong>val</strong> – The value to encode </p></li>
-<li><p><strong>chainIndex</strong> – Chain index used for encoding (when applicable) </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9TTEncoder24encodeConditionalEncryptEbRK7TTShapeRK12DoubleTensori">
-<span id="_CPPv3NK8helayers9TTEncoder24encodeConditionalEncryptEbRK7TTShapeRK12DoubleTensori"></span><span id="_CPPv2NK8helayers9TTEncoder24encodeConditionalEncryptEbRK7TTShapeRK12DoubleTensori"></span><span id="helayers::TTEncoder::encodeConditionalEncrypt__b.TTShapeCR.DoubleTensorCR.iC"></span><span class="target" id="classhelayers_1_1TTEncoder_1a61a8111bd122c26e80c2039714aaafea"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TileTensor</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeConditionalEncrypt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">encrypt</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9TTEncoder24encodeConditionalEncryptEbRK7TTShapeRK12DoubleTensori" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Encodes or encode-encrypts a tensor, and returns a TileTensor pointer. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>encrypt</strong> – Whether to encrypt </p></li>
-<li><p><strong>shape</strong> – Target tile tensor shape </p></li>
-<li><p><strong>src</strong> – Input tensor </p></li>
-<li><p><strong>chainIndex</strong> – Chain index used for encoding (when applicable) </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9TTEncoder30encodeMappedConditionalEncryptEbRK7TTShapeRK12DoubleTensorRKNSt6vectorINSt6vectorI6DimIntEEEEi">
-<span id="_CPPv3NK8helayers9TTEncoder30encodeMappedConditionalEncryptEbRK7TTShapeRK12DoubleTensorRKNSt6vectorINSt6vectorI6DimIntEEEEi"></span><span id="_CPPv2NK8helayers9TTEncoder30encodeMappedConditionalEncryptEbRK7TTShapeRK12DoubleTensorRKNSt6vectorINSt6vectorI6DimIntEEEEi"></span><span id="helayers::TTEncoder::encodeMappedConditionalEncrypt__b.TTShapeCR.DoubleTensorCR.std::vector:std::vector:DimInt::CR.iC"></span><span class="target" id="classhelayers_1_1TTEncoder_1a27dee1d642f18ae0821529ae044ae9eb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TileTensor</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeMappedConditionalEncrypt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">encrypt</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dimMap</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9TTEncoder30encodeMappedConditionalEncryptEbRK7TTShapeRK12DoubleTensorRKNSt6vectorINSt6vectorI6DimIntEEEEi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Peforms mapping operations on input tensors, then encodes or encode-encrypts it, and returns a TileTensor pointer. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>encrypt</strong> – Whether to encrypt </p></li>
-<li><p><strong>shape</strong> – Target tile tensor shape </p></li>
-<li><p><strong>src</strong> – Input tensor </p></li>
-<li><p><strong>dimMap</strong> – Map what to do with each input dim: An element with an empty list means keep only 0 index, single value means copy to this target dim, multiple values means split into multiple dimensions in last-order convention. </p></li>
 <li><p><strong>chainIndex</strong> – Chain index used for encoding (when applicable) </p></li>
 </ul>
 </dd>
@@ -823,7 +827,7 @@ a tile tensor and back again.</p>
 <li><p><strong>title</strong> – Text to include in error message </p></li>
 <li><p><strong>expectedVals</strong> – tensor input to compare </p></li>
 <li><p><strong>eps</strong> – Tolerance </p></li>
-<li><p><strong>percent</strong> – Relative diff indictoar </p></li>
+<li><p><strong>percent</strong> – Relative diff indictor </p></li>
 </ul>
 </dd>
 </dl>
@@ -850,6 +854,43 @@ a tile tensor and back again.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoder12getHeContextEv">
 <span id="_CPPv3N8helayers9TTEncoder12getHeContextEv"></span><span id="_CPPv2N8helayers9TTEncoder12getHeContextEv"></span><span id="helayers::TTEncoder::getHeContext"></span><span class="target" id="classhelayers_1_1TTEncoder_1aaa62d3081085e74d33f482790eaf7a6c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHeContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9TTEncoder12getHeContextEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the context. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoder17extractTileValuesERNSt6vectorIdEERK12DoubleTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE">
+<span id="_CPPv3N8helayers9TTEncoder17extractTileValuesERNSt6vectorIdEERK12DoubleTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="_CPPv2N8helayers9TTEncoder17extractTileValuesERNSt6vectorIdEERK12DoubleTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="helayers::TTEncoder::extractTileValues__std::vector:double:R.DoubleTensorCR.TTShapeCR.i.std::shared_ptr:TTTileMappingC:"></span><span class="target" id="classhelayers_1_1TTEncoder_1ab6eb7b1090cc021b9599feedaaae8bb7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extractTileValues</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tensor</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileFlatIndex</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TTTileMapping</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ttTileMapping</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9TTEncoder17extractTileValuesERNSt6vectorIdEERK12DoubleTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Extracts and populates the values of a single tile from an original tensor of values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Output vector of values. </p></li>
+<li><p><strong>tensor</strong> – Original tensor. </p></li>
+<li><p><strong>shape</strong> – Shape of the tile tensor. </p></li>
+<li><p><strong>tileFlatIndex</strong> – Flat index of tile in tile tensor. </p></li>
+<li><p><strong>ttTileMapping</strong> – Optional pre-processed tile mapping. If exists extraction works faster. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9TTEncoder17extractTileValuesERNSt6vectorINSt7complexIdEEEERK13ComplexTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE">
+<span id="_CPPv3N8helayers9TTEncoder17extractTileValuesERNSt6vectorINSt7complexIdEEEERK13ComplexTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="_CPPv2N8helayers9TTEncoder17extractTileValuesERNSt6vectorINSt7complexIdEEEERK13ComplexTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE"></span><span id="helayers::TTEncoder::extractTileValues__std::vector:std::complex:double::R.ComplexTensorCR.TTShapeCR.i.std::shared_ptr:TTTileMappingC:"></span><span class="target" id="classhelayers_1_1TTEncoder_1a19477b9fc705d2c7f29fd34976c6ed55"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extractTileValues</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ComplexTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tensor</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileFlatIndex</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TTTileMapping</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ttTileMapping</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9TTEncoder17extractTileValuesERNSt6vectorINSt7complexIdEEEERK13ComplexTensorRK7TTShapeiNSt10shared_ptrIK13TTTileMappingEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Extracts and populates the complex values of a single tile from an original tensor of values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Output vector of complex values. </p></li>
+<li><p><strong>tensor</strong> – Original (complex packed) tensor. </p></li>
+<li><p><strong>shape</strong> – Shape of the tile tensor. </p></li>
+<li><p><strong>tileFlatIndex</strong> – Flat index of tile in tile tensor. </p></li>
+<li><p><strong>ttTileMapping</strong> – Optional pre-processed tile mapping. If exists extraction works faster. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

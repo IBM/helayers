@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ONNX Support &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>ONNX Support &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -53,7 +53,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="FHE overview" href="fhe_overview.html" />
+    <link rel="next" title="Tile tensors" href="tile_tensors.html" />
     <link rel="prev" title="HElayers Overview" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -305,6 +305,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">ONNX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile_tensors.html">Tile tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -379,19 +380,28 @@ document.write(`
 <h1>ONNX Support<a class="headerlink" href="#onnx-support" title="Permalink to this heading">#</a></h1>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md11">
 <h2>ONNX supported operators<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md11" title="Permalink to this heading">#</a></h2>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md11">Currently, HElayers partially support ONNX files. It is recommended to review the supported operations below before loading an ONNX file into HElayers. When an unsupported operator is loaded to HElayers, it will try to automatically identify it and alert the user about it.</p>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md11">Currently, HElayers partially supports ONNX files. It is recommended to review the supported operations below before loading an ONNX file into HElayers. When an unsupported operator is loaded to HElayers, it will try to automatically identify it and alert the user about it.</p>
 <p>The supported ONNX operators are:<ul class="simple">
 <li><p>AveragePool</p></li>
 <li><p>BatchNormalization</p></li>
 <li><p>Cast</p></li>
 <li><p>Concat</p></li>
+<li><p>Constant</p></li>
 <li><p>Conv</p></li>
+<li><p>Expand (can be applied on weights only)</p></li>
 <li><p>Flatten</p></li>
+<li><p>Gather</p></li>
 <li><p>Gemm</p></li>
 <li><p>Identity</p></li>
 <li><p>MatMul</p></li>
-<li><p>ReduceSum</p></li>
+<li><p>Pad</p></li>
+<li><p>PolyApprox</p></li>
+<li><p>Reciprocal (can be applied on weights only)</p></li>
 <li><p>ReduceMean</p></li>
+<li><p>ReduceSum</p></li>
+<li><p>Reshape</p></li>
+<li><p>Shape</p></li>
+<li><p>Slice</p></li>
 <li><p>Squeeze</p></li>
 <li><p>Transpose</p></li>
 <li><p>Unsqueeze</p></li>
@@ -400,19 +410,20 @@ document.write(`
 <p>In addition, the following operators are interpreted by HElayers as polynomial activation layers:<ul class="simple">
 <li><p>Constant</p></li>
 <li><p>Div</p></li>
+<li><p>Neg</p></li>
 <li><p>Pow</p></li>
-<li><p>Sub</p></li>
-<li><p>The “Add” and “Mul” operators are also supported and may be used either as a separate layer that performs element-wise addition or multiplication on the outputs of two previous layers together, or as part of an activation layer.</p></li>
+<li><p>The “Add”, “Sub” and “Mul” operators are also supported and may be used either as a separate layer that performs element-wise addition, subtraction or multiplication on the outputs of two previous layers together, or on the output of a previous layer and a weight tensor, or as part of an activation layer.</p></li>
 </ul>
 </p>
-<p>HElayers support non-sequential graphs of operators: operator’s output can be the input of multiple operators, and the outputs of two operators can be added, multiplied or concatenated to one another as long as the tensor shapes are compatible. The operators must form a DAG, where all paths start and end in the same nodes. For example, an NN must have a single input, which can then be fed into multiple layers.</p>
-<p>Note: dimension 0 is assumed to be the batch dimension. This dimension must not be changed, manipulated or involved in operations in any way.</p>
+<p>HElayers support non-sequential graphs of operators: operator’s output can be the input of multiple operators, and the outputs of two operators can be added, subtracted, multiplied or concatenated to one another as long as the tensor shapes are compatible. The operators must form a DAG, where all paths start and end in the same nodes. For example, an NN must have a single input, which can then be fed into multiple layers.</p>
+<p>Note: dimension 0 is assumed to be the batch dimension of the NN input and output. This dimension must not be changed, manipulated or involved in operations in any way. To overcome this limitation, set a model-specified fixed batch size (see PlainModelHyperParams::modelSpecifiedFixedBatchSize).</p>
+<p>Below is a description of each of the supported operators, including a list of its supported attributes. Any other attribute that is not specified will raise an error.</p>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md12">
 <h3>Add<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md12" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md12"><ul class="simple">
 <li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
@@ -421,13 +432,16 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md13"><ul class="simple">
 <li><p>Must have one input: the input data.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>The supported attributes are:<ul>
 <li><p>”kernel_shape” - required, must contain two integers</p></li>
-<li><p>”strides” - required, must contain two integers</p></li>
-<li><p>”pads” - required, must contain 4 integers. Alternatively, pads will be taken from a previous “Pad” operator, if such operator appears before this layer.</p></li>
+<li><p>”strides” - optional (default [1,1]), if given must contain two integers</p></li>
+<li><p>”pads” - optional (default [0,0,0,0]), if given must contain 4 integers. If a “Pad” operator exists just before this layer, and if that “Pad” operator defines pads that are not all-zeros, the pads for this layer will be taken from that previous “Pad” operator, and in such case, this layer’s pads must either not be specified or define pads that are all-zeros.</p></li>
+<li><p>”count_include_pad” - optional. NOTICE: when an average pooling layer includes padding, its evaluation by Helayers will include the pads when averaging, regardless of the value of this attribute.</p></li>
+<li><p>”auto_pad” - optional, if given must have the value “NOTSET”</p></li>
+<li><p>”ceil_mode” - optional, if given must have the value 0</p></li>
+<li><p>”dilations” - optional, if given must have the value [1,1]</p></li>
 </ul>
 </p></li>
-<li><p>NOTICE: when an average pooling layer includes padding, its evaluation by Helayers will include the pads when averaging, regardless of any setting or behaviour of an external library.</p></li>
 </ul>
 </p>
 </section>
@@ -436,8 +450,10 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md14"><ul class="simple">
 <li><p>Must have five inputs: the input data, the scales, the biases, the means and the variances.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”epsilon” - required, the value to use for the normalization, to avoid deviding by zero.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”epsilon” - optional (default 1e-5), the value to use for the normalization, to avoid deviding by zero.</p></li>
+<li><p>”momentum” - optional, ignored</p></li>
+<li><p>”training_mode” - optional, if given must have the value 0</p></li>
 </ul>
 </p></li>
 <li><p>The batch normalization is assumed to be over dimension #1.</p></li>
@@ -449,20 +465,24 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md15"><ul class="simple">
 <li><p>Must have one input.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
-<li><p>Has no effect.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”to” - required. If applied on a non-weight, must either equal onnx::TensorProto::FLOAT or onnx::TensorProto::DOUBLE. Notice that in this case, no actual casting will be applied under FHE, and values will always be represented by the numeric type supported by the FHE library. If applied on a weight, must equal one of the following: TensorProto::UINT8, TensorProto::INT8, TensorProto::UINT16, TensorProto::INT16, TensorProto::UINT32, TensorProto::INT32, TensorProto::UINT64, TensorProto::INT64.</p></li>
+</ul>
+</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md16">
 <h3>Concat<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md16" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md16"><ul class="simple">
-<li><p>Must have two inputs.</p></li>
+<li><p>Must have two or more inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>The supported attributes are:<ul>
 <li><p>”axis” - required, the axis to concatenate along.</p></li>
 </ul>
 </p></li>
+<li><p>Must be applied on operands that are either all non-weights or all weights.</p></li>
+<li><p>If wpplied on non-weights, must have exactly two inputs.</p></li>
 </ul>
 </p>
 </section>
@@ -471,8 +491,8 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md17"><ul class="simple">
 <li><p>Must have no inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”value” - required, must contain a valid tensor with a single value.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”value” - required, must contain a valid tensor with values.</p></li>
 </ul>
 </p></li>
 </ul>
@@ -483,11 +503,13 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md18"><ul class="simple">
 <li><p>Must have two or three inputs: the input data, filters and optional biases.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>The supported attributes are:<ul>
 <li><p>”kernel_shape” - required, must contain two integers</p></li>
-<li><p>”strides” - required, must contain two integers</p></li>
-<li><p>”pads” - required, must contain 4 integers</p></li>
-<li><p>”group” - required. Currently, must be either 1, or the number of input channels in case they also equal the number of output channels.</p></li>
+<li><p>”strides” - optional (default [1,1]), if given must contain two integers</p></li>
+<li><p>”pads” - optional (default [0,0,0,0]), if given must contain 4 integers</p></li>
+<li><p>”group” - optional (default 1), if given, currently, must be either 1, or the number of input channels in case they also equal the number of output channels.</p></li>
+<li><p>”auto_pad” - optional, if given must have the value “NOTSET”</p></li>
+<li><p>”dilations” - optional, if given must have the value [1,1]</p></li>
 </ul>
 </p></li>
 <li><p>The number of filters will be deduced from the associated filters specified as input for the operator.</p></li>
@@ -500,148 +522,237 @@ document.write(`
 <p id="NeuralNetOnnxParser_8h_1autotoc_md19"><ul class="simple">
 <li><p>Must have two inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md20">
-<h3>Flatten<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md20" title="Permalink to this heading">#</a></h3>
+<h3>Expand<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md20" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md20"><ul class="simple">
+<li><p>See ONNX documentation for “Expand” operator for the logic, supported inputs, outputs and attributes.</p></li>
+<li><p>Can be applied on weights only.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md21">
+<h3>Flatten<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md21" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md21"><ul class="simple">
 <li><p>Must have one input: the input data.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”axis” - required, must contain 1 integer with a value of 1</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”axis” - optional, if given must have the value 1</p></li>
 </ul>
 </p></li>
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md21">
-<h3>Gemm<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md21" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md21"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md22">
+<h3>Gather<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md22" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md22"><ul class="simple">
+<li><p>See ONNX documentation for “Gather” operator for the logic, supported inputs, outputs and attributes.</p></li>
+<li><p>Can be applied on weights only.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md23">
+<h3>Gemm<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md23" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md23"><ul class="simple">
 <li><p>Must have two or three inputs: the input data, weights and optional bias.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”alpha” - optional (default 1)</p></li>
+<li><p>”beta” - optional (default 1)</p></li>
+<li><p>”transA” - optional, if given must have the value 0</p></li>
+<li><p>”transB” - optional (default 0)</p></li>
+</ul>
+</p></li>
 <li><p>The output size will be deduced from the associated weights specified as input for the operator.</p></li>
 <li><p>Weights are assumed to be of shape [output_size][input_size]</p></li>
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md22">
-<h3>Identity<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md22" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md22"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md24">
+<h3>Identity<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md24" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md24"><ul class="simple">
 <li><p>Must have one input.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
-</ul>
-</p>
-</section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md23">
-<h3>MatMul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md23" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md23"><ul class="simple">
-<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
-<li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
-</ul>
-</p>
-</section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md24">
-<h3>Mul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md24" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md24"><ul class="simple">
-<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
-<li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md25">
-<h3>Pow<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md25" title="Permalink to this heading">#</a></h3>
+<h3>MatMul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md25" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md25"><ul class="simple">
-<li><p>Must have two inputs: the input data and the exponent.</p></li>
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
-<li><p>The input associated with the exponent must contain a valid tensor with a single value, or be a “Constant” operator representing a single scalar. The exponent value must be a non-negative integer.</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md26">
-<h3>Pad<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md26" title="Permalink to this heading">#</a></h3>
+<h3>Mul<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md26" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md26"><ul class="simple">
-<li><p>Must have one or two inputs: the input data and optional pad values.</p></li>
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”pads” - required, must contain 8 integers: 0,0,T,L,0,0,B,R where T,L,B,R are the paddings from top, left, bottom and right, and can be zero or non-zero values. If provided, will be applied over the next layer which must be AveragePool. In case the operator has two inputs, the pad values will be taken from the second input and not from the “pads” attribute. In such case, the second input must contain a tensor of 8 integers that follow the above limitations.</p></li>
-</ul>
-</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md27">
-<h3>ReduceMean<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md27" title="Permalink to this heading">#</a></h3>
+<h3>Neg<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md27" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md27"><ul class="simple">
-<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one inputs: the input data.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the are value will be taken from the second input and not from the “axes” attribute.</p></li>
-<li><p>”keepdims” - required, whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
-</ul>
-</p></li>
+<li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md28">
-<h3>ReduceSum<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md28" title="Permalink to this heading">#</a></h3>
+<h3>Pad<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md28" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md28"><ul class="simple">
-<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one or two inputs: the input data and optional pad values.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the are value will be taken from the second input and not from the “axes” attribute.</p></li>
-<li><p>”keepdims” - required, whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”pads” or “paddings” - required if pads are not provided as a second input. If provided, must contain 8 integers: 0,0,T,L,0,0,B,R where T,L,B,R are the paddings from top, left, bottom and right, and can be zero or non-zero values. In case the operator has two inputs, the pad values will be taken from the second input and not from the “pads” or “paddings” attribute, which in this case are ignored. In such case, the second input must contain a tensor of 8 integers that follow the above limitations.</p></li>
+<li><p>”mode” - optional, if given must have the value “constant”</p></li>
+<li><p>”value” - optional, if given must have the value 0</p></li>
 </ul>
 </p></li>
+<li><p>This operators must be followed by an AveragePool operator, and the paddings of this operator will be applied over that next AveragePool.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md29">
-<h3>Squeeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md29" title="Permalink to this heading">#</a></h3>
+<h3>PolyApprox<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md29" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md29"><ul class="simple">
-<li><p>Must have one input.</p></li>
+<li><p>Must have one input: the input data.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”axes” - optional, the dimensions to squeeze. If empty, all the dimensions of size 1 will be squeezed.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”function” - a string specifying the function to be approximated. Currently only “1/sqrt” is supported.</p></li>
+<li><p>”approximationMethod” - a string specifying the approximation method of the specified function. Currently only “goldschmidt” is supported, which computes 1/sqrt(x) using the goldschmidt approximation method.</p></li>
+<li><p>”numIterations” - The number of iterations of the approximation algorithm.</p></li>
+<li><p>”scale” - A scale to be applied on the input so it will fall within the supported approximation range.</p></li>
 </ul>
 </p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md30">
-<h3>Sub<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md30" title="Permalink to this heading">#</a></h3>
+<h3>Pow<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md30" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md30"><ul class="simple">
-<li><p>Must have two inputs.</p></li>
+<li><p>Must have two inputs: the input data and the exponent.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>No attributes are supported (any attribute will be ignored).</p></li>
+<li><p>No attributes are supported.</p></li>
+<li><p>The input associated with the exponent must contain a valid tensor with a single value, or be a “Constant” operator representing a single scalar. The exponent value must be a non-negative integer.</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md31">
-<h3>Transpose<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md31" title="Permalink to this heading">#</a></h3>
+<h3>Reciprocal<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md31" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md31"><ul class="simple">
 <li><p>Must have one input.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
+<li><p>No attributes are supported.</p></li>
+<li><p>Can be applied on weights only.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md32">
+<h3>ReduceMean<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md32" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md32"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the value will be taken from the second input and not from the “axes” attribute. Must contain a single integer.</p></li>
+<li><p>”keepdims” - optional (default 1), whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
+<li><p>”noop_with_empty_axes” - optional, ignored as an empty list of “axes” is not supported.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md33">
+<h3>ReduceSum<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md33" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md33"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes value.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”axes” - required, the axis to apply the reduce along. In case the operator has two inputs, the value will be taken from the second input and not from the “axes” attribute. Must contain a single integer.</p></li>
+<li><p>”keepdims” - optional (default 1), whether to keep the reduced dim as a degenerate dim or to remove it.</p></li>
+<li><p>”noop_with_empty_axes” - optional, ignored as an empty list of “axes” is not supported.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md34">
+<h3>Reshape<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md34" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md34"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional shape value.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”shape” - required, the new shape to reshape into. In case the operator has two inputs, the value will be taken from the second input and not from the “shape” attribute. Must contain a list of integers.</p></li>
+<li><p>”allowzero” - optional, if given must have the value 0.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md35">
+<h3>Shape<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md35" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md35"><ul class="simple">
+<li><p>See ONNX documentation for “Shape” operator for the logic, supported inputs, outputs and attributes.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md36">
+<h3>Slice<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md36" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md36"><ul class="simple">
+<li><p>See ONNX documentation for “Slice” operator for the logic, supported inputs, outputs and attributes.</p></li>
+<li><p>Currently, “steps”, if provided, must all equal 1.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md37">
+<h3>Squeeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md37" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md37"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes values.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”axes” - optional, the dimensions to squeeze. If empty, all the dimensions of size 1 will be squeezed. If provided, must contain a list of integers. In case the operator has two inputs, the axes values will be taken from the second input and not from the “axes” attribute, which in this case is ignored. In such case, the second input must contain a list of integers.</p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md38">
+<h3>Sub<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md38" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md38"><ul class="simple">
+<li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>No attributes are supported.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md39">
+<h3>Transpose<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md39" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md39"><ul class="simple">
+<li><p>Must have one input.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
 <li><p>”perm” - required, the permutation to apply.</p></li>
 </ul>
 </p></li>
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md32">
-<h3>Unsqueeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md32" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md32"><ul class="simple">
-<li><p>Must have one input.</p></li>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md40">
+<h3>Unsqueeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md40" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md40"><ul class="simple">
+<li><p>Must have one or two inputs: the input data and optional axes values.</p></li>
 <li><p>Must have one output.</p></li>
-<li><p>The supported attributes are: (any other attribute will be ignored)<ul>
-<li><p>”axes” - required, the dimensions to unsqueeze. </p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”axes” - required if axes are not provided as a second input. If provided, must contain a list of integers. In case the operator has two inputs, the axes values will be taken from the second input and not from the “axes” attribute, which in this case is ignored. In such case, the second input must contain a list of integers. </p></li>
 </ul>
 </p></li>
 </ul>
@@ -668,11 +779,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="fhe_overview.html"
+       href="tile_tensors.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FHE overview</p>
+        <p class="prev-next-title">Tile tensors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -700,19 +811,27 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md17">Constant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md18">Conv</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md19">Div</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md20">Flatten</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md21">Gemm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md22">Identity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md23">MatMul</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md24">Mul</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md25">Pow</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md26">Pad</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md27">ReduceMean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md28">ReduceSum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md29">Squeeze</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md30">Sub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md31">Transpose</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md32">Unsqueeze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md20">Expand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md21">Flatten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md22">Gather</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md23">Gemm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md24">Identity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md25">MatMul</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md26">Mul</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md27">Neg</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md28">Pad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md29">PolyApprox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md30">Pow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md31">Reciprocal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md32">ReduceMean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md33">ReduceSum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md34">Reshape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md35">Shape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md36">Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md37">Squeeze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md38">Sub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md39">Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md40">Unsqueeze</a></li>
 </ul>
 </li>
 </ul>

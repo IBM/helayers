@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Resources &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>Resources &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -305,6 +305,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile_tensors.html">Tile tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -415,19 +416,28 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2023 May 05</p></td>
+<tr class="row-even"><td><p>2024 Jun 04</p></td>
+<td><p><a class="reference external" href="https://www.ibm.com/blog/intesa-sanpaolo-ibm-secure-digital-transactions-fhe/">Intesa Sanpaolo and IBM secure digital transactions with fully homomorphic encryption</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024 Apr 11</p></td>
+<td><p><a class="reference external" href="https://www.ibm.com/blog/ibm-researchers-to-publish-fhe-challenges-on-the-fherma-platform/">IBM researchers to publish FHE challenges on the FHERMA platform</a></p></td>
+</tr>
+<tr class="row-even"><td><p>2023 Oct 16</p></td>
+<td><p><a class="reference external" href="https://securityintelligence.com/posts/healthcare-breach-costs-soar-new-thinking-safeguarding-data/">Healthcare breach costs soar requiring new thinking for safeguarding data</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2023 May 05</p></td>
 <td><p><a class="reference external" href="https://research.ibm.com/blog/privacy-preserving-federated-learning-finance">Building privacy-preserving federated learning to help fight financial crime</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>2022 Dec 16</p></td>
+<tr class="row-even"><td><p>2022 Dec 16</p></td>
 <td><p><a class="reference external" href="https://research.ibm.com/blog/federated-learning-homomorphic-encryption">Federated Learning meets Homomorphic Encryption</a></p></td>
 </tr>
-<tr class="row-even"><td><p>2022 Dec 08</p></td>
+<tr class="row-odd"><td><p>2022 Dec 08</p></td>
 <td><p><a class="reference external" href="https://research.ibm.com/blog/fhe-cloud-security-hE4cloud">The ultimate tool for data privacy: Fully homomorphic encryption</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>2022 Feb 21</p></td>
+<tr class="row-even"><td><p>2022 Feb 21</p></td>
 <td><p><a class="reference external" href="https://developer.ibm.com/blogs/ibm-homomorphic-encryption-a-dashing-solution-for-healthcare-dataprivacy/">IBM homomorphic encryption: A DASHing solution for healthcare data privacy</a></p></td>
 </tr>
-<tr class="row-even"><td><p>2021 Sep 06</p></td>
+<tr class="row-odd"><td><p>2021 Sep 06</p></td>
 <td><p><a class="reference external" href="https://developer.ibm.com/blogs/secure-ai-workloads-using-fully-homomorphic-encrypted-data/">IBM Developer Blog</a></p></td>
 </tr>
 </tbody>
@@ -455,8 +465,15 @@ document.write(`
 <tr class="row-even"><td><p>Complex Encoded Tile Tensors: Accelerating Encrypted Analytics</p></td>
 <td><p>[<a class="reference external" href="https://ieeexplore.ieee.org/document/9805391">IEEE Security and Privacy</a>]</p></td>
 </tr>
+<tr class="row-odd"><td><p>Tutorial-HEPack4ML ‘23: Advanced HE Packing Methods with Applications to ML</p></td>
+<td><p>[<a class="reference external" href="https://dl.acm.org/doi/10.1145/3605774.3625525">Tutorial&#64;CCS 2023</a>]</p></td>
+</tr>
+<tr class="row-even"><td><p>Demo: Rotating Wide Tensors with HElayers</p></td>
+<td><p>[<a class="reference external" href="https://dl.acm.org/doi/10.1145/3605774.3625524">Tutorial&#64;CCS 2023</a>]</p></td>
+</tr>
 </tbody>
 </table>
+<p>A 2-dimensions online tile tensors simulator is found in <a class="reference internal" href="tile_tensors.html"><span class="doc">here</span></a>.</p>
 </section>
 <section id="he-friendly-neural-networks">
 <h2>HE-Friendly neural networks<a class="headerlink" href="#he-friendly-neural-networks" title="Permalink to this heading">#</a></h2>
@@ -471,21 +488,24 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>A methodology for training homomorphic encryption friendly neural networks</p></td>
-<td><p>[<a class="reference external" href="https://arxiv.org/abs/2111.03362">arXiv</a>, <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-16815-4_29">SIMLA 2022</a>]</p></td>
+<tr class="row-even"><td><p>Converting Transformers to Polynomial Form for Secure Inference Over Homomorphic Encryption</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2311.08610">arXiv</a>, <a class="reference external" href="https://icml.cc/virtual/2024/poster/34811">ICML 2024</a>]</p></td>
 </tr>
-<tr class="row-odd"><td><p>Efficient Skip Connections Realization for Secure Inference on Encrypted Data</p></td>
-<td><p>[<a class="reference external" href="https://arxiv.org/abs/2306.06736">arXiv</a>,</p></td>
+<tr class="row-odd"><td><p>Training Large Scale Polynomial CNNs for E2E Inference over Homomorphic Encryption</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2304.14836">arXiv</a>]</p></td>
 </tr>
 <tr class="row-even"><td><p>HE-PEx: Efficient Machine Learning under Homomorphic Encryption using Pruning, Permutation and Expansion</p></td>
-<td><p>[<a class="reference external" href="https://arxiv.org/abs/2207.03384">arXiv</a>]</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2207.03384">arXiv</a>, <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-51482-1_11">ESORICS 2023</a>]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efficient Skip Connections Realization for Secure Inference on Encrypted Data</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2306.06736">arXiv</a>, <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-34671-2_5">CSCML 2023</a>]</p></td>
+</tr>
+<tr class="row-even"><td><p>A methodology for training homomorphic encryption friendly neural networks</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2111.03362">arXiv</a>, <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-16815-4_29">SIMLA 2022</a>]</p></td>
 </tr>
 <tr class="row-odd"><td><p>Secure SqueezeNet inference in 4 minutes. 43rd IEEE Symposium on Security and Privacy</p></td>
 <td><p>[<a class="reference external" href="https://www.ieee-security.org/TC/SP2022/program-posters.html">s&amp;p 2022 posters</a>,
 <a class="reference external" href="https://www.ieee-security.org/TC/SP2022/downloads/SP22-posters/sp22-posters-50.pdf">pdf</a>]</p></td>
-</tr>
-<tr class="row-even"><td><p>Training Large Scale Polynomial CNNs for E2E Inference over Homomorphic Encryption</p></td>
-<td><p>[<a class="reference external" href="https://arxiv.org/abs/2304.14836">arXiv</a>]</p></td>
 </tr>
 </tbody>
 </table>
@@ -506,7 +526,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>BLEACH: Cleaning Errors in Discrete Computations over CKKS</p></td>
-<td><p>[<a class="reference external" href="https://eprint.iacr.org/2022/1298">ePrint</a>]</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2022/1298">ePrint</a>, <a class="reference external" href="https://link.springer.com/article/10.1007/s00145-023-09483-1">JoC 2023</a>]</p></td>
 </tr>
 </tbody>
 </table>
@@ -524,17 +544,32 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Efficient Privacy-Preserving Viral Strain Classification via k-mer Signatures and FHE</p></td>
-<td><p>[<a class="reference external" href="https://eprint.iacr.org/2023/009">ePrint</a>]</p></td>
+<tr class="row-even"><td><p>Secure Range-Searching Using Copy-And-Recurse</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2023/983">arXiv</a>, <a class="reference external" href="https://petsymposium.org/popets/2024/popets-2024-0096.php">PETs 2024</a>]</p></td>
 </tr>
-<tr class="row-odd"><td><p>NTT software optimization using an extended Harvey butterfly</p></td>
-<td><p>[<a class="reference external" href="https://eprint.iacr.org/2021/1396">ePrint</a>]</p></td>
+<tr class="row-odd"><td><p>Privacy Preserving Feature Selection for Sparse Linear Regression</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2023/1354">arXiv</a>, <a class="reference external" href="https://petsymposium.org/popets/2024/popets-2024-0017.php">PETs 2024</a>]</p></td>
+</tr>
+<tr class="row-even"><td><p>Efficient Privacy-Preserving Viral Strain Classification via k-mer Signatures and FHE</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2023/009">ePrint</a>, <a class="reference external" href="https://www.computer.org/csdl/proceedings-article/csf/2023/219200a178/1Mv21A7cADK">CSF 2023</a>]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Generating One-Hot Maps under Encryption</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2306.06739">arXiv</a>, <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-34671-2_8">CSCML 2023</a>]</p></td>
+</tr>
+<tr class="row-even"><td><p>Poster: Efficient AES-GCM Decryption Under Homomorphic Encryption</p></td>
+<td><p>[<a class="reference external" href="https://dl.acm.org/doi/10.1145/3576915.3624377">CCS 2023</a>]</p></td>
+</tr>
+<tr class="row-odd"><td><p>E2E near-standard and practical authenticated transciphering</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2023/1040">ePrint 2023</a>]</p></td>
 </tr>
 <tr class="row-even"><td><p>Timing leakage analysis of non-constant-time NTT implementations with Harvey butterflies</p></td>
 <td><p>[<a class="reference external" href="https://eprint.iacr.org/2022/094">ePrint</a>,  <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-07689-3_8">CSCML 2022</a>]</p></td>
 </tr>
-<tr class="row-odd"><td><p>Generating One-Hot Maps under Encryption</p></td>
-<td><p>[<a class="reference external" href="https://arxiv.org/abs/2306.06739">arXiv</a>]</p></td>
+<tr class="row-odd"><td><p>NTT software optimization using an extended Harvey butterfly</p></td>
+<td><p>[<a class="reference external" href="https://eprint.iacr.org/2021/1396">ePrint</a>]</p></td>
+</tr>
+<tr class="row-even"><td><p>Privacy-Preserving Federated Learning over Vertically and Horizontally Partitioned Data for Financial Anomaly Detection</p></td>
+<td><p>[<a class="reference external" href="https://arxiv.org/abs/2310.19304">arXiv</a>]</p></td>
 </tr>
 </tbody>
 </table>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>loadIoProcessor &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>loadIoProcessor &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -219,10 +219,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -372,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -528,42 +524,11 @@ document.write(`
   <section id="loadioprocessor">
 <h1>loadIoProcessor<a class="headerlink" href="#loadioprocessor" title="Permalink to this heading">#</a></h1>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py function">
-<dt class="sig sig-object py" id="pyhelayers.load_io_processor">
-<span class="sig-name descname"><span class="pre">load_io_processor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ModelIoProcessor.html#pyhelayers.ModelIoProcessor" title="pyhelayers.ModelIoProcessor"><span class="pre">pyhelayers.ModelIoProcessor</span></a></span></span><a class="headerlink" href="#pyhelayers.load_io_processor" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads a ModelIoProcessor object from the given buffer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>context</strong> – The HeContext to initialize the ModelIoProcessor with.</p></li>
-<li><p><strong>buf</strong> – The buffer to load from.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain a ModelIoProcessor
-or if loading fails due to an illegal header of the ModelIoProcessor
-object in the given buffer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers15loadIoProcessorERK9HeContextRNSt7istreamE">
-<span id="_CPPv3N8helayers15loadIoProcessorERK9HeContextRNSt7istreamE"></span><span id="_CPPv2N8helayers15loadIoProcessorERK9HeContextRNSt7istreamE"></span><span id="helayers::loadIoProcessor__HeContextCR.isR"></span><span class="target" id="namespacehelayers_1ad215fddb9d3d96b28f20d73233c3665e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="ModelIoProcessor.html#_CPPv4N8helayers16ModelIoProcessorE" title="helayers::ModelIoProcessor"><span class="n"><span class="pre">ModelIoProcessor</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">loadIoProcessor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">context</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers15loadIoProcessorERK9HeContextRNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Loads a <a class="reference internal" href="ModelIoProcessor.html#classhelayers_1_1ModelIoProcessor"><span class="std std-ref">ModelIoProcessor</span></a> object from the given stream. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>context</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to initialize the <a class="reference internal" href="ModelIoProcessor.html#classhelayers_1_1ModelIoProcessor"><span class="std std-ref">ModelIoProcessor</span></a> with. </p></li>
-<li><p><strong>stream</strong> – The stream to load from. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given stream does not contain a <a class="reference internal" href="ModelIoProcessor.html#classhelayers_1_1ModelIoProcessor"><span class="std std-ref">ModelIoProcessor</span></a> object or if loading fails due to an illegal header of the <a class="reference internal" href="ModelIoProcessor.html#classhelayers_1_1ModelIoProcessor"><span class="std std-ref">ModelIoProcessor</span></a> object in the given stream. </p>
-</dd>
-</dl>
-</dd></dl>
-
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “helayers::loadIoProcessor” in doxygen xml output for project “HElayers C++” from directory: ../../../autodoc/xml</p>
+</div>
 </div></div>
 </section>
 
@@ -599,20 +564,6 @@ object in the given buffer.</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.load_io_processor"><code class="docutils literal notranslate"><span class="pre">load_io_processor()</span></code></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

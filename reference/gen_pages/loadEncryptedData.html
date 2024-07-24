@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>loadEncryptedData &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>loadEncryptedData &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -531,7 +531,7 @@ document.write(`
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py function">
 <dt class="sig sig-object py" id="pyhelayers.load_encrypted_data">
 <span class="sig-name descname"><span class="pre">load_encrypted_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></span><a class="headerlink" href="#pyhelayers.load_encrypted_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads encrypted data (a CTileTensor object) from the given buffer.</p>
+<dd><p>Loads encrypted data from the given buffer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -540,9 +540,9 @@ document.write(`
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain a CTileTensor
-or if loading fails due to an illegal header of the CTileTensor
-object in the given buffer.</p>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain an
+EncryptedData object, or if the object was saved with a mismatching
+HELayers version.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -559,7 +559,7 @@ object in the given buffer.</p>
 </ul>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given stream does not contain an <a class="reference internal" href="EncryptedData.html#classhelayers_1_1EncryptedData"><span class="std std-ref">EncryptedData</span></a> object or if loading fails due to an illegal header of the <a class="reference internal" href="EncryptedData.html#classhelayers_1_1EncryptedData"><span class="std std-ref">EncryptedData</span></a> object in the given stream. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given stream does not contain an <a class="reference internal" href="EncryptedData.html#classhelayers_1_1EncryptedData"><span class="std std-ref">EncryptedData</span></a> object, or if the object was saved with a mismatching HElayers version. </p>
 </dd>
 </dl>
 </dd></dl>

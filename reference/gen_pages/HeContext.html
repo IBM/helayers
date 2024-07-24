@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>HeContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -538,7 +538,7 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeContext</span></span><a class="headerlink" href="#pyhelayers.HeContext" title="Permalink to this definition">#</a></dt>
 <dd><p>An abstract main class representing an underlying HE library &amp; scheme,
 configured, initialized, and ready to start working.</p>
-<p>Upon initaliation, use on of the inheriting concrete classes such as
+<p>Upon initialization, use on of the inheriting concrete classes such as
 HelibCkksContext. Then continue with a generic reference to HeContext to
 allow scheme obliviousness</p>
 <p>This class bundles together all the data structures
@@ -625,12 +625,12 @@ contexts names (highest priority first).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeContext.get_default_device">
-<span class="sig-name descname"><span class="pre">get_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyhelayers.DeviceType</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.get_default_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.DeviceType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.HeContext.get_default_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the default device of the ciphertexts and plaintexts generated
 using this HeContext.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>DeviceType</p>
+<dd class="field-odd"><p>DeviceType, int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -655,6 +655,18 @@ HeConfigRequirement object provided when initializing this HeContext.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeContext.get_hybrid_device_utilization">
+<span class="sig-name descname"><span class="pre">get_hybrid_device_utilization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.get_hybrid_device_utilization" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns indication for whether a policy of hybrid utilization of
+devices of different types is applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeContext.get_library_name">
 <span class="sig-name descname"><span class="pre">get_library_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.get_library_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the name of the underlying library.</p>
@@ -673,6 +685,18 @@ applicable).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pyarrayuint64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeContext.get_num_devices_of_type">
+<span class="sig-name descname"><span class="pre">get_num_devices_of_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.get_num_devices_of_type" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the number of devices of the given type available for this
+HeContext to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The device type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -992,14 +1016,22 @@ HeContext will be bootstrapped automatically when needed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeContext.set_default_device">
-<span class="sig-name descname"><span class="pre">set_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.set_default_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hybrid_utilization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeContext.set_default_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the default device of the ciphertexts and plaintexts generated using
-this HeContext.</p>
+this HeContext, and the hybrid devices utilization policy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – the new default device</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – the new default device type.</p></li>
+<li><p><strong>device_id</strong> – the new default device ID.</p></li>
+<li><p><strong>hybrid_utilization</strong> – Whether a policy of hybrid utilization of</p></li>
+</ul>
 </dd>
 </dl>
+<p>devices of different types shall be applied. Such policy is only
+applicable for DEVICE_CPU as the default device type. In such policy, the
+GPU may be utilized alongside CPU for parts of the computation (e.g., for
+performing bootstraps).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1031,7 +1063,7 @@ created over this context.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9HeContextE">
 <span id="_CPPv3N8helayers9HeContextE"></span><span id="_CPPv2N8helayers9HeContextE"></span><span id="helayers::HeContext"></span><span class="target" id="classhelayers_1_1HeContext"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HeContext</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Printable</span></span><a class="headerlink" href="#_CPPv4N8helayers9HeContextE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>An abstract main class representing an underlying HE library &amp; scheme, configured, initialized, and ready to start working. </p>
-<p>Upon initaliation, use on of the inheriting concrete classes such as <a class="reference internal" href="HelibCkksContext.html#classhelayers_1_1HelibCkksContext"><span class="std std-ref">HelibCkksContext</span></a>. Then continue with a generic reference to <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to allow scheme obliviousness</p>
+<p>Upon initialization, use on of the inheriting concrete classes such as <a class="reference internal" href="HelibCkksContext.html#classhelayers_1_1HelibCkksContext"><span class="std std-ref">HelibCkksContext</span></a>. Then continue with a generic reference to <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to allow scheme obliviousness</p>
 <p>This class bundles together all the data structures required for performing HE operations, including the keys. It either contains a public/private key pair, allowing all operations including decryption, or just the public key allowing everything but decryption.</p>
 <p>It is used as input in constructor of many other classes in this library. For example, to create a ciphertext using the library represent by an <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>, write: <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> c(he);</p>
 <p>It can be further used to query various properties of the underlying scheme and library. </p>
@@ -1154,7 +1186,7 @@ created over this context.</p>
 <p>If there is not such a number of slots, returns -1. All the fields of the given requirement other than req.numSlots are expected to be present, while any value in numSlots will be ignored.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>req</strong> – The HeConfigrequirement. </p>
+<dd class="field-odd"><p><strong>req</strong> – The <a class="reference internal" href="HeConfigRequirement.html#structhelayers_1_1HeConfigRequirement"><span class="std std-ref">HeConfigRequirement</span></a>. </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If one of the fields of <code class="docutils literal notranslate"><span class="pre">req</span></code> other than req.numSlots is not present. </p>
@@ -1171,6 +1203,12 @@ created over this context.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext19createAbstractPlainEv">
 <span id="_CPPv3NK8helayers9HeContext19createAbstractPlainEv"></span><span id="_CPPv2NK8helayers9HeContext19createAbstractPlainEv"></span><span id="helayers::HeContext::createAbstractPlainC"></span><span class="target" id="classhelayers_1_1HeContext_1a128b52edbaf8ada3c6b5e3972b2c67f7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractPlaintext</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractPlain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext19createAbstractPlainEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Do not use. Should be made private. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext21createAbstractMessageEv">
+<span id="_CPPv3NK8helayers9HeContext21createAbstractMessageEv"></span><span id="_CPPv2NK8helayers9HeContext21createAbstractMessageEv"></span><span id="helayers::HeContext::createAbstractMessageC"></span><span class="target" id="classhelayers_1_1HeContext_1afc3ca769f7fe62525dba66acb98b8537"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractMessage</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractMessage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext21createAbstractMessageEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Do not use. Should be made private. </p>
 </dd></dl>
 
@@ -1335,7 +1373,7 @@ created over this context.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeContext_1aa25367c2b12a671cc26ec1bb5b30b802"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeContext_1aa25367c2b12a671cc26ec1bb5b30b802"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -1375,7 +1413,7 @@ created over this context.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeContext_1aa25367c2b12a671cc26ec1bb5b30b802"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeContext_1aa25367c2b12a671cc26ec1bb5b30b802"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -1383,18 +1421,39 @@ created over this context.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext19getNumDevicesOfTypeE10DeviceType">
+<span id="_CPPv3NK8helayers9HeContext19getNumDevicesOfTypeE10DeviceType"></span><span id="_CPPv2NK8helayers9HeContext19getNumDevicesOfTypeE10DeviceType"></span><span id="helayers::HeContext::getNumDevicesOfType__DeviceTypeC"></span><span class="target" id="classhelayers_1_1HeContext_1aa4b7f4bf6535614c4a05dbfb918499c9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumDevicesOfType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext19getNumDevicesOfTypeE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of devices of the given type available for this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to use. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – <strong>[in]</strong> The device type. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext16getDefaultDeviceEv">
-<span id="_CPPv3NK8helayers9HeContext16getDefaultDeviceEv"></span><span id="_CPPv2NK8helayers9HeContext16getDefaultDeviceEv"></span><span id="helayers::HeContext::getDefaultDeviceC"></span><span class="target" id="classhelayers_1_1HeContext_1a5a0cd4c1daf7d71066ad7da6789a468e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext16getDefaultDeviceEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers9HeContext16getDefaultDeviceEv"></span><span id="_CPPv2NK8helayers9HeContext16getDefaultDeviceEv"></span><span id="helayers::HeContext::getDefaultDeviceC"></span><span class="target" id="classhelayers_1_1HeContext_1ad61032baaa44947c102e38f19dcb2376"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext16getDefaultDeviceEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers9HeContext16setDefaultDeviceE10DeviceType">
-<span id="_CPPv3N8helayers9HeContext16setDefaultDeviceE10DeviceType"></span><span id="_CPPv2N8helayers9HeContext16setDefaultDeviceE10DeviceType"></span><span id="helayers::HeContext::setDefaultDevice__DeviceType"></span><span class="target" id="classhelayers_1_1HeContext_1adc92868072e5fce5e1c106c6987aea66"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9HeContext16setDefaultDeviceE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext26getHybridDeviceUtilizationEv">
+<span id="_CPPv3NK8helayers9HeContext26getHybridDeviceUtilizationEv"></span><span id="_CPPv2NK8helayers9HeContext26getHybridDeviceUtilizationEv"></span><span id="helayers::HeContext::getHybridDeviceUtilizationC"></span><span class="target" id="classhelayers_1_1HeContext_1aa975f67a64ca31ccbab2fa79f3aa2e78"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHybridDeviceUtilization</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext26getHybridDeviceUtilizationEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns indication for whether a policy of hybrid utilization of devices of different types is applied. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9HeContext16setDefaultDeviceE10DeviceTypeib">
+<span id="_CPPv3N8helayers9HeContext16setDefaultDeviceE10DeviceTypeib"></span><span id="_CPPv2N8helayers9HeContext16setDefaultDeviceE10DeviceTypeib"></span><span id="helayers::HeContext::setDefaultDevice__DeviceType.i.b"></span><span class="target" id="classhelayers_1_1HeContext_1a476ab2fa0f7317c83e2de44fdf44248a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">hybridUtilization</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9HeContext16setDefaultDeviceE10DeviceTypeib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>, and the hybrid devices utilization policy. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – <strong>[in]</strong> the new default device </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – <strong>[in]</strong> The device type. </p></li>
+<li><p><strong>deviceId</strong> – <strong>[in]</strong> The device ID. </p></li>
+<li><p><strong>hybridUtilization</strong> – <strong>[in]</strong> Whether a policy of hybrid utilization of devices of different types shall be applied. Such policy is only applicable for DEVICE_CPU as the default device type. In such policy, the GPU may be utilized alongside CPU for parts of the computation (e.g., for performing bootstraps). </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1444,7 +1503,7 @@ created over this context.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext19getMaxAllowedValuesEv">
 <span id="_CPPv3NK8helayers9HeContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers9HeContext19getMaxAllowedValuesEv"></span><span id="helayers::HeContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1HeContext_1acf44cdecdac9f69a8145c6281da09ec8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the maximal absolute value allowed for each chain index. </p>
-<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+<p>Values lower than the threshold are guaranteed to not produce overflows. The value in position i corresponds to the limit for chain index i. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1593,6 +1652,17 @@ created over this context.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext15isRotationExistEi">
+<span id="_CPPv3NK8helayers9HeContext15isRotationExistEi"></span><span id="_CPPv2NK8helayers9HeContext15isRotationExistEi"></span><span id="helayers::HeContext::isRotationExist__iC"></span><span class="target" id="classhelayers_1_1HeContext_1a9aec8abfbb9b12d503ba66d78d5994c2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRotationExist</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rotateStep</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext15isRotationExistEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether there exists a rotation key for the given rotation step. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rotateStep</strong> – The rotation step. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext16canComposeRotateEi">
 <span id="_CPPv3NK8helayers9HeContext16canComposeRotateEi"></span><span id="_CPPv2NK8helayers9HeContext16canComposeRotateEi"></span><span id="helayers::HeContext::canComposeRotate__iC"></span><span class="target" id="classhelayers_1_1HeContext_1a738244e35815c8c685e1fa6a201901b9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">canComposeRotate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">targetRotate</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext16canComposeRotateEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns true if it is possible to construct such a list using the supported rotations, and false otherwise. </p>
@@ -1648,7 +1718,7 @@ created over this context.</p>
 <dd class="field-odd"><p><strong>fileName</strong> – name of file to write to </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this Hecontext is not initialized. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is not initialized. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1667,8 +1737,8 @@ created over this context.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_arguemnt</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support saving with the given publicFunctions argument. </p></li>
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this Hecontext is not initialized. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support saving with the given publicFunctions argument. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is not initialized. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1712,8 +1782,8 @@ created over this context.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_arguemnt</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support saving with the given publicFunctions argument. </p></li>
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this Hecontext is not initialized. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support saving with the given publicFunctions argument. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is not initialized. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1734,13 +1804,27 @@ created over this context.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext14raiseAbortFlagEv">
 <span id="_CPPv3NK8helayers9HeContext14raiseAbortFlagEv"></span><span id="_CPPv2NK8helayers9HeContext14raiseAbortFlagEv"></span><span id="helayers::HeContext::raiseAbortFlagC"></span><span class="target" id="classhelayers_1_1HeContext_1afb6ae7af26e4d6d5f39c4680c715406e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">raiseAbortFlag</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext14raiseAbortFlagEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Truns on the “abort” flag, see documentation of this flag for more details. </p>
+<dd><p>Turns on the “abort” flag, see documentation of this flag for more details. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext18wasAbortFlagRaisedEv">
 <span id="_CPPv3NK8helayers9HeContext18wasAbortFlagRaisedEv"></span><span id="_CPPv2NK8helayers9HeContext18wasAbortFlagRaisedEv"></span><span id="helayers::HeContext::wasAbortFlagRaisedC"></span><span class="target" id="classhelayers_1_1HeContext_1af95b36faeb7219448a5c8561e79cd584"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wasAbortFlagRaised</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext18wasAbortFlagRaisedEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the value of the “abort” flag, see documentation of this flag for more details. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9HeContext30genRotKeysFromHierarchicalKeysEv">
+<span id="_CPPv3N8helayers9HeContext30genRotKeysFromHierarchicalKeysEv"></span><span id="_CPPv2N8helayers9HeContext30genRotKeysFromHierarchicalKeysEv"></span><span id="helayers::HeContext::genRotKeysFromHierarchicalKeys"></span><span class="target" id="classhelayers_1_1HeContext_1a991ea62bf5c19e043992959fee501ff3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genRotKeysFromHierarchicalKeys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9HeContext30genRotKeysFromHierarchicalKeysEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Generate rotation keys from existing rotation keys in the hierarchical rotation keys setting. </p>
+<p>If bootstrapping is enabled, generated the bootstrapping rotation keys as well. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers9HeContext21cudaDeviceSynchronizeEv">
+<span id="_CPPv3NK8helayers9HeContext21cudaDeviceSynchronizeEv"></span><span id="_CPPv2NK8helayers9HeContext21cudaDeviceSynchronizeEv"></span><span id="helayers::HeContext::cudaDeviceSynchronizeC"></span><span class="target" id="classhelayers_1_1HeContext_1abb3c591ea179610ed0aeb3a99db3cdf1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cudaDeviceSynchronize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers9HeContext21cudaDeviceSynchronizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Wait for GPU to finish all jobs. </p>
+<p>Kernel execution is normally asynchronous, so while the GPU device is executing a kernel the CPU can continue to work on some other commands, issue more instructions to the GPU, etc. However, when using this synchronization command, the CPU is instead forced to idle until all the GPU work has completed before doing anything else. Use when measuring GPU operations run times with HELAYERS_TIMER. Notice that this synchronization slows down the entire execution, so use carefully. </p>
 </dd></dl>
 
 </div>
@@ -1858,8 +1942,10 @@ created over this context.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_default_device"><code class="docutils literal notranslate"><span class="pre">HeContext.get_default_device()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_default_scale"><code class="docutils literal notranslate"><span class="pre">HeContext.get_default_scale()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_he_config_requirement"><code class="docutils literal notranslate"><span class="pre">HeContext.get_he_config_requirement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_hybrid_device_utilization"><code class="docutils literal notranslate"><span class="pre">HeContext.get_hybrid_device_utilization()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_library_name"><code class="docutils literal notranslate"><span class="pre">HeContext.get_library_name()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_modulus_chain"><code class="docutils literal notranslate"><span class="pre">HeContext.get_modulus_chain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_num_devices_of_type"><code class="docutils literal notranslate"><span class="pre">HeContext.get_num_devices_of_type()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_public_functions"><code class="docutils literal notranslate"><span class="pre">HeContext.get_public_functions()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_scheme_name"><code class="docutils literal notranslate"><span class="pre">HeContext.get_scheme_name()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeContext.get_security_level"><code class="docutils literal notranslate"><span class="pre">HeContext.get_security_level()</span></code></a></li>

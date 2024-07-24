@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Encoder &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>Encoder &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -807,7 +807,7 @@ doubles.</p>
 <li><p>encode(self: pyhelayers.Encoder, val: int, chain_index: int = -1) -&gt; pyhelayers.PTile</p>
 <blockquote>
 <div><p>Encodes the given integer into all slots of a PTile. This is
-Usually more effecient than regular encoding.</p>
+Usually more efficient than regular encoding.</p>
 <dl class="field-list simple">
 <dt class="field-odd">param val<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The value to encode.</p>
@@ -825,7 +825,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted PTile.</p>
+<dd class="field-odd"><p>The encrypted PTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>PTile</p>
@@ -836,7 +836,7 @@ ignored. Defaults to -1.</p>
 <li><p>encode(self: pyhelayers.Encoder, val: float, chain_index: int = -1) -&gt; pyhelayers.PTile</p>
 <blockquote>
 <div><p>Encodes the given double into all slots of a PTile. This is
-Usually more effecient than regular encoding.</p>
+Usually more efficient than regular encoding.</p>
 <dl class="field-list simple">
 <dt class="field-odd">param val<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The value to encode.</p>
@@ -854,10 +854,35 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted PTile.</p>
+<dd class="field-odd"><p>The encrypted PTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>PTile</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode(self: pyhelayers.Encoder, val: complex, chain_index: int = -1) -&gt; pyhelayers.PTile</p>
+<blockquote>
+<div><p>Encodes the given complex value into all slots of a PTile. This is
+Usually more effecient than regular encoding.
+:param val:         The value to encode.
+:type val:          complex
+:param chain_index: If the HeContext used to create this PTile is a</p>
+<blockquote>
+<div><p>CKKS context, specifies the chain index of the
+resulting PTile. Otherwise, this parameter is
+ignored. Defaults to -1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">type chainIndex<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encrpyted PTile.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PTile</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -886,7 +911,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted PTile.</p>
+<dd class="field-odd"><p>The encrypted PTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>numpy.array</p>
@@ -920,7 +945,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted PTile.</p>
+<dd class="field-odd"><p>The encrypted PTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>PTile</p>
@@ -954,7 +979,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted PTile.</p>
+<dd class="field-odd"><p>The encrypted PTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>PTile</p>
@@ -973,6 +998,78 @@ ignored. Defaults to -1.</p>
 <span class="sig-name descname"><span class="pre">encode_encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.Encoder.encode_encrypt" title="Permalink to this definition">#</a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic">
+<li><p>encode_encrypt(self: pyhelayers.Encoder, val: int, chain_index: int = -1) -&gt; pyhelayers.CTile</p>
+<blockquote>
+<div><p>Encodes and then encrypts the given int into all slots of a CTile.
+:param val: The value to encode and encrypt.
+:type val: int
+:param chain_index: If the HeContext used to create this CTile is a</p>
+<blockquote>
+<div><p>CKKS context, specifies the chain index of the
+resulting CTile. Otherwise, this parameter is
+ignored. Defaults to -1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">type chainIndex<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encrpyted CTile.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CTile</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode_encrypt(self: pyhelayers.Encoder, val: float, chain_index: int = -1) -&gt; pyhelayers.CTile</p>
+<blockquote>
+<div><p>Encodes and then encrypts the given float into all slots of a CTile.
+:param val: The value to encode and encrypt.
+:type val: float
+:param chain_index: If the HeContext used to create this CTile is a</p>
+<blockquote>
+<div><p>CKKS context, specifies the chain index of the
+resulting CTile. Otherwise, this parameter is
+ignored. Defaults to -1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">type chainIndex<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encrpyted CTile.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CTile</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode_encrypt(self: pyhelayers.Encoder, val: complex, chain_index: int = -1) -&gt; pyhelayers.CTile</p>
+<blockquote>
+<div><p>Encodes and then encrypts the given complex value into all slots of a CTile.
+:param val: The value to encode and encrypt.
+:type val: complex
+:param chain_index: If the HeContext used to create this CTile is a</p>
+<blockquote>
+<div><p>CKKS context, specifies the chain index of the
+resulting CTile. Otherwise, this parameter is
+ignored. Defaults to -1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">type chainIndex<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encrpyted CTile.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CTile</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
 <li><p>encode_encrypt(self: pyhelayers.Encoder, vals: List[int], chain_index: int = -1) -&gt; pyhelayers.CTile</p>
 <blockquote>
 <div><p>Encodes and then encrypts the given list of integers into a CTile.
@@ -997,7 +1094,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted CTile.</p>
+<dd class="field-odd"><p>The encrypted CTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>CTile</p>
@@ -1032,7 +1129,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted CTile.</p>
+<dd class="field-odd"><p>The encrypted CTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>CTile</p>
@@ -1067,7 +1164,7 @@ ignored. Defaults to -1.</p>
 <dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The encrpyted CTile.</p>
+<dd class="field-odd"><p>The encrypted CTile.</p>
 </dd>
 <dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>CTile</p>
@@ -1119,12 +1216,12 @@ added noise.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.Encoder.get_default_device">
-<span class="sig-name descname"><span class="pre">get_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Encoder" title="pyhelayers.Encoder"><span class="pre">pyhelayers.Encoder</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyhelayers.DeviceType</span></span></span><a class="headerlink" href="#pyhelayers.Encoder.get_default_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Encoder" title="pyhelayers.Encoder"><span class="pre">pyhelayers.Encoder</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.DeviceType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.Encoder.get_default_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the default device of the ciphertexts and plaintexts generated
 using this HeContext.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>DeviceType</p>
+<dd class="field-odd"><p>DeviceType, int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1137,7 +1234,7 @@ If no default was previously set, return the default scale define by the
 HeContext object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>chain_index</strong> – The chain index, may affect the sacle used by the
+<dd class="field-odd"><p><strong>chain_index</strong> – The chain index, may affect the scale used by the
 scheme’s default if no other default scale was set.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1152,7 +1249,7 @@ scheme’s default if no other default scale was set.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.Encoder.print_error_stats">
 <span class="sig-name descname"><span class="pre">print_error_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Encoder" title="pyhelayers.Encoder"><span class="pre">pyhelayers.Encoder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.Encoder.print_error_stats" title="Permalink to this definition">#</a></dt>
-<dd><p>Prints statstical information relating to the difference between “actual_c”
+<dd><p>Prints statistical information relating to the difference between “actual_c”
 and “expected_z”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1208,12 +1305,15 @@ added noise.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.Encoder.set_default_device">
-<span class="sig-name descname"><span class="pre">set_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Encoder" title="pyhelayers.Encoder"><span class="pre">pyhelayers.Encoder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.Encoder.set_default_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Encoder" title="pyhelayers.Encoder"><span class="pre">pyhelayers.Encoder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.DeviceType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.Encoder.set_default_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the default device of the ciphertexts and plaintexts generated using
 this HeContext.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – the new default device</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – the new default device type.</p></li>
+<li><p><strong>device_id</strong> – the new default device ID.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1270,19 +1370,22 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7Encoder16setDefaultDeviceE10DeviceType">
-<span id="_CPPv3N8helayers7Encoder16setDefaultDeviceE10DeviceType"></span><span id="_CPPv2N8helayers7Encoder16setDefaultDeviceE10DeviceType"></span><span id="helayers::Encoder::setDefaultDevice__DeviceType"></span><span class="target" id="classhelayers_1_1Encoder_1a320802a17aaa99e8761e9bd1f76fcef3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7Encoder16setDefaultDeviceE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7Encoder16setDefaultDeviceE10DeviceTypei">
+<span id="_CPPv3N8helayers7Encoder16setDefaultDeviceE10DeviceTypei"></span><span id="_CPPv2N8helayers7Encoder16setDefaultDeviceE10DeviceTypei"></span><span id="helayers::Encoder::setDefaultDevice__DeviceType.i"></span><span class="target" id="classhelayers_1_1Encoder_1a0a645a8f852fe5183b6d4bc026a2d0c0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7Encoder16setDefaultDeviceE10DeviceTypei" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the default device of ciphertext or plaintexts that are encrypted or encoded using this <a class="reference internal" href="#classhelayers_1_1Encoder"><span class="std std-ref">Encoder</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – <strong>[in]</strong> The new default device. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – <strong>[in]</strong> The device type. </p></li>
+<li><p><strong>deviceId</strong> – <strong>[in]</strong> The device ID. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder16getDefaultDeviceEv">
-<span id="_CPPv3NK8helayers7Encoder16getDefaultDeviceEv"></span><span id="_CPPv2NK8helayers7Encoder16getDefaultDeviceEv"></span><span id="helayers::Encoder::getDefaultDeviceC"></span><span class="target" id="classhelayers_1_1Encoder_1a18d2e6b630bbd811169006f4381ce650"></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder16getDefaultDeviceEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers7Encoder16getDefaultDeviceEv"></span><span id="_CPPv2NK8helayers7Encoder16getDefaultDeviceEv"></span><span id="helayers::Encoder::getDefaultDeviceC"></span><span class="target" id="classhelayers_1_1Encoder_1a2bf3c7dbb689754ff11be1717ae04d37"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder16getDefaultDeviceEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the default device used by the encoder as set by setDefaultDevice. </p>
 <p>If no default was previously set, returns the default scale defined by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> object. </p>
 </dd></dl>
@@ -1306,7 +1409,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <p>If no default was previously set, returns the default scale defined by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>chainIndex</strong> – <strong>[in]</strong> The chain index, may affect the sacle used by the scheme’s default if no other default scale was set. </p>
+<dd class="field-odd"><p><strong>chainIndex</strong> – <strong>[in]</strong> The chain index, may affect the scale used by the scheme’s default if no other default scale was set. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1396,10 +1499,25 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt7complexIdEEi">
+<span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRKNSt7complexIdEEi"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRKNSt7complexIdEEi"></span><span id="helayers::Encoder::encode__PTileR.std::complex:double:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a171258e0a4c54af117b8bb9b13b09a90"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt7complexIdEEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encodes the given complex into all slots of a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – The encoded <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p></li>
+<li><p><strong>val</strong> – The value to encode. </p></li>
+<li><p><strong>chainIndex</strong> – If <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is a CKKS context, specifies the chainIndex of the resulting <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. otherwise, this parameter is ignored. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIiEEi">
 <span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIiEEi"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIiEEi"></span><span id="helayers::Encoder::encode__PTileR.std::vector:i:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a79a31e2e68010bac3b14010556d993b6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIiEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes the given vector of integers into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
-<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1418,7 +1536,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIlEEi">
 <span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIlEEi"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIlEEi"></span><span id="helayers::Encoder::encode__PTileR.std::vector:l:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1af94184dd71954c098ad1b2182bef33a0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIlEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes the given vector of longs into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
-<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1437,7 +1555,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIdEEi">
 <span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIdEEi"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIdEEi"></span><span id="helayers::Encoder::encode__PTileR.std::vector:double:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1af19c90c02b0db74510c3927972ee6d19"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorIdEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes the given vector of doubles into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
-<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1456,7 +1574,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorINSt7complexIdEEEEi">
 <span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRKNSt6vectorINSt7complexIdEEEEi"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRKNSt6vectorINSt7complexIdEEEEi"></span><span id="helayers::Encoder::encode__PTileR.std::vector:std::complex:double::CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a53d3f9cd63c01e7e14dc2b0c52023d7a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRKNSt6vectorINSt7complexIdEEEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes the given vector of complex numbers into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
-<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>If the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1467,6 +1585,21 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if vals.size() &gt; slot count </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder6encodeER5PTileRK5MTilei">
+<span id="_CPPv3NK8helayers7Encoder6encodeER5PTileRK5MTilei"></span><span id="_CPPv2NK8helayers7Encoder6encodeER5PTileRK5MTilei"></span><span id="helayers::Encoder::encode__PTileR.MTileCR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a69c87d0aee0da78e499e00566d5f549f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">MTile</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder6encodeER5PTileRK5MTilei" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encodes the given MTile into a <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – The encoded <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a></p></li>
+<li><p><strong>m</strong> – The MTile to encode. </p></li>
+<li><p><strong>chainIndex</strong> – If <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is a CKKS context, specifies the chainIndex of the resulting <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. otherwise, this parameter is ignored. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1567,7 +1700,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>res</strong> – <strong>[out]</strong> The encoded <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a></p></li>
+<li><p><strong>res</strong> – <strong>[out]</strong> The encoded <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a></p></li>
 <li><p><strong>val</strong> – <strong>[in]</strong> The value to encode </p></li>
 <li><p><strong>chainIndex</strong> – <strong>[in]</strong> If <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is a CKKS context, specifies the chainIndex of the resulting <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. otherwise, this parameter is ignored. </p></li>
 </ul>
@@ -1582,9 +1715,24 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>res</strong> – <strong>[out]</strong> The encoded <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a></p></li>
+<li><p><strong>res</strong> – <strong>[out]</strong> The encoded <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a></p></li>
 <li><p><strong>val</strong> – <strong>[in]</strong> The value to encode </p></li>
 <li><p><strong>chainIndex</strong> – <strong>[in]</strong> If <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is a CKKS context, specifies the chainIndex of the resulting <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. otherwise, this parameter is ignored. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt7complexIdEEi">
+<span id="_CPPv3NK8helayers7Encoder13encodeEncryptER5CTileRKNSt7complexIdEEi"></span><span id="_CPPv2NK8helayers7Encoder13encodeEncryptER5CTileRKNSt7complexIdEEi"></span><span id="helayers::Encoder::encodeEncrypt__CTileR.std::complex:double:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a9ff31bfb392bde1fb4b9d679f52975c4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt7complexIdEEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encodes and then encrypts the given complex value into all slots of a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – The encoded <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+<li><p><strong>val</strong> – The value to encode and encrypt. </p></li>
+<li><p><strong>chainIndex</strong> – If <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is a CKKS context, specifies the chainIndex of the resulting <a class="reference internal" href="PTile.html#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. otherwise, this parameter is ignored. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1594,7 +1742,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIiEEi">
 <span id="_CPPv3NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIiEEi"></span><span id="_CPPv2NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIiEEi"></span><span id="helayers::Encoder::encodeEncrypt__CTileR.std::vector:i:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a61da963c7f7fe8173eb24ac23cba0cee"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIiEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes and then encrypts the given vector into a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p>
-<p>if the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>if the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1613,7 +1761,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIlEEi">
 <span id="_CPPv3NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIlEEi"></span><span id="_CPPv2NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIlEEi"></span><span id="helayers::Encoder::encodeEncrypt__CTileR.std::vector:l:CR.iC"></span><span class="target" id="classhelayers_1_1Encoder_1a2d698a37c809d6a53fedd9c4202fb186"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">chainIndex</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder13encodeEncryptER5CTileRKNSt6vectorIlEEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encodes and then encrypts the given vector into a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p>
-<p>if the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a untime_error will be thrown. </p>
+<p>if the size of the given vector is less than slot count, the empty slots of the <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> will be set to zero. If the size of the given vector is more than slot count, a runtime_error will be thrown. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1672,7 +1820,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder16decryptDecodeIntERK5CTile">
 <span id="_CPPv3NK8helayers7Encoder16decryptDecodeIntERK5CTile"></span><span id="_CPPv2NK8helayers7Encoder16decryptDecodeIntERK5CTile"></span><span id="helayers::Encoder::decryptDecodeInt__CTileCRC"></span><span class="target" id="classhelayers_1_1Encoder_1a4541273a42103f48d586382cdef27255"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decryptDecodeInt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder16decryptDecodeIntERK5CTile" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Decodes and then decryots the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of ints. </p>
+<dd><p>Decodes and then decrypts the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of ints. </p>
 <p>If the underlying FHE scheme is a scheme that supports floating point values, then “src” is first decrypted into a vector of doubles and then rounded to the nearest integers. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1684,7 +1832,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder17decryptDecodeLongERK5CTile">
 <span id="_CPPv3NK8helayers7Encoder17decryptDecodeLongERK5CTile"></span><span id="_CPPv2NK8helayers7Encoder17decryptDecodeLongERK5CTile"></span><span id="helayers::Encoder::decryptDecodeLong__CTileCRC"></span><span class="target" id="classhelayers_1_1Encoder_1a0c9ab2066d74be95fec60118ee1c915c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decryptDecodeLong</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder17decryptDecodeLongERK5CTile" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Decodes and then decryots the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of ints. </p>
+<dd><p>Decodes and then decrypts the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of ints. </p>
 <p>If the underlying FHE scheme is a scheme that supports floating point values, then “src” is first decrypted into a vector of doubles and then rounded to the nearest integers. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1696,7 +1844,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder19decryptDecodeDoubleERK5CTile">
 <span id="_CPPv3NK8helayers7Encoder19decryptDecodeDoubleERK5CTile"></span><span id="_CPPv2NK8helayers7Encoder19decryptDecodeDoubleERK5CTile"></span><span id="helayers::Encoder::decryptDecodeDouble__CTileCRC"></span><span class="target" id="classhelayers_1_1Encoder_1ad56afd4efb287fa66bb0e225ce7130c2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decryptDecodeDouble</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder19decryptDecodeDoubleERK5CTile" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Decodes and then decryots the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of doubles. </p>
+<dd><p>Decodes and then decrypts the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of doubles. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>src</strong> – <strong>[in]</strong> The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> to decode and decrypt. </p>
@@ -1719,7 +1867,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder20decryptDecodeComplexERK5CTile">
 <span id="_CPPv3NK8helayers7Encoder20decryptDecodeComplexERK5CTile"></span><span id="_CPPv2NK8helayers7Encoder20decryptDecodeComplexERK5CTile"></span><span id="helayers::Encoder::decryptDecodeComplex__CTileCRC"></span><span class="target" id="classhelayers_1_1Encoder_1a65d8e47d7f688af17af56dff1701d178"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decryptDecodeComplex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder20decryptDecodeComplexERK5CTile" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Decodes and then decryots the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of complex&lt;double&gt;. </p>
+<dd><p>Decodes and then decrypts the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> into a vector of complex&lt;double&gt;. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>src</strong> – <strong>[in]</strong> The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> to decode and decrypt. </p>
@@ -1730,7 +1878,7 @@ setDefaultScale sets the scale that the encoder will use henceforth.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7Encoder15printErrorStatsER5CTileNSt6vectorIdEERNSt7ostreamEb">
 <span id="_CPPv3NK8helayers7Encoder15printErrorStatsER5CTileNSt6vectorIdEERNSt7ostreamEb"></span><span id="_CPPv2NK8helayers7Encoder15printErrorStatsER5CTileNSt6vectorIdEERNSt7ostreamEb"></span><span id="helayers::Encoder::printErrorStats__CTileR.std::vector:double:.osR.bC"></span><span class="target" id="classhelayers_1_1Encoder_1a49a0cd3e83d9bbb54f3afdcdd3f585fb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printErrorStats</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">actualC</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">expectedZ</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">asCsv</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7Encoder15printErrorStatsER5CTileNSt6vectorIdEERNSt7ostreamEb" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Prints statstical information relating to the difference between “actualC” and “expectedZ”. </p>
+<dd><p>Prints statistical information relating to the difference between “actualC” and “expectedZ”. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

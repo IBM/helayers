@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>KMS implementations &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>KMS implementations &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -305,6 +305,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="overview.html">HElayers Overview</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="onnx.html">ONNX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile_tensors.html">Tile tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="fhe_overview.html">FHE overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -383,7 +384,7 @@ document.write(`
 <li><p><strong>In software under some Trusted Execution Environemnt (TEE)</strong> such as <a class="reference external" href="https://www.ibm.com/cloud/hyper-protect-virtual-servers">IBM Hyper Protect Virtual Server (HPVS)</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html">Intel SGX</a>, where we primarily need to trust just the hardware.</p></li>
 <li><p><strong>In hardware</strong>, e.g., by using an HSM such as <a class="reference external" href="https://www.ibm.com/products/pcie-cryptographic-coprocessor">IBM Systems cryptographic HSMs</a>, which often offers the highest security guarantees.</p></li>
 </ul>
-<p>Specifically, for FHE, no off-the-shelf HSM solutions exist, mostly because of the large size of the different keys and the huge amoutn of traffic they need to handle. Today, HE-based KMS solutions should have combined HW+SW solutions. Below we describe one such solution.</p>
+<p>Specifically, for FHE, no off-the-shelf HSM solutions exist, mostly because of the large size of the different keys and the huge amount of traffic they need to handle. Today, HE-based KMS solutions should have combined HW+SW solutions. Below we describe one such solution.</p>
 <div class="warning admonition">
 <p class="admonition-title">Commercial application should rely on KMS standards</p>
 <p>Commercial applications should be assisted with security and cryptography experts before using the following examples.</p>
@@ -407,7 +408,7 @@ general recommendations, they do not necessarily capture issues and concerns tha
 <ul class="simple">
 <li><p>A user always starts by submitting a registration command that transparently goes to the HKMS.</p></li>
 <li><p>The HKMS generates the keys, which it can store locally in plaintext or encrypted at some external storage location.</p></li>
-<li><p>The user can then upload secret data or code, encode it using some HE compiler, e.g., HELayers, and encrypt it using the KMS.</p></li>
+<li><p>The user can then upload secret data or code, encode it using some HE compiler, e.g., HElayers, and encrypt it using the KMS.</p></li>
 <li><p>After encryption, the data can be stored at some storage location or delivered directly to the HE evaluation unit.</p></li>
 <li><p>In addition, the user can provide public input directly to the HE evaluation unit, such as the desired model parameters or architecture.</p></li>
 <li><p>Finally, the results are either stored or moved to the KMS for decryption.</p></li>

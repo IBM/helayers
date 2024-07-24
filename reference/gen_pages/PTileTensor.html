@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PTileTensor &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>PTileTensor &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -538,7 +538,7 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PTileTensor</span></span><a class="headerlink" href="#pyhelayers.PTileTensor" title="Permalink to this definition">#</a></dt>
 <dd><p>A plaintext tile tensor.
 A tile tensor is an data structure for storing tensors
-(multipy dimensional arrays, e.g., vectors, matrices, or higher dimensional
+(multiply dimensional arrays, e.g., vectors, matrices, or higher dimensional
 arrays)
 in a set of fixed size tiles, in this case plaintexts.</p>
 <dl class="py method">
@@ -636,7 +636,7 @@ PTile.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensorE">
 <span id="_CPPv3N8helayers11PTileTensorE"></span><span id="_CPPv2N8helayers11PTileTensorE"></span><span id="helayers::PTileTensor"></span><span class="target" id="classhelayers_1_1PTileTensor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PTileTensor</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">TileTensor</span></span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensorE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>An encoded tile tensor. </p>
-<p>A tile tensor is a data structure for storing tensors (multipy dimensional arrays, e.g., vectors, matrices, or higher dimensional arrays) in a set of fixed size tiles, in this case PTile-s (encoded data). </p>
+<p>A tile tensor is a data structure for storing tensors (multiply dimensional arrays, e.g., vectors, matrices, or higher dimensional arrays) in a set of fixed size tiles, in this case PTile-s (encoded data). </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp type">
@@ -723,7 +723,25 @@ PTile.</p>
 <dd><p>Returns the i’th tile in a flattened order according to the first-order convention. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>i</strong> – Index of tile </p>
+<dd class="field-odd"><p><strong>ind</strong> – Index of tile </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11PTileTensor22getTileByFlatIndexLazyE6DimIntRKNSt6vectorIiEE">
+<span id="_CPPv3NK8helayers11PTileTensor22getTileByFlatIndexLazyE6DimIntRKNSt6vectorIiEE"></span><span id="_CPPv2NK8helayers11PTileTensor22getTileByFlatIndexLazyE6DimIntRKNSt6vectorIiEE"></span><span id="helayers::PTileTensor::getTileByFlatIndexLazy__DimInt.std::vector:i:CRC"></span><span class="target" id="classhelayers_1_1PTileTensor_1a6657c1e5d508ceb36ef865d457aed684"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTileByFlatIndexLazy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ind</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mask</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11PTileTensor22getTileByFlatIndexLazyE6DimIntRKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a single tile of this tile tensor. </p>
+<p>This method is only applicable in the below two cases: (1) if isSleeping() is true, and the lazy mode is LAZY_ENCODING, i.e., a lazy-encoded tile tensor not being in a packed state. (2) if isSleeping() is false, and lazyGpu mode is enabled. In this case, the tile will be moved to the GPU. For both cases 1 and 2 above, the returned tile is a pointer that should be deleted by the caller. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flatIndex</strong> – Flat index of tile. </p></li>
+<li><p><strong>mask</strong> – Optional mask to multiply tile with. Default: none (empty). Not applicable for case (2) above. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A caller-owned pointer to tile. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -943,7 +961,7 @@ PTile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dim</strong> – The dimension to slice along. Specifying negative value will count from the last dim backwards (-1 for the last dim, -2 for the previoud one etc.). </p></li>
+<li><p><strong>dim</strong> – The dimension to slice along. Specifying negative value will count from the last dim backwards (-1 for the last dim, -2 for the previous one etc.). </p></li>
 <li><p><strong>startIndex</strong> – The index to start slicing at along the dimension </p></li>
 <li><p><strong>sliceDepth</strong> – The depth/size of the slice along the dimension </p></li>
 </ul>
@@ -976,19 +994,24 @@ PTile.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers11PTileTensor12getContextIdEv">
 <span id="_CPPv3NK8helayers11PTileTensor12getContextIdEv"></span><span id="_CPPv2NK8helayers11PTileTensor12getContextIdEv"></span><span id="helayers::PTileTensor::getContextIdC"></span><span class="target" id="classhelayers_1_1PTileTensor_1a8db9e232ccbfdd54bf911fb4855d0154"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getContextId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11PTileTensor12getContextIdEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the contextId of the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> this object was initialized with. </p>
-<p>This contextId can be used, for example, to verify heContext match when loading a saved Saveable object. </p>
+<p>This contextId can be used, for example, to verify <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> match when loading a saved Saveable object. Returning -1 signals no <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor5sleepEv">
-<span id="_CPPv3N8helayers11PTileTensor5sleepEv"></span><span id="_CPPv2N8helayers11PTileTensor5sleepEv"></span><span id="helayers::PTileTensor::sleep"></span><span class="target" id="classhelayers_1_1PTileTensor_1a4d0755cef7997e2953cb7bed883d5894"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sleep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor5sleepEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>If Ptiles, if lazyMode is LAZY_ENCODING, clear all the tiles. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor5sleepEb">
+<span id="_CPPv3N8helayers11PTileTensor5sleepEb"></span><span id="_CPPv2N8helayers11PTileTensor5sleepEb"></span><span id="helayers::PTileTensor::sleep__b"></span><span class="target" id="classhelayers_1_1PTileTensor_1abe257e5c33104325e989e6fb3a818698"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sleep</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">shouldSaveToFile</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor5sleepEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Clears data if lazyMode is LAZY_ENCODING or LAZY_LOADING, also saves data to disk if lazyMode is LAZY_LOADING and shouldSaveToFile flag is true, and does nothing otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shouldSaveToFile</strong> – Whether to also save data to disk if lazyMode is LAZY_LOADING. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor6wakeupEv">
 <span id="_CPPv3N8helayers11PTileTensor6wakeupEv"></span><span id="_CPPv2N8helayers11PTileTensor6wakeupEv"></span><span id="helayers::PTileTensor::wakeup"></span><span class="target" id="classhelayers_1_1PTileTensor_1adda91860e135e783af81a9ca3cb7bd1c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wakeup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor6wakeupEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>If Ptiles, encodes data if lazyMode is LAZY_ENCODING, and does nothing else. </p>
+<dd><p>Encodes data if lazyMode is LAZY_ENCODING, loads data if lazyMode is LAZY_LOADING, and does nothing otherwise. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -997,15 +1020,14 @@ PTile.</p>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor17setLazyChainIndexEi">
-<span id="_CPPv3N8helayers11PTileTensor17setLazyChainIndexEi"></span><span id="_CPPv2N8helayers11PTileTensor17setLazyChainIndexEi"></span><span id="helayers::PTileTensor::setLazyChainIndex__i"></span><span class="target" id="classhelayers_1_1PTileTensor_1af898b24195d5159c5475b11ef6eeea65"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLazyChainIndex</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newChainIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor17setLazyChainIndexEi" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor12clearRawDataEv">
+<span id="_CPPv3N8helayers11PTileTensor12clearRawDataEv"></span><span id="_CPPv2N8helayers11PTileTensor12clearRawDataEv"></span><span id="helayers::PTileTensor::clearRawData"></span><span class="target" id="classhelayers_1_1PTileTensor_1adb593f8502209c67a036b9cf2f111b04"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearRawData</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor12clearRawDataEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11PTileTensor15getNumUsedTilesEv">
-<span id="_CPPv3NK8helayers11PTileTensor15getNumUsedTilesEv"></span><span id="_CPPv2NK8helayers11PTileTensor15getNumUsedTilesEv"></span><span id="helayers::PTileTensor::getNumUsedTilesC"></span><span class="target" id="classhelayers_1_1PTileTensor_1abc30bcf5535b5daf7d17a0916e2cebac"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumUsedTiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11PTileTensor15getNumUsedTilesEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the number of tiles this tile tensor uses. </p>
-</dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor17setRawDataComplexERK13ComplexTensor">
+<span id="_CPPv3N8helayers11PTileTensor17setRawDataComplexERK13ComplexTensor"></span><span id="_CPPv2N8helayers11PTileTensor17setRawDataComplexERK13ComplexTensor"></span><span id="helayers::PTileTensor::setRawDataComplex__ComplexTensorCR"></span><span class="target" id="classhelayers_1_1PTileTensor_1aee3a40d021b177b5ca7c68ccca52afcd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRawDataComplex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ComplexTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newRawData</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor17setRawDataComplexERK13ComplexTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers11PTileTensor12getHeContextEv">
@@ -1023,10 +1045,11 @@ PTile.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor21createFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE">
-<span id="_CPPv3N8helayers11PTileTensor21createFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE"></span><span id="_CPPv2N8helayers11PTileTensor21createFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE"></span><span id="helayers::PTileTensor::createFromPTileVector__HeContextCR.TTShapeCR.std::vector:PTile:CR"></span><span class="target" id="classhelayers_1_1PTileTensor_1a7a617d7d3ab74703c1307e6804b4d09d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11PTileTensorE" title="helayers::PTileTensor"><span class="n"><span class="pre">PTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createFromPTileVector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tilesVec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor21createFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11PTileTensor29internalCreateFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE">
+<span id="_CPPv3N8helayers11PTileTensor29internalCreateFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE"></span><span id="_CPPv2N8helayers11PTileTensor29internalCreateFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE"></span><span id="helayers::PTileTensor::internalCreateFromPTileVector__HeContextCR.TTShapeCR.std::vector:PTile:CR"></span><span class="target" id="classhelayers_1_1PTileTensor_1ad2994618debdfeb47e830fd6c98e49b0"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11PTileTensorE" title="helayers::PTileTensor"><span class="n"><span class="pre">PTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalCreateFromPTileVector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="PTile.html#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tilesVec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11PTileTensor29internalCreateFromPTileVectorERK9HeContextRK7TTShapeRKNSt6vectorI5PTileEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Creates a <a class="reference internal" href="#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a> from the given vector of PTiles. </p>
-<p>“tilesVec” vector is expected to have a first-order orientation. The created <a class="reference internal" href="#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a> will have the given shape, which is assumed to be complete (i.e. with all original sizes set), not to contain any duplicated dims and to have all unused slots unknown.</p>
+<p>This method is for implementing operators that modify <a class="reference internal" href="#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a> objects, and requires careful testing. Use <a class="reference internal" href="#classhelayers_1_1PTileTensor_1ae229311c53e79c066ca86f3af0e5565a"><span class="std std-ref">assertIntegrity()</span></a> in tests to make sure the result is in a consistent state.</p>
+<p>“tilesVec” vector is expected to have a first-order orientation. The created <a class="reference internal" href="#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a> will have the given shape, which is assumed to be complete (i.e. with all original sizes set).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

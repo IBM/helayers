@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeConfigRequirement &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>HeConfigRequirement &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -540,7 +540,7 @@ security_level, integerPartPrecision).</p>
 resulting from executing a chain index consuming operation on a ciphertext
 with too small chain index. The logic for deciding the bootstrapping
 points is scheme and library specific. But, in general, the bootstrappings
-are delyed as much as possible. This flag can only be set to true if this
+are delayed as much as possible. This flag can only be set to true if this
 HeContext supports bootstrapping.</p>
 </dd></dl>
 
@@ -548,8 +548,8 @@ HeContext supports bootstrapping.</p>
 <dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.bootstrappable">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrappable</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.bootstrappable" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether CTiles created by the HeContext will be bootstrappable. Setting
-this flag to true will lead to the creation of a BootsrapEvaluator object
-upon the initialization of the HeContext. Note that this BootstrapEvalutor
+this flag to true will lead to the creation of a BootstrapEvaluator object
+upon the initialization of the HeContext. Note that this BootstrapEvaluator
 creation increases the runtime of the initialization.</p>
 </dd></dl>
 
@@ -611,7 +611,7 @@ creation increases the runtime of the initialization.</p>
 <dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.public_functions">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">public_functions</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.public_functions" title="Permalink to this definition">#</a></dt>
 <dd><p>This member specifies which functionalities will be supported by the
-public keys of the HeContex</p>
+public keys of the HeContext</p>
 </dd></dl>
 
 <dl class="py property">
@@ -820,7 +820,7 @@ public keys of the HeContex</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement14bootstrappableE">
 <span id="_CPPv3N8helayers19HeConfigRequirement14bootstrappableE"></span><span id="_CPPv2N8helayers19HeConfigRequirement14bootstrappableE"></span><span id="helayers::HeConfigRequirement::bootstrappable__b"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a718aae5de1f7a7c2755cee7bcc99ba3a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrappable</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement14bootstrappableE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Whether <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> objects (ciphrtexts) created by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> will be bootstrappable. </p>
+<dd><p>Whether <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> objects (ciphertexts) created by the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> will be bootstrappable. </p>
 <p>Setting this flag to true will allow performing computation of arbitrary multiplication depth. Note that this feature is not supported yet by all underlying back-end libraries, or not yet integrated with HElayers for all underlying back-ends. </p>
 </dd></dl>
 
@@ -829,6 +829,26 @@ public keys of the HeContex</p>
 <span id="_CPPv3N8helayers19HeConfigRequirement22automaticBootstrappingE"></span><span id="_CPPv2N8helayers19HeConfigRequirement22automaticBootstrappingE"></span><span id="helayers::HeConfigRequirement::automaticBootstrapping__b"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a2fc7999de6ff4fb2638f51301ec8c9ae"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">automaticBootstrapping</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement22automaticBootstrappingE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Whether bootstrapping is applied automatically to prevent runtime errors resulting from executing a chain index consuming operation on a ciphertext with too small chain index. </p>
 <p>The logic for deciding the bootstrapping points is scheme and library specific. But, in general, the bootstrappings are delayed as much as possible. This flag can only be set to true if this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> supports bootstrapping. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement17defaultDeviceTypeE">
+<span id="_CPPv3N8helayers19HeConfigRequirement17defaultDeviceTypeE"></span><span id="_CPPv2N8helayers19HeConfigRequirement17defaultDeviceTypeE"></span><span id="helayers::HeConfigRequirement::defaultDeviceType__DeviceType"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a1f3a334e40e30e4d93d3088c7db65db6"></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">defaultDeviceType</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DEVICE_CPU</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement17defaultDeviceTypeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The default device type of the ciphertexts and plaintexts that will be generated using the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement15defaultDeviceIdE">
+<span id="_CPPv3N8helayers19HeConfigRequirement15defaultDeviceIdE"></span><span id="_CPPv2N8helayers19HeConfigRequirement15defaultDeviceIdE"></span><span id="helayers::HeConfigRequirement::defaultDeviceId__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a5388dd7fcfa21b4829694192f104200b"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">defaultDeviceId</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement15defaultDeviceIdE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The default device ID of the ciphertexts and plaintexts that will be generated using the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+<p>Relevant only when defaultDeviceType is DEVICE_GPU. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement23hybridDeviceUtilizationE">
+<span id="_CPPv3N8helayers19HeConfigRequirement23hybridDeviceUtilizationE"></span><span id="_CPPv2N8helayers19HeConfigRequirement23hybridDeviceUtilizationE"></span><span id="helayers::HeConfigRequirement::hybridDeviceUtilization__b"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1ad8df9131ead468753869fa039da3e57e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hybridDeviceUtilization</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement23hybridDeviceUtilizationE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Policy of hybrid utilization of devices of different types. </p>
+<p>Such policy is only applicable for DEVICE_CPU as the default device type. In such policy, the GPU may be utilized alongside CPU for parts of the computation (e.g., for performing bootstraps). </p>
 </dd></dl>
 
 <dl class="cpp var">

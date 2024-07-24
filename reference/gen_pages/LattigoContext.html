@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>LattigoContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>LattigoContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -682,7 +682,7 @@ requirement.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1LattigoContext_1afcb1e1cb0537e2c032b6f60f95f28260"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1LattigoContext_1afcb1e1cb0537e2c032b6f60f95f28260"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -777,7 +777,7 @@ requirement.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14LattigoContext19getMaxAllowedValuesEv">
 <span id="_CPPv3NK8helayers14LattigoContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers14LattigoContext19getMaxAllowedValuesEv"></span><span id="helayers::LattigoContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1LattigoContext_1a65902090d9cfe740631cbfe171d4d634"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14LattigoContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the maximal absolute value allowed for each chain index. </p>
-<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+<p>Values lower than the threshold are guaranteed to not produce overflows. The value in position i corresponds to the limit for chain index i. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -841,9 +841,20 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14LattigoContext15isRotationExistEi">
+<span id="_CPPv3NK8helayers14LattigoContext15isRotationExistEi"></span><span id="_CPPv2NK8helayers14LattigoContext15isRotationExistEi"></span><span id="helayers::LattigoContext::isRotationExist__iC"></span><span class="target" id="classhelayers_1_1LattigoContext_1a12cd08f6154418ff7739c74fcb854462"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRotationExist</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rotateStep</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14LattigoContext15isRotationExistEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether there exists a rotation key for the given rotation step. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rotateStep</strong> – The rotation step. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14LattigoContext22getBootstrapParametersEv">
 <span id="_CPPv3NK8helayers14LattigoContext22getBootstrapParametersEv"></span><span id="_CPPv2NK8helayers14LattigoContext22getBootstrapParametersEv"></span><span id="helayers::LattigoContext::getBootstrapParametersC"></span><span class="target" id="classhelayers_1_1LattigoContext_1ad222a4e2c527e936afb31c1213583771"></span><span class="n"><span class="pre">latticpp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">BootstrappingParameters</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBootstrapParameters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers14LattigoContext22getBootstrapParametersEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the scheme’s bootstrappoing preset parameters. </p>
+<dd><p>Returns the scheme’s bootstrapping preset parameters. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -867,7 +878,13 @@ requirement.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14LattigoContext19getBootstrappingKeyEv">
 <span id="_CPPv3NK8helayers14LattigoContext19getBootstrappingKeyEv"></span><span id="_CPPv2NK8helayers14LattigoContext19getBootstrappingKeyEv"></span><span id="helayers::LattigoContext::getBootstrappingKeyC"></span><span class="target" id="classhelayers_1_1LattigoContext_1aa6917a350207586f10682c8a35cb4b38"></span><span class="n"><span class="pre">latticpp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">BootstrappingKey</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBootstrappingKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers14LattigoContext19getBootstrappingKeyEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the schme bootstraping keys. </p>
+<dd><p>Returns the scheme’s bootstrapping keys. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14LattigoContext30genRotKeysFromHierarchicalKeysEv">
+<span id="_CPPv3N8helayers14LattigoContext30genRotKeysFromHierarchicalKeysEv"></span><span id="_CPPv2N8helayers14LattigoContext30genRotKeysFromHierarchicalKeysEv"></span><span id="helayers::LattigoContext::genRotKeysFromHierarchicalKeys"></span><span class="target" id="classhelayers_1_1LattigoContext_1ae556e8a307929227b22b0fe052d0df6b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genRotKeysFromHierarchicalKeys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers14LattigoContext30genRotKeysFromHierarchicalKeysEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>generate rotation keys from the hierarchical keys </p>
 </dd></dl>
 
 </div>

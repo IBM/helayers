@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>EmptyContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>EmptyContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -657,7 +657,7 @@ document.write(`
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1EmptyContext_1a2c5e1bc83a6476912cec457732548882"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1EmptyContext_1a2c5e1bc83a6476912cec457732548882"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -686,23 +686,6 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12EmptyContext27isConfigRequirementFeasibleERK19HeConfigRequirement">
 <span id="_CPPv3NK8helayers12EmptyContext27isConfigRequirementFeasibleERK19HeConfigRequirement"></span><span id="_CPPv2NK8helayers12EmptyContext27isConfigRequirementFeasibleERK19HeConfigRequirement"></span><span id="helayers::EmptyContext::isConfigRequirementFeasible__HeConfigRequirementCRC"></span><span class="target" id="classhelayers_1_1EmptyContext_1a23480ee181bac5b53cf79c2329c11124"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isConfigRequirementFeasible</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12EmptyContext27isConfigRequirementFeasibleERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Internal use. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12EmptyContext20setEstimatedMeasuresERKNSt3mapINSt6stringE7int64_tEE">
-<span id="_CPPv3N8helayers12EmptyContext20setEstimatedMeasuresERKNSt3mapINSt6stringE7int64_tEE"></span><span id="_CPPv2N8helayers12EmptyContext20setEstimatedMeasuresERKNSt3mapINSt6stringE7int64_tEE"></span><span id="helayers::EmptyContext::setEstimatedMeasures__std::map:ss.int64_t:CR"></span><span class="target" id="classhelayers_1_1EmptyContext_1a101a6c0e1c527634cb70393ed040ae9e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEstimatedMeasures</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">int64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">estimatedMeasures</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12EmptyContext20setEstimatedMeasuresERKNSt3mapINSt6stringE7int64_tEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Store estimated measures with respect to the times of various HE operations. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>estimatedMeasures</strong> – a map with the estimated measures </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12EmptyContext20getEstimatedMeasuresEv">
-<span id="_CPPv3NK8helayers12EmptyContext20getEstimatedMeasuresEv"></span><span id="_CPPv2NK8helayers12EmptyContext20getEstimatedMeasuresEv"></span><span id="helayers::EmptyContext::getEstimatedMeasuresC"></span><span class="target" id="classhelayers_1_1EmptyContext_1a815c2106ea041808e49c3601d1e715cd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">int64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEstimatedMeasures</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12EmptyContext20getEstimatedMeasuresEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>For internal use. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -753,7 +736,7 @@ document.write(`
 <p>Chain indexes equal or lower than this limit will cause the “abort” flag of this context to be turned on.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>chainIndexOffset</strong> – The desired chain index offset. </p>
+<dd class="field-odd"><p><strong>chainIndex</strong> – The desired chain index limit. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -768,20 +751,25 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12EmptyContext11enableAbortEv">
 <span id="_CPPv3N8helayers12EmptyContext11enableAbortEv"></span><span id="_CPPv2N8helayers12EmptyContext11enableAbortEv"></span><span id="helayers::EmptyContext::enableAbort"></span><span class="target" id="classhelayers_1_1EmptyContext_1a6c854351d58e863966d60570dbfb787a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enableAbort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12EmptyContext11enableAbortEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Enables the abort mechanism for non-bootstrappable context with chain index limitation based on contsants from RunStats. </p>
+<dd><p>Enables the abort mechanism for non-bootstrappable context with chain index limitation based on constants from RunStats. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12EmptyContext20followAbortBehaviourERK9HeContext">
 <span id="_CPPv3N8helayers12EmptyContext20followAbortBehaviourERK9HeContext"></span><span id="_CPPv2N8helayers12EmptyContext20followAbortBehaviourERK9HeContext"></span><span id="helayers::EmptyContext::followAbortBehaviour__HeContextCR"></span><span class="target" id="classhelayers_1_1EmptyContext_1a8112cccb0a982a9b58a62f9fa85ddff7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">followAbortBehaviour</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12EmptyContext20followAbortBehaviourERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the abort mechanism of this object to follow the same limits as those of the given empty HE context. </p>
-<p>Does nothing if the given context is not of type <a class="reference internal" href="#classhelayers_1_1EmptyContext"><span class="std std-ref">EmptyContext</span></a> or does not have its abort mechanism enabeled.</p>
+<p>Does nothing if the given context is not of type <a class="reference internal" href="#classhelayers_1_1EmptyContext"><span class="std std-ref">EmptyContext</span></a> or does not have its abort mechanism enabled.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>he</strong> – The other HE context. </p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12EmptyContext13imitateTraitsERK8HeTraits">
+<span id="_CPPv3N8helayers12EmptyContext13imitateTraitsERK8HeTraits"></span><span id="_CPPv2N8helayers12EmptyContext13imitateTraitsERK8HeTraits"></span><span id="helayers::EmptyContext::imitateTraits__HeTraitsCR"></span><span class="target" id="classhelayers_1_1EmptyContext_1a2af1518cb2a9a504e6174a08782c5efe"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imitateTraits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeTraits.html#_CPPv4N8helayers8HeTraitsE" title="helayers::HeTraits"><span class="n"><span class="pre">HeTraits</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12EmptyContext13imitateTraitsERK8HeTraits" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

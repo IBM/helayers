@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeTraits &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>HeTraits &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -531,10 +531,15 @@ document.write(`
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
 <dt class="sig sig-object py" id="pyhelayers.HeTraits">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeTraits</span></span><a class="headerlink" href="#pyhelayers.HeTraits" title="Permalink to this definition">#</a></dt>
-<dd><p>A set of flags characterizing the underyling HE scheme.</p>
+<dd><p>A set of flags characterizing the underlying HE scheme.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.HeTraits.arithmetic_modulus">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arithmetic_modulus</span></span><a class="headerlink" href="#pyhelayers.HeTraits.arithmetic_modulus" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.HeTraits.arithmetic_requires_default_scale">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arithmetic_requires_default_scale</span></span><a class="headerlink" href="#pyhelayers.HeTraits.arithmetic_requires_default_scale" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -543,13 +548,13 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="pyhelayers.HeTraits.automatically_manages_rescale">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">automatically_manages_rescale</span></span><a class="headerlink" href="#pyhelayers.HeTraits.automatically_manages_rescale" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.HeTraits.defers_rescale">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">defers_rescale</span></span><a class="headerlink" href="#pyhelayers.HeTraits.defers_rescale" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="pyhelayers.HeTraits.defers_rescale">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">defers_rescale</span></span><a class="headerlink" href="#pyhelayers.HeTraits.defers_rescale" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.HeTraits.has_gpu_measures">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_gpu_measures</span></span><a class="headerlink" href="#pyhelayers.HeTraits.has_gpu_measures" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -573,8 +578,8 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="pyhelayers.HeTraits.supports_botstrapping">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">supports_botstrapping</span></span><a class="headerlink" href="#pyhelayers.HeTraits.supports_botstrapping" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.HeTraits.supports_bootstrapping">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">supports_bootstrapping</span></span><a class="headerlink" href="#pyhelayers.HeTraits.supports_bootstrapping" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -698,10 +703,10 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits30setAutomaticallyManagesRescaleEb">
-<span id="_CPPv3N8helayers8HeTraits30setAutomaticallyManagesRescaleEb"></span><span id="_CPPv2N8helayers8HeTraits30setAutomaticallyManagesRescaleEb"></span><span id="helayers::HeTraits::setAutomaticallyManagesRescale__b"></span><span class="target" id="classhelayers_1_1HeTraits_1aed6d0e6a2f3464e5dbe8a9217a0d6067"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAutomaticallyManagesRescale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits30setAutomaticallyManagesRescaleEb" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the value of automaticallyManagesRescale trait. </p>
-<p>See also HeTraits::automaticallyManagesRescale. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits33setArithmeticRequiresDefaultScaleEb">
+<span id="_CPPv3N8helayers8HeTraits33setArithmeticRequiresDefaultScaleEb"></span><span id="_CPPv2N8helayers8HeTraits33setArithmeticRequiresDefaultScaleEb"></span><span id="helayers::HeTraits::setArithmeticRequiresDefaultScale__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a1e56a86dc3ce3475daa084fbe7449dc1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setArithmeticRequiresDefaultScale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits33setArithmeticRequiresDefaultScaleEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the value of arithmeticRequiresDefaultScale trait. </p>
+<p>See also HeTraits::arithmeticRequiresDefaultScale. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
@@ -726,11 +731,6 @@ document.write(`
 <span id="_CPPv3N8helayers8HeTraits31setSupportsExplicitChainIndicesEb"></span><span id="_CPPv2N8helayers8HeTraits31setSupportsExplicitChainIndicesEb"></span><span id="helayers::HeTraits::setSupportsExplicitChainIndices__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a6e0399585e37e019468ab3fa1a501c62"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSupportsExplicitChainIndices</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits31setSupportsExplicitChainIndicesEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of supportsExplicitChainIndices trait. </p>
 <p>See also HeTraits::supportsExplicitChainIndices. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -842,6 +842,18 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits10setIsDebugEb">
+<span id="_CPPv3N8helayers8HeTraits10setIsDebugEb"></span><span id="_CPPv2N8helayers8HeTraits10setIsDebugEb"></span><span id="helayers::HeTraits::setIsDebug__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a7ce93f88685a32d1dea2a122c80ececd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIsDebug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits10setIsDebugEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the value of isDebug trait. </p>
+<p>See also HeTraits::isDebug. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits28setSupportsDecryptAddedNoiseEb">
 <span id="_CPPv3N8helayers8HeTraits28setSupportsDecryptAddedNoiseEb"></span><span id="_CPPv2N8helayers8HeTraits28setSupportsDecryptAddedNoiseEb"></span><span id="helayers::HeTraits::setSupportsDecryptAddedNoise__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a3039cf265819782809ef4c6954c88cf0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSupportsDecryptAddedNoise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits28setSupportsDecryptAddedNoiseEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of supportsDecryptAddedNoise trait. </p>
@@ -858,6 +870,18 @@ document.write(`
 <span id="_CPPv3N8helayers8HeTraits11setIsMockupEb"></span><span id="_CPPv2N8helayers8HeTraits11setIsMockupEb"></span><span id="helayers::HeTraits::setIsMockup__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a732e530cb9aa3aedd8444a7c457c4558"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIsMockup</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits11setIsMockupEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of isMockup trait. </p>
 <p>See also HeTraits::isMockup. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits12setIsCircuitEb">
+<span id="_CPPv3N8helayers8HeTraits12setIsCircuitEb"></span><span id="_CPPv2N8helayers8HeTraits12setIsCircuitEb"></span><span id="helayers::HeTraits::setIsCircuit__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a31cb395d02809445ff784654b57ae59c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIsCircuit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits12setIsCircuitEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the value of isCircuit trait. </p>
+<p>See also HeTraits::isCircuit. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
@@ -895,6 +919,18 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits17setHasGpuMeasuresEb">
+<span id="_CPPv3N8helayers8HeTraits17setHasGpuMeasuresEb"></span><span id="_CPPv2N8helayers8HeTraits17setHasGpuMeasuresEb"></span><span id="helayers::HeTraits::setHasGpuMeasures__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a4efa410e5cd9b939fb53baac181a282e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHasGpuMeasures</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits17setHasGpuMeasuresEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the value of hasGpuMeasures trait. </p>
+<p>See also HeTraits::hasGpuMeasures </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits36setSupportsBootstrapRealOptimizationEb">
 <span id="_CPPv3N8helayers8HeTraits36setSupportsBootstrapRealOptimizationEb"></span><span id="_CPPv2N8helayers8HeTraits36setSupportsBootstrapRealOptimizationEb"></span><span id="helayers::HeTraits::setSupportsBootstrapRealOptimization__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a86377a4c211f771d58b7489132f91b27"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSupportsBootstrapRealOptimization</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits36setSupportsBootstrapRealOptimizationEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of supportsBootstrapRealOptimization trait. </p>
@@ -911,6 +947,18 @@ document.write(`
 <span id="_CPPv3N8helayers8HeTraits39setSupportsHandleTransparentCiphertextsEb"></span><span id="_CPPv2N8helayers8HeTraits39setSupportsHandleTransparentCiphertextsEb"></span><span id="helayers::HeTraits::setSupportsHandleTransparentCiphertexts__b"></span><span class="target" id="classhelayers_1_1HeTraits_1adcf22b662b04a5c79416a1c1e8901594"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSupportsHandleTransparentCiphertexts</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits39setSupportsHandleTransparentCiphertextsEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the value of supportsHandleTransparentCiphertexts trait. </p>
 <p>See also HeTraits::supportsHandleTransparentCiphertexts </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers8HeTraits35setSupportsHierarchicalRotationKeysEb">
+<span id="_CPPv3N8helayers8HeTraits35setSupportsHierarchicalRotationKeysEb"></span><span id="_CPPv2N8helayers8HeTraits35setSupportsHierarchicalRotationKeysEb"></span><span id="helayers::HeTraits::setSupportsHierarchicalRotationKeys__b"></span><span class="target" id="classhelayers_1_1HeTraits_1a086822134d10bb665727595464b7eaf3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSupportsHierarchicalRotationKeys</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers8HeTraits35setSupportsHierarchicalRotationKeysEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the value of supportsHierarchicalRotationKeys trait. </p>
+<p>See also HeTraits::supportsHierarchicalRotationKeys </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> – The value to be set. </p>
@@ -968,10 +1016,10 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits30getAutomaticallyManagesRescaleEv">
-<span id="_CPPv3NK8helayers8HeTraits30getAutomaticallyManagesRescaleEv"></span><span id="_CPPv2NK8helayers8HeTraits30getAutomaticallyManagesRescaleEv"></span><span id="helayers::HeTraits::getAutomaticallyManagesRescaleC"></span><span class="target" id="classhelayers_1_1HeTraits_1a05a5cbf2ad9d38c4b76dae7e7da499d3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAutomaticallyManagesRescale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits30getAutomaticallyManagesRescaleEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the value of automaticallyManagesRescale trait. </p>
-<p>See also HeTraits::automaticallyManagesRescale. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits33getArithmeticRequiresDefaultScaleEv">
+<span id="_CPPv3NK8helayers8HeTraits33getArithmeticRequiresDefaultScaleEv"></span><span id="_CPPv2NK8helayers8HeTraits33getArithmeticRequiresDefaultScaleEv"></span><span id="helayers::HeTraits::getArithmeticRequiresDefaultScaleC"></span><span class="target" id="classhelayers_1_1HeTraits_1a16e301c189f934d0a360652f6f8b1bc3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getArithmeticRequiresDefaultScale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits33getArithmeticRequiresDefaultScaleEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the value of arithmeticRequiresDefaultScale trait. </p>
+<p>See also HeTraits::arithmeticRequiresDefaultScale. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1045,6 +1093,12 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits10getIsDebugEv">
+<span id="_CPPv3NK8helayers8HeTraits10getIsDebugEv"></span><span id="_CPPv2NK8helayers8HeTraits10getIsDebugEv"></span><span id="helayers::HeTraits::getIsDebugC"></span><span class="target" id="classhelayers_1_1HeTraits_1ade2d488aee3a2f7c65f45aff353e3b1c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIsDebug</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits10getIsDebugEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the value of isDebug trait. See also HeTraits::isDebug. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits28getSupportsDecryptAddedNoiseEv">
 <span id="_CPPv3NK8helayers8HeTraits28getSupportsDecryptAddedNoiseEv"></span><span id="_CPPv2NK8helayers8HeTraits28getSupportsDecryptAddedNoiseEv"></span><span id="helayers::HeTraits::getSupportsDecryptAddedNoiseC"></span><span class="target" id="classhelayers_1_1HeTraits_1ab013ffbdf527725fcd74f5ebfeba7b6b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSupportsDecryptAddedNoise</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits28getSupportsDecryptAddedNoiseEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the value of supportsDecryptAddedNoise trait. </p>
@@ -1056,6 +1110,13 @@ document.write(`
 <span id="_CPPv3NK8helayers8HeTraits11getIsMockupEv"></span><span id="_CPPv2NK8helayers8HeTraits11getIsMockupEv"></span><span id="helayers::HeTraits::getIsMockupC"></span><span class="target" id="classhelayers_1_1HeTraits_1a1dcfef54e8d09d9d331d6633fce6de1e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIsMockup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits11getIsMockupEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the value of isMockup trait. </p>
 <p>See also HeTraits::isMockup. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits12getIsCircuitEv">
+<span id="_CPPv3NK8helayers8HeTraits12getIsCircuitEv"></span><span id="_CPPv2NK8helayers8HeTraits12getIsCircuitEv"></span><span id="helayers::HeTraits::getIsCircuitC"></span><span class="target" id="classhelayers_1_1HeTraits_1ad14dece1c20d6846e8be0e1e391244bc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIsCircuit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits12getIsCircuitEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the value of isCircuit trait. </p>
+<p>See also HeTraits::isCircuit. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1078,6 +1139,13 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits17getHasGpuMeasuresEv">
+<span id="_CPPv3NK8helayers8HeTraits17getHasGpuMeasuresEv"></span><span id="_CPPv2NK8helayers8HeTraits17getHasGpuMeasuresEv"></span><span id="helayers::HeTraits::getHasGpuMeasuresC"></span><span class="target" id="classhelayers_1_1HeTraits_1a63592f25c605e40da8dfa22f1798911f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHasGpuMeasures</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits17getHasGpuMeasuresEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the value of hasGpuMeasures trait. </p>
+<p>See also HeTraits::hasGpuMeasures. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits36getSupportsBootstrapRealOptimizationEv">
 <span id="_CPPv3NK8helayers8HeTraits36getSupportsBootstrapRealOptimizationEv"></span><span id="_CPPv2NK8helayers8HeTraits36getSupportsBootstrapRealOptimizationEv"></span><span id="helayers::HeTraits::getSupportsBootstrapRealOptimizationC"></span><span class="target" id="classhelayers_1_1HeTraits_1a893d60e672f372521300bea3de7eb828"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSupportsBootstrapRealOptimization</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits36getSupportsBootstrapRealOptimizationEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the value of supportsBootstrapRealOptimization trait. </p>
@@ -1089,6 +1157,13 @@ document.write(`
 <span id="_CPPv3NK8helayers8HeTraits39getSupportsHandleTransparentCiphertextsEv"></span><span id="_CPPv2NK8helayers8HeTraits39getSupportsHandleTransparentCiphertextsEv"></span><span id="helayers::HeTraits::getSupportsHandleTransparentCiphertextsC"></span><span class="target" id="classhelayers_1_1HeTraits_1a9ef6ee4913e820beef6708447fcfe121"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSupportsHandleTransparentCiphertexts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits39getSupportsHandleTransparentCiphertextsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the value of supportsHandleTransparentCiphertexts trait. </p>
 <p>See also HeTraits::supportsHandleTransparentCiphertexts. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers8HeTraits35getSupportsHierarchicalRotationKeysEv">
+<span id="_CPPv3NK8helayers8HeTraits35getSupportsHierarchicalRotationKeysEv"></span><span id="_CPPv2NK8helayers8HeTraits35getSupportsHierarchicalRotationKeysEv"></span><span id="helayers::HeTraits::getSupportsHierarchicalRotationKeysC"></span><span class="target" id="classhelayers_1_1HeTraits_1ab9820a1bafc0cbb886b5cb85c2628991"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSupportsHierarchicalRotationKeys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers8HeTraits35getSupportsHierarchicalRotationKeysEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the value of supportsHierarchicalRotationKeys trait. </p>
+<p>See also HeTraits::supportsHierarchicalRotationKeys. </p>
 </dd></dl>
 
 </div>
@@ -1140,14 +1215,15 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits"><code class="docutils literal notranslate"><span class="pre">HeTraits</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.arithmetic_modulus"><code class="docutils literal notranslate"><span class="pre">HeTraits.arithmetic_modulus</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.arithmetic_requires_default_scale"><code class="docutils literal notranslate"><span class="pre">HeTraits.arithmetic_requires_default_scale</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.automatically_manages_chain_indices"><code class="docutils literal notranslate"><span class="pre">HeTraits.automatically_manages_chain_indices</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.automatically_manages_rescale"><code class="docutils literal notranslate"><span class="pre">HeTraits.automatically_manages_rescale</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.defers_rescale"><code class="docutils literal notranslate"><span class="pre">HeTraits.defers_rescale</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.has_gpu_measures"><code class="docutils literal notranslate"><span class="pre">HeTraits.has_gpu_measures</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.is_debug_empty"><code class="docutils literal notranslate"><span class="pre">HeTraits.is_debug_empty</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.is_modular_arithmetic"><code class="docutils literal notranslate"><span class="pre">HeTraits.is_modular_arithmetic</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_bitwise_operations"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_bitwise_operations</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_bootstrap_utils"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_bootstrap_utils</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_botstrapping"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_botstrapping</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_bootstrapping"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_bootstrapping</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_complex_numbers"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_complex_numbers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_decrypt_added_noise"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_decrypt_added_noise</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeTraits.supports_explicit_chain_indices"><code class="docutils literal notranslate"><span class="pre">HeTraits.supports_explicit_chain_indices</span></code></a></li>

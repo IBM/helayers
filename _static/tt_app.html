@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tile Tensor Applet</title>
+	<style>
+		button {
+			background-color: #5B5;
+			border: none;
+			color: white;
+			padding: 8px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<h3 id="title">Demo</h3>
+	<p>Try the following tile tensor shapes:<br>
+
+		[5/2,6/4]<br>
+		[5/2,1/4]<br>
+		[5/2,*/4]<br>
+		[5/2,1?/4]<br>
+		[5/2,6?/4]<br>
+		[5/2,6~/4]<br>
+		[5/2,6~?/4]<br>
+	</p>
+
+	<form>
+		<div>
+			Tile tensor shape: [ <input type="text" id="oy" onchange="redraw()" name="oyname" size="3" value="5"> /
+			<input type="text" id="ty" name="tyname" size="3" onchange="redraw()" value="2"> ,
+			<input type="text" id="ox" name="oxname" size="3" onchange="redraw()" value="6"> /
+			<input type="text" id="tx" name="txname" size="3" onchange="redraw()" value="4"> ]
+
+	</form>
+	<br><br>
+	<canvas style="border:1px solid black" width="700" height="400" id="can"></canvas>
+	</div>
+	<br />
+
+
+	<script>
+
+		var CELLX = 20;
+		var CELLY = 16;
+
+		function formatNum(num) {
+			var res = num.toFixed(1);
+			while (res.length < 4)
+				res = '&nbsp;' + res;
+			return res;
+		}
+
+
+
+		function getElement(shape, x, y) {
+			var xs = shape.ox;
+			return y * xs + x;
+		}
+		function interpColors(cols, x, w) {
+
+			var col1 = cols[x * 2];
+			var col2 = cols[x * 2 + 1];
+			var r = col1[0] * (1 - w) + col2[0] * w;
+			var g = col1[1] * (1 - w) + col2[1] * w;
+			var b = col1[2] * (1 - w) + col2[2] * w;
+
+			var val = ("rgb(" + Math.floor(r) + "," + Math.floor(g) + "," + Math.floor(b) + ")");
+
+			return val;
+		}
+
+
+		function interpColors2(cols, y, w) {
+
+			var r = 120 * (1 - y) + 300 * y;
+			var g = 100 * (1 - w) + 100 * w;
+			var b = 50 * (1 - w) + 20 * w;
+
+
+			var val = ("hsl(" + Math.floor(r) + "," + Math.floor(g) + "%," + Math.floor(b) + "%)");
+			return val;
+		}
+
+		function getw(x, xs) {
+			if (xs > 1)
+				return x / (xs - 1);
+			return 0;
+		}
+
+
+		function getElColor(shape, x, y) {
+			var xs = shape.ox;
+			var ys = shape.oy;
+			var cols = [0, 120, 240, 60, 180, 300, 30, 150, 270, 90, 210, 330];
+
+			return interpColors2(cols, getw(y, ys), getw(x, xs));
+		}
+		function drawCell(ctx, val, col, xx, yy) {
+			ctx.strokeStyle = '#000';
+			ctx.fillStyle = col;
+			ctx.font = "12px consolas, san-serif";
+			ctx.fillRect(xx, yy, 20, 16);
+			ctx.fillStyle = "#ffffff";
+			ctx.textAlign = "right"
+			ctx.fillText(val, xx + 18, yy + 12);
+		}
+
+		function drawMatrix(ctx, shape, xx, yy) {
+			var xs = shape.ox;
+			var ys = shape.oy;
+			for (let x = 0; x < xs; x++) {
+				for (let y = 0; y < ys; y++) {
+					drawCell(ctx, getElement(shape, x, y), getElColor(shape, x, y), xx + CELLX * x, yy + CELLY * y);
+				}
+			}
+		}
+
+
+		function getOrg(info, ti, i) {
+			if (info.duplicate)
+				return 0;
+			if (info.interleaved) {
+				return info.esz * i + ti;
+			}
+			return info.tsize * ti + i;
+		}
+
+		function drawTile(ctx, shape, tix, tiy, xx, yy) {
+			var tx = shape.tx;
+			var ty = shape.ty;
+
+			for (let x = 0; x < tx; x++) {
+				for (let y = 0; y < ty; y++) {
+					var ox = getOrg(shape.xinfo, tix, x);
+					var oy = getOrg(shape.yinfo, tiy, y);
+					var val;
+					var col = "#777";
+					if (ox < shape.ox && oy < shape.oy) {
+						val = getElement(shape, ox, oy);
+						col = getElColor(shape, ox, oy);
+					} else if ((ox >= shape.ox && shape.xinfo.unknowns) ||
+						(oy >= shape.oy && shape.yinfo.unknowns)) {
+						val = "?";
+						col = "#f00";
+					} else
+						val = "0";
+					drawCell(ctx, val, col, xx + CELLX * x, yy + CELLY * y);
+				}
+			}
+
+		}
+
+		function parseSource(val, tsize) {
+			if (val == "*") {
+				return { esz: 1, sz: 1, duplicate: true };
+			}
+
+			var regexp2 = /^(\d+)$/;
+			var res2 = tsize.match(regexp2);
+			if (!res2) {
+				return {
+					esz: 1, sz: 1,
+					hasErrorOrg: "Syntax error in \"" + tsize + "\"",
+					hasError: "Type a number in the range 1...10."
+				};
+			}
+
+			if (tsize < 1 || tsize > 10) {
+				ro = { esz: 1, sz: 1 };
+				ro.hasErrorOrg = "Invalid value \"" + tsize + "\".",
+					ro.hasError = "Values must be in the range 1...10 for this demo.";
+				return ro;
+			}
+
+			var regexp = /^(\d+)(\~?)(\??)$/;
+			var res = val.match(regexp);
+			if (!res) {
+				return {
+					esz: 1, sz: 1,
+					hasErrorOrg: "Syntax error in \"" + val + "\"",
+					hasError: "Try digits only, or see instructions below."
+				};
+			}
+
+			var ro = { sz: res[1], interleaved: (res[2] == "~"), unknowns: (res[3] == "?") }
+			ro.esz = Math.ceil(ro.sz / tsize);
+			ro.tsize = tsize;
+
+			if (ro.sz < 1 || ro.sz > 10) {
+				ro.hasErrorOrg = "Invalid value \"" + val + "\".",
+					ro.hasError = "Values must be in the range 1...10 for this demo.";
+			}
+
+			return ro;
+
+		}
+
+		function showError(ctx, msg, org) {
+			ctx.font = "16px consolas, san-serif";
+			ctx.fillStyle = "#000";
+			ctx.textAlign = "left";
+			ctx.fillText(org, 20, 20);
+			ctx.fillText(msg, 20, 40);
+		}
+
+		function showTitle(ctx, msg, xx, yy) {
+			ctx.font = "14px consolas, san-serif";
+			ctx.fillStyle = "#000";
+			ctx.textAlign = "left";
+			ctx.fillText(msg, xx, yy);
+		}
+
+		function formatShape(x, y) {
+			return x + " x " + y;
+		}
+
+		function redraw() {
+
+			var canvas = document.getElementById("can");
+
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#aaa";
+
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			var ox = document.getElementById("ox").value;
+			var tx = document.getElementById("tx").value;
+			var oy = document.getElementById("oy").value;
+			var ty = document.getElementById("ty").value;
+
+			var shape = { tx: tx, oox: ox, ooy: oy, ty: ty };
+
+			shape.xinfo = parseSource(ox, tx);
+			shape.yinfo = parseSource(oy, ty);
+			if (shape.xinfo.hasError) {
+				showError(ctx, shape.xinfo.hasError, shape.xinfo.hasErrorOrg);
+				return;
+			} else if (shape.yinfo.hasError) {
+				showError(ctx, shape.yinfo.hasError, shape.yinfo.hasErrorOrg);
+				return;
+			}
+			shape.ox = shape.xinfo.sz;
+			shape.oy = shape.yinfo.sz;
+
+			ctx.strokeStyle = '#fff';
+			ctx.fillStyle = "#fff";
+
+			ctx.font = "14px consolas, san-serif";
+
+			showTitle(ctx, "Original matrix:", 20, 20);
+			showTitle(ctx, "Size: " + formatShape(shape.oy, shape.ox), 20, 40);
+			drawMatrix(ctx, shape, 20, 50);
+
+			var numx = Math.ceil(shape.ox / shape.tx);
+			var numy = Math.ceil(shape.oy / shape.ty);
+
+			var baseX = 10 * CELLX + 20 + 40;
+			showTitle(ctx, "Tile tensor:", baseX, 20);
+			showTitle(ctx, formatShape(shape.yinfo.esz, shape.xinfo.esz) + " Tiles of size " + formatShape(ty, tx) + " each", baseX, 40);
+
+			for (let x = 0; x < numx; x++) {
+				for (let y = 0; y < numy; y++) {
+					drawTile(ctx, shape, x, y, baseX + (shape.tx * CELLX + 10) * x, 50 + (shape.ty * CELLY + 10) * y);
+				}
+			}
+		}
+
+		redraw();
+	</script>
+
+</body>
+
+</html>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HEbase &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>HEbase &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -370,7 +370,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="gen_pages/HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen_pages/HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen_pages/HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen_pages/ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen_pages/ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -534,9 +534,9 @@ that can be exploited for specific use cases. The HElayers SDK API provides all 
 of the supported schemes and libraries, to maximize the use of each to its fullest extent.</p>
 <p>To maintain scheme and library abstraction as much as possible, the following steps are taken:</p>
 <ul class="simple">
-<li><p>HELayers attempts to compensate internally for missing functionality where possible. E.g.,
+<li><p>HElayers attempts to compensate internally for missing functionality where possible. E.g.,
 the “power” operator is directed to the library’s native power operator if it exists,
-or otherwise a generic algorithm inside helayers for evaluation of powers using multiplication is used.</p></li>
+or otherwise a generic algorithm inside HElayers for evaluation of powers using multiplication is used.</p></li>
 <li><p>A “traits” class <a class="reference internal" href="gen_pages/HeTraits.html"><span class="doc">HeTraits</span></a> can be queried by the user to detect which functionality is
 supported by the underlying library. The user can use this information in one of two ways:</p>
 <ul>

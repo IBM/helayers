@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CircuitContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>CircuitContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -541,6 +541,17 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext7imitateERK9HeContext">
+<span id="_CPPv3N8helayers14CircuitContext7imitateERK9HeContext"></span><span id="_CPPv2N8helayers14CircuitContext7imitateERK9HeContext"></span><span id="helayers::CircuitContext::imitate__HeContextCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1a5593959c02636d2f475c4efcfea702df"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imitate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext7imitateERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Initializes a circuit context with the same parameters and traits as given he. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>he</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to imitate. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext4initERK19HeConfigRequirement">
 <span id="_CPPv3N8helayers14CircuitContext4initERK19HeConfigRequirement"></span><span id="_CPPv2N8helayers14CircuitContext4initERK19HeConfigRequirement"></span><span id="helayers::CircuitContext::init__HeConfigRequirementCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1a0fd2dfadcd045e05873bf4ccfee540db"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeConfigRequirement.html#_CPPv4N8helayers19HeConfigRequirementE" title="helayers::HeConfigRequirement"><span class="n"><span class="pre">HeConfigRequirement</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext4initERK19HeConfigRequirement" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Internal use. </p>
@@ -557,24 +568,45 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext9getCtxtIdEv">
-<span id="_CPPv3N8helayers14CircuitContext9getCtxtIdEv"></span><span id="_CPPv2N8helayers14CircuitContext9getCtxtIdEv"></span><span id="helayers::CircuitContext::getCtxtId"></span><span class="target" id="classhelayers_1_1CircuitContext_1a74754f41a2a993eb1550885e40f1ef9c"></span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CtxtId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCtxtId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext9getCtxtIdEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext12createNodeIdEv">
+<span id="_CPPv3N8helayers14CircuitContext12createNodeIdEv"></span><span id="_CPPv2N8helayers14CircuitContext12createNodeIdEv"></span><span id="helayers::CircuitContext::createNodeId"></span><span class="target" id="classhelayers_1_1CircuitContext_1a98756189e2346d26cc365533878dc507"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createNodeId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext12createNodeIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Allocate a new NodeId. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext9getPtxtIdEv">
-<span id="_CPPv3N8helayers14CircuitContext9getPtxtIdEv"></span><span id="_CPPv2N8helayers14CircuitContext9getPtxtIdEv"></span><span id="helayers::CircuitContext::getPtxtId"></span><span class="target" id="classhelayers_1_1CircuitContext_1a7aa3917e7edadc57f35bb34944d61f64"></span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">PtxtId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPtxtId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext9getPtxtIdEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext14createTensorIdEv">
+<span id="_CPPv3N8helayers14CircuitContext14createTensorIdEv"></span><span id="_CPPv2N8helayers14CircuitContext14createTensorIdEv"></span><span id="helayers::CircuitContext::createTensorId"></span><span class="target" id="classhelayers_1_1CircuitContext_1a5d252473280ae45b3aa37eefe955965b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createTensorId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext14createTensorIdEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Allocate a new tensor ID. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext9labelCtxtERK5CTileRKNSt6stringE">
 <span id="_CPPv3N8helayers14CircuitContext9labelCtxtERK5CTileRKNSt6stringE"></span><span id="_CPPv2N8helayers14CircuitContext9labelCtxtERK5CTileRKNSt6stringE"></span><span id="helayers::CircuitContext::labelCtxt__CTileCR.ssCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1aa271519f45c9929e0c96ca9d1e60f799"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">labelCtxt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext9labelCtxtERK5CTileRKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Associate a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> with a label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> – <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> to associate with a label. </p></li>
+<li><p><strong>label</strong> – The label to associate to a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext9labelCtxtERK11CTileTensorRKNSt6stringE">
 <span id="_CPPv3N8helayers14CircuitContext9labelCtxtERK11CTileTensorRKNSt6stringE"></span><span id="_CPPv2N8helayers14CircuitContext9labelCtxtERK11CTileTensorRKNSt6stringE"></span><span id="helayers::CircuitContext::labelCtxt__CTileTensorCR.ssCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1a9334ea508d15754e66e1734b7c078ed7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">labelCtxt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext9labelCtxtERK11CTileTensorRKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Associate a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> with a label. </p>
+<p>This actually assigns a unique label to each <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> in the tile tensor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> – The tile tensor to associate with a label. </p></li>
+<li><p><strong>label</strong> – The label to associate to a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14CircuitContext20createAbstractCipherEv">
@@ -639,7 +671,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14CircuitContext14printSignatureERNSt7ostreamE">
-<span id="_CPPv3NK8helayers14CircuitContext14printSignatureERNSt7ostreamE"></span><span id="_CPPv2NK8helayers14CircuitContext14printSignatureERNSt7ostreamE"></span><span id="helayers::CircuitContext::printSignature__osRC"></span><span class="target" id="classhelayers_1_1CircuitContext_1aa0a9472207aaddb9c58abbb1a2a074f3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printSignature</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14CircuitContext14printSignatureERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers14CircuitContext14printSignatureERNSt7ostreamE"></span><span id="_CPPv2NK8helayers14CircuitContext14printSignatureERNSt7ostreamE"></span><span id="helayers::CircuitContext::printSignature__osRC"></span><span class="target" id="classhelayers_1_1CircuitContext_1ab7b3ba6276c7b9f3117b8ec2e2819e23"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printSignature</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">cout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14CircuitContext14printSignatureERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Prints a summary of library details and configuration params. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -681,7 +713,7 @@ document.write(`
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1CircuitContext_1a1444b31ed32939dc2b6a0b8e15a2760c"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1CircuitContext_1a1444b31ed32939dc2b6a0b8e15a2760c"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -760,6 +792,20 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext23logMultiOutputsOperatorEN7circuit5PNodeERKNSt6vectorIN7circuit6NodeIdEEE">
+<span id="_CPPv3N8helayers14CircuitContext23logMultiOutputsOperatorEN7circuit5PNodeERKNSt6vectorIN7circuit6NodeIdEEE"></span><span id="_CPPv2N8helayers14CircuitContext23logMultiOutputsOperatorEN7circuit5PNodeERKNSt6vectorIN7circuit6NodeIdEEE"></span><span id="helayers::CircuitContext::logMultiOutputsOperator__circuit::PNode.std::vector:circuit::NodeId:CR"></span><span class="target" id="classhelayers_1_1CircuitContext_1ac2b6c29269583589cdf5041e8e260676"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logMultiOutputsOperator</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">PNode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeId</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">outputIds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext23logMultiOutputsOperatorEN7circuit5PNodeERKNSt6vectorIN7circuit6NodeIdEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Log an operation that does not involve plaintext and has multiple outputs as a node in the circuit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – The node to be added to the circuit. </p></li>
+<li><p><strong>outputIds</strong> – The nodes IDs of the outputs of this node. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext20logPlaintextOperatorENSt10shared_ptrIN7circuit14BinaryPtxtNodeEEERK16CircuitPlaintext">
 <span id="_CPPv3N8helayers14CircuitContext20logPlaintextOperatorENSt10shared_ptrIN7circuit14BinaryPtxtNodeEEERK16CircuitPlaintext"></span><span id="_CPPv2N8helayers14CircuitContext20logPlaintextOperatorENSt10shared_ptrIN7circuit14BinaryPtxtNodeEEERK16CircuitPlaintext"></span><span id="helayers::CircuitContext::logPlaintextOperator__std::shared_ptr:circuit::BinaryPtxtNode:.CircuitPlaintextCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1ab26d87d21c4b280da68ed6be8edb25df"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logPlaintextOperator</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">BinaryPtxtNode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CircuitPlaintext</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext20logPlaintextOperatorENSt10shared_ptrIN7circuit14BinaryPtxtNodeEEERK16CircuitPlaintext" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Log an operation that involves a plaintext as a node in the circuit. </p>
@@ -801,6 +847,93 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers14CircuitContext32getMinChainIndexForBootstrappingEv">
 <span id="_CPPv3NK8helayers14CircuitContext32getMinChainIndexForBootstrappingEv"></span><span id="_CPPv2NK8helayers14CircuitContext32getMinChainIndexForBootstrappingEv"></span><span id="helayers::CircuitContext::getMinChainIndexForBootstrappingC"></span><span class="target" id="classhelayers_1_1CircuitContext_1a97d4ef83a1d4d149be03f21f88bb8201"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers14CircuitContext32getMinChainIndexForBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the minimum level in which ciphertexts can be bootstrapped. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext10startGroupERKNSt6stringEb">
+<span id="_CPPv3N8helayers14CircuitContext10startGroupERKNSt6stringEb"></span><span id="_CPPv2N8helayers14CircuitContext10startGroupERKNSt6stringEb"></span><span id="helayers::CircuitContext::startGroup__ssCR.b"></span><span class="target" id="classhelayers_1_1CircuitContext_1ac6b9eeaf95d45c1130335ce4bce5fbf7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startGroup</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">makeUnique</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext10startGroupERKNSt6stringEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Start a new group. </p>
+<p>Every node logged from now until the group closes will be a part of the group. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> – The group name. </p></li>
+<li><p><strong>makeUnique</strong> – Add a prefix to make the group name unique. If there can be multiple groups with the same name they can be made unique by setting this parameter to true. A unique suffix of ” #&lt;id&gt;” will be added to the name. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext8endGroupERKNSt6stringE">
+<span id="_CPPv3N8helayers14CircuitContext8endGroupERKNSt6stringE"></span><span id="_CPPv2N8helayers14CircuitContext8endGroupERKNSt6stringE"></span><span id="helayers::CircuitContext::endGroup__ssCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1a4bfdc72ceefe306f5dd7dcbc5636974f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endGroup</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext8endGroupERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Close a group. </p>
+<p>Every node logged since the creation of the group until now was a part of the group. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>g</strong> – The group name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext8startEraERKN7circuit7EraInfoE">
+<span id="_CPPv3N8helayers14CircuitContext8startEraERKN7circuit7EraInfoE"></span><span id="_CPPv2N8helayers14CircuitContext8startEraERKN7circuit7EraInfoE"></span><span id="helayers::CircuitContext::startEra__circuit::EraInfoCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1ace5c1e7d865855b4208d646835ba4a3a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startEra</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EraInfo</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext8startEraERKN7circuit7EraInfoE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Start a new era. </p>
+<p>Every node logged from now will belong to the new era. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The info of the new era. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext21addToTensorRepositoryEiRK12DoubleTensorRK7TTShape">
+<span id="_CPPv3N8helayers14CircuitContext21addToTensorRepositoryEiRK12DoubleTensorRK7TTShape"></span><span id="_CPPv2N8helayers14CircuitContext21addToTensorRepositoryEiRK12DoubleTensorRK7TTShape"></span><span id="helayers::CircuitContext::addToTensorRepository__i.DoubleTensorCR.TTShapeCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1abdaa4655c2c2129960a9ca6f3d295ed4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addToTensorRepository</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tensorId</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="DoubleTensor.html#_CPPv4N8helayers12DoubleTensorE" title="helayers::DoubleTensor"><span class="n"><span class="pre">DoubleTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tensor</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext21addToTensorRepositoryEiRK12DoubleTensorRK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds a new tensor to the tensor repository of the circuit associated with this context, if not exist already (if exists, does nothing). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensorId</strong> – The ID of the tensor to add. </p></li>
+<li><p><strong>tensor</strong> – The tensor to add. </p></li>
+<li><p><strong>shape</strong> – The tile tensor shape associated with the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext21addToTensorRepositoryEiRK13ComplexTensorRK7TTShape">
+<span id="_CPPv3N8helayers14CircuitContext21addToTensorRepositoryEiRK13ComplexTensorRK7TTShape"></span><span id="_CPPv2N8helayers14CircuitContext21addToTensorRepositoryEiRK13ComplexTensorRK7TTShape"></span><span id="helayers::CircuitContext::addToTensorRepository__i.ComplexTensorCR.TTShapeCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1a192ea38035939397893389dcf850be3b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addToTensorRepository</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tensorId</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ComplexTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tensor</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="TTShape.html#_CPPv4N8helayers7TTShapeE" title="helayers::TTShape"><span class="n"><span class="pre">TTShape</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shape</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext21addToTensorRepositoryEiRK13ComplexTensorRK7TTShape" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adds a new complex tensor to the tensor repository of the circuit associated with this context, if not exist already (if exists, does nothing). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensorId</strong> – The ID of the tensor to add. </p></li>
+<li><p><strong>tensor</strong> – The complex tensor to add. </p></li>
+<li><p><strong>shape</strong> – The tile tensor shape associated with the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers14CircuitContext7imitateER11CTileTensorRK11CTileTensor">
+<span id="_CPPv3N8helayers14CircuitContext7imitateER11CTileTensorRK11CTileTensor"></span><span id="_CPPv2N8helayers14CircuitContext7imitateER11CTileTensorRK11CTileTensor"></span><span id="helayers::CircuitContext::imitate__CTileTensorR.CTileTensorCR"></span><span class="target" id="classhelayers_1_1CircuitContext_1abce1a4a27c055bba4de30c7f58cf8929"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imitate</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers14CircuitContext7imitateER11CTileTensorRK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Create an imitating TileTensor with the same shape. </p>
+<p>The new <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> may have a different <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. This function can be used to generate a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> of <a class="reference internal" href="#classhelayers_1_1CircuitContext"><span class="std std-ref">CircuitContext</span></a> that is imitating a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> of another context. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – The <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to imitate. </p></li>
+<li><p><strong>circ</strong> – The new imitating <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

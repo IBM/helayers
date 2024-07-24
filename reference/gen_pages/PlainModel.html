@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PlainModel &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>PlainModel &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -538,6 +538,15 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PlainModel</span></span><a class="headerlink" href="#pyhelayers.PlainModel" title="Permalink to this definition">#</a></dt>
 <dd><p>A plaintext representation of an ML model.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModel.compare_weights">
+<span class="sig-name descname"><span class="pre">compare_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.compare_weights" title="Permalink to this definition">#</a></dt>
+<dd><p>Compare weights of this PlainModel with the PlainModel pass as an argument.
+:param plain: The PlainModel object,
+:param verbose: bool,
+:param eps: double</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.PlainModel.create">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.PlainModel.create" title="Permalink to this definition">#</a></dt>
 <dd><p>Overloaded function.</p>
@@ -618,38 +627,15 @@ corresponding to this plain model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_input_shapes_for_fit">
-<span class="sig-name descname"><span class="pre">get_input_shapes_for_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_input_shapes_for_fit" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the expected shapes of the inputs for fit. If batch
-dimension is applicable, the value of the batch dimension is set to zero.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_input_shapes_for_predict">
-<span class="sig-name descname"><span class="pre">get_input_shapes_for_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_input_shapes_for_predict" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the expected shapes of the inputs for predict. If batch
-dimension is applicable, the value of the batch dimension is set to zero.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_inputs_names_for_fit">
-<span class="sig-name descname"><span class="pre">get_inputs_names_for_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_inputs_names_for_fit" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the names of inputs the model expects for fit, to be used to
-deduce the order in which multiple inputs are expected.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_inputs_names_for_predict">
-<span class="sig-name descname"><span class="pre">get_inputs_names_for_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_inputs_names_for_predict" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the names of inputs the model expects for predict, to be
-used to deduce the order in which multiple inputs are expected.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_outputs_names_of_predict">
-<span class="sig-name descname"><span class="pre">get_outputs_names_of_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_outputs_names_of_predict" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the names of outputs the model returns after predict, to be
-used to deduce the order in which multiple outputs are returned.</p>
+<dt class="sig sig-object py" id="pyhelayers.PlainModel.get_inputs_plain_tensor_metadata">
+<span class="sig-name descname"><span class="pre">get_inputs_plain_tensor_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.PlainTensorMetadata</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_inputs_plain_tensor_metadata" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a vector of PlainTensorMetadata objects. The i-th element
+of this vector contains metadata relating to the i-th input of
+this PlainModel (such as shape and batch dimension). If this
+PlainModel is initialized for prediction, the returned vector
+describes inputs for the the predict() method. If this PlainModel
+is initialized for fitting, the returned vector describes the
+inputs for the fit() method.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -722,7 +708,7 @@ turned on or off.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers10PlainModelE">
 <span id="_CPPv3N8helayers10PlainModelE"></span><span id="_CPPv2N8helayers10PlainModelE"></span><span id="helayers::PlainModel"></span><span class="target" id="classhelayers_1_1PlainModel"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PlainModel</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Printable</span></span><a class="headerlink" href="#_CPPv4N8helayers10PlainModelE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A plaintext representation of an ML model. </p>
-<p>Subclassed by <a class="reference internal" href="ArimaPlain.html#classhelayers_1_1ArimaPlain"><span class="std std-ref">helayers::ArimaPlain</span></a>, <a class="reference internal" href="DTreePlain.html#classhelayers_1_1DTreePlain"><span class="std std-ref">helayers::DTreePlain</span></a>, <a class="reference internal" href="KMeansPlain.html#classhelayers_1_1KMeansPlain"><span class="std std-ref">helayers::KMeansPlain</span></a>, <a class="reference internal" href="LogisticRegressionPlain.html#classhelayers_1_1LogisticRegressionPlain"><span class="std std-ref">helayers::LogisticRegressionPlain</span></a>, <a class="reference internal" href="NeuralNetPlain.html#classhelayers_1_1NeuralNetPlain"><span class="std std-ref">helayers::NeuralNetPlain</span></a>, <a class="reference internal" href="XGBoostPlain.html#classhelayers_1_1XGBoostPlain"><span class="std std-ref">helayers::XGBoostPlain</span></a></p>
+<p>Subclassed by helayers::AmlPlain, <a class="reference internal" href="ArimaPlain.html#classhelayers_1_1ArimaPlain"><span class="std std-ref">helayers::ArimaPlain</span></a>, <a class="reference internal" href="DTreePlain.html#classhelayers_1_1DTreePlain"><span class="std std-ref">helayers::DTreePlain</span></a>, <a class="reference internal" href="KMeansPlain.html#classhelayers_1_1KMeansPlain"><span class="std std-ref">helayers::KMeansPlain</span></a>, <a class="reference internal" href="LogisticRegressionPlain.html#classhelayers_1_1LogisticRegressionPlain"><span class="std std-ref">helayers::LogisticRegressionPlain</span></a>, <a class="reference internal" href="NeuralNetPlain.html#classhelayers_1_1NeuralNetPlain"><span class="std std-ref">helayers::NeuralNetPlain</span></a>, <a class="reference internal" href="XGBoostPlain.html#classhelayers_1_1XGBoostPlain"><span class="std std-ref">helayers::XGBoostPlain</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -779,35 +765,23 @@ turned on or off.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel24getInputsNamesForPredictEv">
-<span id="_CPPv3NK8helayers10PlainModel24getInputsNamesForPredictEv"></span><span id="_CPPv2NK8helayers10PlainModel24getInputsNamesForPredictEv"></span><span id="helayers::PlainModel::getInputsNamesForPredictC"></span><span class="target" id="classhelayers_1_1PlainModel_1a157591ecb3daf3a7422e3d548d5b9b36"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsNamesForPredict</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel24getInputsNamesForPredictEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the names of inputs the model expects for predict, to be used to deduce the order in which multiple inputs are expected. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel28getInputsPlainTensorMetadataEv">
+<span id="_CPPv3NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="_CPPv2NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="helayers::PlainModel::getInputsPlainTensorMetadataC"></span><span class="target" id="classhelayers_1_1PlainModel_1ae26d9c0cc6a6a0486aae630a46d5fb0e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PlainTensorMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsPlainTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel28getInputsPlainTensorMetadataEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a vector of PlainTensorMetadata objects. </p>
+<p>The i-th element of this vector contains metadata relating to the i-th input of this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> (such as shape and batch dimension). If this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> is initialized for prediction, the returned vector describes inputs for the the <a class="reference internal" href="#classhelayers_1_1PlainModel_1acf56e65d13c08031ac559b8e60c6f0d3"><span class="std std-ref">predict()</span></a> method. If this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> is initialized for fitting, the returned vector describes the inputs for the <a class="reference internal" href="#classhelayers_1_1PlainModel_1a85963d2549bee086b09050d236acf6db"><span class="std std-ref">fit()</span></a> method. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel20getInputsNamesForFitEv">
-<span id="_CPPv3NK8helayers10PlainModel20getInputsNamesForFitEv"></span><span id="_CPPv2NK8helayers10PlainModel20getInputsNamesForFitEv"></span><span id="helayers::PlainModel::getInputsNamesForFitC"></span><span class="target" id="classhelayers_1_1PlainModel_1a850e335192eb008c455b6e411188811f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsNamesForFit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel20getInputsNamesForFitEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the names of inputs the model expects for fit, to be used to deduce the order in which multiple inputs are expected. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel17getInputsBatchDimEv">
+<span id="_CPPv3NK8helayers10PlainModel17getInputsBatchDimEv"></span><span id="_CPPv2NK8helayers10PlainModel17getInputsBatchDimEv"></span><span id="helayers::PlainModel::getInputsBatchDimC"></span><span class="target" id="classhelayers_1_1PlainModel_1a7178e6356bee9f01358870046f511281"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsBatchDim</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel17getInputsBatchDimEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the batch dimension of the inputs, if exist. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel24getOutputsNamesOfPredictEv">
-<span id="_CPPv3NK8helayers10PlainModel24getOutputsNamesOfPredictEv"></span><span id="_CPPv2NK8helayers10PlainModel24getOutputsNamesOfPredictEv"></span><span id="helayers::PlainModel::getOutputsNamesOfPredictC"></span><span class="target" id="classhelayers_1_1PlainModel_1a3ef42994d6ac684f744b071684be085e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOutputsNamesOfPredict</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel24getOutputsNamesOfPredictEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the names of outputs the model returns after predict, to be used to deduce the order in which multiple outputs are returned. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel24getInputShapesForPredictEv">
-<span id="_CPPv3NK8helayers10PlainModel24getInputShapesForPredictEv"></span><span id="_CPPv2NK8helayers10PlainModel24getInputShapesForPredictEv"></span><span id="helayers::PlainModel::getInputShapesForPredictC"></span><span class="target" id="classhelayers_1_1PlainModel_1a02993e28879b434dc03d16bc1dc73910"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputShapesForPredict</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel24getInputShapesForPredictEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the expected shapes of the inputs for predict. </p>
-<p>If batch dimension is applicable, the value of the batch dimension is set to zero. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel20getInputShapesForFitEv">
-<span id="_CPPv3NK8helayers10PlainModel20getInputShapesForFitEv"></span><span id="_CPPv2NK8helayers10PlainModel20getInputShapesForFitEv"></span><span id="helayers::PlainModel::getInputShapesForFitC"></span><span class="target" id="classhelayers_1_1PlainModel_1aa46d1234a4770476632f3497ccfad212"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputShapesForFit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel20getInputShapesForFitEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the expected shapes of the inputs for fit. </p>
-<p>If batch dimension is applicable, the value of the batch dimension is set to zero. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel31getRequirementForFixedBatchSizeEv">
+<span id="_CPPv3NK8helayers10PlainModel31getRequirementForFixedBatchSizeEv"></span><span id="_CPPv2NK8helayers10PlainModel31getRequirementForFixedBatchSizeEv"></span><span id="helayers::PlainModel::getRequirementForFixedBatchSizeC"></span><span class="target" id="classhelayers_1_1PlainModel_1a9bc9bfd29e4713df8a59147d95b4fcea"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRequirementForFixedBatchSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel31getRequirementForFixedBatchSizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a value if the model has a requirement for a fixed batch size. </p>
+<p>If so, it is only able to process batches of the given size. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -837,6 +811,12 @@ turned on or off.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel9isFitModeEv">
 <span id="_CPPv3NK8helayers10PlainModel9isFitModeEv"></span><span id="_CPPv2NK8helayers10PlainModel9isFitModeEv"></span><span id="helayers::PlainModel::isFitModeC"></span><span class="target" id="classhelayers_1_1PlainModel_1a3526e5d8c94381d2b225d04ac78bdd96"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFitMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel9isFitModeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns indication for whether the initialized model is on fit-only or on predict-only mode. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers10PlainModel14setPredictModeEv">
+<span id="_CPPv3N8helayers10PlainModel14setPredictModeEv"></span><span id="_CPPv2N8helayers10PlainModel14setPredictModeEv"></span><span id="helayers::PlainModel::setPredictMode"></span><span class="target" id="classhelayers_1_1PlainModel_1a7bf8f7daae22e13eb600c80c96919bf0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPredictMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers10PlainModel14setPredictModeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set the model to predict mode. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -877,7 +857,7 @@ turned on or off.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel12getClassNameEv">
 <span id="_CPPv3NK8helayers10PlainModel12getClassNameEv"></span><span id="_CPPv2NK8helayers10PlainModel12getClassNameEv"></span><span id="helayers::PlainModel::getClassNameC"></span><span class="target" id="classhelayers_1_1PlainModel_1a682b234967dc689e117461edc7be3e61"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getClassName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel12getClassNameEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Retunrs the name of this class. </p>
+<dd><p>Returns the name of this class. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -890,6 +870,21 @@ turned on or off.</p>
 <li><p><strong>title</strong> – Text to add to the print </p></li>
 <li><p><strong>verbosity</strong> – Verbosity level </p></li>
 <li><p><strong>out</strong> – Output stream </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel14compareWeightsERK10PlainModelbd">
+<span id="_CPPv3NK8helayers10PlainModel14compareWeightsERK10PlainModelbd"></span><span id="_CPPv2NK8helayers10PlainModel14compareWeightsERK10PlainModelbd"></span><span id="helayers::PlainModel::compareWeights__PlainModelCR.b.doubleC"></span><span class="target" id="classhelayers_1_1PlainModel_1a03ba891ed6a41c30a2b1b03caf3d2810"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compareWeights</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">verbose</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-6</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel14compareWeightsERK10PlainModelbd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Compares the internal weights of this model with the weights of the other model. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – The other plain model. </p></li>
+<li><p><strong>verbose</strong> – Whether to report comparison results in verbose way. </p></li>
+<li><p><strong>eps</strong> – Comparison tolerance. </p></li>
 </ul>
 </dd>
 </dl>
@@ -986,15 +981,12 @@ turned on or off.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel"><code class="docutils literal notranslate"><span class="pre">PlainModel</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.compare_weights"><code class="docutils literal notranslate"><span class="pre">PlainModel.compare_weights()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.create"><code class="docutils literal notranslate"><span class="pre">PlainModel.create()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.fit"><code class="docutils literal notranslate"><span class="pre">PlainModel.fit()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_empty_he_model"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_empty_he_model()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_hyper_params"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_hyper_params()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_input_shapes_for_fit"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_input_shapes_for_fit()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_input_shapes_for_predict"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_input_shapes_for_predict()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_inputs_names_for_fit"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_inputs_names_for_fit()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_inputs_names_for_predict"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_inputs_names_for_predict()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_outputs_names_of_predict"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_outputs_names_of_predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.get_inputs_plain_tensor_metadata"><code class="docutils literal notranslate"><span class="pre">PlainModel.get_inputs_plain_tensor_metadata()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.init"><code class="docutils literal notranslate"><span class="pre">PlainModel.init()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.init_from_files"><code class="docutils literal notranslate"><span class="pre">PlainModel.init_from_files()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.is_fit_mode"><code class="docutils literal notranslate"><span class="pre">PlainModel.is_fit_mode()</span></code></a></li>

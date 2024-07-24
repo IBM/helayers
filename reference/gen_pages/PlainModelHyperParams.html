@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PlainModelHyperParams &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>PlainModelHyperParams &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -538,6 +538,19 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PlainModelHyperParams</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams" title="Permalink to this definition">#</a></dt>
 <dd><p>A struct for the hyperparameters of the plain AI model.</p>
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.aml_delta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aml_delta</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.aml_delta" title="Permalink to this definition">#</a></dt>
+<dd><p>The weight of the risk of the other banks in the evaluation of the
+risks of the next iteration in the Aml model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.aml_iterations">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aml_iterations</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.aml_iterations" title="Permalink to this definition">#</a></dt>
+<dd><p>The number of iterations in the AML model.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.d">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">d</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.d" title="Permalink to this definition">#</a></dt>
 <dd><p>number of differentiations</p>
@@ -601,6 +614,12 @@ the accuracy on the account of deeper and slower computation.</p>
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.init_random_weights">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_random_weights</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.init_random_weights" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize the PlainModel with random weights.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.inverse_approximation_precision">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inverse_approximation_precision</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.inverse_approximation_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>The approximation precision of the linear regression inverse operation.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -676,6 +695,27 @@ A lower limit for the random values.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_specified_fixed_batch_size</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Indication to whether a model-specified fixed batch size is
+effective (default: false). With such fixed batch size, the batch size is
+fixed to the batch size specified in the plain NN model, and future runs
+of predict with the plain model and the HE model created from it, must
+provide exactly that much elements per batch. If this flag is turned off,
+the batch size is dynamic, meaning it can be changed and the HE model can
+be optimized for any batch size desired, but in this case the batch
+dimension must not be changed, manipulated or involved in operations by
+the NN in any way.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.model_subclass">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_subclass</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.model_subclass" title="Permalink to this definition">#</a></dt>
+<dd><p>A named parameter allowing to specify some specific model type,
+e.g., a specific class of NN architecture.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.mu">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mu</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.mu" title="Permalink to this definition">#</a></dt>
 <dd><p>The mu coefficient of the Arima model.</p>
@@ -685,6 +725,12 @@ A lower limit for the random values.</p>
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.negate_sigmoid_input">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">negate_sigmoid_input</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.negate_sigmoid_input" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether to negate the input to the Sigmoid activation function.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.num_accounts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_accounts</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.num_accounts" title="Permalink to this definition">#</a></dt>
+<dd><p>The combined number of accounts at all banks in the Aml model.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -716,6 +762,12 @@ cached as an optimization.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_classes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_classes</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_classes" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of classes.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_features">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_features</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_features" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of features in an input sample.
@@ -737,6 +789,24 @@ Value of -1 indicates it will be determined by the model file.</p>
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.phi">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.phi" title="Permalink to this definition">#</a></dt>
 <dd><p>The phi coefficients of the Arima model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plain_batch_norm_in_encrypted_nn</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn" title="Permalink to this definition">#</a></dt>
+<dd><p>An indication to whether the batch normalization constants of an
+encrypted NN should remain exposed in a plaintext form and not be
+encrypted. May often result in improved performance. Not relevant for
+non-encrypted NN.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plain_poly_activation_coeffs_in_encrypted_nn</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn" title="Permalink to this definition">#</a></dt>
+<dd><p>An indication to whether the coefficients of a polynomial activation
+function of an encrypted NN should remain exposed in a plaintext form and
+not be encrypted. May often result in improved performance. Not relevant
+for non-encrypted NN.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -796,6 +866,11 @@ will not be exposed to the server at any time.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.use_linear_regression_estimator">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_linear_regression_estimator</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.use_linear_regression_estimator" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.varw">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">varw</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.varw" title="Permalink to this definition">#</a></dt>
 <dd><p>The error variance of the Arima model.</p>
@@ -848,9 +923,37 @@ will not be exposed to the server at any time.</p>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE"></span><span id="helayers::PlainModelHyperParams::loadBin__isR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a7154e64532996c645117dde1d7d5c1d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadBin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads this object from the given binary stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to load from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE">
+<span id="_CPPv3NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE"></span><span id="_CPPv2NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE"></span><span id="helayers::PlainModelHyperParams::saveBin__osRC"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a060e27d5dbaa3838e6bbab33c29ff2c3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveBin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves this object to the given binary stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to save to. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams9debugModeE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams9debugModeE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams9debugModeE"></span><span id="helayers::PlainModelHyperParams::debugMode__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abf07bf413bda36541f7f1862cafc2170"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams9debugModeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Debug mode. </p>
+</dd></dl>
+
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams7verboseE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams7verboseE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams7verboseE"></span><span id="helayers::PlainModelHyperParams::verbose__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3a4e2331d63fb1c91d5a1c889c82949e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verbose</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams7verboseE" title="Permalink to this definition">#</a><br /></dt>
@@ -899,6 +1002,12 @@ will not be exposed to the server at any time.</p>
 </dd></dl>
 
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13modelSubclassE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams13modelSubclassE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13modelSubclassE"></span><span id="helayers::PlainModelHyperParams::modelSubclass__ss"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1acfecd32e484131374a9fc82abc19da82"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelSubclass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13modelSubclassE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A named parameter allowing to specify some specific model type, e.g., a specific class of NN architecture. </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28logisticRegressionActivationE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams28logisticRegressionActivationE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28logisticRegressionActivationE"></span><span id="helayers::PlainModelHyperParams::logisticRegressionActivation__LRActivationType"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1acf13a1ce27725cb8c1d5b2a728f8fefb"></span><a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationTypeE" title="helayers::LRActivationType"><span class="n"><span class="pre">LRActivationType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logisticRegressionActivation</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationType21LR_ACTIVATION_DEFAULTE" title="helayers::LR_ACTIVATION_DEFAULT"><span class="n"><span class="pre">LR_ACTIVATION_DEFAULT</span></span></a><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28logisticRegressionActivationE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Activation used in logistic regression. </p>
@@ -908,6 +1017,18 @@ will not be exposed to the server at any time.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams18negateSigmoidInputE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams18negateSigmoidInputE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams18negateSigmoidInputE"></span><span id="helayers::PlainModelHyperParams::negateSigmoidInput__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a6fb61b116b9bf3692b017e4099b2850f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">negateSigmoidInput</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams18negateSigmoidInputE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Whether to negate the input to the Sigmoid activation function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams15numberOfClassesE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams15numberOfClassesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams15numberOfClassesE"></span><span id="helayers::PlainModelHyperParams::numberOfClasses__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a34d022164b9fe179f25072f77e998c70"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfClasses</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams15numberOfClassesE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Number of classes. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE"></span><span id="helayers::PlainModelHyperParams::useLinearRegressionEstimator__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac50a7a6cfa0c5a7272aecaf6dae03cc0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">useLinearRegressionEstimator</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Whether to use the linear regression estimator (that provides a closed solution, but is limited to a single feature) when performing linear regression fit, or use gradient descent algorithm. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -938,6 +1059,12 @@ will not be exposed to the server at any time.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams20linearRegressionStdXE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams20linearRegressionStdXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams20linearRegressionStdXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionStdX__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af5b5e3f38ed4ff964c7ad7a9e0170ac7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionStdX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams20linearRegressionStdXE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The standard deviation of the values of X in linear regression training with normal distribution. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE"></span><span id="helayers::PlainModelHyperParams::inverseApproximationPrecision__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac4c626f8c0a50734e7e30231c460baeb"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverseApproximationPrecision</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The approximation precision of the linear regression inverse operation. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1054,6 +1181,45 @@ will not be exposed to the server at any time.</p>
 <p>Turning this flag on makes close thresholds considered the same one, thus reducing runtime on the account of possibly reducing accuracy. </p>
 </dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE"></span><span id="helayers::PlainModelHyperParams::modelSpecifiedFixedBatchSize__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a85c146c5dfa9ccadabc52aaa813d55d9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelSpecifiedFixedBatchSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Indication to whether a model-specified fixed batch size is effective (default: false). </p>
+<p>With such fixed batch size, the batch size is fixed to the batch size specified in the plain NN model, and future runs of predict with the plain model and the HE model created from it, must provide exactly that much elements per batch. If this flag is turned off, the batch size is dynamic, meaning it can be changed and the HE model can be optimized for any batch size desired, but in this case the batch dimension must not be changed, manipulated or involved in operations by the NN in any way. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE"></span><span id="helayers::PlainModelHyperParams::plainPolyActivationCoeffsInEncryptedNn__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aad5fa264fcecc2d855af06bf270f0a73"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plainPolyActivationCoeffsInEncryptedNn</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>An indication to whether the coefficients of a polynomial activation function of an encrypted NN should remain exposed in a plaintext form and not be encrypted. </p>
+<p>May often result in improved performance. Not relevant for non-encrypted NN. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE"></span><span id="helayers::PlainModelHyperParams::plainBatchNormInEncryptedNn__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a924bb109c8f4e4b47ef3dc37b192ab8d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plainBatchNormInEncryptedNn</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>An indication to whether the batch normalization constants of an encrypted NN should remain exposed in a plaintext form and not be encrypted. </p>
+<p>May often result in improved performance. Not relevant for non-encrypted NN. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams8amlDeltaE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams8amlDeltaE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams8amlDeltaE"></span><span id="helayers::PlainModelHyperParams::amlDelta__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a73eebad9d95c184de028bec53f8cb446"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amlDelta</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams8amlDeltaE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The weight of the risk of the other banks in the evaluation of the risks of the next iteration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13amlIterationsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams13amlIterationsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13amlIterationsE"></span><span id="helayers::PlainModelHyperParams::amlIterations__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a036f47a7ee6314aad8e57614833b3b58"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amlIterations</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13amlIterationsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The number of iterations in the AML model. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams11numAccountsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams11numAccountsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams11numAccountsE"></span><span id="helayers::PlainModelHyperParams::numAccounts__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a1c2e3548341aca3a05dcf887522eb659"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numAccounts</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams11numAccountsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The combined number of accounts at all banks. </p>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -1102,6 +1268,8 @@ will not be exposed to the server at any time.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.aml_delta"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.aml_delta</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.aml_iterations"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.aml_iterations</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.d"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.d</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.feature_ranges"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.feature_ranges</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.features_bin_size"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.features_bin_size</span></code></a></li>
@@ -1110,6 +1278,7 @@ will not be exposed to the server at any time.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.frep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.frep</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.grep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.grep</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.init_random_weights"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.init_random_weights</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.inverse_approximation_precision"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.inverse_approximation_precision</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_distribution_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_distribution_x</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_max_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_max_x</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_mean_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_mean_x</span></code></a></li>
@@ -1120,21 +1289,28 @@ will not be exposed to the server at any time.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.logistic_regression_activation"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.logistic_regression_activation</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.max_rand_value"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.max_rand_value</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.min_rand_value"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.min_rand_value</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.model_specified_fixed_batch_size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.model_subclass"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.model_subclass</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.mu"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.mu</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.negate_sigmoid_input"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.negate_sigmoid_input</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_accounts"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_accounts</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_centers"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_centers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_samples"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_samples</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_values_used_for_prediction"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_values_used_for_prediction</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_cached_nodes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_cached_nodes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_classes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_classes</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_features"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_features</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.p"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.p</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.phi</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_batch_norm_in_encrypted_nn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.q"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.q</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.round_before_storing_thresholds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.sparse_rate"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.sparse_rate</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.store_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.store_thresholds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.theta1"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.theta1</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.trainable"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.trainable</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.use_linear_regression_estimator"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.use_linear_regression_estimator</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.varw"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.varw</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.verbose"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.verbose</span></code></a></li>
 </ul>

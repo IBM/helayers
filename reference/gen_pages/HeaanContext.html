@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeaanContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>HeaanContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -538,6 +538,13 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeaanContext</span></span><a class="headerlink" href="#pyhelayers.HeaanContext" title="Permalink to this definition">#</a></dt>
 <dd><p>An implementation of HeContext using the HEaaN CKKS backend.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_parameter_preset_str">
+<span class="sig-name descname"><span class="pre">get_parameter_preset_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.HeaanContext"><span class="pre">pyhelayers.HeaanContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_parameter_preset_str" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a string with the name of the HEaaN Parameter Preset of this
+HeaanContext object</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.HeaanContext.init">
 <span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.HeaanContext"><span class="pre">pyhelayers.HeaanContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">req</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.HeConfigRequirement"><span class="pre">pyhelayers.HeConfigRequirement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.init" title="Permalink to this definition">#</a></dt>
 <dd><p>Initializes this HeaanContext according the given requirement.</p>
@@ -549,6 +556,28 @@ configuration parameters (e.g. securityLevel, numSlots).</p>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>RuntimeError</strong> – if it is not possible to fulfill the given
 requirement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_public_keys_to_dir">
+<span class="sig-name descname"><span class="pre">save_public_keys_to_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.HeaanContext"><span class="pre">pyhelayers.HeaanContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.save_public_keys_to_dir" title="Permalink to this definition">#</a></dt>
+<dd><p>Saves the public keys of this HeaanContext to the given directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir</strong> – The path of the directory to save to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_secret_key_to_dir">
+<span class="sig-name descname"><span class="pre">save_secret_key_to_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.HeaanContext"><span class="pre">pyhelayers.HeaanContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.save_secret_key_to_dir" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads the secret keys of this HeaanContext from the given directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir</strong> – The path of the directory to load from.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -651,6 +680,12 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext21createAbstractMessageEv">
+<span id="_CPPv3NK8helayers12HeaanContext21createAbstractMessageEv"></span><span id="_CPPv2NK8helayers12HeaanContext21createAbstractMessageEv"></span><span id="helayers::HeaanContext::createAbstractMessageC"></span><span class="target" id="classhelayers_1_1HeaanContext_1ad91cafe2552c9db65debd8a37d09b91b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractMessage</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createAbstractMessage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext21createAbstractMessageEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Do not use. Should be made private. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext10getEncoderEv">
 <span id="_CPPv3NK8helayers12HeaanContext10getEncoderEv"></span><span id="_CPPv2NK8helayers12HeaanContext10getEncoderEv"></span><span id="helayers::HeaanContext::getEncoderC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a426d234d7b0b4146386be2c81743cf0c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractEncoder</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEncoder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext10getEncoderEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Do not use. Should be made private. </p>
@@ -699,12 +734,15 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext12getSecretKeyE10DeviceType">
-<span id="_CPPv3NK8helayers12HeaanContext12getSecretKeyE10DeviceType"></span><span id="_CPPv2NK8helayers12HeaanContext12getSecretKeyE10DeviceType"></span><span id="helayers::HeaanContext::getSecretKey__DeviceTypeC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a3d9227f5f9c98f87dcd36d10ef2f90da"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SecretKey</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSecretKey</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DEVICE_CPU</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext12getSecretKeyE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext12getSecretKeyE10DeviceTypei">
+<span id="_CPPv3NK8helayers12HeaanContext12getSecretKeyE10DeviceTypei"></span><span id="_CPPv2NK8helayers12HeaanContext12getSecretKeyE10DeviceTypei"></span><span id="helayers::HeaanContext::getSecretKey__DeviceType.iC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a9b057ae556075ce772a7e841878ba384"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SecretKey</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSecretKey</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DEVICE_CPU</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext12getSecretKeyE10DeviceTypei" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the SecretKey object of the underlying HEaaN library. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>deviceType</strong> – The deviceType of the secret key. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceType</strong> – The device type of the secret key. </p></li>
+<li><p><strong>deviceId</strong> – The device ID of the secret key. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a> does not have a secret key. </p>
@@ -756,8 +794,7 @@ requirement.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext15getDefaultScaleEv">
 <span id="_CPPv3NK8helayers12HeaanContext15getDefaultScaleEv"></span><span id="_CPPv2NK8helayers12HeaanContext15getDefaultScaleEv"></span><span id="helayers::HeaanContext::getDefaultScaleC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a8e0beb2ee6dd4ca20df01b44de4edb13"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultScale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext15getDefaultScaleEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the default scale of ciphertexts and plaintexts created by this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a>. </p>
-<p>Returns the average of the default scales of each of the chain indices. </p>
+<dd><p>Returns default scale used in encoding (where applicable). </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -766,10 +803,7 @@ requirement.</p>
 <dd><p>Returns the default scale of ciphertexts and plaintexts created by this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a> at a specific chain index. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>chainIndex</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-odd"><p><strong>chainIndex</strong> – The chain index. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -814,7 +848,7 @@ requirement.</p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeaanContext_1a003478fe3213974bb22721bf7601379c"><span class="std std-ref">hasSecretKey()</span></a> is ture. </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> already has a secret key. i.e. <a class="reference internal" href="#classhelayers_1_1HeaanContext_1a003478fe3213974bb22721bf7601379c"><span class="std std-ref">hasSecretKey()</span></a> is true. </p></li>
 <li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If seedOnly is true but the underlying <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> does not support secret key I/O using seeds. </p></li>
 </ul>
 </dd>
@@ -871,12 +905,6 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext23getHeaanParameterPresetEv">
-<span id="_CPPv3NK8helayers12HeaanContext23getHeaanParameterPresetEv"></span><span id="_CPPv2NK8helayers12HeaanContext23getHeaanParameterPresetEv"></span><span id="helayers::HeaanContext::getHeaanParameterPresetC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a898efb72804bce1d6dc7a3d2bf684bb2"></span><span class="n"><span class="pre">HeaanParameterPreset</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeaanParameterPreset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext23getHeaanParameterPresetEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the HeaanParameterPreset object corresponding to the parameterPreset object of this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a>. </p>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext32getMinChainIndexForBootstrappingEv">
 <span id="_CPPv3NK8helayers12HeaanContext32getMinChainIndexForBootstrappingEv"></span><span id="_CPPv2NK8helayers12HeaanContext32getMinChainIndexForBootstrappingEv"></span><span id="helayers::HeaanContext::getMinChainIndexForBootstrappingC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a28d48d4c07c072b4d8bdb1e6f82a5ec0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext32getMinChainIndexForBootstrappingEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Assuming this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, returns the minimum level in which ciphertexts can be bootstrapped. </p>
@@ -915,7 +943,7 @@ requirement.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext19getMaxAllowedValuesEv">
 <span id="_CPPv3NK8helayers12HeaanContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers12HeaanContext19getMaxAllowedValuesEv"></span><span id="helayers::HeaanContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a52d5f51fead729a53689b909fe674292"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the maximal absolute value allowed for each chain index. </p>
-<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+<p>Values lower than the threshold are guaranteed to not produce overflows. The value in position i corresponds to the limit for chain index i. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -937,18 +965,43 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE">
-<span id="_CPPv3NK8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE"></span><span id="_CPPv2NK8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE"></span><span id="helayers::HeaanContext::deviceTypeFromHeaanDeviceType__HEaaN::DeviceTypeC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a1747d4849ca228ca3080eb370c1dc7cb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deviceTypeFromHeaanDeviceType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext19getNumDevicesOfTypeE10DeviceType">
+<span id="_CPPv3NK8helayers12HeaanContext19getNumDevicesOfTypeE10DeviceType"></span><span id="_CPPv2NK8helayers12HeaanContext19getNumDevicesOfTypeE10DeviceType"></span><span id="helayers::HeaanContext::getNumDevicesOfType__DeviceTypeC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a0e9d20370b8c2777b87e1ca05ada9b73"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumDevicesOfType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext19getNumDevicesOfTypeE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the number of devices of the given type available for this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> to use. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – <strong>[in]</strong> The device type. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType">
-<span id="_CPPv3NK8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType"></span><span id="_CPPv2NK8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType"></span><span id="helayers::HeaanContext::heaanDeviceTypeFromDeviceType__DeviceTypeC"></span><span class="target" id="classhelayers_1_1HeaanContext_1af9fe29b1ed79bed9661b9edc0b382cf8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heaanDeviceTypeFromDeviceType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext23getHeaanParameterPresetEv">
+<span id="_CPPv3NK8helayers12HeaanContext23getHeaanParameterPresetEv"></span><span id="_CPPv2NK8helayers12HeaanContext23getHeaanParameterPresetEv"></span><span id="helayers::HeaanContext::getHeaanParameterPresetC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a898efb72804bce1d6dc7a3d2bf684bb2"></span><span class="n"><span class="pre">HeaanParameterPreset</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeaanParameterPreset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext23getHeaanParameterPresetEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the HeaanParameterPreset object corresponding to the parameterPreset object of this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext21getParameterPresetStrEv">
+<span id="_CPPv3NK8helayers12HeaanContext21getParameterPresetStrEv"></span><span id="_CPPv2NK8helayers12HeaanContext21getParameterPresetStrEv"></span><span id="helayers::HeaanContext::getParameterPresetStrC"></span><span class="target" id="classhelayers_1_1HeaanContext_1af623f0fbe11bac85437a0e1dc2b4dd40"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getParameterPresetStr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext21getParameterPresetStrEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a string with the name of the HEaaN Parameter Preset of this <a class="reference internal" href="#classhelayers_1_1HeaanContext"><span class="std std-ref">HeaanContext</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers12HeaanContext21cudaDeviceSynchronizeEv">
+<span id="_CPPv3NK8helayers12HeaanContext21cudaDeviceSynchronizeEv"></span><span id="_CPPv2NK8helayers12HeaanContext21cudaDeviceSynchronizeEv"></span><span id="helayers::HeaanContext::cudaDeviceSynchronizeC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a9d24bc7ea8e0c755ce53b02ac4300f46"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cudaDeviceSynchronize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12HeaanContext21cudaDeviceSynchronizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Wait for GPU to finish all jobs. </p>
+<p>Kernel execution is normally asynchronous, so while the GPU device is executing a kernel the CPU can continue to work on some other commands, issue more instructions to the GPU, etc. However, when using this synchronization command, the CPU is instead forced to idle until all the GPU work has completed before doing anything else. Use when measuring GPU operations run times with HELAYERS_TIMER. Notice that this synchronization slows down the entire execution, so use carefully. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange">
+<span id="_CPPv3N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange"></span><span id="_CPPv2N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange"></span><span id="helayers::HeaanContext::getHeaanMinChainIndexForBootstrapping__BootstrapRange"></span><span class="target" id="classhelayers_1_1HeaanContext_1a2ccd15f2bcf2fc98810f3a36715dabb9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeaanMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BootstrapRange</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">range</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DEFAULT_RANGE</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext22getParameterPresetsMapEv">
 <span id="_CPPv3N8helayers12HeaanContext22getParameterPresetsMapEv"></span><span id="_CPPv2N8helayers12HeaanContext22getParameterPresetsMapEv"></span><span id="helayers::HeaanContext::getParameterPresetsMap"></span><span class="target" id="classhelayers_1_1HeaanContext_1aba91dfc0bf15756bd35c3664315f3399"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParameterPreset</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">HeaanParameterPreset</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getParameterPresetsMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext22getParameterPresetsMapEv" title="Permalink to this definition">#</a><br /></dt>
@@ -957,9 +1010,47 @@ requirement.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange">
-<span id="_CPPv3N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange"></span><span id="_CPPv2N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange"></span><span id="helayers::HeaanContext::getHeaanMinChainIndexForBootstrapping__BootstrapRange"></span><span class="target" id="classhelayers_1_1HeaanContext_1a2ccd15f2bcf2fc98810f3a36715dabb9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeaanMinChainIndexForBootstrapping</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BootstrapRange</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">range</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DEFAULT_RANGE</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext37getHeaanMinChainIndexForBootstrappingE14BootstrapRange" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE">
+<span id="_CPPv3N8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE"></span><span id="_CPPv2N8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE"></span><span id="helayers::HeaanContext::deviceTypeFromHeaanDeviceType__HEaaN::DeviceType"></span><span class="target" id="classhelayers_1_1HeaanContext_1a488ee3f3c23822b2a0f183832b244e9f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deviceTypeFromHeaanDeviceType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext29deviceTypeFromHeaanDeviceTypeEN5HEaaN10DeviceTypeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Given an HEaaN library DeviceType returns the corresponding HElayers DeviceType. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deviceType</strong> – The HEaaN library DeviceType. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType">
+<span id="_CPPv3N8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType"></span><span id="_CPPv2N8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType"></span><span id="helayers::HeaanContext::heaanDeviceTypeFromDeviceType__DeviceType"></span><span class="target" id="classhelayers_1_1HeaanContext_1a5626c57e1d9dc84519f8dfdcfb9e70ba"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">HEaaN</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heaanDeviceTypeFromDeviceType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext29heaanDeviceTypeFromDeviceTypeE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Given an HElayers DeviceType returns the corresponding HEaaN library DeviceType. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deviceType</strong> – The HElayers DeviceType. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext23heaanMinCustomPrimeSizeE">
+<span id="_CPPv3N8helayers12HeaanContext23heaanMinCustomPrimeSizeE"></span><span id="_CPPv2N8helayers12HeaanContext23heaanMinCustomPrimeSizeE"></span><span id="helayers::HeaanContext::heaanMinCustomPrimeSize__iC"></span><span class="target" id="classhelayers_1_1HeaanContext_1ad601c85b5233966f609b373e379e6f4f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heaanMinCustomPrimeSize</span></span></span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext23heaanMinCustomPrimeSizeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Min prime size for custom presets in the underlying HEaaN library. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext23heaanMaxCustomPrimeSizeE">
+<span id="_CPPv3N8helayers12HeaanContext23heaanMaxCustomPrimeSizeE"></span><span id="_CPPv2N8helayers12HeaanContext23heaanMaxCustomPrimeSizeE"></span><span id="helayers::HeaanContext::heaanMaxCustomPrimeSize__iC"></span><span class="target" id="classhelayers_1_1HeaanContext_1aaf9d0e6feba1f942f6534e9071ddb943"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heaanMaxCustomPrimeSize</span></span></span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext23heaanMaxCustomPrimeSizeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Max prime size for custom presets in the underlying HEaaN library. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12HeaanContext25heaanMaxCustomChainLengthE">
+<span id="_CPPv3N8helayers12HeaanContext25heaanMaxCustomChainLengthE"></span><span id="_CPPv2N8helayers12HeaanContext25heaanMaxCustomChainLengthE"></span><span id="helayers::HeaanContext::heaanMaxCustomChainLength__iC"></span><span class="target" id="classhelayers_1_1HeaanContext_1a3443d1a1ad7ab671bc3b714be28a1c3b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heaanMaxCustomChainLength</span></span></span><a class="headerlink" href="#_CPPv4N8helayers12HeaanContext25heaanMaxCustomChainLengthE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Max primes chain length for custom presets in the underlying HEaaN library. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -1009,7 +1100,10 @@ requirement.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeaanContext"><code class="docutils literal notranslate"><span class="pre">HeaanContext</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_parameter_preset_str"><code class="docutils literal notranslate"><span class="pre">HeaanContext.get_parameter_preset_str()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeaanContext.init"><code class="docutils literal notranslate"><span class="pre">HeaanContext.init()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_public_keys_to_dir"><code class="docutils literal notranslate"><span class="pre">HeaanContext.save_public_keys_to_dir()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_secret_key_to_dir"><code class="docutils literal notranslate"><span class="pre">HeaanContext.save_secret_key_to_dir()</span></code></a></li>
 </ul>
 </li>
 </ul>

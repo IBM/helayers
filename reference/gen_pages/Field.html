@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Field &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>Field &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -536,9 +536,11 @@ document.write(`
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
 <dt class="sig sig-object py" id="pyhelayers.Field">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Field</span></span><a class="headerlink" href="#pyhelayers.Field" title="Permalink to this definition">#</a></dt>
-<dd><p>This class holds one or more CTiles that represent the values of a
-specific data base entry for a batch of records whose size is
-equal to the number of slots available in the used HeContext.</p>
+<dd><p>This class may be used as an input to FHE SQL queries implemented
+by Table class. To this end, a Field object may be created using
+Table::createCompareValue() function. Then, the created Field
+object may be used as an input to FHE SQL queries, such as
+Table::countQuery().</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.Field.load_from_buffer">
 <span class="sig-name descname"><span class="pre">load_from_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.Field" title="pyhelayers.Field"><span class="pre">pyhelayers.Field</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.Field.load_from_buffer" title="Permalink to this definition">#</a></dt>
@@ -588,7 +590,8 @@ equal to the number of slots available in the used HeContext.</p>
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5FieldE">
 <span id="_CPPv3N8helayers5FieldE"></span><span id="_CPPv2N8helayers5FieldE"></span><span id="helayers::Field"></span><span class="target" id="classhelayers_1_1Field"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Field</span></span></span><a class="headerlink" href="#_CPPv4N8helayers5FieldE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>This class holds one or more CTiles that represent the values of a specific data base entry for a batch of records whose size is equal to the number of slots available in the used <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+<dd><p>This class holds one or more encrypted values. </p>
+<p>It may be used as an input to FHE SQL queries implemented by <a class="reference internal" href="Table.html#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> class. To this end, a <a class="reference internal" href="#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> object can be created using <a class="reference internal" href="Table.html#classhelayers_1_1Table_1a9bfe72e9dfa727e58b9d932bbe6c18f0"><span class="std std-ref">Table::createCompareValue()</span></a> function. Then, the created <a class="reference internal" href="#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> object can be used as an input to FHE SQL queries, such as <a class="reference internal" href="Table.html#classhelayers_1_1Table_1a559532b6903ffbcc9c717943d20b9637"><span class="std std-ref">Table::countQuery()</span></a>. The <a class="reference internal" href="#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> class also has some internal usages. For example, it is used by the <a class="reference internal" href="Table.html#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> class to hold a single column value of slotCount database records. If a <a class="reference internal" href="Table.html#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> contains 2*SlotCount records and one column, it will hold two <a class="reference internal" href="#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> objects. While If a <a class="reference internal" href="Table.html#classhelayers_1_1Table"><span class="std std-ref">Table</span></a> contains 2*slotCount records and two columns, it will hold four <a class="reference internal" href="#classhelayers_1_1Field"><span class="std std-ref">Field</span></a> objects. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">

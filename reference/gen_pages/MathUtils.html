@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MathUtils &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>MathUtils &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -368,7 +368,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -606,6 +606,12 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils5isIntEd">
+<span id="_CPPv3N8helayers9MathUtils5isIntEd"></span><span id="_CPPv2N8helayers9MathUtils5isIntEd"></span><span id="helayers::MathUtils::isInt__double"></span><span class="target" id="classhelayers_1_1MathUtils_1a7b029f864735e36a6b489c645c77064e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils5isIntEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if this double value can be safely converted to an int. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils24getConvolutionOutputSizeEiiiii">
 <span id="_CPPv3N8helayers9MathUtils24getConvolutionOutputSizeEiiiii"></span><span id="_CPPv2N8helayers9MathUtils24getConvolutionOutputSizeEiiiii"></span><span id="helayers::MathUtils::getConvolutionOutputSize__i.i.i.i.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a39c0b1870b8e8dbbc0277ca12a5add51"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConvolutionOutputSize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inputSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filterSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stride</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">startPadding</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">endPadding</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils24getConvolutionOutputSizeEiiiii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the size of the output of the convolution operator for a specific dimension. </p>
@@ -705,6 +711,20 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils16getRelativeErrorEdd">
+<span id="_CPPv3N8helayers9MathUtils16getRelativeErrorEdd"></span><span id="_CPPv2N8helayers9MathUtils16getRelativeErrorEdd"></span><span id="helayers::MathUtils::getRelativeError__double.double"></span><span class="target" id="classhelayers_1_1MathUtils_1ae1cd5985c1d15cbf2df8174c00411d60"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRelativeError</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils16getRelativeErrorEdd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the relative error between a and b, which is computed as |a-b|/max(|a|,|b|). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first value. </p></li>
+<li><p><strong>b</strong> – The second value. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils10getInverseERKNSt6vectorIdEE">
 <span id="_CPPv3N8helayers9MathUtils10getInverseERKNSt6vectorIdEE"></span><span id="_CPPv2N8helayers9MathUtils10getInverseERKNSt6vectorIdEE"></span><span id="helayers::MathUtils::getInverse__std::vector:double:CR"></span><span class="target" id="classhelayers_1_1MathUtils_1a7c17eb85298a06d7fca10d52dea24a33"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInverse</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils10getInverseERKNSt6vectorIdEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns element-wise inverse vector R given a vector of values V, where R[i] = 1 / V[i] for every index i. </p>
@@ -738,7 +758,7 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>v</strong> – The double to cast. </p></li>
-<li><p><strong>eps</strong> – The maximal allowed differene between the casting result and “v”. </p></li>
+<li><p><strong>eps</strong> – The maximal allowed difference between the casting result and “v”. </p></li>
 </ul>
 </dd>
 </dl>
@@ -781,10 +801,22 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vals</strong> – The vector of values. </p></li>
+<li><p><strong>vec</strong> – The vector of values. </p></li>
 <li><p><strong>batchNum</strong> – The batch number. </p></li>
 <li><p><strong>batchSize</strong> – The size of each batch. </p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils8fillPermERNSt6vectorIiEE">
+<span id="_CPPv3N8helayers9MathUtils8fillPermERNSt6vectorIiEE"></span><span id="_CPPv2N8helayers9MathUtils8fillPermERNSt6vectorIiEE"></span><span id="helayers::MathUtils::fillPerm__std::vector:i:R"></span><span class="target" id="classhelayers_1_1MathUtils_1ab748128ffc522e0135bb61343132b37f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillPerm</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">perm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils8fillPermERNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Fills values of dimensions in a permutation that contains -1 values in some of its elements. </p>
+<p>The -1 values will be replaced by values in the range [0,size_of_perm) that currently do not appear in the permutation. The permutation will be filled such that a minimal number of dimensions will be permuted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>perm</strong> – The given permutation. </p>
 </dd>
 </dl>
 </dd></dl>

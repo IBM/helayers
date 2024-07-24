@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>DebugContext &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>DebugContext &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -727,12 +727,16 @@ requirement, or if the context is already initalized.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceType">
-<span id="_CPPv3N8helayers12DebugContext16setDefaultDeviceE10DeviceType"></span><span id="_CPPv2N8helayers12DebugContext16setDefaultDeviceE10DeviceType"></span><span id="helayers::DebugContext::setDefaultDevice__DeviceType"></span><span class="target" id="classhelayers_1_1DebugContext_1a96c47a2ce25c7f62dd3d244fd532f9c7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceType" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceTypeib">
+<span id="_CPPv3N8helayers12DebugContext16setDefaultDeviceE10DeviceTypeib"></span><span id="_CPPv2N8helayers12DebugContext16setDefaultDeviceE10DeviceTypeib"></span><span id="helayers::DebugContext::setDefaultDevice__DeviceType.i.b"></span><span class="target" id="classhelayers_1_1DebugContext_1a4ac6af26b4f0caec377aa4db2a0b53cb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">hybridUtilization</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers12DebugContext16setDefaultDeviceE10DeviceTypeib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the default device of the ciphertexts and plaintexts generated using this <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>, and the hybrid devices utilization policy. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> – <strong>[in]</strong> the new default device </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – <strong>[in]</strong> The device type. </p></li>
+<li><p><strong>deviceId</strong> – <strong>[in]</strong> The device ID. </p></li>
+<li><p><strong>hybridUtilization</strong> – <strong>[in]</strong> Whether a policy of hybrid utilization of devices of different types shall be applied. Such policy is only applicable for DEVICE_CPU as the default device type. In such policy, the GPU may be utilized alongside CPU for parts of the computation (e.g., for performing bootstraps). </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -807,7 +811,7 @@ requirement, or if the context is already initalized.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers12DebugContext19getMaxAllowedValuesEv">
 <span id="_CPPv3NK8helayers12DebugContext19getMaxAllowedValuesEv"></span><span id="_CPPv2NK8helayers12DebugContext19getMaxAllowedValuesEv"></span><span id="helayers::DebugContext::getMaxAllowedValuesC"></span><span class="target" id="classhelayers_1_1DebugContext_1a3a1d6fc02efa03c247f420a0a5c8ab94"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAllowedValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers12DebugContext19getMaxAllowedValuesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the maximal absolute value allowed for each chain index. </p>
-<p>Values lower than the threshold are guaranteed to not preduce overflows. The value in position i corresponds to the limit for chain index i. </p>
+<p>Values lower than the threshold are guaranteed to not produce overflows. The value in position i corresponds to the limit for chain index i. </p>
 </dd></dl>
 
 <dl class="cpp function">

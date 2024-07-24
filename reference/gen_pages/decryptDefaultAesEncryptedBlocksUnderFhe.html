@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>decryptDefaultAesEncryptedBlocksUnderFhe &#8212; HElayers 1.5.3.1 documentation</title>
+    <title>decryptDefaultAesEncryptedBlocksUnderFhe &#8212; HElayers 1.5.4.0 documentation</title>
   
   
   
@@ -372,7 +372,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ModelIoProcessor.html">ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../applications.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -534,7 +534,7 @@ document.write(`
 <dd><p>Decrypts the given AES-encrypted blocks, running the AES-decryption
 under FHE given an FHE-encrypted AES secret key. Supports the AES counter
 (CTR) mode of operation. Assumes the original tensors of numbers were
-arranged into blocks accoring to a default arrangement.</p>
+arranged into blocks according to a default arrangement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -554,7 +554,7 @@ bytes (128 bits).</p></li>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers40decryptDefaultAesEncryptedBlocksUnderFheER13EncryptedDataRKNSt6vectorINSt6vectorIhEEEERK6AesKeyRKNSt6vectorIhEERK12NumberConfigRK11DataPacking">
 <span id="_CPPv3N8helayers40decryptDefaultAesEncryptedBlocksUnderFheER13EncryptedDataRKNSt6vectorINSt6vectorIhEEEERK6AesKeyRKNSt6vectorIhEERK12NumberConfigRK11DataPacking"></span><span id="_CPPv2N8helayers40decryptDefaultAesEncryptedBlocksUnderFheER13EncryptedDataRKNSt6vectorINSt6vectorIhEEEERK6AesKeyRKNSt6vectorIhEERK12NumberConfigRK11DataPacking"></span><span id="helayers::decryptDefaultAesEncryptedBlocksUnderFhe__EncryptedDataR.std::vector:std::vector:unsigned-c::CR.AesKeyCR.std::vector:unsigned-c:CR.NumberConfigCR.DataPackingCR"></span><span class="target" id="namespacehelayers_1af4f301fb70ffadacdf453d08d3d0073f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">decryptDefaultAesEncryptedBlocksUnderFhe</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">encryptedBlocks</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="AesKey.html#_CPPv4N8helayers6AesKeyE" title="helayers::AesKey"><span class="n"><span class="pre">AesKey</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">aesKey</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">iv</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="NumberConfig.html#_CPPv4N8helayers12NumberConfigE" title="helayers::NumberConfig"><span class="n"><span class="pre">NumberConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">numberConfig</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">DataPacking</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dataPacking</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers40decryptDefaultAesEncryptedBlocksUnderFheER13EncryptedDataRKNSt6vectorINSt6vectorIhEEEERK6AesKeyRKNSt6vectorIhEERK12NumberConfigRK11DataPacking" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Decrypts the given AES-encrypted blocks, running the AES-decryption under FHE given an FHE-encrypted AES secret key. </p>
-<p>Supports the AES counter (CTR) mode of operation. Assumes the original tensors of numbers were arranged into blocks accoring to a default arrangement.</p>
+<p>Supports the AES counter (CTR) mode of operation. Assumes the original tensors of numbers were arranged into blocks according to a default arrangement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
