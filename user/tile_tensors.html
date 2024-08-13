@@ -389,6 +389,17 @@ options known in the literature (see examples below), unify them to a generic
 framework, generalize upon them, and add novel possibilities</p>
 <section id="tile-tensor-shapes">
 <h2>Tile tensor shapes<a class="headerlink" href="#tile-tensor-shapes" title="Permalink to this heading">#</a></h2>
+<p>Tile tensor is a tensor divided into tiles, where each tile contains a part of the
+original tensor, and is stored flattened in a ciphertext.</p>
+<p>The tile tensor shape defines the shape of the tensor, and how it is divided
+into tiles. For example, the tile tensor shape <img class="math" src="../_images/math/4c1cfb3f4f6b937e772d0c249a87d406c6fc061b.png" alt="[\frac{5}{2},\frac{6}{4}]"/>
+specifies the following:</p>
+<ul class="simple">
+<li><p>The numbers above the fraction line indicate the shape of the tensor, <img class="math" src="../_images/math/86ebfe08bed52f8fcdc124d817b7b3403a0b6c78.png" alt="[5,6]"/>. This means the tile tensor contains a 5 by 6 matrix.</p></li>
+<li><p>The numbers below the line indicate the shape of the tiles, <img class="math" src="../_images/math/9ee224c659df6c62135b7582be9a16a25d3bc560.png" alt="[2,4]"/>. This means we divided our matrix into contiguous blocks of shape <img class="math" src="../_images/math/9ee224c659df6c62135b7582be9a16a25d3bc560.png" alt="[2,4]"/> and stored each such block in a separate ciphertext. This also implies each ciphertext has $8$ slots.</p></li>
+</ul>
+<p>See this example in the interactive demo below, where you can try various other shapes,
+including the options of duplication, unknowns, and interleaved packing.</p>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -718,41 +729,16 @@ E.g., a tensor of shape <img class="math" src="../_images/math/b17897287b23d9647
 where the first three dimensions come from the ‘a’ dimension and are labeled a0,a1,a2,
 and the last two come from the ‘b’ dimension and are labeled b0,b1.</p>
 <p>Now say this reshaped tensor is packed into a ciphertext with 8 slots.
-Fhelipe uses tile shapes that also only has dimensions of size 2, which is</p>
-<blockquote>
-<div><p><img class="math" src="../_images/math/5141b909cea7475efc352b012ed1235221552506.png" alt="[2,2,2]"/> in our example. The tensor</p>
-</div></blockquote>
-<p>can now be packed in various ways, e.g.  <img class="math" src="../_images/math/d9d28c37ce12eb69d2d65d1fa1d7749f0ede7e72.png" alt="[a0,a1,a2/2,b0/2,b1/2]"/> or <img class="math" src="../_images/math/4a3d0ef4d121546e51ea08b90be9915852810fdc.png" alt="[b0,b1,a0/2,a1/2/a2/2]"/>. In Fhelipe’s notation,
+Fhelipe uses tile shapes that also only has dimensions of size 2, which is
+<img class="math" src="../_images/math/5141b909cea7475efc352b012ed1235221552506.png" alt="[2,2,2]"/> in our example. The tensor
+can now be packed in various ways, e.g.  <img class="math" src="../_images/math/d9d28c37ce12eb69d2d65d1fa1d7749f0ede7e72.png" alt="[a0,a1,a2/2,b0/2,b1/2]"/> or <img class="math" src="../_images/math/4a3d0ef4d121546e51ea08b90be9915852810fdc.png" alt="[b0,b1,a0/2,a1/2/a2/2]"/>. In Fhelipe’s notation,
 the same thing is written <img class="math" src="../_images/math/5506019c0aea0cbd7999b7273eeda5bc55002e47.png" alt="[a0,a1;a2,b0,b1]"/> or <img class="math" src="../_images/math/02a81bd64923266da49f91c94cf9b4649b2aab3b.png" alt="[b0,b1;a0,a1,a2]"/>.</p>
 <p>Tile tensors can therefore capture Fhelipe’s packing methods, and in addition offer several advantages:</p>
 <ul class="simple">
-<li><p>Most noticeably, you are not forced to reshape a tensor to dimensions of size 2 or</p></li>
+<li><p>Most noticeably, you are not forced to reshape a tensor to dimensions of size 2 or to work with a tile shape of <img class="math" src="../_images/math/82cc55e731679848bcb6a2da92e3d6d70693a618.png" alt="[2,2,...2]"/>. In the above example, if the tensor’s original shape is <img class="math" src="../_images/math/600a55a2eb0d4f34eeb9d66535491e7d15d8dd50.png" alt="[80,4]"/>, Fhelipe would require first padding it to a larger size of <img class="math" src="../_images/math/6348d54439f6cc97fb2cd90e4dbcadb4fd9fe58e.png" alt="[128,4]"/>, to enable breaking down both dimensions to size-2 dimensions. This causes a considerable waste.Using tile tensors, working with a tile tensor shape of <img class="math" src="../_images/math/cea7414f46f44d778503c76f240ee394c04f893d.png" alt="[80/4,4/2]"/> or <img class="math" src="../_images/math/b09289f140071c5b9ae54b3b23895421506a5634.png" alt="[80/2,4/4]"/> would provide maximal efficiency in terms of both storage and computation time.</p></li>
+<li><p>Tile tensors offer the interleaved packing method, which allows for rotating tensor dimensions with high efficiency and zero multiplication depth. While Fhelipe’s layouts can also be configured to schemes equivalent to interleaved packing, these configurations are less intuitive, and the rotation algorithms adapted to Fhelipe’s layouts require non-trivial multiplication depth.</p></li>
+<li><p>Tile tensors keep better track of slots containing duplicate values and unknown values. While both Fhelipe’s layout and tile tensors allow the user to request replication, tile tensors have the additional advantage of identifying cases where replication occurs spontaneously, e.g., after summation of a dimension under certain, simple conditions. If these conditions are not satisfied, then some slots will have unknown values, which are too tracked by the tile tensor metadata. Clearing them is not automatic as in Fhelipe, as they might not disrupt the rest of the computation, or be cleared as a side effect of one of the next operators.</p></li>
 </ul>
-<p>to work with a tile shape of <img class="math" src="../_images/math/82cc55e731679848bcb6a2da92e3d6d70693a618.png" alt="[2,2,...2]"/>.
-In the above example, if the tensor’s original shape is <img class="math" src="../_images/math/600a55a2eb0d4f34eeb9d66535491e7d15d8dd50.png" alt="[80,4]"/>,
-Fhelipe would require first padding it to a larger size of <img class="math" src="../_images/math/6348d54439f6cc97fb2cd90e4dbcadb4fd9fe58e.png" alt="[128,4]"/>, to enable
-breaking down both dimensions to size-2 dimensions. This causes a considerable waste.
-Using tile tensors, working with a tile tensor shape of
-<img class="math" src="../_images/math/cea7414f46f44d778503c76f240ee394c04f893d.png" alt="[80/4,4/2]"/> or <img class="math" src="../_images/math/b09289f140071c5b9ae54b3b23895421506a5634.png" alt="[80/2,4/4]"/> would provide maximal efficiency
-in terms of both storage and computation time.</p>
-<ul class="simple">
-<li><p>Tile tensors offer the interleaved packing method, which allows</p></li>
-</ul>
-<p>for rotating tensor dimensions with high efficiency and zero multiplication depth.
-While Fhelipe’s layouts can also be configured to schemes equivalent to interleaved packing,
-these configurations are less intuitive, and the rotation algorithms adapted to Fhelipe’s layouts
-require non-trivial multiplication depth.</p>
-<ul class="simple">
-<li><p>Tile tensors keep better track of slots containing duplicate values</p></li>
-</ul>
-<p>and unknown values. While both Fhelipe’s layout and tile tensors allow the user
-to request replication, tile tensors have the additional advantage of
-identifying cases where replication occurs spontaneously, e.g., after
-summation of a dimension under certain, simple conditions. If these conditions
-are not satisfied, then some slots will have unknown values, which are too
-tracked by the tile tensor metadata. Clearing them is not automatic as in Fhelipe,
-as they might not disrupt the rest of the computation, or be cleared
-as a side effect of one of the next operators.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
