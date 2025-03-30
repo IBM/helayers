@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>QueryDatabase &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>CopyAndRecurseDatabase &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -52,7 +52,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/QueryDatabase';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/CopyAndRecurseDatabase';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multi Party FHE" href="../mp_fhe.html" />
@@ -311,20 +311,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -396,14 +388,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">QueryDatabase</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -509,7 +502,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../db.html" class="nav-link">Data bases</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">QueryDatabase</li>
+    <li class="breadcrumb-item active" aria-current="page">CopyAndRecurseDatabase</li>
   </ul>
 </nav>
 </div>
@@ -526,20 +519,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="querydatabase">
-<h1>QueryDatabase<a class="headerlink" href="#querydatabase" title="Permalink to this heading">#</a></h1>
+  <section id="copyandrecursedatabase">
+<h1>CopyAndRecurseDatabase<a class="headerlink" href="#copyandrecursedatabase" title="Permalink to this heading">#</a></h1>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13QueryDatabaseE">
-<span id="_CPPv3N8helayers13QueryDatabaseE"></span><span id="_CPPv2N8helayers13QueryDatabaseE"></span><span id="helayers::QueryDatabase"></span><span class="target" id="classhelayers_1_1QueryDatabase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">QueryDatabase</span></span></span><a class="headerlink" href="#_CPPv4N8helayers13QueryDatabaseE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabaseE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabaseE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabaseE"></span><span id="helayers::CopyAndRecurseDatabase"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CopyAndRecurseDatabase</span></span></span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabaseE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A class for a queryable encrypted database. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13QueryDatabase13QueryDatabaseERK9HeContext">
-<span id="_CPPv3N8helayers13QueryDatabase13QueryDatabaseERK9HeContext"></span><span id="_CPPv2N8helayers13QueryDatabase13QueryDatabaseERK9HeContext"></span><span id="helayers::QueryDatabase::QueryDatabase__HeContextCR"></span><span class="target" id="classhelayers_1_1QueryDatabase_1ab3cb4db476d1af8c05d37fc0a1484683"></span><span class="sig-name descname"><span class="n"><span class="pre">QueryDatabase</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13QueryDatabase13QueryDatabaseERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Construct a new <a class="reference internal" href="#classhelayers_1_1QueryDatabase"><span class="std std-ref">QueryDatabase</span></a> object. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase22CopyAndRecurseDatabaseERK9HeContext">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase22CopyAndRecurseDatabaseERK9HeContext"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase22CopyAndRecurseDatabaseERK9HeContext"></span><span id="helayers::CopyAndRecurseDatabase::CopyAndRecurseDatabase__HeContextCR"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1a65f1884d742c5b0979887d4b05d7c1b3"></span><span class="sig-name descname"><span class="n"><span class="pre">CopyAndRecurseDatabase</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase22CopyAndRecurseDatabaseERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a> object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>he</strong> – The <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a>. </p>
@@ -548,41 +541,95 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13QueryDatabase4initERKNSt6vectorI8uint16_tEEi">
-<span id="_CPPv3N8helayers13QueryDatabase4initERKNSt6vectorI8uint16_tEEi"></span><span id="_CPPv2N8helayers13QueryDatabase4initERKNSt6vectorI8uint16_tEEi"></span><span id="helayers::QueryDatabase::init__std::vector:uint16_t:CR.i"></span><span class="target" id="classhelayers_1_1QueryDatabase_1aacb0100024b245b12394b87cc12258e5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint16_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">database</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numChildren</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13QueryDatabase4initERKNSt6vectorI8uint16_tEEi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Initializes this <a class="reference internal" href="#classhelayers_1_1QueryDatabase"><span class="std std-ref">QueryDatabase</span></a> object with data. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase4initERKNSt6vectorI8uint16_tEEib">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase4initERKNSt6vectorI8uint16_tEEib"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase4initERKNSt6vectorI8uint16_tEEib"></span><span id="helayers::CopyAndRecurseDatabase::init__std::vector:uint16_t:CR.i.b"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1aaf485536a3e6e4ff8e8e571f4d28d0b6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint16_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">database</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numChildren</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">binary</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase4initERKNSt6vectorI8uint16_tEEib" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Initializes this <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a> object with data. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>database</strong> – The plain database. </p></li>
-<li><p><strong>numChildren</strong> – The number of children of every internal node in the partition trees data structure of this <a class="reference internal" href="#classhelayers_1_1QueryDatabase"><span class="std std-ref">QueryDatabase</span></a>. </p></li>
+<li><p><strong>numChildren</strong> – The number of children of every internal node in the partition trees data structure of this <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a>. </p></li>
+<li><p><strong>binary</strong> – Whether to encrypt the values of the database in binary representation. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13QueryDatabase10countQueryER5CTileRK5CTileRK5CTileiii">
-<span id="_CPPv3N8helayers13QueryDatabase10countQueryER5CTileRK5CTileRK5CTileiii"></span><span id="_CPPv2N8helayers13QueryDatabase10countQueryER5CTileRK5CTileRK5CTileiii"></span><span id="helayers::QueryDatabase::countQuery__CTileR.CTileCR.CTileCR.i.i.i"></span><span class="target" id="classhelayers_1_1QueryDatabase_1a94925edc6bd43816beeced645c93f6af"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">countQuery</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">start</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">end</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxDist</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13QueryDatabase10countQueryER5CTileRK5CTileRK5CTileiii" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase16setCompareMethodENSt8functionIF5CTileRK5CTileRK5CTileEEE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase16setCompareMethodENSt8functionIF5CTileRK5CTileRK5CTileEEE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase16setCompareMethodENSt8functionIF5CTileRK5CTileRK5CTileEEE"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1ac2a2469015ed72ce7e161ef63362da4f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCompareMethod</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compare</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase16setCompareMethodENSt8functionIF5CTileRK5CTileRK5CTileEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the comparison method to use. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compare</strong> – The comparison method to use. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase22setCompareBinaryMethodENSt8functionIF5CTileRKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEEEEE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase22setCompareBinaryMethodENSt8functionIF5CTileRKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEEEEE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase22setCompareBinaryMethodENSt8functionIF5CTileRKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEEEEE"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1ab3dfecd1ff4a9fbf45ec82ce010ee578"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCompareBinaryMethod</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compare</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase22setCompareBinaryMethodENSt8functionIF5CTileRKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEEEEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the comparison method to use when running in binary representation mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compare</strong> – The comparison method to use. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers22CopyAndRecurseDatabase12encryptRangeEdd">
+<span id="_CPPv3NK8helayers22CopyAndRecurseDatabase12encryptRangeEdd"></span><span id="_CPPv2NK8helayers22CopyAndRecurseDatabase12encryptRangeEdd"></span><span id="helayers::CopyAndRecurseDatabase::encryptRange__double.doubleC"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1ac2d0176cd6e593b8d12f29d52cad85c4"></span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabaseE" title="helayers::CopyAndRecurseDatabase"><span class="n"><span class="pre">CopyAndRecurseDatabase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabase5RangeE" title="helayers::CopyAndRecurseDatabase::Range"><span class="n"><span class="pre">Range</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encryptRange</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">start</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">end</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers22CopyAndRecurseDatabase12encryptRangeEdd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encrypts a range to use in a query over a <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a> object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – start of range. </p></li>
+<li><p><strong>end</strong> – end of range. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a> was initialized in binary representation mode, and the given range values are not integers. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase_1_1Range"><span class="std std-ref">Range</span></a> object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase10countQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase10countQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase10countQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE"></span><span id="helayers::CopyAndRecurseDatabase::countQuery__CTileR.CopyAndRecurseDatabase::RangeCR"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1a3153a626f631eeb41520200db8b7f525"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">countQuery</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabaseE" title="helayers::CopyAndRecurseDatabase"><span class="n"><span class="pre">CopyAndRecurseDatabase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabase5RangeE" title="helayers::CopyAndRecurseDatabase::Range"><span class="n"><span class="pre">Range</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">range</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase10countQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Performs a count query. </p>
 <p>Returns an encryption of the number of elements contained within the given encrypted range. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>res</strong> – The output result. </p></li>
-<li><p><strong>start</strong> – The start of the query range. </p></li>
-<li><p><strong>end</strong> – The end of the query range. </p></li>
-<li><p><strong>gRep</strong> – Sets the accuracy of the compare function, see <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a0daf7ece912d5e3bda2a8255a68d1fe3"><span class="std std-ref">FunctionEvaluator::sign</span></a>. </p></li>
-<li><p><strong>fRep</strong> – Sets the accuracy of the compare function, see <a class="reference internal" href="FunctionEvaluator.html#classhelayers_1_1FunctionEvaluator_1a0daf7ece912d5e3bda2a8255a68d1fe3"><span class="std std-ref">FunctionEvaluator::sign</span></a>. </p></li>
-<li><p><strong>maxDist</strong> – The maximal distance between every two elements in the database. </p></li>
+<li><p><strong>range</strong> – The range to query. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers13QueryDatabase12setVerbosityE9Verbosity">
-<span id="_CPPv3N8helayers13QueryDatabase12setVerbosityE9Verbosity"></span><span id="_CPPv2N8helayers13QueryDatabase12setVerbosityE9Verbosity"></span><span id="helayers::QueryDatabase::setVerbosity__Verbosity"></span><span class="target" id="classhelayers_1_1QueryDatabase_1a48586567b5bff18fbc86c4acd208f9bb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVerbosity</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers13QueryDatabase12setVerbosityE9Verbosity" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase14emptinessQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase14emptinessQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase14emptinessQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE"></span><span id="helayers::CopyAndRecurseDatabase::emptinessQuery__CTileR.CopyAndRecurseDatabase::RangeCR"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1abc351240f6b8834169cb3613a0a56c51"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emptinessQuery</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabaseE" title="helayers::CopyAndRecurseDatabase"><span class="n"><span class="pre">CopyAndRecurseDatabase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8helayers22CopyAndRecurseDatabase5RangeE" title="helayers::CopyAndRecurseDatabase::Range"><span class="n"><span class="pre">Range</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">range</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase14emptinessQueryER5CTileRKN22CopyAndRecurseDatabase5RangeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Performs an emptiness query. </p>
+<p>Returns an encryption of an indicator which indicates whether the given encrypted range is empty or not. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – The output indicator result. </p></li>
+<li><p><strong>range</strong> – The range to query. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase12setVerbosityE9Verbosity">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase12setVerbosityE9Verbosity"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase12setVerbosityE9Verbosity"></span><span id="helayers::CopyAndRecurseDatabase::setVerbosity__Verbosity"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1a11dcdb24a3e59cf9dcbdba458a559c28"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVerbosity</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="Verbosity.html#_CPPv4N8helayers9VerbosityE" title="helayers::Verbosity"><span class="n"><span class="pre">Verbosity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">verbosity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase12setVerbosityE9Verbosity" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the verbosity. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -592,12 +639,17 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers13QueryDatabase15getNumUsedTilesEv">
-<span id="_CPPv3NK8helayers13QueryDatabase15getNumUsedTilesEv"></span><span id="_CPPv2NK8helayers13QueryDatabase15getNumUsedTilesEv"></span><span id="helayers::QueryDatabase::getNumUsedTilesC"></span><span class="target" id="classhelayers_1_1QueryDatabase_1aaa2f4599cf2edbd54544d43bb919e98f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumUsedTiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers13QueryDatabase15getNumUsedTilesEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Gets the number of used tiles in this <a class="reference internal" href="#classhelayers_1_1QueryDatabase"><span class="std std-ref">QueryDatabase</span></a> object. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers22CopyAndRecurseDatabase15getNumUsedTilesEv">
+<span id="_CPPv3NK8helayers22CopyAndRecurseDatabase15getNumUsedTilesEv"></span><span id="_CPPv2NK8helayers22CopyAndRecurseDatabase15getNumUsedTilesEv"></span><span id="helayers::CopyAndRecurseDatabase::getNumUsedTilesC"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1a24de0318c3e3e3db2d098d3595cb676a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumUsedTiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers22CopyAndRecurseDatabase15getNumUsedTilesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Gets the number of used tiles in this <a class="reference internal" href="#classhelayers_1_1CopyAndRecurseDatabase"><span class="std std-ref">CopyAndRecurseDatabase</span></a> object. </p>
 </dd></dl>
 
 </div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers22CopyAndRecurseDatabase5RangeE">
+<span id="_CPPv3N8helayers22CopyAndRecurseDatabase5RangeE"></span><span id="_CPPv2N8helayers22CopyAndRecurseDatabase5RangeE"></span><span id="helayers::CopyAndRecurseDatabase::Range"></span><span class="target" id="classhelayers_1_1CopyAndRecurseDatabase_1_1Range"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Range</span></span></span><a class="headerlink" href="#_CPPv4N8helayers22CopyAndRecurseDatabase5RangeE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div></div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PTile &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>PTile &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -536,8 +529,20 @@ It’s called a PTile because from a high-level point of view
 we’ll usually use several of these combined for holding a more complicated
 object such as a matrix.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PTile.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PTile" title="pyhelayers.PTile"><span class="pre">pyhelayers.PTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PTile" title="pyhelayers.PTile"><span class="pre">pyhelayers.PTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PTile.add" title="Permalink to this definition">#</a></dt>
+<dd><p>Add content of another plaintext to this one, elementwise.
+Result is stored in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – other plaintext to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.PTile.get_current_device">
-<span class="sig-name descname"><span class="pre">get_current_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PTile" title="pyhelayers.PTile"><span class="pre">pyhelayers.PTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.DeviceType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PTile.get_current_device" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_current_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PTile" title="pyhelayers.PTile"><span class="pre">pyhelayers.PTile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">helayers::Device</span></span></span><a class="headerlink" href="#pyhelayers.PTile.get_current_device" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the current device of this PTile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -648,6 +653,18 @@ and false otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers5PTile3addERK5PTile">
+<span id="_CPPv3N8helayers5PTile3addERK5PTile"></span><span id="_CPPv2N8helayers5PTile3addERK5PTile"></span><span id="helayers::PTile::add__PTileCR"></span><span class="target" id="classhelayers_1_1PTile_1a0fd2c2276ba518c06d209abe1ca99a52"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers5PTileE" title="helayers::PTile"><span class="n"><span class="pre">PTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers5PTile3addERK5PTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Add content of another plaintext to this one, elementwise. </p>
+<p>Result is stored in place. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other plaintext to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers5PTile8toDeviceE10DeviceTypei">
 <span id="_CPPv3N8helayers5PTile8toDeviceE10DeviceTypei"></span><span id="_CPPv2N8helayers5PTile8toDeviceE10DeviceTypei"></span><span id="helayers::PTile::toDevice__DeviceType.i"></span><span class="target" id="classhelayers_1_1PTile_1a1ed7a0c45b65b02226f8d9ac3f4fd13b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toDevice</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DeviceType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deviceId</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8helayers5PTile8toDeviceE10DeviceTypei" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Move this <a class="reference internal" href="#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a> to another device. </p>
@@ -663,7 +680,7 @@ and false otherwise.</p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers5PTile16getCurrentDeviceEv">
-<span id="_CPPv3NK8helayers5PTile16getCurrentDeviceEv"></span><span id="_CPPv2NK8helayers5PTile16getCurrentDeviceEv"></span><span id="helayers::PTile::getCurrentDeviceC"></span><span class="target" id="classhelayers_1_1PTile_1ad7d5659a728267898715446604e6cb6b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">DeviceType</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5PTile16getCurrentDeviceEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8helayers5PTile16getCurrentDeviceEv"></span><span id="_CPPv2NK8helayers5PTile16getCurrentDeviceEv"></span><span id="helayers::PTile::getCurrentDeviceC"></span><span class="target" id="classhelayers_1_1PTile_1a83a50812e1f59a8ab5489df0dbe32af1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Device</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5PTile16getCurrentDeviceEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the current device of this <a class="reference internal" href="#classhelayers_1_1PTile"><span class="std std-ref">PTile</span></a>. </p>
 </dd></dl>
 
@@ -800,9 +817,15 @@ and false otherwise.</p>
 <dd><p>in place element-wise multiplication </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – - the ptile multiplicant </p>
+<dd class="field-odd"><p><strong>other</strong> – - the ptile multiplicand </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers5PTile11isEncryptedEv">
+<span id="_CPPv3NK8helayers5PTile11isEncryptedEv"></span><span id="_CPPv2NK8helayers5PTile11isEncryptedEv"></span><span id="helayers::PTile::isEncryptedC"></span><span class="target" id="classhelayers_1_1PTile_1a9f8a19787f187956738b9e47edb0b70d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEncrypted</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers5PTile11isEncryptedEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns whether this tile is encrypted or not. </p>
 </dd></dl>
 
 </div>
@@ -853,6 +876,7 @@ and false otherwise.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PTile"><code class="docutils literal notranslate"><span class="pre">PTile</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PTile.add"><code class="docutils literal notranslate"><span class="pre">PTile.add()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PTile.get_current_device"><code class="docutils literal notranslate"><span class="pre">PTile.get_current_device()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PTile.is_all_zeroes"><code class="docutils literal notranslate"><span class="pre">PTile.is_all_zeroes()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PTile.to_device"><code class="docutils literal notranslate"><span class="pre">PTile.to_device()</span></code></a></li>

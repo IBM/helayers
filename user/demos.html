@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Demos &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Demos &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -391,12 +391,11 @@ descriptive and are designed to explain a given concept. Such demos use the <img
 to provide a fast code example that can be used by HElayers users.
 Such demos use the <img alt="A Python demo" class="no-scaled-link" src="../_images/py_ex_tag.svg" width="25" /> tag.</p></li>
 </ul>
-<p>The demos use three backends: <a class="reference external" href="https://www.cryptolab.co.kr/en/products-en/heaan-he/">HEaaN</a>,
-<a class="reference external" href="https://github.com/homenc/HElib">HElib</a>, and <a class="reference external" href="https://github.com/microsoft/SEAL">SEAL</a>.
+<p>The demos use two backends: <a class="reference external" href="https://github.com/microsoft/SEAL">SEAL</a> and <a class="reference external" href="https://openfhe.org">OpenFHE</a>
 For most demos it is easy to switch between different backends, and explore which works best in each case.</p>
 <div class="helayers-admonition-info admonition">
 <p class="admonition-title">Running the tutorials</p>
-<p>To run the tutroials, see the instructions on the <a class="reference internal" href="installation.html"><span class="doc">installation page</span></a>.</p>
+<p>To run the tutorials, see the instructions on the <a class="reference internal" href="installation.html"><span class="doc">installation page</span></a>.</p>
 </div>
 <section id="tutorials">
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">#</a></h2>
@@ -461,7 +460,7 @@ The server performs classification when both tree and incoming data are encrypte
 </thead>
 <tbody>
 <tr class="row-even"><td><p>ARIMA prediction</p></td>
-<td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /> <img alt="A C++ demo" class="no-scaled-link" src="../_images/cpp_tag.svg" width="25" /></p></td>
+<td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /> <img alt="A C++ demo" class="no-scaled-link" src="../_images/cpp_tag.svg" width="25" /> <img alt="A temporary disabled demo" class="no-scaled-link" src="../_images/disabled_tag.svg" width="40" /></p></td>
 <td><p>ARIMA model training and prediction on encrypted data.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Linear regression inference</p></td>
@@ -504,8 +503,8 @@ The tutorial uses only 4 out of the 20 available categories.</p></td>
 </tbody>
 </table>
 </section>
-<section id="training-tuorials">
-<h4>Training tuorials<a class="headerlink" href="#training-tuorials" title="Permalink to this heading">#</a></h4>
+<section id="training-tutorials">
+<h4>Training tutorials<a class="headerlink" href="#training-tutorials" title="Permalink to this heading">#</a></h4>
 <table class="table">
 <colgroup>
 <col style="width: 24%" />
@@ -580,7 +579,8 @@ samples from <a class="reference internal" href="resources.html#public-datasets"
 </tr>
 <tr class="row-even"><td><p>MLToolbox demonstration</p></td>
 <td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /></p></td>
-<td><p>Using MLToolbox to convert a general NN model into an FHE-Friendly NN model with nearly the same performance, that can later be encrypted and used for prediction on encrypted data.</p></td>
+<td><p>Using MLToolbox to convert a general NN model into an FHE-Friendly NN model with nearly the same performance, that can later be encrypted and used for prediction on encrypted data.
+Note: this demo includes an additional notebook for running the resulting model under encryption, but this notebook is temporarily disabled.</p></td>
 </tr>
 <tr class="row-odd"><td><p>A demo of use of a multi-party FHE setting</p></td>
 <td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /> <img alt="A C++ demo" class="no-scaled-link" src="../_images/cpp_tag.svg" width="25" /></p></td>
@@ -597,8 +597,8 @@ samples from <a class="reference internal" href="resources.html#public-datasets"
 </tbody>
 </table>
 </section>
-<section id="he-utiltiies-tutorials">
-<h3>HE utiltiies tutorials<a class="headerlink" href="#he-utiltiies-tutorials" title="Permalink to this heading">#</a></h3>
+<section id="he-utilities-tutorials">
+<h3>HE utilities tutorials<a class="headerlink" href="#he-utilities-tutorials" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 25%" />
@@ -618,7 +618,11 @@ samples from <a class="reference internal" href="resources.html#public-datasets"
 </tr>
 <tr class="row-odd"><td><p>A demo of Private Set Intersection (PSI) process between three parties to be used for Vertical Federated Learning (VFL)</p></td>
 <td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /> <img alt="A C++ demo" class="no-scaled-link" src="../_images/cpp_tag.svg" width="25" /></p></td>
-<td><p>PSI is the process of finding common entries in two datasets or more without disclosing any information about the data. In VFL the dataset is paritioned “vertically” between the parties, meaning that each party holds different features of some subset of the samples, while each sample is identified by a unique UID. Given list of UIDs and the partial dataset of one of the parties, the objective is to calculate an encrypted dataset that contains only the samples that appear also in the datasets of the other parties, and do so without disclosing any information to each of the parties.</p></td>
+<td><p>PSI is the process of finding common entries in two datasets or more without disclosing any information about the data. In VFL the dataset is partitioned “vertically” between the parties, meaning that each party holds different features of some subset of the samples, while each sample is identified by a unique UID. Given list of UIDs and the partial dataset of one of the parties, the objective is to calculate an encrypted dataset that contains only the samples that appear also in the datasets of the other parties, and do so without disclosing any information to each of the parties.</p></td>
+</tr>
+<tr class="row-even"><td><p>A demo of Multi-Party FHE with two parties and a server.</p></td>
+<td><p><img alt="A Python demo" class="no-scaled-link" src="../_images/py_tag.svg" width="25" /> <img alt="A C++ demo" class="no-scaled-link" src="../_images/cpp_tag.svg" width="25" /></p></td>
+<td><p>The server trains a joint Linear-Regression model with two encrypted data sets coming from the two parties. The resulting encrypted model is then decrypted jointly by the two parties.</p></td>
 </tr>
 </tbody>
 </table>
@@ -702,12 +706,12 @@ the computation fails after only a few rounds. This demo is based on the <a clas
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases-based-tutorials">Use cases based tutorials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-tutorials">Machine Learning tutorials</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-tutorials">Inference tutorials</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-tuorials">Training tuorials</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-tutorials">Training tutorials</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#databases-tutorials">Databases tutorials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-apis-tutorials">Low-level APIs tutorials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-utiltiies-tutorials">HE utiltiies tutorials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-utilities-tutorials">HE utilities tutorials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tutorials">Other tutorials</a></li>
 </ul>
 </li>

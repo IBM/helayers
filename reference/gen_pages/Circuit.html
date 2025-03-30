@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Circuit &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Circuit &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -311,20 +311,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -396,14 +388,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -691,8 +684,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv">
-<span id="_CPPv3NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit13areEdgesBuiltEv"></span><span id="helayers::circuit::Circuit::areEdgesBuiltC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a39e306b31ead61cd280e0928bd9642fb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">areEdgesBuilt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13areEdgesBuiltEv" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit14isCircuitReadyEv">
+<span id="_CPPv3NK8helayers7circuit7Circuit14isCircuitReadyEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit14isCircuitReadyEv"></span><span id="helayers::circuit::Circuit::isCircuitReadyC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a3032eea41b601e727dd4d485fec0b2d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isCircuitReady</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit14isCircuitReadyEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return whether the edges have been built. </p>
 </dd></dl>
 
@@ -810,12 +803,15 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE">
-<span id="_CPPv3NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE"></span><span id="helayers::circuit::Circuit::writeGateList__osRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aea5a34b4fa2e2b362cb057c4f13a70ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeGateList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamEb">
+<span id="_CPPv3NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamEb"></span><span id="_CPPv2NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamEb"></span><span id="helayers::circuit::Circuit::writeGateList__osR.bC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1af7c109b9058a28f3af6fe0ce7fd9bf3d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeGateList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">brief</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit13writeGateListERNSt7ostreamEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write the circuit into a GateList file. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>o</strong> – The stream to write the file into. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>o</strong> – The stream to write the file into. </p></li>
+<li><p><strong>brief</strong> – Write circuit in brief: Instead of writing the entire params, write the 3 values then “…”. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -930,8 +926,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor">
-<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileTensorCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1ae40b3b65ecb0d7e76e579df4da1085f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensorRKNSt8optionalI6DeviceEE">
+<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensorRKNSt8optionalI6DeviceEE"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensorRKNSt8optionalI6DeviceEE"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileTensorCR.std::optional:Device:CR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1aadfd26f546de5eea157b4d6a7f4d2706"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTileTensor.html#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Device</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dti</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullopt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK11CTileTensorRKNSt8optionalI6DeviceEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set a <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> associated with a label. </p>
 <p>This fills all one InputCtxtNode for each tile of this tile tensor. </p>
 <dl class="field-list simple">
@@ -939,18 +935,22 @@ document.write(`
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>label</strong> – The label of the <a class="reference internal" href="CTileTensor.html#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p></li>
 <li><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>. </p></li>
+<li><p><strong>dti</strong> – The device type ID associated with the caller. Only elements that should be moved to the specified device will be considered. </p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile">
-<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileCR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a5f7a86eaec231fdaf0db9084f9ddf1d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTileRKNSt8optionalI6DeviceEE">
+<span id="_CPPv3N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTileRKNSt8optionalI6DeviceEE"></span><span id="_CPPv2N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTileRKNSt8optionalI6DeviceEE"></span><span id="helayers::circuit::Circuit::setByLabelCopy__NodeLabelCR.CTileCR.std::optional:Device:CR"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a8ca219712420dbbb32f15b0e794cd1c3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setByLabelCopy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NodeLabel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Device</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dti</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullopt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7circuit7Circuit14setByLabelCopyERK9NodeLabelRK5CTileRKNSt8optionalI6DeviceEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the output of the InputCtxtNode associated with this label. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>label</strong> – The label of the InputCtxtNode. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the InputCtxtNode. </p></li>
+<li><p><strong>dti</strong> – The device type ID associated with the caller. The given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> will be considered only if it should be moved to the specified device. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1005,6 +1005,17 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit19getTensorRepositoryEv">
 <span id="_CPPv3NK8helayers7circuit7Circuit19getTensorRepositoryEv"></span><span id="_CPPv2NK8helayers7circuit7Circuit19getTensorRepositoryEv"></span><span id="helayers::circuit::Circuit::getTensorRepositoryC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a57eb683fd7716dff9ce925feeb10dbec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TensorRepository</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTensorRepository</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit19getTensorRepositoryEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the tensor repository object of this circuit. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7circuit7Circuit21outputTimeStatsPerEraERNSt7ostreamE">
+<span id="_CPPv3NK8helayers7circuit7Circuit21outputTimeStatsPerEraERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7circuit7Circuit21outputTimeStatsPerEraERNSt7ostreamE"></span><span id="helayers::circuit::Circuit::outputTimeStatsPerEra__osRC"></span><span class="target" id="classhelayers_1_1circuit_1_1Circuit_1a15c43d22488b1ac99b5b933921ddba59"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outputTimeStatsPerEra</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7circuit7Circuit21outputTimeStatsPerEraERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Outputs the circuit time stats per era to the given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – The stream. </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

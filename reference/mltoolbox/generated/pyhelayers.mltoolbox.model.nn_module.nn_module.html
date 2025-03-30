@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>nn_module &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>nn_module &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -313,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gen_pages/HeTraits.html">HeTraits</a></li>
@@ -398,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -564,14 +557,14 @@ return x</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dd><p>Initializes an instance of the nn_module class.</p>
 </dd></dl>
 
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.__init__" title="pyhelayers.mltoolbox.model.nn_module.nn_module.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p></td>
+<td><p>Initializes an instance of the nn_module class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.addBatchNormAfterActivation" title="pyhelayers.mltoolbox.model.nn_module.nn_module.addBatchNormAfterActivation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addBatchNormAfterActivation</span></code></a>(bn_info)</p></td>
 <td><p>Adds batch normalization after specific layers, specified by the user</p></td>
@@ -600,8 +593,8 @@ return x</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code>()</p></td>
 <td><p>Returns an iterator over immediate children modules.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_range_awareness_loss</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.clear_range_awareness_loss" title="pyhelayers.mltoolbox.model.nn_module.nn_module.clear_range_awareness_loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_range_awareness_loss</span></code></a>()</p></td>
+<td><p>Clears the accumulated range awareness loss in all range-aware activations of the model.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cpu</span></code>()</p></td>
 <td><p>Moves all model parameters and buffers to the CPU.</p></td>
@@ -621,8 +614,8 @@ return x</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>()</p></td>
 <td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">float</span></code> datatype.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code>(x)</p></td>
-<td><p>Defines the computation performed at every call.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.forward" title="pyhelayers.mltoolbox.model.nn_module.nn_module.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(x)</p></td>
+<td><p>The forward method of the wrapper class.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_buffer</span></code>(target)</p></td>
 <td><p>Returns the buffer given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
@@ -636,8 +629,8 @@ return x</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameter</span></code>(target)</p></td>
 <td><p>Returns the parameter given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pooling_by_type</span></code>(type)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.get_pooling_by_type" title="pyhelayers.mltoolbox.model.nn_module.nn_module.get_pooling_by_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pooling_by_type</span></code></a>(type)</p></td>
+<td><p>Returns a string of the asked torch class (average or max pooling)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_submodule</span></code>(target)</p></td>
 <td><p>Returns the submodule given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
@@ -645,8 +638,8 @@ return x</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">half</span></code>()</p></td>
 <td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">half</span></code> datatype.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_actual_data_range</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.init_actual_data_range" title="pyhelayers.mltoolbox.model.nn_module.nn_module.init_actual_data_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_actual_data_range</span></code></a>()</p></td>
+<td><p>Zeroize the actual data range of all range-aware activations.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ipu</span></code>([device])</p></td>
 <td><p>Moves all model parameters and buffers to the IPU.</p></td>
@@ -675,8 +668,8 @@ return x</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code>([recurse])</p></td>
 <td><p>Returns an iterator over module parameters.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">post_process_activations</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_activations" title="pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_activations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">post_process_activations</span></code></a>()</p></td>
+<td><p>The method post-process an FHE friendly model before converting it into an ONNX file: It replaces WeightedRelu activations by the actual activation and removes range awareness</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_weighted_relu_act" title="pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_weighted_relu_act"><code class="xref py py-obj docutils literal notranslate"><span class="pre">post_process_weighted_relu_act</span></code></a>()</p></td>
 <td><p>Replaces each WeightedRelu activation in the given model, by the WeightedRelu.activation:</p></td>
@@ -705,8 +698,8 @@ return x</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_parameter</span></code>(name, param)</p></td>
 <td><p>Adds a parameter to the module.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_range_awareness</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.remove_range_awareness" title="pyhelayers.mltoolbox.model.nn_module.nn_module.remove_range_awareness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_range_awareness</span></code></a>()</p></td>
+<td><p>Unset the range awareness for all CNN and PolyReLU activations</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">requires_grad_</span></code>([requires_grad])</p></td>
 <td><p>Change if autograd should record operations on parameters in this module.</p></td>
@@ -799,6 +792,20 @@ return x</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.clear_range_awareness_loss">
+<span class="sig-name descname"><span class="pre">clear_range_awareness_loss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.clear_range_awareness_loss" title="Permalink to this definition">#</a></dt>
+<dd><p>Clears the accumulated range awareness loss in all range-aware activations of the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>The forward method of the wrapper class. It should be called by any subclass (by super().forward(x)) as
+shown in the class documentation example. This asserts the size of the input image and also clears any accumulated range_awareness_loss
+from any previous model forward calls (this happens for every batch calculation)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.get_input_size">
 <span class="sig-name descname"><span class="pre">get_input_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.get_input_size" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the input size expected by the model</p>
@@ -810,6 +817,18 @@ return x</p>
 <dd class="field-even"><p>tuple</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.get_pooling_by_type">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pooling_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.get_pooling_by_type" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a string of the asked torch class (average or max pooling)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.init_actual_data_range">
+<span class="sig-name descname"><span class="pre">init_actual_data_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.init_actual_data_range" title="Permalink to this definition">#</a></dt>
+<dd><p>Zeroize the actual data range of all range-aware activations.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -828,6 +847,13 @@ return x</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_activations">
+<span class="sig-name descname"><span class="pre">post_process_activations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_activations" title="Permalink to this definition">#</a></dt>
+<dd><p>The method post-process an FHE friendly model before converting it into an ONNX file:
+It replaces WeightedRelu activations by the actual activation and removes range awareness</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_weighted_relu_act">
 <span class="sig-name descname"><span class="pre">post_process_weighted_relu_act</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_weighted_relu_act" title="Permalink to this definition">#</a></dt>
 <dd><p>Replaces each WeightedRelu activation in the given model, by the WeightedRelu.activation:</p>
@@ -838,6 +864,12 @@ return x</p>
 </dl>
 <p>will be replaced by the plain</p>
 <p>TrainablePolyReLU(coefs=[0.09679805487394333, 0.13760216534137726])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.model.nn_module.nn_module.remove_range_awareness">
+<span class="sig-name descname"><span class="pre">remove_range_awareness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.remove_range_awareness" title="Permalink to this definition">#</a></dt>
+<dd><p>Unset the range awareness for all CNN and PolyReLU activations</p>
 </dd></dl>
 
 <dl class="py method">
@@ -898,9 +930,15 @@ return x</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.add_batch_norm_before_conv"><code class="docutils literal notranslate"><span class="pre">nn_module.add_batch_norm_before_conv()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.assertSize"><code class="docutils literal notranslate"><span class="pre">nn_module.assertSize()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.bn_info"><code class="docutils literal notranslate"><span class="pre">nn_module.bn_info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.clear_range_awareness_loss"><code class="docutils literal notranslate"><span class="pre">nn_module.clear_range_awareness_loss()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.forward"><code class="docutils literal notranslate"><span class="pre">nn_module.forward()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.get_input_size"><code class="docutils literal notranslate"><span class="pre">nn_module.get_input_size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.get_pooling_by_type"><code class="docutils literal notranslate"><span class="pre">nn_module.get_pooling_by_type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.init_actual_data_range"><code class="docutils literal notranslate"><span class="pre">nn_module.init_actual_data_range()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.make_fhe_friendly"><code class="docutils literal notranslate"><span class="pre">nn_module.make_fhe_friendly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_activations"><code class="docutils literal notranslate"><span class="pre">nn_module.post_process_activations()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.post_process_weighted_relu_act"><code class="docutils literal notranslate"><span class="pre">nn_module.post_process_weighted_relu_act()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.remove_range_awareness"><code class="docutils literal notranslate"><span class="pre">nn_module.remove_range_awareness()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.model.nn_module.nn_module.set_max_pooling_to_avg"><code class="docutils literal notranslate"><span class="pre">nn_module.set_max_pooling_to_avg()</span></code></a></li>
 </ul>
 </li>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>BitwiseEvaluator &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>BitwiseEvaluator &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -311,20 +311,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -396,14 +388,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -874,6 +867,25 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>c1, c2</strong> – <strong>[in]</strong> To evaluate c1 &lt;= c2 on. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers16BitwiseEvaluator16compareBitArraysERKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEER5CTileR5CTile">
+<span id="_CPPv3N8helayers16BitwiseEvaluator16compareBitArraysERKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEER5CTileR5CTile"></span><span id="_CPPv2N8helayers16BitwiseEvaluator16compareBitArraysERKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEER5CTileR5CTile"></span><span id="helayers::BitwiseEvaluator::compareBitArrays__std::vector:std::shared_ptr:CTile::CR.std::vector:std::shared_ptr:CTile::CR.CTileR.CTileR"></span><span class="target" id="classhelayers_1_1BitwiseEvaluator_1a6a79d5e710eac1ec9485de902ee85f2b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compareBitArrays</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c2</span></span>, <a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">isEq</span></span>, <a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">isLess</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers16BitwiseEvaluator16compareBitArraysERKNSt6vectorINSt10shared_ptrI5CTileEEEERKNSt6vectorINSt10shared_ptrI5CTileEEEER5CTileR5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Compares c1 to c2. </p>
+<p>Returns isEq which is (an ecryption of) 1 if c1=c2 and isSmaller which is (an encryption of) 1 if c1&lt;c2. The function assumes the i-th bit of c1 is encrypted in c1[i] (similarly for c2). Also c1 and c2 are assumed to be unsigned and having the same bit-length. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c1, c2</strong> – <strong>[in]</strong> to evaluate on. </p></li>
+<li><p><strong>isEq</strong> – is set to 1 if c1==c2. </p></li>
+<li><p><strong>isLess</strong> – is set to 1 if c1&lt;c2. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

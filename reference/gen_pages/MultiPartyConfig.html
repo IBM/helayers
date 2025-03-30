@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MultiPartyConfig &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>MultiPartyConfig &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Protocol" href="Protocol.html" />
-    <link rel="prev" title="DecryptProtocol" href="DecryptProtocol.html" />
+    <link rel="prev" title="Multi Party FHE" href="../mp_fhe.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -543,6 +536,13 @@ document.write(`
 <dd><p>The ID of the aggregator (see MultiPartyRole::MP_AGGREGATOR).</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.get_key_owners_ids">
+<span class="sig-name descname"><span class="pre">get_key_owners_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.MultiPartyConfig" title="pyhelayers.MultiPartyConfig"><span class="pre">pyhelayers.MultiPartyConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.get_key_owners_ids" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the IDS of key-owners (see
+MultiPartyRole::MP_KEY_OWNER)</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.initiator_id">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initiator_id</span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.initiator_id" title="Permalink to this definition">#</a></dt>
@@ -596,12 +596,6 @@ document.write(`
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.key_owners_ids">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_owners_ids</span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.key_owners_ids" title="Permalink to this definition">#</a></dt>
-<dd><p>The IDs of the key-owners (see MultiPartyRole::MP_KEY_OWNER).</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.num_key_owners">
 <span class="sig-name descname"><span class="pre">num_key_owners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.MultiPartyConfig" title="pyhelayers.MultiPartyConfig"><span class="pre">pyhelayers.MultiPartyConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.num_key_owners" title="Permalink to this definition">#</a></dt>
@@ -617,6 +611,18 @@ document.write(`
 <dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.participant_id">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">participant_id</span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.participant_id" title="Permalink to this definition">#</a></dt>
 <dd><p>Id of this participant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.MultiPartyConfig.set_key_owners_ids">
+<span class="sig-name descname"><span class="pre">set_key_owners_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.MultiPartyConfig" title="pyhelayers.MultiPartyConfig"><span class="pre">pyhelayers.MultiPartyConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.MultiPartyConfig.set_key_owners_ids" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the IDS of key-owners (see
+MultiPartyRole::MP_KEY_OWNER)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vals</strong> – list of IDs</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -782,12 +788,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="DecryptProtocol.html"
+       href="../mp_fhe.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DecryptProtocol</p>
+        <p class="prev-next-title">Multi Party FHE</p>
       </div>
     </a>
     <a class="right-next"
@@ -816,14 +822,15 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.aggregator_id"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.aggregator_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.get_key_owners_ids"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.get_key_owners_ids()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.initiator_id"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.initiator_id</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.is_aggregator"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.is_aggregator()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.is_id_key_owner"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.is_id_key_owner()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.is_initiator"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.is_initiator()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.is_key_owner"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.is_key_owner()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.key_owners_ids"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.key_owners_ids</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.num_key_owners"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.num_key_owners()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.participant_id"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.participant_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.MultiPartyConfig.set_key_owners_ids"><code class="docutils literal notranslate"><span class="pre">MultiPartyConfig.set_key_owners_ids()</span></code></a></li>
 </ul>
 </li>
 </ul>

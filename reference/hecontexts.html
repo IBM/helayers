@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HE Contexts &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>HE Contexts &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -313,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="gen_pages/HeTraits.html">HeTraits</a></li>
@@ -398,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -526,39 +519,6 @@ document.write(`
   <section id="he-contexts">
 <h1>HE Contexts<a class="headerlink" href="#he-contexts" title="Permalink to this heading">#</a></h1>
 <p>There are different HEContext objects that abstract the various libraries.</p>
-<table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Library</p></th>
-<th class="head"><p>HEContexts</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.cryptolab.co.kr/en/products-en/heaan-he/">HEaaN</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/HeaanContext.html"><span class="doc">HeaanContext</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/homenc/HElib">HElib</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/HelibBgvContext.html"><span class="doc">HelibBgvContext</span></a>,
-<a class="reference internal" href="gen_pages/HelibBitwiseBgvContext.html"><span class="doc">HelibBitwiseBgvContext</span></a>
-<a class="reference internal" href="gen_pages/HelibCkksContext.html"><span class="doc">HelibCkksContext</span></a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/tuneinsight/lattigo">Lattigo</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/LattigoContext.html"><span class="doc">LattigoContext</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.openfhe.org/">OpenFHE</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/OpenFheCkksContext.html"><span class="doc">OpenFheCkksContext</span></a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://gitlab.com/palisade">Palisade</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/PalisadeCkksContext.html"><span class="doc">PalisadeCkksContext</span></a>, <a class="reference internal" href="gen_pages/PalisadeTfheContext.html"><span class="doc">PalisadeTfheContext</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/microsoft/SEAL">SEAL</a></p></td>
-<td><p><a class="reference internal" href="gen_pages/SealCkksContext.html"><span class="doc">SealCkksContext</span></a></p></td>
-</tr>
-</tbody>
-</table>
 <section id="research-and-debug-classes">
 <span id="debug-contexts"></span><h2>Research and debug classes<a class="headerlink" href="#research-and-debug-classes" title="Permalink to this heading">#</a></h2>
 <p>In addition to the standard contexts, HElayers provides two contexts listed below

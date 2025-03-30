@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PlainModel &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>PlainModel &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -628,8 +621,8 @@ corresponding to this plain model.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.PlainModel.get_inputs_plain_tensor_metadata">
-<span class="sig-name descname"><span class="pre">get_inputs_plain_tensor_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.PlainTensorMetadata</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_inputs_plain_tensor_metadata" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns a vector of PlainTensorMetadata objects. The i-th element
+<span class="sig-name descname"><span class="pre">get_inputs_plain_tensor_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">pyhelayers.PlainShape</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.get_inputs_plain_tensor_metadata" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a vector of PlainShape objects. The i-th element
 of this vector contains metadata relating to the i-th input of
 this PlainModel (such as shape and batch dimension). If this
 PlainModel is initialized for prediction, the returned vector
@@ -695,6 +688,11 @@ turned on or off.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModel.set_verbose">
+<span class="sig-name descname"><span class="pre">set_verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModel.set_verbose" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.PlainModel.validate_init">
@@ -766,8 +764,8 @@ turned on or off.</p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel28getInputsPlainTensorMetadataEv">
-<span id="_CPPv3NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="_CPPv2NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="helayers::PlainModel::getInputsPlainTensorMetadataC"></span><span class="target" id="classhelayers_1_1PlainModel_1ae26d9c0cc6a6a0486aae630a46d5fb0e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PlainTensorMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsPlainTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel28getInputsPlainTensorMetadataEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns a vector of PlainTensorMetadata objects. </p>
+<span id="_CPPv3NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="_CPPv2NK8helayers10PlainModel28getInputsPlainTensorMetadataEv"></span><span id="helayers::PlainModel::getInputsPlainTensorMetadataC"></span><span class="target" id="classhelayers_1_1PlainModel_1a713e0f00d29d64477ab36afa8720882a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PlainShape</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInputsPlainTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel28getInputsPlainTensorMetadataEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a vector of PlainShape objects. </p>
 <p>The i-th element of this vector contains metadata relating to the i-th input of this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> (such as shape and batch dimension). If this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> is initialized for prediction, the returned vector describes inputs for the the <a class="reference internal" href="#classhelayers_1_1PlainModel_1acf56e65d13c08031ac559b8e60c6f0d3"><span class="std std-ref">predict()</span></a> method. If this <a class="reference internal" href="#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> is initialized for fitting, the returned vector describes the inputs for the <a class="reference internal" href="#classhelayers_1_1PlainModel_1a85963d2549bee086b09050d236acf6db"><span class="std std-ref">fit()</span></a> method. </p>
 </dd></dl>
 
@@ -823,6 +821,17 @@ turned on or off.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers10PlainModel9isVerboseEv">
 <span id="_CPPv3NK8helayers10PlainModel9isVerboseEv"></span><span id="_CPPv2NK8helayers10PlainModel9isVerboseEv"></span><span id="helayers::PlainModel::isVerboseC"></span><span class="target" id="classhelayers_1_1PlainModel_1a2f083fe5d1d049ff2bc2e6e863da8da8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isVerbose</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers10PlainModel9isVerboseEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns indication for whether the initialized model verbosity is turned on or off. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers10PlainModel10setVerboseEb">
+<span id="_CPPv3N8helayers10PlainModel10setVerboseEb"></span><span id="_CPPv2N8helayers10PlainModel10setVerboseEb"></span><span id="helayers::PlainModel::setVerbose__b"></span><span class="target" id="classhelayers_1_1PlainModel_1a41d6c942bc0e7798cf9473d304e86ffc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVerbose</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers10PlainModel10setVerboseEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the verbosity of this model. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The verbosity. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -992,6 +1001,7 @@ turned on or off.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.is_fit_mode"><code class="docutils literal notranslate"><span class="pre">PlainModel.is_fit_mode()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.is_verbose"><code class="docutils literal notranslate"><span class="pre">PlainModel.is_verbose()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.predict"><code class="docutils literal notranslate"><span class="pre">PlainModel.predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.set_verbose"><code class="docutils literal notranslate"><span class="pre">PlainModel.set_verbose()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModel.validate_init"><code class="docutils literal notranslate"><span class="pre">PlainModel.validate_init()</span></code></a></li>
 </ul>
 </li>

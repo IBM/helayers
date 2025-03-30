@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TTShape &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>TTShape &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -688,6 +681,11 @@ If it is inserted at pos i, current dimension at i becomes i+1.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_degenerate_tile_dim">
+<span class="sig-name descname"><span class="pre">is_degenerate_tile_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_degenerate_tile_dim" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.TTShape.is_diagonalized">
 <span class="sig-name descname"><span class="pre">is_diagonalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_diagonalized" title="Permalink to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -697,13 +695,13 @@ If it is inserted at pos i, current dimension at i becomes i+1.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTShape.is_first_non_degenerate_tile_dim">
-<span class="sig-name descname"><span class="pre">is_first_non_degenerate_tile_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_first_non_degenerate_tile_dim" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_incomplete">
+<span class="sig-name descname"><span class="pre">is_incomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_incomplete" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.TTShape.is_incomplete">
-<span class="sig-name descname"><span class="pre">is_incomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_incomplete" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyhelayers.TTShape.is_rotatable">
+<span class="sig-name descname"><span class="pre">is_rotatable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.TTShape" title="pyhelayers.TTShape"><span class="pre">pyhelayers.TTShape</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.TTShape.is_rotatable" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1153,10 +1151,37 @@ Diagonalized shapes must satisfy:
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt">
-<span id="_CPPv3NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt"></span><span id="helayers::TTShape::isFirstNonDegenerateTileDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1ac417909701631e4ed8ba9274a9395014"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFirstNonDegenerateTileDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape27isFirstNonDegenerateTileDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns true if given dimension is the first dimension whose tile size is larger than one. </p>
-<p>This dimension allows true rotation, and summation ends with duplication.</p>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7TTShape12splitDimTileE6DimInt6DimInt6DimInt">
+<span id="_CPPv3N8helayers7TTShape12splitDimTileE6DimInt6DimInt6DimInt"></span><span id="_CPPv2N8helayers7TTShape12splitDimTileE6DimInt6DimInt6DimInt"></span><span id="helayers::TTShape::splitDimTile__DimInt.DimInt.DimInt"></span><span class="target" id="classhelayers_1_1TTShape_1a91f168183d7fcfb3ac1332333323e847"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">splitDimTile</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size1</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7TTShape12splitDimTileE6DimInt6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Splits a dimension to 2 new dimensions by splitting the tile size. </p>
+<p>The product of the 2 new tile sizes should be the same as the tile size in the dimension that is split. The original size remain entirely within the second resulting dimension, and therefore it must be not larger than size2. The first resulting dimension will have original size of 1. For example, the second dim in the shape <code class="docutils literal notranslate"><span class="pre">[10/4,11/256,12/4]</span></code> can be split to get <code class="docutils literal notranslate"><span class="pre">[10/4,1/8,11/32,12/4]</span></code> by calling splitDimTile(1,8,32).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – The dimension to split. </p></li>
+<li><p><strong>size1</strong> – The size of the first part. </p></li>
+<li><p><strong>size2</strong> – The size of the second part. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape19isDegenerateTileDimE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape19isDegenerateTileDimE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape19isDegenerateTileDimE6DimInt"></span><span id="helayers::TTShape::isDegenerateTileDim__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1afa7c54e7b2bf5627ecc1093c9ccc2a01"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDegenerateTileDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape19isDegenerateTileDimE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if given dimension has a degenerate tile size. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Input dimension. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7TTShape11isRotatableE6DimInt">
+<span id="_CPPv3NK8helayers7TTShape11isRotatableE6DimInt"></span><span id="_CPPv2NK8helayers7TTShape11isRotatableE6DimInt"></span><span id="helayers::TTShape::isRotatable__DimIntC"></span><span class="target" id="classhelayers_1_1TTShape_1a1599762f9993b92ecc721f49ca086e9f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRotatable</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7TTShape11isRotatableE6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if this dimension can be rotated efficiently using rotation operators only (without masking). </p>
+<p>This implies for example that this dimension will be duplicated if it is summed using rotate-and-sum. A dimension is rotatable if all dimensions before it are either fully duplicated or have a degenerate tile size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dim</strong> – Input dimension. </p>
@@ -1413,9 +1438,10 @@ Diagonalized shapes must satisfy:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.get_with_duplicated_dims"><code class="docutils literal notranslate"><span class="pre">TTShape.get_with_duplicated_dims()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.insert_dim_at"><code class="docutils literal notranslate"><span class="pre">TTShape.insert_dim_at()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_compatible"><code class="docutils literal notranslate"><span class="pre">TTShape.is_compatible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_degenerate_tile_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.is_degenerate_tile_dim()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_diagonalized"><code class="docutils literal notranslate"><span class="pre">TTShape.is_diagonalized()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_first_non_degenerate_tile_dim"><code class="docutils literal notranslate"><span class="pre">TTShape.is_first_non_degenerate_tile_dim()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_incomplete"><code class="docutils literal notranslate"><span class="pre">TTShape.is_incomplete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.is_rotatable"><code class="docutils literal notranslate"><span class="pre">TTShape.is_rotatable()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_all_unused_slots_unknown"><code class="docutils literal notranslate"><span class="pre">TTShape.set_all_unused_slots_unknown()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_diagonalized"><code class="docutils literal notranslate"><span class="pre">TTShape.set_diagonalized()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.TTShape.set_original_sizes"><code class="docutils literal notranslate"><span class="pre">TTShape.set_original_sizes()</span></code></a></li>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tile tensors &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Tile tensors &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -711,14 +711,14 @@ They can be tuned to optimize various goals, e.g., latency, throughput, memory, 
 <li><p>Compute the elementwise product <img class="math" src="../_images/math/c6a7bd52127031ee5832c757cacf18502fdb7be0.png" alt="T_{M_1} * T_{M_2}"/> then sum over the second dimension.</p></li>
 </ul>
 <p>The authors of HyPHEN <a class="reference internal" href="#references"><span class="std std-ref">[3]</span></a> describe several methods for convolutional networks that can also be written using the tile tensor notation.
-For exmaple, the CAConv with SISO method is implemented as follows.</p>
+For example, the CAConv with SISO method is implemented as follows.</p>
 <ul class="simple">
 <li><p>The input image <img class="math" src="../_images/math/d91076411f4835bcdf71a960ab3786cfd9cacc43.png" alt="[c_i,w_i,h_i]"/> is packed as <img class="math" src="../_images/math/38631d0973e5cc6f676812804904fc00b7108839.png" alt="[\frac{c_i}{2},\frac{w_i}{32},\frac{h_i}{32}]"/>.</p></li>
 <li><p>The kernels <img class="math" src="../_images/math/cf6896c91b3c5d9acb5d276e7cce8056513cddd7.png" alt="[c_o,c_i,f_w,f_h]"/> are packed as <img class="math" src="../_images/math/ec5467d9943ef5e44a2e7faa1a974c8c8aa9bcbd.png" alt="[f_w,f_h,\frac{c_i}{2},c_o,\frac{*}{32},\frac{*}{32}]"/>.</p></li>
 <li><p>The computation is the same as the tile tensor’s convolution operator.</p></li>
 <li><p>The result is packed as <img class="math" src="../_images/math/adb5fa00f0c2cd26165dbe704475e3a17106427f.png" alt="[\frac{*}{2},c_o,\frac{w_i}{32},\frac{h_i}{32}]"/>.</p></li>
 </ul>
-<p>Tile tensors generalize on the above, using interleaved packing to support arbitrary image size and aribtrary tile sizes.</p>
+<p>Tile tensors generalize on the above, using interleaved packing to support arbitrary image size and arbitrary tile sizes.</p>
 </section>
 <section id="related-work">
 <h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this heading">#</a></h2>

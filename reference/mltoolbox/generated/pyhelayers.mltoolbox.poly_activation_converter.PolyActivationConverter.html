@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PolyActivationConverter &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>PolyActivationConverter &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -313,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gen_pages/HeTraits.html">HeTraits</a></li>
@@ -398,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -544,28 +537,41 @@ Furthermore, we assume that the non-trainable PolyRelu activation function is on
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chp_was_completed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Initializes the PolyActivationConverter, managing the activation function
+replacement process for Fully Homomorphic Encryption (FHE) conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html#pyhelayers.mltoolbox.arguments.Arguments" title="pyhelayers.mltoolbox.arguments.Arguments"><em>Arguments</em></a>) – A set of user-defined arguments for the conversion process.</p></li>
+<li><p><strong>model</strong> (<em>torch.nn.Module</em>) – The model to be converted.</p></li>
+<li><p><strong>train_state</strong> (<em>SimpleNamespace</em><em>, </em><em>optional</em>) – A dictionary holding the training state, if resuming from a checkpoint. Defaults to None.</p></li>
+<li><p><strong>chp_was_completed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicates whether the checkpoint conversion was fully completed. True if there are no Relu activations in the model.</p></li>
+<li><p><strong>loss</strong> (<em>float</em><em>, </em><em>optional</em>) – Loss value at train_state.epoch</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.__init__" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(args, model[, train_state, ...])</p></td>
-<td><p></p></td>
+<td><p>Initializes the PolyActivationConverter, managing the activation function replacement process for Fully Homomorphic Encryption (FHE) conversion.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.create_train_state" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.create_train_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_train_state</span></code></a>(epoch)</p></td>
 <td><p>Returns a namespace that groups start_epoch, current epoch and wait_before_change together</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_best_found_loss</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_best_found_loss" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_best_found_loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_best_found_loss</span></code></a>()</p></td>
+<td><p>A getter for the best_loss class argument</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_start_epoch</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_start_epoch" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_start_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_start_epoch</span></code></a>()</p></td>
+<td><p>A getter for the start_epoch class argument</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_wait_before_change</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_wait_before_change" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_wait_before_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_wait_before_change</span></code></a>()</p></td>
+<td><p>A getter for the wait_before_change class argument</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_was_completed</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_was_completed" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_was_completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_was_completed</span></code></a>()</p></td>
+<td><p>A getter for the was_completed class argument</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.is_fhe_friendly" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.is_fhe_friendly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fhe_friendly</span></code></a>(model)</p></td>
 <td><p><dl class="field-list simple">
@@ -578,8 +584,8 @@ Furthermore, we assume that the non-trainable PolyRelu activation function is on
 <tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.replace_activations" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.replace_activations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_activations</span></code></a>(trainer, epoch, scheduler)</p></td>
 <td><p>Handles the entire replacement logic - depending on the arguments values and current epoch</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_best_found_loss_and_epoch</span></code>(loss, epoch)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.set_best_found_loss_and_epoch" title="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.set_best_found_loss_and_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_best_found_loss_and_epoch</span></code></a>(loss, epoch)</p></td>
+<td><p>A setter for the best_loss and best_epoch class arguments</p></td>
 </tr>
 </tbody>
 </table>
@@ -598,6 +604,30 @@ Furthermore, we assume that the non-trainable PolyRelu activation function is on
 <dd class="field-odd"><p>SimpleNamespace</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_best_found_loss">
+<span class="sig-name descname"><span class="pre">get_best_found_loss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_best_found_loss" title="Permalink to this definition">#</a></dt>
+<dd><p>A getter for the best_loss class argument</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_start_epoch">
+<span class="sig-name descname"><span class="pre">get_start_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_start_epoch" title="Permalink to this definition">#</a></dt>
+<dd><p>A getter for the start_epoch class argument</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_wait_before_change">
+<span class="sig-name descname"><span class="pre">get_wait_before_change</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_wait_before_change" title="Permalink to this definition">#</a></dt>
+<dd><p>A getter for the wait_before_change class argument</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_was_completed">
+<span class="sig-name descname"><span class="pre">get_was_completed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_was_completed" title="Permalink to this definition">#</a></dt>
+<dd><p>A getter for the was_completed class argument</p>
 </dd></dl>
 
 <dl class="py method">
@@ -629,6 +659,12 @@ Furthermore, we assume that the non-trainable PolyRelu activation function is on
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.set_best_found_loss_and_epoch">
+<span class="sig-name descname"><span class="pre">set_best_found_loss_and_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.set_best_found_loss_and_epoch" title="Permalink to this definition">#</a></dt>
+<dd><p>A setter for the best_loss and best_epoch class arguments</p>
 </dd></dl>
 
 </dd></dl>
@@ -679,8 +715,13 @@ Furthermore, we assume that the non-trainable PolyRelu activation function is on
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.__init__"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.__init__()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.create_train_state"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.create_train_state()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_best_found_loss"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.get_best_found_loss()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_start_epoch"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.get_start_epoch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_wait_before_change"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.get_wait_before_change()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.get_was_completed"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.get_was_completed()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.is_fhe_friendly"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.is_fhe_friendly()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.replace_activations"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.replace_activations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.set_best_found_loss_and_epoch"><code class="docutils literal notranslate"><span class="pre">PolyActivationConverter.set_best_found_loss_and_epoch()</span></code></a></li>
 </ul>
 </li>
 </ul>

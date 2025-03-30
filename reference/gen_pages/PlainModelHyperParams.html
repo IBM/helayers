@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PlainModelHyperParams &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>PlainModelHyperParams &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -553,7 +546,7 @@ risks of the next iteration in the Aml model</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.d">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">d</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.d" title="Permalink to this definition">#</a></dt>
-<dd><p>number of differentiations</p>
+<dd><p>number of differentiations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Arima model parameter</p>
@@ -564,8 +557,9 @@ risks of the next iteration in the Aml model</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.feature_ranges">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feature_ranges</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.feature_ranges" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of pairs specifying the minimum and maximum
-supported values for each feature for XGBoost and DTree</p>
+<dd><p>Gets a list of pairs specifying the minimum and maximum
+supported values for each feature for XGBoost and
+DTree</p>
 </dd></dl>
 
 <dl class="py property">
@@ -602,6 +596,12 @@ in XGBoost and DTree prediction. A higher frep increases
 the accuracy on the account of deeper and slower computation.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.get_phi">
+<span class="sig-name descname"><span class="pre">get_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.get_phi" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the phi coefficients of the Arima model.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.grep">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grep</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.grep" title="Permalink to this definition">#</a></dt>
@@ -625,7 +625,7 @@ the accuracy on the account of deeper and slower computation.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_distribution_x">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_distribution_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_distribution_x" title="Permalink to this definition">#</a></dt>
-<dd><p>The distribution type of X values in linear regression training</p>
+<dd><p>The distribution type of X values in linear regression training.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -637,7 +637,7 @@ the accuracy on the account of deeper and slower computation.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_mean_x">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_mean_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_mean_x" title="Permalink to this definition">#</a></dt>
-<dd><p>The mean of the values of X in linear regression training with normal distribution.</p>
+<dd><p>The mean of the values of X in linear regression training with uniform or unknown distribution.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -649,7 +649,7 @@ the accuracy on the account of deeper and slower computation.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_std_x">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_std_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_std_x" title="Permalink to this definition">#</a></dt>
-<dd><p>The standard deviation of the values of X in linear regression training with normal distribution.</p>
+<dd><p>The standard deviation of the values of X in linear regression training with uniform or unknown distribution.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -684,7 +684,7 @@ the accuracy on the account of deeper and slower computation.</p>
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.max_rand_value">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_rand_value</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.max_rand_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Relevant when init_random_weights is set to True.
-An upper limit for the random values.</p>
+A upper limit for the random values.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -777,18 +777,12 @@ Value of -1 indicates it will be determined by the model file.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.p">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.p" title="Permalink to this definition">#</a></dt>
-<dd><p>number of past values effecting current value</p>
+<dd><p>number of past values effecting current value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Arima model parameter</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.phi">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.phi" title="Permalink to this definition">#</a></dt>
-<dd><p>The phi coefficients of the Arima model.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -812,7 +806,7 @@ for non-encrypted NN.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.q">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">q</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.q" title="Permalink to this definition">#</a></dt>
-<dd><p>number of past errors effecting current value</p>
+<dd><p>number of past errors effecting current value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Arima model parameter</p>
@@ -828,6 +822,14 @@ thresholds should be scaled and rounded before they are
 stored. Turning this flag on makes close thresholds
 considered the same one, thus reducing runtime on the
 account of possibly reducing accuracy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.set_phi">
+<span class="sig-name descname"><span class="pre">set_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">phiVals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.set_phi" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the phi coefficients of the Arima model.
+:param phiVals: The array of phi vals.
+:type phiVals: numpy double array</p>
 </dd></dl>
 
 <dl class="py property">
@@ -886,10 +888,241 @@ will not be exposed to the server at any time.</p>
 
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParamsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParamsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParamsE"></span><span id="helayers::PlainModelHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PlainModelHyperParams</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParamsE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8helayers21PlainModelHyperParamsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParamsE"></span><span id="helayers::PlainModelHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PlainModelHyperParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">JsonBasedParameters</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParamsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A struct for the hyperparameters of the plain AI model. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv"></span><span id="helayers::PlainModelHyperParams::PlainModelHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a4f20fac17a5cf8e9c1f98c7528a143ae"></span><span class="sig-name descname"><span class="n"><span class="pre">PlainModelHyperParams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers21PlainModelHyperParams9getSchemeEv">
+<span id="_CPPv3NK8helayers21PlainModelHyperParams9getSchemeEv"></span><span id="_CPPv2NK8helayers21PlainModelHyperParams9getSchemeEv"></span><span id="helayers::PlainModelHyperParams::getSchemeC"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3f11868f33c372e98b4c667423061e44"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">JsonScheme</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getScheme</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers21PlainModelHyperParams9getSchemeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the scheme of this JSON-based parameters object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__debugMode.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a61e281b93233af0a8554d09ab946488a"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">debugMode</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__verbose.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a03e36114ee68b348237155c95cf259cd"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">verbose</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__trainable.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ad13b4305d2d59ffe19d878d7499b25f8"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">trainable</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__initRandomWeights.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5ea0e73d6e1f1674f3a5a0d153e0ec37"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">initRandomWeights</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__minRandValue.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac3e804deef04109fdca7354a764ac3bc"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">minRandValue</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__maxRandValue.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af44f2737fe3b45c5d5aea83af5bc863b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">maxRandValue</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__sparseRate.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2f7bc8e8df873b5f2c7dfb7598e0e027"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">sparseRate</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfFeatures.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a9ea8a7903ca2f2c9c4a5b3b6913ec127"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfFeatures</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__modelSubclass.ss"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a673858d604f9b560c03d8aa0fefd1ba1"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modelSubclass</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__logisticRegressionActivation.LRActivationType"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abc67e460ad199d95df9af85402611384"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">logisticRegressionActivation</span></span>, <a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationTypeE" title="helayers::LRActivationType"><span class="n"><span class="pre">LRActivationType</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__negateSigmoidInput.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af48638a823fe5988d98fb91667df2e5e"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">negateSigmoidInput</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfClasses.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ade313d74eaaf78dbba1a68224b0aa6e1"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfClasses</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__useLinearRegressionEstimator.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2012bc5e0c17e307cb029ee77d6e0095"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">useLinearRegressionEstimator</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionDistributionX.LRDistribution"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a08cc025ac08d651e14886b287c2ddf65"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionDistributionX</span></span>, <span class="n"><span class="pre">LRDistribution</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMinX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a277410024ef123697f8798b92e270e1d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMinX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMaxX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a81a9c760259d03e449aa7dedaf1c4639"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMaxX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMeanX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1adedf8b16281c306ac411a32d60e4da34"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMeanX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionStdX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aac4eb5e38c41a11880ff50fd1199e79d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionStdX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__inverseApproximationPrecision.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a94e3d1d66bd1637d3e010cd3202e9e5c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">inverseApproximationPrecision</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__p.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ad4f590e919d29d4b696f14be26fa5768"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">p</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__d.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a22b13515b2fd10f651e6d24be4144d13"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">d</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__q.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a068780eff2d693d2eeadd2a6e34c5ff4"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">q</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numValuesUsedForPrediction.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3bd49ca89491d588116c448f41fa450f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numValuesUsedForPrediction</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numSamples.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0c82378a672ebe51f64eebdae39a6be6"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numSamples</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__mu.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a7f5b01b719a636e4224f330413176f61"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">mu</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid">
+<span id="_CPPv3N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET_VECTOR__phi.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a8778dda1190cde6ad3f0274160c9247c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET_VECTOR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">phi</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__theta1.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a70f8e63ccd9c652eaf44e5ca15292cfa"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">theta1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__varw.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0224cd5b1a82627993e3f1cb0e897c07"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">varw</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numCenters.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a711f60fe6c2917cf88b13769a06d5807"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numCenters</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__featuresScaleTarget.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a6735d299243d9c8acd3ef22f85190d84"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featuresScaleTarget</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__featuresBinSize.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a17bf942b495592f75eafe578707b583c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featuresBinSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__gRep.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a971999dacc8bada77f4fdc2ea2e40d82"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__fRep.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a935c070c11343c1b72bb1214bd63aafc"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRS__featureRanges.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5f87dd6a7a5f5f78585b0647acaded7b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featureRanges</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfCachedNodes.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2ef44ea9f19b963304eaca2dc082585b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfCachedNodes</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__storeThresholds.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abad32a62cd20913cf6bde702a2dfa967"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">storeThresholds</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__roundBeforeStoringThresholds.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a20b23cf67580790da94b9594de6c0f6f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">roundBeforeStoringThresholds</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__modelSpecifiedFixedBatchSize.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abdcd128fe9d8d22f08f6889c04715e2d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modelSpecifiedFixedBatchSize</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__plainPolyActivationCoeffsInEncryptedNn.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a9ce665660c2b57e7bee413993b016d09"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">plainPolyActivationCoeffsInEncryptedNn</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__plainBatchNormInEncryptedNn.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a861e359afe6fc379f6de470f2424bb95"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">plainBatchNormInEncryptedNn</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__generationCount.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aefe283f98a4e6ecc156d88040a64fe9d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">generationCount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__amlDelta.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a56c19298ade20f49e599e1f9c0004616"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">amlDelta</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__amlIterations.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3db712c6446a48caeb2e5967ad85c01f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">amlIterations</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numAccounts.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ab028a6ce8db13121bca4df23284add19"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numAccounts</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4loadERKNSt6stringE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams4loadERKNSt6stringE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4loadERKNSt6stringE"></span><span id="helayers::PlainModelHyperParams::load__ssCR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a655c234ccf795902586f999d45faff9c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParamsJsonFile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4loadERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
@@ -908,17 +1141,6 @@ will not be exposed to the server at any time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>hyperParamsJsonStream</strong> – The stream. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4loadERK11JsonWrapper">
-<span id="_CPPv3N8helayers21PlainModelHyperParams4loadERK11JsonWrapper"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4loadERK11JsonWrapper"></span><span id="helayers::PlainModelHyperParams::load__JsonWrapperCR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1afabac56408b392686d9f1e2213a8d901"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="JsonWrapper.html#_CPPv4N8helayers11JsonWrapperE" title="helayers::JsonWrapper"><span class="n"><span class="pre">JsonWrapper</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParams</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4loadERK11JsonWrapper" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Load the object from JSON wrapper. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>hyperParams</strong> – The JSON wrapper. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -949,275 +1171,9 @@ will not be exposed to the server at any time.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams9debugModeE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams9debugModeE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams9debugModeE"></span><span id="helayers::PlainModelHyperParams::debugMode__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abf07bf413bda36541f7f1862cafc2170"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams9debugModeE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Debug mode. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams7verboseE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams7verboseE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams7verboseE"></span><span id="helayers::PlainModelHyperParams::verbose__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3a4e2331d63fb1c91d5a1c889c82949e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verbose</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams7verboseE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Verbosity flag. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams9trainableE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams9trainableE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams9trainableE"></span><span id="helayers::PlainModelHyperParams::trainable__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac191491cd7cf2fc34e20ff12b0c7269c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">trainable</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams9trainableE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Whether the <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> object should allow to call fit(). </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams17initRandomWeightsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams17initRandomWeightsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams17initRandomWeightsE"></span><span id="helayers::PlainModelHyperParams::initRandomWeights__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1afd3dd88abbb9b309157ead931b785b83"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initRandomWeights</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams17initRandomWeightsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Initialize the <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel"><span class="std std-ref">PlainModel</span></a> with random weights. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams12minRandValueE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams12minRandValueE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams12minRandValueE"></span><span id="helayers::PlainModelHyperParams::minRandValue__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aa5da1429b52337fee7f5a7ff2eed80b8"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minRandValue</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams12minRandValueE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Constraints over the random values in case where random weights are used. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams12maxRandValueE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams12maxRandValueE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams12maxRandValueE"></span><span id="helayers::PlainModelHyperParams::maxRandValue__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a41cc0ee72b31279a99e39b513b0be4c3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxRandValue</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams12maxRandValueE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams10sparseRateE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams10sparseRateE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams10sparseRateE"></span><span id="helayers::PlainModelHyperParams::sparseRate__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a326caab888f41e5dd2a4d1622386d31e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sparseRate</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams10sparseRateE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams14fitHyperParamsE">
 <span id="_CPPv3N8helayers21PlainModelHyperParams14fitHyperParamsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams14fitHyperParamsE"></span><span id="helayers::PlainModelHyperParams::fitHyperParams__FitHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ab85bb1f383668ca1ec44b26dbba18791"></span><span class="n"><span class="pre">FitHyperParams</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fitHyperParams</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams14fitHyperParamsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Hyper parameters common to most fitting algorithm. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams16numberOfFeaturesE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams16numberOfFeaturesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams16numberOfFeaturesE"></span><span id="helayers::PlainModelHyperParams::numberOfFeatures__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af8d41c7cac54ca5ae6ba973075b6409d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfFeatures</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams16numberOfFeaturesE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Number of features in an input sample. </p>
-<p>Value of -1 indicates it will be determined by the model file. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13modelSubclassE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams13modelSubclassE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13modelSubclassE"></span><span id="helayers::PlainModelHyperParams::modelSubclass__ss"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1acfecd32e484131374a9fc82abc19da82"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelSubclass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13modelSubclassE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>A named parameter allowing to specify some specific model type, e.g., a specific class of NN architecture. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28logisticRegressionActivationE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams28logisticRegressionActivationE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28logisticRegressionActivationE"></span><span id="helayers::PlainModelHyperParams::logisticRegressionActivation__LRActivationType"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1acf13a1ce27725cb8c1d5b2a728f8fefb"></span><a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationTypeE" title="helayers::LRActivationType"><span class="n"><span class="pre">LRActivationType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logisticRegressionActivation</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationType21LR_ACTIVATION_DEFAULTE" title="helayers::LR_ACTIVATION_DEFAULT"><span class="n"><span class="pre">LR_ACTIVATION_DEFAULT</span></span></a><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28logisticRegressionActivationE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Activation used in logistic regression. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams18negateSigmoidInputE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams18negateSigmoidInputE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams18negateSigmoidInputE"></span><span id="helayers::PlainModelHyperParams::negateSigmoidInput__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a6fb61b116b9bf3692b017e4099b2850f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">negateSigmoidInput</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams18negateSigmoidInputE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Whether to negate the input to the Sigmoid activation function. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams15numberOfClassesE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams15numberOfClassesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams15numberOfClassesE"></span><span id="helayers::PlainModelHyperParams::numberOfClasses__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a34d022164b9fe179f25072f77e998c70"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfClasses</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams15numberOfClassesE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Number of classes. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE"></span><span id="helayers::PlainModelHyperParams::useLinearRegressionEstimator__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac50a7a6cfa0c5a7272aecaf6dae03cc0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">useLinearRegressionEstimator</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28useLinearRegressionEstimatorE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Whether to use the linear regression estimator (that provides a closed solution, but is limited to a single feature) when performing linear regression fit, or use gradient descent algorithm. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams29linearRegressionDistributionXE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams29linearRegressionDistributionXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams29linearRegressionDistributionXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionDistributionX__LRDistribution"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5d0106adb61288eb185d1a33dc2f4209"></span><span class="n"><span class="pre">LRDistribution</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionDistributionX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LR_UNIFORM_DISTRIBUTION</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams29linearRegressionDistributionXE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The distribution type of X values in linear regression training. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams20linearRegressionMinXE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams20linearRegressionMinXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams20linearRegressionMinXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionMinX__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a1cffb301964add42a3fd7b8b8349d9e7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionMinX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams20linearRegressionMinXE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The minimum of the values of X in linear regression training with uniform or unknown distribution. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams20linearRegressionMaxXE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams20linearRegressionMaxXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams20linearRegressionMaxXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionMaxX__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3a1858f154fd7596a5c365dfaca0dafe"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionMaxX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams20linearRegressionMaxXE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The maximum of the values of X in linear regression training with uniform or unknown distribution. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21linearRegressionMeanXE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams21linearRegressionMeanXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21linearRegressionMeanXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionMeanX__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a8b6be851e473a088648b82038b44cc03"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionMeanX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21linearRegressionMeanXE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The mean of the values of X in linear regression training with normal distribution. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams20linearRegressionStdXE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams20linearRegressionStdXE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams20linearRegressionStdXE"></span><span id="helayers::PlainModelHyperParams::linearRegressionStdX__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af5b5e3f38ed4ff964c7ad7a9e0170ac7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRegressionStdX</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams20linearRegressionStdXE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The standard deviation of the values of X in linear regression training with normal distribution. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE"></span><span id="helayers::PlainModelHyperParams::inverseApproximationPrecision__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac4c626f8c0a50734e7e30231c460baeb"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverseApproximationPrecision</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams29inverseApproximationPrecisionE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The approximation precision of the linear regression inverse operation. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams1pE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams1pE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams1pE"></span><span id="helayers::PlainModelHyperParams::p__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a81cd94c3df6ba178a81d699daf571aa3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams1pE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The number of past time lags to depend on. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams1dE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams1dE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams1dE"></span><span id="helayers::PlainModelHyperParams::d__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1afa7f1878a8375f3d01024877a396735e"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams1dE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The number of differentiations. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams1qE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams1qE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams1qE"></span><span id="helayers::PlainModelHyperParams::q__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5d60fdbee4d4e2dafb0f71ce2f97bb4b"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">q</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams1qE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The number of past errors to depend on. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams26numValuesUsedForPredictionE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams26numValuesUsedForPredictionE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams26numValuesUsedForPredictionE"></span><span id="helayers::PlainModelHyperParams::numValuesUsedForPrediction__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a271bfbca2511b43a83b6b825e17396db"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numValuesUsedForPrediction</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams26numValuesUsedForPredictionE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>See ArimaPlain::numValuesUsedForPrediction. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams10numSamplesE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams10numSamplesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams10numSamplesE"></span><span id="helayers::PlainModelHyperParams::numSamples__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1afda42ba7b2e03f30125850cbc9321be0"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numSamples</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams10numSamplesE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>See ArimaPlain::numSamples. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams2muE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams2muE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams2muE"></span><span id="helayers::PlainModelHyperParams::mu__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a694e30cadb62356bddc3c3dd646897f6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mu</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nan</span></span><span class="p"><span class="pre">(</span></span><span class="s"><span class="pre">&quot;0&quot;</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams2muE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The mu coefficient of the ARIMA model, which has the following formula: x_(t+1) = mu + sum(phi[i]*x[t-i]) + theta1*e[t] + e_[t+1]. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams3phiE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams3phiE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams3phiE"></span><span id="helayers::PlainModelHyperParams::phi__std::vector:double:"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ae981ddaec27d1ebde52605ceedc453d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">phi</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams3phiE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The phi coefficients of the ARIMA model, which has the following formula: x_(t+1) = mu + sum(phi[i]*x[t-i]) + theta1*e[t] + e_[t+1]. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams6theta1E">
-<span id="_CPPv3N8helayers21PlainModelHyperParams6theta1E"></span><span id="_CPPv2N8helayers21PlainModelHyperParams6theta1E"></span><span id="helayers::PlainModelHyperParams::theta1__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a1b3a8bf6a0e456830563f24b77e34d80"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">theta1</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nan</span></span><span class="p"><span class="pre">(</span></span><span class="s"><span class="pre">&quot;0&quot;</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams6theta1E" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The theta1 coefficient of the ARIMA model, which has the following formula: x_(t+1) = mu + sum(phi[i]*x[t-i]) + theta1*e[t] + e_[t+1]. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4varwE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams4varwE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4varwE"></span><span id="helayers::PlainModelHyperParams::varw__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a64588811600b15b8bc9e021329278626"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">varw</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nan</span></span><span class="p"><span class="pre">(</span></span><span class="s"><span class="pre">&quot;0&quot;</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4varwE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The variance of the error of the ARIMA model. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams10numCentersE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams10numCentersE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams10numCentersE"></span><span id="helayers::PlainModelHyperParams::numCenters__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a749b010b414fd5b7a3d8a787a83bbb51"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numCenters</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams10numCentersE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The number of centers. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams19featuresScaleTargetE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams19featuresScaleTargetE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams19featuresScaleTargetE"></span><span id="helayers::PlainModelHyperParams::featuresScaleTarget__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a52903db9e32a7a61caba06105eb49ca2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">featuresScaleTarget</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams19featuresScaleTargetE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Controls the scale of the features and thresholds. </p>
-<p>The features and thresholds will be scaled so they will be in the range [0, featuresScaleTarget]. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams15featuresBinSizeE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams15featuresBinSizeE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams15featuresBinSizeE"></span><span id="helayers::PlainModelHyperParams::featuresBinSize__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a579ba1e1374a4eb957752ce9331a226e"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">featuresBinSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">4</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams15featuresBinSizeE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Controls the approximation of the feature values and thresholds. </p>
-<p>The feature values will be approximated to the closest multiple of featuresBinSize. The thresholds will be approximated to the mid-point between the two closest multiples of featuresBinSize. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4gRepE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams4gRepE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4gRepE"></span><span id="helayers::PlainModelHyperParams::gRep__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a105f9c45dc40bca419ae5643bbbd4e2c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gRep</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4gRepE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Controls the accuracy of the comparison approximation in XGBoost and DTree prediction. </p>
-<p>A higher grep increases the accuracy on the account of deeper and slower computation. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4fRepE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams4fRepE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4fRepE"></span><span id="helayers::PlainModelHyperParams::fRep__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ab2673240af8a61f10c9c191c3465576f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fRep</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4fRepE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Controls the accuracy of the comparison approximation in XGBoost and DTree prediction. </p>
-<p>A higher frep increases the accuracy on the account of deeper and slower computation. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13featureRangesE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams13featureRangesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13featureRangesE"></span><span id="helayers::PlainModelHyperParams::featureRanges__std::vector:std::pair:double.double::"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0a349ad0fcf81e54c57727c1d9dc1b51"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">featureRanges</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13featureRangesE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>A vector specifying the minimum and maximum supported values for each feature. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams19numberOfCachedNodesE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams19numberOfCachedNodesE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams19numberOfCachedNodesE"></span><span id="helayers::PlainModelHyperParams::numberOfCachedNodes__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2eb8dd8bc027f91133697e86444b9235"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfCachedNodes</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams19numberOfCachedNodesE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Number of nodes that are shared among trees and their results are cached as an optimization. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams15storeThresholdsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams15storeThresholdsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams15storeThresholdsE"></span><span id="helayers::PlainModelHyperParams::storeThresholds__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a52f024f18ec495f395f9d703e99277da"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">storeThresholds</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams15storeThresholdsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>If true, XGBoost and DTree will store all thresholds of the model in the user side, in the plain. </p>
-<p>This has the advantage of making prediction faster and more accurate, on the account of storing additional, possibly sensitive, data in the user side, and requiring the user to do some additional pre-processing. Note that the additional data will be kept in the user side and it will not be exposed to the server at any time. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE"></span><span id="helayers::PlainModelHyperParams::roundBeforeStoringThresholds__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac47e3b46153c3b19b9439cdcd7a0c883"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">roundBeforeStoringThresholds</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28roundBeforeStoringThresholdsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>In case storeThresholds is true, decides whether the thresholds should be scaled and rounded before they are stored. </p>
-<p>Turning this flag on makes close thresholds considered the same one, thus reducing runtime on the account of possibly reducing accuracy. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE"></span><span id="helayers::PlainModelHyperParams::modelSpecifiedFixedBatchSize__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a85c146c5dfa9ccadabc52aaa813d55d9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelSpecifiedFixedBatchSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28modelSpecifiedFixedBatchSizeE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Indication to whether a model-specified fixed batch size is effective (default: false). </p>
-<p>With such fixed batch size, the batch size is fixed to the batch size specified in the plain NN model, and future runs of predict with the plain model and the HE model created from it, must provide exactly that much elements per batch. If this flag is turned off, the batch size is dynamic, meaning it can be changed and the HE model can be optimized for any batch size desired, but in this case the batch dimension must not be changed, manipulated or involved in operations by the NN in any way. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE"></span><span id="helayers::PlainModelHyperParams::plainPolyActivationCoeffsInEncryptedNn__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aad5fa264fcecc2d855af06bf270f0a73"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plainPolyActivationCoeffsInEncryptedNn</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams38plainPolyActivationCoeffsInEncryptedNnE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>An indication to whether the coefficients of a polynomial activation function of an encrypted NN should remain exposed in a plaintext form and not be encrypted. </p>
-<p>May often result in improved performance. Not relevant for non-encrypted NN. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE"></span><span id="helayers::PlainModelHyperParams::plainBatchNormInEncryptedNn__b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a924bb109c8f4e4b47ef3dc37b192ab8d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plainBatchNormInEncryptedNn</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams27plainBatchNormInEncryptedNnE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>An indication to whether the batch normalization constants of an encrypted NN should remain exposed in a plaintext form and not be encrypted. </p>
-<p>May often result in improved performance. Not relevant for non-encrypted NN. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams8amlDeltaE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams8amlDeltaE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams8amlDeltaE"></span><span id="helayers::PlainModelHyperParams::amlDelta__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a73eebad9d95c184de028bec53f8cb446"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amlDelta</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams8amlDeltaE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The weight of the risk of the other banks in the evaluation of the risks of the next iteration. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams13amlIterationsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams13amlIterationsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams13amlIterationsE"></span><span id="helayers::PlainModelHyperParams::amlIterations__double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a036f47a7ee6314aad8e57614833b3b58"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amlIterations</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams13amlIterationsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The number of iterations in the AML model. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams11numAccountsE">
-<span id="_CPPv3N8helayers21PlainModelHyperParams11numAccountsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams11numAccountsE"></span><span id="helayers::PlainModelHyperParams::numAccounts__i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a1c2e3548341aca3a05dcf887522eb659"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numAccounts</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams11numAccountsE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The combined number of accounts at all banks. </p>
 </dd></dl>
 
 </div>
@@ -1276,6 +1232,7 @@ will not be exposed to the server at any time.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.features_scale_target"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.features_scale_target</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.fit_hyper_params"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.fit_hyper_params</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.frep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.frep</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.get_phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.get_phi()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.grep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.grep</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.init_random_weights"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.init_random_weights</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.inverse_approximation_precision"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.inverse_approximation_precision</span></code></a></li>
@@ -1301,11 +1258,11 @@ will not be exposed to the server at any time.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_classes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_classes</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_features"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_features</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.p"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.p</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.phi</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_batch_norm_in_encrypted_nn</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.q"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.q</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.round_before_storing_thresholds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.set_phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.set_phi()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.sparse_rate"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.sparse_rate</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.store_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.store_thresholds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.theta1"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.theta1</span></code></a></li>

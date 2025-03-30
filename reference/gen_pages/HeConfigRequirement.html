@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HeConfigRequirement &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>HeConfigRequirement &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -545,6 +538,13 @@ HeContext supports bootstrapping.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.bootstrap_config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrap_config</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.bootstrap_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Specifies the bootstrap configuration. If this
+parameter is empty, a default configuration is used.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.bootstrappable">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrappable</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.bootstrappable" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether CTiles created by the HeContext will be bootstrappable. Setting
@@ -608,6 +608,13 @@ creation increases the runtime of the initialization.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.plaintext_modulus">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plaintext_modulus</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.plaintext_modulus" title="Permalink to this definition">#</a></dt>
+<dd><p>The required plaintext modulus. Relevant for schemes that
+support modular arithmetic.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="pyhelayers.HeConfigRequirement.public_functions">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">public_functions</span></span><a class="headerlink" href="#pyhelayers.HeConfigRequirement.public_functions" title="Permalink to this definition">#</a></dt>
 <dd><p>This member specifies which functionalities will be supported by the
@@ -646,7 +653,7 @@ public keys of the HeContext</p>
 <li><p>bootstrappable: set this to true for computations that require a lot of multiplication depth, typically more than 20. For depth in the range 10-20 you can experiment which works better, with bootstrappable true or false. Even if bootstrappable is set to true, you still need to set the multiplication depth. Different values of it in the range 4-20 may produce different bootstrappable configurations. Note that generally turning on this flag creates significantly larger keys and slower setup time. Bootstrapping can be called manually using <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>’s bootstrap method, or turn on automaticBootstrapping to have it called automatically when necessary.</p></li>
 <li><p>securityLevel: typical values are 128, 192, and 256. Default is 128.</p></li>
 <li><p>Troubleshooting:<ul>
-<li><p>Bootstrapping is not supported by all underlying libraries, or by the HElayers wrapper for that library. Currently HElayers supports bootstrapping using HEaaN and Lattigo.</p></li>
+<li><p>Bootstrapping is not supported by all underlying libraries, or by the HElayers wrapper for that library. Currently HElayers supports bootstrapping using openFHE and Lattigo.</p></li>
 <li><p>Some combination of values may not satisfy the securityLevel constraint specified (or the default 128). To solve that, try increasing numSlots, or decreasing multiplicationDepth, fractionalPartPrecision, and integerPartPrecision.</p></li>
 <li><p>Some combinations of integerPartPrecision and fractionalPartPrecision may cause errors related to choosing appropriate prime numbers. This may happen for values that are too low or too high. Try values closer to the typical values of integerPartPrecision=10 and fractionalPartPrecision=40.</p></li>
 </ul>
@@ -812,6 +819,13 @@ public keys of the HeContext</p>
 </dd></dl>
 
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement16plaintextModulusE">
+<span id="_CPPv3N8helayers19HeConfigRequirement16plaintextModulusE"></span><span id="_CPPv2N8helayers19HeConfigRequirement16plaintextModulusE"></span><span id="helayers::HeConfigRequirement::plaintextModulus__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1a130fc65f4c43b88bb6a620fbd36b8781"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plaintextModulus</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement16plaintextModulusE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>The required plaintext modulus. </p>
+<p>Relevant for schemes that support modular arithmetic. </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers19HeConfigRequirement13securityLevelE">
 <span id="_CPPv3N8helayers19HeConfigRequirement13securityLevelE"></span><span id="_CPPv2N8helayers19HeConfigRequirement13securityLevelE"></span><span id="helayers::HeConfigRequirement::securityLevel__i"></span><span class="target" id="structhelayers_1_1HeConfigRequirement_1ac860066e78e8e14d637cfe80100c0f34"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">securityLevel</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">128</span></span><a class="headerlink" href="#_CPPv4N8helayers19HeConfigRequirement13securityLevelE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The required security level. </p>
@@ -938,6 +952,7 @@ public keys of the HeContext</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.automatic_bootstrapping"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.automatic_bootstrapping</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.bootstrap_config"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.bootstrap_config</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.bootstrappable"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.bootstrappable</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.fractional_part_precision"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.fractional_part_precision</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.get_multi_party_config"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.get_multi_party_config()</span></code></a></li>
@@ -945,6 +960,7 @@ public keys of the HeContext</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.integer_part_precision"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.integer_part_precision</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.multiplication_depth"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.multiplication_depth</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.num_slots"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.num_slots</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.plaintext_modulus"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.plaintext_modulus</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.public_functions"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.public_functions</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.security_level"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.security_level</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeConfigRequirement.set_multi_party_config"><code class="docutils literal notranslate"><span class="pre">HeConfigRequirement.set_multi_party_config()</span></code></a></li>

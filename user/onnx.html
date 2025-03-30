@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ONNX Support &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>ONNX Support &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -400,6 +400,7 @@ document.write(`
 <li><p>ReduceMean</p></li>
 <li><p>ReduceSum</p></li>
 <li><p>Reshape</p></li>
+<li><p>RotaryEmbedding</p></li>
 <li><p>Shape</p></li>
 <li><p>Slice</p></li>
 <li><p>Squeeze</p></li>
@@ -550,7 +551,11 @@ document.write(`
 <h3>Gather<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md22" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md22"><ul class="simple">
 <li><p>See ONNX documentation for “Gather” operator for the logic, supported inputs, outputs and attributes.</p></li>
-<li><p>Can be applied on weights only.</p></li>
+<li><p>Currently we support only two cases:<ul>
+<li><p>Both inputs of gather are weights. The gather is computed in the plain.</p></li>
+<li><p>One input is non-weight, and the indices are a rank-0 (scalar) tensor. In this case we perform this gather node as a slice node to slice out the given index.</p></li>
+</ul>
+</p></li>
 </ul>
 </p>
 </section>
@@ -699,23 +704,40 @@ document.write(`
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md35">
-<h3>Shape<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md35" title="Permalink to this heading">#</a></h3>
+<h3>RotaryEmbedding<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md35" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md35"><ul class="simple">
-<li><p>See ONNX documentation for “Shape” operator for the logic, supported inputs, outputs and attributes.</p></li>
+<li><p>Must have one input: the input data.</p></li>
+<li><p>Must have one output.</p></li>
+<li><p>The supported attributes are:<ul>
+<li><p>”rotary_variant” - required, a string specifying the rotary variant. Currently only “rotate_half” is supported.</p></li>
+<li><p>”rotation_size” - required, the size (along the hidden dimension) of the slice to apply rotation in. Must contain a single integer.</p></li>
+<li><p>”base” - required, the base. Must contain a single integer.</p></li>
+<li><p>”seq_dim_index” - required, the index of the sequence dimension. Must contain a single integer.</p></li>
+<li><p>”heads_dim_index” - required, the index of the heads dimension. Must contain a single integer.</p></li>
+<li><p>”hidden_dim_index” - required, the index of the hidden dimension. Must contain a single integer.</p></li>
+</ul>
+</p></li>
 </ul>
 </p>
 </section>
 <section id="NeuralNetOnnxParser_8h_1autotoc_md36">
-<h3>Slice<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md36" title="Permalink to this heading">#</a></h3>
+<h3>Shape<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md36" title="Permalink to this heading">#</a></h3>
 <p id="NeuralNetOnnxParser_8h_1autotoc_md36"><ul class="simple">
+<li><p>See ONNX documentation for “Shape” operator for the logic, supported inputs, outputs and attributes.</p></li>
+</ul>
+</p>
+</section>
+<section id="NeuralNetOnnxParser_8h_1autotoc_md37">
+<h3>Slice<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md37" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md37"><ul class="simple">
 <li><p>See ONNX documentation for “Slice” operator for the logic, supported inputs, outputs and attributes.</p></li>
 <li><p>Currently, “steps”, if provided, must all equal 1.</p></li>
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md37">
-<h3>Squeeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md37" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md37"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md38">
+<h3>Squeeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md38" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md38"><ul class="simple">
 <li><p>Must have one or two inputs: the input data and optional axes values.</p></li>
 <li><p>Must have one output.</p></li>
 <li><p>The supported attributes are:<ul>
@@ -725,18 +747,18 @@ document.write(`
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md38">
-<h3>Sub<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md38" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md38"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md39">
+<h3>Sub<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md39" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md39"><ul class="simple">
 <li><p>Must have two inputs: the input data and weights, or two inputs.</p></li>
 <li><p>Must have one output.</p></li>
 <li><p>No attributes are supported.</p></li>
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md39">
-<h3>Transpose<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md39" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md39"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md40">
+<h3>Transpose<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md40" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md40"><ul class="simple">
 <li><p>Must have one input.</p></li>
 <li><p>Must have one output.</p></li>
 <li><p>The supported attributes are:<ul>
@@ -746,9 +768,9 @@ document.write(`
 </ul>
 </p>
 </section>
-<section id="NeuralNetOnnxParser_8h_1autotoc_md40">
-<h3>Unsqueeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md40" title="Permalink to this heading">#</a></h3>
-<p id="NeuralNetOnnxParser_8h_1autotoc_md40"><ul class="simple">
+<section id="NeuralNetOnnxParser_8h_1autotoc_md41">
+<h3>Unsqueeze<a class="headerlink" href="#NeuralNetOnnxParser_8h_1autotoc_md41" title="Permalink to this heading">#</a></h3>
+<p id="NeuralNetOnnxParser_8h_1autotoc_md41"><ul class="simple">
 <li><p>Must have one or two inputs: the input data and optional axes values.</p></li>
 <li><p>Must have one output.</p></li>
 <li><p>The supported attributes are:<ul>
@@ -826,12 +848,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md32">ReduceMean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md33">ReduceSum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md34">Reshape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md35">Shape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md36">Slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md37">Squeeze</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md38">Sub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md39">Transpose</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md40">Unsqueeze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md35">RotaryEmbedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md36">Shape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md37">Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md38">Squeeze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md39">Sub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md40">Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NeuralNetOnnxParser_8h_1autotoc_md41">Unsqueeze</a></li>
 </ul>
 </li>
 </ul>

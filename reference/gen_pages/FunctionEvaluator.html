@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>FunctionEvaluator &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>FunctionEvaluator &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -534,6 +527,19 @@ document.write(`
 <dd><p>This class is used to evaluate different available functions on
 CTiles, such as approximate inverse function.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.abs">
+<span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_possible_abs_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.abs" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Calculates absolute value.</dt><dd><p>This method return the absolute value of a cipher text.
+:param a: Cipher to calculate absolute for.
+:param g_rep: How many repetitions of g(x).
+:param f_rep: How many repetitions of f(x).
+:param max_possible_abs_value:  The maximum absolute value possible for a.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.compare">
 <span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.Tile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_possible_abs_of_diff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.compare" title="Permalink to this definition">#</a></dt>
 <dd><p>Comparison of two numbers.
@@ -580,6 +586,164 @@ accurate the result will be.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.composite_polynomial_evaluation">
+<span class="sig-name descname"><span class="pre">composite_polynomial_evaluation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polys:</span> <span class="pre">std::vector&lt;std::vector&lt;double</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;double&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;std::vector&lt;double</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;double&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">pyhelayers.EvalType</span> <span class="pre">=</span> <span class="pre">&lt;EvalType.MIN_DEPTH:</span> <span class="pre">2&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.composite_polynomial_evaluation" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Composite polynomial evaluation. Evaluates the composition of the
+given polynomials on the given “src”, and stores the result in “res”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Where to store the result.</p></li>
+<li><p><strong>src</strong> – The input of the composite polynomial.</p></li>
+<li><p><strong>polys</strong> – <dl class="simple">
+<dt>The coefficients of the composition polynomials.</dt><dd><p>polys[0] is evaluated first, and polys[i][0] is the free
+coefficient of the i-th polynomial.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the evaluation algorithm. See also the
+documentation of “EvalType”.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.composite_polynomial_evaluation_in_place">
+<span class="sig-name descname"><span class="pre">composite_polynomial_evaluation_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polys:</span> <span class="pre">std::vector&lt;std::vector&lt;double</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;double&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;std::vector&lt;double</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;double&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">pyhelayers.EvalType</span> <span class="pre">=</span> <span class="pre">&lt;EvalType.MIN_DEPTH:</span> <span class="pre">2&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.composite_polynomial_evaluation_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Composite polynomial evaluation, in place. Evaluates the
+composition of the given polynomials on the given “src”, and stores the
+result in “src”.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input of the composite polynomial. This will contain the
+result of the evaluation at the end of the function
+execution.</p>
+</dd>
+<dt class="field-even">param  polys<span class="colon">:</span></dt>
+<dd class="field-even"><p>The coefficients of the composition polynomials.
+polys[0] is evaluated first, and polys[i][0] is the free
+coefficient of the i-th polynomial.</p>
+</dd>
+<dt class="field-odd">param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the evaluation algorithm. See also the
+documentation of “EvalType”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.composite_remez_depth12_sign">
+<span class="sig-name descname"><span class="pre">composite_remez_depth12_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_abs_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.composite_remez_depth12_sign" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes the (approximated) sign of src. The sign is computed as
+a composition of three remez polynomials, and it consumes a total
+multiplication depth of 12. The error remains below 0.1 if
+<a href="#id1"><span class="problematic" id="id2">|src|</span></a>/max_abs_val &gt;= 2^-9, and it remains in order of 1e-4 (or less) if
+<a href="#id3"><span class="problematic" id="id4">|src|</span></a>/max_abs_val &gt;= 2^-8.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>max_abs_val</strong> – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>binary_res</strong> – If true the result will be close to 0 when src &lt; 0 and
+close to 1 when src &gt; 0. If false, the result will be
+close to -1 when src &lt; 0 and close to 1 when src &gt; 0.
+Defaults to false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.composite_remez_depth12_sign_in_place">
+<span class="sig-name descname"><span class="pre">composite_remez_depth12_sign_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_abs_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.composite_remez_depth12_sign_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes the (approximated) sign of src, in place. The sign is computed as
+a composition of three remez polynomials, and it consumes a total
+multiplication depth of 12. The error remains below 0.1 if
+<a href="#id5"><span class="problematic" id="id6">|src|</span></a>/max_abs_val &gt;= 2^-9, and it remains in order of 1e-4 (or less) if
+<a href="#id7"><span class="problematic" id="id8">|src|</span></a>/max_abs_val &gt;= 2^-8.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>max_abs_val</strong> – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>binary_res</strong> – If true the result will be close to 0 when src &lt; 0 and
+close to 1 when src &gt; 0. If false, the result will be
+close to -1 when src &lt; 0 and close to 1 when src &gt; 0.
+Defaults to false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.gelu_by_sigmoid">
+<span class="sig-name descname"><span class="pre">gelu_by_sigmoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.gelu_by_sigmoid" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Calculates (an approximation of) GELU(x) in place.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – CTile.  The values to calculate GELU on. The output will be
+stored in place.</p></li>
+<li><p><strong>scale</strong> – double. scale to divide x by in order to compute sigmoid from sign.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.get_poly_eval_mul_depth">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_poly_eval_mul_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.get_poly_eval_mul_depth" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>get_poly_eval_mul_depth(num_encrypted_coefs: int, normalized: bool) -&gt; int</p>
+<blockquote>
+<div><blockquote>
+<div><p>Returns the required multiplication depth to evaluate the described polynomial.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param num_encrypted_coefs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of encrypted coefficients of the polynomial</p>
+</dd>
+<dt class="field-even">param normalized<span class="colon">:</span></dt>
+<dd class="field-even"><p>If false, the polynomial to evaluate will be composed
+from the coefficients in “coeffs” vector only.
+Otherwise, an extra term, whose coefficient is 1 and
+whose power is coefs.size(), will be added.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>get_poly_eval_mul_depth(coefs: std::vector&lt;double, std::allocator&lt;double&gt; &gt;, type: pyhelayers.EvalType) -&gt; int</p>
+<blockquote>
+<div><blockquote>
+<div><p>Returns the required multiplication depth to evaluate the given
+polynomial, using the given evaluation method.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param coefs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The polynomial’s coefficients.</p>
+</dd>
+<dt class="field-even">param type<span class="colon">:</span></dt>
+<dd class="field-even"><p>The polynomial evaluation method.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.inverse_positive">
 <span class="sig-name descname"><span class="pre">inverse_positive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.inverse_positive" title="Permalink to this definition">#</a></dt>
 <dd><p>Calculates (an approximation of) 1/src. src must be between
@@ -609,6 +773,148 @@ Defaults to 5.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.inverse_positive_without_scaling">
+<span class="sig-name descname"><span class="pre">inverse_positive_without_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.inverse_positive_without_scaling" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates (an approximation of) 1/src. src must be in the range(0, 2),
+and the approximation becomes less accurate near the boundaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>bit_resolution</strong> – Controls the accuracy of the result. A
+higher bit_resolution value will increase
+the accuracy of the result at the account
+of consuming more multiplication depth.
+Defaults to 5.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.inverse_without_scaling">
+<span class="sig-name descname"><span class="pre">inverse_without_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.inverse_without_scaling" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates (an approximation of) 1/src. src must be in the range(-sqrt(2), sqrt(2)),
+and the approximation becomes less accurate near the boundaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – Ciphertext to calculate its inverse.</p></li>
+<li><p><strong>bit_resolution</strong> – Controls the accuracy of the result. A
+higher bit_resolution value will increase
+the accuracy of the result at the account
+of consuming more multiplication depth.
+Defaults to 5.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.min" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>min(self: pyhelayers.FunctionEvaluator, min_res: pyhelayers.CTile, min_indicators: pyhelayers.CTileVector, cs: pyhelayers.CTileVector, g_rep: int, f_rep: int, max_diff: float = 1) -&gt; None</p></li>
+</ol>
+<dl>
+<dt>Stores the minimum of “cs” CTiles in “min_res” and stores in</dt><dd><blockquote>
+<div><p>minIndicators[i] a CTile containing 1 if cs[i] is the minimum and 0
+otherwise</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param min_res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CTile containg minimum.</p>
+</dd>
+<dt class="field-even">param min_indicators<span class="colon">:</span></dt>
+<dd class="field-even"><p>stores in
+minIndicators[i] a CTile containing 1 if cs[i] is the minimum and 0
+otherwise.</p>
+</dd>
+<dt class="field-odd">param cs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array of CTile</p>
+</dd>
+<dt class="field-even">param g_rep<span class="colon">:</span></dt>
+<dd class="field-even"><p>Determine the accuracy of the result. Greater g_rep will
+result with a greater accuracy on the account
+of slower runtime and more multiplication depth.</p>
+</dd>
+<dt class="field-odd">param f_rep<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Determine the accuracy of the result. Greater f_rep will
+result with a greater accuracy on the account
+of slower runtime and more multiplication depth.</p>
+</dd>
+<dt class="field-even">param max_diff<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum possible absolute difference between two
+values in cs[i].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>min(self: pyhelayers.FunctionEvaluator, min_res: pyhelayers.CTile, min_indicators: pyhelayers.CTile, a: pyhelayers.CTile, b: pyhelayers.CTile, g_rep: int, f_rep: int, max_diff: float = 1, delay_mul_by_half: bool = False) -&gt; None</p></li>
+</ol>
+<dl>
+<dt>Computes min(a,b), stores it in min_res and stores the minimum</dt><dd><blockquote>
+<div><p>indicator in “minIndicator” (1 if a &lt; b and 0 otherwise).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param min_res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>min(a,b) will be stored here.</p>
+</dd>
+<dt class="field-even">param min_indicators<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting minimum indicator. This will contain
+an encryption of 1 if a &lt; b and 0 otherwise.</p>
+</dd>
+<dt class="field-odd">param a<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The first CTile for the minimum computation.</p>
+</dd>
+<dt class="field-even">param b<span class="colon">:</span></dt>
+<dd class="field-even"><p>The second CTile for the minimum computation.</p>
+</dd>
+<dt class="field-odd">param g_rep<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Determine the accuracy of the result. Greater gRep will
+result with a greater accuracy on the account
+of slower runtime and more multiplication depth.</p>
+</dd>
+<dt class="field-even">param f_rep<span class="colon">:</span></dt>
+<dd class="field-even"><p>Determine the accuracy of the result. Greater fRep will
+result with a greater accuracy on the account
+of slower runtime and more multiplication depth.</p>
+</dd>
+<dt class="field-odd">param max_diff<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum possible absolute difference between a and b.</p>
+</dd>
+<dt class="field-even">param delay_mul_by_half<span class="colon">:</span></dt>
+<dd class="field-even"><p>If true, min_res will contain two times min(a,b) and
+the function will consume one less chain index in “min_res”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.multiply_many">
+<span class="sig-name descname"><span class="pre">multiply_many</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cts:</span> <span class="pre">std::vector&lt;helayers::CTileTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;helayers::CTileTensor&gt;</span> <span class="pre">&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.multiply_many" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the product of the given CTileTensors. The multiplication
+depth consumed by this function is ceil(log(cst.size()))</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param cts<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The vector of CTileTensors to multiply.</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>CTileTensor.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CTileTensor</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.one_hot">
 <span class="sig-name descname"><span class="pre">one_hot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">possible_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTileVector.html#pyhelayers.CTileVector" title="pyhelayers.CTileVector"><span class="pre">pyhelayers.CTileVector</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.one_hot" title="Permalink to this definition">#</a></dt>
 <dd><p>Given ciphertext src and a list possible_values of the possible
@@ -622,6 +928,318 @@ src[j]=possible_values[i], and 0 otherwise.</p>
 <li><p><strong>src</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – The source ciphertext</p></li>
 <li><p><strong>possible_values</strong> (<em>list</em>) – A list of doubles contain the possible values
 inside src</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.poly_eval">
+<span class="sig-name descname"><span class="pre">poly_eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefs:</span> <span class="pre">std::vector&lt;double</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;double&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">pyhelayers.EvalType</span> <span class="pre">=</span> <span class="pre">&lt;EvalType.MIN_DEPTH:</span> <span class="pre">2&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.poly_eval" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div><p>Polynomial evaluation. Evaluates the given polynomial on input</p>
+</div></blockquote>
+<p>“src”, and stores the result in “res”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Where to store the result.</p></li>
+<li><p><strong>src</strong> – The input of the polynomial.</p></li>
+<li><p><strong>coefs</strong> – The coefficients of the polynomial.
+coefs[0] is the free coefficient.</p></li>
+<li><p><strong>type</strong> – The type of the evaluation algorithm. See also the
+documentation of “EvalType”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.poly_eval_by_roots">
+<span class="sig-name descname"><span class="pre">poly_eval_by_roots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roots:</span> <span class="pre">std::vector&lt;std::complex&lt;double&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;std::complex&lt;double&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.poly_eval_by_roots" title="Permalink to this definition">#</a></dt>
+<dd><p>Polynomial evaluation using a polynomial’s roots. If the roots
+vector is (r1, …, rn), then the evaluated polynomial is:
+coef * (x - r1) * … * (x - rn).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – The input of the polynomial.</p></li>
+<li><p><strong>roots</strong> – The roots of the polynomial..</p></li>
+<li><p><strong>coef</strong> – The evaluated polynomial is coef * prod(x-r_i) (where r_i are
+the roots).</p></li>
+<li><p><strong>block_size</strong> – Before evaluation, each blockSize roots are expanded into
+one polynomial of degree block_size. If -1, a blockSize of min(sqrt(n), 16)
+is used (where n is the number of roots). Defaults to -1. If a positive
+value is given, it must not be greater than 30.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The CTile.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile">CTile</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.poly_eval_by_roots_in_place">
+<span class="sig-name descname"><span class="pre">poly_eval_by_roots_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.FunctionEvaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src:</span> <span class="pre">pyhelayers.CTile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roots:</span> <span class="pre">std::vector&lt;std::complex&lt;double&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std::allocator&lt;std::complex&lt;double&gt;</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.poly_eval_by_roots_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Polynomial evaluation using a polynomial’s roots, in place. Refer
+to polyEvalByRoots() documentation for more details.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input of the polynomial. This will contain the result of
+the evaluation at the end of the function execution</p>
+</dd>
+<dt class="field-even">param roots<span class="colon">:</span></dt>
+<dd class="field-even"><p>The roots of the polynomial..</p>
+</dd>
+<dt class="field-odd">param coef<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The evaluated polynomial is coef * prod(x-r_i) (where r_i are
+the roots).</p>
+</dd>
+<dt class="field-even">param block_size<span class="colon">:</span></dt>
+<dd class="field-even"><p>Before evaluation, each blockSize roots are expanded into
+one polynomial of degree block_size. If -1, a block_size of min(sqrt(n), 16)
+is used (where n is the number of roots). Defaults to -1. If a positive
+value is given, it must not be greater than 30.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.poly_eval_in_place">
+<span class="sig-name descname"><span class="pre">poly_eval_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.poly_eval_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>poly_eval_in_place(self: pyhelayers.FunctionEvaluator, src: pyhelayers.CTile, coefs: pyhelayers.CTileVector, normalized: bool = False, ignore_free_coef: bool = False) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Polynomial evaluation, in place. Evaluates the given polynomial on
+input “src”, and stores the result in “src”.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input of the polynomial. This will contain the
+result of the evaluation at the end of the function</p>
+<blockquote>
+<div><p>execution.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">param coefs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The (encrypted) coefficients of the polynomial.
+coefs[0] is the free coefficient.</p>
+</dd>
+<dt class="field-odd">param normalized<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If false, the polynomial to evaluate will be composed
+from the coefficients in “coeffs” vector only.
+Otherwise, an extra term, whose coefficient is 1 and
+whose power is coefs.size(), will be added.
+coefs[0] is the free coefficient.</p>
+</dd>
+<dt class="field-even">param ignore_free_coef<span class="colon">:</span></dt>
+<dd class="field-even"><p>If true, the first coefficient in “coefs” array is
+not added to the final result.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>poly_eval_in_place(self: pyhelayers.FunctionEvaluator, src: pyhelayers.CTile, coefs: pyhelayers.CTileVector, required_ci_for_coefs: std::vector&lt;int, std::allocator&lt;int&gt; &gt;, normalized: bool = False, ignore_free_coef: bool = False) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Polynomial evaluation, in place. Evaluates the given polynomial on
+input “src”, and stores the result in “src”.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input of the polynomial. This will contain the
+result of the evaluation at the end of the function</p>
+<blockquote>
+<div><p>execution.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">param coefs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The (encrypted) coefficients of the polynomial.
+coefs[0] is the free coefficient.</p>
+</dd>
+</dl>
+<dl>
+<dt>:param required_ci_for_coefs :After the end of the computation, the i-th</dt><dd><blockquote>
+<div><p>element of this vector will contain the chain index of the ciphertext</p>
+</div></blockquote>
+<p>which was multiplied by coefs[i]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">param normalized<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If false, the polynomial to evaluate will be composed
+from the coefficients in “coeffs” vector only.
+Otherwise, an extra term, whose coefficient is 1 and
+whose power is coefs.size(), will be added.
+coefs[0] is the free coefficient.</p>
+</dd>
+<dt class="field-even">param ignore_free_coef<span class="colon">:</span></dt>
+<dd class="field-even"><p>If true, the first coefficient in “coefs” array is
+not added to the final result.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>poly_eval_in_place(self: pyhelayers.FunctionEvaluator, src: pyhelayers.CTile, coefs: std::vector&lt;double, std::allocator&lt;double&gt; &gt;, type: pyhelayers.EvalType = &lt;EvalType.MIN_DEPTH: 2&gt;) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Polynomial evaluation, in place. Evaluates the given polynomial on
+input “src”, and stores the result in “src”.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input of the polynomial. This will contain the
+result of the evaluation at the end of the function</p>
+<blockquote>
+<div><p>execution.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">param coefs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The (encrypted) coefficients of the polynomial.
+coefs[0] is the free coefficient.</p>
+</dd>
+<dt class="field-odd">param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the evaluation algorithm. See also the
+documentation of “EvalType”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.poly_eval_needs_bs">
+<span class="sig-name descname"><span class="pre">poly_eval_needs_bs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.poly_eval_needs_bs" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>poly_eval_needs_bs(self: pyhelayers.FunctionEvaluator, src: pyhelayers.CTile, num_encrypted_coefs: int, normalized: bool) -&gt; bool</p>
+<blockquote>
+<div><p>Checks whether bootstrapping will be required to complete the
+specified polynomial evaluation. If bootstrapping is required to
+evaluate the given polynomial on the given p src ciphertext and using the
+given evaluation method, returns true. Otherwise, returns false.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ciphertext to evaluate the polynomial on.</p>
+</dd>
+<dt class="field-even">param num_encrypted_coefs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of encrypted coefficients of the
+polynomial.</p>
+</dd>
+<dt class="field-odd">param normalized<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If false, the polynomial to evaluate will be composed
+from the coefficients in “coeffs” vector only.
+Otherwise, an extra term, whose coefficient is 1 and
+whose power is coefs.size(), will be added.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>poly_eval_needs_bs(self: pyhelayers.FunctionEvaluator, src: pyhelayers.CTile, coeffs: numpy.ndarray[numpy.float64], type: pyhelayers.EvalType) -&gt; bool</p>
+<blockquote>
+<div><p>Checks whether bootstrapping will be required to complete the
+specified polynomial evaluation. If bootstrapping is required to
+evaluate the given polynomial on the given p src ciphertext and using the
+given evaluation method, returns true. Otherwise, returns false.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param src<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ciphertext to evaluate the polynomial on.</p>
+</dd>
+<dt class="field-even">param coeffs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The polynomial’s coefficients.</p>
+</dd>
+<dt class="field-odd">param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The polynomial evaluation method.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.pow">
+<span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.pow" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes src^degree, and stores the result into res.
+:param res:       Where the result should be stored.
+:param src:       To compute its power.
+:param degree:    The required exponent.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.pow_in_place">
+<span class="sig-name descname"><span class="pre">pow_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_linearized_monomials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_scaled_monomials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.pow_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes c^degree, in place.
+:param c:         Cipher to compute its power. The result will be stored here.
+:param degree:     The required exponent.
+:param non_linearized_monomials:  If true the result is not linearized.
+:param non_scaled_monomials:  If true the result is not scaled.
+:param ci: If not 0 the result’s chain index set to ci</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.relu_by_sign15">
+<span class="sig-name descname"><span class="pre">relu_by_sign15</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_abs_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.relu_by_sign15" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Calculates (an approximation of) ReLU(x) in place
+assuming that x is in [-max_abs_val, max_abs_val].</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – CTile.  The values to calculate ReLU on. The output will be
+stored in place.</p></li>
+<li><p><strong>max_abs_val</strong> – double. Maximal expected absolute value of value in the slots of x</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.sigmoid">
+<span class="sig-name descname"><span class="pre">sigmoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.SigmoidType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.sigmoid" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>A polynomial approximation of sigmoid.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – Where to store the result.</p></li>
+<li><p><strong>src</strong> – Ciphertext to calculate its sigmoid.</p></li>
+<li><p><strong>type</strong> – Specifies the degree of the approximating polynomial. See also
+SigmoidType documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.sigmoid_in_place">
+<span class="sig-name descname"><span class="pre">sigmoid_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.SigmoidType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.sigmoid_in_place" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>A polynomial approximation of sigmoid in place.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – Ciphertext to calculate its sigmoid. The result will be stored here.</p></li>
+<li><p><strong>type</strong> – Specifies the degree of the approximating polynomial. See also
+SigmoidType documentation.</p></li>
 </ul>
 </dd>
 </dl>
@@ -647,6 +1265,69 @@ the range [-max_abs_val, max_abs_val].</p></li>
 close to 1 when a &gt; 0. If false, the result will be close
 to -1 when a &lt; 0 and close to 1 when a &gt; 0. Defaults to
 false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.sign_in_place">
+<span class="sig-name descname"><span class="pre">sign_in_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_rep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_abs_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.sign_in_place" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the (approximated) sign of a, in place. src must be in the
+range [-maxAbsVal, maxAbsVal]. The sign is computed as
+f(f(…f(g(g(…g(x)))))), where g(x) and f(x) are two degree 7
+polynomials. The number of times g(x) and f(x) appear in the
+composition can be controlled by p gRep and p fRep arguments,
+respectively. g(x) is a “giant-step” polynomial, which takes an
+input in the range (-1, 1) and pushes it to be close to -1 or 1,
+while f(x) is a “baby-step” polynomial, which takes an input
+already close to -1 or 1, and brings it closer to one of them. The
+sign approximation starts by applying g(x) gRep times to bring the
+input to be close to -1 or 1, and then applying f(x) fRep times to
+tune the output so the error gets reduced. It is recommended to
+set fRep to a small value (1, 2 or 3), and then increase gRep
+until reaching the desired accuracy. The multiplication depth
+consumed by the sign function is 3*(gRep+fRep), and higher values
+of gRep, fRep increase accuracy at the expense of increasing
+latency of the sign function. Possible values for gRep, fRep are:
+* gRep=3, fRep=2: maximum error of 1.9e-05 when <a href="#id9"><span class="problematic" id="id10">|x|</span></a> in [2^(-7), 1].
+* gRep=4, fRep=2: maximum error of 1.4e-06 when <a href="#id11"><span class="problematic" id="id12">|x|</span></a> in [2^(-9), 1].
+* gRep=5, fRep=2: maximum error of 1.1e-07 when <a href="#id13"><span class="problematic" id="id14">|x|</span></a> in [2^(-11), 1].
+See also SignOptimizer class and SignOptimizerTest.cpp for
+automatic choise of gRep, fRep that achieve a desired error and
+helper functions that compute the errors achieved by a specific
+pair of gRep, fRep.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><em>CTile</em></a>) – Ciphertext we want to find its sign. a must be in
+the range [-max_abs_val, max_abs_val].</p></li>
+<li><p><strong>g_rep</strong> (<em>int</em>) – How many repetitions of g(x)</p></li>
+<li><p><strong>f_rep</strong> (<em>int</em>) – How many repetitions of f(x)</p></li>
+<li><p><strong>max_abs_val</strong> (<em>double</em>) – An upper bound on the absolute value of a. Defaults to 1.</p></li>
+<li><p><strong>binary_res</strong> (<em>boolean</em>) – If true the result will be close to 0 when a &lt; 0 and
+close to 1 when a &gt; 0. If false, the result will be close
+to -1 when a &lt; 0 and close to 1 when a &gt; 0. Defaults to
+false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.FunctionEvaluator.sqrt">
+<span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><span class="pre">pyhelayers.FunctionEvaluator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><span class="pre">pyhelayers.CTile</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.FunctionEvaluator.sqrt" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Calculates (an approximation of) sqrt(src). src must be in the range</dt><dd><p>[0,1].</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – To compute its square root.</p></li>
+<li><p><strong>bit_resolution</strong> – Controls the accuracy of the result. A higher value
+results with a better accuracy at the account of
+higher multiplication depth and higher latency.</p></li>
 </ul>
 </dd>
 </dl>
@@ -724,6 +1405,24 @@ false.</p></li>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If for each i, abs(coefs[i]) &lt; (1 / he.getDefaultScale()). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator15polyEvalInPlaceER5CTileRKNSt6vectorI5CTileEERNSt6vectorIiEEbb">
+<span id="_CPPv3NK8helayers17FunctionEvaluator15polyEvalInPlaceER5CTileRKNSt6vectorI5CTileEERNSt6vectorIiEEbb"></span><span id="_CPPv2NK8helayers17FunctionEvaluator15polyEvalInPlaceER5CTileRKNSt6vectorI5CTileEERNSt6vectorIiEEbb"></span><span id="helayers::FunctionEvaluator::polyEvalInPlace__CTileR.std::vector:CTile:CR.std::vector:i:R.b.bC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1aa5a30b86f5684d9a7fa80be2013f6884"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">polyEvalInPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefs</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">requiredCIForCoefs</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">normalized</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ignoreFreeCoef</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator15polyEvalInPlaceER5CTileRKNSt6vectorI5CTileEERNSt6vectorIiEEbb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Polynomial evaluation, in place. </p>
+<p>Evaluates the given polynomial on input “src”, and stores the result in “src”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – The input of the polynomial. This will contain the result of the evaluation at the end of the function execution. </p></li>
+<li><p><strong>coefs</strong> – The (encrypted) coefficients of the polynomial. coefs[0] is the free coefficient. </p></li>
+<li><p><strong>requiredCIForCoefs</strong> – After the end of the computation, the i-th element of this vector will contain the chain index of the ciphertext which was multiplied by coefs[i]. </p></li>
+<li><p><strong>normalized</strong> – If false, the polynomial to evaluate will be composed from the coefficients in “coeffs” vector only. Otherwise, an extra term, whose coefficient is 1 and whose power is coefs.size(), will be added. </p></li>
+<li><p><strong>ignoreFreeCoef</strong> – If true, the first coefficient in “coefs” array is not added to the final result. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -972,7 +1671,12 @@ This method compares two numbers a and b and placed the result in a. The result 
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator11signInPlaceER5CTileiidb">
 <span id="_CPPv3NK8helayers17FunctionEvaluator11signInPlaceER5CTileiidb"></span><span id="_CPPv2NK8helayers17FunctionEvaluator11signInPlaceER5CTileiidb"></span><span id="helayers::FunctionEvaluator::signInPlace__CTileR.i.i.double.bC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a87fb42dc2d700cc09d2a31d618690301"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">signInPlace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxAbsVal</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">binaryRes</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator11signInPlaceER5CTileiidb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Computes the (approximated) sign of <code class="docutils literal notranslate"><span class="pre">src</span></code>, in place. </p>
-<p>The sign is computed as the g(g(…g(f(f(…f(x)))))), where g(x) and f(x) are two degree 7 polynomials. The number of times g(x) and f(x) appear in the composition can be controlled by <code class="docutils literal notranslate"><span class="pre">gRep</span></code> and <code class="docutils literal notranslate"><span class="pre">fRep</span></code> arguments, respectively. <code class="docutils literal notranslate"><span class="pre">src</span></code> must be in the range [-maxAbsVal, maxAbsVal].</p>
+<p><code class="docutils literal notranslate"><span class="pre">src</span></code> must be in the range [-maxAbsVal, maxAbsVal]. The sign is computed as f(f(…f(g(g(…g(x)))))), where g(x) and f(x) are two degree 7 polynomials. The number of times g(x) and f(x) appear in the composition can be controlled by <code class="docutils literal notranslate"><span class="pre">gRep</span></code> and <code class="docutils literal notranslate"><span class="pre">fRep</span></code> arguments, respectively. g(x) is a “giant-step” polynomial, which takes an input in the range (-1, 1) and pushes it to be close to -1 or 1, while f(x) is a “baby-step” polynomial, which takes an input already close to -1 or 1, and brings it closer to one of them. The sign approximation starts by applying g(x) gRep times to bring the input to be close to -1 or 1, and then applying f(x) fRep times to tune the output so the error gets reduced. It is recommended to set fRep to a small value (1, 2 or 3), and then increase gRep until reaching the desired accuracy. The multiplication depth consumed by the sign function is 3*(gRep+fRep), and higher values of gRep, fRep increase accuracy at the expense of increasing latency of the sign function. Possible values for gRep, fRep are:<ul class="simple">
+<li><p>gRep=3, fRep=2: maximum error of 1.9e-05 when |x| \in [2^(-7), 1].</p></li>
+<li><p>gRep=4, fRep=2: maximum error of 1.4e-06 when |x| \in [2^(-9), 1].</p></li>
+<li><p>gRep=5, fRep=2: maximum error of 1.1e-07 when |x| \in [2^(-11), 1]. See also SignOptimizer class and SignOptimizerTest.cpp for automatic choise of gRep, fRep that achieve a desired error and helper functions that compute the errors achieved by a specific pair of gRep, fRep.</p></li>
+</ul>
+</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1004,17 +1708,36 @@ This method compares two numbers a and b and placed the result in a. The result 
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator7inverseER5CTiledi">
+<span id="_CPPv3NK8helayers17FunctionEvaluator7inverseER5CTiledi"></span><span id="_CPPv2NK8helayers17FunctionEvaluator7inverseER5CTiledi"></span><span id="helayers::FunctionEvaluator::inverse__CTileR.double.iC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a9969d2c36f85bf96ad3de0d89f908591"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverse</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">absUpperBound</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator7inverseER5CTiledi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) 1/src. </p>
+<p>the absolute value of src must be smaller than absUpperBound. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – ciphertext to calculate its inverse. </p></li>
+<li><p><strong>absLowerBound</strong> – a lower bound on the absolute value of src. The tighter this bound is, the more accurate the result will be. This lower bound must be non-negative. </p></li>
+<li><p><strong>bitResolution</strong> – Controls the accuracy of the result. A higher bitResolution value will increase the accuracy of the result at the expense of consuming more multiplication depth. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">If</span></span></span> – absUpperBound is not positive. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator15inversePositiveER5CTileddi">
 <span id="_CPPv3NK8helayers17FunctionEvaluator15inversePositiveER5CTileddi"></span><span id="_CPPv2NK8helayers17FunctionEvaluator15inversePositiveER5CTileddi"></span><span id="helayers::FunctionEvaluator::inversePositive__CTileR.double.double.iC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a2c4864733d34f717dffbef7d9c93e8b8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inversePositive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lowerBound</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">upperBound</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator15inversePositiveER5CTileddi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates (an approximation of) 1/src. </p>
-<p>src must be between lowerBound and upperBound. lowerBound must be non-negative and smaller or equal to upperBound, and upperBound must be strictly positive. The tighter the given bounds are, the more accurate the result will be. </p>
+<p>src must encrypt positive values between lowerBound and upperBound. lowerBound must be non-negative and smaller or equal to upperBound, and upperBound must be strictly positive. The tighter the given bounds are, the more accurate the result will be. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>src</strong> – ciphertext to calculate its inverse. </p></li>
 <li><p><strong>lowerBound</strong> – a lower bound on src. The tighter this bound is, the more accurate the result will be. This lowerBound must be non-negative. </p></li>
 <li><p><strong>upperBound</strong> – an upper upperBound on src. The tighter this bound is, the more accurate the result will be. </p></li>
-<li><p><strong>bitResolution</strong> – Controls the accuracy of the result. A higher bitResolution value will increase the accuracy of the result at the account of consuming more multiplication depth. </p></li>
+<li><p><strong>bitResolution</strong> – Controls the accuracy of the result. A higher bitResolution value will increase the accuracy of the result at the expense of consuming more multiplication depth. </p></li>
 </ul>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
@@ -1024,10 +1747,25 @@ This method compares two numbers a and b and placed the result in a. The result 
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator21inverseWithoutScalingER5CTilei">
+<span id="_CPPv3NK8helayers17FunctionEvaluator21inverseWithoutScalingER5CTilei"></span><span id="_CPPv2NK8helayers17FunctionEvaluator21inverseWithoutScalingER5CTilei"></span><span id="helayers::FunctionEvaluator::inverseWithoutScaling__CTileR.iC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a92e43586b3a5ae98c9a2d87f00ce3c29"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverseWithoutScaling</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator21inverseWithoutScalingER5CTilei" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) 1/src. </p>
+<p>src must be in the range (-sqrt(2), sqrt(2)), and the approximation becomes less accurate near the boundaries. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – ciphertext to calculate its inverse. </p></li>
+<li><p><strong>bitResolution</strong> – Controls the accuracy of the result. A higher bitResolution value will increase the accuracy of the result at the expense of consuming more multiplication depth. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator29inversePositiveWithoutScalingER5CTilei">
 <span id="_CPPv3NK8helayers17FunctionEvaluator29inversePositiveWithoutScalingER5CTilei"></span><span id="_CPPv2NK8helayers17FunctionEvaluator29inversePositiveWithoutScalingER5CTilei"></span><span id="helayers::FunctionEvaluator::inversePositiveWithoutScaling__CTileR.iC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1aa197b20db999b6fa4fdd018f08ccfde4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inversePositiveWithoutScaling</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitResolution</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator29inversePositiveWithoutScalingER5CTilei" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates (an approximation of) 1/src. </p>
-<p>src must be in the range(0, 2), and the approximation becomes less accurates near the boundaries. </p>
+<p>src must be in the range(0, 2), and the approximation becomes less accurate near the boundaries. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1125,7 +1863,7 @@ This method compares two numbers a and b and placed the result in a. The result 
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers17FunctionEvaluator15polyEvalByRootsER5CTileRK5CTileRKNSt6vectorINSt7complexIdEEEEd6DimInt">
 <span id="_CPPv3NK8helayers17FunctionEvaluator15polyEvalByRootsER5CTileRK5CTileRKNSt6vectorINSt7complexIdEEEEd6DimInt"></span><span id="_CPPv2NK8helayers17FunctionEvaluator15polyEvalByRootsER5CTileRK5CTileRKNSt6vectorINSt7complexIdEEEEd6DimInt"></span><span id="helayers::FunctionEvaluator::polyEvalByRoots__CTileR.CTileCR.std::vector:std::complex:double::CR.double.DimIntC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a571cf195eed4bef8231fbe87e3c28952"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">polyEvalByRoots</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">roots</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">blockSize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers17FunctionEvaluator15polyEvalByRootsER5CTileRK5CTileRKNSt6vectorINSt7complexIdEEEEd6DimInt" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Polynomial evaluation using a polynomial’s roots. </p>
-<p>If the roots vector is (r1, …, rn), then the evaluated polynomial is: coef * (x - r1) * … * (x - rn). This polynomial evaluation is usually more stable and faster than other polynomial evaluation methods, although in some cases it might consume one chain index more than the MIN_DEPTH polynomial evaluation (which can be applied by calling polyEval(type=MIN_DEPTH)). During the evaluation, each “blockSize” roots are expanded into one polynomial of degree blockSize. Then, all of the expanded blocks are evaluated separately and multiplied together. A blockSize of sqrt(n) results with the best runtime, while a smaller blockSize may decrease multiplication depth by 1 and slightly enhance stabilitiy. </p>
+<p>If the roots vector is (r1, …, rn), then the evaluated polynomial is: coef * (x - r1) * … * (x - rn). This polynomial evaluation is usually more stable and faster than other polynomial evaluation methods, although in some cases it might consume one chain index more than the MIN_DEPTH polynomial evaluation (which can be applied by calling polyEval(type=MIN_DEPTH)). During the evaluation, each “blockSize” roots are expanded into one polynomial of degree blockSize. Then, all of the expanded blocks are evaluated separately and multiplied together. A blockSize of sqrt(n) results with the best runtime, while a smaller blockSize may decrease multiplication depth by 1 and slightly enhance stability. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1158,13 +1896,13 @@ This method compares two numbers a and b and placed the result in a. The result 
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled">
-<span id="_CPPv3N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled"></span><span id="_CPPv2N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled"></span><span id="helayers::FunctionEvaluator::geluBySigmoid__CTileR.double"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1ae4532e7c3469d3e18c7e2c2d4421548d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">geluBySigmoid</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxAbsVal</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Calculates (an approximation of) GeLU(x) in place assuming that x is in [-maxAbsVal,maxAbsVal]. </p>
+<span id="_CPPv3N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled"></span><span id="_CPPv2N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled"></span><span id="helayers::FunctionEvaluator::geluBySigmoid__CTileR.double"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a7adbe2724e059f19b08b538f801fb0a2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">geluBySigmoid</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scale</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers17FunctionEvaluator23SIGMOID_FROM_SIGN_SCALEE" title="helayers::FunctionEvaluator::SIGMOID_FROM_SIGN_SCALE"><span class="n"><span class="pre">SIGMOID_FROM_SIGN_SCALE</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator13geluBySigmoidER5CTiled" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calculates (an approximation of) GELU(x) in place assuming that x is in [-maxAbsVal,maxAbsVal]. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – The values to calculate GeLU on. The output will be stored in place. </p></li>
-<li><p><strong>maxAbsVal</strong> – Maximal expected absolute value of value in the slots of x </p></li>
+<li><p><strong>x</strong> – The values to calculate GELU on. The output will be stored in place. </p></li>
+<li><p><strong>scale</strong> – scale to divide x by in order to compute sigmoid from sign. See documentation of sigmoidBySignScaled for further details. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1173,6 +1911,24 @@ This method compares two numbers a and b and placed the result in a. The result 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17FunctionEvaluator18polyEvalGetCoefsCIEiibbi">
+<span id="_CPPv3N8helayers17FunctionEvaluator18polyEvalGetCoefsCIEiibbi"></span><span id="_CPPv2N8helayers17FunctionEvaluator18polyEvalGetCoefsCIEiibbi"></span><span id="helayers::FunctionEvaluator::polyEvalGetCoefsCI__i.i.b.b.i"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a5ef13d44d29bcaeae03734d79f2a6ea8"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">polyEvalGetCoefsCI</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">srcChainIndex</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numEncryptedCoefs</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">normalized</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ignoreFreeCoef</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">minChainIndexForBootstrapping</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator18polyEvalGetCoefsCIEiibbi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a vector specifying the required chain indexes of the encrypted coefficients when evaluating a polynomial with the specified number of encrypted coefficients. </p>
+<p>The i-th element of the returned vector specifies the required chain index of the coefficient of x^i. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>srcChainIndex</strong> – The chain index of the source ciphertext to evaluate an encrypted polynomial on. </p></li>
+<li><p><strong>numEncryptedCoefs</strong> – The number of the encrypted coefficients of the polynomial. If “normalized” is true, these coefficients do not include the coefficient of the highest power of the polynomial, which we consider to be 1. </p></li>
+<li><p><strong>normalized</strong> – If false, the polynomial to evaluate will be composed from “numEncryptedCoefs” only. If true, an extra term, whose coefficient is 1 and whose power is “numEncryptedCoefs”, will be added to the polynomial. </p></li>
+<li><p><strong>ignoreFreeCoef</strong> – The value of “ignoreFreeCoef” parameter that is going to be sent to <a class="reference internal" href="#classhelayers_1_1FunctionEvaluator_1acb393a1e7f8b8be4b08dc7e192dc930a"><span class="std std-ref">polyEvalInPlace()</span></a> when evaluating the encrypted polynomial. </p></li>
+<li><p><strong>minChainIndexForBootstrapping.</strong> – If the used <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is bootstrappable, this parameter should specify the minimum chain index that allows bootstrapping. If the used <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> is not bootstrappable, this parameter can be set to -1 and it will be ignored. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers17FunctionEvaluator19getPolyEvalMulDepthERKNSt6vectorIdEE8EvalType">
 <span id="_CPPv3N8helayers17FunctionEvaluator19getPolyEvalMulDepthERKNSt6vectorIdEE8EvalType"></span><span id="_CPPv2N8helayers17FunctionEvaluator19getPolyEvalMulDepthERKNSt6vectorIdEE8EvalType"></span><span id="helayers::FunctionEvaluator::getPolyEvalMulDepth__std::vector:double:CR.EvalType"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a1326317e648b45f8cf087d3d63a7806d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPolyEvalMulDepth</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefs</span></span>, <span class="n"><span class="pre">EvalType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator19getPolyEvalMulDepthERKNSt6vectorIdEE8EvalType" title="Permalink to this definition">#</a><br /></dt>
@@ -1264,6 +2020,19 @@ This method compares two numbers a and b and placed the result in a. The result 
 <span id="_CPPv3N8helayers17FunctionEvaluator12sign15BpolysE"></span><span id="_CPPv2N8helayers17FunctionEvaluator12sign15BpolysE"></span><span id="helayers::FunctionEvaluator::sign15Bpolys__std::vector:std::vector:double::C"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a45598f82b4889016f961e9eb44c62b5b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sign15Bpolys</span></span></span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator12sign15BpolysE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17FunctionEvaluator23SIGMOID_FROM_SIGN_SCALEE">
+<span id="_CPPv3N8helayers17FunctionEvaluator23SIGMOID_FROM_SIGN_SCALEE"></span><span id="_CPPv2N8helayers17FunctionEvaluator23SIGMOID_FROM_SIGN_SCALEE"></span><span id="helayers::FunctionEvaluator::SIGMOID_FROM_SIGN_SCALE__doubleC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1a54d314907eba12a08093fa0340c12c40"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SIGMOID_FROM_SIGN_SCALE</span></span></span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator23SIGMOID_FROM_SIGN_SCALEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>sigmoid(x) ~= 0.5*sign(x/scale) + 0.5 where the scale can be optimized to produce the best approximation for different input ranges. </p>
+<p>SIGMOID_FROM_SIGN_SCALE is optimized to give the best mean accuracy of Sigmoid(x) from Sign(x) for x in [30,30] </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers17FunctionEvaluator23GELU_FROM_SIGMOID_SCALEE">
+<span id="_CPPv3N8helayers17FunctionEvaluator23GELU_FROM_SIGMOID_SCALEE"></span><span id="_CPPv2N8helayers17FunctionEvaluator23GELU_FROM_SIGMOID_SCALEE"></span><span id="helayers::FunctionEvaluator::GELU_FROM_SIGMOID_SCALE__doubleC"></span><span class="target" id="classhelayers_1_1FunctionEvaluator_1ad0b3d6a9d25bbae3158e2a1b6318e824"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GELU_FROM_SIGMOID_SCALE</span></span></span><a class="headerlink" href="#_CPPv4N8helayers17FunctionEvaluator23GELU_FROM_SIGMOID_SCALEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>GELU(x) ~= sigmoid(1.702*x) </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
@@ -1320,11 +2089,34 @@ This method compares two numbers a and b and placed the result in a. The result 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.abs"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.abs()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.compare"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.compare()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.compareInPlace"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.compareInPlace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.composite_polynomial_evaluation"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.composite_polynomial_evaluation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.composite_polynomial_evaluation_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.composite_polynomial_evaluation_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.composite_remez_depth12_sign"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.composite_remez_depth12_sign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.composite_remez_depth12_sign_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.composite_remez_depth12_sign_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.gelu_by_sigmoid"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.gelu_by_sigmoid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.get_poly_eval_mul_depth"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.get_poly_eval_mul_depth()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.inverse_positive"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.inverse_positive()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.inverse_positive_without_scaling"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.inverse_positive_without_scaling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.inverse_without_scaling"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.inverse_without_scaling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.min"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.min()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.multiply_many"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.multiply_many()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.one_hot"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.one_hot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.poly_eval"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.poly_eval()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.poly_eval_by_roots"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.poly_eval_by_roots()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.poly_eval_by_roots_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.poly_eval_by_roots_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.poly_eval_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.poly_eval_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.poly_eval_needs_bs"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.poly_eval_needs_bs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.pow"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.pow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.pow_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.pow_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.relu_by_sign15"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.relu_by_sign15()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.sigmoid"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.sigmoid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.sigmoid_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.sigmoid_in_place()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.sign"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.sign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.sign_in_place"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.sign_in_place()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.FunctionEvaluator.sqrt"><code class="docutils literal notranslate"><span class="pre">FunctionEvaluator.sqrt()</span></code></a></li>
 </ul>
 </li>
 </ul>

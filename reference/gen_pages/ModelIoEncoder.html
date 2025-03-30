@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ModelIoEncoder &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>ModelIoEncoder &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -769,6 +762,22 @@ applicable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>numElements</strong> – The number of elements along the batch dimension, if applicable. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers14ModelIoEncoder27preprocessAndCreateMetadataERNSt6vectorI16DoubleTensorCPtrEERNSt10shared_ptrI19TrainingSetMetadataEERKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3NK8helayers14ModelIoEncoder27preprocessAndCreateMetadataERNSt6vectorI16DoubleTensorCPtrEERNSt10shared_ptrI19TrainingSetMetadataEERKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2NK8helayers14ModelIoEncoder27preprocessAndCreateMetadataERNSt6vectorI16DoubleTensorCPtrEERNSt10shared_ptrI19TrainingSetMetadataEERKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::ModelIoEncoder::preprocessAndCreateMetadata__std::vector:DoubleTensorCPtr:R.std::shared_ptr:TrainingSetMetadata:R.std::vector:DoubleTensorCPtr:CRC"></span><span class="target" id="classhelayers_1_1ModelIoEncoder_1a4f9046fa156ada2fd42b808ee6ca329d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preprocessAndCreateMetadata</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">modifiedInputs</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TrainingSetMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">metadata</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers14ModelIoEncoder27preprocessAndCreateMetadataERNSt6vectorI16DoubleTensorCPtrEERNSt10shared_ptrI19TrainingSetMetadataEERKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Preprocesses the given plaintext inputs for training and creates a TrainingSetMetadata object from the given inputs. </p>
+<p>The preprocessing and metadata are needed for the training of some HeModels. The preprocessed data is stored in “modifiedInputs” vector and the created metadata is stored in “metadata” pointer. Note that there are models that do not require metadata and preprocessing. For such models, if no preprocessing was applied, “modifiedInputs” array will be left empty. And if no metadata is needed, “metadata” will be set to nullptr. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modifiedInputs</strong> – The preprocessed plaintext inputs will be stored here. If no preprocessing is applied, this vector will be left empty. </p></li>
+<li><p><strong>metadata</strong> – The created metadata will be stored here. If no metadata is required, this pointer will be set to nullptr. For models that require this metadata, it can be created by calling <a class="reference internal" href="#classhelayers_1_1ModelIoEncoder_1a4f9046fa156ada2fd42b808ee6ca329d"><span class="std std-ref">ModelIoEncoder::preprocessAndCreateMetadata()</span></a></p></li>
+<li><p><strong>inputs</strong> – The plaintext inputs to create metadata from. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

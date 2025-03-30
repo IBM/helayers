@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Installation &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -395,8 +395,12 @@ document.write(`
 <p class="admonition-title">GPU support</p>
 <p>HElayers <a class="reference internal" href="../contact.html#premium"><span class="std std-ref">Premium edition</span></a> allows compiling HElayers with GPU support.</p>
 </div>
-<section id="importing-the-pyhelayers-python-packge">
-<span id="importing-pyhelayers"></span><h2>Importing the <cite>pyhelayers</cite> Python packge<a class="headerlink" href="#importing-the-pyhelayers-python-packge" title="Permalink to this heading">#</a></h2>
+<div class="helayers-admonition-info dropdown admonition">
+<p class="admonition-title">HEaaN support</p>
+<p>HElayers <a class="reference internal" href="../contact.html#premium"><span class="std std-ref">Premium edition</span></a> allows compiling HElayers with <a class="reference external" href="https://www.cryptolab.co.kr/en/products-en/heaan-he/">HEaaN</a> support.</p>
+</div>
+<section id="importing-the-pyhelayers-python-package">
+<span id="importing-pyhelayers"></span><h2>Importing the <cite>pyhelayers</cite> Python package<a class="headerlink" href="#importing-the-pyhelayers-python-package" title="Permalink to this heading">#</a></h2>
 <p>Install and import one of the following packages to use HElayers from your Python environment of choice.</p>
 <table class="tg">
 <thead>
@@ -412,18 +416,14 @@ document.write(`
     <td class="tg-7btt" colspan="6">Supported backends (HE libraries)</td>
     </tr>
     <tr>
-    <td class="tg-7btt">HEaaN</td>
-    <td class="tg-7btt">HElib</td>
     <td class="tg-7btt">OpenFHE</td>
     <td class="tg-7btt">Lattigo</td>
-    <td class="tg-7btt">Palisade</td>
     <td class="tg-7btt">SEAL</td>
     </tr>
     <tr>
     <td class="tg-fymr"><a href=https://pypi.org/project/pyhelayers/>pyhelayers</a></td>
     <td class="tg-fymr">zSystem (s390s)</td>
     <td class="tg-fymr">Linux</td>
-    <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">&#x2714;</td>
@@ -434,7 +434,6 @@ document.write(`
     <td class="tg-fymr"><a href=https://pypi.org/project/pyhelayers/>pyhelayers</a></td>
     <td class="tg-fymr">x86_64</td>
     <td class="tg-fymr">Linux</td>
-    <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
@@ -449,14 +448,12 @@ document.write(`
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
     <td class="tg-c3ow">&#x2714;</td>
     </tr>
     <tr>
     <td class="tg-fymr"><a href=https://pypi.org/project/pyhelayerslite/>pyhelayerslite (no AI layer)</a></td>
     <td class="tg-fymr">x86_64</td>
     <td class="tg-fymr">Windows</td>
-    <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
@@ -507,9 +504,9 @@ document.write(`
 </div>
 <div class="helayers-admonition-youtube dropdown admonition">
 <p class="admonition-title">Getting Started with HElayers on Z systems - instructional setup video</p>
-<p>For your convenience, an instructional setup video of how to use the Python demos of HElayers on Z systems is available <a class="reference external" href="https://www.youtube.com/watch?v=_bEMWffloas&amp;ab_channel=IBMResearch">here</a>. The exact details are also listed in the next sections.</p>
+<p>For your convenience, an instructional setup video of how to use the Python demos of HElayers on Z systems is available <a class="reference external" href="https://www.youtube.com/watch?v=ouqYm6mW3Rw_channel=IBMResearch">here</a>. The exact details are also listed in the next sections.</p>
 <div class="video_wrapper" style="">
-<iframe allowfullscreen="true" src="https://www.youtube.com/embed/_bEMWffloas" style="border: 0; height: 345px; width: 560px">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/ouqYm6mW3Rw" style="border: 0; height: 345px; width: 560px">
 </iframe></div></div>
 </section>
 <section id="docker-types-and-supported-systems">
@@ -532,11 +529,8 @@ document.write(`
     <td class="tg-7btt" colspan="6">Supported backends (HE libraries)</td>
     </tr>
     <tr>
-    <td class="tg-7btt">HEaaN</td>
-    <td class="tg-7btt">HElib</td>
     <td class="tg-7btt">OpenFHE</td>
     <td class="tg-7btt">Lattigo</td>
-    <td class="tg-7btt">Palisade</td>
     <td class="tg-7btt">SEAL</td>
     </tr>
     <tr>
@@ -546,11 +540,9 @@ document.write(`
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
-    <td class="tg-c3ow">&#x2714;</td>
     </tr>
     <tr>
     <td class="tg-fymr">helayers-lab-s390x</td>
-    <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">&#x2714;</td>
@@ -574,11 +566,8 @@ document.write(`
     <td class="tg-7btt" colspan="6">Supported backends (HE libraries)</td>
     </tr>
     <tr>
-    <td class="tg-7btt">HEaaN</td>
-    <td class="tg-7btt">HElib</td>
     <td class="tg-7btt">OpenFHE</td>
     <td class="tg-7btt">Lattigo</td>
-    <td class="tg-7btt">Palisade</td>
     <td class="tg-7btt">SEAL</td>
     </tr>
     <tr>
@@ -588,11 +577,9 @@ document.write(`
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
-    <td class="tg-c3ow">&#x2714;</td>
     </tr>
     <tr>
     <td class="tg-fymr">helayers-pylab-s390x</td>
-    <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow">&#x2714;</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">&#x2714;</td>
@@ -642,7 +629,7 @@ For example, use <cite>8888:8888</cite> for the <cite>helayers-lab</cite> contai
 <ul>
 <li><dl>
 <dt><strong>For Python users</strong>:</dt><dd><ul class="simple">
-<li><p>Connect to the Juptyer notebook welcome page by opening a web browser on your host machine (not the docker container instance), and browse to</p></li>
+<li><p>Connect to the Jupyter notebook welcome page by opening a web browser on your host machine (not the docker container instance), and browse to</p></li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">http://127.0.0.1:8888/lab/?token=demo-experience-with-fhe-and-python</span>
 </pre></div>
@@ -719,7 +706,7 @@ For example, use <cite>8888:8888</cite> for the <cite>helayers-lab</cite> contai
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-the-pyhelayers-python-packge">Importing the <cite>pyhelayers</cite> Python packge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-the-pyhelayers-python-package">Importing the <cite>pyhelayers</cite> Python package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-image-installation">Docker image installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-types-and-supported-systems">Docker types and supported systems</a></li>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CovidCTDataset &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>CovidCTDataset &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -313,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gen_pages/HeTraits.html">HeTraits</a></li>
@@ -398,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -538,13 +531,24 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwards</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Initializes the CovidCTDataset wrapper for the _CovidCT2A_Dataset.
+This class is registered under the name ‘COVID_CT’ in the DSFactory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>int</em>) – The number of classes in the dataset.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – The base directory where the dataset is stored.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments. Not used. (Maintained for consistency with other dataset constructors)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.__init__" title="pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(classes, path, **kwards)</p></td>
-<td><p></p></td>
+<td><p>Initializes the CovidCTDataset wrapper for the _CovidCT2A_Dataset.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_approximation_set</span></code>()</p></td>
 <td><p>returns the approximation data set, to be used for range approximation</p></td>

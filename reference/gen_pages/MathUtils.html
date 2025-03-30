@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MathUtils &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>MathUtils &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -311,20 +311,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -396,14 +388,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -606,9 +599,26 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils11integerPow2Ei">
+<span id="_CPPv3N8helayers9MathUtils11integerPow2Ei"></span><span id="_CPPv2N8helayers9MathUtils11integerPow2Ei"></span><span id="helayers::MathUtils::integerPow2__i"></span><span class="target" id="classhelayers_1_1MathUtils_1a15d2119222498a081caad54e22181ef1"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integerPow2</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils11integerPow2Ei" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns 2^x. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils5isIntEd">
 <span id="_CPPv3N8helayers9MathUtils5isIntEd"></span><span id="_CPPv2N8helayers9MathUtils5isIntEd"></span><span id="helayers::MathUtils::isInt__double"></span><span class="target" id="classhelayers_1_1MathUtils_1a7b029f864735e36a6b489c645c77064e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils5isIntEd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns true if this double value can be safely converted to an int. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils7isInt64Ed">
+<span id="_CPPv3N8helayers9MathUtils7isInt64Ed"></span><span id="_CPPv2N8helayers9MathUtils7isInt64Ed"></span><span id="helayers::MathUtils::isInt64__double"></span><span class="target" id="classhelayers_1_1MathUtils_1ac51290231354f0d57261b2ef2758e627"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInt64</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scalar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils7isInt64Ed" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if this double value can be safely converted to an int64_t. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -736,6 +746,18 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils14getMsbPositionE8uint64_t">
+<span id="_CPPv3N8helayers9MathUtils14getMsbPositionE8uint64_t"></span><span id="_CPPv2N8helayers9MathUtils14getMsbPositionE8uint64_t"></span><span id="helayers::MathUtils::getMsbPosition__uint64_t"></span><span class="target" id="classhelayers_1_1MathUtils_1ab661899f95b200c0bf37a84838eeb9a4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMsbPosition</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils14getMsbPositionE8uint64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the index of the MSB of the given unsigned value. </p>
+<p>The index count starts from 1, and a zero result means that the input is zero. The result of this method is equivalent to the number of bits required to store this number in memory (i.e., the bit-width of the number). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – The value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils8toStringEdi">
 <span id="_CPPv3N8helayers9MathUtils8toStringEdi"></span><span id="_CPPv2N8helayers9MathUtils8toStringEdi"></span><span id="helayers::MathUtils::toString__double.i"></span><span class="target" id="classhelayers_1_1MathUtils_1a026c8b374b506fbbaeb914076fa14f5a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">precision</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils8toStringEdi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns a string representing the given double, using the given number of precision digits. </p>
@@ -817,6 +839,45 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>perm</strong> – The given permutation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIdEEd">
+<span id="_CPPv3N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIdEEd"></span><span id="_CPPv2N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIdEEd"></span><span id="helayers::MathUtils::vecIsAllZeros__std::vector:double:CR.double"></span><span class="target" id="classhelayers_1_1MathUtils_1ad1df84ca0d59ba10e3cc56938e8fd01e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vecIsAllZeros</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIdEEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if all of the elements of the given vector have an absolute value that is smaller than “eps” and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vec</strong> – The vector to check if it is all zeros. </p></li>
+<li><p><strong>eps</strong> – The threshold from which to consider a value to be zero. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIiEE">
+<span id="_CPPv3N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIiEE"></span><span id="_CPPv2N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIiEE"></span><span id="helayers::MathUtils::vecIsAllZeros__std::vector:i:CR"></span><span class="target" id="classhelayers_1_1MathUtils_1a6254ba981783f07526dca4f00d122aab"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vecIsAllZeros</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if all of the elements of the given vector are zeros and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vec</strong> – The vector to check if it is all zeros. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorINSt7complexIdEEEEd">
+<span id="_CPPv3N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorINSt7complexIdEEEEd"></span><span id="_CPPv2N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorINSt7complexIdEEEEd"></span><span id="helayers::MathUtils::vecIsAllZeros__std::vector:std::complex:double::CR.double"></span><span class="target" id="classhelayers_1_1MathUtils_1aab134e762991f8b3c2b11932b59432df"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vecIsAllZeros</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">complex</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eps</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers9MathUtils13vecIsAllZerosERKNSt6vectorINSt7complexIdEEEEd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns true if all of the elements of the given vector have an absolute value that is smaller than “eps” and false otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vec</strong> – The vector to check if it is all zeros. </p></li>
+<li><p><strong>eps</strong> – The threshold from which to consider a value to be zero. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

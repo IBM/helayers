@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Security aspects &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Security aspects &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -503,7 +503,7 @@ With that said, the code of HElayers that deals with data to be encrypted (<a cl
 <p>No, like with all public-private key cryptography systems, it is important to keep the secret key protected. Interactions with your secret key should only be done from a trusted environment and should not be revealed to anyone except the data owner.</p>
 </div>
 <div class="helayers-admonition-question dropdown admonition">
-<p class="admonition-title">Are there specifiic security recommendations when using CKKS?</p>
+<p class="admonition-title">Are there specific security recommendations when using CKKS?</p>
 <p>Yes, please follow the <a class="reference external" href="https://www.iso.org/standard/83139.html">ISO (draft) standard</a> recommendations. In general, it is important to keep the decryptions of CKKS ciphertexts as private information only available to the secret key owner. This is due to the potential of leaking the secret key attack of <a class="reference external" href="https://eprint.iacr.org/2020/1533">Li and Micciancio</a>. When an application needs to share this information, e.g., as part of some protocol, the number of bits shared should be kept to a minimum, and secret keys should be rotated regularly.  helayers-admonition-info that some backends use special techniques to mitigate the above issue. It is recommended, that commercial applications that use CKKS be carefully reviewed by cryptography experts who are familiar with FHE security models and the underlying backend.</p>
 </div>
 <div class="helayers-admonition-question dropdown admonition">

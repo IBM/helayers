@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>FHE overview &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>FHE overview &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -416,17 +416,17 @@ have different characteristics.</p>
 <p class="admonition-title">What capabilities modern FHE schemes provide</p>
 <p>Exact FHE schemes such as BGV, B/FV, and TFHE provide at least the following set of operations:</p>
 <ul class="simple">
-<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that recieves a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
-<li><p>Decryption <img class="math" src="../_images/math/2c56f3765f4ab421450db8c05185bfb7805683d2.png" alt="m=Dec(c)"/> - that recieves a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
-<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/8bb0a7c7cf683fbfab9637f64ee0593a63f02df4.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))"/>.</p></li>
-<li><p>Multiplicaiton <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/5fffbad51976676d0e5c97b3c8388cd057ae12b9.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))"/>.</p></li>
+<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that receives a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
+<li><p>Decryption <img class="math" src="../_images/math/2c56f3765f4ab421450db8c05185bfb7805683d2.png" alt="m=Dec(c)"/> - that receives a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
+<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that receives two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/8bb0a7c7cf683fbfab9637f64ee0593a63f02df4.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))"/>.</p></li>
+<li><p>Multiplication <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that receives two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/5fffbad51976676d0e5c97b3c8388cd057ae12b9.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))"/>.</p></li>
 </ul>
-<p>Apprixmated FHE schemes such as CKKS provide at least the following set of operations for some small <img class="math" src="../_images/math/0ad7b30534898f253002222f998f38001e604648.png" alt="\epsilon"/>:</p>
+<p>Approximated FHE schemes such as CKKS provide at least the following set of operations for some small <img class="math" src="../_images/math/0ad7b30534898f253002222f998f38001e604648.png" alt="\epsilon"/>:</p>
 <ul class="simple">
-<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that recieves a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
-<li><p>Decryption <img class="math" src="../_images/math/a051955d0d952d2092b64ead1581717f142b0511.png" alt="m = Dec(c) + \epsilon"/> - that recieves a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
-<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/3e96aed755e30547b8944ec21b41c20066cbbc0c.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))  + \epsilon"/>.</p></li>
-<li><p>Multiplicaiton <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that recieves two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/0c2bba1a508766031d533c5e420e24d19efe8f17.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))  + \epsilon"/>.</p></li>
+<li><p>Encryption <img class="math" src="../_images/math/48e509fec2df51816e3bb406e9af0f599fc78bfa.png" alt="c=Enc(m)"/> - that receives a data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/> and encrypts it to a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/>.</p></li>
+<li><p>Decryption <img class="math" src="../_images/math/a051955d0d952d2092b64ead1581717f142b0511.png" alt="m = Dec(c) + \epsilon"/> - that receives a ciphertext <img class="math" src="../_images/math/d520a12f1579170834c32ad5f656de081bbb36fe.png" alt="c"/> and decrypt it to the underlying data message <img class="math" src="../_images/math/e9bc7da808d33a16a8347f27a519bd067186aa66.png" alt="m"/>.</p></li>
+<li><p>Addition <img class="math" src="../_images/math/f635145486b3a4252411ef15e5ee9d088deece01.png" alt="c_{add}=Enc(c_1, c_2)"/> - that receives two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and add them such that <img class="math" src="../_images/math/3e96aed755e30547b8944ec21b41c20066cbbc0c.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))  + \epsilon"/>.</p></li>
+<li><p>Multiplication <img class="math" src="../_images/math/0cbb07f0c3ab50c4eab925a1e262b3bd8f5c3d53.png" alt="c_{mul}=Enc(c_1, c_2)"/> - that receives two ciphertext <img class="math" src="../_images/math/75fcac3347f1bf71bd6a669fa22206d64e10d625.png" alt="c_1, c_2"/> and multiply them such that <img class="math" src="../_images/math/0c2bba1a508766031d533c5e420e24d19efe8f17.png" alt="Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))  + \epsilon"/>.</p></li>
 </ul>
 </div>
 <div class="helayers-admonition-question dropdown admonition">
@@ -435,7 +435,7 @@ have different characteristics.</p>
 characteristics regarding the input they accept and the output they produce. For instance, BGV, B/FV, and TFHE
 are designed to operate on integers, enabling operations like database lookups and comparisons of numbers.
 On the other hand, CKKS is particularly well-suited for handling real or complex numbers,
-making it suitable for applications such as AI and ML, including tasks like NN infernece.</p>
+making it suitable for applications such as AI and ML, including tasks like NN inference.</p>
 </div>
 <div class="helayers-admonition-question dropdown admonition">
 <p class="admonition-title">Is FHE quantum-safe and what does quantum-safe mean?</p>
@@ -464,7 +464,7 @@ All higher level functions are implemented in terms of low level primitives, whi
 <div class="helayers-admonition-question dropdown admonition">
 <p class="admonition-title">What are high level primitives?</p>
 <p>Complex operations like operations on matrices or arrays are built upon the low level primitives.
-These operations, e.g., <a class="reference external" href="resources.md#tile-tensors">tile tensors</a>, are already implemented and provided by HElayers.
+These operations, e.g., <a class="reference external" href="tile_tensors.html">tile tensors</a>, are already implemented and provided by HElayers.
 See relevant APIs in <a class="reference internal" href="../reference/tt.html"><span class="doc">tile tensor</span></a>.</p>
 </div>
 <div class="helayers-admonition-question dropdown admonition">
@@ -474,7 +474,7 @@ Even approximate schemes that until recently were not considered Turing-complete
 see <a class="reference external" href="https://eprint.iacr.org/2022/1298">BLEACH</a>.</p>
 </div>
 <div class="helayers-admonition-question dropdown admonition">
-<p class="admonition-title">What is the differnece between HE, LHE, FHE and PHE?</p>
+<p class="admonition-title">What is the difference between HE, LHE, FHE and PHE?</p>
 <ul class="simple">
 <li><p>Partially Homomorphic Encryption (PHE): Refers to schemes that allow performing only one operation on ciphertexts,
 either addition or multiplication such as Paillier and El-Gamal. PHE schemes are limited in their computational capabilities.</p></li>

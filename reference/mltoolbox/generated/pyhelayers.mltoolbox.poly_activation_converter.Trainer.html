@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Trainer &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Trainer &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -313,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gen_pages/HeTraits.html">HeTraits</a></li>
@@ -398,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -539,8 +532,8 @@ In case model and optimizer are passed - they are used, In case any of those arg
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>args</strong> (<a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html#pyhelayers.mltoolbox.arguments.Arguments" title="pyhelayers.mltoolbox.arguments.Arguments"><em>Arguments</em></a>) – user defined arguments</p></li>
-<li><p><strong>model</strong> (<em>nn.Model</em>) – Either a partually trained model (loaded from check point) or None. In case no model is passed, the model is loaded based on user arguments, by name</p></li>
-<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – The optimizer to use during training (loaded from check point) or None. In case no model is passed, the optimizer is loaded based on user arguments</p></li>
+<li><p><strong>model</strong> (<em>nn.Model</em><em>, </em><em>optional</em>) – Either a partually trained model (loaded from check point) or None. In case no model is passed, the model is loaded based on user arguments, by name</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em><em>, </em><em>optional</em>) – The optimizer to use during training (loaded from check point) or None. In case no model is passed, the optimizer is loaded based on user arguments</p></li>
 </ul>
 </dd>
 </dl>
@@ -556,7 +549,7 @@ In case model and optimizer are passed - they are used, In case any of those arg
 <td><p>Runs the model on the given data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_all_ranges" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_all_ranges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_ranges</span></code></a>(args)</p></td>
-<td><p>lists all activations ranges (min and max) in a single list</p></td>
+<td><p>Lists all activations ranges (min and max) in a single list</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_model" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_model</span></code></a>()</p></td>
 <td><p>Returns the model to be trained</p></td>
@@ -564,17 +557,17 @@ In case model and optimizer are passed - they are used, In case any of those arg
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_optimizer" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_optimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimizer</span></code></a>()</p></td>
 <td><p>Returns the optimizer of the training</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_range_aware_act</span></code>(args)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_range_aware_act" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_range_aware_act"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_range_aware_act</span></code></a>(args)</p></td>
+<td><p>Returns a list of activations in the current trained model that are range awared.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.test" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>(args, epoch)</p></td>
-<td><p>tests the model on the given data</p></td>
+<td><p>Tests the model on the given data</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.train_step" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.train_step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_step</span></code></a>(args, epoch, t)</p></td>
-<td><p>performs a single train step (a single forward and backward pass)</p></td>
+<td><p>Performs a single train step (a single forward and backward pass)</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.validation" title="pyhelayers.mltoolbox.poly_activation_converter.Trainer.validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validation</span></code></a>(args, epoch)</p></td>
-<td><p>tests the model on the given data</p></td>
+<td><p>Tests the model on the given data</p></td>
 </tr>
 </tbody>
 </table>
@@ -595,7 +588,7 @@ This ranges are used when approximation the range aware relu by range aware poly
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_all_ranges">
 <span class="sig-name descname"><span class="pre">get_all_ranges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_all_ranges" title="Permalink to this definition">#</a></dt>
-<dd><p>lists all activations ranges (min and max) in a single list</p>
+<dd><p>Lists all activations ranges (min and max) in a single list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html#pyhelayers.mltoolbox.arguments.Arguments" title="pyhelayers.mltoolbox.arguments.Arguments"><em>Arguments</em></a>) – user arguments</p>
@@ -638,9 +631,15 @@ This ranges are used when approximation the range aware relu by range aware poly
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_range_aware_act">
+<span class="sig-name descname"><span class="pre">get_range_aware_act</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_range_aware_act" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a list of activations in the current trained model that are range awared.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.Trainer.test">
 <span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.test" title="Permalink to this definition">#</a></dt>
-<dd><p>tests the model on the given data</p>
+<dd><p>Tests the model on the given data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -664,7 +663,7 @@ np.array: confusion matrix</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.Trainer.train_step">
 <span class="sig-name descname"><span class="pre">train_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tqdm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.train_step" title="Permalink to this definition">#</a></dt>
-<dd><p>performs a single train step (a single forward and backward pass)</p>
+<dd><p>Performs a single train step (a single forward and backward pass)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -689,7 +688,7 @@ np.array: confusion matrix</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.mltoolbox.poly_activation_converter.Trainer.validation">
 <span class="sig-name descname"><span class="pre">validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.validation" title="Permalink to this definition">#</a></dt>
-<dd><p>tests the model on the given data</p>
+<dd><p>Tests the model on the given data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -761,6 +760,7 @@ np.array: confusion matrix</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_all_ranges"><code class="docutils literal notranslate"><span class="pre">Trainer.get_all_ranges()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_model"><code class="docutils literal notranslate"><span class="pre">Trainer.get_model()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_optimizer"><code class="docutils literal notranslate"><span class="pre">Trainer.get_optimizer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.get_range_aware_act"><code class="docutils literal notranslate"><span class="pre">Trainer.get_range_aware_act()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.test"><code class="docutils literal notranslate"><span class="pre">Trainer.test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.train_step"><code class="docutils literal notranslate"><span class="pre">Trainer.train_step()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.mltoolbox.poly_activation_converter.Trainer.validation"><code class="docutils literal notranslate"><span class="pre">Trainer.validation()</span></code></a></li>

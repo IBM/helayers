@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CTileTensor &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>CTileTensor &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -315,20 +315,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
@@ -400,14 +392,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -608,6 +601,28 @@ Relies on CTile::add_raw.</p>
 <li><p><strong>scalar</strong> (<em>double</em>) – double value to add.</p></li>
 <li><p><strong>keep_unknowns_clear</strong> (<em>boolean</em>) – the default is ‘false’.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.add_tile_tensor">
+<span class="sig-name descname"><span class="pre">add_tile_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.add_tile_tensor" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls add(const CTileTensor&amp;) or addPlain(const PTileTensor&amp;) depending on argument type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – Other TileTensor to add to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.add_tile_tensor_raw">
+<span class="sig-name descname"><span class="pre">add_tile_tensor_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.add_tile_tensor_raw" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls addRaw(const CTileTensor&amp;) or addPlainRaw(const PTileTensor&amp;) depending on argument type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – other TileTensor to add.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -816,18 +831,52 @@ Result is [*/t1,6/t2,1/t3]</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.get_multiply_and_sum">
-<span class="sig-name descname"><span class="pre">get_multiply_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.get_multiply_and_sum" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the result of elementwise multiplication and summation
+<span class="sig-name descname"><span class="pre">get_multiply_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.get_multiply_and_sum" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>get_multiply_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.CTileTensor, sum_dim: int) -&gt; pyhelayers.CTileTensor</p>
+<blockquote>
+<div><p>Returns the result of elementwise multiplication and summation
 between this and other. See CTileTensor::multiplyAndSum for usage
 examples.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><em>CTileTensor</em></a>) – Other encoded tile tensor.</p></li>
-<li><p><strong>sumDim</strong> – Dimension to sum over.</p></li>
-</ul>
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encoded tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>CTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimension to sum over.</p>
+</dd>
+<dt class="field-even">type sum_dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+<li><p>get_multiply_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.CTileTensor, sum_dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; pyhelayers.CTileTensor</p>
+<blockquote>
+<div><p>Returns the result of elementwise multiplication and summation
+between this and other. See CTileTensor::multiplyAndSum for usage
+examples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encoded tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>CTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimensions to sum over.</p>
+</dd>
+<dt class="field-even">type sum_dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -884,7 +933,7 @@ given scalar.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.get_pseudo_rotate_along_dim">
-<span class="sig-name descname"><span class="pre">get_pseudo_rotate_along_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_rotate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.get_pseudo_rotate_along_dim" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_pseudo_rotate_along_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.get_pseudo_rotate_along_dim" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the result of calling psuedoRotateAlongDim. See also
 pseudo_roate_along_dim().</p>
 </dd></dl>
@@ -945,7 +994,7 @@ CTile.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.get_slice">
-<span class="sig-name descname"><span class="pre">get_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.get_slice" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.get_slice" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a slice of the tensor in specific dimension. Result has the
 same number of dimensions as the original tensor. For dim with tile size
 of 1, getSlice is supported for every valid startIndex and
@@ -1077,8 +1126,12 @@ Relies on CTile::multiply.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.multiply_and_sum">
-<span class="sig-name descname"><span class="pre">multiply_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_and_sum" title="Permalink to this definition">#</a></dt>
-<dd><p>Performs elementwise multiplication between this and other, then
+<span class="sig-name descname"><span class="pre">multiply_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_and_sum" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>multiply_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.CTileTensor, sum_dim: int) -&gt; None</p>
+<blockquote>
+<div><p>Performs elementwise multiplication between this and other, then
 sums over the specified dim.
 If both are vectors of same length,
 sum over dim 0 to get inner product.</p>
@@ -1093,13 +1146,54 @@ over dim 0.</p>
 <p>Matrix1 [ a/t1,b/t2,* /t3] and Matrix2 [* / t1,b / t2, c/t3], sum
 over dim 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><em>CTileTensor</em></a>) – Other encrypted tile tensor.</p></li>
-<li><p><strong>sumDim</strong> (<em>int</em>) – Dimension to sum over.</p></li>
-</ul>
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encrypted tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>CTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimension to sum over.</p>
+</dd>
+<dt class="field-even">type sumDim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+<li><p>multiply_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.CTileTensor, sum_dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; None</p>
+<blockquote>
+<div><p>Performs elementwise multiplication between this and other, then
+sums over the specified dim.
+If both are vectors of same length,
+sum over dim 0 to get inner product.</p>
+<p>If this is a matrix [a/t1,b/t2] and other is a vector [a/t1,*/t2],
+sum over dim 0 will produce the matrix-vector multiplication.
+Similarly for matrix [a/t1,b/t2] and vector [*/t1,b/t2], sum over
+dim 1.</p>
+<p>For matrix-matrix multiplication use for example:</p>
+<p>Matrix1 [ a/t1,b/t2,* /t3] and Matrix2 [a/t1,* / t2, c/t3], sum
+over dim 0.</p>
+<p>or:</p>
+<p>Matrix1 [ a/t1,b/t2,* /t3] and Matrix2 [* / t1,b / t2, c/t3], sum
+over dim 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encrypted tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>CTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimensions to sum over.</p>
+</dd>
+<dt class="field-even">type sumDim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -1150,18 +1244,52 @@ Relies on CTile::multiply_plain.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.multiply_plain_and_sum">
-<span class="sig-name descname"><span class="pre">multiply_plain_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PTileTensor.html#pyhelayers.PTileTensor" title="pyhelayers.PTileTensor"><span class="pre">pyhelayers.PTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_plain_and_sum" title="Permalink to this definition">#</a></dt>
-<dd><p>Performs elementwise multiplication between this and other, then
+<span class="sig-name descname"><span class="pre">multiply_plain_and_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_plain_and_sum" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>multiply_plain_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.PTileTensor, sum_dim: int) -&gt; None</p>
+<blockquote>
+<div><p>Performs elementwise multiplication between this and other, then
 sums over the specified dim.
 See CTileTensor::multiplyAndSum for usage examples.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<a class="reference internal" href="PTileTensor.html#pyhelayers.PTileTensor" title="pyhelayers.PTileTensor"><em>PTileTensor</em></a>) – Other encoded tile tensor.</p></li>
-<li><p><strong>sumDim</strong> – Dimension to sum over.</p></li>
-</ul>
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encoded tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>PTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimension to sum over.</p>
+</dd>
+<dt class="field-even">type sum_dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+<li><p>multiply_plain_and_sum(self: pyhelayers.CTileTensor, other: pyhelayers.PTileTensor, sum_dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; None</p>
+<blockquote>
+<div><p>Performs elementwise multiplication between this and other, then
+sums over the specified dim.
+See CTileTensor::multiplyAndSum for usage examples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param other<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Other encoded tile tensor.</p>
+</dd>
+<dt class="field-even">type other<span class="colon">:</span></dt>
+<dd class="field-even"><p>PTileTensor</p>
+</dd>
+<dt class="field-odd">param sumDim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dimensions to sum over.</p>
+</dd>
+<dt class="field-even">type sum_dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -1239,6 +1367,28 @@ variant doesn’t clear unknowns. Refer to multiply_scalar(double) that does.</p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.multiply_tile_tensor">
+<span class="sig-name descname"><span class="pre">multiply_tile_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_tile_tensor" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls multiply(const CTileTensor&amp;) or multiplyPlain(const PTileTensor&amp;) depending on argument type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – Other TileTensor to multiply to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.multiply_tile_tensor_raw">
+<span class="sig-name descname"><span class="pre">multiply_tile_tensor_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.multiply_tile_tensor_raw" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls multiplyRaw(const CTileTensor&amp;) or multiplyPlainRaw(const PTileTensor&amp;) depending on argument type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – Other TileTensor to multiply to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.negate">
 <span class="sig-name descname"><span class="pre">negate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.negate" title="Permalink to this definition">#</a></dt>
 <dd><p>Elementwise negate. Relies on CTile::negate.</p>
@@ -1246,34 +1396,22 @@ variant doesn’t clear unknowns. Refer to multiply_scalar(double) that does.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.pseudo_rotate_along_dim">
-<span class="sig-name descname"><span class="pre">pseudo_rotate_along_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_rotate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.pseudo_rotate_along_dim" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pseudo_rotate_along_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.pseudo_rotate_along_dim" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies a “pseudo rotation” on this CTileTensor by the given
-offset along dimension “dim”. If “realRotate” is true, the
-function verifies that a real rotate is performed, meaning that
-the values that fall out of one end must cycle back to the other
-end. If “realRotate” is false, a pseudo rotation is performed,
-meaning that the values that fall out of one end are not
-guaranteed to cycle back to the other end. To Perform a real
-rotation, “dim” must be the first non-trivial dimension and it
-mustn’t contain any unused slots. In both cases (a real or a
-pseudo rotate), if the external size of “dim” is not 1, then “dim”
-must be interleaved. If the external size of “dim” is 1, the
-rotation works and will have the same effect regardless of the
-interleaved flag being on or off.
+offset along dimension “dim”. A pseudo rotation is a rotation in
+which the values that fall out of one end are not always
+guaranteed to cycle back to the other end. If the external size of
+“dim” is not 1, then “dim” must be interleaved. If the external
+size of “dim” is 1, the pseudo rotation works and will have the
+same effect regardless of the interleaved flag being on or off.
 :param dim: The dimension to rotate along.
 :type dim: int
 :param offset: The rotation offset.
 :type offset: int
-:param real_rotate: If true, the function asserts that a true</p>
+:raises ValueError: If the external size of dim is not 1 and it is</p>
 <blockquote>
-<div><p>rotation is performed.</p>
+<div><p>not interleaved.</p>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If the rotated dimension does not satisfy the</p>
-</dd>
-</dl>
-<p>above requirements.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1427,36 +1565,129 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pyhelayers.CTileTensor.sum_in_tiles_over_dim">
-<span class="sig-name descname"><span class="pre">sum_in_tiles_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_in_tiles_over_dim" title="Permalink to this definition">#</a></dt>
-<dd><p>Sums inside tiles over a dimension.</p>
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.sub_tile_tensor">
+<span class="sig-name descname"><span class="pre">sub_tile_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.sub_tile_tensor" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls sub(const CTileTensor&amp;) or subPlain(const PTileTensor&amp;) depending on argument type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – The dimension to sum inside tiles over it.</p>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – Other TileTensor to subtract.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.sub_tile_tensor_raw">
+<span class="sig-name descname"><span class="pre">sub_tile_tensor_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TileTensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.sub_tile_tensor_raw" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Calls subRaw(const CTileTensor&amp;) or subPlainRaw(const PTileTensor&amp;) depending on argument type.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>TileTensor</em>) – Other TileTensor to subtract.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.CTileTensor.sum_in_tiles_over_dim">
+<span class="sig-name descname"><span class="pre">sum_in_tiles_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_in_tiles_over_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>sum_in_tiles_over_dim(self: pyhelayers.CTileTensor, dim: int) -&gt; None</p>
+<blockquote>
+<div><p>Sums inside tiles over a dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimension to sum inside tiles over it.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>sum_in_tiles_over_dim(self: pyhelayers.CTileTensor, dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; None</p>
+<blockquote>
+<div><p>Sums inside tiles over a dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimension to sum inside tiles over it.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.sum_over_dim">
-<span class="sig-name descname"><span class="pre">sum_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_over_dim" title="Permalink to this definition">#</a></dt>
-<dd><p>Sums over a dimension.</p>
+<span class="sig-name descname"><span class="pre">sum_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_over_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>sum_over_dim(self: pyhelayers.CTileTensor, dim: int) -&gt; None</p>
+<blockquote>
+<div><p>Sums over a dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – The dimension to sum over.</p>
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimension to sum over.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+<li><p>sum_over_dim(self: pyhelayers.CTileTensor, dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; None</p>
+<blockquote>
+<div><p>Sums over a dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimensions to sum over.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyhelayers.CTileTensor.sum_tiles_over_dim">
-<span class="sig-name descname"><span class="pre">sum_tiles_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><span class="pre">pyhelayers.CTileTensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_tiles_over_dim" title="Permalink to this definition">#</a></dt>
-<dd><p>Sums tile over a dimension.</p>
+<span class="sig-name descname"><span class="pre">sum_tiles_over_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.CTileTensor.sum_tiles_over_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>sum_tiles_over_dim(self: pyhelayers.CTileTensor, dim: int) -&gt; None</p>
+<blockquote>
+<div><p>Sums tile over a dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – The dimension to sum over.</p>
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimension to sum over.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+<li><p>sum_tiles_over_dim(self: pyhelayers.CTileTensor, dim: std::vector&lt;int, std::allocator&lt;int&gt; &gt;) -&gt; None</p>
+<blockquote>
+<div><p>Sums tile over a dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dim<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dimensions to sum over.</p>
+</dd>
+<dt class="field-even">type dim<span class="colon">:</span></dt>
+<dd class="field-even"><p>vector&lt;int&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
 </dd></dl>
 
 </dd></dl>
@@ -1575,6 +1806,144 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor13addTileTensorERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor13addTileTensorERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor13addTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::addTileTensor__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a74cc47930a7194eacb418259283e9441"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor13addTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a59c4ffd49112274f861d92dfabe3d259"><span class="std std-ref">add(const CTileTensor&amp;)</span></a> or <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a8c53d1fc6c4088a062d2194862f9349e"><span class="std std-ref">addPlain(const PTileTensor&amp;)</span></a> depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor16addTileTensorRawERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor16addTileTensorRawERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor16addTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::addTileTensorRaw__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a266605519968101ad5840f37264b7a9d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor16addTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a74ffcf9913cd6f8c125b38031f08f748"><span class="std std-ref">addRaw(const CTileTensor&amp;)</span></a> or <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ab50de667923a796295b2ab64833f89d7"><span class="std std-ref">addPlainRaw(const PTileTensor&amp;)</span></a> depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to add. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor13subTileTensorERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor13subTileTensorERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor13subTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::subTileTensor__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1aaf56fbb77390b3df5ffdc8e7164e96e9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor13subTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a2bed0df245a7dc959d978f6daa91bd8b"><span class="std std-ref">sub(const CTileTensor&amp;)</span></a> or <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a1311af6a0f5b4437fca29e3d7906d787"><span class="std std-ref">subPlain(const PTileTensor&amp;)</span></a> depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to subtract. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor16subTileTensorRawERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor16subTileTensorRawERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor16subTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::subTileTensorRaw__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a6596daae5d9d0f3d114fc48cc1dad06b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor16subTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a26fa6cc58d19c1265fbdbcf276bad365"><span class="std std-ref">subRaw(const CTileTensor&amp;)</span></a> or <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a679b9b40771527c7e46d031ba8ca5b99"><span class="std std-ref">subPlainRaw(const PTileTensor&amp;)</span></a> depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to subtract. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor18multiplyTileTensorERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor18multiplyTileTensorERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor18multiplyTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::multiplyTileTensor__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1af0ac45b9fa8e1f8100ea8288a1eb592e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor18multiplyTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a8b06535811531f62a30b3a2afe6deff1"><span class="std std-ref">multiply(const CTileTensor&amp;)</span></a> or <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ad832ac89738d3981cf1deaa28cc12ec7"><span class="std std-ref">multiplyPlain(const PTileTensor&amp;)</span></a> depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to multiply. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor21multiplyTileTensorRawERK10TileTensor">
+<span id="_CPPv3N8helayers11CTileTensor21multiplyTileTensorRawERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor21multiplyTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::multiplyTileTensorRaw__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a6722cd31afcda26515c405fd35491f00"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor21multiplyTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Calls <a class="reference internal" href="#classhelayers_1_1CTileTensor_1abf2512ac1acc7f298c6cbc5e6d883338"><span class="std std-ref">multiplyRaw(const CTileTensor&amp;)</span></a> or multiplyPlainRaw(const <a class="reference internal" href="PTileTensor.html#classhelayers_1_1PTileTensor"><span class="std std-ref">PTileTensor</span></a>&amp;) depending on argument type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other object to multiply. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor16getAddTileTensorERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor16getAddTileTensorERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor16getAddTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::getAddTileTensor__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a089d384d6e050bf3894cbd8bdbf1ad02"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAddTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor16getAddTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise add of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a74cc47930a7194eacb418259283e9441"><span class="std std-ref">CTileTensor::addTileTensor</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::getSubTileTensor__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a84390974d9a4ac7780469cf08be7e37f"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSubTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise sub of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1aaf56fbb77390b3df5ffdc8e7164e96e9"><span class="std std-ref">CTileTensor::subTileTensor</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor21getMultiplyTileTensorERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor21getMultiplyTileTensorERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor21getMultiplyTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::getMultiplyTileTensor__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1aacad4faaf5e7ba06eab439f3df387d0c"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiplyTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor21getMultiplyTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise multiply of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1af0ac45b9fa8e1f8100ea8288a1eb592e"><span class="std std-ref">CTileTensor::multiplyTileTensor</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor19getAddTileTensorRawERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor19getAddTileTensorRawERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor19getAddTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::getAddTileTensorRaw__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a67629dba52be6e67d3e2de1300ea35e6"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAddTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor19getAddTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise add of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a266605519968101ad5840f37264b7a9d"><span class="std std-ref">CTileTensor::addTileTensorRaw</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor19getSubTileTensorRawERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor19getSubTileTensorRawERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor19getSubTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::getSubTileTensorRaw__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1abea3b5c96c9f0d2efe2744cfa241de57"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSubTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor19getSubTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise sub of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a6596daae5d9d0f3d114fc48cc1dad06b"><span class="std std-ref">CTileTensor::subTileTensorRaw</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor24getMultiplyTileTensorRawERK10TileTensor">
+<span id="_CPPv3NK8helayers11CTileTensor24getMultiplyTileTensorRawERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor24getMultiplyTileTensorRawERK10TileTensor"></span><span id="helayers::CTileTensor::getMultiplyTileTensorRaw__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1ad849d6bd4d2b5d74fc826cf97433e974"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiplyTileTensorRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor24getMultiplyTileTensorRawERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise multiply of this and other TileTensor. </p>
+<p>Relies on <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a6722cd31afcda26515c405fd35491f00"><span class="std std-ref">CTileTensor::multiplyTileTensorRaw</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor3addERK11CTileTensor">
 <span id="_CPPv3N8helayers11CTileTensor3addERK11CTileTensor"></span><span id="_CPPv2N8helayers11CTileTensor3addERK11CTileTensor"></span><span id="helayers::CTileTensor::add__CTileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a59c4ffd49112274f861d92dfabe3d259"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor3addERK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Elementwise add with other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p>
@@ -1606,18 +1975,6 @@ Relies on CTile::sub_raw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to subtract. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor13subTileTensorERK10TileTensor">
-<span id="_CPPv3N8helayers11CTileTensor13subTileTensorERK10TileTensor"></span><span id="_CPPv2N8helayers11CTileTensor13subTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::subTileTensor__TileTensorCR"></span><span class="target" id="classhelayers_1_1CTileTensor_1aaf56fbb77390b3df5ffdc8e7164e96e9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor13subTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Elementwise subtract other TileTensor from this. </p>
-<p>Relies on <a class="reference internal" href="CTile.html#classhelayers_1_1CTile_1a3a02bf7c04e22f8015c40d3326b1c57b"><span class="std std-ref">CTile::subTile</span></a>. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to subtract. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1746,10 +2103,22 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor14multiplyScalarE7int64_t">
+<span id="_CPPv3N8helayers11CTileTensor14multiplyScalarE7int64_t"></span><span id="_CPPv2N8helayers11CTileTensor14multiplyScalarE7int64_t"></span><span id="helayers::CTileTensor::multiplyScalar__int64_t"></span><span class="target" id="classhelayers_1_1CTileTensor_1a3fac17e6de7ad7d0439c992505d8ead4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalar</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor14multiplyScalarE7int64_t" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiplies all used tensor elements by a given int64 scalar. </p>
+<p>May consume one chain index. This variant doesn’t clear unknowns. Refer to <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a7501865ac8849faa90ca7d2c4bf84e50"><span class="std std-ref">multiplyScalar(double)</span></a> that does. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – <strong>[in]</strong> Value to multiply by. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor14multiplyScalarEi">
 <span id="_CPPv3N8helayers11CTileTensor14multiplyScalarEi"></span><span id="_CPPv2N8helayers11CTileTensor14multiplyScalarEi"></span><span id="helayers::CTileTensor::multiplyScalar__i"></span><span class="target" id="classhelayers_1_1CTileTensor_1a59ce04558d2a055e72f48b939191f04e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyScalar</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor14multiplyScalarEi" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Multiplies all used tensor elements by a given integer scalar. </p>
-<p>May consume one chain index. This variant doesn’t clear unknowns. Refer to <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a7501865ac8849faa90ca7d2c4bf84e50"><span class="std std-ref">multiplyScalar(double)</span></a> that does. </p>
+<dd><p>one chain index. </p>
+<p>This variant doesn’t clear unknowns. Refer to <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a7501865ac8849faa90ca7d2c4bf84e50"><span class="std std-ref">multiplyScalar(double)</span></a> that does. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> – <strong>[in]</strong> Value to multiply by. </p>
@@ -1811,6 +2180,20 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor14multiplyAndSumERK11CTileTensorRKNSt6vectorIiEE">
+<span id="_CPPv3N8helayers11CTileTensor14multiplyAndSumERK11CTileTensorRKNSt6vectorIiEE"></span><span id="_CPPv2N8helayers11CTileTensor14multiplyAndSumERK11CTileTensorRKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::multiplyAndSum__CTileTensorCR.std::vector:i:CR"></span><span class="target" id="classhelayers_1_1CTileTensor_1aba81e0abf262300c57f0600bbf3fa0b4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyAndSum</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sumDims</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor14multiplyAndSumERK11CTileTensorRKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Performs elementwise multiplication between this and other, then sums over specified dimensions. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other encrypted tile tensor </p></li>
+<li><p><strong>sumDims</strong> – Dimensions to sum over </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensori">
 <span id="_CPPv3N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensori"></span><span id="_CPPv2N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensori"></span><span id="helayers::CTileTensor::multiplyPlainAndSum__PTileTensorCR.i"></span><span class="target" id="classhelayers_1_1CTileTensor_1a9982b8f6c7c8a2d23f6b35efa64fd634"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyPlainAndSum</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PTileTensor.html#_CPPv4N8helayers11PTileTensorE" title="helayers::PTileTensor"><span class="n"><span class="pre">PTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sumDim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensori" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Performs elementwise multiplication between this and other, then sums over specified dim. </p>
@@ -1820,6 +2203,21 @@ Relies on CTile::sub_raw.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>other</strong> – Other encoded tile tensor </p></li>
 <li><p><strong>sumDim</strong> – Dimension to sum over </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensorRKNSt6vectorIiEE">
+<span id="_CPPv3N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensorRKNSt6vectorIiEE"></span><span id="_CPPv2N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensorRKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::multiplyPlainAndSum__PTileTensorCR.std::vector:i:CR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a5455d1c4cde1e19d559b92eebc04480b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyPlainAndSum</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PTileTensor.html#_CPPv4N8helayers11PTileTensorE" title="helayers::PTileTensor"><span class="n"><span class="pre">PTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sumDims</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor19multiplyPlainAndSumERK11PTileTensorRKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Performs elementwise multiplication between this and other, then sums over specified dimensions. </p>
+<p>See <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ac392a9e935b419d4de4c8e9f2fe5976d"><span class="std std-ref">CTileTensor::multiplyAndSum</span></a> for usage examples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other encoded tile tensor </p></li>
+<li><p><strong>sumDims</strong> – Dimensions to sum over </p></li>
 </ul>
 </dd>
 </dl>
@@ -1860,9 +2258,38 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor10sumOverDimERKNSt6vectorIiEE">
+<span id="_CPPv3N8helayers11CTileTensor10sumOverDimERKNSt6vectorIiEE"></span><span id="_CPPv2N8helayers11CTileTensor10sumOverDimERKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::sumOverDim__std::vector:i:CR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a84a41beedb2ebb8d272d7808fc251b43"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumOverDim</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dims</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor10sumOverDimERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sums over a list of dimensions. </p>
+<p>Equal to calling sumOverDim for each dimension in the list. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dims</strong> – <strong>[in]</strong> Dimensions to sum over. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor15sumTilesOverDimEi">
 <span id="_CPPv3N8helayers11CTileTensor15sumTilesOverDimEi"></span><span id="_CPPv2N8helayers11CTileTensor15sumTilesOverDimEi"></span><span id="helayers::CTileTensor::sumTilesOverDim__i"></span><span class="target" id="classhelayers_1_1CTileTensor_1ad438974bc169e1ed17374bf8b64e2d76"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumTilesOverDim</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor15sumTilesOverDimEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sums tile over a dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – The dimension to sum over. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor15sumTilesOverDimERKNSt6vectorIiEE">
+<span id="_CPPv3N8helayers11CTileTensor15sumTilesOverDimERKNSt6vectorIiEE"></span><span id="_CPPv2N8helayers11CTileTensor15sumTilesOverDimERKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::sumTilesOverDim__std::vector:i:CR"></span><span class="target" id="classhelayers_1_1CTileTensor_1a4af460439ecf5e6d44ef60a8f5ac0c10"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumTilesOverDim</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor15sumTilesOverDimERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sums tile over a list of dimensions. </p>
+<p>Equivalent to calling sumOverDim for each dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – The list of dimensions to sum over. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1874,6 +2301,19 @@ Relies on CTile::sub_raw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dim</strong> – Dimension to sum over. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor17sumInTilesOverDimENSt6vectorIiEE">
+<span id="_CPPv3N8helayers11CTileTensor17sumInTilesOverDimENSt6vectorIiEE"></span><span id="_CPPv2N8helayers11CTileTensor17sumInTilesOverDimENSt6vectorIiEE"></span><span id="helayers::CTileTensor::sumInTilesOverDim__std::vector:i:"></span><span class="target" id="classhelayers_1_1CTileTensor_1ad177e6ae0f5df5878dccad8ac5c9fa38"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sumInTilesOverDim</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor17sumInTilesOverDimENSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sum inside tiles. </p>
+<p>This method assumes the external sizes along the given dimensions are all 1. It reduces the original sizes to 1 by summing inside the remaining tile.</p>
+<p>The result will be duplicated for the first non-trivial dimension (if it is one of the given dimensions). Note, if the first non-trivial dim is in the given dimensions and originalSize==1 then this call will still incur rotations satisfy the duplicated result requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – List of dimensions to sum over. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1896,9 +2336,28 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor22multiplyInTilesOverDimEi">
+<span id="_CPPv3N8helayers11CTileTensor22multiplyInTilesOverDimEi"></span><span id="_CPPv2N8helayers11CTileTensor22multiplyInTilesOverDimEi"></span><span id="helayers::CTileTensor::multiplyInTilesOverDim__i"></span><span class="target" id="classhelayers_1_1CTileTensor_1a89942fd988a142ad6a602b4fa2dccbad"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyInTilesOverDim</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor22multiplyInTilesOverDimEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Multiply inside tiles. </p>
+<p>This method assumes the external size along this dimension is 1. It reduces the original size to 1 by multiplying inside the remaining tile.</p>
+<p>The result will be duplicated if this is the first non-trivial dimension and the original size of “dim” is at least tileSize/2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> – Dimension to multiply over. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor21multiplyImaginaryUnitEv">
 <span id="_CPPv3N8helayers11CTileTensor21multiplyImaginaryUnitEv"></span><span id="_CPPv2N8helayers11CTileTensor21multiplyImaginaryUnitEv"></span><span id="helayers::CTileTensor::multiplyImaginaryUnit"></span><span class="target" id="classhelayers_1_1CTileTensor_1a9a7837ba8387005b90c5478619da6ce2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyImaginaryUnit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor21multiplyImaginaryUnitEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Multiply all elements of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> by the imaginary unit, i. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor20nullifyImaginaryPartEv">
+<span id="_CPPv3N8helayers11CTileTensor20nullifyImaginaryPartEv"></span><span id="_CPPv2N8helayers11CTileTensor20nullifyImaginaryPartEv"></span><span id="helayers::CTileTensor::nullifyImaginaryPart"></span><span class="target" id="classhelayers_1_1CTileTensor_1a49a97afa914bcc39bdcf1b57c515afe1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nullifyImaginaryPart</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor20nullifyImaginaryPartEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Nullify the imaginary part of all elements of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1939,7 +2398,7 @@ Relies on CTile::sub_raw.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor15flattenFullDimsEii">
 <span id="_CPPv3N8helayers11CTileTensor15flattenFullDimsEii"></span><span id="_CPPv2N8helayers11CTileTensor15flattenFullDimsEii"></span><span id="helayers::CTileTensor::flattenFullDims__i.i"></span><span class="target" id="classhelayers_1_1CTileTensor_1a82a768c9923a9c1ba751844e00370613"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flattenFullDims</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">startDim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">endDim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor15flattenFullDimsEii" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Flattens consucutive dimension that are full, except the first dimension. </p>
+<dd><p>Flattens consecutive dimension that are full, except the first dimension. </p>
 <p>All flattened dimensions except the first one must have external size of 1 and no unused slots. The first dimension can have unused slots and external size larger than one. If it has unknown values, so will the resulting flattened dimension. All flattened dimensions must have basic tiling. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2061,8 +2520,8 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor9bootstrapEv">
-<span id="_CPPv3N8helayers11CTileTensor9bootstrapEv"></span><span id="_CPPv2N8helayers11CTileTensor9bootstrapEv"></span><span id="helayers::CTileTensor::bootstrap"></span><span class="target" id="classhelayers_1_1CTileTensor_1ab09829b14c896b01816604dfc752c78d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor9bootstrapEv" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor9bootstrapEPK18BootstrapEvaluator">
+<span id="_CPPv3N8helayers11CTileTensor9bootstrapEPK18BootstrapEvaluator"></span><span id="_CPPv2N8helayers11CTileTensor9bootstrapEPK18BootstrapEvaluator"></span><span id="helayers::CTileTensor::bootstrap__BootstrapEvaluatorCP"></span><span class="target" id="classhelayers_1_1CTileTensor_1a4b663e1de14f6f3ce2e82341a173f7d0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bootstrap</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">BootstrapEvaluator</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">bootstrapEvaluator</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor9bootstrapEPK18BootstrapEvaluator" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Performs bootstrap on all the tiles of this tile tensor. </p>
 </dd></dl>
 
@@ -2163,57 +2622,6 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor5addToER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor5addToER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor5addToER11CTileTensor"></span><span id="helayers::CTileTensor::addTo__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1ada756c185f80f44d85069abccae55625"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTo</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor5addToER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Equivalent to other.add(*this) </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to add. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor8addToRawER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor8addToRawER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor8addToRawER11CTileTensor"></span><span id="helayers::CTileTensor::addToRaw__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1aae0d05401a154e60aa9b928e19acac2a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addToRaw</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor8addToRawER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>See <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ada756c185f80f44d85069abccae55625"><span class="std std-ref">addTo()</span></a></p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor7subFromER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor7subFromER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor7subFromER11CTileTensor"></span><span id="helayers::CTileTensor::subFrom__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1abb919b20c7f70eb6d738ff1dd5db3e36"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subFrom</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor7subFromER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Equivalent to other.sub(*this) </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to subtract from. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor10subFromRawER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor10subFromRawER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor10subFromRawER11CTileTensor"></span><span id="helayers::CTileTensor::subFromRaw__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1ae10d8f8f284a0833a7eef94a7861170b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subFromRaw</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor10subFromRawER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>See <a class="reference internal" href="#classhelayers_1_1CTileTensor_1abb919b20c7f70eb6d738ff1dd5db3e36"><span class="std std-ref">subFrom()</span></a></p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor10multiplyToER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor10multiplyToER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor10multiplyToER11CTileTensor"></span><span id="helayers::CTileTensor::multiplyTo__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a68dbcc88b927f45536ff66401fc4769b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyTo</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor10multiplyToER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Equivalent to other.multiply(*this) </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to multiply to </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor13multiplyToRawER11CTileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor13multiplyToRawER11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor13multiplyToRawER11CTileTensor"></span><span id="helayers::CTileTensor::multiplyToRaw__CTileTensorRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1af008532901d66bd19ee42da445437015"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyToRaw</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor13multiplyToRawER11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>See <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a68dbcc88b927f45536ff66401fc4769b"><span class="std std-ref">multiplyTo()</span></a></p>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor6getSubERK11CTileTensor">
 <span id="_CPPv3NK8helayers11CTileTensor6getSubERK11CTileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor6getSubERK11CTileTensor"></span><span id="helayers::CTileTensor::getSub__CTileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a25f73d3be48eea7a440480af27cc353b"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSub</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor6getSubERK11CTileTensor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the result of elementwise sub of this and other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p>
@@ -2221,18 +2629,6 @@ Relies on CTile::sub_raw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> – <strong>[in]</strong> other <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> to sub. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor">
-<span id="_CPPv3NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor"></span><span id="_CPPv2NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor"></span><span id="helayers::CTileTensor::getSubTileTensor__TileTensorCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a84390974d9a4ac7780469cf08be7e37f"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSubTileTensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TileTensor</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor16getSubTileTensorERK10TileTensor" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the result of elementwise sub of this and other TileTensor. </p>
-<p>Relies on <a class="reference internal" href="CTile.html#classhelayers_1_1CTile_1a3a02bf7c04e22f8015c40d3326b1c57b"><span class="std std-ref">CTile::subTile</span></a>. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – Other TileTensor to sub. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -2397,6 +2793,21 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor17getMultiplyAndSumERK11CTileTensorRKNSt6vectorIiEE">
+<span id="_CPPv3NK8helayers11CTileTensor17getMultiplyAndSumERK11CTileTensorRKNSt6vectorIiEE"></span><span id="_CPPv2NK8helayers11CTileTensor17getMultiplyAndSumERK11CTileTensorRKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::getMultiplyAndSum__CTileTensorCR.std::vector:i:CRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1afb8f68bd213f3644a3448c9541e5c037"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiplyAndSum</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dims</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor17getMultiplyAndSumERK11CTileTensorRKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of elementwise multiplication of this and other and summing over specified dim. </p>
+<p>See <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ac392a9e935b419d4de4c8e9f2fe5976d"><span class="std std-ref">CTileTensor::multiplyAndSum</span></a> for usage examples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other encrypted tile tensor </p></li>
+<li><p><strong>dims</strong> – Dimensions to sum over </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor22getMultiplyPlainAndSumERK11PTileTensori">
 <span id="_CPPv3NK8helayers11CTileTensor22getMultiplyPlainAndSumERK11PTileTensori"></span><span id="_CPPv2NK8helayers11CTileTensor22getMultiplyPlainAndSumERK11PTileTensori"></span><span id="helayers::CTileTensor::getMultiplyPlainAndSum__PTileTensorCR.iC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a92a881bb3b7c5d563c8f738aee1c629a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMultiplyPlainAndSum</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PTileTensor.html#_CPPv4N8helayers11PTileTensorE" title="helayers::PTileTensor"><span class="n"><span class="pre">PTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor22getMultiplyPlainAndSumERK11PTileTensori" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the result of elementwise multiplication of this and other and summing over specified dim. </p>
@@ -2420,6 +2831,20 @@ Relies on CTile::sub_raw.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>other</strong> – Other encrypted tile tensor </p></li>
 <li><p><strong>dim</strong> – Dimension to sum over </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor16multiplyAndSumToER11CTileTensorRKNSt6vectorIiEE">
+<span id="_CPPv3NK8helayers11CTileTensor16multiplyAndSumToER11CTileTensorRKNSt6vectorIiEE"></span><span id="_CPPv2NK8helayers11CTileTensor16multiplyAndSumToER11CTileTensorRKNSt6vectorIiEE"></span><span id="helayers::CTileTensor::multiplyAndSumTo__CTileTensorR.std::vector:i:CRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a60446cfbe1d981018cec9b0eee93176f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiplyAndSumTo</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dims</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor16multiplyAndSumToER11CTileTensorRKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Equivalent to other.multiplyAndSum(*this, dim) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> – Other encrypted tile tensor </p></li>
+<li><p><strong>dims</strong> – Dimensions to sum over </p></li>
 </ul>
 </dd>
 </dl>
@@ -2634,7 +3059,7 @@ Relies on CTile::sub_raw.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor14rotateAlongDimEii">
 <span id="_CPPv3N8helayers11CTileTensor14rotateAlongDimEii"></span><span id="_CPPv2N8helayers11CTileTensor14rotateAlongDimEii"></span><span id="helayers::CTileTensor::rotateAlongDim__i.i"></span><span class="target" id="classhelayers_1_1CTileTensor_1aa4c34ea08303f3b1ab1b4418f57f212b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotateAlongDim</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rot</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor14rotateAlongDimEii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Rotates this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> along the specified dimension (index (i+rot) % originalSize moves to i). </p>
-<p>The elements that fall out of one end cycle back in the other end. If the external size of “dim” is not 1, then “dim” must be interleaved. If the external size of “dim” is 1, the rotation works and will have the same effect regardless of the interleaved flag being on or off. For the rotation to succeed, “dim” must be the first non-trivial” dimension, and it must not contain any unused slots. </p>
+<p>The elements that fall out of one end cycle back in the other end. “dim” must not contain any unused slots. In most cases, this function is more costly than <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ae4d107791236cd80fdc6ef358d47fd2d"><span class="std std-ref">pseudoRotateAlongDim()</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2649,29 +3074,32 @@ Relies on CTile::sub_raw.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimIntb">
-<span id="_CPPv3N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimIntb"></span><span id="_CPPv2N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimIntb"></span><span id="helayers::CTileTensor::pseudoRotateAlongDim__DimInt.DimInt.b"></span><span class="target" id="classhelayers_1_1CTileTensor_1af36315d061cea1e50a9b40ef183aa90c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pseudoRotateAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">realRotate</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimIntb" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimInt">
+<span id="_CPPv3N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimInt"></span><span id="_CPPv2N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimInt"></span><span id="helayers::CTileTensor::pseudoRotateAlongDim__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1CTileTensor_1ae4d107791236cd80fdc6ef358d47fd2d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pseudoRotateAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor20pseudoRotateAlongDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Applies a “pseudo rotation” on this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> by the given offset along dimension “dim”. </p>
-<p>If “realRotate” is true, the function verifies that a real rotation is performed, meaning that the values that fall out of one end must cycle back to the other end. If “realRotate” is false, a pseudo rotation is performed, meaning that the values that fall out of one end are not guaranteed to cycle back to the other end. To Perform a real rotation, “dim” must be the first non-trivial dimension and it mustn’t contain any unused slots. In both cases (a real or a pseudo rotate), if the external size of “dim” is not 1, then “dim” must be interleaved. If the external size of “dim” is 1, the rotation works and will have the same effect regardless of the interleaved flag being on or off. </p>
+<p>A pseudo rotation is a rotation in which the values that fall out of one end are not always guaranteed to cycle back to the other end. If the external size of “dim” is not 1, then “dim” must be interleaved. If the external size of “dim” is 1, the pseudo rotation works and will have the same effect regardless of the interleaved flag being on or off. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>dim</strong> – The dimensions to rotate along. </p></li>
-<li><p><strong>offset</strong> – The rotation offset. </p></li>
-<li><p><strong>realRotate</strong> – If true, the function asserts that a true rotation is performed. </p></li>
-</ul>
+<dd class="field-odd"><p><strong>offset</strong> – The rotation offset. </p>
 </dd>
 <dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If realRotate is true but the conditions above don’t hold. </p>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If the external size of dim is not 1 and it is not interleaved. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimIntb">
-<span id="_CPPv3NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimIntb"></span><span id="_CPPv2NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimIntb"></span><span id="helayers::CTileTensor::getPseudoRotateAlongDim__DimInt.DimInt.bC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a59b82226da604c05ab004a431b0a17d4"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPseudoRotateAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">realRotate</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimIntb" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the result of calling psuedoRotateAlongDim. </p>
-<p>See also psuedoRotateAlongDim(). </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimInt">
+<span id="_CPPv3NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimInt"></span><span id="_CPPv2NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimInt"></span><span id="helayers::CTileTensor::getPseudoRotateAlongDim__DimInt.DimIntC"></span><span class="target" id="classhelayers_1_1CTileTensor_1ad9ad814062ad96bb50b12c84802d7090"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPseudoRotateAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor23getPseudoRotateAlongDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of calling pseudoRotateAlongDim. </p>
+<p>See also <a class="reference internal" href="#classhelayers_1_1CTileTensor_1ae4d107791236cd80fdc6ef358d47fd2d"><span class="std std-ref">pseudoRotateAlongDim()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor17getRotateAlongDimE6DimInt6DimInt">
+<span id="_CPPv3NK8helayers11CTileTensor17getRotateAlongDimE6DimInt6DimInt"></span><span id="_CPPv2NK8helayers11CTileTensor17getRotateAlongDimE6DimInt6DimInt"></span><span id="helayers::CTileTensor::getRotateAlongDim__DimInt.DimIntC"></span><span class="target" id="classhelayers_1_1CTileTensor_1a3db3a30ac5baca45d5c06d830c9d1764"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRotateAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor17getRotateAlongDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the result of calling rotateAlongDim. </p>
+<p>See also <a class="reference internal" href="#classhelayers_1_1CTileTensor_1aa4c34ea08303f3b1ab1b4418f57f212b"><span class="std std-ref">rotateAlongDim()</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2744,7 +3172,7 @@ Relies on CTile::sub_raw.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor17resizeOriginalDimE6DimInt6DimInt">
 <span id="_CPPv3N8helayers11CTileTensor17resizeOriginalDimE6DimInt6DimInt"></span><span id="_CPPv2N8helayers11CTileTensor17resizeOriginalDimE6DimInt6DimInt"></span><span id="helayers::CTileTensor::resizeOriginalDim__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1CTileTensor_1a793a696c7f60028464750e342d203985"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resizeOriginalDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">newSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor17resizeOriginalDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Change the original size of a tensor along a dimension. </p>
-<p>The external-size may change accordingly. If new CTiles need to be added to the tensor they are added as 0s. </p>
+<p>The external-size may change accordingly. If new CTiles need to be added to the tensor they are added as 0s. If the newSize leaves new unused slots, the unused slots will be set to unknowns in updated dimension. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2771,6 +3199,87 @@ Relies on CTile::sub_raw.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor11isEncryptedEv">
 <span id="_CPPv3NK8helayers11CTileTensor11isEncryptedEv"></span><span id="_CPPv2NK8helayers11CTileTensor11isEncryptedEv"></span><span id="helayers::CTileTensor::isEncryptedC"></span><span class="target" id="classhelayers_1_1CTileTensor_1afb46415b018332a9da2e68fc06d9f16d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEncrypted</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor11isEncryptedEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns whether this tile tensor is encrypted or just encoded. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor17shouldParallelizeEv">
+<span id="_CPPv3NK8helayers11CTileTensor17shouldParallelizeEv"></span><span id="_CPPv2NK8helayers11CTileTensor17shouldParallelizeEv"></span><span id="helayers::CTileTensor::shouldParallelizeC"></span><span class="target" id="classhelayers_1_1CTileTensor_1acca45d2f6b0abf7c5b771ef28e0e48b9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shouldParallelize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor17shouldParallelizeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns wether operations over this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> should be parallelized. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor28internalDuplicateAndMaskTileERK5CTile">
+<span id="_CPPv3NK8helayers11CTileTensor28internalDuplicateAndMaskTileERK5CTile"></span><span id="_CPPv2NK8helayers11CTileTensor28internalDuplicateAndMaskTileERK5CTile"></span><span id="helayers::CTileTensor::internalDuplicateAndMaskTile__CTileCRC"></span><span class="target" id="classhelayers_1_1CTileTensor_1aa9a9011668774cdcd9ccd20cab4f7b7f"></span><a class="reference internal" href="#_CPPv4N8helayers11CTileTensorE" title="helayers::CTileTensor"><span class="n"><span class="pre">CTileTensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalDuplicateAndMaskTile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="CTile.html#_CPPv4N8helayers5CTileE" title="helayers::CTile"><span class="n"><span class="pre">CTile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor28internalDuplicateAndMaskTileERK5CTile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> containing the given value in all used slots of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>, and zeroes in unused slot. </p>
+<p>The input <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> must contain a single value duplicated across all slots. The result is obtained by creating a <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> with the given <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>, and a <a class="reference internal" href="TTShape.html#classhelayers_1_1TTShape"><span class="std std-ref">TTShape</span></a> that defines it to be duplicated along all dimensions. Then it is multiplied elementwise by getPlainScalarMask(1). This method is for implementing operators that modify <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> objects, and requires careful testing. Use <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a14c74cd6e1f943f178b93691c3d78851"><span class="std std-ref">assertIntegrity()</span></a> in tests to make sure the result is in a consistent state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – The <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a> to duplicate and mask. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN8helayers11CTileTensor22internalUnaryOperationEv6OpFuncDpRR4Args">
+<span id="_CPPv3I0DpEN8helayers11CTileTensor22internalUnaryOperationE6OpFuncDpRR4Args"></span><span id="_CPPv2I0DpEN8helayers11CTileTensor22internalUnaryOperationE6OpFuncDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OpFunc</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhelayers_1_1CTileTensor_1a6d17f7dfccc7a596443db0e5669b77ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalUnaryOperation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN8helayers11CTileTensor22internalUnaryOperationEv6OpFuncDpRR4Args" title="helayers::CTileTensor::internalUnaryOperation::OpFunc"><span class="n"><span class="pre">OpFunc</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">func</span></span>, <a class="reference internal" href="#_CPPv4I0DpEN8helayers11CTileTensor22internalUnaryOperationEv6OpFuncDpRR4Args" title="helayers::CTileTensor::internalUnaryOperation::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN8helayers11CTileTensor22internalUnaryOperationEv6OpFuncDpRR4Args" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Performs a unary operation in-place on all tiles of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a>. </p>
+<p>This method is for implementing operators that modify <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> objects, and requires careful testing. Use <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a14c74cd6e1f943f178b93691c3d78851"><span class="std std-ref">assertIntegrity()</span></a> in tests to make sure the result is in a consistent state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>OpFunc</strong> – A type for the function implementing the required unary operation. The function must receive a <a class="reference internal" href="CTile.html#classhelayers_1_1CTile"><span class="std std-ref">CTile</span></a>&amp; as its first argument. </p></li>
+<li><p><strong>...Args</strong> – A type for the function’s arguments. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>func</strong> – A function implementing the operation to be performed. </p></li>
+<li><p><strong>...args</strong> – The function’s arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor25internalAlignChainIndexesEv">
+<span id="_CPPv3N8helayers11CTileTensor25internalAlignChainIndexesEv"></span><span id="_CPPv2N8helayers11CTileTensor25internalAlignChainIndexesEv"></span><span id="helayers::CTileTensor::internalAlignChainIndexes"></span><span class="target" id="classhelayers_1_1CTileTensor_1a7c4b728acbaaa1d9702d1c14567e96e6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalAlignChainIndexes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor25internalAlignChainIndexesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Aligns the chain indexes of all tiles to have the same value, by reducing to the minimal one. </p>
+<p>This method is for implementing operators that modify <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> objects, and requires careful testing. Use <a class="reference internal" href="#classhelayers_1_1CTileTensor_1a14c74cd6e1f943f178b93691c3d78851"><span class="std std-ref">assertIntegrity()</span></a> in tests to make sure the result is in a consistent state. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers11CTileTensor14cloneSharedPtrEv">
+<span id="_CPPv3NK8helayers11CTileTensor14cloneSharedPtrEv"></span><span id="_CPPv2NK8helayers11CTileTensor14cloneSharedPtrEv"></span><span id="helayers::CTileTensor::cloneSharedPtrC"></span><span class="target" id="classhelayers_1_1CTileTensor_1ae889a5ea6dfa132f8e80dca9822c361f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TileTensor</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cloneSharedPtr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers11CTileTensor14cloneSharedPtrEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a clone of this TileTensor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor22fillUnusedSlotsWithValE6DimIntd">
+<span id="_CPPv3N8helayers11CTileTensor22fillUnusedSlotsWithValE6DimIntd"></span><span id="_CPPv2N8helayers11CTileTensor22fillUnusedSlotsWithValE6DimIntd"></span><span id="helayers::CTileTensor::fillUnusedSlotsWithVal__DimInt.double"></span><span class="target" id="classhelayers_1_1CTileTensor_1a6b705c363078567b54722a4c78de7bbf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillUnusedSlotsWithVal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor22fillUnusedSlotsWithValE6DimIntd" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Fills the unused slots in the specified dimension with the given value, assuming they contained zeros before calling this function. </p>
+<p>The shape of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> will be updated to contain no unused slots in “dim”. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – The dimension to fill its unused slots. </p></li>
+<li><p><strong>val</strong> – The value to fill the unused slots with. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers11CTileTensor19rotateTilesAlongDimE6DimInt6DimInt">
+<span id="_CPPv3N8helayers11CTileTensor19rotateTilesAlongDimE6DimInt6DimInt"></span><span id="_CPPv2N8helayers11CTileTensor19rotateTilesAlongDimE6DimInt6DimInt"></span><span id="helayers::CTileTensor::rotateTilesAlongDim__DimInt.DimInt"></span><span class="target" id="classhelayers_1_1CTileTensor_1a59b66cc343603447d521f2f76cdc7ad1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotateTilesAlongDim</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dim</span></span>, <a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rot</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers11CTileTensor19rotateTilesAlongDimE6DimInt6DimInt" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Rotates all tiles of this <a class="reference internal" href="#classhelayers_1_1CTileTensor"><span class="std std-ref">CTileTensor</span></a> by the given offset along the specified dimension. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – The dimension to rotate along. </p></li>
+<li><p><strong>rot</strong> – The rotation offset. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -2822,11 +3331,8 @@ Relies on CTile::sub_raw.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctts</strong> – The CTileTensors to combine. </p></li>
-<li><p><strong>dim</strong> – The dimension to combine along </p></li>
+<li><p><strong>dim</strong> – The dimension to combine along. empty or if “dim” is negative or greater or equal to the order of the given CTileTensors. </p></li>
 </ul>
-</dd>
-<dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">invalid_argument</span></span></span> – If the conditions above don’t hold, if “ctts” is empty or if “dim” is negative or greater or equal to the order of the given CTileTensors. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -2849,14 +3355,6 @@ Relies on CTile::sub_raw.</p>
 </dd>
 </dl>
 </dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
-<dl>
-<dt class="sig sig-object cpp">
-<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">circuit::Runner</span></dt>
-</dl>
 
 </div>
 </dd></dl>
@@ -2912,6 +3410,8 @@ Relies on CTile::sub_raw.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.add_plain_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.add_plain_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.add_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.add_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.add_scalar"><code class="docutils literal notranslate"><span class="pre">CTileTensor.add_scalar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.add_tile_tensor"><code class="docutils literal notranslate"><span class="pre">CTileTensor.add_tile_tensor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.add_tile_tensor_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.add_tile_tensor_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.adjust_chain_index"><code class="docutils literal notranslate"><span class="pre">CTileTensor.adjust_chain_index()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.clear_unknowns"><code class="docutils literal notranslate"><span class="pre">CTileTensor.clear_unknowns()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.duplicate_over_dim"><code class="docutils literal notranslate"><span class="pre">CTileTensor.duplicate_over_dim()</span></code></a></li>
@@ -2953,6 +3453,8 @@ Relies on CTile::sub_raw.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.multiply_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.multiply_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.multiply_scalar"><code class="docutils literal notranslate"><span class="pre">CTileTensor.multiply_scalar()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.multiply_scalar_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.multiply_scalar_raw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.multiply_tile_tensor"><code class="docutils literal notranslate"><span class="pre">CTileTensor.multiply_tile_tensor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.multiply_tile_tensor_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.multiply_tile_tensor_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.negate"><code class="docutils literal notranslate"><span class="pre">CTileTensor.negate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.pseudo_rotate_along_dim"><code class="docutils literal notranslate"><span class="pre">CTileTensor.pseudo_rotate_along_dim()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.re_encrypt"><code class="docutils literal notranslate"><span class="pre">CTileTensor.re_encrypt()</span></code></a></li>
@@ -2968,6 +3470,8 @@ Relies on CTile::sub_raw.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sub_plain"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sub_plain()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sub_plain_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sub_plain_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sub_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sub_raw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sub_tile_tensor"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sub_tile_tensor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sub_tile_tensor_raw"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sub_tile_tensor_raw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sum_in_tiles_over_dim"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sum_in_tiles_over_dim()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sum_over_dim"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sum_over_dim()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.CTileTensor.sum_tiles_over_dim"><code class="docutils literal notranslate"><span class="pre">CTileTensor.sum_tiles_over_dim()</span></code></a></li>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Multi Party FHE &#8212; HElayers 1.5.4.0 documentation</title>
+    <title>Multi Party FHE &#8212; HElayers 1.5.5.0 documentation</title>
   
   
   
@@ -53,8 +53,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="InitProtocol" href="gen_pages/InitProtocol.html" />
-    <link rel="prev" title="QueryDatabase" href="gen_pages/QueryDatabase.html" />
+    <link rel="next" title="MultiPartyConfig" href="gen_pages/MultiPartyConfig.html" />
+    <link rel="prev" title="CopyAndRecurseDatabase" href="gen_pages/CopyAndRecurseDatabase.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,6 +217,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -309,20 +313,12 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/DebugContext.html">DebugContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/EmptyContext.html">EmptyContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/HeContext.html">HeContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibContext.html">HelibContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBgvContext.html">HelibBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBitwiseContext.html">HelibBitwiseContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibBitwiseBgvContext.html">HelibBitwiseBgvContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibCkksContext.html">HelibCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HeaanContext.html">HeaanContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/LattigoContext.html">LattigoContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/MockupContext.html">MockupContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheContext.html">OpenFheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheCkksContext.html">OpenFheCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/PalisadeCkksContext.html">PalisadeCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/PalisadeTfheContext.html">PalisadeTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheTfheContext.html">OpenFheTfheContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/SealCkksContext.html">SealCkksContext</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/HelibConfig.html">HelibConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="gen_pages/HeTraits.html">HeTraits</a></li>
@@ -394,14 +390,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/ComparisonType.html">ComparisonType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Field.html">Field</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Table.html">Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/QueryDatabase.html">QueryDatabase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Multi Party FHE</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
@@ -521,16 +518,98 @@ document.write(`
                   
   <section id="multi-party-fhe">
 <h1>Multi Party FHE<a class="headerlink" href="#multi-party-fhe" title="Permalink to this heading">#</a></h1>
+<p>Multi-Party FHE allows a set of parties to collaborate in computing some function over their
+combined secret data while not revealing their respective data to any of the other parties.
+For example, multiple parties may join to train a single model based on the secret data of the different
+parties.</p>
+<p>Using a regular public-key setting for such a use-case will not be secure, since it requires the
+parties to trust the holder of the secret key, whether it is one of the parties or a “trusted” third party.
+In the multi-party FHE setting, none of the parties has a hold on the secret key.
+Instead, each party has its own secret key. The public keys (which include the encryption key and
+the FHE evaluation keys) are generated in an initialization protocol (a.k.a
+<a class="reference internal" href="gen_pages/InitProtocol.html"><span class="doc">InitProtocol</span></a>) between the parties. To decrypt a ciphertext, all the parties
+(key-owners) need to give their consent and to take part in a decryption protocol
+(a.k.a. <a class="reference internal" href="gen_pages/DecryptProtocol.html"><span class="doc">DecryptProtocol</span></a>).</p>
+<section id="using-multi-party-fhe-with-helayers">
+<h2>Using Multi Party FHE with HeLayers<a class="headerlink" href="#using-multi-party-fhe-with-helayers" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Setup</strong>: Every party that wants to participate in a joint multi-party FHE computation
+(via InitProtocol, FHE computations, and DecryptProtocol - see below) must first
+extend its FHE context (<a class="reference internal" href="gen_pages/HeContext.html"><span class="doc">HeContext</span></a>) with multi-party configuration
+information (<a class="reference internal" href="gen_pages/MultiPartyConfig.html"><span class="doc">MultiPartyConfig</span></a>)
+which specifies the role (<a class="reference internal" href="mpc_types.html"><span class="doc">MultiPartyRole</span></a>) that the party is expected to play in the protocols and
+identifies the other collaborating parties and their respective roles.</p></li>
+<li><p><strong>Initialize keys</strong>: Every party that wants to participate in a joint multi-party FHE computation
+while keeping its own data secret from the other parties, must first set its own private secret key
+(a.k.a. a private “key-share”) known only to itself. All the parties then communicate via an
+<a class="reference internal" href="gen_pages/InitProtocol.html"><span class="doc">InitProtocol</span></a> and jointly compute the shared public FHE keys, which include the public encryption
+key and the public evaluation keys that enable the FHE computations (see below).</p></li>
+<li><p><strong>Private Data Encryption</strong>: Every party can now encrypt its own private data using the shared public
+encryption key that was jointly computed in the previous step. Any data encrypted with the shared public
+encryption key, or resulting from FHE computations based on such encrypted data, can only be decrypted
+via a Decryption protocol in which all the parties participate (see below). Thus, the private data
+encrypted by the various parties can be communicated and shared among the parties without the risk
+of it being decrypted by any single party or by a subset of colluding parties.</p></li>
+<li><p><strong>FHE computation</strong>: Anyone with access to the shared public evaluation keys and to private
+data encrypted with the shared public encryption key can now perform FHE computations
+involving the encrypted data of the multiple parties. This computation can be carried out
+by the original parties that participated in the InitProtocol (see above)
+but also by a “new” participant such as a public cloud service.</p></li>
+<li><p><strong>Decryption</strong>: The result of the FHE computation described above is a ciphertext, which can
+only be decrypted via a Decryption protocol (<a class="reference internal" href="gen_pages/DecryptProtocol.html"><span class="doc">DecryptProtocol</span></a>) in which all the parties participate.
+All the parties jointly compute the decrypted plaintext using their respective private secret keys
+(which were created in the above <em>Initialize keys</em> step).</p></li>
+</ul>
+<p>See an example for the above steps in an example cpp program (<a class="reference internal" href="../user/demos.html#he-utilities-tutorials"><span class="std std-ref">HE utilities tutorials</span></a>)
+where two parties train a shared Linear-Regression model based on their respective private data,
+using a separate server to perform the training on their private encrypted data, and then
+joining to decrypt the result.</p>
+</section>
+<section id="main-classes">
+<h2>Main classes:<a class="headerlink" href="#main-classes" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="gen_pages/HeContext.html"><span class="doc">HeContext</span></a></p></td>
+<td><p>The main access point to the underlying cryptographic library. Initialized during startup to a specific library and scheme. Most other classes receive a reference to it in their constructors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="gen_pages/MultiPartyConfig.html"><span class="doc">MultiPartyConfig</span></a></p></td>
+<td><p>A configuration of the role that the party is expected to play in the protocols and of identities of the other collaborating parties and their respective roles.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="gen_pages/InitProtocol.html"><span class="doc">InitProtocol</span></a></p></td>
+<td><p>A multi-party protocol in which the parties collaborate to compute shared public FHE keys (for encryption and evaluation) in several rounds involving message communication and processing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="gen_pages/DecryptProtocol.html"><span class="doc">DecryptProtocol</span></a></p></td>
+<td><p>A multi-party protocol in which the parties collaborate to decrypt a given ciphertext using their respective secret key-shares, in several rounds involving message communication and processing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="gen_pages/ProtocolMessage.html"><span class="doc">ProtocolMessage</span></a></p></td>
+<td><p>A message sent and received in a protocol. The message structure depends on the particular protocol.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Most of the classes listed in the above table have inherited classes that correspond to
+corresponding FHE contexts. For example, <a class="reference internal" href="gen_pages/OpenFheCkksInitProtocol.html"><span class="doc">OpenFheCkksInitProtocol</span></a>
+inherit from the InitProtocol class.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gen_pages/MultiPartyConfig.html">MultiPartyConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gen_pages/Protocol.html">Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gen_pages/InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gen_pages/OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gen_pages/DecryptProtocol.html">DecryptProtocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gen_pages/ProtocolMessage.html">ProtocolMessage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mpc_types.html">Multi-Party FHE Types</a></li>
 </ul>
 </div>
+</section>
 </section>
 
 
@@ -542,20 +621,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="gen_pages/QueryDatabase.html"
+       href="gen_pages/CopyAndRecurseDatabase.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">QueryDatabase</p>
+        <p class="prev-next-title">CopyAndRecurseDatabase</p>
       </div>
     </a>
     <a class="right-next"
-       href="gen_pages/InitProtocol.html"
+       href="gen_pages/MultiPartyConfig.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">InitProtocol</p>
+        <p class="prev-next-title">MultiPartyConfig</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -565,6 +644,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multi-party-fhe-with-helayers">Using Multi Party FHE with HeLayers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-classes">Main classes:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
