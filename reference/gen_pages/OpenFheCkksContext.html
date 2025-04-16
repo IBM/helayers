@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>OpenFheCkksContext &#8212; HElayers 1.5.5.0 documentation</title>
+    <title>OpenFheCkksContext &#8212; HElayers 1.5.5.1 documentation</title>
   
   
   
@@ -218,6 +218,10 @@ document.write(`
     </div>
   
 
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
   
 </div>
 
@@ -522,7 +526,28 @@ document.write(`
   <section id="openfheckkscontext">
 <h1>OpenFheCkksContext<a class="headerlink" href="#openfheckkscontext" title="Permalink to this heading">#</a></h1>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.OpenFheCkksContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OpenFheCkksContext</span></span><a class="headerlink" href="#pyhelayers.OpenFheCkksContext" title="Permalink to this definition">#</a></dt>
+<dd><p>An implementation of HeContext using the OpenFhe CKKS backend.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.OpenFheCkksContext.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.OpenFheCkksContext" title="pyhelayers.OpenFheCkksContext"><span class="pre">pyhelayers.OpenFheCkksContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">req</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.HeConfigRequirement"><span class="pre">pyhelayers.HeConfigRequirement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.OpenFheCkksContext.init" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes this OpenFheCkksContext according the given requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> – an HeConfigRequirement object, indicating the required
+configuration parameters (e.g. securityLevel, numSlots).</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – if it is not possible to fulfill the given
+requirement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers18OpenFheCkksContextE">
 <span id="_CPPv3N8helayers18OpenFheCkksContextE"></span><span id="_CPPv2N8helayers18OpenFheCkksContextE"></span><span id="helayers::OpenFheCkksContext"></span><span class="target" id="classhelayers_1_1OpenFheCkksContext"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OpenFheCkksContext</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="OpenFheContext.html#_CPPv4N8helayers14OpenFheContextE" title="helayers::OpenFheContext"><span class="n"><span class="pre">OpenFheContext</span></span></a><a class="headerlink" href="#_CPPv4N8helayers18OpenFheCkksContextE" title="Permalink to this definition">#</a><br /></dt>
@@ -661,6 +686,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.OpenFheCkksContext"><code class="docutils literal notranslate"><span class="pre">OpenFheCkksContext</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.OpenFheCkksContext.init"><code class="docutils literal notranslate"><span class="pre">OpenFheCkksContext.init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

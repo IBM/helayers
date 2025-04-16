@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>OpenFheContext &#8212; HElayers 1.5.5.0 documentation</title>
+    <title>OpenFheContext &#8212; HElayers 1.5.5.1 documentation</title>
   
   
   
@@ -218,6 +218,10 @@ document.write(`
     </div>
   
 
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
   
 </div>
 
@@ -522,7 +526,26 @@ document.write(`
   <section id="openfhecontext">
 <h1>OpenFheContext<a class="headerlink" href="#openfhecontext" title="Permalink to this heading">#</a></h1>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><p>Currently, this API is unsupported in Python</p>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.OpenFheContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OpenFheContext</span></span><a class="headerlink" href="#pyhelayers.OpenFheContext" title="Permalink to this definition">#</a></dt>
+<dd><p>An abstract class for all OpenFHE context classes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.OpenFheContext.clear_all_contexts">
+<span class="sig-name descname"><span class="pre">clear_all_contexts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.OpenFheContext.clear_all_contexts" title="Permalink to this definition">#</a></dt>
+<dd><p>Clears all global OpenFHE context objects from memory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.OpenFheContext.clear_keys">
+<span class="sig-name descname"><span class="pre">clear_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.OpenFheContext" title="pyhelayers.OpenFheContext"><span class="pre">pyhelayers.OpenFheContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.OpenFheContext.clear_keys" title="Permalink to this definition">#</a></dt>
+<dd><p>Clears the multiplication and rotation keys from memory. In OpenFHE,
+the context object is global, and public keys are not cleared unless
+explicitly asked for.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8helayers14OpenFheContextE">
 <span id="_CPPv3N8helayers14OpenFheContextE"></span><span id="_CPPv2N8helayers14OpenFheContextE"></span><span id="helayers::OpenFheContext"></span><span class="target" id="classhelayers_1_1OpenFheContext"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OpenFheContext</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><a class="headerlink" href="#_CPPv4N8helayers14OpenFheContextE" title="Permalink to this definition">#</a><br /></dt>
@@ -742,6 +765,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.OpenFheContext"><code class="docutils literal notranslate"><span class="pre">OpenFheContext</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.OpenFheContext.clear_all_contexts"><code class="docutils literal notranslate"><span class="pre">OpenFheContext.clear_all_contexts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.OpenFheContext.clear_keys"><code class="docutils literal notranslate"><span class="pre">OpenFheContext.clear_keys()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
