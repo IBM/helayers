@@ -1,26 +1,78 @@
-# HElayers
+# HElayers Blog
 
-## Scope
+Welcome to the official blog repository for **HElayers** — a high-performance library for privacy-preserving computation using Homomorphic Encryption (HE).
 
-IBM HElayers is software development kit (SDK) for the practical and efficient
-execution of encrypted workloads using fully homomorphic encrypted data.
-HElayers is designed to enable application developers and data scientists to
-seamlessly apply advanced privacy preserving techniques without requiring
-specialized skills in cryptography.
+This repository hosts technical articles, related to HElayers and privacy-preserving machine learning.
 
-HElayers now powers [IBM's FHE Cloud Service](https://he4cloud.com/public/), a
-beta cloud service that enables data scientists and developers to deploy
-privacy preserving machine learning driven Software-as-a-Service (SaaS)
-applications in the Cloud.
+---
 
-## Usage
+## What is HElayers?
 
-Please refer to the [HElayers website](https://ibm.github.io/helayers/).
+**HElayers** is an advanced software library designed to enable secure computation over encrypted data using homomorphic encryption. It allows developers and researchers to:
 
-## License
+- Perform computations directly on encrypted data  
+- Build privacy-preserving machine learning workflows  
+- Integrate secure inference into real-world systems  
+- Deploy encrypted analytics pipelines  
 
-HElayers is provided under a community edition license for non-commercial use;
-see [license](https://ibm.ent.box.com/s/zfl6rt2p09811nyy8yow8t3mpsmkmsw6). For
-commercial deployments and access to the source code, please contact
-[chamliam@ie.ibm.com](mailto:chamliam@ie.ibm.com) for the Premium Edition
-license.
+HElayers is suitable for researchers, engineers, and organizations building secure AI and confidential data processing solutions.
+
+---
+
+## Download HElayers
+
+HElayers can be downloaded from the official IBM Research page:
+
+- IBM Research – HElayers: https://research.ibm.com  
+- GitHub repository (if applicable): https://github.com  
+
+---
+
+## Blog Posts
+
+- [Getting Started with HElayers](./getting-started/)
+- [Running Secure Inference with Encrypted Models](./secure-inference/)
+- [Performance Optimization Techniques](./performance-optimization/)
+- [Architecture Overview](./architecture/)
+- [HElayers and Privacy-Preserving AI](./privacy-ai/)
+
+---
+
+## Who Is This Blog For?
+
+This blog is intended for:
+
+- Cryptography researchers  
+- Privacy-preserving ML practitioners  
+- Security engineers  
+- Developers integrating homomorphic encryption into applications  
+- Organizations evaluating confidential computing technologies  
+
+---
+
+## Topics Covered
+
+- Homomorphic Encryption (HE)  
+- Secure Machine Learning  
+- Encrypted Inference  
+- System Architecture  
+- Performance Engineering  
+- Deployment Strategies  
+- Practical Implementation Examples  
+
+---
+
+
+Each blog directory contains its own Markdown content and related assets.
+
+---
+
+## Contact
+
+For questions about HElayers, collaborations, or technical support, please contact Omri.Soceanu at il.ibm.com
+
+---
+
+© IBM Research – HElayers
+
+
