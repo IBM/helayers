@@ -29,7 +29,7 @@ HElayers can be downloaded from IBM's official github page:
 
 ## Blog Posts
 
-- [IBM researchers to publish FHE challenges on the FHERma platform](./fherma/index.html)
+- [IBM researchers to publish FHE challenges on the FHERma platform](https://ibm.github.io/helayers/fherma/)
 - [Getting Started with HElayers](./getting-started/)
 - [Running Secure Inference with Encrypted Models](./secure-inference/)
 - [Performance Optimization Techniques](./performance-optimization/)
