@@ -21,15 +21,15 @@ HElayers is suitable for researchers, engineers, and organizations building secu
 
 ## Download HElayers
 
-HElayers can be downloaded from the official IBM Research page:
+HElayers can be downloaded from IBM's official github page:
 
-- IBM Research – HElayers: https://research.ibm.com  
-- GitHub repository (if applicable): https://github.com  
+- IBM Research – HElayers: https://ibm.github.io/helayers/
 
 ---
 
 ## Blog Posts
 
+- [IBM researchers to publish FHE challenges on the FHERma platform](./fherma/index.html)
 - [Getting Started with HElayers](./getting-started/)
 - [Running Secure Inference with Encrypted Models](./secure-inference/)
 - [Performance Optimization Techniques](./performance-optimization/)
