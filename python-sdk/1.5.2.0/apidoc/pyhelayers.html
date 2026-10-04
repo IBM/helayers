@@ -1,0 +1,871 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyhelayers &#8212; pyhelayers 1.5.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidoc/pyhelayers';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html" />
+    <link rel="prev" title="pyhelayers API" href="../api.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">pyhelayers 1.5.2.0 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">pyhelayers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html">pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.get_print_options.html">pyhelayers.get_print_options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_encrypted_data.html">pyhelayers.load_encrypted_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context.html">pyhelayers.load_he_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context_from_file.html">pyhelayers.load_he_context_from_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_model.html">pyhelayers.load_he_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_io_processor.html">pyhelayers.load_io_processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.prepare_default_plain_blocks_for_aes_encryption.html">pyhelayers.prepare_default_plain_blocks_for_aes_encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.set_neural_net_verbosity_level.html">pyhelayers.set_neural_net_verbosity_level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ActionType.html">pyhelayers.ActionType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AesKey.html">pyhelayers.AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AggregatorPsiManager.html">pyhelayers.AggregatorPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Arima.html">pyhelayers.Arima</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ArimaPlain.html">pyhelayers.ArimaPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.BootstrapConfig.html">pyhelayers.BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTile.html">pyhelayers.CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensor.html">pyhelayers.CTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensorVector.html">pyhelayers.CTileTensorVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileVector.html">pyhelayers.CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ComparisonType.html">pyhelayers.ComparisonType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ConjugationSupport.html">pyhelayers.ConjugationSupport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Crf.html">pyhelayers.Crf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CrfPlain.html">pyhelayers.CrfPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DefaultContext.html">pyhelayers.DefaultContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DeviceType.html">pyhelayers.DeviceType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DoubleTensor.html">pyhelayers.DoubleTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Encoder.html">pyhelayers.Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedBatch.html">pyhelayers.EncryptedBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedData.html">pyhelayers.EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EvalType.html">pyhelayers.EvalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Field.html">pyhelayers.Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldType.html">pyhelayers.FieldType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldVector.html">pyhelayers.FieldVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FileStorage.html">pyhelayers.FileStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FitHyperParams.html">pyhelayers.FitHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FunctionEvaluator.html">pyhelayers.FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeConfigRequirement.html">pyhelayers.HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeContext.html">pyhelayers.HeContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModel.html">pyhelayers.HeModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModelRunner.html">pyhelayers.HeModelRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeProfile.html">pyhelayers.HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeRunRequirements.html">pyhelayers.HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeTraits.html">pyhelayers.HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeaanContext.html">pyhelayers.HeaanContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibBgvContext.html">pyhelayers.HelibBgvContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibCkksContext.html">pyhelayers.HelibCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibConfig.html">pyhelayers.HelibConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibContext.html">pyhelayers.HelibContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibPreset.html">pyhelayers.HelibPreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeans.html">pyhelayers.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeansPlain.html">pyhelayers.KMeansPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LRActivation.html">pyhelayers.LRActivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LattigoContext.html">pyhelayers.LattigoContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegression.html">pyhelayers.LogisticRegression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegressionPlain.html">pyhelayers.LogisticRegressionPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ModelIoProcessor.html">pyhelayers.ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NativeFunctionEvaluator.html">pyhelayers.NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNet.html">pyhelayers.NeuralNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetConfig.html">pyhelayers.NeuralNetConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetPlain.html">pyhelayers.NeuralNetPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberConfig.html">pyhelayers.NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSigned.html">pyhelayers.NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSize.html">pyhelayers.NumberSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.OptimizationTarget.html">pyhelayers.OptimizationTarget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTile.html">pyhelayers.PTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTileTensor.html">pyhelayers.PTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Padding2d.html">pyhelayers.Padding2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModel.html">pyhelayers.PlainModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModelHyperParams.html">pyhelayers.PlainModelHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PrintOptions.html">pyhelayers.PrintOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PublicFunctions.html">pyhelayers.PublicFunctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PythonBackedStorage.html">pyhelayers.PythonBackedStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageConfig.html">pyhelayers.RecordLinkageConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageManager.html">pyhelayers.RecordLinkageManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkagePackage.html">pyhelayers.RecordLinkagePackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRule.html">pyhelayers.RecordLinkageRule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRuleType.html">pyhelayers.RecordLinkageRuleType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RotationSetType.html">pyhelayers.RotationSetType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RtsPsiManager.html">pyhelayers.RtsPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.SealCkksContext.html">pyhelayers.SealCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Storage.html">pyhelayers.Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTDim.html">pyhelayers.TTDim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTEncoder.html">pyhelayers.TTEncoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTFunctionEvaluator.html">pyhelayers.TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTShape.html">pyhelayers.TTShape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Table.html">pyhelayers.Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Tile.html">pyhelayers.Tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TileTensor.html">pyhelayers.TileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Verbosity.html">pyhelayers.Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoost.html">pyhelayers.XGBoost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoostPlain.html">pyhelayers.XGBoostPlain</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.ext.html">pyhelayers.ext</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.MODEL_ARCH.html">pyhelayers.ext.MODEL_ARCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.pyfhe.html">pyhelayers.ext.pyfhe</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.html">pyhelayers.ext.pyfhecommon</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.abstractmethod.html">pyhelayers.ext.pyfhecommon.abstractmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.ABC.html">pyhelayers.ext.pyfhecommon.ABC</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.html">pyhelayers.ext.pyfhemlimpl</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.pyfheml.html">pyhelayers.ext.pyfhemlimpl.pyfheml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.utils.html">pyhelayers.ext.utils</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.end_timer.html">pyhelayers.ext.utils.end_timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.extract_batch.html">pyhelayers.ext.utils.extract_batch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.report_duration.html">pyhelayers.ext.utils.report_duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.start_timer.html">pyhelayers.ext.utils.start_timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.html">pyhelayers.mltoolbox</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.html">pyhelayers.mltoolbox.arguments</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html">pyhelayers.mltoolbox.arguments.Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.html">pyhelayers.mltoolbox.data_loader</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.cifar10_dataset.html">pyhelayers.mltoolbox.data_loader.cifar10_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidCT_dataset.html">pyhelayers.mltoolbox.data_loader.covidCT_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidXray_dataset.html">pyhelayers.mltoolbox.data_loader.covidXray_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.dataset_wrapper.html">pyhelayers.mltoolbox.data_loader.dataset_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.ds_factory.html">pyhelayers.mltoolbox.data_loader.ds_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.places205_dataset.html">pyhelayers.mltoolbox.data_loader.places205_dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint.html">pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed.html">pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point.html">pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau.html">pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace.html">pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.html">pyhelayers.mltoolbox.he_dl_lib</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.distillation.html">pyhelayers.mltoolbox.he_dl_lib.distillation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.my_logger.html">pyhelayers.mltoolbox.he_dl_lib.my_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.poly_activations.html">pyhelayers.mltoolbox.he_dl_lib.poly_activations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.singleton.html">pyhelayers.mltoolbox.he_dl_lib.singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.timers.html">pyhelayers.mltoolbox.he_dl_lib.timers</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.model.html">pyhelayers.mltoolbox.model</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.DNN_factory.html">pyhelayers.mltoolbox.model.DNN_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.alexnet_fhe.html">pyhelayers.mltoolbox.model.alexnet_fhe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.lenet5.html">pyhelayers.mltoolbox.model.lenet5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.nn_module.html">pyhelayers.mltoolbox.model.nn_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenet.html">pyhelayers.mltoolbox.model.squeezenet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenetchet.html">pyhelayers.mltoolbox.model.squeezenetchet</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.html">pyhelayers.mltoolbox.trainer</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.accuracy.html">pyhelayers.mltoolbox.trainer.accuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_logger.html">pyhelayers.mltoolbox.trainer.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_model_by_name.html">pyhelayers.mltoolbox.trainer.get_model_by_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_optimizer.html">pyhelayers.mltoolbox.trainer.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.load_checkpoint.html">pyhelayers.mltoolbox.trainer.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.make_confusion_matrix.html">pyhelayers.mltoolbox.trainer.make_confusion_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.nd_loss.html">pyhelayers.mltoolbox.trainer.nd_loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.print_summary.html">pyhelayers.mltoolbox.trainer.print_summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.top_k_acc.html">pyhelayers.mltoolbox.trainer.top_k_acc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidCTDataset.html">pyhelayers.mltoolbox.trainer.CovidCTDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidXrayDataset.html">pyhelayers.mltoolbox.trainer.CovidXrayDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DDP.html">pyhelayers.mltoolbox.trainer.DDP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DataLoader.html">pyhelayers.mltoolbox.trainer.DataLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DistributedSampler.html">pyhelayers.mltoolbox.trainer.DistributedSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.SimpleNamespace.html">pyhelayers.mltoolbox.trainer.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.Trainer.html">pyhelayers.mltoolbox.trainer.Trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.places205Dataset.html">pyhelayers.mltoolbox.trainer.places205Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.tqdm.html">pyhelayers.mltoolbox.trainer.tqdm</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.utils.html">pyhelayers.mltoolbox.utils</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.cf_matrix.html">pyhelayers.mltoolbox.utils.cf_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.metrics_tracker.html">pyhelayers.mltoolbox.utils.metrics_tracker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.training_debug.html">pyhelayers.mltoolbox.utils.training_debug</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.util.html">pyhelayers.mltoolbox.utils.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="module-pyhelayers">
+<span id="pyhelayers"></span><h1>pyhelayers<a class="headerlink" href="#module-pyhelayers" title="Permalink to this heading">#</a></h1>
+<p>IBM HElayers is a software development kit (SDK) for the practical and
+efficient execution of encrypted workloads using fully homomorphic encrypted
+data. HElayers is designed to enable application developers and data scientists
+to seamlessly apply advanced privacy-preserving techniques without requiring
+specialized skills in cryptography.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html#pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe" title="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decrypt_default_aes_encrypted_blocks_under_fhe</span></code></a></p></td>
+<td><p>Decrypts the given AES-encrypted blocks, running the AES-decryption under FHE given an FHE-encrypted AES secret key.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.get_print_options.html#pyhelayers.get_print_options" title="pyhelayers.get_print_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_print_options</span></code></a></p></td>
+<td><p>Returns global print options.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.load_encrypted_data.html#pyhelayers.load_encrypted_data" title="pyhelayers.load_encrypted_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_encrypted_data</span></code></a></p></td>
+<td><p>Loads encrypted data (a CTileTensor object) from the given buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.load_he_context.html#pyhelayers.load_he_context" title="pyhelayers.load_he_context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_he_context</span></code></a></p></td>
+<td><p>Loads a context object from the given buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.load_he_context_from_file.html#pyhelayers.load_he_context_from_file" title="pyhelayers.load_he_context_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_he_context_from_file</span></code></a></p></td>
+<td><p>Loads a context object from the given file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.load_he_model.html#pyhelayers.load_he_model" title="pyhelayers.load_he_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_he_model</span></code></a></p></td>
+<td><p>Loads an HeModel from the given buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.load_io_processor.html#pyhelayers.load_io_processor" title="pyhelayers.load_io_processor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_io_processor</span></code></a></p></td>
+<td><p>Loads a ModelIoProcessor object from the given buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.prepare_default_plain_blocks_for_aes_encryption.html#pyhelayers.prepare_default_plain_blocks_for_aes_encryption" title="pyhelayers.prepare_default_plain_blocks_for_aes_encryption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_default_plain_blocks_for_aes_encryption</span></code></a></p></td>
+<td><p>Arranges the given inputs, containing tensors with numbers, into blocks of bytes to be encrypted under AES.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.set_neural_net_verbosity_level.html#pyhelayers.set_neural_net_verbosity_level" title="pyhelayers.set_neural_net_verbosity_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_neural_net_verbosity_level</span></code></a></p></td>
+<td><p>Sets the verbosity level of messages printed when executing operations on NeuralNet objects.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.ActionType.html#pyhelayers.ActionType" title="pyhelayers.ActionType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ActionType</span></code></a></p></td>
+<td><p>Action types for Tile Tensor dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.AesKey.html#pyhelayers.AesKey" title="pyhelayers.AesKey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AesKey</span></code></a></p></td>
+<td><p>A class to hold the AES secret key encrypted under FHE, required for decrpytion of AES ciphertexts under FHE.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.AggregatorPsiManager.html#pyhelayers.AggregatorPsiManager" title="pyhelayers.AggregatorPsiManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AggregatorPsiManager</span></code></a></p></td>
+<td><p>Aggregator side of the PSI for federated learning module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Arima.html#pyhelayers.Arima" title="pyhelayers.Arima"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Arima</span></code></a></p></td>
+<td><p>An FHE implementation of an Arima(1,1,1) time series prediction model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.ArimaPlain.html#pyhelayers.ArimaPlain" title="pyhelayers.ArimaPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ArimaPlain</span></code></a></p></td>
+<td><p>A class representing a plaintext Arima model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.BootstrapConfig.html#pyhelayers.BootstrapConfig" title="pyhelayers.BootstrapConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BootstrapConfig</span></code></a></p></td>
+<td><p>A configuration of the Bootstrap process via various parameter setups.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.CTile.html#pyhelayers.CTile" title="pyhelayers.CTile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTile</span></code></a></p></td>
+<td><p>A class representing a ciphertext.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.CTileTensor.html#pyhelayers.CTileTensor" title="pyhelayers.CTileTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTileTensor</span></code></a></p></td>
+<td><p>An encrypted tile tensor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.CTileTensorVector.html#pyhelayers.CTileTensorVector" title="pyhelayers.CTileTensorVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTileTensorVector</span></code></a></p></td>
+<td><p>A vector (list) of CTileTensor objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.CTileVector.html#pyhelayers.CTileVector" title="pyhelayers.CTileVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTileVector</span></code></a></p></td>
+<td><p>A vector (list) of CTile objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.ComparisonType.html#pyhelayers.ComparisonType" title="pyhelayers.ComparisonType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComparisonType</span></code></a></p></td>
+<td><p>Comparison types for <a class="reference internal" href="pyhelayers.Table.html#pyhelayers.Table" title="pyhelayers.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a> queries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.ConjugationSupport.html#pyhelayers.ConjugationSupport" title="pyhelayers.ConjugationSupport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConjugationSupport</span></code></a></p></td>
+<td><p>A type describing the set of rotations supported</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.Crf.html#pyhelayers.Crf" title="pyhelayers.Crf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Crf</span></code></a></p></td>
+<td><p>a FHE implementation of Completley Random Forest.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.CrfPlain.html#pyhelayers.CrfPlain" title="pyhelayers.CrfPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrfPlain</span></code></a></p></td>
+<td><p>Plaintext implementation of Completely Random Forest model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.DefaultContext.html#pyhelayers.DefaultContext" title="pyhelayers.DefaultContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DefaultContext</span></code></a></p></td>
+<td><p>alias of <a class="reference internal" href="pyhelayers.SealCkksContext.html#pyhelayers.SealCkksContext" title="pyhelayers.libs.pyhelayers_cppwrappers.SealCkksContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">SealCkksContext</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.DeviceType.html#pyhelayers.DeviceType" title="pyhelayers.DeviceType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DeviceType</span></code></a></p></td>
+<td><p>Device types for CTile/PTile compute.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.DoubleTensor.html#pyhelayers.DoubleTensor" title="pyhelayers.DoubleTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DoubleTensor</span></code></a></p></td>
+<td><p>A thin wrapper over a boost::numeric::ublas::tensor&lt;double&gt; object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Encoder.html#pyhelayers.Encoder" title="pyhelayers.Encoder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Encoder</span></code></a></p></td>
+<td><p>A class used to encode, encrypt, decode and decrypt ciphertexts and plaintexts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.EncryptedBatch.html#pyhelayers.EncryptedBatch" title="pyhelayers.EncryptedBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EncryptedBatch</span></code></a></p></td>
+<td><p>A class to hold an encrypted batch of element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EncryptedData</span></code></a></p></td>
+<td><p>A class to hold encrypted data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.EvalType.html#pyhelayers.EvalType" title="pyhelayers.EvalType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvalType</span></code></a></p></td>
+<td><p>This type is used to specify a polynomial evaluation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Field.html#pyhelayers.Field" title="pyhelayers.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Field</span></code></a></p></td>
+<td><p>This class holds one or more CTiles that represent the values of a specific data base entry for a batch of records whose size is equal to the number of slots available in the used HeContext.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.FieldType.html#pyhelayers.FieldType" title="pyhelayers.FieldType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldType</span></code></a></p></td>
+<td><p>Type of field in an encrypted database (Table).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.FieldVector.html#pyhelayers.FieldVector" title="pyhelayers.FieldVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldVector</span></code></a></p></td>
+<td><p>Vector (list) of fields for encrypted database (<a class="reference internal" href="pyhelayers.Table.html#pyhelayers.Table" title="pyhelayers.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.FileStorage.html#pyhelayers.FileStorage" title="pyhelayers.FileStorage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FileStorage</span></code></a></p></td>
+<td><p>A file system implementation of Storage</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.FitHyperParams.html#pyhelayers.FitHyperParams" title="pyhelayers.FitHyperParams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FitHyperParams</span></code></a></p></td>
+<td><p>Hyper parameters common to most fitting algorithms</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.FunctionEvaluator.html#pyhelayers.FunctionEvaluator" title="pyhelayers.FunctionEvaluator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FunctionEvaluator</span></code></a></p></td>
+<td><p>This class is used to evaluate different available functions on CTiles, such as approximate inverse function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.HeConfigRequirement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeConfigRequirement</span></code></a></p></td>
+<td><p>A class used to construct an HeContext with certain requirements (e.g.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeContext</span></code></a></p></td>
+<td><p>An abstract main class representing an underlying HE library &amp; scheme, configured, initialized, and ready to start working.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HeModel.html#pyhelayers.HeModel" title="pyhelayers.HeModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeModel</span></code></a></p></td>
+<td><p>A class to represent an AI model that is encoded and possibly encrypted under HE, that supports running an inference and possibly training process.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HeModelRunner.html#pyhelayers.HeModelRunner" title="pyhelayers.HeModelRunner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeModelRunner</span></code></a></p></td>
+<td><p>Utility class for easily evaluating the performance of AI models under encryption</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HeProfile.html#pyhelayers.HeProfile" title="pyhelayers.HeProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeProfile</span></code></a></p></td>
+<td><p>A class to hold a complete HE profile of a given model run, including the requirements it takes from the HE context to be init with, the tile layout and some estimated measurements with respect to its run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HeRunRequirements.html#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeRunRequirements</span></code></a></p></td>
+<td><p>A class to describe all the user requirements for running a model with respect to the library, packaging considerations and computational performance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HeTraits.html#pyhelayers.HeTraits" title="pyhelayers.HeTraits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeTraits</span></code></a></p></td>
+<td><p>A set of flags characterizing the underyling HE scheme.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HeaanContext.html#pyhelayers.HeaanContext" title="pyhelayers.HeaanContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeaanContext</span></code></a></p></td>
+<td><p>An implementation of HeContext using the HEaaN CKKS backend.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HelibBgvContext.html#pyhelayers.HelibBgvContext" title="pyhelayers.HelibBgvContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HelibBgvContext</span></code></a></p></td>
+<td><p>An implementation of HeContext using the HElib BGV backend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HelibCkksContext.html#pyhelayers.HelibCkksContext" title="pyhelayers.HelibCkksContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HelibCkksContext</span></code></a></p></td>
+<td><p>An implementation of HeContext using the HElib CKKS backend.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HelibConfig.html#pyhelayers.HelibConfig" title="pyhelayers.HelibConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HelibConfig</span></code></a></p></td>
+<td><p>A class for holding HElib configuration parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.HelibContext.html#pyhelayers.HelibContext" title="pyhelayers.HelibContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HelibContext</span></code></a></p></td>
+<td><p>An implementation of HeContext API with concrete subclasses for HElib scheme.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.HelibPreset.html#pyhelayers.HelibPreset" title="pyhelayers.HelibPreset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HelibPreset</span></code></a></p></td>
+<td><p>Configuration presets for HElib context.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.KMeans.html#pyhelayers.KMeans" title="pyhelayers.KMeans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KMeans</span></code></a></p></td>
+<td><p>An encrypted KMeans model that supports calculating distances from all means.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.KMeansPlain.html#pyhelayers.KMeansPlain" title="pyhelayers.KMeansPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KMeansPlain</span></code></a></p></td>
+<td><p>A plaintext representation of a KMeans model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.LRActivation.html#pyhelayers.LRActivation" title="pyhelayers.LRActivation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LRActivation</span></code></a></p></td>
+<td><p>Types of logistic regression activation functions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.LattigoContext.html#pyhelayers.LattigoContext" title="pyhelayers.LattigoContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LattigoContext</span></code></a></p></td>
+<td><p>An implementation of HeContext using the Lattigo backend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.LogisticRegression.html#pyhelayers.LogisticRegression" title="pyhelayers.LogisticRegression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a></p></td>
+<td><p>An encrypted logistic regression model that supports training and inference.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.LogisticRegressionPlain.html#pyhelayers.LogisticRegressionPlain" title="pyhelayers.LogisticRegressionPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LogisticRegressionPlain</span></code></a></p></td>
+<td><p>A plaintext representation of a LogisticRegression model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.ModelIoProcessor.html#pyhelayers.ModelIoProcessor" title="pyhelayers.ModelIoProcessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelIoProcessor</span></code></a></p></td>
+<td><p>A class to handle the IO of an HE model, mainly, encoding and encrypting the inputs to be used for predict and fit, and decrypting and decoding the outputs of predict.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.NativeFunctionEvaluator.html#pyhelayers.NativeFunctionEvaluator" title="pyhelayers.NativeFunctionEvaluator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NativeFunctionEvaluator</span></code></a></p></td>
+<td><p>Class for holding functions supplied directly by underlying schemes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.NeuralNet.html#pyhelayers.NeuralNet" title="pyhelayers.NeuralNet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNet</span></code></a></p></td>
+<td><p>An encrypted neural network that supports inference, consists of various encrypted layers</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.NeuralNetConfig.html#pyhelayers.NeuralNetConfig" title="pyhelayers.NeuralNetConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetConfig</span></code></a></p></td>
+<td><p>Class to hold configuration details related to NN.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.NeuralNetPlain.html#pyhelayers.NeuralNetPlain" title="pyhelayers.NeuralNetPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetPlain</span></code></a></p></td>
+<td><p>A plaintext neural network that supports inference, consists of various plaintext layers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.NumberConfig.html#pyhelayers.NumberConfig" title="pyhelayers.NumberConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumberConfig</span></code></a></p></td>
+<td><p>A class to define the configuration of a number when represented in memory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.NumberSigned.html#pyhelayers.NumberSigned" title="pyhelayers.NumberSigned"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumberSigned</span></code></a></p></td>
+<td><p>Members:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.NumberSize.html#pyhelayers.NumberSize" title="pyhelayers.NumberSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumberSize</span></code></a></p></td>
+<td><p>Members:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.OptimizationTarget.html#pyhelayers.OptimizationTarget" title="pyhelayers.OptimizationTarget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptimizationTarget</span></code></a></p></td>
+<td><p>Target types for HeProfileOptimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.PTile.html#pyhelayers.PTile" title="pyhelayers.PTile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PTile</span></code></a></p></td>
+<td><p>A class representing an encoded (unencrypted) plaintext.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.PTileTensor.html#pyhelayers.PTileTensor" title="pyhelayers.PTileTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PTileTensor</span></code></a></p></td>
+<td><p>A plaintext tile tensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Padding2d.html#pyhelayers.Padding2d" title="pyhelayers.Padding2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Padding2d</span></code></a></p></td>
+<td><p>A structure that holds padding for a 2d array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.PlainModel.html#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PlainModel</span></code></a></p></td>
+<td><p>A plaintext representation of an ML model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.PlainModelHyperParams.html#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PlainModelHyperParams</span></code></a></p></td>
+<td><p>A struct for the hyperparameters of the plain AI model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.PrintOptions.html#pyhelayers.PrintOptions" title="pyhelayers.PrintOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrintOptions</span></code></a></p></td>
+<td><p>Options effecting printing of helayers object for debug purposes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.PublicFunctions.html#pyhelayers.PublicFunctions" title="pyhelayers.PublicFunctions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PublicFunctions</span></code></a></p></td>
+<td><p>A struct specifying the functionalities that should be supported by the public keys of an HeContext</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.PythonBackedStorage.html#pyhelayers.PythonBackedStorage" title="pyhelayers.PythonBackedStorage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PythonBackedStorage</span></code></a></p></td>
+<td><p>A class that allows hooking Python code to handle load and save operations to implement a custom storage engine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.RecordLinkageConfig.html#pyhelayers.RecordLinkageConfig" title="pyhelayers.RecordLinkageConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecordLinkageConfig</span></code></a></p></td>
+<td><p>RecordLinkageConfig class with record field definitions and various tunings of the Record-Linkage algorithm and heuristics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.RecordLinkageManager.html#pyhelayers.RecordLinkageManager" title="pyhelayers.RecordLinkageManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecordLinkageManager</span></code></a></p></td>
+<td><p>RecordLinkageManager class for managing the Privacy-Preserving Record-Linkage (PPRL) protocol.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.RecordLinkagePackage.html#pyhelayers.RecordLinkagePackage" title="pyhelayers.RecordLinkagePackage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecordLinkagePackage</span></code></a></p></td>
+<td><p>RecordLinkagePackage class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.RecordLinkageRule.html#pyhelayers.RecordLinkageRule" title="pyhelayers.RecordLinkageRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecordLinkageRule</span></code></a></p></td>
+<td><p>RecordLinkageRule class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.RecordLinkageRuleType.html#pyhelayers.RecordLinkageRuleType" title="pyhelayers.RecordLinkageRuleType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecordLinkageRuleType</span></code></a></p></td>
+<td><p>Rule types for the Privacy-Preserving Record-Linkage (PPRL) protocol.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.RotationSetType.html#pyhelayers.RotationSetType" title="pyhelayers.RotationSetType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RotationSetType</span></code></a></p></td>
+<td><p>A type describing the set of rotations supported</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.RtsPsiManager.html#pyhelayers.RtsPsiManager" title="pyhelayers.RtsPsiManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RtsPsiManager</span></code></a></p></td>
+<td><p>Client side of the PSI for federated learning module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.SealCkksContext.html#pyhelayers.SealCkksContext" title="pyhelayers.SealCkksContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SealCkksContext</span></code></a></p></td>
+<td><p>An implementation of HeContext using the SEAL CKKS backend.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Storage.html#pyhelayers.Storage" title="pyhelayers.Storage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Storage</span></code></a></p></td>
+<td><p>An abstract class that allows saving Savable objects to storage and loading them from storage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.TTDim.html#pyhelayers.TTDim" title="pyhelayers.TTDim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TTDim</span></code></a></p></td>
+<td><p>Specification of a single dimension in a tile tensor shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.TTEncoder.html#pyhelayers.TTEncoder" title="pyhelayers.TTEncoder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TTEncoder</span></code></a></p></td>
+<td><p>Encoder for tile tensors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.TTFunctionEvaluator.html#pyhelayers.TTFunctionEvaluator" title="pyhelayers.TTFunctionEvaluator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TTFunctionEvaluator</span></code></a></p></td>
+<td><p>This class is used to evaluate different available functions on CTileTensor objects, such as polynomial evaluation and sigmoid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.TTShape.html#pyhelayers.TTShape" title="pyhelayers.TTShape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TTShape</span></code></a></p></td>
+<td><p>Tile tensor shape.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.Table.html#pyhelayers.Table" title="pyhelayers.Table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></p></td>
+<td><p>A class representing an encrypted database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Tile.html#pyhelayers.Tile" title="pyhelayers.Tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tile</span></code></a></p></td>
+<td><p>A class representing a tile: a vector of numbers, either encrypted or encoded.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.TileTensor.html#pyhelayers.TileTensor" title="pyhelayers.TileTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TileTensor</span></code></a></p></td>
+<td><p>A plaintext tile tensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.Verbosity.html#pyhelayers.Verbosity" title="pyhelayers.Verbosity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Verbosity</span></code></a></p></td>
+<td><p>Verbosity levels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.XGBoost.html#pyhelayers.XGBoost" title="pyhelayers.XGBoost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XGBoost</span></code></a></p></td>
+<td><p>A class representing an encrypted model of XGBoost.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.XGBoostPlain.html#pyhelayers.XGBoostPlain" title="pyhelayers.XGBoostPlain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XGBoostPlain</span></code></a></p></td>
+<td><p>A class representing a plaintext XGBoost model</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Modules</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pyhelayers.ext.html#module-pyhelayers.ext" title="pyhelayers.ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyhelayers.ext</span></code></a></p></td>
+<td><p>pyhelayers.ext is an extension package on the base pyhelayers, that provides two main functionalities: an abstraction layer that simplifies usage of the original (pyhelayers) API, and an easy integration with scikit-learn/keras libraries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pyhelayers.mltoolbox.html#module-pyhelayers.mltoolbox" title="pyhelayers.mltoolbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyhelayers.mltoolbox</span></code></a></p></td>
+<td><p>pyhelayers MLToolbox contains a set of tools that make a model FHE-friendly, minimizing the possible drop in performance.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../api.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">pyhelayers API</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, IBM.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

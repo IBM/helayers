@@ -1,0 +1,1486 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyhelayers.HeaanContext &#8212; pyhelayers 1.5.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidoc/pyhelayers.HeaanContext';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyhelayers.HelibBgvContext" href="pyhelayers.HelibBgvContext.html" />
+    <link rel="prev" title="pyhelayers.HeTraits" href="pyhelayers.HeTraits.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">pyhelayers 1.5.2.0 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Installing pyhelayers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        pyhelayers API
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pyhelayers.html">pyhelayers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe.html">pyhelayers.decrypt_default_aes_encrypted_blocks_under_fhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.get_print_options.html">pyhelayers.get_print_options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_encrypted_data.html">pyhelayers.load_encrypted_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context.html">pyhelayers.load_he_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_context_from_file.html">pyhelayers.load_he_context_from_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_he_model.html">pyhelayers.load_he_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.load_io_processor.html">pyhelayers.load_io_processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.prepare_default_plain_blocks_for_aes_encryption.html">pyhelayers.prepare_default_plain_blocks_for_aes_encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.set_neural_net_verbosity_level.html">pyhelayers.set_neural_net_verbosity_level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ActionType.html">pyhelayers.ActionType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AesKey.html">pyhelayers.AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.AggregatorPsiManager.html">pyhelayers.AggregatorPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Arima.html">pyhelayers.Arima</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ArimaPlain.html">pyhelayers.ArimaPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.BootstrapConfig.html">pyhelayers.BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTile.html">pyhelayers.CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensor.html">pyhelayers.CTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileTensorVector.html">pyhelayers.CTileTensorVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CTileVector.html">pyhelayers.CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ComparisonType.html">pyhelayers.ComparisonType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ConjugationSupport.html">pyhelayers.ConjugationSupport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Crf.html">pyhelayers.Crf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.CrfPlain.html">pyhelayers.CrfPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DefaultContext.html">pyhelayers.DefaultContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DeviceType.html">pyhelayers.DeviceType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.DoubleTensor.html">pyhelayers.DoubleTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Encoder.html">pyhelayers.Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedBatch.html">pyhelayers.EncryptedBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EncryptedData.html">pyhelayers.EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.EvalType.html">pyhelayers.EvalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Field.html">pyhelayers.Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldType.html">pyhelayers.FieldType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FieldVector.html">pyhelayers.FieldVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FileStorage.html">pyhelayers.FileStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FitHyperParams.html">pyhelayers.FitHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.FunctionEvaluator.html">pyhelayers.FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeConfigRequirement.html">pyhelayers.HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeContext.html">pyhelayers.HeContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModel.html">pyhelayers.HeModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeModelRunner.html">pyhelayers.HeModelRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeProfile.html">pyhelayers.HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeRunRequirements.html">pyhelayers.HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HeTraits.html">pyhelayers.HeTraits</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyhelayers.HeaanContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibBgvContext.html">pyhelayers.HelibBgvContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibCkksContext.html">pyhelayers.HelibCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibConfig.html">pyhelayers.HelibConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibContext.html">pyhelayers.HelibContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.HelibPreset.html">pyhelayers.HelibPreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeans.html">pyhelayers.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.KMeansPlain.html">pyhelayers.KMeansPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LRActivation.html">pyhelayers.LRActivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LattigoContext.html">pyhelayers.LattigoContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegression.html">pyhelayers.LogisticRegression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.LogisticRegressionPlain.html">pyhelayers.LogisticRegressionPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.ModelIoProcessor.html">pyhelayers.ModelIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NativeFunctionEvaluator.html">pyhelayers.NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNet.html">pyhelayers.NeuralNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetConfig.html">pyhelayers.NeuralNetConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NeuralNetPlain.html">pyhelayers.NeuralNetPlain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberConfig.html">pyhelayers.NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSigned.html">pyhelayers.NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.NumberSize.html">pyhelayers.NumberSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.OptimizationTarget.html">pyhelayers.OptimizationTarget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTile.html">pyhelayers.PTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PTileTensor.html">pyhelayers.PTileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Padding2d.html">pyhelayers.Padding2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModel.html">pyhelayers.PlainModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PlainModelHyperParams.html">pyhelayers.PlainModelHyperParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PrintOptions.html">pyhelayers.PrintOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PublicFunctions.html">pyhelayers.PublicFunctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.PythonBackedStorage.html">pyhelayers.PythonBackedStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageConfig.html">pyhelayers.RecordLinkageConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageManager.html">pyhelayers.RecordLinkageManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkagePackage.html">pyhelayers.RecordLinkagePackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRule.html">pyhelayers.RecordLinkageRule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RecordLinkageRuleType.html">pyhelayers.RecordLinkageRuleType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RotationSetType.html">pyhelayers.RotationSetType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.RtsPsiManager.html">pyhelayers.RtsPsiManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.SealCkksContext.html">pyhelayers.SealCkksContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Storage.html">pyhelayers.Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTDim.html">pyhelayers.TTDim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTEncoder.html">pyhelayers.TTEncoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTFunctionEvaluator.html">pyhelayers.TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TTShape.html">pyhelayers.TTShape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Table.html">pyhelayers.Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Tile.html">pyhelayers.Tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.TileTensor.html">pyhelayers.TileTensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.Verbosity.html">pyhelayers.Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoost.html">pyhelayers.XGBoost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyhelayers.XGBoostPlain.html">pyhelayers.XGBoostPlain</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.ext.html">pyhelayers.ext</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.MODEL_ARCH.html">pyhelayers.ext.MODEL_ARCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.pyfhe.html">pyhelayers.ext.pyfhe</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.html">pyhelayers.ext.pyfhecommon</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.abstractmethod.html">pyhelayers.ext.pyfhecommon.abstractmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhecommon.ABC.html">pyhelayers.ext.pyfhecommon.ABC</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.html">pyhelayers.ext.pyfhemlimpl</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.pyfhemlimpl.pyfheml.html">pyhelayers.ext.pyfhemlimpl.pyfheml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyhelayers.ext.replace.html">pyhelayers.ext.replace</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.ext.utils.html">pyhelayers.ext.utils</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.end_timer.html">pyhelayers.ext.utils.end_timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.extract_batch.html">pyhelayers.ext.utils.extract_batch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.report_duration.html">pyhelayers.ext.utils.report_duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.ext.utils.start_timer.html">pyhelayers.ext.utils.start_timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.html">pyhelayers.mltoolbox</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.html">pyhelayers.mltoolbox.arguments</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.arguments.Arguments.html">pyhelayers.mltoolbox.arguments.Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.html">pyhelayers.mltoolbox.data_loader</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.cifar10_dataset.html">pyhelayers.mltoolbox.data_loader.cifar10_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidCT_dataset.html">pyhelayers.mltoolbox.data_loader.covidCT_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.covidXray_dataset.html">pyhelayers.mltoolbox.data_loader.covidXray_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.dataset_wrapper.html">pyhelayers.mltoolbox.data_loader.dataset_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.ds_factory.html">pyhelayers.mltoolbox.data_loader.ds_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.data_loader.places205_dataset.html">pyhelayers.mltoolbox.data_loader.places205_dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint.html">pyhelayers.mltoolbox.fhe_friendly_convertor.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed.html">pyhelayers.mltoolbox.fhe_friendly_convertor.set_seed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point.html">pyhelayers.mltoolbox.fhe_friendly_convertor.starting_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor.html">pyhelayers.mltoolbox.fhe_friendly_convertor.FheFriendlyConvertor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau.html">pyhelayers.mltoolbox.fhe_friendly_convertor.ReduceLROnPlateau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace.html">pyhelayers.mltoolbox.fhe_friendly_convertor.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer.html">pyhelayers.mltoolbox.fhe_friendly_convertor.Trainer</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.html">pyhelayers.mltoolbox.he_dl_lib</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.distillation.html">pyhelayers.mltoolbox.he_dl_lib.distillation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.my_logger.html">pyhelayers.mltoolbox.he_dl_lib.my_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.poly_activations.html">pyhelayers.mltoolbox.he_dl_lib.poly_activations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.singleton.html">pyhelayers.mltoolbox.he_dl_lib.singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.he_dl_lib.timers.html">pyhelayers.mltoolbox.he_dl_lib.timers</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.model.html">pyhelayers.mltoolbox.model</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.DNN_factory.html">pyhelayers.mltoolbox.model.DNN_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.alexnet_fhe.html">pyhelayers.mltoolbox.model.alexnet_fhe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.lenet5.html">pyhelayers.mltoolbox.model.lenet5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.nn_module.html">pyhelayers.mltoolbox.model.nn_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenet.html">pyhelayers.mltoolbox.model.squeezenet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.model.squeezenetchet.html">pyhelayers.mltoolbox.model.squeezenetchet</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.html">pyhelayers.mltoolbox.trainer</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.accuracy.html">pyhelayers.mltoolbox.trainer.accuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_logger.html">pyhelayers.mltoolbox.trainer.get_logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_model_by_name.html">pyhelayers.mltoolbox.trainer.get_model_by_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.get_optimizer.html">pyhelayers.mltoolbox.trainer.get_optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.load_checkpoint.html">pyhelayers.mltoolbox.trainer.load_checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.make_confusion_matrix.html">pyhelayers.mltoolbox.trainer.make_confusion_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.nd_loss.html">pyhelayers.mltoolbox.trainer.nd_loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.print_summary.html">pyhelayers.mltoolbox.trainer.print_summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.top_k_acc.html">pyhelayers.mltoolbox.trainer.top_k_acc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidCTDataset.html">pyhelayers.mltoolbox.trainer.CovidCTDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.CovidXrayDataset.html">pyhelayers.mltoolbox.trainer.CovidXrayDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DDP.html">pyhelayers.mltoolbox.trainer.DDP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DataLoader.html">pyhelayers.mltoolbox.trainer.DataLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.DistributedSampler.html">pyhelayers.mltoolbox.trainer.DistributedSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.SimpleNamespace.html">pyhelayers.mltoolbox.trainer.SimpleNamespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.Trainer.html">pyhelayers.mltoolbox.trainer.Trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.places205Dataset.html">pyhelayers.mltoolbox.trainer.places205Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.trainer.tqdm.html">pyhelayers.mltoolbox.trainer.tqdm</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pyhelayers.mltoolbox.utils.html">pyhelayers.mltoolbox.utils</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.cf_matrix.html">pyhelayers.mltoolbox.utils.cf_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.metrics_tracker.html">pyhelayers.mltoolbox.utils.metrics_tracker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.training_debug.html">pyhelayers.mltoolbox.utils.training_debug</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyhelayers.mltoolbox.utils.util.html">pyhelayers.mltoolbox.utils.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="pyhelayers-heaancontext">
+<h1>pyhelayers.HeaanContext<a class="headerlink" href="#pyhelayers-heaancontext" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeaanContext</span></span><a class="headerlink" href="#pyhelayers.HeaanContext" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">HeContext</span></code></a></p>
+<p>An implementation of HeContext using the HEaaN CKKS backend.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeaanContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeaanContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.__init__" title="pyhelayers.HeaanContext.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.clone" title="pyhelayers.HeaanContext.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone</span></code></a>(self)</p></td>
+<td><p>Returns an uninitialized context of the same type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.create" title="pyhelayers.HeaanContext.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_automatic_bootstrapping" title="pyhelayers.HeaanContext.get_automatic_bootstrapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_automatic_bootstrapping</span></code></a>(self)</p></td>
+<td><p>Returns the value of the automaticBootstrapping flag</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_context_id" title="pyhelayers.HeaanContext.get_context_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_context_id</span></code></a>(self)</p></td>
+<td><p>Returns the context id that identifies the specific key set used by this context.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_default_device" title="pyhelayers.HeaanContext.get_default_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_device</span></code></a>(self)</p></td>
+<td><p>Returns the default device of the ciphertexts and plaintexts generated using this HeContext.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_default_scale" title="pyhelayers.HeaanContext.get_default_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_scale</span></code></a>(self)</p></td>
+<td><p>Returns default scale used in encoding (where applicable).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_library_name" title="pyhelayers.HeaanContext.get_library_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_library_name</span></code></a>(self)</p></td>
+<td><p>Returns the name of the underlying library.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_modulus_chain" title="pyhelayers.HeaanContext.get_modulus_chain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_modulus_chain</span></code></a>(self)</p></td>
+<td><p>Returns the modulus chain: the value of each prime in the chain (where applicable).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_public_functions" title="pyhelayers.HeaanContext.get_public_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_public_functions</span></code></a>(self)</p></td>
+<td><p>Returns a PublicFunctions object specifying the functionalities that are supported by the public keys of this HeContext</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_scheme_name" title="pyhelayers.HeaanContext.get_scheme_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scheme_name</span></code></a>(self)</p></td>
+<td><p>Returns the name of the underlying scheme.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_security_level" title="pyhelayers.HeaanContext.get_security_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_security_level</span></code></a>(self)</p></td>
+<td><p>Returns the security level supplied by this context.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_signature" title="pyhelayers.HeaanContext.get_signature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_signature</span></code></a>(self)</p></td>
+<td><p>Returns a signature of the context that distinguishes it enough to be able to load previously stored contexts based on their signatures.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_top_chain_index" title="pyhelayers.HeaanContext.get_top_chain_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_top_chain_index</span></code></a>(self)</p></td>
+<td><p>Returns the highest available chain index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.get_traits" title="pyhelayers.HeaanContext.get_traits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_traits</span></code></a>(self)</p></td>
+<td><p>Returns an HeTraits object containing various properties of the underlying scheme.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.has_secret_key" title="pyhelayers.HeaanContext.has_secret_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_secret_key</span></code></a>(self)</p></td>
+<td><p>Returns whether this context contains a secret key.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.init" title="pyhelayers.HeaanContext.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(self, req)</p></td>
+<td><p>Initializes this HeaanContext according the given requirement.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.is_registered_context" title="pyhelayers.HeaanContext.is_registered_context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_registered_context</span></code></a>(context_name)</p></td>
+<td><p>Returns indication to whether a registered context exists under a given context name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.load_from_buffer" title="pyhelayers.HeaanContext.load_from_buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_buffer</span></code></a>(self, buf)</p></td>
+<td><p>Loads this HeContext from a buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.load_from_file" title="pyhelayers.HeaanContext.load_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_file</span></code></a>(self, file_name)</p></td>
+<td><p>Loads this HeContext from a file saved by save_to_file().</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.load_secret_key" title="pyhelayers.HeaanContext.load_secret_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_secret_key</span></code></a>(self, buf[, seed_only])</p></td>
+<td><p>Load secret key from a buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.load_secret_key_from_file" title="pyhelayers.HeaanContext.load_secret_key_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_secret_key_from_file</span></code></a>(self, file_name[, ...])</p></td>
+<td><p>Loads context saved by the saveToFile() method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.print_signature" title="pyhelayers.HeaanContext.print_signature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_signature</span></code></a>(self)</p></td>
+<td><p>Prints a summary of library details and configuration params.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.public_functions_supported" title="pyhelayers.HeaanContext.public_functions_supported"><code class="xref py py-obj docutils literal notranslate"><span class="pre">public_functions_supported</span></code></a>(self, ...)</p></td>
+<td><p>Returns whether the given PublicFunctions object is supported by this HeContext.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.save_secret_key" title="pyhelayers.HeaanContext.save_secret_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_secret_key</span></code></a>(self[, seed_only])</p></td>
+<td><p>Save secret key into a buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.save_secret_key_to_file" title="pyhelayers.HeaanContext.save_secret_key_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_secret_key_to_file</span></code></a>(self, file_name[, ...])</p></td>
+<td><p>Save secret key to the given file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.save_to_buffer" title="pyhelayers.HeaanContext.save_to_buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_to_buffer</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.save_to_file" title="pyhelayers.HeaanContext.save_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_to_file</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.set_automatic_bootstrapping" title="pyhelayers.HeaanContext.set_automatic_bootstrapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_automatic_bootstrapping</span></code></a>(self, v)</p></td>
+<td><p>Sets the automaticBootstrapping flag to the given v.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.set_default_device" title="pyhelayers.HeaanContext.set_default_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default_device</span></code></a>(self, device)</p></td>
+<td><p>Sets the default device of the ciphertexts and plaintexts generated using this HeContext.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.set_default_scale" title="pyhelayers.HeaanContext.set_default_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default_scale</span></code></a>(self, v)</p></td>
+<td><p>Sets the default scale to be used in encoding (where applicable)..</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.slot_count" title="pyhelayers.HeaanContext.slot_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slot_count</span></code></a>(self)</p></td>
+<td><p>The number of slots in each CTile (ciphertext) or PTile (plaintext) created over this context.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyhelayers.HeaanContext.to_string" title="pyhelayers.HeaanContext.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self, verbosity)</p></td>
+<td><p>Convert object to string.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.clone" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns an uninitialized context of the same type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeaanContext.create" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>create(context_name: str, req: pyhelayers.libs.pyhelayers_cppwrappers.HeConfigRequirement) -&gt; pyhelayers.libs.pyhelayers_cppwrappers.HeContext</p>
+<blockquote>
+<div><p>Creates and returns an initialized HE context given a context name
+and config requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param context_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The context name.</p>
+</dd>
+<dt class="field-even">type context_name<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param req<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The config requirement.</p>
+</dd>
+<dt class="field-even">type req<span class="colon">:</span></dt>
+<dd class="field-even"><p>pyhelayers.HeConfigRequirement</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>create(prioritized_context_names: List[str]) -&gt; pyhelayers.libs.pyhelayers_cppwrappers.HeContext</p>
+<blockquote>
+<div><p>Creates an HE context instance from the first available
+context name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param prioritized_context_names<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Prioritized list of</p>
+</dd>
+</dl>
+<p>contexts names (highest priority first).
+:raise ValueError: If no matching context is found.</p>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_automatic_bootstrapping">
+<span class="sig-name descname"><span class="pre">get_automatic_bootstrapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_automatic_bootstrapping" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the value of the automaticBootstrapping flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_context_id">
+<span class="sig-name descname"><span class="pre">get_context_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_context_id" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the context id that identifies the specific key set used by this context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_default_device">
+<span class="sig-name descname"><span class="pre">get_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pyhelayers.DeviceType.html#pyhelayers.DeviceType" title="pyhelayers.libs.pyhelayers_cppwrappers.DeviceType"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.DeviceType</span></a></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_default_device" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the default device of the ciphertexts and plaintexts generated
+using this HeContext.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyhelayers.DeviceType.html#pyhelayers.DeviceType" title="pyhelayers.DeviceType">DeviceType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_default_scale">
+<span class="sig-name descname"><span class="pre">get_default_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_default_scale" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns default scale used in encoding (where applicable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>double</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_library_name">
+<span class="sig-name descname"><span class="pre">get_library_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_library_name" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the name of the underlying library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_modulus_chain">
+<span class="sig-name descname"><span class="pre">get_modulus_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.uint64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_modulus_chain" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the modulus chain: the value of each prime in the chain (where
+applicable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pyarrayuint64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_public_functions">
+<span class="sig-name descname"><span class="pre">get_public_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pyhelayers.PublicFunctions.html#pyhelayers.PublicFunctions" title="pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions</span></a></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_public_functions" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a PublicFunctions object specifying the functionalities
+that are supported by the public keys of this HeContext</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_scheme_name">
+<span class="sig-name descname"><span class="pre">get_scheme_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_scheme_name" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the name of the underlying scheme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_security_level">
+<span class="sig-name descname"><span class="pre">get_security_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_security_level" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the security level supplied by this context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_signature">
+<span class="sig-name descname"><span class="pre">get_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_signature" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a signature of the context that distinguishes it enough to be able
+to load previously stored contexts based on their signatures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_top_chain_index">
+<span class="sig-name descname"><span class="pre">get_top_chain_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_top_chain_index" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the highest available chain index. (for schemes where it is
+applicable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.get_traits">
+<span class="sig-name descname"><span class="pre">get_traits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pyhelayers.HeTraits.html#pyhelayers.HeTraits" title="pyhelayers.libs.pyhelayers_cppwrappers.HeTraits"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeTraits</span></a></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.get_traits" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns an HeTraits object containing various properties of the
+underlying scheme.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.has_secret_key">
+<span class="sig-name descname"><span class="pre">has_secret_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.has_secret_key" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns whether this context contains a secret key.
+If not, decryption and other operations relying on decryption
+will not be available (will throw an exception).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeaanContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeaanContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeaanContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">req</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeConfigRequirement.html#pyhelayers.HeConfigRequirement" title="pyhelayers.libs.pyhelayers_cppwrappers.HeConfigRequirement"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeConfigRequirement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.init" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes this HeaanContext according the given requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> – an HeConfigRequirement object, indicating the required
+configuration parameters (e.g. securityLevel, numSlots).</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – if it is not possible to fulfill the given
+requirement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.is_registered_context">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_registered_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.is_registered_context" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns indication to whether a registered context
+exists under a given context name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>context_name</strong> – The context name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.load_from_buffer">
+<span class="sig-name descname"><span class="pre">load_from_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.load_from_buffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads this HeContext from a buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>buf</strong> – a memory buffer to load the object from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.load_from_file">
+<span class="sig-name descname"><span class="pre">load_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.load_from_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads this HeContext from a file saved by save_to_file().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>string</em>) – File to load from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.load_secret_key">
+<span class="sig-name descname"><span class="pre">load_secret_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.load_secret_key" title="Permalink to this definition">#</a></dt>
+<dd><p>Load secret key from a buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buf</strong> (<em>A memory buffer</em>) – A memory buffer to load the HeContext from.</p></li>
+<li><p><strong>seed_only</strong> – If True, the seed of the secret key will be loaded
+from the given buffer and the secret key will be
+generated using this seed. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If this HeContext already has a secret key.</p></li>
+<li><p><strong>RuntimeError</strong> – If seed_only is True but the underlying
+HeContext does not support secret key I/O
+using seeds.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.load_secret_key_from_file">
+<span class="sig-name descname"><span class="pre">load_secret_key_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.load_secret_key_from_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads context saved by the saveToFile() method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>string</em>) – File to load from.</p></li>
+<li><p><strong>seed_only</strong> (<em>bool</em>) – If True, the seed of the secret key will be
+loaded from the given file and the secret key
+will be generated using this seed. Defaults to
+False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If this HeContext already has a secret key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.print_signature">
+<span class="sig-name descname"><span class="pre">print_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.print_signature" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints a summary of library details and configuration params.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.public_functions_supported">
+<span class="sig-name descname"><span class="pre">public_functions_supported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">public_functions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.PublicFunctions.html#pyhelayers.PublicFunctions" title="pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.public_functions_supported" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns whether the given PublicFunctions object is supported by
+this HeContext.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>public_functions</strong> – The PublicFunctions object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_secret_key">
+<span class="sig-name descname"><span class="pre">save_secret_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.save_secret_key" title="Permalink to this definition">#</a></dt>
+<dd><p>Save secret key into a buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seed_only</strong> (<em>bool</em>) – If True, only the seed used to control the secret
+key’s randomness will be saved, rather than the
+whole secret key. Defaults to False.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If this HeContext doesn’t have a secret key.</p></li>
+<li><p><strong>RuntimeError</strong> – If seed_only is True but the underlying
+HeContext does not support secret key I/O
+using seeds.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a memory buffer containing the saved secret key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_secret_key_to_file">
+<span class="sig-name descname"><span class="pre">save_secret_key_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.save_secret_key_to_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Save secret key to the given file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>string</em>) – File to write to.</p></li>
+<li><p><strong>seed_only</strong> (<em>bool</em>) – If True, only the seed used to control the
+secret key’s randomness will be saved, rather
+than the whole secret key. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If this HeContext does not have a secret key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_to_buffer">
+<span class="sig-name descname"><span class="pre">save_to_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeaanContext.save_to_buffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>save_to_buffer(self: pyhelayers.libs.pyhelayers_cppwrappers.HeContext) -&gt; bytes</p>
+<blockquote>
+<div><p>Saves this HeContext into a buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a memory buffer containing the saved object.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>save_to_buffer(self: pyhelayers.libs.pyhelayers_cppwrappers.HeContext, public_functions: pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions) -&gt; bytes</p>
+<blockquote>
+<div><p>Saves this HeContext into a buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param public_functions<span class="colon">:</span></dt>
+<dd class="field-odd"><p>determines which of the public keys
+should be saved.</p>
+</dd>
+<dt class="field-even">type public_functions<span class="colon">:</span></dt>
+<dd class="field-even"><p>pyhelayers.PublicFunctions</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a memory buffer containing the saved object.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.save_to_file">
+<span class="sig-name descname"><span class="pre">save_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeaanContext.save_to_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>save_to_file(self: pyhelayers.libs.pyhelayers_cppwrappers.HeContext, file_name: str) -&gt; int</p>
+<blockquote>
+<div><p>Saves this HeContext to a file in binary form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param file_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to write to.</p>
+</dd>
+<dt class="field-even">type file_name<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>save_to_file(self: pyhelayers.libs.pyhelayers_cppwrappers.HeContext, file_name: str, public_fuctions: pyhelayers.libs.pyhelayers_cppwrappers.PublicFunctions) -&gt; int</p>
+<blockquote>
+<div><p>Saves this HeContext to a file in binary form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param file_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to write to.</p>
+</dd>
+<dt class="field-even">type file_name<span class="colon">:</span></dt>
+<dd class="field-even"><p>string</p>
+</dd>
+<dt class="field-odd">param public_functions<span class="colon">:</span></dt>
+<dd class="field-odd"><p>determines which of the public keys
+should be saved.</p>
+</dd>
+<dt class="field-even">type public_functions<span class="colon">:</span></dt>
+<dd class="field-even"><p>pyhelayers.PublicFunctions</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.set_automatic_bootstrapping">
+<span class="sig-name descname"><span class="pre">set_automatic_bootstrapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.set_automatic_bootstrapping" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the automaticBootstrapping flag to the given v. When
+automaticBootstrapping is set to true, ciphertexts created using this
+HeContext will be bootstrapped automatically when needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.set_default_device">
+<span class="sig-name descname"><span class="pre">set_default_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.DeviceType.html#pyhelayers.DeviceType" title="pyhelayers.libs.pyhelayers_cppwrappers.DeviceType"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.DeviceType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.set_default_device" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the default device of the ciphertexts and plaintexts generated using
+this HeContext.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device</strong> – the new default device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.set_default_scale">
+<span class="sig-name descname"><span class="pre">set_default_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.set_default_scale" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the default scale to be used in encoding (where applicable)..</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – The default scale.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.slot_count">
+<span class="sig-name descname"><span class="pre">slot_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pyhelayers.HeContext.html#pyhelayers.HeContext" title="pyhelayers.libs.pyhelayers_cppwrappers.HeContext"><span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.HeContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.slot_count" title="Permalink to this definition">#</a></dt>
+<dd><p>The number of slots in each CTile (ciphertext) or PTile (plaintext)
+created over this context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeaanContext.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.Printable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity:</span> <span class="pre">pyhelayers.libs.pyhelayers_cppwrappers.Verbosity</span> <span class="pre">=</span> <span class="pre">&lt;Verbosity.VERBOSITY_REGULAR:</span> <span class="pre">2&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyhelayers.HeaanContext.to_string" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert object to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbosity</strong> (<a class="reference internal" href="pyhelayers.Verbosity.html#pyhelayers.Verbosity" title="pyhelayers.Verbosity"><em>Verbosity</em></a>) – Verbosity level (default=VERBOSITY_REGULAR)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="pyhelayers.HeTraits.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">pyhelayers.HeTraits</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="pyhelayers.HelibBgvContext.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">pyhelayers.HelibBgvContext</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyhelayers.HeaanContext">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     HeaanContext
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.__init__">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.__init__()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.clone">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.clone()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.create">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.create()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_automatic_bootstrapping">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_automatic_bootstrapping()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_context_id">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_context_id()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_default_device">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_default_device()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_default_scale">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_default_scale()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_library_name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_library_name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_modulus_chain">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_modulus_chain()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_public_functions">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_public_functions()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_scheme_name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_scheme_name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_security_level">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_security_level()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_signature">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_signature()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_top_chain_index">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_top_chain_index()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.get_traits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.get_traits()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.has_secret_key">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.has_secret_key()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.init">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.init()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.is_registered_context">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.is_registered_context()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.load_from_buffer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.load_from_buffer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.load_from_file">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.load_from_file()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.load_secret_key">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.load_secret_key()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.load_secret_key_from_file">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.load_secret_key_from_file()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.print_signature">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.print_signature()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.public_functions_supported">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.public_functions_supported()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_secret_key">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.save_secret_key()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_secret_key_to_file">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.save_secret_key_to_file()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_to_buffer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.save_to_buffer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.save_to_file">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.save_to_file()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.set_automatic_bootstrapping">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.set_automatic_bootstrapping()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.set_default_device">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.set_default_device()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.set_default_scale">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.set_default_scale()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.slot_count">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.slot_count()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyhelayers.HeaanContext.to_string">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HeaanContext.to_string()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, IBM.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
