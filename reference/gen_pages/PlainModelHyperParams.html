@@ -1,0 +1,1330 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>PlainModelHyperParams &#8212; HElayers 1.5.5.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/PlainModelHyperParams';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="XGBoostPlain" href="XGBoostPlain.html" />
+    <link rel="prev" title="PlainModel" href="PlainModel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeModel.html">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../plain_models.html" class="nav-link">Plain Models</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">PlainModelHyperParams</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="plainmodelhyperparams">
+<h1>PlainModelHyperParams<a class="headerlink" href="#plainmodelhyperparams" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PlainModelHyperParams</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams" title="Permalink to this definition">#</a></dt>
+<dd><p>A struct for the hyperparameters of the plain AI model.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.aml_delta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aml_delta</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.aml_delta" title="Permalink to this definition">#</a></dt>
+<dd><p>The weight of the risk of the other banks in the evaluation of the
+risks of the next iteration in the Aml model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.aml_iterations">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aml_iterations</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.aml_iterations" title="Permalink to this definition">#</a></dt>
+<dd><p>The number of iterations in the AML model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.d">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">d</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.d" title="Permalink to this definition">#</a></dt>
+<dd><p>number of differentiations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Arima model parameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.feature_ranges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feature_ranges</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.feature_ranges" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets a list of pairs specifying the minimum and maximum
+supported values for each feature for XGBoost and
+DTree</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.features_bin_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_bin_size</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.features_bin_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Controls the approximation of the feature values and
+thresholds for XGBoost and DTree. The feature values
+will be approximated to the closest multiple of
+features_bin_size. The thresholds will be approximated
+to the mid-point between the two closest multiples of
+features_bin_size.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.features_scale_target">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_scale_target</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.features_scale_target" title="Permalink to this definition">#</a></dt>
+<dd><p>Controls the scale of the features and thresholds for
+XGBoost and DTree. The features and thresholds will be
+scaled so they will be in the range
+[0, featuresScaleTarget]. Defaults to 500.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.fit_hyper_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fit_hyper_params</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.fit_hyper_params" title="Permalink to this definition">#</a></dt>
+<dd><p>Hyper parameters common to most fitting algorithm</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.frep">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frep</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.frep" title="Permalink to this definition">#</a></dt>
+<dd><p>Controls the accuracy of the comparison approximation
+in XGBoost and DTree prediction. A higher frep increases
+the accuracy on the account of deeper and slower computation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.get_phi">
+<span class="sig-name descname"><span class="pre">get_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.get_phi" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the phi coefficients of the Arima model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.grep">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grep</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.grep" title="Permalink to this definition">#</a></dt>
+<dd><p>Controls the accuracy of the comparison approximation
+in XGBoost and DTree prediction. A higher grep increases
+the accuracy on the account of deeper and slower computation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.init_random_weights">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_random_weights</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.init_random_weights" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize the PlainModel with random weights.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.inverse_approximation_precision">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inverse_approximation_precision</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.inverse_approximation_precision" title="Permalink to this definition">#</a></dt>
+<dd><p>The approximation precision of the linear regression inverse operation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_distribution_x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_distribution_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_distribution_x" title="Permalink to this definition">#</a></dt>
+<dd><p>The distribution type of X values in linear regression training.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_max_x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_max_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_max_x" title="Permalink to this definition">#</a></dt>
+<dd><p>The maximum of the values of X in linear regression training with uniform or unknown distribution.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_mean_x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_mean_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_mean_x" title="Permalink to this definition">#</a></dt>
+<dd><p>The mean of the values of X in linear regression training with uniform or unknown distribution.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_min_x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_min_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_min_x" title="Permalink to this definition">#</a></dt>
+<dd><p>The minimum of the values of X in linear regression training with uniform or unknown distribution.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.linear_regression_std_x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_regression_std_x</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.linear_regression_std_x" title="Permalink to this definition">#</a></dt>
+<dd><p>The standard deviation of the values of X in linear regression training with uniform or unknown distribution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.load" title="Permalink to this definition">#</a></dt>
+<dd><p>Load the object from JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> – The name of the JSON file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.load_from_buffer">
+<span class="sig-name descname"><span class="pre">load_from_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.load_from_buffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Load the object from JSON buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>buffer</strong> – The buffer to load from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.logistic_regression_activation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logistic_regression_activation</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.logistic_regression_activation" title="Permalink to this definition">#</a></dt>
+<dd><p>Activation used in logistic regression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.max_rand_value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_rand_value</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.max_rand_value" title="Permalink to this definition">#</a></dt>
+<dd><p>Relevant when init_random_weights is set to True.
+A upper limit for the random values.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.min_rand_value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">min_rand_value</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.min_rand_value" title="Permalink to this definition">#</a></dt>
+<dd><p>Relevant when init_random_weights is set to True.
+A lower limit for the random values.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_specified_fixed_batch_size</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Indication to whether a model-specified fixed batch size is
+effective (default: false). With such fixed batch size, the batch size is
+fixed to the batch size specified in the plain NN model, and future runs
+of predict with the plain model and the HE model created from it, must
+provide exactly that much elements per batch. If this flag is turned off,
+the batch size is dynamic, meaning it can be changed and the HE model can
+be optimized for any batch size desired, but in this case the batch
+dimension must not be changed, manipulated or involved in operations by
+the NN in any way.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.model_subclass">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_subclass</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.model_subclass" title="Permalink to this definition">#</a></dt>
+<dd><p>A named parameter allowing to specify some specific model type,
+e.g., a specific class of NN architecture.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.mu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mu</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.mu" title="Permalink to this definition">#</a></dt>
+<dd><p>The mu coefficient of the Arima model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.negate_sigmoid_input">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">negate_sigmoid_input</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.negate_sigmoid_input" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether to negate the input to the Sigmoid activation function.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.num_accounts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_accounts</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.num_accounts" title="Permalink to this definition">#</a></dt>
+<dd><p>The combined number of accounts at all banks in the Aml model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.num_centers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_centers</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.num_centers" title="Permalink to this definition">#</a></dt>
+<dd><p>The number of centers for KMeans.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.num_samples">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.num_samples" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of values to use for fitting and training.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.num_values_used_for_prediction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_values_used_for_prediction</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.num_values_used_for_prediction" title="Permalink to this definition">#</a></dt>
+<dd><p>The number of previous values of the time series to be used in
+prediction.
+A greater value will increase the prediction precision (compared to a
+plain ARIMA model) on the account of higher multiplication depth.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_cached_nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_cached_nodes</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_cached_nodes" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of nodes that are shared among trees and their results are
+cached as an optimization.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_classes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_classes</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_classes" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of classes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.number_of_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_features</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.number_of_features" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of features in an input sample.
+Value of -1 indicates it will be determined by the model file.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.p">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.p" title="Permalink to this definition">#</a></dt>
+<dd><p>number of past values effecting current value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Arima model parameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plain_batch_norm_in_encrypted_nn</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn" title="Permalink to this definition">#</a></dt>
+<dd><p>An indication to whether the batch normalization constants of an
+encrypted NN should remain exposed in a plaintext form and not be
+encrypted. May often result in improved performance. Not relevant for
+non-encrypted NN.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plain_poly_activation_coeffs_in_encrypted_nn</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn" title="Permalink to this definition">#</a></dt>
+<dd><p>An indication to whether the coefficients of a polynomial activation
+function of an encrypted NN should remain exposed in a plaintext form and
+not be encrypted. May often result in improved performance. Not relevant
+for non-encrypted NN.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.q">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">q</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.q" title="Permalink to this definition">#</a></dt>
+<dd><p>number of past errors effecting current value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Arima model parameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.round_before_storing_thresholds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">round_before_storing_thresholds</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds" title="Permalink to this definition">#</a></dt>
+<dd><p>In case storeThresholds is true, decides whether the
+thresholds should be scaled and rounded before they are
+stored. Turning this flag on makes close thresholds
+considered the same one, thus reducing runtime on the
+account of possibly reducing accuracy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.set_phi">
+<span class="sig-name descname"><span class="pre">set_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.PlainModelHyperParams" title="pyhelayers.PlainModelHyperParams"><span class="pre">pyhelayers.PlainModelHyperParams</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">phiVals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.set_phi" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the phi coefficients of the Arima model.
+:param phiVals: The array of phi vals.
+:type phiVals: numpy double array</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.sparse_rate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sparse_rate</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.sparse_rate" title="Permalink to this definition">#</a></dt>
+<dd><p>Relevant when init_random_weights is set to True.
+The rate of zeroed values. Must be in the range of [0,1].
+For example, 0 means no values will be set to zero, while 0.3 means ~30%
+of the values will be set to zero and ~70% will get values in the range of
+[min,max).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.store_thresholds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">store_thresholds</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.store_thresholds" title="Permalink to this definition">#</a></dt>
+<dd><p>If true, XGBoost and DTree will store all thresholds of
+the model in the user side, in the plain.
+This has the advantage of making prediction faster and
+more accurate, on the account of storing additional,
+possibly sensitive, data in the user side, and requiring
+the user to do some additional pre-processing. Note that
+the additional data will be kept in the user side and it
+will not be exposed to the server at any time.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.theta1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">theta1</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.theta1" title="Permalink to this definition">#</a></dt>
+<dd><p>The theta1 coefficient of the Arima model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.trainable">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trainable</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.trainable" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether the PlainModel object should allow to call fit().</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.use_linear_regression_estimator">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_linear_regression_estimator</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.use_linear_regression_estimator" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.varw">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">varw</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.varw" title="Permalink to this definition">#</a></dt>
+<dd><p>The error variance of the Arima model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyhelayers.PlainModelHyperParams.verbose">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verbose</span></span><a class="headerlink" href="#pyhelayers.PlainModelHyperParams.verbose" title="Permalink to this definition">#</a></dt>
+<dd><p>Verbosity flag.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParamsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParamsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParamsE"></span><span id="helayers::PlainModelHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PlainModelHyperParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">JsonBasedParameters</span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParamsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A struct for the hyperparameters of the plain AI model. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv"></span><span id="helayers::PlainModelHyperParams::PlainModelHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a4f20fac17a5cf8e9c1f98c7528a143ae"></span><span class="sig-name descname"><span class="n"><span class="pre">PlainModelHyperParams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21PlainModelHyperParamsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers21PlainModelHyperParams9getSchemeEv">
+<span id="_CPPv3NK8helayers21PlainModelHyperParams9getSchemeEv"></span><span id="_CPPv2NK8helayers21PlainModelHyperParams9getSchemeEv"></span><span id="helayers::PlainModelHyperParams::getSchemeC"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3f11868f33c372e98b4c667423061e44"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">JsonScheme</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getScheme</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8helayers21PlainModelHyperParams9getSchemeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the scheme of this JSON-based parameters object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__debugMode.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a61e281b93233af0a8554d09ab946488a"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">debugMode</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9debugModeb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__verbose.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a03e36114ee68b348237155c95cf259cd"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">verbose</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE7verboseb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__trainable.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ad13b4305d2d59ffe19d878d7499b25f8"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">trainable</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE9trainableb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__initRandomWeights.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5ea0e73d6e1f1674f3a5a0d153e0ec37"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">initRandomWeights</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE17initRandomWeightsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__minRandValue.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ac3e804deef04109fdca7354a764ac3bc"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">minRandValue</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12minRandValued" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__maxRandValue.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af44f2737fe3b45c5d5aea83af5bc863b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">maxRandValue</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE12maxRandValued" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__sparseRate.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2f7bc8e8df873b5f2c7dfb7598e0e027"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">sparseRate</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10sparseRated" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfFeatures.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a9ea8a7903ca2f2c9c4a5b3b6913ec127"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfFeatures</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE16numberOfFeaturesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__modelSubclass.ss"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a673858d604f9b560c03d8aa0fefd1ba1"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modelSubclass</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13modelSubclassNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__logisticRegressionActivation.LRActivationType"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abc67e460ad199d95df9af85402611384"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">logisticRegressionActivation</span></span>, <a class="reference internal" href="LRActivationType.html#_CPPv4N8helayers16LRActivationTypeE" title="helayers::LRActivationType"><span class="n"><span class="pre">LRActivationType</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28logisticRegressionActivation16LRActivationType" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__negateSigmoidInput.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af48638a823fe5988d98fb91667df2e5e"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">negateSigmoidInput</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE18negateSigmoidInputb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfClasses.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ade313d74eaaf78dbba1a68224b0aa6e1"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfClasses</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15numberOfClassesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__useLinearRegressionEstimator.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2012bc5e0c17e307cb029ee77d6e0095"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">useLinearRegressionEstimator</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28useLinearRegressionEstimatorb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionDistributionX.LRDistribution"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a08cc025ac08d651e14886b287c2ddf65"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionDistributionX</span></span>, <span class="n"><span class="pre">LRDistribution</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29linearRegressionDistributionX14LRDistribution" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMinX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a277410024ef123697f8798b92e270e1d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMinX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMinXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMaxX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a81a9c760259d03e449aa7dedaf1c4639"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMaxX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionMaxXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionMeanX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1adedf8b16281c306ac411a32d60e4da34"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionMeanX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE21linearRegressionMeanXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__linearRegressionStdX.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aac4eb5e38c41a11880ff50fd1199e79d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">linearRegressionStdX</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE20linearRegressionStdXd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__inverseApproximationPrecision.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a94e3d1d66bd1637d3e010cd3202e9e5c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">inverseApproximationPrecision</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE29inverseApproximationPrecisioni" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__p.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ad4f590e919d29d4b696f14be26fa5768"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">p</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1pi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__d.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a22b13515b2fd10f651e6d24be4144d13"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">d</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1di" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__q.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a068780eff2d693d2eeadd2a6e34c5ff4"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">q</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE1qi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numValuesUsedForPrediction.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3bd49ca89491d588116c448f41fa450f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numValuesUsedForPrediction</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE26numValuesUsedForPredictioni" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numSamples.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0c82378a672ebe51f64eebdae39a6be6"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numSamples</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numSamplesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__mu.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a7f5b01b719a636e4224f330413176f61"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">mu</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE2mud" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid">
+<span id="_CPPv3N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid"></span><span id="_CPPv2N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET_VECTOR__phi.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a8778dda1190cde6ad3f0274160c9247c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET_VECTOR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">phi</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams28ADD_JSON_PARAM_GETSET_VECTORE3phid" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__theta1.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a70f8e63ccd9c652eaf44e5ca15292cfa"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">theta1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE6theta1d" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__varw.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a0224cd5b1a82627993e3f1cb0e897c07"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">varw</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4varwd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numCenters.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a711f60fe6c2917cf88b13769a06d5807"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numCenters</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE10numCentersi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__featuresScaleTarget.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a6735d299243d9c8acd3ef22f85190d84"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featuresScaleTarget</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19featuresScaleTargetd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__featuresBinSize.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a17bf942b495592f75eafe578707b583c"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featuresBinSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15featuresBinSizei" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__gRep.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a971999dacc8bada77f4fdc2ea2e40d82"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">gRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4gRepi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__fRep.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a935c070c11343c1b72bb1214bd63aafc"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fRep</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE4fRepi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd">
+<span id="_CPPv3N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd"></span><span id="_CPPv2N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRS__featureRanges.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a5f87dd6a7a5f5f78585b0647acaded7b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">featureRanges</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams37ADD_JSON_PARAM_GETSET_VECTOR_OF_PAIRSE13featureRangesd" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numberOfCachedNodes.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a2ef44ea9f19b963304eaca2dc082585b"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numberOfCachedNodes</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE19numberOfCachedNodesi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__storeThresholds.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abad32a62cd20913cf6bde702a2dfa967"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">storeThresholds</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15storeThresholdsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__roundBeforeStoringThresholds.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a20b23cf67580790da94b9594de6c0f6f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">roundBeforeStoringThresholds</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28roundBeforeStoringThresholdsb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__modelSpecifiedFixedBatchSize.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1abdcd128fe9d8d22f08f6889c04715e2d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modelSpecifiedFixedBatchSize</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE28modelSpecifiedFixedBatchSizeb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__plainPolyActivationCoeffsInEncryptedNn.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a9ce665660c2b57e7bee413993b016d09"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">plainPolyActivationCoeffsInEncryptedNn</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE38plainPolyActivationCoeffsInEncryptedNnb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__plainBatchNormInEncryptedNn.b"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a861e359afe6fc379f6de470f2424bb95"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">plainBatchNormInEncryptedNn</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE27plainBatchNormInEncryptedNnb" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__generationCount.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1aefe283f98a4e6ecc156d88040a64fe9d"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">generationCount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE15generationCounti" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__amlDelta.double"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a56c19298ade20f49e599e1f9c0004616"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">amlDelta</span></span>, <span class="kt"><span class="pre">double</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE8amlDeltad" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__amlIterations.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a3db712c6446a48caeb2e5967ad85c01f"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">amlIterations</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE13amlIterationsi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi">
+<span id="_CPPv3N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi"></span><span id="_CPPv2N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi"></span><span id="helayers::PlainModelHyperParams::ADD_JSON_PARAM_GETSET__numAccounts.i"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ab028a6ce8db13121bca4df23284add19"></span><span class="sig-name descname"><span class="n"><span class="pre">ADD_JSON_PARAM_GETSET</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">numAccounts</span></span>, <span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams21ADD_JSON_PARAM_GETSETE11numAccountsi" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4loadERKNSt6stringE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams4loadERKNSt6stringE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4loadERKNSt6stringE"></span><span id="helayers::PlainModelHyperParams::load__ssCR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a655c234ccf795902586f999d45faff9c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParamsJsonFile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4loadERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Load the object from JSON file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hyperParamsJsonFile</strong> – The name of the JSON file. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams4loadERNSt7istreamE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams4loadERNSt7istreamE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams4loadERNSt7istreamE"></span><span id="helayers::PlainModelHyperParams::load__isR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1af54b08787fb83a5335514fdf2bcc1ef2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParamsJsonStream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams4loadERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Load the object from streams containing JSON file content. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hyperParamsJsonStream</strong> – The stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE"></span><span id="helayers::PlainModelHyperParams::loadBin__isR"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a7154e64532996c645117dde1d7d5c1d9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadBin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams7loadBinERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads this object from the given binary stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to load from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE">
+<span id="_CPPv3NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE"></span><span id="_CPPv2NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE"></span><span id="helayers::PlainModelHyperParams::saveBin__osRC"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1a060e27d5dbaa3838e6bbab33c29ff2c3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveBin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers21PlainModelHyperParams7saveBinERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Saves this object to the given binary stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to save to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers21PlainModelHyperParams14fitHyperParamsE">
+<span id="_CPPv3N8helayers21PlainModelHyperParams14fitHyperParamsE"></span><span id="_CPPv2N8helayers21PlainModelHyperParams14fitHyperParamsE"></span><span id="helayers::PlainModelHyperParams::fitHyperParams__FitHyperParams"></span><span class="target" id="structhelayers_1_1PlainModelHyperParams_1ab85bb1f383668ca1ec44b26dbba18791"></span><span class="n"><span class="pre">FitHyperParams</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fitHyperParams</span></span></span><a class="headerlink" href="#_CPPv4N8helayers21PlainModelHyperParams14fitHyperParamsE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Hyper parameters common to most fitting algorithm. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PlainModel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PlainModel</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="XGBoostPlain.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">XGBoostPlain</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.aml_delta"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.aml_delta</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.aml_iterations"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.aml_iterations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.d"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.d</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.feature_ranges"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.feature_ranges</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.features_bin_size"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.features_bin_size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.features_scale_target"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.features_scale_target</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.fit_hyper_params"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.fit_hyper_params</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.frep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.frep</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.get_phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.get_phi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.grep"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.grep</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.init_random_weights"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.init_random_weights</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.inverse_approximation_precision"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.inverse_approximation_precision</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_distribution_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_distribution_x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_max_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_max_x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_mean_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_mean_x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_min_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_min_x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.linear_regression_std_x"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.linear_regression_std_x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.load"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.load_from_buffer"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.load_from_buffer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.logistic_regression_activation"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.logistic_regression_activation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.max_rand_value"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.max_rand_value</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.min_rand_value"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.min_rand_value</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.model_specified_fixed_batch_size"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.model_specified_fixed_batch_size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.model_subclass"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.model_subclass</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.mu"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.mu</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.negate_sigmoid_input"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.negate_sigmoid_input</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_accounts"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_accounts</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_centers"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_centers</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_samples"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_samples</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.num_values_used_for_prediction"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.num_values_used_for_prediction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_cached_nodes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_cached_nodes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_classes"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_classes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.number_of_features"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.number_of_features</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.p"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.p</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_batch_norm_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_batch_norm_in_encrypted_nn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.plain_poly_activation_coeffs_in_encrypted_nn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.q"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.q</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.round_before_storing_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.round_before_storing_thresholds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.set_phi"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.set_phi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.sparse_rate"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.sparse_rate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.store_thresholds"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.store_thresholds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.theta1"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.theta1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.trainable"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.trainable</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.use_linear_regression_estimator"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.use_linear_regression_estimator</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.varw"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.varw</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.PlainModelHyperParams.verbose"><code class="docutils literal notranslate"><span class="pre">PlainModelHyperParams.verbose</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

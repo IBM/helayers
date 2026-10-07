@@ -1,0 +1,1463 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>HeModel &#8212; HElayers 1.5.5.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/helayers.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/gen_pages/HeModel';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LinearRegressionEstimator" href="LinearRegressionEstimator.html" />
+    <link rel="prev" title="loadHeModel" href="loadHeModel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/helayerslogo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/helayerslogo_dark.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        APIs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hebase.html">HEbase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BootstrapConfig.html">BootstrapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTile.html">CTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CTileVector.html">CTileVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoder.html">Encoder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../hecontexts.html">HE Contexts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContext.html">loadHeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeContextFromFile.html">loadHeContextFromFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugContext.html">DebugContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyContext.html">EmptyContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HeContext.html">HeContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LattigoContext.html">LattigoContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MockupContext.html">MockupContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheContext.html">OpenFheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksContext.html">OpenFheCkksContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheTfheContext.html">OpenFheTfheContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SealCkksContext.html">SealCkksContext</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeTraits.html">HeTraits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PTile.html">PTile</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../circuit.html">Circuit layer (CircLayer)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="CircuitContext.html">CircuitContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CtxtCacheMem.html">CtxtCacheMem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Runner.html">Runner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math.html">Mathematical functions</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tt.html">Tile Tensors</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensor.html">CTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CTileTensorVector.html">CTileTensorVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensor.html">DoubleTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DoubleTensorCPtr.html">DoubleTensorCPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTileTensor.html">PTileTensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvConfig.html">TTConvConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvFilters.html">TTConvFilters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTConvolutionInterleaved.html">TTConvolutionInterleaved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTDim.html">TTDim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTEncoder.html">TTEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TTShape.html">TTShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DimInt.html">DimInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loadEncryptedData.html">loadEncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BitwiseEvaluator.html">BitwiseEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncryptedData.html">EncryptedData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NativeFunctionEvaluator.html">NativeFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionEvaluator.html">FunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTFunctionEvaluator.html">TTFunctionEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MathUtils.html">MathUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../packing_optimizer.html">Packing optimizer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadIoProcessor.html">loadIoProcessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeProfile.html">HeProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeConfigRequirement.html">HeConfigRequirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeRunRequirements.html">HeRunRequirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelIoEncoder.html">ModelIoEncoder</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../applications.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../ai.html">AI Layer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../plain_models.html">Plain Models</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ArimaPlain.html">ArimaPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CrfPlain.html">CrfPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatasetPlain.html">DatasetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DTreePlain.html">DTreePlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KMeansPlain.html">KMeansPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LogisticRegressionPlain.html">LogisticRegressionPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NeuralNetPlain.html">NeuralNetPlain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModel.html">PlainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlainModelHyperParams.html">PlainModelHyperParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XGBoostPlain.html">XGBoostPlain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="loadHeModel.html">loadHeModel</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">HeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearRegressionEstimator.html">LinearRegressionEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LRActivationType.html">LRActivationType</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db.html">Data bases</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComparisonType.html">ComparisonType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CopyAndRecurseDatabase.html">CopyAndRecurseDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mp_fhe.html">Multi Party FHE</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="MultiPartyConfig.html">MultiPartyConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InitProtocol.html">InitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpenFheCkksInitProtocol.html">OpenFheCkksInitProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DecryptProtocol.html">DecryptProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProtocolMessage.html">ProtocolMessage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpc_types.html">Multi-Party FHE Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../fl.html">Federated Learning (FL)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="AggregatorPsiManager.html">AggregatorPsiManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RtsPsiManager.html">RtsPsiManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../er.html">Entity Resolution (ER)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageConfig.html">RecordLinkageConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageRule.html">RecordLinkageRule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageManager.html">RecordLinkageManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockManager.html">RecordLinkageMockManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkageMockPackage.html">RecordLinkageMockPackage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RecordLinkagePackage.html">RecordLinkagePackage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../utils.html">General utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="JsonWrapper.html">JsonWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Verbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileUtils.html">FileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryUtils.html">MemoryUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemoryStorage.html">MemoryStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TextIoUtils.html">TextIoUtils</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hybrid_enc.html">Hybrid Encryption (Transciphering)</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="decryptDefaultAesEncryptedBlocksUnderFhe.html">decryptDefaultAesEncryptedBlocksUnderFhe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepareDefaultPlainBlocksForAesEncryption.html">prepareDefaultPlainBlocksForAesEncryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AesKey.html">AesKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberConfig.html">NumberConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSigned.html">NumberSigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumberSize.html">NumberSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mltoolbox/index.html">MLToolbox</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.Dataset.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.dataset_wrapper.DatasetWrapper.html">DatasetWrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.cifar10_dataset.Cifar10Dataset.html">Cifar10Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.covidCT_dataset.CovidCTDataset.html">CovidCTDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.data_loader.places205_dataset.places205Dataset.html">places205Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mltoolbox/nn_models.html">Neural Network FHE models.</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.model.nn_module.nn_module.html">nn_module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.arguments.Arguments.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.PolyActivationConverter.html">PolyActivationConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mltoolbox/generated/pyhelayers.mltoolbox.poly_activation_converter.Trainer.html">Trainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">APIs</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../ai.html" class="nav-link">AI Layer</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">HeModel</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="hemodel">
+<h1>HeModel<a class="headerlink" href="#hemodel" title="Permalink to this heading">#</a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Qysr" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Qysr" name="Qysr" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><dl class="py class">
+<dt class="sig sig-object py" id="pyhelayers.HeModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeModel</span></span><a class="headerlink" href="#pyhelayers.HeModel" title="Permalink to this definition">#</a></dt>
+<dd><p>A class to represent an AI model that is encoded and possibly encrypted
+under HE, that supports running an inference and possibly training process.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.compile">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PlainModel.html#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">he_run_req</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeRunRequirements.html#pyhelayers.HeRunRequirements" title="pyhelayers.HeRunRequirements"><span class="pre">pyhelayers.HeRunRequirements</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeProfile.html#pyhelayers.HeProfile" title="pyhelayers.HeProfile"><span class="pre">pyhelayers.HeProfile</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.compile" title="Permalink to this definition">#</a></dt>
+<dd><p>Compiles a plain model under a given HE run requirements. Returns an
+optional HE profile that is populated if the compilation is possible given
+the plain model and requirements, or empty otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plain</strong> – The plain model. Must be initialized.</p></li>
+<li><p><strong>he_run_req</strong> – The HE run requirements.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.create_context">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="HeProfile.html#pyhelayers.HeProfile" title="pyhelayers.HeProfile"><span class="pre">pyhelayers.HeProfile</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.create_context" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates, initializes and returns an HE context given an HE profile
+that was obtained as an output of model compilation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>profile</strong> – The given HE profile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.create_model_io_encoder">
+<span class="sig-name descname"><span class="pre">create_model_io_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ModelIoEncoder.html#pyhelayers.ModelIoEncoder" title="pyhelayers.ModelIoEncoder"><span class="pre">pyhelayers.ModelIoEncoder</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.create_model_io_encoder" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a model IO encoder for this model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.decrypt_decode">
+<span class="sig-name descname"><span class="pre">decrypt_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PlainModel.html#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.decrypt_decode" title="Permalink to this definition">#</a></dt>
+<dd><p>Decrypts a trained model (after calling “fit”) to obtain a trained
+plain model. Requires the HE context to contain a secret key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeModel.encode" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>encode(self: pyhelayers.HeModel, plain: pyhelayers.PlainModel, profile: pyhelayers.HeProfile, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><p>Encodes a model given a plain model and an HE profile that was
+obtained as an output of model compilation. The resulting model will have
+non-encrypted weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param plain<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The plain model. Must be initialized.</p>
+</dd>
+<dt class="field-even">param profile<span class="colon">:</span></dt>
+<dd class="field-even"><p>The given HE profile.</p>
+</dd>
+<dt class="field-odd">param inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode(self: pyhelayers.HeModel, streams: List[bytes], files: List[str], he_run_req: pyhelayers.HeRunRequirements, hyper_params: pyhelayers.PlainModelHyperParams = &lt;pyhelayers.PlainModelHyperParams object at 0x7f3b52195030&gt;, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><p>Loads the given model and prepared it to run with encrypted data,
+with the model itself not encrypted. Optional parameters can control
+various additional settings.</p>
+<p>Internally, this method initializes a plain model using PlainModel.init,
+compiles a model using HeModel.compile and calls HeModel.encode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param streams<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of streams with content to load, depending on the
+underlying model. All streams must be rewindable.</p>
+</dd>
+<dt class="field-even">param files<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of file names corresponding to each stream.</p>
+</dd>
+<dt class="field-odd">param he_run_req<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The HE run requirements.</p>
+</dd>
+<dt class="field-even">param hyper_params<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hyperparameters object.</p>
+</dd>
+<dt class="field-odd">param inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode(self: pyhelayers.HeModel, files: List[str], he_run_req: pyhelayers.HeRunRequirements, hyper_params: pyhelayers.PlainModelHyperParams = &lt;pyhelayers.PlainModelHyperParams object at 0x7f3b521a07b0&gt;, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><p>Loads the given model and prepared it to run with encrypted data,
+with the model itself not encrypted. Optional parameters can control
+various additional settings.</p>
+<p>Internally, this method initializes a plain model using PlainModel.init,
+compiles a model using HeModel.compile and calls HeModel.encode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param files<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of file names with content to load, depending on the
+underlying model.</p>
+</dd>
+<dt class="field-even">param he_run_req<span class="colon">:</span></dt>
+<dd class="field-even"><p>The HE run requirements.</p>
+</dd>
+<dt class="field-odd">param hyper_params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hyperparameters object.</p>
+</dd>
+<dt class="field-even">param inputs<span class="colon">:</span></dt>
+<dd class="field-even"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.encode_encrypt">
+<span class="sig-name descname"><span class="pre">encode_encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeModel.encode_encrypt" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>encode_encrypt(self: pyhelayers.HeModel, plain: pyhelayers.PlainModel, profile: pyhelayers.HeProfile, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><p>Encodes and encrypts a model given a plain model and an HE profile
+that was obtained as an output of model compilation. The resulting model
+will have encrypted weights.</p>
+<p>NOTE: while the model weights are encrypted, the model architecture and/or
+structure is not hidden. For example, in neural network the non-hidden
+architecture includes the number of layers, the order of the layers, each
+layer’s type, input shape, output shape and internal parameters (e.g.
+number of neurons in Dense layer; size of kernel, strides and padding in
+Conv2D layer; the degree of a polynomial activation layer and the sign of
+its leading coefficient, etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">param plain<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The plain model. Must be initialized.</p>
+</dd>
+<dt class="field-even">param profile<span class="colon">:</span></dt>
+<dd class="field-even"><p>The given HE profile.</p>
+</dd>
+<dt class="field-odd">param inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>encode_encrypt(self: pyhelayers.HeModel, streams: List[bytes], files: List[str], he_run_req: pyhelayers.HeRunRequirements, hyper_params: pyhelayers.PlainModelHyperParams = &lt;pyhelayers.PlainModelHyperParams object at 0x7f3b52196330&gt;, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Loads the given model and prepared it to run with encrypted data,
+and encrypted model. Optional parameters can control various additional</p>
+</div></blockquote>
+<p>settings.</p>
+<blockquote>
+<div><p>Internally, this method initializes a plain model using PlainModel.init,
+compiles a model using HeModel.compile and calls HeModel.encode_encrypt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param streams<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of streams with content to load, depending on the
+underlying model. All streams must be rewindable.</p>
+</dd>
+<dt class="field-even">param files<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of file names corresponding to each stream.</p>
+</dd>
+<dt class="field-odd">param he_run_req<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The HE run requirements.</p>
+</dd>
+<dt class="field-even">param hyper_params<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hyperparameters object.</p>
+</dd>
+<dt class="field-odd">param inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>encode_encrypt(self: pyhelayers.HeModel, files: List[str], he_run_req: pyhelayers.HeRunRequirements, hyper_params: pyhelayers.PlainModelHyperParams = &lt;pyhelayers.PlainModelHyperParams object at 0x7f3b521a08f0&gt;, inputs: List[numpy.ndarray[numpy.float64]] = []) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Loads the given model and prepared it to run with encrypted data,
+and encrypted model. Optional parameters can control various additional</p>
+</div></blockquote>
+<p>settings.</p>
+<blockquote>
+<div><p>Internally, this method initializes a plain model using PlainModel.init,
+compiles a model using HeModel.compile and calls HeModel.encode_encrypt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param files<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of file names with content to load, depending on the
+underlying model.</p>
+</dd>
+<dt class="field-even">param he_run_req<span class="colon">:</span></dt>
+<dd class="field-even"><p>The HE run requirements.</p>
+</dd>
+<dt class="field-odd">param hyper_params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hyperparameters object.</p>
+</dd>
+<dt class="field-even">param inputs<span class="colon">:</span></dt>
+<dd class="field-even"><p>An optional representative plaintext inputs, to be used for
+preventing overflows. It is recommended to include representative inputs,
+including ones that might produce intermediate results with high values
+during the computation, as these inputs will be used to tune the model.
+NOTE: Providing inputs and running the overflows prevention mechanism may
+result in derivatives of the given inputs or model weights to be present
+in plaintext inside the model and in any IO processor created from it.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyhelayers.TrainingSetMetadata</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.fit" title="Permalink to this definition">#</a></dt>
+<dd><p>Fit (train) the model under FHE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The encrypted training inputs.</p></li>
+<li><p><strong>metadata</strong> – Metadata that was extracted from the training
+set. Some HeModels require this metadata object for the
+training. For models that require this metadata, it can be
+created by calling ModelIoEncoder::preprocessAndCreateMetadata()</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_can_switch_between_predict_fit_modes">
+<span class="sig-name descname"><span class="pre">get_can_switch_between_predict_fit_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_can_switch_between_predict_fit_modes" title="Permalink to this definition">#</a></dt>
+<dd><p>Check whether this model can be switched from fit to predict mode.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_created_he_context">
+<span class="sig-name descname"><span class="pre">get_created_he_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_created_he_context" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a shared pointer to the HeContext object that was created while
+initializing this model using encode() or encodeEncrypt() method directly
+from plain model files or streams.
+Returns null if this model was initialized with an HeContext created
+beforehand.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_encrypted_internals">
+<span class="sig-name descname"><span class="pre">get_encrypted_internals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_encrypted_internals" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the encrypted internals (e.g., weights) of this model. The
+packing of the encrypted internals depends on the model type. The
+encrypted internals can be decrypted and decoded independently,
+and be given as input to the method get_plain_model_from_decoded_internals().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_fit_hyperparams">
+<span class="sig-name descname"><span class="pre">get_fit_hyperparams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyhelayers.FitHyperParams</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_fit_hyperparams" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns common training related hyper parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_he_context">
+<span class="sig-name descname"><span class="pre">get_he_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeContext.html#pyhelayers.HeContext" title="pyhelayers.HeContext"><span class="pre">pyhelayers.HeContext</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_he_context" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the HE context object this model uses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_plain_model_from_decoded_internals">
+<span class="sig-name descname"><span class="pre">get_plain_model_from_decoded_internals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoded_internals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PlainModel.html#pyhelayers.PlainModel" title="pyhelayers.PlainModel"><span class="pre">pyhelayers.PlainModel</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_plain_model_from_decoded_internals" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructs a plain model from the given decoded internals (decrypted
+and decoded from the output of getEncryptedInternals()). The same HeModel
+object should be used for both getEncryptedInternals() and this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>decoded_internals</strong> – The decoded internals which were decrypted and</p>
+</dd>
+</dl>
+<p>decoded from the output of getEncryptedInternals().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.get_profile">
+<span class="sig-name descname"><span class="pre">get_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="HeProfile.html#pyhelayers.HeProfile" title="pyhelayers.HeProfile"><span class="pre">pyhelayers.HeProfile</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.get_profile" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the HE profile that was used to build the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.is_fit_mode">
+<span class="sig-name descname"><span class="pre">is_fit_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.is_fit_mode" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns indication to whether the model is found in fit mode.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.load_encrypted_data">
+<span class="sig-name descname"><span class="pre">load_encrypted_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.load_encrypted_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads encrypted data from the given buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>buf</strong> – The buffer to load from.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If the given buffer does not contain an
+EncryptedData object, or if the object was saved with a
+mismatching HElayers version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.load_encrypted_data_from_file">
+<span class="sig-name descname"><span class="pre">load_encrypted_data_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="EncryptedData.html#pyhelayers.EncryptedData" title="pyhelayers.EncryptedData"><span class="pre">pyhelayers.EncryptedData</span></a></span></span><a class="headerlink" href="#pyhelayers.HeModel.load_encrypted_data_from_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads encrypted data from the given file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The path of the file to load from.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If the given file does not contain an
+EncryptedData object, or if the object was saved with a
+mismatching HElayers version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyhelayers.HeModel.predict" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>predict(self: pyhelayers.HeModel, res: pyhelayers.EncryptedData, inputs: pyhelayers.EncryptedData) -&gt; None</p>
+<blockquote>
+<div><p>Run prediction (inference) over the model under FHE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An output parameter to store the prediction result (encrypted
+predictions) in.</p>
+</dd>
+<dt class="field-even">param inputs<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encrypted inputs.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>predict(self: pyhelayers.HeModel, res: pyhelayers.EncryptedBatch, inputs: pyhelayers.EncryptedBatch) -&gt; None</p>
+<blockquote>
+<div><p>Run prediction (inference) of a single batch over the model under
+FHE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param res<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An output parameter to store the prediction result (encrypted
+predictions of a single batch) in.</p>
+</dd>
+<dt class="field-even">param inputs<span class="colon">:</span></dt>
+<dd class="field-even"><p>A single batch of encrypted inputs.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyhelayers.HeModel.switch_to_predict_mode">
+<span class="sig-name descname"><span class="pre">switch_to_predict_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyhelayers.HeModel" title="pyhelayers.HeModel"><span class="pre">pyhelayers.HeModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyhelayers.HeModel.switch_to_predict_mode" title="Permalink to this definition">#</a></dt>
+<dd><p>Switch this model from fit to predict mode.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModelE">
+<span id="_CPPv3N8helayers7HeModelE"></span><span id="_CPPv2N8helayers7HeModelE"></span><span id="helayers::HeModel"></span><span class="target" id="classhelayers_1_1HeModel"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HeModel</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">helayers</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Saveable</span></span><a class="headerlink" href="#_CPPv4N8helayers7HeModelE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A class to represent an AI model that is encoded and possibly encrypted under HE, that supports running an inference and possibly training process. </p>
+<p>Subclassed by helayers::Aml, helayers::Arima, helayers::DTree, helayers::KMeans, helayers::LogisticRegression, helayers::NeuralNet, helayers::TrainableXGBoost, helayers::XGBoost</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel7HeModelEv">
+<span id="_CPPv3N8helayers7HeModel7HeModelEv"></span><span id="_CPPv2N8helayers7HeModel7HeModelEv"></span><span id="helayers::HeModel::HeModel"></span><span class="target" id="classhelayers_1_1HeModel_1abf6555114a277ca10db52a41ec8746f3"></span><span class="sig-name descname"><span class="n"><span class="pre">HeModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N8helayers7HeModel7HeModelEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct an empty HE Model object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel7HeModelERK9HeContext">
+<span id="_CPPv3N8helayers7HeModel7HeModelERK9HeContext"></span><span id="_CPPv2N8helayers7HeModel7HeModelERK9HeContext"></span><span id="helayers::HeModel::HeModel__HeContextCR"></span><span class="target" id="classhelayers_1_1HeModel_1a33db08fd971b2e92cabe4419daad8e9b"></span><span class="sig-name descname"><span class="n"><span class="pre">HeModel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">he</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel7HeModelERK9HeContext" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Construct a new HE Model object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>he</strong> – An initialized HE context. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModelD0Ev">
+<span id="_CPPv3N8helayers7HeModelD0Ev"></span><span id="_CPPv2N8helayers7HeModelD0Ev"></span><span id="helayers::HeModel::~HeModel"></span><span class="target" id="classhelayers_1_1HeModel_1a62cdf24b5cd781f2b2ff85934c3ead7f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~HeModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N8helayers7HeModelD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Destroy the HE Model object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel7HeModelERK7HeModel">
+<span id="_CPPv3N8helayers7HeModel7HeModelERK7HeModel"></span><span id="_CPPv2N8helayers7HeModel7HeModelERK7HeModel"></span><span id="helayers::HeModel::HeModel__HeModelCR"></span><span class="target" id="classhelayers_1_1HeModel_1adb4216b25c20791ba7a1fee8f5d30027"></span><span class="sig-name descname"><span class="n"><span class="pre">HeModel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7HeModel7HeModelERK7HeModel" title="helayers::HeModel::HeModel"><span class="n"><span class="pre">HeModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N8helayers7HeModel7HeModelERK7HeModel" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Deleted copy constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModelaSERK7HeModel">
+<span id="_CPPv3N8helayers7HeModelaSERK7HeModel"></span><span id="_CPPv2N8helayers7HeModelaSERK7HeModel"></span><span id="helayers::HeModel::assign-operator__HeModelCR"></span><span class="target" id="classhelayers_1_1HeModel_1a9ecbd161ed1e6ac0c382bd256d54a574"></span><a class="reference internal" href="#_CPPv4N8helayers7HeModelE" title="helayers::HeModel"><span class="n"><span class="pre">HeModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8helayers7HeModelE" title="helayers::HeModel"><span class="n"><span class="pre">HeModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N8helayers7HeModelaSERK7HeModel" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Deleted operator=. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel6encodeERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel6encodeERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel6encodeERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encode__PlainModelCR.HeProfileCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1af449aa3be750b32150a5e6a122a21298"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModel.html#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">plain</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeProfile.html#_CPPv4N8helayers9HeProfileE" title="helayers::HeProfile"><span class="n"><span class="pre">HeProfile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">profile</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel6encodeERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encodes a model given a plain model and an HE profile that was obtained as an output of model compilation. </p>
+<p>The resulting model will have non-encrypted weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plain</strong> – The plain model. Must be initialized. </p></li>
+<li><p><strong>profile</strong> – The given HE profile. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel6encodeERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel6encodeERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel6encodeERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encode__std::vector:std::shared_ptr:is::CR.std::vector:ss:CR.HeRunRequirementsCR.PlainModelHyperParamsCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1a000575c7a5f6eeb102ecef4f6f866066"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">streams</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeRunRequirements.html#_CPPv4N8helayers17HeRunRequirementsE" title="helayers::HeRunRequirements"><span class="n"><span class="pre">HeRunRequirements</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heRunReq</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParams</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel6encodeERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads the given model and prepared it to run with encrypted data, with the model itself not encrypted. </p>
+<p>Optional parameters can control various additional settings.</p>
+<p>Internally, this method initializes a plain model using <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel_1acc4e7c0b1c5e9d0c91214474b2f52fd6"><span class="std std-ref">PlainModel::init</span></a>, compiles a model using <a class="reference internal" href="#classhelayers_1_1HeModel_1a2bbbcb9193057ef19807977e46c7df33"><span class="std std-ref">HeModel::compile</span></a> and calls <a class="reference internal" href="#classhelayers_1_1HeModel_1af449aa3be750b32150a5e6a122a21298"><span class="std std-ref">HeModel::encode</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>streams</strong> – List of streams with content to load, depending on the underlying model. All streams must be rewindable. </p></li>
+<li><p><strong>files</strong> – List of file names corresponding to each stream. </p></li>
+<li><p><strong>heRunReq</strong> – The HE run requirements. </p></li>
+<li><p><strong>hyperParams</strong> – The hyperparameters object. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel6encodeERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel6encodeERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel6encodeERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encode__std::vector:ss:CR.HeRunRequirementsCR.PlainModelHyperParamsCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1ab1f15b89450ccd9403033f389d418918"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeRunRequirements.html#_CPPv4N8helayers17HeRunRequirementsE" title="helayers::HeRunRequirements"><span class="n"><span class="pre">HeRunRequirements</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heRunReq</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParams</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel6encodeERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads the given model and prepared it to run with encrypted data, with the model itself not encrypted. </p>
+<p>Optional parameters can control various additional settings.</p>
+<p>Internally, this method initializes a plain model using <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel_1acc4e7c0b1c5e9d0c91214474b2f52fd6"><span class="std std-ref">PlainModel::init</span></a>, compiles a model using <a class="reference internal" href="#classhelayers_1_1HeModel_1a2bbbcb9193057ef19807977e46c7df33"><span class="std std-ref">HeModel::compile</span></a> and calls <a class="reference internal" href="#classhelayers_1_1HeModel_1af449aa3be750b32150a5e6a122a21298"><span class="std std-ref">HeModel::encode</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> – List of file names with content to load, depending on the underlying model. </p></li>
+<li><p><strong>heRunReq</strong> – The HE run requirements. </p></li>
+<li><p><strong>hyperParams</strong> – The hyperparameters object. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel13encodeEncryptERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel13encodeEncryptERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel13encodeEncryptERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encodeEncrypt__PlainModelCR.HeProfileCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1a889bee81b4a85429ac8bde35fa0d6d1e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModel.html#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">plain</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeProfile.html#_CPPv4N8helayers9HeProfileE" title="helayers::HeProfile"><span class="n"><span class="pre">HeProfile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">profile</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel13encodeEncryptERK10PlainModelRK9HeProfileRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Encodes and encrypts a model given a plain model and an HE profile that was obtained as an output of model compilation. </p>
+<p>The resulting model will have encrypted weights.</p>
+<p>NOTE: while the model weights are encrypted, the model architecture and/or structure is not hidden. For example, in neural network the non-hidden architecture includes the number of layers, the order of the layers, each layer’s type, input shape, output shape and internal parameters (e.g. number of neurons in Dense layer; size of kernel, strides and padding in Conv2D layer; the degree of a polynomial activation layer and the sign of its leading coefficient, etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plain</strong> – The plain model. Must be initialized. </p></li>
+<li><p><strong>profile</strong> – The given HE profile. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encodeEncrypt__std::vector:std::shared_ptr:is::CR.std::vector:ss:CR.HeRunRequirementsCR.PlainModelHyperParamsCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1a7b4ab5c7ce30b4d356808d119260ac80"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">streams</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeRunRequirements.html#_CPPv4N8helayers17HeRunRequirementsE" title="helayers::HeRunRequirements"><span class="n"><span class="pre">HeRunRequirements</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heRunReq</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParams</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt10shared_ptrINSt7istreamEEEEERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads the given model and prepared it to run with encrypted data, and encrypted model. </p>
+<p>Optional parameters can control various additional settings.</p>
+<p>Internally, this method initializes a plain model using <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel_1acc4e7c0b1c5e9d0c91214474b2f52fd6"><span class="std std-ref">PlainModel::init</span></a>, compiles a model using <a class="reference internal" href="#classhelayers_1_1HeModel_1a2bbbcb9193057ef19807977e46c7df33"><span class="std std-ref">HeModel::compile</span></a> and calls <a class="reference internal" href="#classhelayers_1_1HeModel_1a889bee81b4a85429ac8bde35fa0d6d1e"><span class="std std-ref">HeModel::encodeEncrypt</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>streams</strong> – List of streams with content to load, depending on the underlying model. All streams must be rewindable. </p></li>
+<li><p><strong>files</strong> – List of file names corresponding to each stream. </p></li>
+<li><p><strong>heRunReq</strong> – The HE run requirements. </p></li>
+<li><p><strong>hyperParams</strong> – The hyperparameters object. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::encodeEncrypt__std::vector:ss:CR.HeRunRequirementsCR.PlainModelHyperParamsCR.std::vector:DoubleTensorCPtr:CR"></span><span class="target" id="classhelayers_1_1HeModel_1ade1df87aa483231bdaba0d1ddde927a3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeEncrypt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">files</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeRunRequirements.html#_CPPv4N8helayers17HeRunRequirementsE" title="helayers::HeRunRequirements"><span class="n"><span class="pre">HeRunRequirements</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heRunReq</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hyperParams</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel13encodeEncryptERKNSt6vectorINSt6stringEEERK17HeRunRequirementsRK21PlainModelHyperParamsRKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads the given model and prepared it to run with encrypted data, and encrypted model. </p>
+<p>Optional parameters can control various additional settings.</p>
+<p>Internally, this method initializes a plain model using <a class="reference internal" href="PlainModel.html#classhelayers_1_1PlainModel_1acc4e7c0b1c5e9d0c91214474b2f52fd6"><span class="std std-ref">PlainModel::init</span></a>, compiles a model using <a class="reference internal" href="#classhelayers_1_1HeModel_1a2bbbcb9193057ef19807977e46c7df33"><span class="std std-ref">HeModel::compile</span></a> and calls <a class="reference internal" href="#classhelayers_1_1HeModel_1a889bee81b4a85429ac8bde35fa0d6d1e"><span class="std std-ref">HeModel::encodeEncrypt</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> – List of file names with content to load, depending on the underlying model. </p></li>
+<li><p><strong>heRunReq</strong> – The HE run requirements. </p></li>
+<li><p><strong>hyperParams</strong> – The hyperparameters object. </p></li>
+<li><p><strong>inputs</strong> – An optional representative plaintext inputs, to be used for preventing overflows. It is recommended to include representative inputs, including ones that might produce intermediate results with high values during the computation, as these inputs will be used to tune the model. NOTE: Providing inputs and running the overflows prevention mechanism may result in derivatives of the given inputs or model weights to be present in plaintext inside the model and in any IO processor created from it. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel10getProfileEv">
+<span id="_CPPv3NK8helayers7HeModel10getProfileEv"></span><span id="_CPPv2NK8helayers7HeModel10getProfileEv"></span><span id="helayers::HeModel::getProfileC"></span><span class="target" id="classhelayers_1_1HeModel_1a8e456ca04087fa7264ca52f4716f4b32"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeProfile.html#_CPPv4N8helayers9HeProfileE" title="helayers::HeProfile"><span class="n"><span class="pre">HeProfile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getProfile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel10getProfileEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the HE profile that was used to build the model. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel17getBaseChainIndexEv">
+<span id="_CPPv3NK8helayers7HeModel17getBaseChainIndexEv"></span><span id="_CPPv2NK8helayers7HeModel17getBaseChainIndexEv"></span><span id="helayers::HeModel::getBaseChainIndexC"></span><span class="target" id="classhelayers_1_1HeModel_1a2e1332c67e90fcc15f2ccf6ba5683a9d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBaseChainIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel17getBaseChainIndexEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel7getModeEv">
+<span id="_CPPv3NK8helayers7HeModel7getModeEv"></span><span id="_CPPv2NK8helayers7HeModel7getModeEv"></span><span id="helayers::HeModel::getModeC"></span><span class="target" id="classhelayers_1_1HeModel_1a7c6c53b7d51560ecb55917be96c9907d"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ModelMode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel7getModeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel12getHeContextEv">
+<span id="_CPPv3NK8helayers7HeModel12getHeContextEv"></span><span id="_CPPv2NK8helayers7HeModel12getHeContextEv"></span><span id="helayers::HeModel::getHeContextC"></span><span class="target" id="classhelayers_1_1HeModel_1a11faa690619a19a4d86f1f6029fb3ba8"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHeContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel12getHeContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the HE context object this model uses. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel19getCreatedHeContextEv">
+<span id="_CPPv3NK8helayers7HeModel19getCreatedHeContextEv"></span><span id="_CPPv2NK8helayers7HeModel19getCreatedHeContextEv"></span><span id="helayers::HeModel::getCreatedHeContextC"></span><span class="target" id="classhelayers_1_1HeModel_1a72ad70b12f4ba1bda6b72d25eb090257"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCreatedHeContext</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel19getCreatedHeContextEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns a shared pointer to the <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> object that was created while initializing this model using <a class="reference internal" href="#classhelayers_1_1HeModel_1af449aa3be750b32150a5e6a122a21298"><span class="std std-ref">encode()</span></a> or <a class="reference internal" href="#classhelayers_1_1HeModel_1a889bee81b4a85429ac8bde35fa0d6d1e"><span class="std std-ref">encodeEncrypt()</span></a> method directly from plain model files or streams. </p>
+<p>Returns null if this model was initialized with an <a class="reference internal" href="HeContext.html#classhelayers_1_1HeContext"><span class="std std-ref">HeContext</span></a> created beforehand. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel17getFitHyperParamsEv">
+<span id="_CPPv3NK8helayers7HeModel17getFitHyperParamsEv"></span><span id="_CPPv2NK8helayers7HeModel17getFitHyperParamsEv"></span><span id="helayers::HeModel::getFitHyperParamsC"></span><span class="target" id="classhelayers_1_1HeModel_1a50f15e2f664953038e8d4aef934d5586"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">FitHyperParams</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFitHyperParams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel17getFitHyperParamsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns common training related hyper parameters. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel24getPlainModelHyperParamsEv">
+<span id="_CPPv3NK8helayers7HeModel24getPlainModelHyperParamsEv"></span><span id="_CPPv2NK8helayers7HeModel24getPlainModelHyperParamsEv"></span><span id="helayers::HeModel::getPlainModelHyperParamsC"></span><span class="target" id="classhelayers_1_1HeModel_1ad4909b703c90bfa9d7c62f19d182b9b7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModelHyperParams.html#_CPPv4N8helayers21PlainModelHyperParamsE" title="helayers::PlainModelHyperParams"><span class="n"><span class="pre">PlainModelHyperParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPlainModelHyperParams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel24getPlainModelHyperParamsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the hyper parameters of this model. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel25getInputsHeTensorMetadataEv">
+<span id="_CPPv3NK8helayers7HeModel25getInputsHeTensorMetadataEv"></span><span id="_CPPv2NK8helayers7HeModel25getInputsHeTensorMetadataEv"></span><span id="helayers::HeModel::getInputsHeTensorMetadataC"></span><span class="target" id="classhelayers_1_1HeModel_1a517460f989300588a3eb7ffab0d8c342"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">HeTensorMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInputsHeTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel25getInputsHeTensorMetadataEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns “inputsHeTensorMetadata” member, which holds metadata on the encrypted input tensors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel26getOutputsHeTensorMetadataEv">
+<span id="_CPPv3NK8helayers7HeModel26getOutputsHeTensorMetadataEv"></span><span id="_CPPv2NK8helayers7HeModel26getOutputsHeTensorMetadataEv"></span><span id="helayers::HeModel::getOutputsHeTensorMetadataC"></span><span class="target" id="classhelayers_1_1HeModel_1a19169e9d49a8d3c57760165aa8571c46"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">HeTensorMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getOutputsHeTensorMetadata</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel26getOutputsHeTensorMetadataEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns “outputsHeTensorMetadata” member, which holds metadata on the encrypted output tensors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel28getFixedBatchSizeRequirementEv">
+<span id="_CPPv3NK8helayers7HeModel28getFixedBatchSizeRequirementEv"></span><span id="_CPPv2NK8helayers7HeModel28getFixedBatchSizeRequirementEv"></span><span id="helayers::HeModel::getFixedBatchSizeRequirementC"></span><span class="target" id="classhelayers_1_1HeModel_1aea7a20b53873a54e3208be11e504209a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DimInt.html#_CPPv4N8helayers6DimIntE" title="helayers::DimInt"><span class="n"><span class="pre">DimInt</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFixedBatchSizeRequirement</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel28getFixedBatchSizeRequirementEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return an optional value, indicating the fixed batch size if such a size was specified by model. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel10getCircuitEv">
+<span id="_CPPv3NK8helayers7HeModel10getCircuitEv"></span><span id="_CPPv2NK8helayers7HeModel10getCircuitEv"></span><span id="helayers::HeModel::getCircuitC"></span><span class="target" id="classhelayers_1_1HeModel_1afb45a14a0e5684ab44968fa96d169922"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">circuit</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="Circuit.html#_CPPv4N8helayers7circuit7CircuitE" title="helayers::circuit::Circuit"><span class="n"><span class="pre">Circuit</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCircuit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel10getCircuitEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Return the circuit that was generated. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel7predictER13EncryptedDataRK13EncryptedData">
+<span id="_CPPv3NK8helayers7HeModel7predictER13EncryptedDataRK13EncryptedData"></span><span id="_CPPv2NK8helayers7HeModel7predictER13EncryptedDataRK13EncryptedData"></span><span id="helayers::HeModel::predict__EncryptedDataR.EncryptedDataCRC"></span><span class="target" id="classhelayers_1_1HeModel_1a8c891ecd3bd2bd56a256eeb20b53b3e8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">predict</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel7predictER13EncryptedDataRK13EncryptedData" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Run prediction (inference) over the model under FHE. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – An output parameter to store the prediction result (encrypted predictions) in. </p></li>
+<li><p><strong>inputs</strong> – The encrypted inputs. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel7predictER14EncryptedBatchRK14EncryptedBatch">
+<span id="_CPPv3NK8helayers7HeModel7predictER14EncryptedBatchRK14EncryptedBatch"></span><span id="_CPPv2NK8helayers7HeModel7predictER14EncryptedBatchRK14EncryptedBatch"></span><span id="helayers::HeModel::predict__EncryptedBatchR.EncryptedBatchCRC"></span><span class="target" id="classhelayers_1_1HeModel_1aea42c9bd96332f72651aa2640442cb71"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">predict</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EncryptedBatch</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">EncryptedBatch</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel7predictER14EncryptedBatchRK14EncryptedBatch" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Run prediction (inference) of a single batch over the model under FHE. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> – An output parameter to store the prediction result (encrypted predictions of a single batch) in. </p></li>
+<li><p><strong>inputs</strong> – A single batch of encrypted inputs. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel3fitERK13EncryptedDataNSt10shared_ptrI19TrainingSetMetadataEE">
+<span id="_CPPv3N8helayers7HeModel3fitERK13EncryptedDataNSt10shared_ptrI19TrainingSetMetadataEE"></span><span id="_CPPv2N8helayers7HeModel3fitERK13EncryptedDataNSt10shared_ptrI19TrainingSetMetadataEE"></span><span id="helayers::HeModel::fit__EncryptedDataCR.std::shared_ptr:TrainingSetMetadata:"></span><span class="target" id="classhelayers_1_1HeModel_1a35a1493374e2f180eff8fd8e978c5e52"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fit</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inputs</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TrainingSetMetadata</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">metadata</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel3fitERK13EncryptedDataNSt10shared_ptrI19TrainingSetMetadataEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Fit (train) the model under FHE. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The encrypted training inputs. </p></li>
+<li><p><strong>metadata</strong> – Metadata that was extracted from the training set. Some HeModels require this metadata object for the training. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel13decryptDecodeEv">
+<span id="_CPPv3NK8helayers7HeModel13decryptDecodeEv"></span><span id="_CPPv2NK8helayers7HeModel13decryptDecodeEv"></span><span id="helayers::HeModel::decryptDecodeC"></span><span class="target" id="classhelayers_1_1HeModel_1a647d34f872e70f9fb10760b739e9318f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="PlainModel.html#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decryptDecode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel13decryptDecodeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Decrypts a trained model (after calling “fit”) to obtain a trained plain model. </p>
+<p>Requires the HE context to contain a secret key. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel21getEncryptedInternalsEv">
+<span id="_CPPv3NK8helayers7HeModel21getEncryptedInternalsEv"></span><span id="_CPPv2NK8helayers7HeModel21getEncryptedInternalsEv"></span><span id="helayers::HeModel::getEncryptedInternalsC"></span><span class="target" id="classhelayers_1_1HeModel_1a436df2c620c2601b961fadd92b9ada8e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEncryptedInternals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel21getEncryptedInternalsEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Returns the encrypted internals (e.g., weights) of this model. </p>
+<p>The packing of the encrypted internals depends on the model type. The encrypted internals can be decrypted and decoded independently, and be given as input to the method <a class="reference internal" href="#classhelayers_1_1HeModel_1a2e8c1ebdc05d0f82c6e1791c66ceddcf"><span class="std std-ref">getPlainModelFromDecodedInternals()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel33getPlainModelFromDecodedInternalsERKNSt6vectorI16DoubleTensorCPtrEE">
+<span id="_CPPv3NK8helayers7HeModel33getPlainModelFromDecodedInternalsERKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="_CPPv2NK8helayers7HeModel33getPlainModelFromDecodedInternalsERKNSt6vectorI16DoubleTensorCPtrEE"></span><span id="helayers::HeModel::getPlainModelFromDecodedInternals__std::vector:DoubleTensorCPtr:CRC"></span><span class="target" id="classhelayers_1_1HeModel_1a2e8c1ebdc05d0f82c6e1791c66ceddcf"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="PlainModel.html#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPlainModelFromDecodedInternals</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="DoubleTensorCPtr.html#_CPPv4N8helayers16DoubleTensorCPtrE" title="helayers::DoubleTensorCPtr"><span class="n"><span class="pre">DoubleTensorCPtr</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">decodedInternals</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel33getPlainModelFromDecodedInternalsERKNSt6vectorI16DoubleTensorCPtrEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructs a plain model from the given decoded internals (decrypted and decoded from the output of <a class="reference internal" href="#classhelayers_1_1HeModel_1a436df2c620c2601b961fadd92b9ada8e"><span class="std std-ref">getEncryptedInternals()</span></a>). </p>
+<p>The same <a class="reference internal" href="#classhelayers_1_1HeModel"><span class="std std-ref">HeModel</span></a> object should be used for both <a class="reference internal" href="#classhelayers_1_1HeModel_1a436df2c620c2601b961fadd92b9ada8e"><span class="std std-ref">getEncryptedInternals()</span></a> and this method. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>decodedInternals</strong> – The decoded internals which were decrypted and decoded from the output of <a class="reference internal" href="#classhelayers_1_1HeModel_1a436df2c620c2601b961fadd92b9ada8e"><span class="std std-ref">getEncryptedInternals()</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel9isFitModeEv">
+<span id="_CPPv3NK8helayers7HeModel9isFitModeEv"></span><span id="_CPPv2NK8helayers7HeModel9isFitModeEv"></span><span id="helayers::HeModel::isFitModeC"></span><span class="target" id="classhelayers_1_1HeModel_1a2683bae70b309ee9f18cac3dcb164ba8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFitMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel9isFitModeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel18getIsEncryptedModeEv">
+<span id="_CPPv3NK8helayers7HeModel18getIsEncryptedModeEv"></span><span id="_CPPv2NK8helayers7HeModel18getIsEncryptedModeEv"></span><span id="helayers::HeModel::getIsEncryptedModeC"></span><span class="target" id="classhelayers_1_1HeModel_1ab1e7603f73fec49b1a8b5941b803b70a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIsEncryptedMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel18getIsEncryptedModeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel20createModelIoEncoderEv">
+<span id="_CPPv3NK8helayers7HeModel20createModelIoEncoderEv"></span><span id="_CPPv2NK8helayers7HeModel20createModelIoEncoderEv"></span><span id="helayers::HeModel::createModelIoEncoderC"></span><span class="target" id="classhelayers_1_1HeModel_1a2e1656b9a187b96f4f41c3a70df9c9d3"></span><a class="reference internal" href="ModelIoEncoder.html#_CPPv4N8helayers14ModelIoEncoderE" title="helayers::ModelIoEncoder"><span class="n"><span class="pre">ModelIoEncoder</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createModelIoEncoder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel20createModelIoEncoderEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Create a model IO encoder for this model. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel17loadEncryptedDataERNSt7istreamE">
+<span id="_CPPv3NK8helayers7HeModel17loadEncryptedDataERNSt7istreamE"></span><span id="_CPPv2NK8helayers7HeModel17loadEncryptedDataERNSt7istreamE"></span><span id="helayers::HeModel::loadEncryptedData__isRC"></span><span class="target" id="classhelayers_1_1HeModel_1a2a0f46748dbc4c0a572f7b6b18bca2c6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadEncryptedData</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel17loadEncryptedDataERNSt7istreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads encrypted data from the given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The stream to load from. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given stream does not contain an <a class="reference internal" href="EncryptedData.html#classhelayers_1_1EncryptedData"><span class="std std-ref">EncryptedData</span></a> object, or if the object was saved with a mismatching HElayers version. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel25loadEncryptedDataFromFileERKNSt6stringE">
+<span id="_CPPv3NK8helayers7HeModel25loadEncryptedDataFromFileERKNSt6stringE"></span><span id="_CPPv2NK8helayers7HeModel25loadEncryptedDataFromFileERKNSt6stringE"></span><span id="helayers::HeModel::loadEncryptedDataFromFile__ssCRC"></span><span class="target" id="classhelayers_1_1HeModel_1a6b31ff13a45891bbe358fe89acba5ae6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="EncryptedData.html#_CPPv4N8helayers13EncryptedDataE" title="helayers::EncryptedData"><span class="n"><span class="pre">EncryptedData</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadEncryptedDataFromFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel25loadEncryptedDataFromFileERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Loads encrypted data from the given file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileName</strong> – The name of the file to load from. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – If the given file does not contain an <a class="reference internal" href="EncryptedData.html#classhelayers_1_1EncryptedData"><span class="std std-ref">EncryptedData</span></a> object, or if the object was saved with a mismatching HElayers version. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel19switchToPredictModeEv">
+<span id="_CPPv3N8helayers7HeModel19switchToPredictModeEv"></span><span id="_CPPv2N8helayers7HeModel19switchToPredictModeEv"></span><span id="helayers::HeModel::switchToPredictMode"></span><span class="target" id="classhelayers_1_1HeModel_1a3faab206c25ee64831b31f8858928ec4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">switchToPredictMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel19switchToPredictModeEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Switch this model from fit mode to predict mode. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel34getCanSwitchBetweenPredictFitModesEv">
+<span id="_CPPv3N8helayers7HeModel34getCanSwitchBetweenPredictFitModesEv"></span><span id="_CPPv2N8helayers7HeModel34getCanSwitchBetweenPredictFitModesEv"></span><span id="helayers::HeModel::getCanSwitchBetweenPredictFitModes"></span><span class="target" id="classhelayers_1_1HeModel_1a67dbe54afee1a786c42b7a6c80736447"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCanSwitchBetweenPredictFitModes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel34getCanSwitchBetweenPredictFitModesEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Whether this model can switch from fit mode to predict mode. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel19setNonMockupContextENSt10shared_ptrI9HeContextEE">
+<span id="_CPPv3N8helayers7HeModel19setNonMockupContextENSt10shared_ptrI9HeContextEE"></span><span id="_CPPv2N8helayers7HeModel19setNonMockupContextENSt10shared_ptrI9HeContextEE"></span><span id="helayers::HeModel::setNonMockupContext__std::shared_ptr:HeContext:"></span><span class="target" id="classhelayers_1_1HeModel_1abd45c35468e4bbddc82a092201fa4462"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNonMockupContext</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nonMockupContext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel19setNonMockupContextENSt10shared_ptrI9HeContextEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Sets the non-mockup context. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nonMockupContext</strong> – A non-mockup context to store. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8helayers7HeModel30outputCircuitTimeStatsPerLayerERNSt7ostreamE">
+<span id="_CPPv3NK8helayers7HeModel30outputCircuitTimeStatsPerLayerERNSt7ostreamE"></span><span id="_CPPv2NK8helayers7HeModel30outputCircuitTimeStatsPerLayerERNSt7ostreamE"></span><span id="helayers::HeModel::outputCircuitTimeStatsPerLayer__osRC"></span><span class="target" id="classhelayers_1_1HeModel_1a78ebd7c9a6ab2c9ae86558db32bc678e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outputCircuitTimeStatsPerLayer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8helayers7HeModel30outputCircuitTimeStatsPerLayerERNSt7ostreamE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Outputs the circuit time stats per layer to the given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – The stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel7compileERK10PlainModelRK17HeRunRequirements">
+<span id="_CPPv3N8helayers7HeModel7compileERK10PlainModelRK17HeRunRequirements"></span><span id="_CPPv2N8helayers7HeModel7compileERK10PlainModelRK17HeRunRequirements"></span><span id="helayers::HeModel::compile__PlainModelCR.HeRunRequirementsCR"></span><span class="target" id="classhelayers_1_1HeModel_1a2bbbcb9193057ef19807977e46c7df33"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="HeProfile.html#_CPPv4N8helayers9HeProfileE" title="helayers::HeProfile"><span class="n"><span class="pre">HeProfile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="PlainModel.html#_CPPv4N8helayers10PlainModelE" title="helayers::PlainModel"><span class="n"><span class="pre">PlainModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">plain</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeRunRequirements.html#_CPPv4N8helayers17HeRunRequirementsE" title="helayers::HeRunRequirements"><span class="n"><span class="pre">HeRunRequirements</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">heRunReq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel7compileERK10PlainModelRK17HeRunRequirements" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Compiles a plain model under a given HE run requirements. </p>
+<p>Returns an optional HE profile that is populated if the compilation is possible given the plain model and requirements, or empty otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plain</strong> – The plain model. Must be initialized. </p></li>
+<li><p><strong>heRunReq</strong> – The HE run requirements. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8helayers7HeModel13createContextERK9HeProfile">
+<span id="_CPPv3N8helayers7HeModel13createContextERK9HeProfile"></span><span id="_CPPv2N8helayers7HeModel13createContextERK9HeProfile"></span><span id="helayers::HeModel::createContext__HeProfileCR"></span><span class="target" id="classhelayers_1_1HeModel_1ad766bf55543e04972ab092deb32a4852"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="HeContext.html#_CPPv4N8helayers9HeContextE" title="helayers::HeContext"><span class="n"><span class="pre">HeContext</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createContext</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="HeProfile.html#_CPPv4N8helayers9HeProfileE" title="helayers::HeProfile"><span class="n"><span class="pre">HeProfile</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">profile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8helayers7HeModel13createContextERK9HeProfile" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Creates, initializes and returns an HE context given an HE profile that was obtained as an output of model compilation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>profile</strong> – The given HE profile. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">ModelIoEncoder</span></dt>
+</dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">ModelIoEncoderImpl</span></dt>
+</dl>
+
+</div>
+</dd></dl>
+
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="loadHeModel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">loadHeModel</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="LinearRegressionEstimator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LinearRegressionEstimator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel"><code class="docutils literal notranslate"><span class="pre">HeModel</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.compile"><code class="docutils literal notranslate"><span class="pre">HeModel.compile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.create_context"><code class="docutils literal notranslate"><span class="pre">HeModel.create_context()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.create_model_io_encoder"><code class="docutils literal notranslate"><span class="pre">HeModel.create_model_io_encoder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.decrypt_decode"><code class="docutils literal notranslate"><span class="pre">HeModel.decrypt_decode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.encode"><code class="docutils literal notranslate"><span class="pre">HeModel.encode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.encode_encrypt"><code class="docutils literal notranslate"><span class="pre">HeModel.encode_encrypt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.fit"><code class="docutils literal notranslate"><span class="pre">HeModel.fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_can_switch_between_predict_fit_modes"><code class="docutils literal notranslate"><span class="pre">HeModel.get_can_switch_between_predict_fit_modes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_created_he_context"><code class="docutils literal notranslate"><span class="pre">HeModel.get_created_he_context()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_encrypted_internals"><code class="docutils literal notranslate"><span class="pre">HeModel.get_encrypted_internals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_fit_hyperparams"><code class="docutils literal notranslate"><span class="pre">HeModel.get_fit_hyperparams()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_he_context"><code class="docutils literal notranslate"><span class="pre">HeModel.get_he_context()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_plain_model_from_decoded_internals"><code class="docutils literal notranslate"><span class="pre">HeModel.get_plain_model_from_decoded_internals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.get_profile"><code class="docutils literal notranslate"><span class="pre">HeModel.get_profile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.is_fit_mode"><code class="docutils literal notranslate"><span class="pre">HeModel.is_fit_mode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.load_encrypted_data"><code class="docutils literal notranslate"><span class="pre">HeModel.load_encrypted_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.load_encrypted_data_from_file"><code class="docutils literal notranslate"><span class="pre">HeModel.load_encrypted_data_from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.predict"><code class="docutils literal notranslate"><span class="pre">HeModel.predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyhelayers.HeModel.switch_to_predict_mode"><code class="docutils literal notranslate"><span class="pre">HeModel.switch_to_predict_mode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, IBM FHE team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
